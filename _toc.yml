@@ -8,6 +8,8 @@ parts:
   - file: 3_Pandas
   - file: 4_matplotlib
   - file: 5_pandas_plot
+  - file: 6_SciPy_stats
+  - file: 7_SciPy_optimize
 - caption: "経済学"
   chapters:
   - url: https://py4macro.github.io
