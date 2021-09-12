@@ -1,0 +1,16 @@
+format: jb-book
+root: index
+parts:
+- caption: "Pythonの学習"
+  chapters:
+  - file: 1_Python_Basics
+  - file: 2_NumPy
+  - file: 3_Pandas
+  - file: 4_matplotlib
+  - file: 5_pandas_plot
+- caption: "経済学"
+  chapters:
+  - url: https://py4macro.github.io
+    title: "Pythonで学ぶマクロ経済学（中級＋レベル）"
+  - url: https://py4etrics.github.io
+    title: "Pythonで学ぶ入門計量経済学"
