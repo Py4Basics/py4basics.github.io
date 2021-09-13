@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # (chap:matplotlib)=
-# # `Matplotlib`の使い方
+# # `Matplotlib`：図示
 
 # ## 説明
 

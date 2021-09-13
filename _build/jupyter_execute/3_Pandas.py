@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # (chap:pandas)=
-# # `Pandas`の使い方
+# # `Pandas`：データ分析
 
 # ## 説明
 

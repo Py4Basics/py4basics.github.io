@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # (chap:pandas_plot)=
-# # `Pandas`を使ったプロット
+# # `Pandas`：図示
 
 # ## 説明
 
@@ -12,8 +12,6 @@
 import pandas as pd
 
 
-# プロット用のパッケージ`Matplotlib`を紹介したが，実は`Pandas`の`DataFrame`と`Series`にはメソッド`plot()`が備えられており，それを使えば基本的なプロットをより簡単んコードで実現できる。裏で動いているのは`Matplotlib`であり，より複雑な図を作成する場合は、`Matplotlib`のコードを直接書くことが必要になるだろうが，手っ取り早くプロットしたい場合には重宝する手法である。詳細は[参考サイト（英語）](https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html)を参考にして欲しいが，ここでは基本的な使い方を紹介する。
-
 # ```{margin}
 # <div name="html-admonition">
 # Do you want to read in a differnt language? Open the 
@@ -21,6 +19,8 @@ import pandas as pd
 # in English or the language of your choice.
 # </div>
 # ```
+
+# プロット用のパッケージ`Matplotlib`を紹介したが，実は`Pandas`の`DataFrame`と`Series`にはメソッド`plot()`が備えられており，それを使えば基本的なプロットをより簡単んコードで実現できる。裏で動いているのは`Matplotlib`であり，より複雑な図を作成する場合は、`Matplotlib`のコードを直接書くことが必要になるだろうが，手っ取り早くプロットしたい場合には重宝する手法である。詳細は[参考サイト（英語）](https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html)を参考にして欲しいが，ここでは基本的な使い方を紹介する。
 
 # 次の`df0`を使って説明する。
 

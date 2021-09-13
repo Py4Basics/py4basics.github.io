@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # (chap:numpy)=
-# # `NumPy`の使い方
+# # `NumPy`：高速化
 
 # `NumPy`は，数値計算をする上で重要な役割を果たすパッケージであり，特に，行列計算に威力を発揮する。`NumPy`は「ナンパイ」と読む。慣例として`np`としてインポートする。
 
@@ -15,6 +15,14 @@ import numpy as np
 # ## `array`
 
 # 基本となる関数が`np.array()`であり，次のコードでは１次元配列を作る。
+
+# ```{margin}
+# <div name="html-admonition">
+# Do you want to read in a differnt language? Open the 
+# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+# in English or the language of your choice.
+# </div>
+# ```
 
 # In[2]:
 
