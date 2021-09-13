@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SciPy.stats &#8212; 経済学のためのPythonの基礎</title>
+    <title>SciPy.stats：確率分布 &#8212; 経済学のためのPythonの基礎</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,8 +55,8 @@
     <link rel="canonical" href="https://py4basics.github.io/6_SciPy_stats.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="解の求め方と最適化問題" href="7_SciPy_optimize.html" />
-    <link rel="prev" title="Pandasを使ったプロット" href="5_pandas_plot.html" />
+    <link rel="next" title="SciPy.optimize：解の求め方と最適化問題" href="7_SciPy_optimize.html" />
+    <link rel="prev" title="Pandas：図示" href="5_pandas_plot.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -102,7 +102,7 @@
      NumPy
     </span>
    </code>
-   の使い方
+   ：高速化
   </a>
  </li>
  <li class="toctree-l1">
@@ -112,7 +112,7 @@
      Pandas
     </span>
    </code>
-   の使い方
+   ：データ分析
   </a>
  </li>
  <li class="toctree-l1">
@@ -122,7 +122,7 @@
      Matplotlib
     </span>
    </code>
-   の使い方
+   ：図示
   </a>
  </li>
  <li class="toctree-l1">
@@ -132,17 +132,27 @@
      Pandas
     </span>
    </code>
-   を使ったプロット
+   ：図示
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   SciPy.stats
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SciPy.stats
+    </span>
+   </code>
+   ：確率分布
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="7_SciPy_optimize.html">
-   解の求め方と最適化問題
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SciPy.optimize
+    </span>
+   </code>
+   ：解の求め方と最適化問題
   </a>
  </li>
 </ul>
@@ -313,10 +323,16 @@
               <div>
                 
   <div class="section" id="scipy-stats">
-<h1>SciPy.stats<a class="headerlink" href="#scipy-stats" title="Permalink to this headline">¶</a></h1>
-<p>If you come here without expecting Japanese, please click <a class="reference external" href="https://translate.google.com/translate?hl=&amp;sl=ja&amp;tl=en&amp;u=https%3A%2F%2Fpy4etrics.github.io%2F5_SciPy_stats.html">Google translated version</a> in English or the language of your choice.</p>
-<hr class="docutils" />
+<h1><code class="docutils literal notranslate"><span class="pre">SciPy.stats</span></code>：確率分布<a class="headerlink" href="#scipy-stats" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">SciPy</span></code>（サイパイ）は，NumPyの大幅な拡張版と理解して良い。<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>を読み込むとNumPyの関数などを利用できるようになる。しかし<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>は大きなパッケージであり，全てを読み込む必要もない。従って，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>を読み込んで，<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>のサブパッケージや関数を読み込むということで十分であろう。ここでは<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>の<code class="docutils literal notranslate"><span class="pre">stats</span></code>というサブパッケージについて説明する。</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div name="html-admonition">
+Do you want to read in a differnt language? Open the 
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+in English or the language of your choice.
+</div>
+</div>
 <div class="section" id="normal-distribution">
 <h2>正規分布（Normal Distribution）<a class="headerlink" href="#normal-distribution" title="Permalink to this headline">¶</a></h2>
 <p>正規分布のモジュール名は<code class="docutils literal notranslate"><span class="pre">norm</span></code>であり，以下が主な関数である。</p>
@@ -858,7 +874,7 @@
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>を使ったプロット</p>
+                <p class="prevnext-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示</p>
             </div>
         </a>
     </div>
@@ -866,7 +882,7 @@
         <a class="right-next" href="7_SciPy_optimize.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">解の求め方と最適化問題</p>
+                <p class="prevnext-title"><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

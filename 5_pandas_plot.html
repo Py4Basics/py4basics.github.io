@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pandasを使ったプロット &#8212; 経済学のためのPythonの基礎</title>
+    <title>Pandas：図示 &#8212; 経済学のためのPythonの基礎</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <link rel="canonical" href="https://py4basics.github.io/5_pandas_plot.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SciPy.stats" href="6_SciPy_stats.html" />
-    <link rel="prev" title="Matplotlibの使い方" href="4_matplotlib.html" />
+    <link rel="next" title="SciPy.stats：確率分布" href="6_SciPy_stats.html" />
+    <link rel="prev" title="Matplotlib：図示" href="4_matplotlib.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -100,7 +100,7 @@
      NumPy
     </span>
    </code>
-   の使い方
+   ：高速化
   </a>
  </li>
  <li class="toctree-l1">
@@ -110,7 +110,7 @@
      Pandas
     </span>
    </code>
-   の使い方
+   ：データ分析
   </a>
  </li>
  <li class="toctree-l1">
@@ -120,7 +120,7 @@
      Matplotlib
     </span>
    </code>
-   の使い方
+   ：図示
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -130,17 +130,27 @@
      Pandas
     </span>
    </code>
-   を使ったプロット
+   ：図示
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="6_SciPy_stats.html">
-   SciPy.stats
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SciPy.stats
+    </span>
+   </code>
+   ：確率分布
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="7_SciPy_optimize.html">
-   解の求め方と最適化問題
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SciPy.optimize
+    </span>
+   </code>
+   ：解の求め方と最適化問題
   </a>
  </li>
 </ul>
@@ -340,7 +350,7 @@
               <div>
                 
   <div class="section" id="pandas">
-<span id="chap-pandas-plot"></span><h1><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>を使ったプロット<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h1>
+<span id="chap-pandas-plot"></span><h1><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>説明<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
@@ -350,7 +360,6 @@
 </div>
 </div>
 </div>
-<p>プロット用のパッケージ<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>を紹介したが，実は<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>の<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>と<code class="docutils literal notranslate"><span class="pre">Series</span></code>にはメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>が備えられており，それを使えば基本的なプロットをより簡単んコードで実現できる。裏で動いているのは<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>であり，より複雑な図を作成する場合は、<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>のコードを直接書くことが必要になるだろうが，手っ取り早くプロットしたい場合には重宝する手法である。詳細は<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">参考サイト（英語）</a>を参考にして欲しいが，ここでは基本的な使い方を紹介する。</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div name="html-admonition">
@@ -359,6 +368,7 @@ Do you want to read in a differnt language? Open the
 in English or the language of your choice.
 </div>
 </div>
+<p>プロット用のパッケージ<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>を紹介したが，実は<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>の<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>と<code class="docutils literal notranslate"><span class="pre">Series</span></code>にはメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>が備えられており，それを使えば基本的なプロットをより簡単んコードで実現できる。裏で動いているのは<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>であり，より複雑な図を作成する場合は、<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>のコードを直接書くことが必要になるだろうが，手っ取り早くプロットしたい場合には重宝する手法である。詳細は<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">参考サイト（英語）</a>を参考にして欲しいが，ここでは基本的な使い方を紹介する。</p>
 <p>次の<code class="docutils literal notranslate"><span class="pre">df0</span></code>を使って説明する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1280,7 +1290,7 @@ Name: X, dtype: int64
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>の使い方</p>
+                <p class="prevnext-title"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示</p>
             </div>
         </a>
     </div>
@@ -1288,7 +1298,7 @@ Name: X, dtype: int64
         <a class="right-next" href="6_SciPy_stats.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">SciPy.stats</p>
+                <p class="prevnext-title"><code class="docutils literal notranslate"><span class="pre">SciPy.stats</span></code>：確率分布</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

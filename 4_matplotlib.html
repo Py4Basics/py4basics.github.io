@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Matplotlibの使い方 &#8212; 経済学のためのPythonの基礎</title>
+    <title>Matplotlib：図示 &#8212; 経済学のためのPythonの基礎</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,8 +55,8 @@
     <link rel="canonical" href="https://py4basics.github.io/4_matplotlib.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pandasを使ったプロット" href="5_pandas_plot.html" />
-    <link rel="prev" title="Pandasの使い方" href="3_Pandas.html" />
+    <link rel="next" title="Pandas：図示" href="5_pandas_plot.html" />
+    <link rel="prev" title="Pandas：データ分析" href="3_Pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -102,7 +102,7 @@
      NumPy
     </span>
    </code>
-   の使い方
+   ：高速化
   </a>
  </li>
  <li class="toctree-l1">
@@ -112,7 +112,7 @@
      Pandas
     </span>
    </code>
-   の使い方
+   ：データ分析
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -122,7 +122,7 @@
      Matplotlib
     </span>
    </code>
-   の使い方
+   ：図示
   </a>
  </li>
  <li class="toctree-l1">
@@ -132,17 +132,27 @@
      Pandas
     </span>
    </code>
-   を使ったプロット
+   ：図示
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="6_SciPy_stats.html">
-   SciPy.stats
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SciPy.stats
+    </span>
+   </code>
+   ：確率分布
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="7_SciPy_optimize.html">
-   解の求め方と最適化問題
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SciPy.optimize
+    </span>
+   </code>
+   ：解の求め方と最適化問題
   </a>
  </li>
 </ul>
@@ -413,7 +423,7 @@
               <div>
                 
   <div class="section" id="matplotlib">
-<span id="chap-matplotlib"></span><h1><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>の使い方<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h1>
+<span id="chap-matplotlib"></span><h1><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>説明<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
@@ -421,6 +431,11 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
 </pre></div>
 </div>
 </div>
@@ -528,7 +543,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x111863220&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1204b6310&gt;]
 </pre></div>
 </div>
 <img alt="_images/4_matplotlib_14_1.png" src="_images/4_matplotlib_14_1.png" />
@@ -553,7 +568,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1119e4310&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x120634340&gt;]
 </pre></div>
 </div>
 <img alt="_images/4_matplotlib_18_1.png" src="_images/4_matplotlib_18_1.png" />
@@ -1797,7 +1812,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>の使い方</p>
+                <p class="prevnext-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析</p>
             </div>
         </a>
     </div>
@@ -1805,7 +1820,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
         <a class="right-next" href="5_pandas_plot.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>を使ったプロット</p>
+                <p class="prevnext-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
