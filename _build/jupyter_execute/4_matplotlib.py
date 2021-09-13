@@ -14,8 +14,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-# `Matplotlib`（「マットプロットリブ」と読む）はプロットのための代表的なパッケージであり、ここではその使い方を解説する。プロットには`Matplotlib`のモジュールである`pyplot`を使うことになる。慣例に沿って`plt`としてインポートする。<br>
-
 # ```{margin}
 # <div name="html-admonition">
 # Do you want to read in a differnt language? Open the 
@@ -23,6 +21,8 @@ import matplotlib.pyplot as plt
 # in English or the language of your choice.
 # </div>
 # ```
+
+# `Matplotlib`（「マットプロットリブ」と読む）はプロットのための代表的なパッケージであり、ここではその使い方を解説する。プロットには`Matplotlib`のモジュールである`pyplot`を使うことになる。慣例に沿って`plt`としてインポートする。<br>
 
 # `pyplot`モジュールを使ってプロットする場合、主に３つのコードの書き方がる。
 # 

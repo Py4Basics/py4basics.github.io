@@ -31,14 +31,6 @@ arr = np.array([10, 20, 30, 40, 50])
 arr
 
 
-# ```{margin}
-# <div name="html-admonition">
-# Do you want to read in a differnt language? Open the 
-# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
-# in English or the language of your choice.
-# </div>
-# ```
-
 # 次に２次元配列を作成しよう。
 
 # In[3]:
