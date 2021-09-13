@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# 経済学のためのPythonの基礎
+# 経済学のためのPython
 
 ```{epigraph}
 **Python Basics for Economics**
