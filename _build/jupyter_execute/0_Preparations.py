@@ -20,6 +20,14 @@
 # * pipを使うパッケージのインストール
 # * Jupyter Notebookの使い方
 # 
+# ```{margin}
+# <div name="html-admonition">
+# Do you want to read in a differnt language? Open the 
+# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+# in English or the language of your choice.
+# </div>
+# ```
+# 
 # また次の点についても述べる。
 # * ゼミ終了後毎回おこなう作業
 # 

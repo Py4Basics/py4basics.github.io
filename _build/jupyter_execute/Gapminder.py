@@ -3,10 +3,6 @@
 
 # # Gapminder
 
-# If you come here without expecting Japanese, please click [Google translated version](https://translate.google.com/translate?hl=&sl=ja&tl=en&u=https%3A%2F%2Fpy4etrics.github.io%2FGapminder.html) in English or the language of your choice.
-# 
-# ---
-
 # In[1]:
 
 
@@ -17,8 +13,16 @@ from gapminder import gapminder
 from see import see
 
 
+# ```{margin}
+# <div name="html-admonition">
+# Do you want to read in a differnt language? Open the 
+# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+# in English or the language of your choice.
+# </div>
+# ```
+
 # [Gapminder](https://www.gapminder.org)とは世界規模で見た経済格差をデータで探る有名なサイトであり、一見の価値があるサイトである。そのサイトで使われているデータを整理してパッケージにまとめたのが`gapminder`である。
-# 
+
 # ````{note}
 # MacではTerminal、WindowsではGit Bashを使い、次のコマンドで`gapminder`をインストールできる。
 # ```
