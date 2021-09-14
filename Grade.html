@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>成績分析 &#8212; 経済学のためのPython入門</title>
+    <title>学業成績の分析 &#8212; 経済学のためのPython入門</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -172,7 +172,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   成績分析
+   学業成績の分析
   </a>
  </li>
  <li class="toctree-l1">
@@ -470,9 +470,7 @@
               <div>
                 
   <div class="section" id="id1">
-<h1>成績分析<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>If you come here without expecting Japanese, please click <a class="reference external" href="https://translate.google.com/translate?hl=&amp;sl=ja&amp;tl=en&amp;u=https%3A%2F%2Fpy4etrics.github.io%2FGrade.html">Google translated version</a> in English or the language of your choice.</p>
-<hr class="docutils" />
+<h1>学業成績の分析<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -483,6 +481,14 @@
 </div>
 </div>
 <p>授業の成績（優秀良可不可）とGP（Grade Point）を使った成績の分析を行う。成績表のコピーは神戸大学の「うりぼーネット」を用いる例を考えるが、Web上で成績表が表示されるのであればコードを少し修正するだけで分析が行えるであろう。</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div name="html-admonition">
+Do you want to read in a differnt language? Open the 
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+in English or the language of your choice.
+</div>
+</div>
 <div class="section" id="id2">
 <h2>データの読み込み<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
@@ -1649,17 +1655,17 @@ Name: 評語, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>秀 20.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>秀
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20.0
 優 13.3
 良 6.7
 可 26.7
 合格 0.0
 認定 6.7
 不可 13.3
-取消
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13.3
+取消 13.3
 --------
 合計 100
 </pre></div>
