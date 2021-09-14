@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 経済学のためのPython
+# # 経済学のための初歩のPython
 # 
 # ```{epigraph}
 # **Python Basics for Economics**
@@ -52,24 +52,35 @@ print('Version:',dt.strftime('%Y年%m月%d日'))
 # 1. **`Pandas`： データ分析**<br>
 #   データを扱う際に欠かせないパッケージである。イメージ的には，`Python`版のExcelと思えば良いだろう。名前は計量経済学の授業で出てきたパネル・データ（Panel Data）から派生した可愛らしい名前になっている。データを扱うのであれば`NumPy`で良いのではと思うかも知れない。実際，`Pandas`のデータの部分は`NumPy`の`array`と呼ばれるデータ型に簡単に変換できるようになっている。どこに利点があるかと言うと，行・列にラベル名（例えば，「Real GDP」）が使えるためデータの直感的な操作が可能となる。またデータを整形するのに便利な関数が多く用意されているので，このパッケージ無ければデータを扱うのは非常に面倒に感じる事になるだろう。
 # 1. **`Matplotlib`： 図示**<br>
-#   データをプロット（図示）するためのパッケージ。`NumPy`，`Pandas`，`SciPy`と並んで`Python`のエコシステムを構築している。プロットするためのパッケージには様々なものが開発されているが，`Matplotlib`が基本となっている。プロットのためのコードには幾つかのパターンがあり，オブジェクト指向と呼ばれる考えに基づく方法を紹介する。
+#   データをプロット（図示）するためのパッケージ。`NumPy`，`Pandas`，`SciPy`と並んで`Python`のエコシステムを構成している。プロットするためのパッケージには様々なものが開発されているが，`Matplotlib`が基本となっている。プロットのためのコードには幾つかのパターンがあり，オブジェクト指向と呼ばれる考えに基づく方法を紹介する。
 # 1. **`Pandas`： 図示**<br>
 #   上で紹介した`Pandas`にもプロットする機能が備わっている。裏では`Matplotlib`が動いているが，手っ取り早くプロットしたい場合に重宝する。図の細かい所まで設定したい場合は`Matplotlib`を直接使った方が良いが，`Pandas`のプロット機能を知っていると非常に便利に感じるだろう。
 # 1. **`SciPy.stats`： 確率分布**<br>
 #   `SciPy`はScientific Pythonの略であり，科学技術計算用のパッケージである。非常に大きなパッケージであり，その中には様々な用途（積分，統計，最適化問題など）に合わせてサブパッケージが用意されている。その中の一つである統計学用の`scipy.stats`の使い方について簡単に説明する。統計学の授業で学んだ概念などを実際にコードを書いて実行することができる。ちなみに，`SciPy`には`NumPy`と重複する機能も含んでおり，仕様が微妙に違ったりする。このサイトと上述の経済学のサイトでは，`NumPy`にあるものは`NumPy`のものを使うことにする。
-# 1. **`SciPy.optimize`： 解の求め方最適化問題**<br>
+# 1. **`SciPy.optimize`： 解の求め方と最適化問題**<br>
 #   経済学では最適化問題が至る所で出てくる。消費者の効用最大化問題，企業の利潤最大化もしくは費用最小化問題など。`scipy.optimize`はそのためのツールを提供してくれる。また単なる最大化・最小化問題を数値的に解くのではなく，制約式の下での最適化問題も解くことが可能である。また等式制約と不等式制約の両方に対応している。経済学を勉強する上で欠かせないツールである。
+# 
+# また次のトピックについても取り上げているので参考にして欲しい。
+# * **ツールのインストールと説明**<br>
+#   Pythonやと関連ツール（GitやGitHubなど）のインストールと使い方について説明する。
+# * **Tipsと注意点**<br>
+#   コードを書く上で役に立つ点をまとめる。是非読んでみよう！
+# * **学業成績の分析**<br>
+# 神戸大学のウリボーネット上にある成績を使い成績分析を行う。成績をコピーして使うので他大学でも使える？
+# * **Gapminder**<br>
+#   Gapminderは世界経済のGDPなどデータを駆使し興味深い分析をおこなっているサイトである。そのデータを使って，グループ別（例えば，アジア・欧州・アフリカなど）の計算を簡単に行うことができる`Pandas`の`groupby`の使い方を紹介する。
+# 
 # 
 # ## 本サイトで使うPythonとパッケージのバージョン
 
 # In[2]:
 
 
-import matplotlib, numpy, pandas, scipy, see
+import gapminder, matplotlib, numpy, pandas, scipy, see
 from platform import python_version
 
-packages = ['Python', 'matplotlib', 'numpy','pandas', 'scipy','see']
-versions = [python_version(), matplotlib.__version__, numpy.__version__, pandas.__version__, scipy.__version__, see.__version__]
+packages = ['Python', 'gapminder', 'matplotlib', 'numpy','pandas', 'scipy','see']
+versions = [python_version(), gapminder.__version__, matplotlib.__version__, numpy.__version__, pandas.__version__, scipy.__version__, see.__version__]
 
 for pack, ver in zip(packages, versions):
     print('{0:14}{1}'.format(pack,ver))
