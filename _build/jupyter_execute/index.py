@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 経済学のための初歩のPython
+# # 経済学のためのPython入門
 # 
 # ```{epigraph}
 # **Python Basics for Economics**

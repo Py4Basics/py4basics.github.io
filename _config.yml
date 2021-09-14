@@ -1,6 +1,6 @@
 #######################################################################################
 # Book settings
-title                       : 経済学のための初歩のPython  # The title of the book. Will be placed in the left navbar.
+title                       : 経済学のためのPython入門  # The title of the book. Will be placed in the left navbar.
 author                      : 春山 鉄源  Tetsugen HARUYAMA  # The author of the book
 copyright                   : "2021"  # Copyright year to be placed in the footer
 logo                        : ""  # A path to the book logo

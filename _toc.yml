@@ -1,7 +1,7 @@
 format: jb-book
 root: index
 parts:
-- caption: "Pythonの初歩"
+- caption: "Python入門"
   chapters:
   - file: 1_Python_Basics
   - file: 2_NumPy
