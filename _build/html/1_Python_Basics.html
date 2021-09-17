@@ -539,7 +539,7 @@
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id26">
-       返り値が複数の場合
+       戻り値が複数の場合
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -790,6 +790,27 @@ in English or the language of your choice.
 <li><p>ブール型（<code class="docutils literal notranslate"><span class="pre">bool</span></code>と表す）</p></li>
 </ul>
 <p>整数型とは文字通り<code class="docutils literal notranslate"><span class="pre">1</span></code>や<code class="docutils literal notranslate"><span class="pre">100</span></code>などの整数のことであり，浮動小数点型とは小数を指す。<code class="docutils literal notranslate"><span class="pre">Python</span></code>では整数と小数を異なるデータ型として区別して扱うので，<code class="docutils literal notranslate"><span class="pre">1</span></code>と<code class="docutils literal notranslate"><span class="pre">1.0</span></code>はデータ型が異なるのである。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>なぜ浮動小数点型を「少数」と呼ばないのか。数字の3.14を考えよう。表示方法によって次のように分けることができる。</p>
+<ul>
+<li><p>固定小数点型</p>
+<div class="math notranslate nohighlight">
+\[
+    3.14
+    \]</div>
+<p>この場合，小数点は3と1の間に固定されている。</p>
+</li>
+<li><p>浮動小数点型</p>
+<div class="math notranslate nohighlight">
+\[
+    3.14\times 10^0,\quad 31.4\times 10^{-1},\quad 314.0\times 10^{-10}
+    \]</div>
+<p>10の指数によって小数点が移動していることがわかる。</p>
+</li>
+</ul>
+<p>コンピュータは後者を利用しデータを2進法で表しているためである。</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> 
@@ -1020,7 +1041,7 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p>ちなみに<code class="docutils literal notranslate"><span class="pre">bool()</span></code>はブール型に変換するのではなく、<code class="docutils literal notranslate"><span class="pre">()</span></code>の中のオブジェクト（以下の説明を参照）の truth value （<code class="docutils literal notranslate"><span class="pre">True</span></code>か<code class="docutils literal notranslate"><span class="pre">False</span></code>のブール値）と呼ばれる値を返す。あるオブジェクトが「空」かどうかを確かめるの使われる。</p>
+<p>ちなみに<code class="docutils literal notranslate"><span class="pre">bool()</span></code>はブール型に変換するのではなく、<code class="docutils literal notranslate"><span class="pre">()</span></code>の中のオブジェクト（以下の説明を参照）の 真偽値（truth value; <code class="docutils literal notranslate"><span class="pre">True</span></code>か<code class="docutils literal notranslate"><span class="pre">False</span></code>）と呼ばれる値を返す。あるオブジェクトが「空」かどうかを確かめるの使われる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
@@ -1041,6 +1062,18 @@ in English or the language of your choice.
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;神戸大学&#39;</span><span class="p">),</span> <span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(True, False)
 </pre></div>
 </div>
 </div>
@@ -1143,7 +1176,7 @@ in English or the language of your choice.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">6</span><span class="n">ac242cb2948</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">29</span><span class="o">-</span><span class="mi">6</span><span class="n">ac242cb2948</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;1.0&#39;</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
@@ -1678,7 +1711,7 @@ in English or the language of your choice.
 <h3>リストとタプル<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id16">
 <h4>リスト<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
-<p>タプルは<code class="docutils literal notranslate"><span class="pre">()</span></code>を使って作成する。また何かをリストに変換する場合は<code class="docutils literal notranslate"><span class="pre">list()</span></code>を使う。</p>
+<p>リストは<code class="docutils literal notranslate"><span class="pre">[]</span></code>を使って作成する。また何かをリストに変換する場合は<code class="docutils literal notranslate"><span class="pre">list()</span></code>を使う。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span> <span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
@@ -1827,7 +1860,7 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p>連続する複数の要素を選択する場合（スライシング）は<code class="docutils literal notranslate"><span class="pre">:</span></code>を使う。<code class="docutils literal notranslate"><span class="pre">:</span></code>の左側が選択する最初の要素で，<code class="docutils literal notranslate"><span class="pre">:</span></code>の右側が選択する最後の次の番号である（即ち，<code class="docutils literal notranslate"><span class="pre">:</span></code>の右側の番号の要素は含まれない。</p>
+<p>連続する複数の要素を選択する場合（スライシング）は<code class="docutils literal notranslate"><span class="pre">:</span></code>を使う。<code class="docutils literal notranslate"><span class="pre">:</span></code>の左側が選択する最初の要素で，<code class="docutils literal notranslate"><span class="pre">:</span></code>の右側が選択する最後の次の番号である（即ち，<code class="docutils literal notranslate"><span class="pre">:</span></code>の右側の番号の要素は含まれない。）</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
@@ -1852,7 +1885,7 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">:</span></code>の左側の番号を省略すると<code class="docutils literal notranslate"><span class="pre">0</span></code>と解釈され，<code class="docutils literal notranslate"><span class="pre">:</span></code>右側を省略すると<code class="docutils literal notranslate"><span class="pre">-1</span></code>と解釈される。</p>
+<p><code class="docutils literal notranslate"><span class="pre">:</span></code>の左側の番号を省略すると<code class="docutils literal notranslate"><span class="pre">0</span></code>と解釈され，<code class="docutils literal notranslate"><span class="pre">:</span></code>右側を省略すると「最後まで」と解釈される。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
@@ -1968,7 +2001,7 @@ in English or the language of your choice.
 <h2>関数<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
 <p>コードを書くうえで関数は非常に重要な役割を果たすのが関数である。主に２つのタイプに分けることができる。</p>
 <ul class="simple">
-<li><p>組み込み関数</p></li>
+<li><p>組み込み関数（最初から準備されている関数）</p></li>
 <li><p>ユーザー定義の関数（ユーザー自身が作成する関数）</p></li>
 </ul>
 <div class="section" id="id21">
@@ -2266,6 +2299,10 @@ in English or the language of your choice.
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">=</span></code>が付いていない引数は該当する位置に書く必要があり，<code class="docutils literal notranslate"><span class="pre">10</span></code>が最初に来ないとエラーとなる。一般的なルールとして，<code class="docutils literal notranslate"><span class="pre">=</span></code>を使う引数は全て<code class="docutils literal notranslate"><span class="pre">()</span></code>の右端にまとめる。</p>
+<ul class="simple">
+<li><p>関数を実行する際に<code class="docutils literal notranslate"><span class="pre">=</span></code>無しで関数に渡される引数は，その位置が重要であるため「位置引数」と呼ばれる。</p></li>
+<li><p>関数を実行する際に<code class="docutils literal notranslate"><span class="pre">=</span></code>付きで関数に渡される引数は「キーワード引数」と呼ばれる。</p></li>
+</ul>
 </div>
 <div class="section" id="id25">
 <h4>関数を定義する際に<code class="docutils literal notranslate"><span class="pre">=</span></code>を使う<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
@@ -2291,13 +2328,9 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>関数を実行する際に<code class="docutils literal notranslate"><span class="pre">=</span></code>無しで関数に渡される引数は，その位置が重要であるため「位置引数」と呼ばれる。</p></li>
-<li><p>関数を実行する際に<code class="docutils literal notranslate"><span class="pre">=</span></code>付きで関数に渡される引数は「キーワード引数」と呼ばれる。</p></li>
-</ul>
 </div>
 <div class="section" id="id26">
-<h4>返り値が複数の場合<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<h4>戻り値が複数の場合<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -2313,7 +2346,7 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p>この場合、返り値はタプルとして返される。これを利用して、関数を実行する際に変数にに返り値のを割り当てることができる。</p>
+<p>この場合、戻り値はタプルとして返される。これを利用して、関数を実行する際に変数にに戻り値のを割り当てることができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">func_3</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -3127,7 +3160,7 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">iterable</span></code>の箇所は<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの１行目と同じとなる。</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">iterable</span></code>はリストや<code class="docutils literal notranslate"><span class="pre">array</span></code>を指す。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>は<code class="docutils literal notranslate"><span class="pre">iterable</span></code>の要素を指す変数。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>は<code class="docutils literal notranslate"><span class="pre">iterable</span></code>の要素を割り当てる変数。</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">＜何かをする＞</span></code>の箇所でしたい事を指定する。</p>
@@ -3180,7 +3213,7 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">def</span></code>を使って作成した自前の関数を使うことも可能である。試してみよう。</p>
+<p>上のコードの<code class="docutils literal notranslate"><span class="pre">str()</span></code>は組み込み関数だが，<code class="docutils literal notranslate"><span class="pre">def</span></code>を使って作成した自前の関数を使うことも可能である。試してみよう。</p>
 </div>
 <div class="section" id="if">
 <h2><code class="docutils literal notranslate"><span class="pre">if</span></code>文<a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h2>
@@ -3472,7 +3505,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -3485,7 +3518,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 6, 2, 2, 3, 1, 3, 6, 1, 1]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5, 1, 4, 2, 5, 6, 4, 2, 6, 2]
 </pre></div>
 </div>
 </div>
@@ -3704,7 +3737,7 @@ print(...)
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">165</span><span class="o">-</span><span class="mi">221</span><span class="n">da6df6ee2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">166</span><span class="o">-</span><span class="mi">221</span><span class="n">da6df6ee2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s_local</span>
 
 <span class="ne">NameError</span>: name &#39;s_local&#39; is not defined
@@ -3721,7 +3754,7 @@ print(...)
 <li><p>グローバル・スコープで定義した変数を関数に使いたい場合は、引数として同じ変数を使う。</p></li>
 </ul>
 </div></blockquote>
-<p>次の例を考えよう。<code class="docutils literal notranslate"><span class="pre">a</span></code>は既に定義されている。</p>
+<p>次の例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
@@ -3734,7 +3767,7 @@ print(...)
 </div>
 </div>
 </div>
-<p>この値とは知らずに<code class="docutils literal notranslate"><span class="pre">10</span></code>だったと勘違いして次の関数を定義したとしよう。</p>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code>は既に定義されたが，この値を忘れて（知らずに）<code class="docutils literal notranslate"><span class="pre">10</span></code>だったと勘違いして次の関数を定義したとしよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scope_3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -3808,7 +3841,7 @@ var_list	 x	 x_list	 y
 <div class="section" id="id43">
 <h3>教訓２<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループの１行目に使う変数は「上書き」されても構わない変数を使おう。</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループの１行目に使う変数は再割り当てされても構わない変数を使おう。</p>
 </div></blockquote>
 <p>例を使って説明しよう。</p>
 <div class="cell docutils container">
