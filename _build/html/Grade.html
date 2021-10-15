@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -72,6 +72,7 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
+      
       
       
       <h1 class="site-logo" id="site-title">経済学のためのPython入門</h1>
@@ -469,7 +470,7 @@
         
               <div>
                 
-  <div class="section" id="id1">
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>学業成績の分析<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1218,9 +1219,9 @@ in English or the language of your choice.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>可     10
 秀      7
 優      5
-合格     2
 不可     2
 取消     2
+合格     2
 良      1
 認定     1
 Name: 評語, dtype: int64
@@ -1344,9 +1345,9 @@ Name: 評語, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>可     33.3
 秀     23.3
 優     16.7
-合格     6.7
 不可     6.7
 取消     6.7
+合格     6.7
 良      3.3
 認定     3.3
 Name: 評語, dtype: float64
@@ -1581,9 +1582,9 @@ Name: 評語, dtype: float64
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>可     4
 秀     3
+取消    2
 優     2
 不可    2
-取消    2
 良     1
 認定    1
 Name: 評語, dtype: int64
@@ -1628,9 +1629,9 @@ Name: 評語, dtype: int64
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>可     26.7
 秀     20.0
+取消    13.3
 優     13.3
 不可    13.3
-取消    13.3
 良      6.7
 認定     6.7
 Name: 評語, dtype: float64
@@ -2463,7 +2464,7 @@ dtype: object
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -2482,12 +2483,15 @@ dtype: object
   <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
 <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){ dataLayer.push(arguments); }
-                    gtag('config', 'G-R9KXY9G892');
-                </script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-165998213-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
 
   </body>
 </html>
