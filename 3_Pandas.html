@@ -541,7 +541,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id26">
-   その他
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     DataFrame
+    </span>
+   </code>
+   のその他
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -578,6 +583,33 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id31">
+   グループ計算
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id32">
+     ステップ１：グループ化する列を指定
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id33">
+     ステップ２：グループ計算したい列を指定
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id34">
+     ステップ３：計算方法の指定
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id35">
+     次のステップ
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -591,6 +623,15 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="pandas">
 <span id="chap-pandas"></span><h1><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">see</span> <span class="kn">import</span> <span class="n">see</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="id1">
 <h2>説明<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>はデータを扱う上で欠かせないパッケージであり，エクセルをイメージすれば良いだろう。<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>にはスプレッド・シートに対応する<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>（データ・フレーム）と<code class="docutils literal notranslate"><span class="pre">Series</span></code>（シリーズ）呼ばれるオブジェクトがあり，それらを駆使してデータ分析をおこなう。</p>
@@ -633,12 +674,8 @@ in English or the language of your choice.
 <p>この特徴により複雑なデータでも扱いが簡単になる。例えば，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>を使うと目的のデータがどこにあるのかは，何番目の行で何番目の列なのかを把握する必要があるが，<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>では行・列にラベルを使うことにより（例えば，行「1980年」の列「GDP」のようにデータを特定することが可能となる），データの操作が非常に簡単になる。また，<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>は<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>に基づいているため，ベクトル演算の機能が使える。</p>
 <p>ここで説明できない他の使い方については<a class="reference external" href="https://github.com/ysdyt/pandas_tutorial">このサイト</a>と<a class="reference external" href="https://note.nkmk.me/python-pandas-post-summary/">このサイト</a>が参考になる。</p>
 <p>通常<code class="docutils literal notranslate"><span class="pre">pd</span></code>という名前で読み込む。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="id2">
@@ -4562,7 +4599,7 @@ dtype: int64
 <p>ここでは<code class="docutils literal notranslate"><span class="pre">id</span></code>に従って先に並び替えられ，その後に<code class="docutils literal notranslate"><span class="pre">gdp</span></code>に従って並び替えられている。<code class="docutils literal notranslate"><span class="pre">ascending</span></code>は昇順（<code class="docutils literal notranslate"><span class="pre">True</span></code>）か降順（<code class="docutils literal notranslate"><span class="pre">False</span></code>）かを指定する引数であり，<code class="docutils literal notranslate"><span class="pre">['id','gdp']</span></code>と<code class="docutils literal notranslate"><span class="pre">ascending=['True','False']</span></code>の順番が対応している。</p>
 </div>
 <div class="section" id="id26">
-<h2>その他<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のその他<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id27">
 <h3>インデックスを振り直す<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
 <p>メソッド<code class="docutils literal notranslate"><span class="pre">.reset_index()</span></code>を使うと，行のインデックスを0,1,2,..と振り直すことができる。<code class="docutils literal notranslate"><span class="pre">df</span></code>を使い説明する。</p>
@@ -5126,6 +5163,368 @@ Name: gdp, dtype: float64
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="id31">
+<h2>グループ計算<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h2>
+<p>上で使った<code class="docutils literal notranslate"><span class="pre">df</span></code>を表示してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gdp</th>
+      <th>inv</th>
+      <th>con</th>
+      <th>pop</th>
+      <th>id</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000</th>
+      <td>100.0</td>
+      <td>20.0</td>
+      <td>80.0</td>
+      <td>8.0</td>
+      <td>a</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>95.0</td>
+      <td>25.0</td>
+      <td>70.0</td>
+      <td>9.0</td>
+      <td>b</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>93.0</td>
+      <td>21.0</td>
+      <td>72.0</td>
+      <td>10.0</td>
+      <td>a</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>100.0</td>
+      <td>30.0</td>
+      <td>70.0</td>
+      <td>11.0</td>
+      <td>b</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>110.0</td>
+      <td>39.0</td>
+      <td>71.0</td>
+      <td>12.0</td>
+      <td>a</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">df</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">.mean()</span></code>を使うと列の平均を簡単に計算できる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_2124/3698961737.py:1: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with &#39;numeric_only=None&#39;) is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+  df.mean()
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gdp    124.818182
+inv     41.500000
+con     67.777778
+pop     14.090909
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>もしくは列を取り出して平均を計算することもできる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>124.81818181818181
+</pre></div>
+</div>
+</div>
+</div>
+<p>一方で，列<code class="docutils literal notranslate"><span class="pre">id</span></code>には<code class="docutils literal notranslate"><span class="pre">a</span></code>と<code class="docutils literal notranslate"><span class="pre">b</span></code>があり，<code class="docutils literal notranslate"><span class="pre">df</span></code>を２つのグループに分けることができる。ここで問題になるのは，グループ別に列の平均を計算したい場合である。まず考えられる方法は<code class="docutils literal notranslate"><span class="pre">a</span></code>グループだけを抽出して平均を計算し，同じように<code class="docutils literal notranslate"><span class="pre">b</span></code>も計算するということだろう。もしグループ数が多い場合は<code class="docutils literal notranslate"><span class="pre">for</span></code>ループが必要になり，より長いコードを書く必要が発生し面倒に感じることになる。</p>
+<p>こういう場合のために，<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>には簡単にグループ計算を可能にする方法が用意されている。それが<code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>というメソッドである。以下では<code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>の使い方を<code class="docutils literal notranslate"><span class="pre">df</span></code>を使って３つのステップに分けて説明する。</p>
+<div class="section" id="id32">
+<h3>ステップ１：グループ化する列を指定<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
+<p>最初のステップでは，<strong>グループ化したい列名</strong>を引数として<code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>を実行する。<code class="docutils literal notranslate"><span class="pre">df</span></code>を<code class="docutils literal notranslate"><span class="pre">id</span></code>でグループ化したいので次のコードとなる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>＜注意＞</strong><br>
+このコードは<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を返すわけでは<strong>ない</strong>。返すのはグループ計算用のオブジェクトであり，それを使ってグループ計算をおこなう事になる。</p>
+<p>実際にコードを実行し，変数<code class="docutils literal notranslate"><span class="pre">df_groupby</span></code>に割り当てよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_groupby</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">df_groupby</span></code>を実行してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_groupby</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x11602aa60&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>何も返されない。表示されているのは，PCメモリーのある箇所に<code class="docutils literal notranslate"><span class="pre">DataFrameGroupBy</span></code>というオブジェクトがありますよと伝えているだけである。</p>
+</div>
+<div class="section" id="id33">
+<h3>ステップ２：グループ計算したい列を指定<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<p>次にグループ計算したい列を指定するが，次の様な書き方となる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>df_groupby[＜グループ計算したい列ラベル＞]
+</pre></div>
+</div>
+<p>ここで<code class="docutils literal notranslate"><span class="pre">[]</span></code>を使っていることに注意しよう。例として<code class="docutils literal notranslate"><span class="pre">gdp</span></code>をグループ計算するとしよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_groupby</span><span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x116043040&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>ここでも新たなオブジェクト<code class="docutils literal notranslate"><span class="pre">SeriesGroupBy</span></code>のメモリーアドレスが表示されるだけである。どの様に計算するかを指定することにより，計算結果が返されることになる。それが次のステップである。</p>
+</div>
+<div class="section" id="id34">
+<h3>ステップ３：計算方法の指定<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
+<p>ステップ１と２がグループ計算の準備段階であり，あとは実際にどのように計算したいかを指定する。例として，平均を考えてみよう。上でも出てきたが，平均はメソッド<code class="docutils literal notranslate"><span class="pre">.mean()</span></code>を使う。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_groupby</span><span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id
+a    124.166667
+b    125.600000
+Name: gdp, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>グループ計算結果は<code class="docutils literal notranslate"><span class="pre">Series</span></code>として返されている。<code class="docutils literal notranslate"><span class="pre">.mean()</span></code>以外にも使える関数は準備されいる。<code class="docutils literal notranslate"><span class="pre">see()</span></code>を使って属性・メソッドを調べてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">see</span><span class="p">(</span><span class="n">df_groupby</span><span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    .*              []              &lt;               &lt;=              ==
+    !=              &gt;               &gt;=              dir()           hash()
+    iter()          len()           repr()          str()           .agg()
+    .aggregate()    .all()          .any()          .apply()
+    .backfill()     .bfill()        .corr()         .count()        .cov()
+    .cumcount()     .cummax()       .cummin()       .cumprod()      .cumsum()
+    .describe()     .diff()         .dtype          .ewm()
+    .expanding()    .ffill()        .fillna()       .filter()       .first()
+    .get_group()    .groups         .head()         .hist()         .idxmax()
+    .idxmin()       .indices        .is_monotonic_decreasing
+    .is_monotonic_increasing        .last()         .mad()          .max()
+    .mean()         .median()       .min()          .ndim           .ngroup()
+    .ngroups        .nlargest()     .nsmallest()    .nth()          .nunique()
+    .ohlc()         .pad()          .pct_change()                   .pipe()
+    .plot()         .prod()         .quantile()     .rank()
+    .resample()     .rolling()      .sample()       .sem()          .shift()
+    .size()         .skew()         .std()          .sum()          .tail()
+    .take()         .transform()    .tshift()       .unique()
+    .value_counts()                 .var()
+</pre></div>
+</div>
+</div>
+</div>
+<p>主なメソッドとして次を挙げることができる。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mean()</span></code>：平均</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">median()</span></code>：中央値</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max()</span></code>：最大値</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min()</span></code>：最小値</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std()</span></code>：標準偏差</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var()</span></code>：分散</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sum()</span></code>：合計</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cumsum()</span></code>：累積和</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">first()</span></code>：最初の値</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">last()</span></code>：最後の値</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count()</span></code>：要素数</p></li>
+<li><p>などなど</p></li>
+</ul>
+<p>このリストにない計算をしたい場合もあるだろう。その場合は，上のリストにもある<code class="docutils literal notranslate"><span class="pre">.agg()</span></code>を使い<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>や自作の関数を指定する。例えば，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の<code class="docutils literal notranslate"><span class="pre">np.mean()</span></code>で平均を計算する場合は次の様になる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_groupby</span><span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id
+a    124.166667
+b    125.600000
+Name: gdp, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>次に平均を計算する自作の関数<code class="docutils literal notranslate"><span class="pre">my_mean</span></code>を考えてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_mean</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>ここでの<code class="docutils literal notranslate"><span class="pre">x</span></code>はステップ２で指定する計算する対象の列と考えれば良いだろう。実際に実行してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_groupby</span><span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">my_mean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id
+a    124.166667
+b    125.600000
+Name: gdp, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.mean</span></code>の場合も<code class="docutils literal notranslate"><span class="pre">my_mean</span></code>の場合も<code class="docutils literal notranslate"><span class="pre">()</span></code>がなく，関数名だけを<code class="docutils literal notranslate"><span class="pre">.agg()</span></code>の引数にしている。関数名だけを<code class="docutils literal notranslate"><span class="pre">.agg</span></code>に渡し，<code class="docutils literal notranslate"><span class="pre">.agg</span></code>が渡された関数を実行するというイメージである。<code class="docutils literal notranslate"><span class="pre">()</span></code>を付けると<code class="docutils literal notranslate"><span class="pre">.agg()</span></code>に渡す前に関数を実行することになりエラーとなってしまう。</p>
+</div>
+</div>
+<div class="section" id="id35">
+<h3>次のステップ<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<p>上の説明では３つのステップに分けたが，もちろん次のように３つのステップを次のように１行で書いても構わないし，むしろその場合が多いだろう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)[</span><span class="s1">&#39;gdp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id
+a    124.166667
+b    125.600000
+Name: gdp, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>このコードは次の様に読むことができる。</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">df</span></code>を<code class="docutils literal notranslate"><span class="pre">id</span></code>でグループ分けして，<code class="docutils literal notranslate"><span class="pre">gdp</span></code>の平均を計算する。</p>
+</div></blockquote>
+<p>またステップ２の計算対象となる列を複数指定しても構わない。ただその場合は，リストとして列を指定すること。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)[[</span><span class="s1">&#39;gdp&#39;</span><span class="p">,</span><span class="s1">&#39;inv&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gdp</th>
+      <th>inv</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>124.166667</td>
+      <td>38.0</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>125.600000</td>
+      <td>45.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>結果は<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>として返されている。</p>
+<p>同様にステップ１のグループ分けする列も複数選択可能である。その際もリストとして列を指定する必要がある。<code class="docutils literal notranslate"><span class="pre">df</span></code>のような小さな<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>では<code class="docutils literal notranslate"><span class="pre">.groupby</span></code>の威力はあまりピンとこないかも知れない。しかし大きな<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使うとその恩恵を強く感じることだろう。<a class="reference external" href="https://py4basics.github.io/Gapminder.html">Gapminder</a>ではマクロ経済データを使い<code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>の使い方の例を示している。興味がある人は是非！</p>
 </div>
 </div>
 </div>
