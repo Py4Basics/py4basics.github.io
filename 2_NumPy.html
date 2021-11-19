@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NumPy：高速化 &#8212; 経済学のためのPython入門</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -43,7 +43,7 @@
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
@@ -58,8 +58,21 @@
     <link rel="next" title="Pandas：データ分析" href="3_Pandas.html" />
     <link rel="prev" title="Pythonの基礎" href="1_Python_Basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-165998213-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -85,7 +98,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption" role="heading">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Python入門
  </span>
@@ -157,7 +170,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   参考
  </span>
@@ -184,7 +197,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   経済学
  </span>
@@ -304,16 +317,28 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   １次元配列：要素の抽出
+   １次元配列
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     要素の抽出
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     要素の代入と削除
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+  <a class="reference internal nav-link" href="#id4">
    ２次元配列：要素の抽出
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#id5">
    <code class="docutils literal notranslate">
     <span class="pre">
      array
@@ -323,32 +348,32 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
+    <a class="reference internal nav-link" href="#id6">
      加算
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
+    <a class="reference internal nav-link" href="#id7">
      減算
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id8">
      スカラー乗算
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#id9">
      乗算：バージョン１
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
+    <a class="reference internal nav-link" href="#id10">
      乗算：バージョン２
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
+    <a class="reference internal nav-link" href="#id11">
      転置
     </a>
    </li>
@@ -402,17 +427,22 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
+  <a class="reference internal nav-link" href="#id13">
    NumPy使用時によく使う属性とメソッド
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id12">
+  <a class="reference internal nav-link" href="#id14">
    よく使うNumPy関数
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
+    <a class="reference internal nav-link" href="#id15">
+     浮動小数点の比較
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
      様々な
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -423,7 +453,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id14">
+    <a class="reference internal nav-link" href="#id17">
      効用関数
     </a>
    </li>
@@ -445,12 +475,12 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id15">
+  <a class="reference internal nav-link" href="#id18">
    マクロ経済学を考える
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
+    <a class="reference internal nav-link" href="#id19">
      ケインズの45度線モデル
     </a>
    </li>
@@ -603,7 +633,9 @@ in English or the language of your choice.
 <p><code class="docutils literal notranslate"><span class="pre">array</span></code>について<a class="reference external" href="https://note.com/sayajewels/n/n95edaedb0fc5">このサイト</a>では図を使って説明しているので興味があるひとは参考にしてはどうだろうか。</p>
 </div>
 <div class="section" id="id1">
-<h2>１次元配列：要素の抽出<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>１次元配列<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>要素の抽出<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>リストと同じように<code class="docutils literal notranslate"><span class="pre">arr</span></code>の要素を抽出するには要素のインデックスを使う。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -645,8 +677,80 @@ in English or the language of your choice.
 </div>
 <p>リストの場合と同じ様に，<code class="docutils literal notranslate"><span class="pre">:</span></code>の左側が選択する最初の要素であり，<code class="docutils literal notranslate"><span class="pre">:</span></code>の右側が選択する最後の次の番号である（即ち，<code class="docutils literal notranslate"><span class="pre">:</span></code>の右側の番号の要素は含まれない。</p>
 </div>
-<div class="section" id="id2">
-<h2>２次元配列：要素の抽出<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>要素の代入と削除<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>要素の入れ替え方法を説明するために，上で作成したリスト<code class="docutils literal notranslate"><span class="pre">arr</span></code>を考えてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([10, 20, 30, 40, 50])
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">30</span></code>を<code class="docutils literal notranslate"><span class="pre">3000</span></code>に入れ替えてみよう。リストや辞書と同じように<code class="docutils literal notranslate"><span class="pre">=</span></code>を使い値を代入する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3000</span>
+<span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([  10,   20, 3000,   40,   50])
+</pre></div>
+</div>
+</div>
+</div>
+<p>要素を削除するには関数<code class="docutils literal notranslate"><span class="pre">np.delete()</span></code>を使う。第一引数に<code class="docutils literal notranslate"><span class="pre">array</span></code>を，第二引数に削除したい要素のインデックスを指定する。例えば，<code class="docutils literal notranslate"><span class="pre">3000</span></code>を削除したいとしよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([10, 20, 40, 50])
+</pre></div>
+</div>
+</div>
+</div>
+<p>ここでもう一度<code class="docutils literal notranslate"><span class="pre">arr</span></code>を表示してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([  10,   20, 3000,   40,   50])
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">3000</span></code>は残ったままである。<code class="docutils literal notranslate"><span class="pre">np.delete()</span></code>を実行すると，もし<code class="docutils literal notranslate"><span class="pre">3000</span></code>を削除するとどうなるかを示している。<code class="docutils literal notranslate"><span class="pre">arr</span></code>自体を変更したい場合は<code class="docutils literal notranslate"><span class="pre">=</span></code>を使って再割り当てをする必要がある。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([10, 20, 40, 50])
+</pre></div>
+</div>
+</div>
+</div>
+<p>これは<code class="docutils literal notranslate"><span class="pre">np.delete()</span></code>特有なものではなく，他の関数（例えば，<code class="docutils literal notranslate"><span class="pre">np.log()</span></code>や<code class="docutils literal notranslate"><span class="pre">np.sqrt()</span></code>）も同じである。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>２次元配列：要素の抽出<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>第<span class="math notranslate nohighlight">\(i\)</span>行目の第<span class="math notranslate nohighlight">\(j\)</span>列目要素にアクセスするためには<code class="docutils literal notranslate"><span class="pre">mat[i,j]</span></code>と書く。<code class="docutils literal notranslate"><span class="pre">[,]</span></code>の<code class="docutils literal notranslate"><span class="pre">,</span></code>を挟んで左が行を表し，右が列を示す。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">行のインデックス</span><span class="p">,</span><span class="n">列のインデックス</span><span class="p">]</span>
 </pre></div>
@@ -746,8 +850,8 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<div class="section" id="id3">
-<h2><code class="docutils literal notranslate"><span class="pre">array</span></code>を使った計算<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2><code class="docutils literal notranslate"><span class="pre">array</span></code>を使った計算<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>まず２つの行列（２次元配列<code class="docutils literal notranslate"><span class="pre">array</span></code>）を作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -778,8 +882,8 @@ in English or the language of your choice.
 </div>
 </div>
 <p>これらは数学で習った行列のように見えるが，少し異なる性質（特に積）を持っているので注意しよう。</p>
-<div class="section" id="id4">
-<h3>加算<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>加算<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>要素ごとの和となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -795,8 +899,8 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<div class="section" id="id5">
-<h3>減算<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>減算<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>要素ごとの差となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -812,8 +916,8 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<div class="section" id="id6">
-<h3>スカラー乗算<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>スカラー乗算<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>与えられた定数とそれぞれの要素の積となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -842,8 +946,8 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<div class="section" id="id7">
-<h3>乗算：バージョン１<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>乗算：バージョン１<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">*</span></code>を使うと要素どうしの積となる。数学で学んだ行列の計算とは異なるので注意すること。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -859,8 +963,8 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<div class="section" id="id8">
-<h3>乗算：バージョン２<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>乗算：バージョン２<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">&#64;</span></code>を使うと数学で学んだ行列の積となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -890,8 +994,8 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<div class="section" id="id9">
-<h3>転置<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3>転置<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>数学で学ぶ転置行列と同じ。<code class="docutils literal notranslate"><span class="pre">m3</span></code>を使って説明する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -943,7 +1047,7 @@ in English or the language of your choice.
 <h2><code class="docutils literal notranslate"><span class="pre">linalg</span></code>サブパッケージ<a class="headerlink" href="#linalg" title="Permalink to this headline">¶</a></h2>
 <p>２次元配列の<code class="docutils literal notranslate"><span class="pre">array</span></code>は行列として使える。その特徴を活かして<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>のサブパッケージである<code class="docutils literal notranslate"><span class="pre">linalg</span></code>（linear algebraの略であり「線形代数」という意味）を使うと連立方程式を解いたり固有値を簡単に計算することができる。</p>
 <div class="section" id="sec-2-simultaneouseq">
-<span id="id10"></span><h3>連立一次方程式の解<a class="headerlink" href="#sec-2-simultaneouseq" title="Permalink to this headline">¶</a></h3>
+<span id="id12"></span><h3>連立一次方程式の解<a class="headerlink" href="#sec-2-simultaneouseq" title="Permalink to this headline">¶</a></h3>
 <p>連立一次方程式は行列表記できる。例えば，</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1084,8 +1188,8 @@ x = 25.0
 </div>
 </div>
 </div>
-<div class="section" id="id11">
-<h2>NumPy使用時によく使う属性とメソッド<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id13">
+<h2>NumPy使用時によく使う属性とメソッド<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">dir()</span></code>を使って<code class="docutils literal notranslate"><span class="pre">m3</span></code>の属性とメソッドを調べてみる。</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
@@ -1316,10 +1420,39 @@ x = 25.0
 </div>
 </div>
 </div>
-<div class="section" id="id12">
-<h2>よく使うNumPy関数<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id13">
-<h3>様々な<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>関数<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h2>よく使うNumPy関数<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h3>浮動小数点の比較<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>次のコードを考えよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.3</span> <span class="o">==</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>これはバグ（bug）ではない。浮動小数点は近似値として扱われるために発生する（詳細は「<a class="reference internal" href="things_to_note.html#sec-tip-float"><span class="std std-ref">浮動小数点型について</span></a>」を参照）。従って，浮動小数点が等しいかを確認するために<code class="docutils literal notranslate"><span class="pre">==</span></code>を使うのは<strong>避けるべきである</strong>。その代わりに<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の関数<code class="docutils literal notranslate"><span class="pre">.isclose()</span></code>を使うようにしよう。使い方は比べる値を引数に指定するだけで良い。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>様々な<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>関数<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p><strong>ルート <span class="math notranslate nohighlight">\(\left(\sqrt x\right)\)</span></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1534,8 +1667,8 @@ x = 25.0
 </div>
 </div>
 </div>
-<div class="section" id="id14">
-<h3>効用関数<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h3>効用関数<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <p>関数に<code class="docutils literal notranslate"><span class="pre">if</span></code>文を組み込む例を考える。相対的リスク回避度一定効用関数は次のように定義される。</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1637,7 +1770,7 @@ u(x)=
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_2678</span><span class="o">/</span><span class="mf">786045132.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_2009</span><span class="o">/</span><span class="mf">786045132.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">list0</span> <span class="o">+</span> <span class="mi">10</span>
 
 <span class="ne">TypeError</span>: can only concatenate list (not &quot;int&quot;) to list
@@ -1807,10 +1940,10 @@ u(x)=
 </div>
 </div>
 </div>
-<div class="section" id="id15">
-<h2>マクロ経済学を考える<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id16">
-<h3>ケインズの45度線モデル<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h2>マクロ経済学を考える<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id19">
+<h3>ケインズの45度線モデル<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>所得：<span class="math notranslate nohighlight">\(Y\)</span></p></li>
 <li><p>計画支出：<span class="math notranslate nohighlight">\(E=C+I+G\)</span></p></li>
@@ -2117,31 +2250,22 @@ Y=\frac{f-hr+G-d}{1-c}
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="1_Python_Basics.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Pythonの基礎</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="1_Python_Basics.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Pythonの基礎</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="3_Pandas.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="3_Pandas.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -2162,18 +2286,7 @@ Y=\frac{f-hr+G-d}{1-c}
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-165998213-3', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
