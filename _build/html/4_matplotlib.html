@@ -566,7 +566,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff5eaef8e50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa8d9451e80&gt;]
 </pre></div>
 </div>
 <img alt="_images/4_matplotlib_14_1.png" src="_images/4_matplotlib_14_1.png" />
@@ -591,7 +591,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff5f81ef820&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa8d95a7940&gt;]
 </pre></div>
 </div>
 <img alt="_images/4_matplotlib_18_1.png" src="_images/4_matplotlib_18_1.png" />
@@ -985,7 +985,10 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 <li><p><code class="docutils literal notranslate"><span class="pre">sharex</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sharey</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tight_layout</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">constrained_layout</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）</p></li>
 </ul>
+<p>＜コメント＞<br>
+<code class="docutils literal notranslate"><span class="pre">tight_layout</span></code>と<code class="docutils literal notranslate"><span class="pre">constrained_layout</span></code>は同じ目的に使われるが，図の配置の計算方法が異なる。どちらを使っても大きく変わらない場合もあれば，一方がより良い表示結果になる場合もある。上手くいかない場合は，もう一方を試してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
@@ -1234,22 +1237,22 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
                        <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                        <span class="n">tight_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Figure 1&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ax[0,0]&#39;</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Figure 2&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ax[0,1]&#39;</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Figure 3&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ax[0,2]&#39;</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Figure 4&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ax[1,0]&#39;</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Figure 5&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ax[1,1]&#39;</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Figure 6&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ax[1,2]&#39;</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Grand Title&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="k">pass</span>

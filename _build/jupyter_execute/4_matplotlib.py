@@ -317,6 +317,10 @@ df2.head()
 # * `sharex`（デフォルトは`False`）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）
 # * `sharey`（デフォルトは`False`）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）
 # * `tight_layout`（デフォルトは`False`）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）
+# * `constrained_layout`（デフォルトは`False`）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）
+# 
+# ＜コメント＞<br>
+# `tight_layout`と`constrained_layout`は同じ目的に使われるが，図の配置の計算方法が異なる。どちらを使っても大きく変わらない場合もあれば，一方がより良い表示結果になる場合もある。上手くいかない場合は，もう一方を試してみよう。
 
 # In[20]:
 
@@ -510,22 +514,22 @@ fig, ax = plt.subplots(2, 3, figsize=(8,3),
                        sharex=True, sharey=True,
                        tight_layout=True)
 ax[0,0].plot('X', data=df2)
-ax[0,0].set_title('Figure 1')
+ax[0,0].set_title('ax[0,0]')
 
 ax[0,1].plot('Y', data=df2)
-ax[0,1].set_title('Figure 2')
+ax[0,1].set_title('ax[0,1]')
 
 ax[0,2].plot('Z', data=df2)
-ax[0,2].set_title('Figure 3')
+ax[0,2].set_title('ax[0,2]')
 
 ax[1,0].plot('X', data=df2)
-ax[1,0].set_title('Figure 4')
+ax[1,0].set_title('ax[1,0]')
 
 ax[1,1].plot('Y', data=df2)
-ax[1,1].set_title('Figure 5')
+ax[1,1].set_title('ax[1,1]')
 
 ax[1,2].plot('Z', data=df2)
-ax[1,2].set_title('Figure 6')
+ax[1,2].set_title('ax[1,2]')
 
 fig.suptitle("Grand Title", fontsize=20)
 pass
