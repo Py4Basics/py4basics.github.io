@@ -3,7 +3,8 @@ root: index
 parts:
 - caption: "Python入門"
   chapters:
-  - file: 1_Python_Basics
+  - file: 1a_Basics_I
+  - file: 1b_Basics_II
   - file: 2_NumPy
   - file: 3_Pandas
   - file: 4_matplotlib
