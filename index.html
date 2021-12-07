@@ -55,7 +55,7 @@
     <link rel="canonical" href="https://py4basics.github.io/index.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pythonの基礎" href="1_Python_Basics.html" />
+    <link rel="next" title="Pythonの基礎（その１）" href="1a_Basics_I.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -104,8 +104,13 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="1_Python_Basics.html">
-   Pythonの基礎
+  <a class="reference internal" href="1a_Basics_I.html">
+   Pythonの基礎（その１）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1b_Basics_II.html">
+   Pythonの基礎（その２）
   </a>
  </li>
  <li class="toctree-l1">
@@ -340,7 +345,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Version: 2021年11月19日
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Version: 2021年12月07日
 </pre></div>
 </div>
 </div>
@@ -368,10 +373,12 @@ in English or the language of your choice.
 <li><p><a class="reference external" href="https://py4etrics.github.io">Pythonで学ぶ入門計量経済学</a></p></li>
 </ul>
 <!-- 新聞，雑誌やインターネット上で「AI」，「ビッグデータ」，「機械学習」どのプログラミングに関連するキーワードを頻繁に見聞きすると思うが，それらの分野で`Python`は広く使われている。一方で`Python` -->
-<p>次の7章から構成されている。</p>
+<p>次の8章から構成されている。</p>
 <ol class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">Python</span></code>の基礎</strong><br>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Python</span></code>の基礎（その１）</strong><br>
 プログラミング言語である<code class="docutils literal notranslate"><span class="pre">Python</span></code>は，日本語と同様に文法・表現・単語が決まっており，それらの使い方を説明する。外国語を学ぶことと似た様なものかと不安になる人もいるかも知れないが，そうではない。殆どの人は英語を学んだと思うが，実は<code class="docutils literal notranslate"><span class="pre">Python</span></code>は英語で書かれているため，英語感覚でコードを読み書きすることができるのが一つの大きな利点である。しかし，英作文をイメージすると間違いである。理由は，正確性が要求されるからである。話し言葉・書き言葉は曖昧な表現になり得る。例えば，I kind of like him.（もしくは，I kinda like him.）ここでの”kind of”は「種類」と言う意味ではなく「曖昧さ」を表している。訳すと「まぁ，好きかなぁ，，，」の様なイメージだろうか。しかし，話すタイミングや語調によっては「実はそうでもないかも」の含みがある様にも聞こえるかも知れない。このように正確さにかける英語ではコンピュータに命令を伝えることは難しい。一般的にプログラミング言語は正確性が重視されるため，味気ない「文章」になる。更には少しでも間違えると「何言ってるか分かんない」という意味でエラーが発生する。一つのスペルミスでもエラーが発生するのである。この章では，「<code class="docutils literal notranslate"><span class="pre">Python</span></code>語」を使いコンピュータに正確に命令を伝えて実行させる方法を学習する。</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Python</span></code>の基礎（その２）</strong><br>
+その１の内容はそれほど難しいとは感じないかも知れない。その２では<code class="docutils literal notranslate"><span class="pre">Python</span></code>の基礎をもう一歩踏み込んで解説する。特に，コードを書く上で欠かせない関数や<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ，<code class="docutils literal notranslate"><span class="pre">if</span></code>文などを紹介する。今後より複雑なコードを書く上でその要となる概念なので，それらの仕組みを十分に理解することが重要となる。</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>： 高速化</strong><br>
 インストールした<code class="docutils literal notranslate"><span class="pre">Python</span></code>をそのままの「素」で使うことができる。しかし用途によっては物足りないと感じる場合がある。「素」の<code class="docutils literal notranslate"><span class="pre">Python</span></code>を４人乗りの家族用乗用車とイメージしてみよう。通常の生活では十分だが，自動車レースに参加するとなると明らかに不十分である。目的によって機能を補ってくれるのがパッケージと呼ばれるもので，この章を含めて残りの章を使って主な（外部）パッケージについて説明する。<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>（Numerical Pythonの略でナンパイと読む）は，名前が示すように計算を高速化させるパッケージであり，乗用車をレース用にチューンアップしてくれる。シミュレーションを行う際には欠かせないパッケージである。</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>： データ分析</strong><br>
@@ -418,7 +425,7 @@ gapminder     0.1
 matplotlib    3.5.0
 numpy         1.21.4
 pandas        1.3.4
-scipy         1.7.2
+scipy         1.7.3
 see           1.4.1
 </pre></div>
 </div>
@@ -462,10 +469,10 @@ see           1.4.1
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="1_Python_Basics.html" title="next page">
+    <a class='right-next' id="next-link" href="1a_Basics_I.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pythonの基礎</p>
+        <p class="prev-next-title">Pythonの基礎（その１）</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
