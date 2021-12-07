@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Pythonの基礎（その１）
+# # `Python`：基礎（その１）
 
 # ## 最初の注意点
 

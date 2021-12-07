@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Pythonの基礎（その２）
+# # `Python`：基礎（その２）
 
 # ## 関数
 
