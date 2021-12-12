@@ -716,32 +716,32 @@ in English or the language of your choice.
 <p>次に<code class="docutils literal notranslate"><span class="pre">f-string</span></code>を紹介する。文字列の前に<code class="docutils literal notranslate"><span class="pre">f</span></code>を書き加え，文字列の中で<code class="docutils literal notranslate"><span class="pre">{}</span></code>を使うことにより，割り当てた変数の値や計算結果などを表示することが可能となる。次の例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;3分の1は</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">です。&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3分の1は0.3333333333333333です。
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3分の1は0.6666666666666666です。
 </pre></div>
 </div>
 </div>
 </div>
-<p>小数点第二位まで表示する場合は，<code class="docutils literal notranslate"><span class="pre">x</span></code>の後に<code class="docutils literal notranslate"><span class="pre">:.2f</span></code>を付け加える。</p>
+<p><strong>四捨五入</strong>し小数点第３位まで表示する場合は，<code class="docutils literal notranslate"><span class="pre">x</span></code>の後に<code class="docutils literal notranslate"><span class="pre">:.3f</span></code>を付け加える。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;10割る3は</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">です。&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;3分の2は約</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">です。&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10割る3は0.33です。
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3分の2は約0.667です。
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">2</span></code>を<code class="docutils literal notranslate"><span class="pre">5</span></code>にすると，小数点第五位までの表示となる。</p>
+<p><code class="docutils literal notranslate"><span class="pre">3f</span></code>を<code class="docutils literal notranslate"><span class="pre">5f</span></code>にすると，小数点第５位までの四捨五入となる。</p>
 </div>
 <div class="section" id="range">
 <h4><code class="docutils literal notranslate"><span class="pre">range()</span></code><a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h4>
@@ -2148,7 +2148,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -2161,7 +2161,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 1, 5, 3, 3, 5, 1, 3, 3, 2]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 3, 5, 1, 4, 3, 6, 3, 1, 6]
 </pre></div>
 </div>
 </div>
@@ -2380,7 +2380,7 @@ print(...)
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_6264</span><span class="o">/</span><span class="mf">3973646127.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_6373</span><span class="o">/</span><span class="mf">3973646127.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s_local</span>
 
 <span class="ne">NameError</span>: name &#39;s_local&#39; is not defined
