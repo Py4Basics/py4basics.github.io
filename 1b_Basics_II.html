@@ -718,12 +718,12 @@ in English or the language of your choice.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;3分の1は</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">です。&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;3分の2は</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">です。&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3分の1は0.6666666666666666です。
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3分の2は0.6666666666666666です。
 </pre></div>
 </div>
 </div>
@@ -741,7 +741,14 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">3f</span></code>を<code class="docutils literal notranslate"><span class="pre">5f</span></code>にすると，小数点第５位までの四捨五入となる。</p>
+<p>＜<code class="docutils literal notranslate"><span class="pre">:.3f</span></code>の解釈＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:</span></code>はこの後に続くコードは表示に関するものだと「宣言」している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.</span></code>は小数点表示に関しての設定であることを示している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3</span></code>は小数点第３位を示している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code>は<code class="docutils literal notranslate"><span class="pre">float</span></code>の<code class="docutils literal notranslate"><span class="pre">f</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">3f</span></code>を<code class="docutils literal notranslate"><span class="pre">5f</span></code>にすると，小数点第５位までの四捨五入となる。試してみよう。</p>
 </div>
 <div class="section" id="range">
 <h4><code class="docutils literal notranslate"><span class="pre">range()</span></code><a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h4>
@@ -859,6 +866,9 @@ in English or the language of your choice.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>経済学はおもしろい(^o^)/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
@@ -2148,7 +2158,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -2161,7 +2171,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 3, 5, 1, 4, 3, 6, 3, 1, 6]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 3, 5, 3, 4, 1, 6, 5, 3, 2]
 </pre></div>
 </div>
 </div>
@@ -2380,7 +2390,7 @@ print(...)
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_6373</span><span class="o">/</span><span class="mf">3973646127.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_6428</span><span class="o">/</span><span class="mf">3973646127.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s_local</span>
 
 <span class="ne">NameError</span>: name &#39;s_local&#39; is not defined
