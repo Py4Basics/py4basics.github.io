@@ -705,12 +705,12 @@ in English or the language of your choice.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;3分の1は</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">です。&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;3分の2は</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">です。&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3分の1は0.6666666666666666です。
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3分の2は0.6666666666666666です。
 </pre></div>
 </div>
 </div>
@@ -728,7 +728,14 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">3f</span></code>を<code class="docutils literal notranslate"><span class="pre">5f</span></code>にすると，小数点第５位までの四捨五入となる。</p>
+<p>＜<code class="docutils literal notranslate"><span class="pre">:.3f</span></code>の解釈＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:</span></code>はこの後に続くコードは表示に関するものだと「宣言」している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.</span></code>は小数点表示に関しての設定であることを示している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3</span></code>は小数点第３位を示している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code>は<code class="docutils literal notranslate"><span class="pre">float</span></code>の<code class="docutils literal notranslate"><span class="pre">f</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">3f</span></code>を<code class="docutils literal notranslate"><span class="pre">5f</span></code>にすると，小数点第５位までの四捨五入となる。試してみよう。</p>
 </div>
 <div class="section" id="range">
 <h4><code class="docutils literal notranslate"><span class="pre">range()</span></code><a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h4>
@@ -2135,7 +2142,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -2148,7 +2155,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 5, 3, 1, 6, 6, 4, 6, 5, 3]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 1, 5, 4, 6, 5, 2, 4, 1, 6]
 </pre></div>
 </div>
 </div>
