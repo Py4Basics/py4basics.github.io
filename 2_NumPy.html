@@ -562,14 +562,6 @@
 <div class="section" id="array">
 <h2><code class="docutils literal notranslate"><span class="pre">array</span></code><a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h2>
 <p>基本となる関数が<code class="docutils literal notranslate"><span class="pre">np.array()</span></code>であり，次のコードでは１次元配列を作る。</p>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<div name="html-admonition">
-Do you want to read in a differnt language? Open the 
-<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
-in English or the language of your choice.
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
@@ -581,6 +573,14 @@ in English or the language of your choice.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([10, 20, 30, 40, 50])
 </pre></div>
 </div>
+</div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div name="html-admonition">
+Do you want to read in a differnt language? Open the 
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+in English or the language of your choice.
 </div>
 </div>
 <p>次に２次元配列を作成しよう。</p>
@@ -680,7 +680,7 @@ in English or the language of your choice.
 <p>要素を連続で抽出するスライシング（slicing）も使うことができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -786,9 +786,9 @@ in English or the language of your choice.
 </div>
 <p>となる。ここで<code class="docutils literal notranslate"><span class="pre">start</span></code>とは選択する要素の最初インデックスであり，<code class="docutils literal notranslate"><span class="pre">end</span></code>は選択する最後の要素の次のインデックスである（リストの場合と同じ）。このルールに従うと，</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">,</span></code>の左または右が<code class="docutils literal notranslate"><span class="pre">:</span></code>のみの場合，「全て」という意味になる。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:</span></code>の左を省略すると「最初から」という意味になる。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:</span></code>の右を省略すると「最後まで」という意味になる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">,</span></code>の左または右が<code class="docutils literal notranslate"><span class="pre">:</span></code>のみの場合，「全て」という意味になる。</p></li>
 </ul>
 <p>これを読むだけでは分かりにくいと思うので，以下の例に目を通してもう一度この箇所の説明を読んむことを推奨する。</p>
 <div class="cell docutils container">
@@ -1114,7 +1114,8 @@ z=a^{-1}b
 <p>このコードは<code class="docutils literal notranslate"><span class="pre">.</span></code>を助詞「の」として，<code class="docutils literal notranslate"><span class="pre">()</span></code>を「実行する」と読むと，次のように日本語として読むことができる。「<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の<code class="docutils literal notranslate"><span class="pre">linalg</span></code>の<code class="docutils literal notranslate"><span class="pre">solve</span></code>関数を引数<code class="docutils literal notranslate"><span class="pre">a</span></code>と<code class="docutils literal notranslate"><span class="pre">b</span></code>を使い実行する」と読める。では実際に<code class="docutils literal notranslate"><span class="pre">solve</span></code>を使って解を求めよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1661,7 +1662,7 @@ x = 25.0
 </div>
 <p><strong>標本相関係数</strong></p>
 <p>2次元以上の<code class="docutils literal notranslate"><span class="pre">array</span></code>やリストの場合</p>
-<p><code class="docutils literal notranslate"><span class="pre">np.(xy)</span></code><span class="math notranslate nohighlight">\(=r_{xy}=\dfrac{c_{xy}}{s_x\cdot s_y}\)</span></p>
+<p><code class="docutils literal notranslate"><span class="pre">np.corrcoef(xy)</span></code><span class="math notranslate nohighlight">\(=r_{xy}=\dfrac{c_{xy}}{s_x\cdot s_y}\)</span></p>
 <p>（注意）<code class="docutils literal notranslate"><span class="pre">ddof</span></code>の影響はない。</p>
 <p>下の計算結果</p>
 <ul class="simple">
@@ -1785,7 +1786,7 @@ u(x)=
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_6513</span><span class="o">/</span><span class="mf">786045132.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1914</span><span class="o">/</span><span class="mf">786045132.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">list0</span> <span class="o">+</span> <span class="mi">10</span>
 
 <span class="ne">TypeError</span>: can only concatenate list (not &quot;int&quot;) to list
