@@ -977,7 +977,7 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p>次に剰余演算<code class="docutils literal notranslate"><span class="pre">%</span></code>についてだが，割り算の余を返す。例えば，次の例を考えよう。</p>
+<p>次に剰余演算<code class="docutils literal notranslate"><span class="pre">%</span></code>についてだが，割り算の余を返す。次の例では<code class="docutils literal notranslate"><span class="pre">5</span></code>を<code class="docutils literal notranslate"><span class="pre">2</span></code>で割り余り<code class="docutils literal notranslate"><span class="pre">1</span></code>を返している。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span>
@@ -990,15 +990,15 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p>よく使われる例として，整数を<code class="docutils literal notranslate"><span class="pre">2</span></code>で割ると偶数の場合は<code class="docutils literal notranslate"><span class="pre">0</span></code>が返されるので偶数・奇数を判断する場合に役に立つだろう。</p>
+<p><code class="docutils literal notranslate"><span class="pre">%</span></code>がよく使われる例を挙げると，整数を<code class="docutils literal notranslate"><span class="pre">2</span></code>で割ると偶数の場合は<code class="docutils literal notranslate"><span class="pre">0</span></code>（余りが<code class="docutils literal notranslate"><span class="pre">0</span></code>）が返されるので偶数・奇数を判断する場合に役に立つ。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">%</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -1028,27 +1028,53 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p>また<code class="docutils literal notranslate"><span class="pre">*</span></code>を使うと文字列をリピートすることができる。</p>
+<p>一方で，，，，</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;(^o^)/ &#39;</span><span class="o">*</span><span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;一人当たり&#39;</span> <span class="s1">&#39;GDP&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;(^o^)/ (^o^)/ (^o^)/ &#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;一人当たりGDP&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>も同じ結果を返す。<code class="docutils literal notranslate"><span class="pre">+</span></code>は文字列の結合を明示的にする目印と考えれば良いだろう。</p>
+<p>また文字列に<code class="docutils literal notranslate"><span class="pre">*</span></code>を使うとリピートすることができる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;(^o^)/   &#39;</span><span class="o">*</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;(^o^)/   (^o^)/   (^o^)/   &#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">50</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;-★&#39;</span><span class="o">*</span><span class="mi">20</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;--------------------------------------------------&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;-★-★-★-★-★-★-★-★-★-★-★-★-★-★-★-★-★-★-★-★&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;😎🚀&#39;</span><span class="o">*</span><span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;😎🚀😎🚀😎🚀😎🚀😎🚀😎🚀😎🚀😎🚀😎🚀😎🚀&#39;
 </pre></div>
 </div>
 </div>
@@ -1845,7 +1871,7 @@ in English or the language of your choice.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">85</span><span class="o">-</span><span class="n">f384d6407657</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">87</span><span class="o">-</span><span class="n">f384d6407657</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tuple0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Kobe&#39;</span>
 
 <span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
