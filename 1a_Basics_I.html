@@ -537,7 +537,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_1872/664614571.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_2718/664614571.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
 <span class="g g-Whitespace">    </span><span class="mi">10</span>
       <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid character in identifier
@@ -696,7 +696,7 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p>従って，後述する加算や除算などはできない<code class="docutils literal notranslate"><span class="pre">0.1</span></code>である。</p>
+<p>従って，後述する数字の加算や除算などはできない<code class="docutils literal notranslate"><span class="pre">0.1</span></code>である。一方で文字列型専用の「加算」と「乗算」があるので，そちらも後述する。</p>
 <p>ブール型には<code class="docutils literal notranslate"><span class="pre">True</span></code>（真）, <code class="docutils literal notranslate"><span class="pre">False</span></code>（偽）がある。名前が示すように「真偽」を示すのがブール型であり，<code class="docutils literal notranslate"><span class="pre">True</span></code>と<code class="docutils literal notranslate"><span class="pre">False</span></code>を真偽値と呼ぶ。例えば，</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -869,6 +869,7 @@ in English or the language of your choice.
 <li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>（乗算）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/</span></code>（除算）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">**</span></code>（累乗）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code>（剰余演算）</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -955,7 +956,7 @@ in English or the language of your choice.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1872</span><span class="o">/</span><span class="mf">3456849713.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_2718</span><span class="o">/</span><span class="mf">3456849713.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;1.0&#39;</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
@@ -989,7 +990,33 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p>最後に，文字列型<code class="docutils literal notranslate"><span class="pre">+</span></code>文字列型とすると結合される。</p>
+<p>次に剰余演算<code class="docutils literal notranslate"><span class="pre">%</span></code>についてだが，割り算の余を返す。例えば，次の例を考えよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>よく使われる例として，整数を<code class="docutils literal notranslate"><span class="pre">2</span></code>で割ると偶数の場合は<code class="docutils literal notranslate"><span class="pre">0</span></code>が返されるので偶数・奇数を判断する場合に役に立つだろう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">%</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p>最後に，文字列型にも<code class="docutils literal notranslate"><span class="pre">+</span></code>と<code class="docutils literal notranslate"><span class="pre">*</span></code>が使えることも付け加える。<code class="docutils literal notranslate"><span class="pre">+</span></code>は文字列を結合することになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;1.0&#39;</span><span class="o">+</span><span class="s1">&#39;1.00&#39;</span>
@@ -1010,6 +1037,31 @@ in English or the language of your choice.
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;一人当たりGDP&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>また<code class="docutils literal notranslate"><span class="pre">*</span></code>を使うと文字列をリピートすることができる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;(^o^)/ &#39;</span><span class="o">*</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;(^o^)/ (^o^)/ (^o^)/ &#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">50</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;--------------------------------------------------&#39;
 </pre></div>
 </div>
 </div>
@@ -1806,7 +1858,7 @@ in English or the language of your choice.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1872</span><span class="o">/</span><span class="mf">696972652.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_2718</span><span class="o">/</span><span class="mf">696972652.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tuple0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Kobe&#39;</span>
 
 <span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
