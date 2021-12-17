@@ -1172,11 +1172,19 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>を習うと「オブジェクト」という単語が必ず出てくる。今の内にイメージをつかむために自転車をオブジェクトの例として考えてみよう。通常の自転車には車輪が２つあり、サドルが１つあり、左右にペダルが２つある。これらの数字が自転車に関する<strong>データ</strong>である。またペダルを踏むことにより前に動き、ハンドルを右にきると右方向に進むことになる。即ち、あることを実行すると、ある結果が返されるのである。これは数学の<strong>関数</strong>と同じように理解できる。<span class="math notranslate nohighlight">\(y=x^2\)</span>の場合、<span class="math notranslate nohighlight">\(x\)</span>が<code class="docutils literal notranslate"><span class="pre">2</span></code>であれば<span class="math notranslate nohighlight">\(y\)</span>の値として<code class="docutils literal notranslate"><span class="pre">4</span></code>が返される。このように自転車はデータと関数が備わっているオブジェクトとして考えることができる。また、車輪の数やペダルを踏むことは自転車特有のデータと関数であり、他のオブジェクト（例えば、冷蔵庫）にはない。即ち、世の中の「オブジェクト」にはそれぞれ異なるデータと関数が存在していると考えることができる。</p>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>の世界でも「すべて」をこれと同じように考える。上のコードの<code class="docutils literal notranslate"><span class="pre">10</span></code>にもデータと関数が備わっており、それらを<strong>属性</strong>（attributes）と呼ぶ。<code class="docutils literal notranslate"><span class="pre">10</span></code>は単なる数字に見えるが、実は様々な属性から構成されるオブジェクトなのである。上の例の自転車のように、<code class="docutils literal notranslate"><span class="pre">Python</span></code>の「属性」は次の２つに分類される。<code class="docutils literal notranslate"><span class="pre">10</span></code>を例にとると、</p>
 <ol class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>が持つ様々な<strong>データ（属性）</strong>（data attributes）（例えば、<code class="docutils literal notranslate"><span class="pre">10</span></code>という値や整数という情報）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>特有の関数である<strong>メソッド（属性）</strong>（method attributes）（例えば、加算、除算のように<code class="docutils literal notranslate"><span class="pre">10</span></code>というデータに働きかける関数）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>が持つ様々な<strong>データ属性</strong>（data attribute）（例えば、<code class="docutils literal notranslate"><span class="pre">10</span></code>という値や整数という情報）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>特有の関数である<strong>メソッド</strong>（method）（例えば、加算、除算のように<code class="docutils literal notranslate"><span class="pre">10</span></code>というデータに働きかける関数）</p></li>
 </ol>
-<p>を指す。自転車と冷蔵庫は異なるデータと関数を持つように、整数<code class="docutils literal notranslate"><span class="pre">10</span></code>と文字列<code class="docutils literal notranslate"><span class="pre">マクロ経済学</span></code>は異なるデータと関数を備えるオブジェクトなのである。この考え方は<code class="docutils literal notranslate"><span class="pre">Python</span></code>のすべてに当てはまる。即ち、Everything is an object in Python.</p>
-<p>データ属性の例として浮動小数点型<code class="docutils literal notranslate"><span class="pre">10.0</span></code>を<code class="docutils literal notranslate"><span class="pre">y</span></code>に割り当てよう。</p>
+<p>を指す（呼称については<a class="reference external" href="https://docs.python.org/ja/3/tutorial/classes.html#instance-objects">Pythonの公式サイト</a>を参照）。自転車と冷蔵庫は異なるデータと関数を持つように、整数<code class="docutils literal notranslate"><span class="pre">10</span></code>と文字列<code class="docutils literal notranslate"><span class="pre">マクロ経済学</span></code>は異なるデータと関数を備えるオブジェクトなのである。この考え方は<code class="docutils literal notranslate"><span class="pre">Python</span></code>のすべてに当てはまる。即ち、Everything is an object in Python.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>データ属性もメソッドもオブジェクトの属性には変わりないが，これ以降このサイトではこの２つを次のように呼ぶことにする。</p>
+<ul class="simple">
+<li><p>データ属性 → 「属性」</p></li>
+<li><p>メソッド → 「メソッド」</p></li>
+</ul>
+</div>
+<p>属性の例を考えるために浮動小数点型<code class="docutils literal notranslate"><span class="pre">10.0</span></code>を<code class="docutils literal notranslate"><span class="pre">y</span></code>に割り当てよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mf">10.0</span>
@@ -1345,8 +1353,17 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>データ属性と異なりメソッドは<code class="docutils literal notranslate"><span class="pre">()</span></code>が必要となる。これは関数の<code class="docutils literal notranslate"><span class="pre">()</span></code>に対応している。</p></li>
+<li><p>（データ）属性と異なりメソッドは<code class="docutils literal notranslate"><span class="pre">()</span></code>が必要となる。これは関数の<code class="docutils literal notranslate"><span class="pre">()</span></code>に対応している。<code class="docutils literal notranslate"><span class="pre">()</span></code>を「する」もしくは「実行する」と読めば分かりやすいだろう。</p></li>
 </ul>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>関数とメソッドの違いは？役割は基本的には同じだが，次の点で異なる。例えば，<code class="docutils literal notranslate"><span class="pre">x=[1,2,3]</span></code>を考えよう。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sum(x)</span></code>の関数<code class="docutils literal notranslate"><span class="pre">sum()</span></code>は<code class="docutils literal notranslate"><span class="pre">x</span></code>から独立して存在する組み込み関数であり，<code class="docutils literal notranslate"><span class="pre">x</span></code>に働きかけて合計を返す。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x.reverse()</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">reverse()</span></code>は<code class="docutils literal notranslate"><span class="pre">x</span></code>に元々備わっている関数であり，<code class="docutils literal notranslate"><span class="pre">x</span></code>に働きかけて要素の順番が逆になるリストを返す。</p></li>
+</ul>
+<p>即ち，オブジェクトに備わっている関数がメソッドとなる。もう一点付け加えると，<code class="docutils literal notranslate"><span class="pre">x.reverse()</span></code>の場合，裏では<code class="docutils literal notranslate"><span class="pre">()</span></code>の中に<code class="docutils literal notranslate"><span class="pre">x</span></code>が引数として設定されている。</p>
 </div>
 </div>
 <div class="section" id="for">
@@ -2142,7 +2159,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -2155,7 +2172,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 3, 4, 5, 2, 5, 6, 4, 1, 3]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 3, 4, 6, 4, 5, 3, 1, 1]
 </pre></div>
 </div>
 </div>

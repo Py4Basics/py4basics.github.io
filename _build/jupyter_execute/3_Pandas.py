@@ -1279,3 +1279,9 @@ df.groupby('id')[['gdp','inv']].mean()
 # 結果は`DataFrame`として返されている。ステップ１もしくは３で複数選択すると`DataFrame`が`MultiIndex`（階層的な行と列）として返されることになるが，その簡単な説明については[Gapminder](https://py4basics.github.io/Gapminder.html)を参照して欲しい。より詳しい説明は他のサイトに譲ることにする。
 # 
 # `df`のような小さな`DataFrame`では`.groupby`の威力はあまりピンとこないかも知れない。しかし大きな`DataFrame`を使うとその恩恵を強く感じることだろう。[Gapminder](https://py4basics.github.io/Gapminder.html)ではマクロ経済データを使い`.groupby()`の使い方の例を示している。興味がある人は是非！
+
+# In[ ]:
+
+
+
+
