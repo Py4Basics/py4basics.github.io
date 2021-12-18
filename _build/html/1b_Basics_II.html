@@ -2216,8 +2216,54 @@ Y =
 </ul>
 </li>
 </ul>
-<p>残りの距離である<code class="docutils literal notranslate"><span class="pre">0.001</span></code>を変えることにより，どこまで壁に近づけれるかを設定できる。</p>
+<p>最後のループでは<code class="docutils literal notranslate"><span class="pre">0.001953125</span></code>が表示されているが，中止された時点での<code class="docutils literal notranslate"><span class="pre">distance</span></code>を調べてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0009765625
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">0.001</span></code>よりも小さいことが確認できる。もちろん，条件にある<code class="docutils literal notranslate"><span class="pre">0.001</span></code>を変えることにより，どこまで壁に近づけれるかを設定できる。もっと小さくすれば，より壁に近づき壁からの「誤差」を縮めることができる。</p>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>は広く科学計算に使われ，（様々なパッケージを使うことにより）簡単に方程式の解を求めることができる。しかし，全てのケースで真の解そのものを計算できるとは限らない。解を近似値として求める場合が多くあり，複雑な方程式であればなおさらである。そのような場合，基本的には上の例と同じ考えに基づいて方程式の解を求めることになる。どういうことかと言うと，次のようなイメージである。壁を方程式の解とすると，<code class="docutils literal notranslate"><span class="pre">distance</span></code>は真の解と解の近似値の乖離もしくは誤差として捉えることができる。計算過程で誤差が減少し解に収束していくことになるが，どこまで解に近づけるかが問題になるのは簡単に想像できる。精度が高い近似値には計算コスト（時間）が掛かることになり，便益と費用のトレードオフが発生することになる。このサイトで使う範囲では，そこまで考える必要はないが，その基本的な考えを理解することは必要であろう。<code class="docutils literal notranslate"><span class="pre">Python</span></code>（とその他のパッケージ）では，近似値の誤差がデフォルトの値が設定されているので，それを使うことになる。</p>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループと違い<code class="docutils literal notranslate"><span class="pre">while</span></code>ループは何回ループ計算をしたかは分からない。次のコードはそれを確認するために変数<code class="docutils literal notranslate"><span class="pre">counter</span></code>を追加している。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">distance</span> <span class="o">&gt;</span> <span class="mf">1e-100</span><span class="p">:</span>
+    <span class="n">distance</span> <span class="o">-=</span> <span class="n">distance</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s1">回ループ計算しました🚀&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>333回ループ計算しました🚀
+</pre></div>
+</div>
+</div>
+</div>
+<p>ここで<code class="docutils literal notranslate"><span class="pre">1e-100</span></code>は<span class="math notranslate nohighlight">\(10^{-100}\)</span>である。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>科学的表記（scientific notation）は次のような書き方となる。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1.5e0</span></code> = <span class="math notranslate nohighlight">\(1.5\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1.5e10</span></code> = <span class="math notranslate nohighlight">\(1.5\times 10^{10}\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-8e100</span></code> = <span class="math notranslate nohighlight">\(-8\times 10^{100}\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1e-100</span></code> = <span class="math notranslate nohighlight">\(10^{-100}\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-5.2e-10</span></code> = <span class="math notranslate nohighlight">\(-5.2\times 10^{-10}\)</span></p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="id19">
 <h2>ヘルプ<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
@@ -2363,7 +2409,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
@@ -2376,7 +2422,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 6, 4, 6, 5, 2, 5, 6, 5, 5]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3, 5, 1, 6, 3, 4, 5, 3, 4]
 </pre></div>
 </div>
 </div>
@@ -2595,7 +2641,7 @@ print(...)
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">88</span><span class="o">-</span><span class="mi">221</span><span class="n">da6df6ee2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">90</span><span class="o">-</span><span class="mi">221</span><span class="n">da6df6ee2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s_local</span>
 
 <span class="ne">NameError</span>: name &#39;s_local&#39; is not defined
@@ -2685,11 +2731,11 @@ print(...)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a	 b	 c	 c_list	 calculate_futre_value	 calculate_yt	 ces_production	 change_in_gdp	 con	 
-consumption	 current_value	 d	 distance	 func_0	 func_1	 func_100	 func_2	 func_3	 
-func_kobe	 future_value	 gdp_component	 gdp_components	 i	 income_list	 k	 k_list	 log	 
-lst	 m	 math	 my_list	 n	 random	 s	 scope_0	 scope_1	 
-scope_2	 scope_3	 scope_4	 see	 sqrt	 t	 v	 values	 var_list	 
-x	 x_list	 y	 
+consumption	 counter	 current_value	 d	 distance	 func_0	 func_1	 func_100	 func_2	 
+func_3	 func_kobe	 future_value	 gdp_component	 gdp_components	 i	 income_list	 k	 k_list	 
+log	 lst	 m	 math	 my_list	 n	 random	 s	 scope_0	 
+scope_1	 scope_2	 scope_3	 scope_4	 see	 sqrt	 t	 v	 values	 
+var_list	 x	 x_list	 y	 
 </pre></div>
 </div>
 </div>
