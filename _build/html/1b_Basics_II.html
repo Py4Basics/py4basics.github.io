@@ -486,7 +486,7 @@
        for
       </span>
      </code>
-     ループの２つの書き方
+     ループの２つの書き方（動学分析の基礎）
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1556,11 +1556,31 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 </ol>
 </div>
 <div class="section" id="for2">
-<h3><code class="docutils literal notranslate"><span class="pre">for</span></code>ループの２つの書き方<a class="headerlink" href="#for2" title="Permalink to this headline">¶</a></h3>
-<p>次のようなリストを作成したいとしよう。</p>
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code>ループの２つの書き方（動学分析の基礎）<a class="headerlink" href="#for2" title="Permalink to this headline">¶</a></h3>
+<p>上で説明した３つの<code class="docutils literal notranslate"><span class="pre">for</span></code>ループは次の特徴を持っている。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code>を使った例</p>
+<ul>
+<li><p>イタラブルの要素を使い，それを表示する。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.append()</span></code>を使った例</p>
+<ul>
+<li><p>イタラブルの要素を使い，それを予め準備したリストに追加する。</p></li>
+</ul>
+</li>
+<li><p>消費関数の例</p>
+<ul>
+<li><p>イタラブルの要素を使い消費を計算し，予め準備したリストに追加する。</p></li>
+</ul>
+</li>
+</ul>
+<p>３つに共通することは，<code class="docutils literal notranslate"><span class="pre">n</span></code>回目に計算した値は<code class="docutils literal notranslate"><span class="pre">n-1</span></code>回目に計算した値から独立だということである。例えば，消費関数を考えてみよう。３回目のループで計算した消費量はその回の所得に依存するが，２回目ループの消費量や所得には依存しない。<code class="docutils literal notranslate"><span class="pre">print()</span></code>と<code class="docutils literal notranslate"><span class="pre">.append()</span></code>の例も同じである。</p>
+<p>一方，マクロ経済学では，今期の値は前期の値に依存する場合が頻繁に出てくる。典型的な例が資本ストックである。<code class="docutils literal notranslate"><span class="pre">t</span></code>期末の資本ストックは<code class="docutils literal notranslate"><span class="pre">t</span></code>期の投資と<code class="docutils literal notranslate"><span class="pre">t-1</span></code>期末の資本ストックに依存する。ここでは，このように動的に変化する変数を捉えるための<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの書き方を紹介するのが目的である。</p>
+<p>例を使って説明するために，次のリストを作成したいとしよう。</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">10</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">10</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -1570,16 +1590,16 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 </div>
 </div>
 </div>
-<p>この例を使って<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの２つの書き方を説明する。目的は動学的な変数の変化を考えるためのコード作成の基礎作りである。次のコードが一つ目の方法である。ここでは２つ目の書き方と比較するために，初期値<code class="docutils literal notranslate"><span class="pre">0</span></code>を最初から<code class="docutils literal notranslate"><span class="pre">my_list</span></code>に置いている。（もちろん，そうせずにコードを書くことができるので考えてみよう。）</p>
+<p>次のコードが一つ目の方法である。変数<code class="docutils literal notranslate"><span class="pre">k</span></code>を資本ストック，３行目の<code class="docutils literal notranslate"><span class="pre">10</span></code>を投資，<code class="docutils literal notranslate"><span class="pre">t</span></code>を時間と考えればより分かり易いだろう。１行目の<code class="docutils literal notranslate"><span class="pre">my_list</span></code>には初期値<code class="docutils literal notranslate"><span class="pre">0</span></code>が置いある。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>           <span class="c1"># １行目</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>             <span class="c1"># １行目</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>      <span class="c1"># ２行目</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10</span> <span class="c1"># ３行目</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>   <span class="c1"># ４行目</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>       <span class="c1"># ２行目</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">k_list</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10</span>   <span class="c1"># ３行目</span>
+    <span class="n">k_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>     <span class="c1"># ４行目</span>
     
-<span class="n">my_list</span>                 <span class="c1"># ５行目</span>
+<span class="n">k_list</span>                  <span class="c1"># ５行目</span>
 </pre></div>
 </div>
 </div>
@@ -1591,48 +1611,48 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 </div>
 <p>＜コードの説明＞</p>
 <ul class="simple">
-<li><p>（１行目）<code class="docutils literal notranslate"><span class="pre">my_list</span></code>の最初の要素として<code class="docutils literal notranslate"><span class="pre">0</span></code>を入れている。以下では<code class="docutils literal notranslate"><span class="pre">my_list</span></code>に値を追加して目的のリストを作成する。</p></li>
+<li><p>（１行目）<code class="docutils literal notranslate"><span class="pre">k_list</span></code>の最初の要素として<code class="docutils literal notranslate"><span class="pre">0</span></code>を入れている。以下では<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に値を追加して目的のリストを作成する。</p></li>
 <li><p>（２行目）ループの開始。</p>
 <ul>
-<li><p>イタラブルとして<code class="docutils literal notranslate"><span class="pre">range(9)</span></code>を使っている。<code class="docutils literal notranslate"><span class="pre">list(range(9))</span></code>と置いても良いが，<code class="docutils literal notranslate"><span class="pre">range(9)</span></code>で十分である。</p></li>
+<li><p>イタラブルとして<code class="docutils literal notranslate"><span class="pre">range(9)</span></code>を使っている。<code class="docutils literal notranslate"><span class="pre">list(range(9))</span></code>と置いても良いが，<code class="docutils literal notranslate"><span class="pre">range(9)</span></code>で役目は果たす。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">range(9)</span></code>は<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">8</span></code>までの整数を準備し，9回ループが実行されることになる。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">8</span></code>までの整数を順次<code class="docutils literal notranslate"><span class="pre">i</span></code>に割り当てることになる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">8</span></code>までの整数を順次<code class="docutils literal notranslate"><span class="pre">t</span></code>に割り当てることになる。</p></li>
 </ul>
 </li>
 <li><p>１回目のループ</p>
 <ul>
-<li><p>（３行目）<code class="docutils literal notranslate"><span class="pre">my_list</span></code>の<code class="docutils literal notranslate"><span class="pre">0</span></code>番目の要素である<code class="docutils literal notranslate"><span class="pre">0</span></code>を抽出し，それに<code class="docutils literal notranslate"><span class="pre">10</span></code>をを足すことにより右辺は<code class="docutils literal notranslate"><span class="pre">10</span></code>となる。それを<code class="docutils literal notranslate"><span class="pre">y</span></code>に割り当てる。</p></li>
-<li><p>（４行目）<code class="docutils literal notranslate"><span class="pre">y</span></code>の値<code class="docutils literal notranslate"><span class="pre">10</span></code>を<code class="docutils literal notranslate"><span class="pre">my_list</span></code>に追加する。<code class="docutils literal notranslate"><span class="pre">10</span></code>は<code class="docutils literal notranslate"><span class="pre">my_list</span></code>の1番目の要素となる。</p></li>
+<li><p>（３行目）<code class="docutils literal notranslate"><span class="pre">k_list</span></code>の<code class="docutils literal notranslate"><span class="pre">0</span></code>番目の要素である<code class="docutils literal notranslate"><span class="pre">0</span></code>を抽出し，それに<code class="docutils literal notranslate"><span class="pre">10</span></code>をを足すことにより右辺は<code class="docutils literal notranslate"><span class="pre">10</span></code>となる。それを<code class="docutils literal notranslate"><span class="pre">k</span></code>に割り当てる。</p></li>
+<li><p>（４行目）<code class="docutils literal notranslate"><span class="pre">k</span></code>の値<code class="docutils literal notranslate"><span class="pre">10</span></code>を<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に追加する。<code class="docutils literal notranslate"><span class="pre">10</span></code>は<code class="docutils literal notranslate"><span class="pre">k_list</span></code>の1番目の要素となる。</p></li>
 </ul>
 </li>
 <li><p>２回目のループ</p>
 <ul>
-<li><p>（３行目）<code class="docutils literal notranslate"><span class="pre">my_list</span></code>の<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の要素である<code class="docutils literal notranslate"><span class="pre">10</span></code>を抽出し，それに<code class="docutils literal notranslate"><span class="pre">10</span></code>をを足すことにより右辺は<code class="docutils literal notranslate"><span class="pre">20</span></code>となる。それを<code class="docutils literal notranslate"><span class="pre">y</span></code>に割り当てる。</p></li>
-<li><p>（４行目）<code class="docutils literal notranslate"><span class="pre">y</span></code>の値<code class="docutils literal notranslate"><span class="pre">20</span></code>を<code class="docutils literal notranslate"><span class="pre">my_list</span></code>に追加する。<code class="docutils literal notranslate"><span class="pre">20</span></code>は<code class="docutils literal notranslate"><span class="pre">my_list</span></code>の2番目の要素となる。</p></li>
+<li><p>（３行目）<code class="docutils literal notranslate"><span class="pre">k_list</span></code>の<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の要素である<code class="docutils literal notranslate"><span class="pre">10</span></code>を抽出し，それに<code class="docutils literal notranslate"><span class="pre">10</span></code>をを足すことにより右辺は<code class="docutils literal notranslate"><span class="pre">20</span></code>となる。それを<code class="docutils literal notranslate"><span class="pre">k</span></code>に割り当てる。</p></li>
+<li><p>（４行目）<code class="docutils literal notranslate"><span class="pre">k</span></code>の値<code class="docutils literal notranslate"><span class="pre">20</span></code>を<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に追加する。<code class="docutils literal notranslate"><span class="pre">20</span></code>は<code class="docutils literal notranslate"><span class="pre">k_list</span></code>の2番目の要素となる。</p></li>
 </ul>
 </li>
 <li><p>３回目のループ</p>
 <ul>
-<li><p>（３行目）<code class="docutils literal notranslate"><span class="pre">my_list</span></code>の<code class="docutils literal notranslate"><span class="pre">2</span></code>番目の要素である<code class="docutils literal notranslate"><span class="pre">20</span></code>を抽出し，それに<code class="docutils literal notranslate"><span class="pre">10</span></code>をを足すことにより右辺は<code class="docutils literal notranslate"><span class="pre">30</span></code>となる。それを<code class="docutils literal notranslate"><span class="pre">y</span></code>に割り当てる。</p></li>
-<li><p>（４行目）<code class="docutils literal notranslate"><span class="pre">y</span></code>の値<code class="docutils literal notranslate"><span class="pre">30</span></code>を<code class="docutils literal notranslate"><span class="pre">my_list</span></code>に追加する。<code class="docutils literal notranslate"><span class="pre">30</span></code>は<code class="docutils literal notranslate"><span class="pre">my_list</span></code>の3番目の要素となる。</p></li>
+<li><p>（３行目）<code class="docutils literal notranslate"><span class="pre">k_list</span></code>の<code class="docutils literal notranslate"><span class="pre">2</span></code>番目の要素である<code class="docutils literal notranslate"><span class="pre">20</span></code>を抽出し，それに<code class="docutils literal notranslate"><span class="pre">10</span></code>をを足すことにより右辺は<code class="docutils literal notranslate"><span class="pre">30</span></code>となる。それを<code class="docutils literal notranslate"><span class="pre">k</span></code>に割り当てる。</p></li>
+<li><p>（４行目）<code class="docutils literal notranslate"><span class="pre">k</span></code>の値<code class="docutils literal notranslate"><span class="pre">30</span></code>を<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に追加する。<code class="docutils literal notranslate"><span class="pre">30</span></code>は<code class="docutils literal notranslate"><span class="pre">k_list</span></code>の3番目の要素となる。</p></li>
 </ul>
 </li>
 <li><p>同様のループ計算が合計で9回繰り返される。</p></li>
-<li><p>（５行目）<code class="docutils literal notranslate"><span class="pre">my_list</span></code>を表示する。</p></li>
+<li><p>（５行目）<code class="docutils literal notranslate"><span class="pre">k_list</span></code>を表示する。</p></li>
 </ul>
-<p>この例では，ループ用の変数<code class="docutils literal notranslate"><span class="pre">i</span></code>が３行目で使われており，比較的に分かりやすいと思う人も多いだろう。一方で，<code class="docutils literal notranslate"><span class="pre">i</span></code>に対応する変数（即ち，<code class="docutils literal notranslate"><span class="pre">my_list[i]</span></code>）が何を指しているのかを考える必要があり少し煩雑と感じる人もいるだろう。</p>
-<p>次のコードでも同じ結果となるが，<code class="docutils literal notranslate"><span class="pre">i</span></code>に対応する変数の値を考える必要はない。</p>
+<p>この例では，ループ用の変数<code class="docutils literal notranslate"><span class="pre">t</span></code>が３行目で使われており，比較的に分かりやすいと思う人も多いだろう。一方で，<code class="docutils literal notranslate"><span class="pre">t</span></code>に対応する変数（即ち，<code class="docutils literal notranslate"><span class="pre">my_list[t]</span></code>）が何を指しているのかを考える必要があり少し煩雑と感じる人もいるだろう。</p>
+<p>次のコードでも同じ結果となるが，<code class="docutils literal notranslate"><span class="pre">t</span></code>に対応する変数の値を考える必要はない。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>                   <span class="c1"># １行目</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>                   <span class="c1"># １行目</span>
 
-<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span><span class="p">]</span>           <span class="c1"># ２行目</span>
+<span class="n">k_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="p">]</span>            <span class="c1"># ２行目</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>      <span class="c1"># ３行目</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span>          <span class="c1"># ４行目</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>   <span class="c1"># ５行目</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>    <span class="c1"># ３行目</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">10</span>          <span class="c1"># ４行目</span>
+    <span class="n">k_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>    <span class="c1"># ５行目</span>
     
-<span class="n">my_list</span>                 <span class="c1"># ６行目</span>
+<span class="n">k_list</span>                  <span class="c1"># ６行目</span>
 </pre></div>
 </div>
 </div>
@@ -1644,41 +1664,41 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 </div>
 <p>＜コードの説明＞</p>
 <ul class="simple">
-<li><p>（１行目）最初の<code class="docutils literal notranslate"><span class="pre">y</span></code>の値を設定する。また<code class="docutils literal notranslate"><span class="pre">y</span></code>はループのアップデート用の変数として使われる。</p></li>
-<li><p>（２行目）最初の<code class="docutils literal notranslate"><span class="pre">y</span></code>の値<code class="docutils literal notranslate"><span class="pre">0</span></code>からなるリストの作成する。以下では<code class="docutils literal notranslate"><span class="pre">my_list</span></code>に値を追加して目的のリストを作成する。</p></li>
+<li><p>（１行目）最初の<code class="docutils literal notranslate"><span class="pre">k</span></code>の値を設定する。また<code class="docutils literal notranslate"><span class="pre">k</span></code>はループのアップデート用の変数として使われる。</p></li>
+<li><p>（２行目）最初の<code class="docutils literal notranslate"><span class="pre">k</span></code>の値<code class="docutils literal notranslate"><span class="pre">0</span></code>からなるリストの作成する。以下では<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に値を追加して目的のリストを作成する。</p></li>
 <li><p>（３行目）ループの開始。</p>
 <ul>
-<li><p>イタラブルとして<code class="docutils literal notranslate"><span class="pre">range(9)</span></code>を使っている。<code class="docutils literal notranslate"><span class="pre">list(range(9))</span></code>と置いても良いが，<code class="docutils literal notranslate"><span class="pre">range(9)</span></code>で十分である。</p></li>
+<li><p>イタラブルとして<code class="docutils literal notranslate"><span class="pre">range(9)</span></code>を使っている。<code class="docutils literal notranslate"><span class="pre">list(range(9))</span></code>と置いても良いが，<code class="docutils literal notranslate"><span class="pre">range(9)</span></code>で役目は果たす。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">range(9)</span></code>は<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">8</span></code>までの整数を準備し，9回ループが実行されることになる。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">8</span></code>までの整数を順次<code class="docutils literal notranslate"><span class="pre">i</span></code>に割り当てることになる。</p></li>
-<li><p>４〜５行目に<code class="docutils literal notranslate"><span class="pre">i</span></code>は使われていない。従って，<code class="docutils literal notranslate"><span class="pre">i</span></code>の役割は<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">8</span></code>までの整数の「捨て場」のようなものである。そのような場合，<code class="docutils literal notranslate"><span class="pre">i</span></code>の代わりに<code class="docutils literal notranslate"><span class="pre">_</span></code>を使うこともある。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">8</span></code>までの整数を順次<code class="docutils literal notranslate"><span class="pre">t</span></code>に割り当てることになる。</p></li>
+<li><p>４〜５行目に<code class="docutils literal notranslate"><span class="pre">t</span></code>は使われていない。従って，<code class="docutils literal notranslate"><span class="pre">t</span></code>の役割は<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">8</span></code>までの整数の「捨て場」のようなものである。そのような場合，<code class="docutils literal notranslate"><span class="pre">t</span></code>の代わりに<code class="docutils literal notranslate"><span class="pre">_</span></code>を使うこともある。</p></li>
 </ul>
 </li>
 <li><p>１回目のループ</p>
 <ul>
-<li><p>（４行目）右辺の<code class="docutils literal notranslate"><span class="pre">y</span></code>の値は１行目で割り当てた<code class="docutils literal notranslate"><span class="pre">0</span></code>である。それに<code class="docutils literal notranslate"><span class="pre">10</span></code>を足し右辺は<code class="docutils literal notranslate"><span class="pre">10</span></code>となり，それを左辺の<code class="docutils literal notranslate"><span class="pre">y</span></code>に割り当てる。この時点で，１行目の<code class="docutils literal notranslate"><span class="pre">y=0</span></code>は「無効」となり，<code class="docutils literal notranslate"><span class="pre">y=10</span></code>として更新される。</p></li>
-<li><p>（５行目）<code class="docutils literal notranslate"><span class="pre">y</span></code>の値<code class="docutils literal notranslate"><span class="pre">10</span></code>を<code class="docutils literal notranslate"><span class="pre">my_list</span></code>に追加する。</p></li>
+<li><p>（４行目）右辺の<code class="docutils literal notranslate"><span class="pre">k</span></code>の値は１行目で割り当てた<code class="docutils literal notranslate"><span class="pre">0</span></code>である。それに<code class="docutils literal notranslate"><span class="pre">10</span></code>を足し右辺は<code class="docutils literal notranslate"><span class="pre">10</span></code>となり，それを左辺の<code class="docutils literal notranslate"><span class="pre">k</span></code>に割り当てる。この時点で，１行目の<code class="docutils literal notranslate"><span class="pre">k=0</span></code>は「無効」となり，<code class="docutils literal notranslate"><span class="pre">k=10</span></code>として更新される。</p></li>
+<li><p>（５行目）<code class="docutils literal notranslate"><span class="pre">k</span></code>の値<code class="docutils literal notranslate"><span class="pre">10</span></code>を<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に追加する。</p></li>
 </ul>
 </li>
 <li><p>２回目のループ</p>
 <ul>
-<li><p>（４行目）右辺の<code class="docutils literal notranslate"><span class="pre">y</span></code>の値は<code class="docutils literal notranslate"><span class="pre">10</span></code>である。それに<code class="docutils literal notranslate"><span class="pre">10</span></code>を足し右辺は<code class="docutils literal notranslate"><span class="pre">20</span></code>となり，それを左辺の<code class="docutils literal notranslate"><span class="pre">y</span></code>に割り当てる。この時点で<code class="docutils literal notranslate"><span class="pre">y=10</span></code>は「無効」となり，<code class="docutils literal notranslate"><span class="pre">y=20</span></code>として更新される。</p></li>
-<li><p>（５行目）<code class="docutils literal notranslate"><span class="pre">y</span></code>の値<code class="docutils literal notranslate"><span class="pre">20</span></code>を<code class="docutils literal notranslate"><span class="pre">my_list</span></code>に追加する。</p></li>
+<li><p>（４行目）右辺の<code class="docutils literal notranslate"><span class="pre">k</span></code>の値は<code class="docutils literal notranslate"><span class="pre">10</span></code>である。それに<code class="docutils literal notranslate"><span class="pre">10</span></code>を足し右辺は<code class="docutils literal notranslate"><span class="pre">20</span></code>となり，それを左辺の<code class="docutils literal notranslate"><span class="pre">k</span></code>に割り当てる。この時点で<code class="docutils literal notranslate"><span class="pre">k=10</span></code>は「無効」となり，<code class="docutils literal notranslate"><span class="pre">k=20</span></code>として更新される。</p></li>
+<li><p>（５行目）<code class="docutils literal notranslate"><span class="pre">k</span></code>の値<code class="docutils literal notranslate"><span class="pre">20</span></code>を<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に追加する。</p></li>
 </ul>
 </li>
 <li><p>３回目のループ</p>
 <ul>
-<li><p>（４行目）右辺の<code class="docutils literal notranslate"><span class="pre">y</span></code>の値は<code class="docutils literal notranslate"><span class="pre">20</span></code>である。それに<code class="docutils literal notranslate"><span class="pre">10</span></code>を足し右辺は<code class="docutils literal notranslate"><span class="pre">30</span></code>となり，それを左辺の<code class="docutils literal notranslate"><span class="pre">y</span></code>に割り当てる。この時点で<code class="docutils literal notranslate"><span class="pre">y=20</span></code>は「無効」となり，<code class="docutils literal notranslate"><span class="pre">y=30</span></code>として更新される。</p></li>
-<li><p>（５行目）<code class="docutils literal notranslate"><span class="pre">y</span></code>の値<code class="docutils literal notranslate"><span class="pre">30</span></code>を<code class="docutils literal notranslate"><span class="pre">my_list</span></code>に追加する。</p></li>
+<li><p>（４行目）右辺の<code class="docutils literal notranslate"><span class="pre">k</span></code>の値は<code class="docutils literal notranslate"><span class="pre">20</span></code>である。それに<code class="docutils literal notranslate"><span class="pre">10</span></code>を足し右辺は<code class="docutils literal notranslate"><span class="pre">30</span></code>となり，それを左辺の<code class="docutils literal notranslate"><span class="pre">k</span></code>に割り当てる。この時点で<code class="docutils literal notranslate"><span class="pre">k=20</span></code>は「無効」となり，<code class="docutils literal notranslate"><span class="pre">k=30</span></code>として更新される。</p></li>
+<li><p>（５行目）<code class="docutils literal notranslate"><span class="pre">k</span></code>の値<code class="docutils literal notranslate"><span class="pre">30</span></code>を<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に追加する。</p></li>
 </ul>
 </li>
 <li><p>同様のループ計算が合計で9回繰り返される。</p></li>
-<li><p>（６行目）<code class="docutils literal notranslate"><span class="pre">my_list</span></code>を表示する。</p></li>
+<li><p>（６行目）<code class="docutils literal notranslate"><span class="pre">k_list</span></code>を表示する。</p></li>
 </ul>
-<p>１行目で<code class="docutils literal notranslate"><span class="pre">y=0</span></code>を設定していたが，ループ終了後の値を確認してみよう。</p>
+<p>１行目で<code class="docutils literal notranslate"><span class="pre">k=0</span></code>を設定していたが，ループ終了後の値を確認してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span>
 </pre></div>
 </div>
 </div>
@@ -1688,8 +1708,8 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">my_list</span></code>の最後の要素と同じであり，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ内で更新用の変数として使われたのがわかる。</p>
-<p>２つの書き方を紹介した。基本的にどちらを使っても良い。上でも書いたが，最初の方法は<code class="docutils literal notranslate"><span class="pre">i</span></code>に対応する変数の値を追う必要があるので，それを分かりやすいと感じる人もいるだろうし，面倒と感じる人もいるかも知れない。一方，２つ目の方法は<code class="docutils literal notranslate"><span class="pre">i</span></code>を確認する必要がない。もちろん，初期値の変数<code class="docutils literal notranslate"><span class="pre">y=0</span></code>を<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの外に作る必要があるが，これは次の例で説明するように，関数の中で使う場合はそれほど問題にはならないだろう。このサイトでは主に２つ目の手法を多用することになる。</p>
+<p><code class="docutils literal notranslate"><span class="pre">k_list</span></code>の最後の要素と同じであり，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ内で更新用の変数として使われたのがわかる。</p>
+<p>２つの書き方を紹介した。基本的にどちらを使っても良い。上でも書いたが，最初の方法は<code class="docutils literal notranslate"><span class="pre">t</span></code>に対応する変数の値を追う必要があるので，それを分かりやすいと感じる人もいるだろうし，面倒と感じる人もいるかも知れない。一方，２つ目の方法は<code class="docutils literal notranslate"><span class="pre">t</span></code>を確認する必要がない。もちろん，初期値の変数<code class="docutils literal notranslate"><span class="pre">k=0</span></code>を<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの外に作る必要があるが，これは次の例で説明するように，関数の中で使う場合はそれほど問題にはならないだろう。このサイトでは主に２つ目の手法を多用することになる。</p>
 </div>
 <div class="section" id="id17">
 <h3>将来価値の時系列<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
@@ -1854,7 +1874,15 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素を全て文字列に変換してみよう。</p>
+<p>次のように並べると<code class="docutils literal notranslate"><span class="pre">for</span></code>ループと内包表記の関係がより分かりやすくなるだろう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>次の例として<code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素を全て文字列に変換してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">]</span>
@@ -2014,6 +2042,20 @@ Y =
 </div>
 </div>
 </div>
+<p>内包表記にも<code class="docutils literal notranslate"><span class="pre">if</span></code>文を追加することも可能である。例えば，<code class="docutils literal notranslate"><span class="pre">1</span></code>から<code class="docutils literal notranslate"><span class="pre">10</span></code>までの整数で<code class="docutils literal notranslate"><span class="pre">5</span></code>以下であれば２乗し，それ以外は<code class="docutils literal notranslate"><span class="pre">0</span></code>にするとしよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">if</span> <span class="n">x</span><span class="o">&lt;=</span><span class="mi">5</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 9, 16, 25, 0, 0, 0, 0, 0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>しかし複雑になると可読性が落ちるので注意しよう。</p>
 </div>
 <div class="section" id="id19">
 <h2>ヘルプ<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
@@ -2159,7 +2201,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
@@ -2172,7 +2214,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 3, 4, 6, 4, 5, 3, 1, 1]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 2, 4, 3, 1, 2, 5, 1, 3, 6]
 </pre></div>
 </div>
 </div>
@@ -2391,7 +2433,7 @@ print(...)
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">84</span><span class="o">-</span><span class="mi">221</span><span class="n">da6df6ee2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">85</span><span class="o">-</span><span class="mi">221</span><span class="n">da6df6ee2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s_local</span>
 
 <span class="ne">NameError</span>: name &#39;s_local&#39; is not defined
@@ -2482,9 +2524,10 @@ print(...)
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a	 b	 c	 c_list	 calculate_futre_value	 calculate_yt	 ces_production	 change_in_gdp	 con	 
 consumption	 current_value	 d	 func_0	 func_1	 func_100	 func_2	 func_3	 func_kobe	 
-future_value	 gdp_component	 gdp_components	 i	 income_list	 log	 lst	 m	 math	 
-my_list	 random	 s	 scope_0	 scope_1	 scope_2	 scope_3	 scope_4	 see	 
-sqrt	 v	 values	 var_list	 x	 x_list	 y	 
+future_value	 gdp_component	 gdp_components	 i	 income_list	 k	 k_list	 log	 lst	 
+m	 math	 my_list	 random	 s	 scope_0	 scope_1	 scope_2	 scope_3	 
+scope_4	 see	 sqrt	 t	 v	 values	 var_list	 x	 x_list	 
+y	 
 </pre></div>
 </div>
 </div>
