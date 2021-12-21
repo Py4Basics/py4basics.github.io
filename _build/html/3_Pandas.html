@@ -3978,21 +3978,22 @@ dtype: float64
 <p>欠損値があるかどうかの確認は，<code class="docutils literal notranslate"><span class="pre">df.info()</span></code>でもできるが，以下のメソッドを組み合わせることでも可能である。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">isna()</span></code>：それぞれの要素について<code class="docutils literal notranslate"><span class="pre">NaN</span></code>の場合<code class="docutils literal notranslate"><span class="pre">True</span></code>を，そうでない場合は<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す。（<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の全ての要素が<code class="docutils literal notranslate"><span class="pre">True/False</span></code>となる。）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sum(axis='rows')</span></code>：<code class="docutils literal notranslate"><span class="pre">df</span></code>の上から下に<strong>行</strong>（rows）を縦断して，それぞれの列の中にある<code class="docutils literal notranslate"><span class="pre">True</span></code>数える。</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">sum()</span></code>：<code class="docutils literal notranslate"><span class="pre">df</span></code>の上から下に<strong>行</strong>（rows）を縦断して，それぞれの列の中にある<code class="docutils literal notranslate"><span class="pre">True</span></code>数える。</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">rows</span></code>は複数！（<code class="docutils literal notranslate"><span class="pre">0</span></code>でも可）</p></li>
+<li><p>デフォルトで引数<code class="docutils literal notranslate"><span class="pre">axis='rows'</span></code>が指定されている。</p></li>
+<li><p>引数値<code class="docutils literal notranslate"><span class="pre">rows</span></code>は複数！（<code class="docutils literal notranslate"><span class="pre">0</span></code>でも可）</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sum(axis='columns')</span></code>：<code class="docutils literal notranslate"><span class="pre">df</span></code>の左から右に<strong>列</strong>（columns）を横断して，それぞれの行の中にある<code class="docutils literal notranslate"><span class="pre">True</span></code>を数える。</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">columns</span></code>は複数！（<code class="docutils literal notranslate"><span class="pre">1</span></code>でも可）</p></li>
+<li><p>引数値<code class="docutils literal notranslate"><span class="pre">columns</span></code>は複数！（<code class="docutils literal notranslate"><span class="pre">1</span></code>でも可）</p></li>
 </ul>
 </li>
 </ul>
 <p>（注意）<code class="docutils literal notranslate"><span class="pre">sum()</span></code>の<code class="docutils literal notranslate"><span class="pre">axis</span></code>は「行を縦断」か「列を横断」かを指定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;rows&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -4035,14 +4036,15 @@ dtype: int64
 <hr class="docutils" />
 <p><code class="docutils literal notranslate"><span class="pre">NaN</span></code>がある行だけを抽出したい場合がある。その場合はメソッド<code class="docutils literal notranslate"><span class="pre">any()</span></code>が役に立つ。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">any(axis='rows')</span></code>：<code class="docutils literal notranslate"><span class="pre">df</span></code>の上から下に行（<code class="docutils literal notranslate"><span class="pre">rows</span></code>）を縦断して，それぞれの列の中で一つ以上<code class="docutils literal notranslate"><span class="pre">True</span></code>がある場合には<code class="docutils literal notranslate"><span class="pre">True</span></code>を，一つもない場合は<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す。</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">any()</span></code>：<code class="docutils literal notranslate"><span class="pre">df</span></code>の上から下に行（<code class="docutils literal notranslate"><span class="pre">rows</span></code>）を縦断して，それぞれの列の中で一つ以上<code class="docutils literal notranslate"><span class="pre">True</span></code>がある場合には<code class="docutils literal notranslate"><span class="pre">True</span></code>を，一つもない場合は<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す。</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">rows</span></code>は複数！（0でも可）</p></li>
+<li><p>デフォルトで引数<code class="docutils literal notranslate"><span class="pre">axis='rows'</span></code>が指定されている。</p></li>
+<li><p>引数値<code class="docutils literal notranslate"><span class="pre">rows</span></code>は複数！（<code class="docutils literal notranslate"><span class="pre">0</span></code>でも可）</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">any(axis='columns')</span></code>：dfの左から右に列（<code class="docutils literal notranslate"><span class="pre">columns</span></code>）を横断して，それぞれの行の中で一つ以上<code class="docutils literal notranslate"><span class="pre">True</span></code>がある場合には<code class="docutils literal notranslate"><span class="pre">True</span></code>を，一つもない場合は<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す。</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">columns</span></code>は複数！（1でも可）</p></li>
+<li><p>引数値<code class="docutils literal notranslate"><span class="pre">columns</span></code>は複数！（1でも可）</p></li>
 </ul>
 </li>
 </ul>
@@ -4235,11 +4237,11 @@ dtype: int64
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>とするか，削除後の<code class="docutils literal notranslate"><span class="pre">df</span></code>を<code class="docutils literal notranslate"><span class="pre">df</span></code>自体に代入する。</p>
+<p>とするか，削除後の<code class="docutils literal notranslate"><span class="pre">df</span></code>を<code class="docutils literal notranslate"><span class="pre">df</span></code>自体に再割り当てする。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>ある列で<code class="docutils literal notranslate"><span class="pre">NaN</span></code>がある場合のみ行を削除する。</p>
+<p>また，ある列で<code class="docutils literal notranslate"><span class="pre">NaN</span></code>がある行のみを削除する場合は，引数<code class="docutils literal notranslate"><span class="pre">subset</span></code>を使う。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;inv&#39;</span><span class="p">])</span>
@@ -5608,7 +5610,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f8dd2be1640&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f9022fabc40&gt;
 </pre></div>
 </div>
 </div>
@@ -5629,7 +5631,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x7f8dd2be1a90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x7f9022fabbb0&gt;
 </pre></div>
 </div>
 </div>
