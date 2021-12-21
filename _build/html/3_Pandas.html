@@ -573,8 +573,20 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id29">
-   よく使う統計学関連メソッド
+   よく使うのメソッド
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id30">
+     統計関連のメソッド
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id31">
+     その他
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#series">
@@ -587,54 +599,54 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id30">
+    <a class="reference internal nav-link" href="#id32">
      構成要素
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id31">
+    <a class="reference internal nav-link" href="#id33">
      要素の抽出
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id32">
+    <a class="reference internal nav-link" href="#id34">
      統計学関連メソッド
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id33">
+  <a class="reference internal nav-link" href="#id35">
    グループ計算
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id34">
+    <a class="reference internal nav-link" href="#id36">
      ステップ１：グループ化する列を指定
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id35">
+    <a class="reference internal nav-link" href="#id37">
      ステップ２：グループ計算したい列を指定
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id36">
+    <a class="reference internal nav-link" href="#id38">
      ステップ３：計算方法の指定
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id37">
+    <a class="reference internal nav-link" href="#id39">
      次のステップ
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id38">
+      <a class="reference internal nav-link" href="#id40">
        １行で書く
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id39">
+      <a class="reference internal nav-link" href="#id41">
        複数選択
       </a>
      </li>
@@ -5028,30 +5040,31 @@ dtype: int64
 </div>
 </div>
 <div class="section" id="id29">
-<h2>よく使う統計学関連メソッド<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>には統計学関連のメソッドが用意されている。ここで幾つか紹介しよう。</p>
-<p><code class="docutils literal notranslate"><span class="pre">.sum()</span></code>は各列の合計を返す。</p>
+<h2>よく使うのメソッド<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>には様々なメソッドが用意されており，ここでは頻繁に用いるメソッド幾つか紹介しよう。</p>
+<div class="section" id="id30">
+<h3>統計関連のメソッド<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<p>上でも出てきたが<code class="docutils literal notranslate"><span class="pre">.sum()</span></code>は各列の合計を返す（<code class="docutils literal notranslate"><span class="pre">axis='rows'</span></code>がデフォルト）。その際，欠損値は無視される。注意する点は合計を計算して意味のある列のみを選択することである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gdp             1373.0
-inv              415.0
-con              610.0
-pop_new          155.0
-id         abababababa
-dtype: object
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gdp        1373.0
+inv         415.0
+con         610.0
+pop_new     155.0
+dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
-<p>各行の合計を計算したい場合は引数<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">axis='columns'</span></code>を指定する。ここで<code class="docutils literal notranslate"><span class="pre">columns</span></code>となるのは列を横断すると覚えれば良いだろう。文字列や欠損値は無視されることになる。</p>
+<p>各行の合計を計算したい場合は引数<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">axis='columns'</span></code>を指定する。ここで<code class="docutils literal notranslate"><span class="pre">columns</span></code>となるのは列を横断すると覚えれば良いだろう。古い<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>のバージョンでは自動で文字列を無視していたが，より新しいバージョンでは合計できる列だけを選択する必要がある。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -5075,6 +5088,8 @@ dtype: float64
 </div>
 <p>同じ使い方で次のメソッドが利用できる。</p>
 <ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.max()</span></code>：最大値</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.min()</span></code>：最小値</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.mean()</span></code>：平均</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.std()</span></code>：標準偏差</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.var()</span></code>：分散</p></li>
@@ -5087,7 +5102,7 @@ dtype: float64
 <p>例えば，<code class="docutils literal notranslate"><span class="pre">.cov()</span></code>を計算してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -5151,6 +5166,67 @@ dtype: float64
 </div>
 <p>対角成分は分散であり，その他は行と列のラベルに対応する共分散となる。<code class="docutils literal notranslate"><span class="pre">.corr()</span></code>も同じ位置関係となる。</p>
 </div>
+<div class="section" id="id31">
+<h3>その他<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<p>列<code class="docutils literal notranslate"><span class="pre">id</span></code>には文字列があり，行のデータをカテゴリー別に分けていると考えることができる。メソッド<code class="docutils literal notranslate"><span class="pre">.unique()</span></code>を使うと，選択した列に重複したデータがある場合，ユニークなものだけを抽出できる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;a&#39;, &#39;b&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>まな類似するメソッドに<code class="docutils literal notranslate"><span class="pre">.nunique()</span></code>があり，カテゴリー数を返す。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>関連するメソッドに<code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code>がある。これを使うとカテゴリーの内訳を確認するすることができる。カテゴリーの行数を表示するには</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a    6
+b    5
+Name: id, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>とする。引数<code class="docutils literal notranslate"><span class="pre">normalize=True</span></code>を追加すると，頻度（パーセント）として表示できる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a    0.545455
+b    0.454545
+Name: id, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">df</span></code>のように行数が少ない<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の場合，これらのメソッドの有用性を見出すことは難しいが，何千行あるデータを扱っていると想像してみよう。そのような大きなデータを扱う場合は非常に重宝するメソッドとなる。</p>
+</div>
+</div>
 <div class="section" id="series">
 <h2><code class="docutils literal notranslate"><span class="pre">Series</span></code>について<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Series</span></code>について簡単に説明する。<code class="docutils literal notranslate"><span class="pre">Series</span></code>はスプレッド・シートから１つの行または列を取り出したようなデータとイメージすれば良いだろう。まず<code class="docutils literal notranslate"><span class="pre">df</span></code>の列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>から<code class="docutils literal notranslate"><span class="pre">Series</span></code>を作ってみよう。</p>
@@ -5193,8 +5269,8 @@ Name: gdp, dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="section" id="id30">
-<h3>構成要素<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id32">
+<h3>構成要素<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
 <p>この例を使い<code class="docutils literal notranslate"><span class="pre">Series</span></code>の構成要素について説明する。</p>
 <ul class="simple">
 <li><p>データ：<code class="docutils literal notranslate"><span class="pre">s.to_numpy()</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">s.values</span></code>で抽出可能</p></li>
@@ -5281,8 +5357,8 @@ Name: gdp, dtype: float64
 </div>
 <p>また<code class="docutils literal notranslate"><span class="pre">dtype='int64'</span></code>とあるが、インデックスは整数であることがわかる。</p>
 </div>
-<div class="section" id="id31">
-<h3>要素の抽出<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id33">
+<h3>要素の抽出<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
 <p>要素の抽出方法は<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の<code class="docutils literal notranslate"><span class="pre">array</span></code>と辞書に似ている。この点を説明するために、次のコードを使い<code class="docutils literal notranslate"><span class="pre">s</span></code>からインデックスを文字列に変換した<code class="docutils literal notranslate"><span class="pre">s_new</span></code>を作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5398,8 +5474,8 @@ Name: gdp, dtype: float64
 </div>
 </div>
 </div>
-<div class="section" id="id32">
-<h3>統計学関連メソッド<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id34">
+<h3>統計学関連メソッド<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Series</span></code>にも<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>と同じような統計学関連メソッドが実装されているので，<code class="docutils literal notranslate"><span class="pre">see</span></code>で調べてみよう。</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
@@ -5480,8 +5556,8 @@ Name: gdp, dtype: float64
 </div>
 </div>
 </div>
-<div class="section" id="id33">
-<h2>グループ計算<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id35">
+<h2>グループ計算<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h2>
 <p>上で使った<code class="docutils literal notranslate"><span class="pre">df</span></code>を表示してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5586,8 +5662,8 @@ dtype: float64
 </div>
 <p>一方で，列<code class="docutils literal notranslate"><span class="pre">id</span></code>には<code class="docutils literal notranslate"><span class="pre">a</span></code>と<code class="docutils literal notranslate"><span class="pre">b</span></code>があり，<code class="docutils literal notranslate"><span class="pre">df</span></code>を２つのグループに分けることができる。ここで問題になるのは，グループ別に列の平均を計算したい場合である。まず考えられる方法は<code class="docutils literal notranslate"><span class="pre">a</span></code>グループだけを抽出して平均を計算し，同じように<code class="docutils literal notranslate"><span class="pre">b</span></code>も計算するということだろう。もしグループ数が多い場合は<code class="docutils literal notranslate"><span class="pre">for</span></code>ループが必要になり，より長いコードを書く必要が発生し面倒に感じることになる。</p>
 <p>こういう場合のために，<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>には簡単にグループ計算を可能にする方法が用意されている。それが<code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>というメソッドである。以下では<code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>の使い方を<code class="docutils literal notranslate"><span class="pre">df</span></code>を使って３つのステップに分けて説明する。</p>
-<div class="section" id="id34">
-<h3>ステップ１：グループ化する列を指定<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id36">
+<h3>ステップ１：グループ化する列を指定<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
 <p>最初のステップでは，<strong>グループ化したい列名</strong>を引数として<code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>を実行する。<code class="docutils literal notranslate"><span class="pre">df</span></code>を<code class="docutils literal notranslate"><span class="pre">id</span></code>でグループ化したいので次のコードとなる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
 </pre></div>
@@ -5610,15 +5686,15 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f9022fabc40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fd69b9207c0&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <p>何も返されない。表示されているのは，PCメモリーのある箇所に<code class="docutils literal notranslate"><span class="pre">DataFrameGroupBy</span></code>というオブジェクトがありますよと伝えているだけである。</p>
 </div>
-<div class="section" id="id35">
-<h3>ステップ２：グループ計算したい列を指定<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id37">
+<h3>ステップ２：グループ計算したい列を指定<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
 <p>次にグループ計算したい列を指定するが，次の様な書き方となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>df_groupby[＜グループ計算したい列ラベル＞]
 </pre></div>
@@ -5631,15 +5707,15 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x7f9022fabbb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x7fd688833370&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <p>ここでも新たなオブジェクト<code class="docutils literal notranslate"><span class="pre">SeriesGroupBy</span></code>のメモリーアドレスが表示されるだけである。どの様に計算するかを指定することにより，計算結果が返されることになる。それが次のステップである。</p>
 </div>
-<div class="section" id="id36">
-<h3>ステップ３：計算方法の指定<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id38">
+<h3>ステップ３：計算方法の指定<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
 <p>ステップ１と２がグループ計算の準備段階であり，あとは実際にどのように計算したいかを指定する。例として，平均を考えてみよう。上でも出てきたが，平均はメソッド<code class="docutils literal notranslate"><span class="pre">.mean()</span></code>を使う。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5748,10 +5824,10 @@ Name: gdp, dtype: float64
 <p><code class="docutils literal notranslate"><span class="pre">np.mean</span></code>の場合も<code class="docutils literal notranslate"><span class="pre">my_mean</span></code>の場合も<code class="docutils literal notranslate"><span class="pre">()</span></code>がなく，関数名だけを<code class="docutils literal notranslate"><span class="pre">.agg()</span></code>の引数にしている。関数名だけを<code class="docutils literal notranslate"><span class="pre">.agg</span></code>に渡し，<code class="docutils literal notranslate"><span class="pre">.agg</span></code>が渡された関数を実行するというイメージである。<code class="docutils literal notranslate"><span class="pre">()</span></code>を付けると<code class="docutils literal notranslate"><span class="pre">.agg()</span></code>に渡す前に関数を実行することになりエラーとなってしまう。</p>
 </div>
 </div>
-<div class="section" id="id37">
-<h3>次のステップ<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id38">
-<h4>１行で書く<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id39">
+<h3>次のステップ<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id40">
+<h4>１行で書く<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h4>
 <p>上の説明では３つのステップに分けたが，もちろん次のように３つのステップを次のように１行で書いても構わないし，むしろその場合が多いだろう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5773,8 +5849,8 @@ Name: gdp, dtype: float64
 <div><p><code class="docutils literal notranslate"><span class="pre">df</span></code>を<code class="docutils literal notranslate"><span class="pre">id</span></code>でグループ分けして，<code class="docutils literal notranslate"><span class="pre">gdp</span></code>の平均を計算する。</p>
 </div></blockquote>
 </div>
-<div class="section" id="id39">
-<h4>複数選択<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id41">
+<h4>複数選択<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h4>
 <p>各ステップでは列や関数を一つだけ選択・設定しているが，それぞれ複数選択することも可能である。</p>
 <ul class="simple">
 <li><p>ステップ１ではグループ化する上で基準となる列を複数選択</p></li>
