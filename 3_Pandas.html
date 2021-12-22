@@ -5103,11 +5103,11 @@ dtype: float64
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">.max()</span></code>：最大値</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.min()</span></code>：最小値</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.mean()</span></code>：平均</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.mean()</span></code>：（算術）平均</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.std()</span></code>：標準偏差</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.var()</span></code>：分散</p></li>
 </ul>
-<p>また次の２つも便利である。計算する際，欠損値は無視され，結果は<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>として返される。</p>
+<p>次の２つも便利である。計算する際，欠損値は無視され，結果は<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>として返される。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">.cov()</span></code>：分散共分散行列</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.corr()</span></code>：相関係数</p></li>
@@ -5178,6 +5178,144 @@ dtype: float64
 </div></div></div>
 </div>
 <p>対角成分は分散であり，その他は行と列のラベルに対応する共分散となる。<code class="docutils literal notranslate"><span class="pre">.corr()</span></code>も同じ位置関係となる。</p>
+<p>また変数の変化率（成長率）を計算するには<code class="docutils literal notranslate"><span class="pre">.pct_change()</span></code>が便利である（percent changeの略）。これは毎期ごとの変化率を返すことになる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gdp</th>
+      <th>inv</th>
+      <th>con</th>
+      <th>pop_new</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>-0.050000</td>
+      <td>0.250000</td>
+      <td>-0.125000</td>
+      <td>0.125000</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>-0.021053</td>
+      <td>-0.160000</td>
+      <td>0.028571</td>
+      <td>0.111111</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>0.075269</td>
+      <td>0.428571</td>
+      <td>-0.027778</td>
+      <td>0.100000</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>0.100000</td>
+      <td>0.300000</td>
+      <td>0.014286</td>
+      <td>0.090909</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>0.045455</td>
+      <td>0.410256</td>
+      <td>-0.154930</td>
+      <td>0.166667</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>-0.017391</td>
+      <td>-0.090909</td>
+      <td>0.050000</td>
+      <td>0.071429</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>0.044248</td>
+      <td>0.060000</td>
+      <td>0.031746</td>
+      <td>0.133333</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>0.008475</td>
+      <td>0.132075</td>
+      <td>-0.092308</td>
+      <td>0.058824</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>0.680672</td>
+      <td>0.033333</td>
+      <td>0.000000</td>
+      <td>0.111111</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>0.050000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.050000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">1999</span></code>年が無いため，<code class="docutils literal notranslate"><span class="pre">2000</span></code>年の成長率は欠損値となっている。<code class="docutils literal notranslate"><span class="pre">.pct_change()</span></code>と<code class="docutils literal notranslate"><span class="pre">.mean()</span></code>を続けて書くと簡単に（算術）平均成長率を計算することができる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gdp        0.091567
+inv        0.136333
+con       -0.027541
+pop_new    0.101838
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="id31">
 <h3>その他<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
@@ -5699,12 +5837,12 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x11eb7dfd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x114e67160&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<p>何も返されない。表示されているのは，PCメモリーのある箇所に<code class="docutils literal notranslate"><span class="pre">DataFrameGroupBy</span></code>というオブジェクトがありますよと伝えているだけである。</p>
+<p>何も返されない。表示されているのは，PCメモリーのある箇所に<code class="docutils literal notranslate"><span class="pre">DataFrameGroupBy</span></code>というオブジェクトが存在すると伝えているだけである。</p>
 </div>
 <div class="section" id="id37">
 <h3>ステップ２：グループ計算したい列を指定<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
@@ -5720,7 +5858,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x11eb7dd00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x114e67250&gt;
 </pre></div>
 </div>
 </div>
@@ -5776,22 +5914,22 @@ Name: gdp, dtype: float64
 </div>
 </div>
 </div>
-<p>主なメソッドとして次を挙げることができる。</p>
+<p>主なメソッドとして次を挙げることができる（これらの計算で欠損値は無視される）。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">mean()</span></code>：平均（欠損値は無視される）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">median()</span></code>：中央値（欠損値は無視される）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">max()</span></code>：最大値（欠損値は無視される）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">min()</span></code>：最小値（欠損値は無視される）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">std()</span></code>：標準偏差（欠損値は無視される）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">var()</span></code>：分散（欠損値は無視される）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sum()</span></code>：合計（欠損値は無視される）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cumsum()</span></code>：累積和（欠損値は無視される）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mean()</span></code>：平均</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">median()</span></code>：中央値</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max()</span></code>：最大値</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min()</span></code>：最小値</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std()</span></code>：標準偏差</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var()</span></code>：分散</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sum()</span></code>：合計</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cumsum()</span></code>：累積和</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">first()</span></code>：最初の値</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">last()</span></code>：最後の値</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">count()</span></code>：要素数（欠損値は無視される）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count()</span></code>：要素数</p></li>
 <li><p>などなど</p></li>
 </ul>
-<p>このリストにない計算をしたい場合もあるだろう。その場合は，上のリストにもある<code class="docutils literal notranslate"><span class="pre">.agg()</span></code>を使い<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>や自作の関数を指定する。例えば，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の<code class="docutils literal notranslate"><span class="pre">np.mean()</span></code>で平均を計算する場合は次の様になる。</p>
+<p>このリストにない計算をしたい場合もあるだろう。その場合は，上のリストにもある<code class="docutils literal notranslate"><span class="pre">.agg()</span></code>（<code class="docutils literal notranslate"><span class="pre">aggregate()</span></code>も同じ）を使い<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>や自作の関数を指定する。例えば，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の<code class="docutils literal notranslate"><span class="pre">np.mean()</span></code>で平均を計算する場合は次の様になる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_groupby</span><span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
