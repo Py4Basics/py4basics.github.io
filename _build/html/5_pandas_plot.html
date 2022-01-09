@@ -934,11 +934,7 @@ Name: X, dtype: int64
 </ol>
 <p>では実際に手順を説明する。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">df0.plot()</span></code>を変数（例えば，<code class="docutils literal notranslate"><span class="pre">ax</span></code>）に割り当てる。</p>
-<ul>
-<li><p>ここで割り当てたオブジェクト（実体）は「軸」である。</p></li>
-</ul>
-</li>
+<li><p>実は<code class="docutils literal notranslate"><span class="pre">df0.plot()</span></code>は「軸」を返す。それを変数（例えば，<code class="docutils literal notranslate"><span class="pre">ax</span></code>）に割り当てる。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ax</span></code>のメソッドを使って以下を設定する。</p>
 <ul>
 <li><p>タイトル：<code class="docutils literal notranslate"><span class="pre">.set_title()</span></code></p>
@@ -951,6 +947,7 @@ Name: X, dtype: int64
 </ul>
 </li>
 </ul>
+<p>実際にそれらの引数を使ってプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="kc">True</span>                     <span class="c1"># title=の引数は使わない</span>
@@ -1002,10 +999,10 @@ Name: X, dtype: int64
 </div>
 <div class="section" id="id7">
 <h3>２軸グラフ<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>2つの<code class="docutils literal notranslate"><span class="pre">df0</span></code>を並べて、右の縦軸を使う<code class="docutils literal notranslate"><span class="pre">df0</span></code>に<code class="docutils literal notranslate"><span class="pre">secondary_y=True</span></code>を設定する。</p>
+<p>左軸を<code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>に，右軸を<code class="docutils literal notranslate"><span class="pre">Z</span></code>に使うとしよう。その場合，引数<code class="docutils literal notranslate"><span class="pre">secondary_y</span></code>に<code class="docutils literal notranslate"><span class="pre">Z</span></code>を設定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">secondary_y</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">secondary_y</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
@@ -1014,11 +1011,12 @@ Name: X, dtype: int64
 <img alt="_images/5_pandas_plot_42_0.png" src="_images/5_pandas_plot_42_0.png" />
 </div>
 </div>
-<p>別々の飾り付けをする場合は次のようにする。</p>
+<p>別々の飾り付けをする場合は次のようにすると良いだろう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">df0</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">secondary_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;Z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>
+                <span class="n">secondary_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
@@ -1027,7 +1025,11 @@ Name: X, dtype: int64
 <img alt="_images/5_pandas_plot_44_0.png" src="_images/5_pandas_plot_44_0.png" />
 </div>
 </div>
-<p>凡例が表示されるように<code class="docutils literal notranslate"><span class="pre">legend=True</span></code>も追加してある。</p>
+<p>上の図との主な違いが３行目にある</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">secondary_y=True</span></code>：<code class="docutils literal notranslate"><span class="pre">Z</span></code>を右軸に使うことを指定する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax=ax_</span></code>：「軸」<code class="docutils literal notranslate"><span class="pre">ax_</span></code>に<code class="docutils literal notranslate"><span class="pre">Z</span></code>をプロットする。</p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="id8">

@@ -197,13 +197,14 @@ pass
 #     * キャンバスには複数の軸を描くことが可能である。
 # 
 # では実際に手順を説明する。
-# * `df0.plot()`を変数（例えば，`ax`）に割り当てる。
-#     * ここで割り当てたオブジェクト（実体）は「軸」である。
+# * 実は`df0.plot()`は「軸」を返す。それを変数（例えば，`ax`）に割り当てる。
 # * `ax`のメソッドを使って以下を設定する。
 #     * タイトル：`.set_title()`
 #         * `plot()`の中で引数`title`を使ってタイトルを設定することができるが，その場合はフォントの大きさを調整できない。一方，`.set_title()`を使うと調整が可能となる。
 #     * 横軸ラベル：`.set_xlabel()`    
 #     * 縦軸ラベル：`.set_ylabel()`
+# 
+# 実際にそれらの引数を使ってプロットしてみよう。
 
 # In[13]:
 
@@ -244,26 +245,29 @@ pass
 
 # ### ２軸グラフ
 
-# 2つの`df0`を並べて、右の縦軸を使う`df0`に`secondary_y=True`を設定する。
+# 左軸を`X`と`Y`に，右軸を`Z`に使うとしよう。その場合，引数`secondary_y`に`Z`を設定する。
 
 # In[16]:
 
 
-df0[['X','Y','Z']].plot(secondary_y='Z')
+df0.plot(secondary_y='Z')
 pass
 
 
-# 別々の飾り付けをする場合は次のようにする。
+# 別々の飾り付けをする場合は次のようにすると良いだろう。
 
 # In[17]:
 
 
-df0[['X','Y']].plot()
-df0['Z'].plot(marker='x', markersize=10, linestyle=':', legend=True, secondary_y=True)
+ax_ = df0[['X','Y']].plot()
+df0[['Z']].plot(marker='x', markersize=10, linestyle=':',
+                secondary_y=True, ax=ax_)
 pass
 
 
-# 凡例が表示されるように`legend=True`も追加してある。
+# 上の図との主な違いが３行目にある
+# * `secondary_y=True`：`Z`を右軸に使うことを指定する。
+# * `ax=ax_`：「軸」`ax_`に`Z`をプロットする。
 
 # ## 日本語
 
