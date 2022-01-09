@@ -10,6 +10,8 @@
 
 
 import pandas as pd
+import numpy as np
+import japanize_matplotlib
 
 
 # ```{margin}
@@ -138,6 +140,9 @@ pass
 
 # ## 引数とメソッド
 
+# (sec:5-options)=
+# ## 引数とメソッド
+
 # ### 基本的な引数
 
 # `plot()`には様々な引数があり図に「飾り付け」をすることができる。詳しくは[このリンク](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html)を参照することにして，ここでは基本的な引数だけを紹介する。
@@ -153,26 +158,34 @@ pass
 # * `fontsize`：横軸・縦軸の数字のフォントサイズの設定
 # * `figsize`：図の大きさ
 #     * `figsize=(キャンバスの横幅、キャンバスの縦の長さ)`
-# * `legend`：凡例（デフォルトは`True`）
+# * `legend`：凡例の表示を指定
+#     * `DataFrame`の場合はデフォルトは`True`
+#     * `Series`の場合はデフォルトは`False`
+# * `label`：凡例の表現を指定（`Series`のみ有効）
 # * `grid`：グリッド表示（ブール型;デフォルトは`False`)
 
 # In[12]:
 
 
-df0.plot(title='This Is a Title'
-        ,style=[':','--','-']
-        ,linewidth=2
-        ,color=['r','k','g']
-        ,marker='o'
-        ,markersize=10
-        ,fontsize=15
-        ,figsize=(8, 4)   # 8は横軸、4は縦軸のサイズ
-        ,legend=False
-        ,grid=True
+# df0はDataFrame
+
+df0.plot(title='This Is a Title',
+         style=[':','--','-'],
+         linewidth=2,
+         color=['r','k','g'],
+         marker='o',
+         markersize=10,
+         fontsize=15,
+         figsize=(8, 4),   # 8は横軸、4は縦軸のサイズ
+         legend=False,
+         grid=True,
         )
 pass
 
 
+# ### タイトルとラベルのサイズの調整
+
+# (sec:5-titlelabels)=
 # ### タイトルとラベルのサイズの調整
 
 # タイトルのフォント・サイズの指定，横軸と縦軸のラベルとフォント・サイズの指定をおこなう場合は、`plot()`の引数ではなく下で説明する方法でおこなう。この方法を理解するために、`Python`は次の手順で描画していることをイメージして欲しい。ここで重要なのは「キャンバス」と「軸」の違いである。
@@ -452,5 +465,375 @@ df_future.tail()
 
 
 df_future.plot()
+pass
+
+
+# ## その他のプロット
+
+# ### 種類
+
+# メソッド`.plot()`には様々な引数が用意されているが，その中に`kind`がある。次を文字列として指定すると様々な種類のプロットが可能となる。
+# * `line`：ライン・プロット（デフォルト）
+#     * `.plot()`は`.plot.line()`と同じ
+#     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.line.html)
+# * `bar`：縦向きの棒グラフ（カテゴリーなどの離散変数に使う）
+#     * `.plot(kind='bar')`は`.plot.bar()`と同じ
+#     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html)
+# * `barh`：横向き棒グラフ（カテゴリーなどの離散変数に使う）
+#     * `barh`の`h`はHorizontalのH
+#     * `.plot(kind='hbar')`は`.plot.hbar()`と同じ
+#     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.barh.html)
+# * `hist`：ヒストグラム（連続変数に使う）
+#     * `hist`はHISTogramのHIST
+#     * `.plot(kind='hist')`は`.plot.hist()`と同じ
+#     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.hist.html)
+# * `box`：ボックスプロット
+#     * `.plot(kind='box')`は`.plot.box()`と同じ
+#     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.box.html)
+# * `kde`：カーネル密度推定プロット
+#     * `kde`はKernel Density EstimateのKDE
+#     * `.plot(kind='kde')`は`.plot.kde()`と同じ
+#     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.kde.html)
+# * `density`：`kde`と同じ
+# * `area`：エリア・プロット
+#     * `.plot(kind='area')`は`.plot.area()`と同じ
+#     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.area.html)
+# * `pie`：パイチャート
+#     * `.plot(kind='pie')`は`.plot.pie()`と同じ
+#     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.pie.html)
+# * `scatter`：散布図（`DataFrame`のみ）
+#     * `.plot(kind='scatter')`は`.plot.scatter()`と同じ
+#     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.scatter.html)
+# * `hexbin`： : 六角形プロット（`DataFrame`のみ）
+#     * `.plot(kind='hexbin')`は`.plot.hexbin()`と同じ
+#     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.hexbin.html)
+# 
+# 
+
+# [ライン・プロットの引数](sec:5-options)は他のプロットと共通のものが多いが，それぞれ独自の引数もある。
+# 
+# 以下では散布図，ヒストグラム，カーネル密度推定プロットについて説明する。
+# 
+# 説明には次のコードで生成する`DataFrame`を使う。それぞれの列`X`，`Y`，`Z`には，標準正規分布から生成した100個のランダム変数が含まれている。
+
+# In[32]:
+
+
+df1 = pd.DataFrame({'X':np.random.normal(size=100),
+                    'Y':np.random.normal(size=100),
+                    'Z':np.random.normal(size=100)})
+
+
+# `X`，`Y`，`Z`は同じ標準正規分布から生成されているが，異なる値から構成されている。
+
+# ### 散布図
+
+# 散布図をプロットする場合は次の構文となる。
+# ```
+# df1.plot(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, kind='scatter')
+# ```
+# 列`X`と`Y`を使ってプロットしてみよう。
+
+# In[33]:
+
+
+df1.plot('X', 'Y', kind='scatter')
+pass
+
+
+# **＜基本的な引数＞**
+# 
+# 様々な引数があり図に「飾り付け」をすることができる。詳しくは[このリンク](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.scatter.html)を参照することにして，ここでは基本的な引数だけを紹介する。
+# * `title`：図のタイトル（文字列型で指定）
+# * `color`：色（リストにして列の順番で指定する; [参照サイト](https://matplotlib.org/3.1.0/gallery/color/named_colors.html)）
+#     * `r`は赤
+#     * `k`は黒
+#     * `g`はグリーン
+# * `marker`：観測値のマーカー（`o`，`.`，`>`，`^`などがある; [参照サイト](https://matplotlib.org/3.2.2/api/markers_api.html)）
+# * `s`：マーカーの大きさ（`markersize`ではない！）
+# * `fontsize`：横軸・縦軸の数字のフォントサイズの設定
+# * `figsize`：図の大きさ
+#     * `figsize=(キャンバスの横幅、キャンバスの縦の長さ)`
+# * `legend`：凡例の表示を指定
+#     * `DataFrame`の場合はデフォルトは`True`
+#     * `Series`の場合はデフォルトは`False`
+# * `label`：凡例の表現を指定（`Series`のみ有効）
+# * `grid`：グリッド表示（ブール型;デフォルトは`False`)
+
+# In[34]:
+
+
+# df1はDataFrame
+
+df1.plot('X', 'Y', kind='scatter',
+         title='タイトルです',
+         color='red',
+         marker='^',
+         s=100,
+         fontsize=20,
+         figsize=(8,4),
+#          legend=True,
+         label='Y',
+         grid=True
+        )
+pass
+
+
+# この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した[タイトルとラベルのサイズの調整](sec:5-titlelabels)のコードと共通なので，そちらを参照しよう。
+
+# またライン・プロットと同じように引数`ax`を使うことにより，複数の散布図を重ねてプロットできる。次のコードは`X`と`Y`，そして`X`と`Z`の散布図を同じ「軸」に表示している。
+
+# In[35]:
+
+
+# df1はDataFrame
+
+ax_ = df1.plot('X', 'Y', kind='scatter',label='Yのデータ')
+df1.plot('X', 'Z', kind='scatter',
+         color='red', marker='^', label='Zのデータ', ax=ax_)
+pass
+
+
+# ### ヒストグラム
+
+# ヒストグラムは次の構文となる。
+# ```
+# df1.plot(kind='hist')
+# ```
+# この場合，`df1`にある全ての列（整数型もしくは浮動小数点型）がヒストグラムとして重ねて表示される。特定の列だけを使う場合は次のように列を選択し`plot()`を使おう。
+
+# In[36]:
+
+
+# df1['Y']はSeries
+
+df1['Y'].plot(kind='hist')
+pass
+
+
+# **＜基本的な引数＞**
+# 
+# 様々な引数があり図に「飾り付け」をすることができる。詳しくは[このリンク](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.hist.html)を参照することにして，ここでは基本的な引数だけを紹介する。
+# * `title`：図のタイトル（文字列型で指定）
+# * `bins`：柱の数
+# * `color`：色（リストにして列の順番で指定する; [参照サイト](https://matplotlib.org/3.1.0/gallery/color/named_colors.html)）
+#     * `r`は赤
+#     * `k`は黒
+#     * `g`はグリーン
+# * `edgecolor`又は`ec`：柱の境界線の色
+# * `alpha`：透明度（`0`から`1.0`; デフォルトは`1`）
+# * `density`：縦軸を相対度数にする（デフォルトは`False`）
+# * `fontsize`：横軸・縦軸の数字のフォントサイズの設定
+# * `figsize`：図の大きさ
+#     * `figsize=(キャンバスの横幅、キャンバスの縦の長さ)`
+# * `legend`：凡例の表示を指定
+#     * `DataFrame`の場合はデフォルトは`True`
+#     * `Series`の場合はデフォルトは`False`
+# * `label`：凡例の表現を指定（`Series`のみ有効）
+# * `grid`：グリッド表示（ブール型;デフォルトは`False`)
+
+# 引数を指定して`X`のヒストグラムをプロットしてみよう。
+
+# In[37]:
+
+
+# XはSeriesとして抽出されている
+
+df1['X'].plot(kind='hist',
+         bins=20,
+         title='タイトルです',
+         color='red',
+         ec='white',
+         alpha=0.5,
+         density=True,
+         fontsize=20,
+         figsize=(8,4),
+         legend=True,
+         label='Xの凡例',
+         grid=True
+        )
+pass
+
+
+# この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した[タイトルとラベルのサイズの調整](sec:5-titlelabels)のコードと共通なのでそちらを参照しよう。
+
+# 次に複数のデータを重ねてプロットする場合を考えよう。ここで役に立つ引数が`alpha`である。
+
+# In[38]:
+
+
+df1[['X','Y']].plot(kind='hist',
+                    color=['r','k'],
+                    alpha=0.4,
+                    edgecolor='k')
+pass
+
+
+# 濃い部分が重なっている部分となる。また柱を重ねて表示するには`stacked=True`（デフォルトは`False`）を使う。
+
+# In[39]:
+
+
+df1[['X','Y']].plot(kind='hist', stacked=True, edgecolor='white')
+pass
+
+
+# ### カーネル密度推定プロット
+
+# ヒストグラムは縦軸に度数，横軸に階級を取ったグラフだが，関連する手法にカーネル密度推定と呼ばれるものがある。考え方は簡単で，上のようなヒストグラムのデータに基づき面積が１になるようにスムーズな分布を推計する手法である。ヒストグラムとカーネル密度関数を重ねてプロットすることもできる。
+# 
+# 次の構文となる。
+# ```
+# df1.plot(kind='kde')
+# ```
+# この場合，`df1`にある全ての列がヒストグラムとして重ねて表示される。特定の列だけを使う場合は列を選択し`plot()`を使う。
+
+# In[40]:
+
+
+df1.plot(kind='kde')
+pass
+
+
+# **＜基本的な引数＞**
+# 
+# 様々な引数があり図に「飾り付け」をすることができる。詳しくは[このリンク](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.kde.html)を参照することにして，ここでは基本的な引数だけを紹介する。
+# * `title`：図のタイトル（文字列型で指定）
+# * `linestyle`又は`style`：線のスタイル（リストにして列の順番で指定する;`-``--``-.``:`）
+# * `linewidth` or `lw`：線の幅
+# * `color`：色（リストにして列の順番で指定する; [参照サイト](https://matplotlib.org/3.1.0/gallery/color/named_colors.html)）
+#     * `r`は赤
+#     * `k`は黒
+#     * `g`はグリーン
+# * `alpha`：透明度（`0`から`1.0`; デフォルトは`1`）
+# * `fontsize`：横軸・縦軸の数字のフォントサイズの設定
+# * `figsize`：図の大きさ
+#     * `figsize=(キャンバスの横幅、キャンバスの縦の長さ)`
+# * `legend`：凡例の表示を指定
+#     * `DataFrame`の場合はデフォルトは`True`
+#     * `Series`の場合はデフォルトは`False`
+# * `label`：凡例の表現を指定（`Series`のみ有効）
+# * `grid`：グリッド表示（ブール型;デフォルトは`False`)
+
+# 引数を指定して`X`をプロットしてみる。
+
+# In[41]:
+
+
+# XはSeriesとして抽出されている
+
+df1['X'].plot(kind='kde',
+         title='タイトルです',
+         linewidth=5,
+         linestyle='-.',
+         color='red',
+         alpha=0.5,
+         fontsize=20,
+         figsize=(8,4),
+         legend=True,
+         label='Xの凡例',
+         grid=True
+        )
+pass
+
+
+# この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した[タイトルとラベルのサイズの調整](sec:5-titlelabels)のコードと共通なのでそちらを参照しよう。
+
+# 次にヒストグラムとカーネル密度推定プロットを重ねて図示してみる。ここで重要な点がヒストグラムに引数`density=True`を設定することである。これがないと縦軸の単位が異なり上手く表示できない。
+
+# In[42]:
+
+
+ax_ = df1['X'].plot(kind='hist',
+                    density=True,
+                    label='Xのヒストグラム',
+                    legend=True)
+df1['X'].plot(kind='kde',
+              ax=ax_,
+              label='XのKDE',
+              legend=True)
+pass
+
+
+# ### 縦線・横線
+
+# 図に縦線や横線を追加したい場合がある。その場合は，[タイトルとラベルのサイズの調整](sec:5-titlelabels)にあるように「軸」に追加していく事になる。次のような書き方となる。
+# 
+# * 縦線の場合
+#     ```
+#     ax_.axvline(＜横軸の値＞)
+#     ```
+#     ここで`axvline`の`ax`はAXis，`v`はVertical，`line`はLINEのことを表している。
+# * 横線の場合
+#     ```
+#     ax_.axhline(＜縦軸の値＞)
+#     ```
+#     ここで`axhline`の`ax`はAXis，`h`はHorizontal，`line`はLINEのことを表している。
+# 
+# ここで`ax_`は`.plot()`で返された「軸」のことである。
+# 
+# `Y`のヒストグラムを使ってプロットしてみよう。
+
+# In[43]:
+
+
+ax_ = df1['Y'].plot(kind='hist', alpha=0.1)
+ax_.axvline(0)
+ax_.axhline(10)
+pass
+
+
+# **＜基本的な引数＞**
+# 
+# 様々な引数があり図に「飾り付け」をすることができる。詳しくは[このリンク](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axvline.html)と[このリンク](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axhline.html)を参照することにして，ここでは基本的な引数だけを紹介する。
+# * `ymin`：`axvline`の縦軸における最小値（`0`~`1`の値; デフォルト`0`）
+# * `ymax`：`axvline`の縦軸における最大値（`0`~`1`の値; デフォルト`1`）
+# * `xmin`：`axhline`の横軸における最小値（`0`~`1`の値; デフォルト`0`）
+# * `xmax`：`axhline`の横軸における最大値（`0`~`1`の値; デフォルト`1`）
+# * `linestyle`：線のスタイル（リストにして列の順番で指定する;`-``--``-.``:`）
+# * `linewidth` or `lw`：線の幅
+# * `color`：色（リストにして列の順番で指定する; [参照サイト](https://matplotlib.org/3.1.0/gallery/color/named_colors.html)）
+#     * `r`は赤
+#     * `k`は黒
+#     * `g`はグリーン
+# * `alpha`：透明度（`0`から`1.0`; デフォルトは`1`）
+
+# 引数を指定してプロットしてみる。
+
+# In[44]:
+
+
+ax_ = df1['Y'].plot(kind='hist', alpha=0.1)
+ax_.axvline(0,
+            ymin=0.3,
+            ymax=0.95,
+            linestyle=':',
+            linewidth=5,
+            color='g',
+            alpha=0.8)
+ax_.axhline(10,
+            xmin=0.05,
+            xmax=0.7,
+            linestyle='-.',
+            linewidth=3,
+            color='k',
+            alpha=0.5)
+pass
+
+
+# 最後に上のヒストグラムとカーネル密度推定プロットに縦線を加えてみよう。
+
+# In[45]:
+
+
+ax_ = df1['X'].plot(kind='hist',
+                    density=True,
+                    label='Xのヒストグラム',
+                    legend=True)
+df1['X'].plot(kind='kde',
+              ax=ax_,
+              label='XのKDE',
+              legend=True)
+ax_.axvline(0, color='red')
 pass
 
