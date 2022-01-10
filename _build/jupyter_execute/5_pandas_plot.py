@@ -477,55 +477,54 @@ pass
 # ### 種類
 
 # メソッド`.plot()`には様々な引数が用意されているが，その中に`kind`がある。次を文字列として指定すると様々な種類のプロットが可能となる。
-# * `line`：ライン・プロット（デフォルト）
-#     * `.plot()`は`.plot.line()`と同じ
+# * `line`：ライン・プロット
+#     * デフォルトの値であり，上で説明した直線・曲線のプロットとなる。
+#     * `.plot()`は`.plot.line()`と同じでもある。
 #     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.line.html)
 # * `bar`：縦向きの棒グラフ（カテゴリーなどの離散変数に使う）
-#     * `.plot(kind='bar')`は`.plot.bar()`と同じ
+#     * `.plot(kind='bar')`は`.plot.bar()`と同じでもある。
 #     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html)
 # * `barh`：横向き棒グラフ（カテゴリーなどの離散変数に使う）
 #     * `barh`の`h`はHorizontalのH
-#     * `.plot(kind='hbar')`は`.plot.hbar()`と同じ
+#     * `.plot(kind='hbar')`は`.plot.hbar()`と同じでもある。
 #     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.barh.html)
 # * `hist`：ヒストグラム（連続変数に使う）
 #     * `hist`はHISTogramのHIST
-#     * `.plot(kind='hist')`は`.plot.hist()`と同じ
+#     * `.plot(kind='hist')`は`.plot.hist()`と同じでもある。
 #     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.hist.html)
 # * `box`：ボックスプロット
-#     * `.plot(kind='box')`は`.plot.box()`と同じ
+#     * `.plot(kind='box')`は`.plot.box()`と同じでもある。
 #     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.box.html)
 # * `kde`：カーネル密度推定プロット
 #     * `kde`はKernel Density EstimateのKDE
-#     * `.plot(kind='kde')`は`.plot.kde()`と同じ
+#     * `.plot(kind='kde')`は`.plot.kde()`と同じでもある。
 #     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.kde.html)
 # * `density`：`kde`と同じ
 # * `area`：エリア・プロット
-#     * `.plot(kind='area')`は`.plot.area()`と同じ
+#     * `.plot(kind='area')`は`.plot.area()`と同じでもある。
 #     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.area.html)
 # * `pie`：パイチャート
-#     * `.plot(kind='pie')`は`.plot.pie()`と同じ
+#     * `.plot(kind='pie')`は`.plot.pie()`と同じでもある。
 #     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.pie.html)
 # * `scatter`：散布図（`DataFrame`のみ）
-#     * `.plot(kind='scatter')`は`.plot.scatter()`と同じ
+#     * `.plot(kind='scatter')`は`.plot.scatter()`と同じでもある。
 #     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.scatter.html)
 # * `hexbin`： : 六角形プロット（`DataFrame`のみ）
-#     * `.plot(kind='hexbin')`は`.plot.hexbin()`と同じ
+#     * `.plot(kind='hexbin')`は`.plot.hexbin()`と同じでもある。
 #     * [プロットの例](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.hexbin.html)
-# 
-# 
 
-# [ライン・プロットの引数](sec:5-options)は他のプロットと共通のものが多いが，それぞれ独自の引数もある。
+# 上で説明した[ライン・プロットの引数](sec:5-options)は他のプロットと共通のものが多いが，それぞれ独自の引数もある。
 # 
 # 以下では散布図，ヒストグラム，カーネル密度推定プロットについて説明する。
 # 
-# 説明には次のコードで生成する`DataFrame`を使う。それぞれの列`X`，`Y`，`Z`には，標準正規分布から生成した100個のランダム変数が含まれている。
+# 説明には次のコードで生成する`DataFrame`を使う。列`X`と`Y`には標準正規分布から生成した100個のランダム変数が含まれている。`Z`には正規分布（平均`2`，標準偏差`1`）から抽出した100個のランダム変数が格納されている。
 
 # In[32]:
 
 
 df1 = pd.DataFrame({'X':np.random.normal(size=100),
                     'Y':np.random.normal(size=100),
-                    'Z':np.random.normal(size=100)})
+                    'Z':np.random.normal(loc=2, size=100)})
 
 
 # `X`，`Y`，`Z`は同じ標準正規分布から生成されているが，異なる値から構成されている。
@@ -666,21 +665,28 @@ pass
 # In[38]:
 
 
-df1[['X','Y']].plot(kind='hist',
+df1[['Y','Z']].plot(kind='hist',
+                    bins=30,
                     color=['r','k'],
-                    alpha=0.4,
-                    edgecolor='k')
+                    edgecolor='k',
+                    alpha=0.4)
 pass
 
 
-# 濃い部分が重なっている部分となる。また柱を重ねて表示するには`stacked=True`（デフォルトは`False`）を使う。
+# 濃い部分が重なっている部分となる。また柱を積み上げて表示するには`stacked=True`（デフォルトは`False`）を使う。
 
 # In[39]:
 
 
-df1[['X','Y']].plot(kind='hist', stacked=True, edgecolor='white')
+df1[['Y','Z']].plot(kind='hist', 
+                    bins=30,
+                    color=['r','k'],
+                    edgecolor='white',
+                    stacked=True)
 pass
 
+
+# 赤の上に黒が積み上げられている。
 
 # ### カーネル密度推定プロット
 
