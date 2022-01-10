@@ -865,7 +865,7 @@ Name: X, dtype: int64
 <p><code class="docutils literal notranslate"><span class="pre">plot()</span></code>には様々な引数があり図に「飾り付け」をすることができる。詳しくは<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html">このリンク</a>を参照することにして，ここでは基本的な引数だけを紹介する。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">title</span></code>：図のタイトル（文字列型で指定）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code>：線のスタイル（リストにして列の順番で指定する;<code class="docutils literal notranslate"><span class="pre">-``--``-.``:</span></code>）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code>：線のスタイル（複数ある場合はリストにして列の順番で指定する;<code class="docutils literal notranslate"><span class="pre">-``--``-.``:</span></code>）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">linewidth</span></code> or <code class="docutils literal notranslate"><span class="pre">lw</span></code>：線の幅</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>：色（リストにして列の順番で指定する; <a class="reference external" href="https://matplotlib.org/3.1.0/gallery/color/named_colors.html">参照サイト</a>）</p>
 <ul>
@@ -922,16 +922,22 @@ Name: X, dtype: int64
 <li><p>図を描くためのキャンバスを用意する。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">figure</span></code>や<code class="docutils literal notranslate"><span class="pre">fig</span></code>などの変数名があれば、キャンバスを指していると理解すれば良いだろう。</p></li>
+<li><p>「透明」で見えない。</p></li>
 </ul>
 </li>
 <li><p>キャンバスのうえに実際に図を描く。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ax</span></code>や<code class="docutils literal notranslate"><span class="pre">axes</span></code>などの変数名があれば、「図」を表していると理解すれば良いだろう。</p></li>
-<li><p>ここでの「図」はキャンバスと異なるが混同しやすいので、以下では「図」の代わりに「軸」（英語で “axis”）という言葉を使うことにする。</p></li>
-<li><p>キャンバスには複数の軸を描くことが可能である。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax</span></code>や<code class="docutils literal notranslate"><span class="pre">axes</span></code>などの変数名があれば、「軸」を表していると理解すれば良いだろう。</p></li>
+<li><p>「軸」が表示される「図」となる。以下では「軸」と「図」は同義として使うことにする。</p></li>
+<li><p>キャンバスには複数の軸（図）を描くことが可能である。</p></li>
 </ul>
 </li>
 </ol>
+<p>従って，次のように理解しよう。</p>
+<ul class="simple">
+<li><p>上で説明した「基本的な引数」は軸（図）の引数</p></li>
+<li><p>タイトルや軸ラベルはキャンバスの引数</p></li>
+</ul>
 <p>では実際に手順を説明する。</p>
 <ul class="simple">
 <li><p>実は<code class="docutils literal notranslate"><span class="pre">df0.plot()</span></code>は「軸」を返す。それを変数（例えば，<code class="docutils literal notranslate"><span class="pre">ax</span></code>）に割り当てる。</p></li>
@@ -950,10 +956,11 @@ Name: X, dtype: int64
 <p>実際にそれらの引数を使ってプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="kc">True</span>                     <span class="c1"># title=の引数は使わない</span>
-             <span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">]</span>
-             <span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span>
-             <span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+              <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">style</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">],</span>
+              <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+              <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
              <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;A Large Title&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span> <span class="mi">30</span><span class="p">)</span>     <span class="c1"># タイトルの設定</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Horizontal Axis&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>   <span class="c1"># 横軸ラベルの設定</span>
@@ -1136,8 +1143,8 @@ Name: X, dtype: int64
 <p>実質利子率<code class="docutils literal notranslate"><span class="pre">r</span></code>によって投資がどのように変化するかを考えてみよう。まず投資関数を次のように仮定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">investment</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">100</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">investment</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">100</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="mi">50</span>
 </pre></div>
 </div>
 </div>
@@ -1145,23 +1152,40 @@ Name: X, dtype: int64
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">100</span></code>：実質利子率が<code class="docutils literal notranslate"><span class="pre">0</span></code>の場合の投資</p></li>
 </ul>
-<p>実質利子率は次のリストで与えられるとする。</p>
+<p>実質利子率は次の<code class="docutils literal notranslate"><span class="pre">array</span></code>で与えられるとする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>   <span class="c1"># %表示の利子率 </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.11</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">r_arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1 ])
 </pre></div>
 </div>
 </div>
 </div>
+<p>次に関数<code class="docutils literal notranslate"><span class="pre">investment</span></code>と<code class="docutils literal notranslate"><span class="pre">r_arr</span></code>を使い投資の<code class="docutils literal notranslate"><span class="pre">array</span></code>を作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i_list</span> <span class="o">=</span> <span class="p">[]</span>   <span class="c1"># 空のリスト</span>
-
-<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">r_list</span><span class="p">:</span>
-    <span class="n">inv</span> <span class="o">=</span> <span class="n">investment</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>   <span class="c1"># 投資の計算</span>
-    <span class="n">i_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span>    <span class="c1"># リストに追加</span>
-
-<span class="n">df_inv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Investment&#39;</span><span class="p">:</span><span class="n">i_list</span><span class="p">})</span>   <span class="c1"># DataFrameの作成</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inv_arr</span> <span class="o">=</span> <span class="n">investment</span><span class="p">(</span><span class="n">r_arr</span><span class="p">)</span>
+<span class="n">inv_arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([60.80388247, 37.15278821, 22.81070798, 14.07126153,  8.7203727 ,
+        5.42883618,  3.39477594,  2.13212286,  1.34485389,  0.85185513])
+</pre></div>
+</div>
+</div>
+</div>
+<p>これらのデータを使い<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を作成する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_inv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;investment&#39;</span><span class="p">:</span><span class="n">inv_arr</span><span class="p">,</span>
+                       <span class="s1">&#39;interest_rate&#39;</span><span class="p">:</span><span class="n">r_arr</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -1192,97 +1216,50 @@ Name: X, dtype: int64
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Investment</th>
+      <th>investment</th>
+      <th>interest_rate</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>100.000000</td>
+      <td>60.803882</td>
+      <td>0.01</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>50.000000</td>
+      <td>37.152788</td>
+      <td>0.02</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>33.333333</td>
+      <td>22.810708</td>
+      <td>0.03</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>25.000000</td>
+      <td>14.071262</td>
+      <td>0.04</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>20.000000</td>
+      <td>8.720373</td>
+      <td>0.05</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>最後の5行を表示する。</p>
+<p>ではプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_inv</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Investment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>45</th>
-      <td>2.173913</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>2.127660</td>
-    </tr>
-    <tr>
-      <th>47</th>
-      <td>2.083333</td>
-    </tr>
-    <tr>
-      <th>48</th>
-      <td>2.040816</td>
-    </tr>
-    <tr>
-      <th>49</th>
-      <td>2.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_inv</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_inv</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;interest_rate&#39;</span><span class="p">,</span><span class="s1">&#39;investment&#39;</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_69_0.png" src="_images/5_pandas_plot_69_0.png" />
+<img alt="_images/5_pandas_plot_71_0.png" src="_images/5_pandas_plot_71_0.png" />
 </div>
 </div>
 </div>
@@ -1474,7 +1451,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_80_0.png" src="_images/5_pandas_plot_80_0.png" />
+<img alt="_images/5_pandas_plot_82_0.png" src="_images/5_pandas_plot_82_0.png" />
 </div>
 </div>
 </div>
@@ -1580,7 +1557,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_89_0.png" src="_images/5_pandas_plot_89_0.png" />
+<img alt="_images/5_pandas_plot_91_0.png" src="_images/5_pandas_plot_91_0.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1631,7 +1608,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_91_0.png" src="_images/5_pandas_plot_91_0.png" />
+<img alt="_images/5_pandas_plot_93_0.png" src="_images/5_pandas_plot_93_0.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なので，そちらを参照しよう。</p>
@@ -1648,7 +1625,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_94_0.png" src="_images/5_pandas_plot_94_0.png" />
+<img alt="_images/5_pandas_plot_96_0.png" src="_images/5_pandas_plot_96_0.png" />
 </div>
 </div>
 </div>
@@ -1658,7 +1635,7 @@ Name: X, dtype: int64
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>この場合，<code class="docutils literal notranslate"><span class="pre">df1</span></code>にある全ての列（整数型もしくは浮動小数点型）がヒストグラムとして重ねて表示される。特定の列だけを使う場合は次のように列を選択し<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使おう。</p>
+<p>この場合，<code class="docutils literal notranslate"><span class="pre">df1</span></code>にある全ての列（整数型もしくは浮動小数点型）がヒストグラムとして重ねて表示される。特定の列だけを使う場合は次のように列を選択して<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使おう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df1[&#39;Y&#39;]はSeries</span>
@@ -1669,7 +1646,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_97_0.png" src="_images/5_pandas_plot_97_0.png" />
+<img alt="_images/5_pandas_plot_99_0.png" src="_images/5_pandas_plot_99_0.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1725,7 +1702,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_100_0.png" src="_images/5_pandas_plot_100_0.png" />
+<img alt="_images/5_pandas_plot_102_0.png" src="_images/5_pandas_plot_102_0.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
@@ -1742,7 +1719,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_103_0.png" src="_images/5_pandas_plot_103_0.png" />
+<img alt="_images/5_pandas_plot_105_0.png" src="_images/5_pandas_plot_105_0.png" />
 </div>
 </div>
 <p>濃い部分が重なっている部分となる。また柱を積み上げて表示するには<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）を使う。</p>
@@ -1758,7 +1735,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_105_0.png" src="_images/5_pandas_plot_105_0.png" />
+<img alt="_images/5_pandas_plot_107_0.png" src="_images/5_pandas_plot_107_0.png" />
 </div>
 </div>
 <p>赤の上に黒が積み上げられている。</p>
@@ -1770,7 +1747,7 @@ Name: X, dtype: int64
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>この場合，<code class="docutils literal notranslate"><span class="pre">df1</span></code>にある全ての列がヒストグラムとして重ねて表示される。特定の列だけを使う場合は列を選択し<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使う。</p>
+<p>この場合，<code class="docutils literal notranslate"><span class="pre">df1</span></code>にある全ての列がヒストグラムとして重ねて表示される。特定の列だけを使う場合は列を選択して<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使う。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
@@ -1779,7 +1756,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_109_0.png" src="_images/5_pandas_plot_109_0.png" />
+<img alt="_images/5_pandas_plot_111_0.png" src="_images/5_pandas_plot_111_0.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1833,7 +1810,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_112_0.png" src="_images/5_pandas_plot_112_0.png" />
+<img alt="_images/5_pandas_plot_114_0.png" src="_images/5_pandas_plot_114_0.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
@@ -1853,7 +1830,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_115_0.png" src="_images/5_pandas_plot_115_0.png" />
+<img alt="_images/5_pandas_plot_117_0.png" src="_images/5_pandas_plot_117_0.png" />
 </div>
 </div>
 </div>
@@ -1886,7 +1863,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_118_0.png" src="_images/5_pandas_plot_118_0.png" />
+<img alt="_images/5_pandas_plot_120_0.png" src="_images/5_pandas_plot_120_0.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1930,7 +1907,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_121_0.png" src="_images/5_pandas_plot_121_0.png" />
+<img alt="_images/5_pandas_plot_123_0.png" src="_images/5_pandas_plot_123_0.png" />
 </div>
 </div>
 <p>最後に上のヒストグラムとカーネル密度推定プロットに縦線を加えてみよう。</p>
@@ -1950,7 +1927,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_123_0.png" src="_images/5_pandas_plot_123_0.png" />
+<img alt="_images/5_pandas_plot_125_0.png" src="_images/5_pandas_plot_125_0.png" />
 </div>
 </div>
 </div>
