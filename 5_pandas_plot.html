@@ -1485,79 +1485,80 @@ Name: X, dtype: int64
 <h3>種類<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <p>メソッド<code class="docutils literal notranslate"><span class="pre">.plot()</span></code>には様々な引数が用意されているが，その中に<code class="docutils literal notranslate"><span class="pre">kind</span></code>がある。次を文字列として指定すると様々な種類のプロットが可能となる。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">line</span></code>：ライン・プロット（デフォルト）</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span></code>：ライン・プロット</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">.plot()</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.line()</span></code>と同じ</p></li>
+<li><p>デフォルトの値であり，上で説明した直線・曲線のプロットとなる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.plot()</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.line()</span></code>と同じでもある。</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.line.html">プロットの例</a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bar</span></code>：縦向きの棒グラフ（カテゴリーなどの離散変数に使う）</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='bar')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.bar()</span></code>と同じ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='bar')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.bar()</span></code>と同じでもある。</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html">プロットの例</a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">barh</span></code>：横向き棒グラフ（カテゴリーなどの離散変数に使う）</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">barh</span></code>の<code class="docutils literal notranslate"><span class="pre">h</span></code>はHorizontalのH</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='hbar')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.hbar()</span></code>と同じ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='hbar')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.hbar()</span></code>と同じでもある。</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.barh.html">プロットの例</a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">hist</span></code>：ヒストグラム（連続変数に使う）</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">hist</span></code>はHISTogramのHIST</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='hist')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.hist()</span></code>と同じ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='hist')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.hist()</span></code>と同じでもある。</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.hist.html">プロットの例</a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">box</span></code>：ボックスプロット</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='box')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.box()</span></code>と同じ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='box')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.box()</span></code>と同じでもある。</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.box.html">プロットの例</a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">kde</span></code>：カーネル密度推定プロット</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">kde</span></code>はKernel Density EstimateのKDE</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='kde')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.kde()</span></code>と同じ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='kde')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.kde()</span></code>と同じでもある。</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.kde.html">プロットの例</a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">density</span></code>：<code class="docutils literal notranslate"><span class="pre">kde</span></code>と同じ</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">area</span></code>：エリア・プロット</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='area')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.area()</span></code>と同じ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='area')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.area()</span></code>と同じでもある。</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.area.html">プロットの例</a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pie</span></code>：パイチャート</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='pie')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.pie()</span></code>と同じ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='pie')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.pie()</span></code>と同じでもある。</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.pie.html">プロットの例</a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scatter</span></code>：散布図（<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のみ）</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='scatter')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.scatter()</span></code>と同じ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='scatter')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.scatter()</span></code>と同じでもある。</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.scatter.html">プロットの例</a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">hexbin</span></code>： : 六角形プロット（<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のみ）</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='hexbin')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.hexbin()</span></code>と同じ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.plot(kind='hexbin')</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot.hexbin()</span></code>と同じでもある。</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.hexbin.html">プロットの例</a></p></li>
 </ul>
 </li>
 </ul>
-<p><a class="reference internal" href="#sec-5-options"><span class="std std-ref">ライン・プロットの引数</span></a>は他のプロットと共通のものが多いが，それぞれ独自の引数もある。</p>
+<p>上で説明した<a class="reference internal" href="#sec-5-options"><span class="std std-ref">ライン・プロットの引数</span></a>は他のプロットと共通のものが多いが，それぞれ独自の引数もある。</p>
 <p>以下では散布図，ヒストグラム，カーネル密度推定プロットについて説明する。</p>
-<p>説明には次のコードで生成する<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使う。それぞれの列<code class="docutils literal notranslate"><span class="pre">X</span></code>，<code class="docutils literal notranslate"><span class="pre">Y</span></code>，<code class="docutils literal notranslate"><span class="pre">Z</span></code>には，標準正規分布から生成した100個のランダム変数が含まれている。</p>
+<p>説明には次のコードで生成する<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使う。列<code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>には標準正規分布から生成した100個のランダム変数が含まれている。<code class="docutils literal notranslate"><span class="pre">Z</span></code>には正規分布（平均<code class="docutils literal notranslate"><span class="pre">2</span></code>，標準偏差<code class="docutils literal notranslate"><span class="pre">1</span></code>）から抽出した100個のランダム変数が格納されている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;X&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span>
                     <span class="s1">&#39;Y&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span>
-                    <span class="s1">&#39;Z&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)})</span>
+                    <span class="s1">&#39;Z&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)})</span>
 </pre></div>
 </div>
 </div>
@@ -1731,10 +1732,11 @@ Name: X, dtype: int64
 <p>次に複数のデータを重ねてプロットする場合を考えよう。ここで役に立つ引数が<code class="docutils literal notranslate"><span class="pre">alpha</span></code>である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="p">[[</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span>
+                    <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
                     <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">],</span>
-                    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
-                    <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+                    <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+                    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
@@ -1743,10 +1745,14 @@ Name: X, dtype: int64
 <img alt="_images/5_pandas_plot_103_0.png" src="_images/5_pandas_plot_103_0.png" />
 </div>
 </div>
-<p>濃い部分が重なっている部分となる。また柱を重ねて表示するには<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）を使う。</p>
+<p>濃い部分が重なっている部分となる。また柱を積み上げて表示するには<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）を使う。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="p">[[</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> 
+                    <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">],</span>
+                    <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+                    <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
@@ -1755,6 +1761,7 @@ Name: X, dtype: int64
 <img alt="_images/5_pandas_plot_105_0.png" src="_images/5_pandas_plot_105_0.png" />
 </div>
 </div>
+<p>赤の上に黒が積み上げられている。</p>
 </div>
 <div class="section" id="id17">
 <h3>カーネル密度推定プロット<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
@@ -1772,7 +1779,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_108_0.png" src="_images/5_pandas_plot_108_0.png" />
+<img alt="_images/5_pandas_plot_109_0.png" src="_images/5_pandas_plot_109_0.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1826,7 +1833,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_111_0.png" src="_images/5_pandas_plot_111_0.png" />
+<img alt="_images/5_pandas_plot_112_0.png" src="_images/5_pandas_plot_112_0.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
@@ -1846,7 +1853,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_114_0.png" src="_images/5_pandas_plot_114_0.png" />
+<img alt="_images/5_pandas_plot_115_0.png" src="_images/5_pandas_plot_115_0.png" />
 </div>
 </div>
 </div>
@@ -1879,7 +1886,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_117_0.png" src="_images/5_pandas_plot_117_0.png" />
+<img alt="_images/5_pandas_plot_118_0.png" src="_images/5_pandas_plot_118_0.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1923,7 +1930,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_120_0.png" src="_images/5_pandas_plot_120_0.png" />
+<img alt="_images/5_pandas_plot_121_0.png" src="_images/5_pandas_plot_121_0.png" />
 </div>
 </div>
 <p>最後に上のヒストグラムとカーネル密度推定プロットに縦線を加えてみよう。</p>
@@ -1943,7 +1950,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_122_0.png" src="_images/5_pandas_plot_122_0.png" />
+<img alt="_images/5_pandas_plot_123_0.png" src="_images/5_pandas_plot_123_0.png" />
 </div>
 </div>
 </div>
