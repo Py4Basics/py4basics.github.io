@@ -574,11 +574,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -922,9 +917,9 @@ Name: X, dtype: int64
 </div>
 <div class="section" id="sec-5-titlelabels">
 <span id="id5"></span><h3>タイトルとラベルのサイズの調整<a class="headerlink" href="#sec-5-titlelabels" title="Permalink to this headline">¶</a></h3>
-<p>タイトルのフォント・サイズの指定，横軸と縦軸のラベルとフォント・サイズの指定をおこなう場合は、<code class="docutils literal notranslate"><span class="pre">plot()</span></code>の引数ではなく下で説明する方法でおこなう。この方法を理解するために、<code class="docutils literal notranslate"><span class="pre">Python</span></code>は次の手順で描画していることをイメージして欲しい。ここで重要なのは「図」，「軸」と「プロット」の違いである。次の図のような構成となっている。</p>
+<p>タイトルのフォント・サイズの指定，横軸と縦軸のラベルとフォント・サイズの指定をおこなう場合は、<code class="docutils literal notranslate"><span class="pre">plot()</span></code>の引数ではなく下で説明する方法でおこなう。この方法を理解するために、<code class="docutils literal notranslate"><span class="pre">Python</span></code>は次の手順で描画していることをイメージして欲しい。ここで重要なのは「図」と「軸」の違いである。次の図のような構成となっている。</p>
 <div class="figure align-default" id="fig-5-figure-axes">
-<a class="reference internal image-reference" href="_images/figure_axes.png"><img alt="_images/figure_axes.png" src="_images/figure_axes.png" style="width: 493.6px; height: 417.6px;" /></a>
+<a class="reference internal image-reference" href="_images/figure_axes.png"><img alt="_images/figure_axes.png" src="_images/figure_axes.png" style="width: 521.6px; height: 417.6px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">図と軸の関係</span><a class="headerlink" href="#fig-5-figure-axes" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="simple">
@@ -937,23 +932,23 @@ Name: X, dtype: int64
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ax</span></code>や<code class="docutils literal notranslate"><span class="pre">axes</span></code>などの変数名があれば、「軸」を表していると理解すれば良いだろう。</p></li>
 <li><p>横軸・縦軸とは異なる。</p></li>
-<li><p>「図」上に複数のグラフを表示する場合は複数区域に分けることになる。</p></li>
+<li><p>「図」上に複数のグラフを表示する場合は複数区域に分け必要がある。</p></li>
 <li><p>「軸」にグラフのタイトルや縦軸・横軸のラベルなどを追加することになる。</p></li>
 </ul>
 </li>
-<li><p>プロット（plot）</p>
-<ul class="simple">
-<li><p>１つのグラフの主要な部分。</p></li>
-<li><p>１つの「軸」内に表示されるグラフ。</p></li>
-<li><p>縦軸・横軸が含まれる。</p></li>
-<li><p>「図」上に複数のプロットを表示するためには複数の「軸」を用意する必要がる。</p></li>
-</ul>
-</li>
 </ol>
+<p>「軸」の中にメソッド<code class="docutils literal notranslate"><span class="pre">.plot()</span></code>を使いグラフを表示することになる。
+* 縦軸・横軸が含まれる。
+* 引数を使い様々な箇所を変更することが可能。</p>
 <p>従って，概ね次のように理解して良いだろう。</p>
 <ul class="simple">
-<li><p>上で説明した「基本的な引数」はプロット（plot）の引数（<code class="docutils literal notranslate"><span class="pre">title</span></code>もあるがオマケのようなものだろう）</p></li>
-<li><p>タイトルや縦・横軸ラベルは「軸」の引数</p></li>
+<li><p>上で説明した「基本的な引数」は上の図のピンクのエリア内での変更となる。</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code>も含まれるがフォントサイズも変更できないオマケのようなもの。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">figsize</span></code>は「図」の大きさを指定する引数だが，メソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>は自動で「図」を作成するため<code class="docutils literal notranslate"><span class="pre">plot()</span></code>内で変更できるようになっている。</p></li>
+</ul>
+</li>
+<li><p>タイトルや縦・横軸ラベルは「軸」の引数を使い変更する。</p></li>
 </ul>
 <p>では実際に手順を説明する。</p>
 <ul class="simple">
