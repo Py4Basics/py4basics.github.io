@@ -655,7 +655,96 @@
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unable to revert mtime: /Library/Fonts
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_3642</span><span class="o">/</span><span class="mf">2080034654.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">~/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.12</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">pyplot</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="kn">from</span> <span class="nn">cycler</span> <span class="kn">import</span> <span class="n">cycler</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="ne">---&gt; </span><span class="mi">49</span> <span class="kn">import</span> <span class="nn">matplotlib.colorbar</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="kn">import</span> <span class="nn">matplotlib.image</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">_api</span>
+
+<span class="o">~/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.12</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">colorbar</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> 
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="ne">---&gt; </span><span class="mi">21</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">collections</span><span class="p">,</span> <span class="n">cm</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">contour</span><span class="p">,</span> <span class="n">ticker</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">import</span> <span class="nn">matplotlib.artist</span> <span class="k">as</span> <span class="nn">martist</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+
+<span class="o">~/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.12</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">contour</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">docstring</span>
+<span class="ne">---&gt; </span><span class="mi">13</span> <span class="kn">from</span> <span class="nn">matplotlib.backend_bases</span> <span class="kn">import</span> <span class="n">MouseButton</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">import</span> <span class="nn">matplotlib.path</span> <span class="k">as</span> <span class="nn">mpath</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">import</span> <span class="nn">matplotlib.ticker</span> <span class="k">as</span> <span class="nn">ticker</span>
+
+<span class="o">~/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.12</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">backend_bases</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> 
+<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="n">_api</span><span class="p">,</span> <span class="n">backend_tools</span> <span class="k">as</span> <span class="n">tools</span><span class="p">,</span> <span class="n">cbook</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">docstring</span><span class="p">,</span> <span class="n">textpath</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="n">tight_bbox</span><span class="p">,</span> <span class="n">transforms</span><span class="p">,</span> <span class="n">widgets</span><span class="p">,</span> <span class="n">get_backend</span><span class="p">,</span> <span class="n">is_interactive</span><span class="p">,</span> <span class="n">rcParams</span><span class="p">)</span>
+
+<span class="o">~/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.12</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">textpath</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">_text_helpers</span><span class="p">,</span> <span class="n">dviread</span><span class="p">,</span> <span class="n">font_manager</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">matplotlib.font_manager</span> <span class="kn">import</span> <span class="n">FontProperties</span><span class="p">,</span> <span class="n">get_font</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">from</span> <span class="nn">matplotlib.ft2font</span> <span class="kn">import</span> <span class="n">LOAD_NO_HINTING</span><span class="p">,</span> <span class="n">LOAD_TARGET_LIGHT</span>
+
+<span class="o">~/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.12</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">font_manager</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1445</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1446</span> 
+<span class="ne">-&gt; </span><span class="mi">1447</span> <span class="n">fontManager</span> <span class="o">=</span> <span class="n">_load_fontmanager</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1448</span> <span class="n">findfont</span> <span class="o">=</span> <span class="n">fontManager</span><span class="o">.</span><span class="n">findfont</span>
+
+<span class="nn">~/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/matplotlib/font_manager.py</span> in <span class="ni">_load_fontmanager</span><span class="nt">(try_read_cache)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1439</span>                 <span class="n">_log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Using fontManager instance from </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fm_path</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1440</span>                 <span class="k">return</span> <span class="n">fm</span>
+<span class="ne">-&gt; </span><span class="mi">1441</span>     <span class="n">fm</span> <span class="o">=</span> <span class="n">FontManager</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1442</span>     <span class="n">json_dump</span><span class="p">(</span><span class="n">fm</span><span class="p">,</span> <span class="n">fm_path</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1443</span>     <span class="n">_log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;generated new fontManager&quot;</span><span class="p">)</span>
+
+<span class="nn">~/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/matplotlib/font_manager.py</span> in <span class="ni">__init__</span><span class="nt">(self, size, weight)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1064</span>             <span class="k">for</span> <span class="n">fontext</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;afm&quot;</span><span class="p">,</span> <span class="s2">&quot;ttf&quot;</span><span class="p">]:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1065</span>                 <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="p">[</span><span class="o">*</span><span class="n">findSystemFonts</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">fontext</span><span class="o">=</span><span class="n">fontext</span><span class="p">),</span>
+<span class="ne">-&gt; </span><span class="mi">1066</span>                              <span class="o">*</span><span class="n">findSystemFonts</span><span class="p">(</span><span class="n">fontext</span><span class="o">=</span><span class="n">fontext</span><span class="p">)]:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1067</span>                     <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1068</span>                         <span class="bp">self</span><span class="o">.</span><span class="n">addfont</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+<span class="nn">~/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/matplotlib/font_manager.py</span> in <span class="ni">findSystemFonts</span><span class="nt">(fontpaths, fontext)</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span>         <span class="n">fontfiles</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">,</span> <span class="n">list_fonts</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fontexts</span><span class="p">)))</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span> 
+<span class="ne">--&gt; </span><span class="mi">380</span>     <span class="k">return</span> <span class="p">[</span><span class="n">fname</span> <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">fontfiles</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">fname</span><span class="p">)]</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span> 
+<span class="g g-Whitespace">    </span><span class="mi">382</span> 
+
+<span class="nn">~/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/matplotlib/font_manager.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span>         <span class="n">fontfiles</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">,</span> <span class="n">list_fonts</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fontexts</span><span class="p">)))</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span> 
+<span class="ne">--&gt; </span><span class="mi">380</span>     <span class="k">return</span> <span class="p">[</span><span class="n">fname</span> <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">fontfiles</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">fname</span><span class="p">)]</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span> 
+<span class="g g-Whitespace">    </span><span class="mi">382</span> 
+
+<span class="nn">~/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/genericpath.py</span> in <span class="ni">exists</span><span class="nt">(path)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="sd">&quot;&quot;&quot;Test whether a path exists.  Returns False for broken symbolic links&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">19</span>         <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>         <span class="k">return</span> <span class="kc">False</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -763,7 +852,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1170165b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7b785e5f40&gt;]
 </pre></div>
 </div>
 <img alt="_images/4_matplotlib_14_1.png" src="_images/4_matplotlib_14_1.png" />
@@ -788,7 +877,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1171e1d60&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7b4892dd60&gt;]
 </pre></div>
 </div>
 <img alt="_images/4_matplotlib_18_1.png" src="_images/4_matplotlib_18_1.png" />
