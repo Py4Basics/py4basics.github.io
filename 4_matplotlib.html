@@ -328,7 +328,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   引数の書き方１
+   データの引数の書き方１
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -355,7 +355,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   引数の書き方２
+   データの引数の書き方２
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -463,6 +463,18 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id13">
      将来価値
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id14">
+   その他のプロット
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     種類
     </a>
    </li>
   </ul>
@@ -494,7 +506,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   引数の書き方１
+   データの引数の書き方１
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -521,7 +533,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   引数の書き方２
+   データの引数の書き方２
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -629,6 +641,18 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id13">
      将来価値
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id14">
+   その他のプロット
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     種類
     </a>
    </li>
   </ul>
@@ -685,31 +709,51 @@ in English or the language of your choice.
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>本サイトでは「書き方２」に沿って<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>の使い方を説明する。一方で，その裏にある考え方を理解するには、「書き方１」から始めた方が良いと思われるので，「書き方１」の簡単な説明をすることにする。理解する上で，特に重要な点は「キャンバス」と「軸」の違いである。</p>
-<ol class="simple">
-<li><p>図を描くためのキャンバスを用意する。</p>
+<p>本サイトでは「書き方２」に沿って<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>の使い方を説明する。一方で，その裏にある考え方を理解するには、「書き方１」から始めた方が良いと思うので，「書き方１」の簡単な説明をすることにする。<a class="reference internal" href="#fig-4-figure-axes"><span class="std std-numref">Fig. 1</span></a>は，<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>が描画する図の階層的な構造を示している。ここで重要なのは「キャンバス」と「軸」の違いである。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>によるプロットは次の図のような構成となっている。</p>
+<div class="figure align-default" id="fig-4-figure-axes">
+<a class="reference internal image-reference" href="_images/figure_axes.png"><img alt="_images/figure_axes.png" src="_images/figure_axes.png" style="width: 473.6px; height: 425.6px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">図と軸の関係</span><a class="headerlink" href="#fig-4-figure-axes" title="Permalink to this image">¶</a></p>
+</div>
 <ul class="simple">
-<li><p>それを行なっているのが書き方１の１行目である。右辺の<code class="docutils literal notranslate"><span class="pre">plt.figure()</span></code>でキャンバスを作成し、それを変数<code class="docutils literal notranslate"><span class="pre">fig</span></code>に割り当てている。キャンバスは実際に表示されないので、「透明のキャンバス」と理解すれば良いだろう。</p></li>
+<li><p>「キャンバス」とは表示される<strong>領域</strong>であり，実際には表示されない「透明のキャンバス」である。</p>
+<ul>
+<li><p>「書き方１」と「書き方２」では変数<code class="docutils literal notranslate"><span class="pre">fig</span></code>が「キャンバス」を表している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">figure</span></code>や<code class="docutils literal notranslate"><span class="pre">fig</span></code>などの変数名や引数名があれば、「キャンバス」を指していると理解すれば良いだろう。</p></li>
 </ul>
 </li>
-<li><p>キャンバス上に「軸」を描く。</p>
+<li><p>「軸」とは１つの図を表示する<strong>区域</strong>である。</p>
+<ul>
+<li><p>「書き方１」と「書き方２」では変数<code class="docutils literal notranslate"><span class="pre">ax</span></code>が「軸」を表している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax</span></code>や<code class="docutils literal notranslate"><span class="pre">axes</span></code>などの変数名や引数名があれば、「軸」を表していると理解すれば良いだろう。</p></li>
+<li><p>「キャンバス」上に複数のグラフを表示する場合は複数の区域を設定する必要がある。</p></li>
+</ul>
+</li>
+</ul>
+<p>これを踏まえて，「書き方１」は次のような手順で描画していと解釈できる。</p>
+<ol class="simple">
+<li><p>「キャンバス」を用意する。</p>
 <ul class="simple">
-<li><p>ここでの「軸」とは縦軸・横軸をイメージしても良いし，パイ・チャートであれば図の骨格と理解すれば良いだろう。</p></li>
-<li><p>「軸」を描いているのが書き方１の２行目である。右辺では、キャンバス<code class="docutils literal notranslate"><span class="pre">fig</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">add_subplot()</span></code>を使いキャンバスに軸を描き、それを左辺の変数<code class="docutils literal notranslate"><span class="pre">ax</span></code>に割り当てている。実際に、書き方１の２行のコードを実行すると透明のキャンバス上に軸が表示される。（試してみよう。）</p></li>
-<li><p>作成された軸<code class="docutils literal notranslate"><span class="pre">ax</span></code>にメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>などを使い直線・曲線・点など付け加えたり、タイトルなどの「飾り付け」をおこない作図することになる。</p></li>
-<li><p>１つのキャンバスには複数の軸を描くことが可能である。</p></li>
+<li><p>それを行なっているのが１行目である。右辺の<code class="docutils literal notranslate"><span class="pre">plt.figure()</span></code>で「キャンバス」を作成し、それを変数<code class="docutils literal notranslate"><span class="pre">fig</span></code>に割り当てている。</p></li>
+</ul>
+</li>
+<li><p>「キャンバス」に「軸」を追加する。</p>
+<ul class="simple">
+<li><p>これをおこなっているのが２行目である。右辺では、「キャンバス」<code class="docutils literal notranslate"><span class="pre">fig</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">add_subplot()</span></code>を使いキャンバスに「軸」を追加し、それを左辺の変数<code class="docutils literal notranslate"><span class="pre">ax</span></code>に割り当てている。実際に、書き方１の２行のコードを実行すると透明の「キャンバス」上に「軸」が表示される。（試してみよう。）</p></li>
+<li><p>作成された「軸」<code class="docutils literal notranslate"><span class="pre">ax</span></code>にメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>などを使い直線・曲線・点など付け加えたり、タイトルなどの「飾り付け」をおこない作図することになる。</p></li>
+<li><p>１つの「キャンバス」に複数の「軸」を作成し，複数の図を表示することが可能となる。</p></li>
 </ul>
 </li>
 </ol>
-<p>この説明でわかることは、<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>で表示される「図」とは透明のキャンバス上に描かれ装飾された「軸」（英語で “axis”）ということである。以下の説明では、「図」という単語はキャンバス上の全ての「軸」を指す場合もあれば，一つの「軸」を表す場合もあるので，文脈に従って解釈してほしい。</p>
-<p>さて「書き方２」に話を戻すと、既に察している読者もいるかも知れないが、１行目は「書き方１」の最初の２行を１行に省略したものである。右辺の<code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code>は透明のキャンバスと軸の２つをタプルとして返す。最初の要素が「キャンバス」でありそれを左辺の<code class="docutils literal notranslate"><span class="pre">fig</span></code>に、２つ目の要素が軸であり<code class="docutils literal notranslate"><span class="pre">ax</span></code>に割り当てている。実際、１行目だけを実行すると軸が表示される。後は「書き方１」同様、<code class="docutils literal notranslate"><span class="pre">ax</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>などを使い軸を飾り付けして作図することになる。</p>
+<p>この説明でわかることは、<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>で表示される図は透明の「キャンバス」上に描かれ装飾された「軸」ということである。以下の説明では、「図」は「キャンバス」全体に表示されたものを指す場合もあれば，ある一つの「軸」に表示されたものを指す場合もああるので，文脈で判断してほしい。</p>
+<p>さて「書き方２」に話を戻すと、既に察している読者もいるかも知れないが、１行目は「書き方１」の最初の２行を１行に省略したものである。右辺の<code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code>は透明の「キャンバス」と「軸」の２つをタプルとして返す。最初の要素が「キャンバス」でありそれを左辺の<code class="docutils literal notranslate"><span class="pre">fig</span></code>に、２つ目の要素が「軸」であり<code class="docutils literal notranslate"><span class="pre">ax</span></code>に割り当てている。実際、１行目だけを実行すると軸が表示される。後は「書き方１」同様、<code class="docutils literal notranslate"><span class="pre">ax</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>などを使い「軸」を飾り付けして作図することになる。</p>
 <p>ちなみに、書き方３は書き方２の３行を１行に省略した形と解釈して良いだろう。本来は<code class="docutils literal notranslate"><span class="pre">Matlab</span></code>ユーザーの<code class="docutils literal notranslate"><span class="pre">Python</span></code>への移行を促す為に用意された書き方である。</p>
-<p>次に，<code class="docutils literal notranslate"><span class="pre">plot()</span></code>の引数について説明するが，主に２つの設定方法がある。</p>
-<p><strong>引数の書き方１</strong>：</p>
+<p>次に<code class="docutils literal notranslate"><span class="pre">plot()</span></code>のデータに関する引数について説明するが，主に２つの設定方法がある。</p>
+<p><strong>データの引数の書き方１</strong>：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>plot(＜横軸のデータ＞, ＜縦軸のデータ＞)
 </pre></div>
 </div>
-<p><strong>引数の書き方２</strong>：変数のラベル名が使える場合（<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>の<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>）</p>
+<p><strong>データの引数の書き方２</strong>：変数のラベル名が使える場合（<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>の<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>）</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>plot(＜横軸の変数名＞, ＜縦軸の変数名＞, data=＜データ名＞)
 </pre></div>
 </div>
@@ -723,7 +767,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 <p>以下ではそれぞれの引数の書き方について解説する。</p>
 </div>
 <div class="section" id="id2">
-<h2>引数の書き方１<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>データの引数の書き方１<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="array">
 <h3><code class="docutils literal notranslate"><span class="pre">array</span></code>を使って<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h3>
 <p>プロットするデータを生成しよう。変数<code class="docutils literal notranslate"><span class="pre">x</span></code>に横軸に使うデータを次のように割り当てる。</p>
@@ -763,10 +807,10 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11bc9b5b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12002d5b0&gt;]
 </pre></div>
 </div>
-<img alt="_images/4_matplotlib_14_1.png" src="_images/4_matplotlib_14_1.png" />
+<img alt="_images/4_matplotlib_16_1.png" src="_images/4_matplotlib_16_1.png" />
 </div>
 </div>
 <p>２行目に<code class="docutils literal notranslate"><span class="pre">marker='o'</span></code>が追加されているが，「●」を表示するために使っている。このような引数の使い方は後で詳しく説明するので，ここでは気にしないで読み進めて欲しい。</p>
@@ -788,10 +832,10 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11be67e50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1201f9d60&gt;]
 </pre></div>
 </div>
-<img alt="_images/4_matplotlib_18_1.png" src="_images/4_matplotlib_18_1.png" />
+<img alt="_images/4_matplotlib_20_1.png" src="_images/4_matplotlib_20_1.png" />
 </div>
 </div>
 <p>より<span class="math notranslate nohighlight">\(y=x^2\)</span>の図に近づいたことがわかる。</p>
@@ -821,7 +865,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_22_0.png" src="_images/4_matplotlib_22_0.png" />
+<img alt="_images/4_matplotlib_24_0.png" src="_images/4_matplotlib_24_0.png" />
 </div>
 </div>
 <p>それぞれの<code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code>を「軸<code class="docutils literal notranslate"><span class="pre">ax</span></code>にデータの組み合わせをプロットする」と読めば理解しやすいと思う。また同じようなコードが続いているので，次のように<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うことより短いコードで同じ図を表示することができる。</p>
@@ -837,7 +881,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_24_0.png" src="_images/4_matplotlib_24_0.png" />
+<img alt="_images/4_matplotlib_26_0.png" src="_images/4_matplotlib_26_0.png" />
 </div>
 </div>
 </div>
@@ -929,7 +973,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_29_0.png" src="_images/4_matplotlib_29_0.png" />
+<img alt="_images/4_matplotlib_31_0.png" src="_images/4_matplotlib_31_0.png" />
 </div>
 </div>
 <p>横軸に<code class="docutils literal notranslate"><span class="pre">X</span></code>，縦軸に<code class="docutils literal notranslate"><span class="pre">Y0</span></code>，<code class="docutils literal notranslate"><span class="pre">Y1</span></code>，<code class="docutils literal notranslate"><span class="pre">Y2</span></code>をプロットしてみる。</p>
@@ -944,7 +988,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_31_0.png" src="_images/4_matplotlib_31_0.png" />
+<img alt="_images/4_matplotlib_33_0.png" src="_images/4_matplotlib_33_0.png" />
 </div>
 </div>
 <p>引数の書き方１の簡略形として，横軸の変数を省略できることを紹介した。その場合はどうなるかを考えてみよう。</p>
@@ -957,15 +1001,15 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_33_0.png" src="_images/4_matplotlib_33_0.png" />
+<img alt="_images/4_matplotlib_35_0.png" src="_images/4_matplotlib_35_0.png" />
 </div>
 </div>
 <p>上の図との違いは横軸の値である。この場合，横軸に<code class="docutils literal notranslate"><span class="pre">df0</span></code>の行インデックスが自動的に使われている。</p>
 </div>
 </div>
 <div class="section" id="id3">
-<h2>引数の書き方２<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>次に引数<code class="docutils literal notranslate"><span class="pre">data</span></code>を使う書き方を考えてみよる。</p>
+<h2>データの引数の書き方２<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>次に引数<code class="docutils literal notranslate"><span class="pre">data</span></code>を使う書き方を考えてみる。</p>
 <div class="section" id="id4">
 <h3>同じ<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使う<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>横軸に<code class="docutils literal notranslate"><span class="pre">X</span></code>，縦軸に<code class="docutils literal notranslate"><span class="pre">Y0</span></code>を指定してプロットしてみる。</p>
@@ -978,7 +1022,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_39_0.png" src="_images/4_matplotlib_39_0.png" />
+<img alt="_images/4_matplotlib_41_0.png" src="_images/4_matplotlib_41_0.png" />
 </div>
 </div>
 <p>変数<code class="docutils literal notranslate"><span class="pre">Y1</span></code>と<code class="docutils literal notranslate"><span class="pre">Y2</span></code>も同じ軸<code class="docutils literal notranslate"><span class="pre">ax</span></code>にプロットしてみよう。</p>
@@ -993,7 +1037,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_41_0.png" src="_images/4_matplotlib_41_0.png" />
+<img alt="_images/4_matplotlib_43_0.png" src="_images/4_matplotlib_43_0.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -1015,7 +1059,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_44_0.png" src="_images/4_matplotlib_44_0.png" />
+<img alt="_images/4_matplotlib_46_0.png" src="_images/4_matplotlib_46_0.png" />
 </div>
 </div>
 <p>行インデックスが横軸の値として使われている。</p>
@@ -1101,14 +1145,14 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_50_0.png" src="_images/4_matplotlib_50_0.png" />
+<img alt="_images/4_matplotlib_52_0.png" src="_images/4_matplotlib_52_0.png" />
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="id6">
 <h2>その他の引数とメソッド<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p>上で説明したコードでは単純なプロットしかできない。一方で様々な引数やメソッドが用意されており，それらを駆使することにより様々な「飾り付け」をすることが可能となる。ここでは主なものを紹介するが，他にも数多く用意されているので<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>の<a class="reference external" href="https://matplotlib.org/stable/index.html">サイト</a>を参考にしてほしい。また，これらの引数・メソッドは，上述の「引数の書き方１」と「引数の書き方２」の両方に有効であることも覚えておこう。</p>
+<p>上で説明したコードでは単純なプロットしかできない。一方で様々な引数やメソッドが用意されており，それらを駆使することにより様々な「飾り付け」をすることが可能となる。ここでは主なものを紹介するが，他にも数多く用意されているので<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>の<a class="reference external" href="https://matplotlib.org/stable/index.html">サイト</a>を参考にしてほしい。また，これらの引数・メソッドは，上述の「データの引数の書き方１」と「データの引数の書き方２」の両方に有効であることも覚えておこう。</p>
 <p>引数・メソッドがもたらす違いを際立たせるために新たな<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使おう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1195,7 +1239,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_57_0.png" src="_images/4_matplotlib_57_0.png" />
+<img alt="_images/4_matplotlib_59_0.png" src="_images/4_matplotlib_59_0.png" />
 </div>
 </div>
 </div>
@@ -1240,7 +1284,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_60_0.png" src="_images/4_matplotlib_60_0.png" />
+<img alt="_images/4_matplotlib_62_0.png" src="_images/4_matplotlib_62_0.png" />
 </div>
 </div>
 <p>引数をいちいち書くのが面倒な場合、次の３つを簡略して一緒に指定できる。</p>
@@ -1265,13 +1309,13 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_62_0.png" src="_images/4_matplotlib_62_0.png" />
+<img alt="_images/4_matplotlib_64_0.png" src="_images/4_matplotlib_64_0.png" />
 </div>
 </div>
 <p>（注意点）</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">:ro</span></code>は文字列</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">:</span></code>、<code class="docutils literal notranslate"><span class="pre">r</span></code>、<code class="docutils literal notranslate"><span class="pre">o</span></code>の順番を変えても良い。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:</span></code>，<code class="docutils literal notranslate"><span class="pre">r</span></code>，<code class="docutils literal notranslate"><span class="pre">o</span></code>の順番を変えても良い。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:</span></code>や<code class="docutils literal notranslate"><span class="pre">:o</span></code>のように１つもしくは２つだけを指定しても良い。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:ro</span></code>は<code class="docutils literal notranslate"><span class="pre">=</span></code>を使う引数の前に置く。</p></li>
 </ul>
@@ -1318,7 +1362,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_66_0.png" src="_images/4_matplotlib_66_0.png" />
+<img alt="_images/4_matplotlib_68_0.png" src="_images/4_matplotlib_68_0.png" />
 </div>
 </div>
 </div>
@@ -1351,7 +1395,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_69_0.png" src="_images/4_matplotlib_69_0.png" />
+<img alt="_images/4_matplotlib_71_0.png" src="_images/4_matplotlib_71_0.png" />
 </div>
 </div>
 <p>６つの軸が表示されているが、それらは<code class="docutils literal notranslate"><span class="pre">ax</span></code>に割り当てられている。<code class="docutils literal notranslate"><span class="pre">ax</span></code>を表示してみよう。</p>
@@ -1405,7 +1449,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_75_0.png" src="_images/4_matplotlib_75_0.png" />
+<img alt="_images/4_matplotlib_77_0.png" src="_images/4_matplotlib_77_0.png" />
 </div>
 </div>
 <p>横軸と縦軸を共有するには次のようにする。</p>
@@ -1423,7 +1467,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_77_0.png" src="_images/4_matplotlib_77_0.png" />
+<img alt="_images/4_matplotlib_79_0.png" src="_images/4_matplotlib_79_0.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ax</span></code>のメソッド（例えば、軸のタイトル）はそれぞれ設定することができる。</p>
@@ -1457,7 +1501,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_80_0.png" src="_images/4_matplotlib_80_0.png" />
+<img alt="_images/4_matplotlib_82_0.png" src="_images/4_matplotlib_82_0.png" />
 </div>
 </div>
 </div>
@@ -1477,7 +1521,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_83_0.png" src="_images/4_matplotlib_83_0.png" />
+<img alt="_images/4_matplotlib_85_0.png" src="_images/4_matplotlib_85_0.png" />
 </div>
 </div>
 <p>コードの説明</p>
@@ -1510,7 +1554,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_86_0.png" src="_images/4_matplotlib_86_0.png" />
+<img alt="_images/4_matplotlib_88_0.png" src="_images/4_matplotlib_88_0.png" />
 </div>
 </div>
 <p>コードの説明</p>
@@ -1559,7 +1603,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_93_0.png" src="_images/4_matplotlib_93_0.png" />
+<img alt="_images/4_matplotlib_95_0.png" src="_images/4_matplotlib_95_0.png" />
 </div>
 </div>
 </div>
@@ -1607,7 +1651,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_97_0.png" src="_images/4_matplotlib_97_0.png" />
+<img alt="_images/4_matplotlib_99_0.png" src="_images/4_matplotlib_99_0.png" />
 </div>
 </div>
 <blockquote>
@@ -1779,7 +1823,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_111_0.png" src="_images/4_matplotlib_111_0.png" />
+<img alt="_images/4_matplotlib_113_0.png" src="_images/4_matplotlib_113_0.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">df_inv</span></code>はデータ・フレームだが、変数が１つしかないため<code class="docutils literal notranslate"><span class="pre">plot()</span></code>の引数に<code class="docutils literal notranslate"><span class="pre">df_inv</span></code>を指定するだけで<code class="docutils literal notranslate"><span class="pre">investment</span></code>のデータが描かれている。</p>
@@ -1976,7 +2020,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_123_0.png" src="_images/4_matplotlib_123_0.png" />
+<img alt="_images/4_matplotlib_125_0.png" src="_images/4_matplotlib_125_0.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code>が続いているので、<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使う事を推奨する。</p>
@@ -1993,10 +2037,37 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_125_0.png" src="_images/4_matplotlib_125_0.png" />
+<img alt="_images/4_matplotlib_127_0.png" src="_images/4_matplotlib_127_0.png" />
 </div>
 </div>
 <p>（１）の<code class="docutils literal notranslate"><span class="pre">df_future.columns</span></code>について説明すると、<code class="docutils literal notranslate"><span class="pre">.columns</span></code>はデータ・フレーム<code class="docutils literal notranslate"><span class="pre">df_future</span></code>の属性であり列ラベルを返す。</p>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>その他のプロット<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h3>種類<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>上で説明した図はライン・プロットと呼ばれる。<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>にはその他にも様々なは種類の図を描くことができるが，ここではライン・プロット以外に４つを紹介する。</p>
+<ul class="simple">
+<li><p>ライン・プロット</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code></p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">プロットの例</a></p></li>
+</ul>
+</li>
+<li><p>ヒストグラム</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.hist()</span></code></p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html">プロットの例</a></p></li>
+</ul>
+</li>
+<li><p>散布図</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.scatter()</span></code></p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html">プロットの例</a></p></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </div>
