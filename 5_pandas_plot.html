@@ -420,13 +420,18 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
+    <a class="reference internal nav-link" href="#sec-5-kernel">
      カーネル密度推定プロット
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id19">
      縦線・横線
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sec-5-bar">
+     棒グラフ
     </a>
    </li>
   </ul>
@@ -552,13 +557,18 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
+    <a class="reference internal nav-link" href="#sec-5-kernel">
      カーネル密度推定プロット
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id19">
      縦線・横線
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sec-5-bar">
+     棒グラフ
     </a>
    </li>
   </ul>
@@ -905,6 +915,11 @@ Name: X, dtype: int64
 <li><p>複数の図を表示する際は，この引数は使わずに下で説明する「軸」のメソッドとして指定する。</p></li>
 </ul>
 </li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax</span></code>：プロットする「軸」を指定する。</p>
+<ul>
+<li><p>１つの「軸」に複数の図を表示する際に使う（後で使い方を説明する）。</p></li>
+</ul>
+</li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -934,7 +949,7 @@ Name: X, dtype: int64
 <span id="id5"></span><h3>タイトルとラベルのサイズの調整<a class="headerlink" href="#sec-5-titlelabels" title="Permalink to this headline">¶</a></h3>
 <p>タイトルのフォント・サイズの指定，横軸と縦軸のラベルとフォント・サイズの指定をおこなう場合は、<code class="docutils literal notranslate"><span class="pre">plot()</span></code>の引数ではなく下で説明する方法でおこなう。この方法を理解するために、<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>（実は<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>）が表示する図は<a class="reference internal" href="#fig-5-figure-axes"><span class="std std-numref">Fig. 2</span></a>で示している階層的な構造となることをイメージして欲しい。ここで重要なのは「キャンバス」と「軸」の違いである。</p>
 <div class="figure align-default" id="fig-5-figure-axes">
-<a class="reference internal image-reference" href="_images/figure_axes.png"><img alt="_images/figure_axes.png" src="_images/figure_axes.png" style="width: 473.6px; height: 425.6px;" /></a>
+<a class="reference internal image-reference" href="_images/figure_axes_pandas.png"><img alt="_images/figure_axes_pandas.png" src="_images/figure_axes_pandas.png" style="width: 473.6px; height: 425.6px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">図と軸の関係</span><a class="headerlink" href="#fig-5-figure-axes" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="simple">
@@ -1605,7 +1620,7 @@ Name: X, dtype: int64
 </li>
 </ul>
 <p>上で説明した<a class="reference internal" href="#sec-5-options"><span class="std std-ref">ライン・プロットの引数</span></a>は他のプロットと共通のものが多いが，それぞれ独自の引数もある。</p>
-<p>以下では散布図，ヒストグラム，カーネル密度推定プロットについて説明する。</p>
+<p>以下では散布図，ヒストグラム，カーネル密度推定プロット，棒グラフについて説明する。</p>
 <p>説明には次のコードで生成する<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使う。列<code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>には標準正規分布（平均<code class="docutils literal notranslate"><span class="pre">0</span></code>，標準偏差<code class="docutils literal notranslate"><span class="pre">1</span></code>）から生成した100個のランダム変数が含まれている。<code class="docutils literal notranslate"><span class="pre">Z</span></code>には正規分布（平均<code class="docutils literal notranslate"><span class="pre">2</span></code>，標準偏差<code class="docutils literal notranslate"><span class="pre">1</span></code>）から抽出した100個のランダム変数が格納されている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1663,6 +1678,7 @@ Name: X, dtype: int64
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>：凡例の表現を指定（<code class="docutils literal notranslate"><span class="pre">Series</span></code>のみ有効）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">grid</span></code>：グリッド表示（ブール型;デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax</span></code>：プロットする「軸」を指定する。</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1754,6 +1770,8 @@ Name: X, dtype: int64
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>：凡例の表現を指定（<code class="docutils literal notranslate"><span class="pre">Series</span></code>のみ有効）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">grid</span></code>：グリッド表示（ブール型;デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subplots</span></code>：複数の図をプロットする（詳細はライン・プロットを参照）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax</span></code>：プロットする「軸」を指定する。</p></li>
 </ul>
 <p>引数を指定して<code class="docutils literal notranslate"><span class="pre">X</span></code>のヒストグラムをプロットしてみよう。</p>
 <div class="cell docutils container">
@@ -1816,9 +1834,9 @@ Name: X, dtype: int64
 </div>
 <p>赤の上に黒が積み上げられている。</p>
 </div>
-<div class="section" id="id18">
-<h3>カーネル密度推定プロット<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
-<p>ヒストグラムは縦軸に度数，横軸に階級を取ったグラフだが，関連する手法にカーネル密度推定と呼ばれるものがある。考え方は簡単で，上のようなヒストグラムのデータに基づき面積が１になるようにスムーズな分布を推計する手法である。ヒストグラムとカーネル密度関数を重ねてプロットすることもできる。</p>
+<div class="section" id="sec-5-kernel">
+<span id="id18"></span><h3>カーネル密度推定プロット<a class="headerlink" href="#sec-5-kernel" title="Permalink to this headline">¶</a></h3>
+<p>ヒストグラムは縦軸に度数，横軸に階級を取ったグラフだが，関連する手法にカーネル密度推定と呼ばれるものがある。考え方は簡単で，上のようなヒストグラムのデータに基づき面積が１になるようにスムーズな分布を推定する手法である。ヒストグラムとカーネル密度関数を重ねてプロットすることもできる。</p>
 <p>次の構文となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1832,7 +1850,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_118_0.png" src="_images/5_pandas_plot_118_0.png" />
+<img alt="_images/5_pandas_plot_119_0.png" src="_images/5_pandas_plot_119_0.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1863,6 +1881,7 @@ Name: X, dtype: int64
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>：凡例の表現を指定（<code class="docutils literal notranslate"><span class="pre">Series</span></code>のみ有効）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">grid</span></code>：グリッド表示（ブール型;デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax</span></code>：プロットする「軸」を指定する。</p></li>
 </ul>
 <p>引数を指定して<code class="docutils literal notranslate"><span class="pre">X</span></code>をプロットしてみる。</p>
 <div class="cell docutils container">
@@ -1886,7 +1905,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_121_0.png" src="_images/5_pandas_plot_121_0.png" />
+<img alt="_images/5_pandas_plot_122_0.png" src="_images/5_pandas_plot_122_0.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
@@ -1906,7 +1925,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_124_0.png" src="_images/5_pandas_plot_124_0.png" />
+<img alt="_images/5_pandas_plot_125_0.png" src="_images/5_pandas_plot_125_0.png" />
 </div>
 </div>
 </div>
@@ -1939,7 +1958,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_127_0.png" src="_images/5_pandas_plot_127_0.png" />
+<img alt="_images/5_pandas_plot_128_0.png" src="_images/5_pandas_plot_128_0.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1983,7 +2002,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_130_0.png" src="_images/5_pandas_plot_130_0.png" />
+<img alt="_images/5_pandas_plot_131_0.png" src="_images/5_pandas_plot_131_0.png" />
 </div>
 </div>
 <p>最後に上のヒストグラムとカーネル密度推定プロットに縦線を加えてみよう。</p>
@@ -2003,9 +2022,143 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_132_0.png" src="_images/5_pandas_plot_132_0.png" />
+<img alt="_images/5_pandas_plot_133_0.png" src="_images/5_pandas_plot_133_0.png" />
 </div>
 </div>
+</div>
+<div class="section" id="sec-5-bar">
+<span id="id20"></span><h3>棒グラフ<a class="headerlink" href="#sec-5-bar" title="Permalink to this headline">¶</a></h3>
+<p>まず次のコードでデータを準備しよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;country&#39;</span><span class="p">:[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;gdp&#39;</span><span class="p">:[</span><span class="mi">100</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">110</span><span class="p">],</span>
+                    <span class="s1">&#39;con&#39;</span><span class="p">:[</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">55</span><span class="p">],</span>
+                    <span class="s1">&#39;inv&#39;</span><span class="p">:[</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">],</span>
+                    <span class="s1">&#39;gov&#39;</span><span class="p">:[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">30</span><span class="p">],</span>
+                    <span class="s1">&#39;netex&#39;</span><span class="p">:[</span><span class="mi">25</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>３国のGDPとその構成要素からなる<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>である。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">country</span></code>：国</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gdp</span></code>：GDP</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">con</span></code>：消費</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inv</span></code>：投資</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gov</span></code>：政府支出</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">netex</span></code>：純輸出</p></li>
+</ul>
+<p>この<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使って棒グラフの作成方法を説明するが，次の構文となる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>df1.plot(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, kind=&#39;bar&#39;)
+</pre></div>
+</div>
+<p>まずA国の<code class="docutils literal notranslate"><span class="pre">gdp</span></code>の棒グラフを表示してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;gdp&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5_pandas_plot_139_0.png" src="_images/5_pandas_plot_139_0.png" />
+</div>
+</div>
+<p>複数の棒（データ）を並べたい場合もあるだろう。その場合は<code class="docutils literal notranslate"><span class="pre">＜縦軸の列ラベル＞</span></code>にリストとして指定すれば表示できる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">,</span><span class="s1">&#39;con&#39;</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5_pandas_plot_141_0.png" src="_images/5_pandas_plot_141_0.png" />
+</div>
+</div>
+<p><strong>＜基本的な引数＞</strong></p>
+<p>詳しい引数についての説明は<a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html">このリンク</a>を参照することにして，ここでは基本的な引数だけを紹介する。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>：色（リストにして列の順番で指定する; <a class="reference external" href="https://matplotlib.org/3.1.0/gallery/color/named_colors.html">参照サイト</a>）</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code>又は<code class="docutils literal notranslate"><span class="pre">red</span></code>：赤</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">k</span></code>又は<code class="docutils literal notranslate"><span class="pre">black</span></code>：黒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">g</span></code>又は<code class="docutils literal notranslate"><span class="pre">green</span></code>：グリーン</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stacked</span></code>：（ブール型;デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+<ul>
+<li><p>複数データを使う場合に棒を積み上げるかどうかを指定</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fontsize</span></code>：横軸・縦軸の数字のフォントサイズの設定</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">figsize</span></code>：図の大きさ</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">figsize=(キャンバスの横幅、キャンバスの縦の長さ)</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">legend</span></code>：凡例の表示を指定</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の場合はデフォルトは<code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>：凡例の表現を指定</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grid</span></code>：グリッド表示（ブール型;デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rot</span></code>：横軸の変数の表示の角度（デフォルトは<code class="docutils literal notranslate"><span class="pre">90</span></code>）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subplots</span></code>：複数の図をプロットする（詳細はライン・プロットを参照）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax</span></code>：プロットする「軸」を指定する。</p></li>
+</ul>
+<p>これらの引数を使いプロットしてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">,</span><span class="s1">&#39;inv&#39;</span><span class="p">,</span><span class="s1">&#39;gov&#39;</span><span class="p">,</span><span class="s1">&#39;netex&#39;</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;orange&#39;</span><span class="p">],</span>
+         <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+         <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
+<span class="c1">#          legend=False       </span>
+         <span class="n">label</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;消費&#39;</span><span class="p">,</span><span class="s1">&#39;投資&#39;</span><span class="p">,</span><span class="s1">&#39;政府支出&#39;</span><span class="p">,</span><span class="s1">&#39;純輸出&#39;</span><span class="p">],</span>
+         <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">rot</span><span class="o">=</span><span class="mi">0</span>
+        <span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5_pandas_plot_143_0.png" src="_images/5_pandas_plot_143_0.png" />
+</div>
+</div>
+<p>次に，ライン・プロットを追加する例を考えてみよう。<code class="docutils literal notranslate"><span class="pre">df2</span></code>には列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>があり，それを表すライン・プロットを重ねることにしよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">,</span><span class="s1">&#39;inv&#39;</span><span class="p">,</span><span class="s1">&#39;gov&#39;</span><span class="p">,</span><span class="s1">&#39;netex&#39;</span><span class="p">],</span>
+         <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+         <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;消費&#39;</span><span class="p">,</span><span class="s1">&#39;投資&#39;</span><span class="p">,</span><span class="s1">&#39;政府支出&#39;</span><span class="p">,</span><span class="s1">&#39;純輸出&#39;</span><span class="p">],</span>
+         <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>      <span class="c1"># ライン・プロット (Series)</span>
+                      <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+                      <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                      <span class="n">label</span><span class="o">=</span><span class="s1">&#39;国内総生産&#39;</span><span class="p">,</span>
+                      <span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">)</span>       <span class="c1"># Seriesに有効</span>
+
+<span class="n">ax_</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;３カ国のGDPと構成要素&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax_</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;国&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax_</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;単位：億米ドル&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5_pandas_plot_145_0.png" src="_images/5_pandas_plot_145_0.png" />
+</div>
+</div>
+<p>棒の高さとGDPのマーカーの高さは同じであることがわかる。このコードでは次の点に注意する必要がある。<code class="docutils literal notranslate"><span class="pre">gdp</span></code>を<code class="docutils literal notranslate"><span class="pre">Series</span></code>として抽出し，メソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使っていることである。これにより，凡例の表記を自由に変更できることになる。</p>
 </div>
 </div>
 </div>
