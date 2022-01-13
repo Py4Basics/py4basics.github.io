@@ -52,7 +52,7 @@ import matplotlib.pyplot as plt
 # scale: 40%
 # name: fig:4-figure_axes
 # ---
-# 図と軸の関係
+# 「キャンバス」と「軸」の関係
 # ```
 # 
 # * 「キャンバス」とは表示される**領域**であり，実際には表示されない「透明のキャンバス」である。
