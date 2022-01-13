@@ -47,7 +47,7 @@ import matplotlib.pyplot as plt
 # 
 # `Matplotlib`によるプロットは次の図のような構成となっている。
 # 
-# ```{figure} /images/figure_axes.png
+# ```{figure} /images/figure_axes_mpl.png
 # ---
 # scale: 40%
 # name: fig:4-figure_axes
@@ -311,7 +311,10 @@ pass
 
 # ## その他の引数とメソッド
 
-# 上で説明したコードでは単純なプロットしかできない。一方で様々な引数やメソッドが用意されており，それらを駆使することにより様々な「飾り付け」をすることが可能となる。ここでは主なものを紹介するが，他にも数多く用意されているので`Matplotlib`の[サイト](https://matplotlib.org/stable/index.html)を参考にしてほしい。また，これらの引数・メソッドは，上述の「データの引数の書き方１」と「データの引数の書き方２」の両方に有効であることも覚えておこう。
+# (sec:4-other_methods)=
+# ## その他の引数とメソッド
+
+# 上で説明したコードでは単純なプロットしかできない。一方で様々な引数やメソッドが用意されており，それらを駆使することにより様々な「飾り付け」をすることが可能となる。ここでは主なものを紹介するが，他にも数多く用意されているので`Matplotlib`の[サイト](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html)を参考にしてほしい。また，これらの引数・メソッドは，上述の「データの引数の書き方１」と「データの引数の書き方２」の両方に有効であることも覚えておこう。
 # 
 # 引数・メソッドがもたらす違いを際立たせるために新たな`DataFrame`を使おう。
 
@@ -834,13 +837,396 @@ pass
 
 # ### 種類
 
-# 上で説明した図はライン・プロットと呼ばれる。`Matplotlib`にはその他にも様々なは種類の図を描くことができるが，ここではライン・プロット以外に４つを紹介する。
-# * ライン・プロット
-#     * `ax.plot()`
-#     * [プロットの例](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html)
-# * ヒストグラム
-#     * `ax.hist()`
-#     * [プロットの例](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html)
-# * 散布図
-#     * `ax.scatter()`
-#     * [プロットの例](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html)
+# 上で説明した図はライン・プロットと呼ばれる。`Matplotlib`にはその他にも様々なは種類の図を描くことができるが，以下ではライン・プロット以外に[散布図](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html)と[ヒストグラム](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html)について説明する。引数に関しては，上で説明した[ライン・プロットの引数](sec:4-other_methods)と共通のものが多いので別に覚える必要はないが，それぞれ独自の引数もあるので基本的なものだけを取り上げることにする。
+
+# 説明には次のコードで生成する`DataFrame`を使う。列`X`と`Y`には標準正規分布（平均`0`，標準偏差`1`）から生成した100個のランダム変数が含まれている。`Z`には正規分布（平均`2`，標準偏差`1`）から抽出した100個のランダム変数が格納されている。
+
+# In[47]:
+
+
+df3 = pd.DataFrame({'X':np.random.normal(size=100),
+                    'Y':np.random.normal(size=100),
+                    'Z':np.random.normal(loc=2, size=100)})
+
+
+# ### 散布図
+
+# * 基本的には次の構文となる。
+#     ```
+#     fig, ax = plt.subplots()
+#     ax.scatter(＜横軸のデータ＞, ＜縦軸のデータ＞)
+#     ```
+# * `DataFrame`を使う場合は次のように書くことも可能である。
+#     ```
+#     fig, ax = plt.subplots()
+#     ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜DataFrame＞)
+#     ```
+# 
+# `df1`を使って列`X`と`Y`を使ってプロットしてみよう。
+
+# In[48]:
+
+
+fig, ax = plt.subplots()
+ax.scatter('X', 'Y', data=df3)
+pass
+
+
+# **＜基本的な引数＞**
+# 
+# 様々な引数があり図に「飾り付け」をすることができるが，主な引数を紹介する。[詳細はこのサイト](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html)を参照。
+# * `color`：色（リストにして列の順番で指定する; [参照サイト](https://matplotlib.org/3.1.0/gallery/color/named_colors.html)）
+#     * `r`又は`red`：赤
+#     * `k`又は`black`：黒
+#     * `g`又は`green`：グリーン
+# * `marker`：観測値のマーカー（`o`，`.`，`>`，`^`などがある; [参照サイト](https://matplotlib.org/3.2.2/api/markers_api.html)）
+# * `s`：マーカーの大きさ（`markersize`ではない！）
+# * `fontsize`：横軸・縦軸の数字のフォントサイズの設定
+# * `label`：凡例の表現を指定
+#     * `ax.legend()`が設定されている場合のみ有効
+# 
+# 実際に引数を指定してみよう。
+
+# In[49]:
+
+
+fig, ax = plt.subplots()
+ax.scatter('X', 'Y', data=df3,
+            color = 'black',
+            marker = 'D',
+            s = 20,
+            label= 'Xの凡例')
+ax.legend()
+pass
+
+
+# `X`と`Z`の散布図を加えてタイトルなども付け加えてみよう。
+
+# In[50]:
+
+
+fig, ax = plt.subplots()
+ax.scatter('X', 'Y', data=df3,
+            color = 'black',
+            marker = 'D',
+            s = 20,
+            label= 'Xの凡例')
+ax.scatter('X', 'Z', data=df3,
+            color = 'red',
+            marker = '1',
+            s = 80,
+            label= 'Xの凡例')
+ax.legend()
+ax.set_title('散布図', size=20)
+ax.set_xlabel('Xの値', size=15)
+ax.set_ylabel('YとZの値', size=15)
+pass
+
+
+# ### ヒストグラム
+
+# * 基本的には次の構文となる。
+#     ```
+#     fig, ax = plt.subplots()
+#     ax.hist(＜データ＞)
+#     ```
+# * `DataFrame`を使う場合のように書くことも可能である。
+#     ```
+#     fig, ax = plt.subplots()
+#     ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
+#     ```
+#     
+# `df3`の列`X`を使ってプロットしてみよう。
+
+# In[51]:
+
+
+fig, ax = plt.subplots()
+ax.hist('X', data=df3)
+pass
+
+
+# **＜基本的な引数＞**
+# 
+# 様々な引数があり図に「飾り付け」をすることができる。詳しくは[このリンク](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html)を参照することにして，ここでは基本的な引数だけを紹介する。
+# * `bins`：柱の数
+# * `linewidth`又は`lw`：柱の間隔（デフォルトは`1`）
+# * `color`：色（リストにして列の順番で指定する; [参照サイト](https://matplotlib.org/3.1.0/gallery/color/named_colors.html)）
+#     * `r`又は`red`：赤
+#     * `k`又は`black`：黒
+#     * `g`又は`green`：グリーン
+# * `edgecolor`又は`ec`：柱の境界線の色
+# * `alpha`：透明度（`0`から`1.0`; デフォルトは`1`）
+# * `density`：縦軸を相対度数にする（デフォルトは`False`）
+# * `label`：凡例の表現を指定
+#     * `ax.legend()`が設定されている場合のみ有効
+#     
+# 上のヒストグラムに引数をしてしてみよう。
+
+# In[52]:
+
+
+fig, ax = plt.subplots()
+ax.hist(df3['X'],
+        color='green',
+        bins = 20,
+        ec='white',
+        lw=3,
+        density=True)
+pass
+
+
+# 次に複数のデータを並べてプロットする場合を考えよう。方法は簡単で，異なるデータをリストとして指定すれば良い。
+
+# In[53]:
+
+
+fig, ax = plt.subplots()
+ax.hist([df3['X'],df3['Z']],
+        bins = 20,
+        color = ['black','red'],
+        ec='black',
+        label=['Xの凡例','Yの凡例'])
+ax.legend()
+ax.set_title('ヒストグラム', size=20)
+pass
+
+
+# 上のコードに引数`stacked=True`を加えると，柱を重ねて表示される。試してみよう。また`ax.hist()`を２回使うと，２つのヒストグラムを重ねて表示することができる。この場合，引数`alpha`の値を調整すると良いだろう。
+
+# In[54]:
+
+
+fig, ax = plt.subplots()
+ax.hist(df3['X'],
+        bins = 20,
+        color = 'black',
+        ec='black',
+        alpha=0.5,
+        label='Xの凡例')
+ax.hist(df3['Z'],
+        bins = 20,
+        color = 'red',
+        ec='black',
+        alpha=0.5,
+        label='Zの凡例')
+ax.legend()
+ax.set_title('ヒストグラム', size=20)
+pass
+
+
+# 濃い赤の部分が重なっている部分となる。
+
+# ヒストグラムは縦軸に度数，横軸に階級を取ったグラフだが，関連する手法にカーネル密度推定と呼ばれるものがある。考え方は簡単で，上のようなヒストグラムのデータに基づき面積が１になるようにスムーズな分布を推定する手法である。残念ながら`Matplotlib`にはカーネル密度推定プロットのメソッドは実装されていない。しかし`DataFrame`のメソッド`plot()`を使えば簡単に描くことが可能である。興味がある読者は[このセクション](sec:5-kernel)を参考にしてはどうだろう。
+# 
+
+# ### 縦線・横線
+
+# 図に縦線や横線を追加したい場合がある。その場合は，他の図と同じように「軸」に追加していく事になる。次のような書き方となる。
+# 
+# * 縦線の場合
+#     ```
+#     ax.axvline(＜横軸の値＞)
+#     ```
+#     ここで`axvline`の`ax`はAXis，`v`はVertical，`line`はLINEのことを表している。
+# * 横線の場合
+#     ```
+#     ax.axhline(＜縦軸の値＞)
+#     ```
+#     ここで`axhline`の`ax`はAXis，`h`はHorizontal，`line`はLINEのことを表している。
+# 
+# ここで`ax`は`.subplots()`で返された「軸」のことである。
+# 
+# ヒストグラムを使ってプロットしてみよう。
+
+# In[55]:
+
+
+fig, ax = plt.subplots()
+ax.hist(df3['X'], alpha=0.2)
+ax.axhline(10)
+ax.axvline(0)
+pass
+
+
+# **＜基本的な引数＞**
+# 
+# 様々な引数があり図に「飾り付け」をすることができる。詳しくは[このリンク](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axvline.html)と[このリンク](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axhline.html)を参照することにして，ここでは基本的な引数だけを紹介する。
+# * `ymin`：`axvline`の縦軸における最小値（`0`~`1`の値; デフォルト`0`）
+# * `ymax`：`axvline`の縦軸における最大値（`0`~`1`の値; デフォルト`1`）
+# * `xmin`：`axhline`の横軸における最小値（`0`~`1`の値; デフォルト`0`）
+# * `xmax`：`axhline`の横軸における最大値（`0`~`1`の値; デフォルト`1`）
+# * `linestyle`：線のスタイル（リストにして列の順番で指定する;`-``--``-.``:`）
+# * `linewidth` or `lw`：線の幅
+# * `color`：色（リストにして列の順番で指定する; [参照サイト](https://matplotlib.org/3.1.0/gallery/color/named_colors.html)）
+#     * `r`は赤
+#     * `k`は黒
+#     * `g`はグリーン
+# * `alpha`：透明度（`0`から`1.0`; デフォルトは`1`）
+
+# In[56]:
+
+
+fig, ax = plt.subplots()
+ax.hist(df3['X'], alpha=0.2)
+ax.axvline(0,
+           ymin=0.3,
+           ymax=0.95,
+           linestyle=':',
+           linewidth=5,
+           color='g',
+           alpha=0.8)
+ax.axhline(10,
+           xmin=0.05,
+           xmax=0.7,
+           linestyle='-.',
+           linewidth=3,
+           color='k',
+           alpha=0.5)
+pass
+
+
+# ### 棒グラフ
+
+# まず次のコードでデータを準備しよう。
+
+# In[57]:
+
+
+df4 = pd.DataFrame({'country':['A','B','C'],
+                    'gdp':[100,90,110],
+                    'con':[50,60,55],
+                    'inv':[15,10,20],
+                    'gov':[10,5,30],
+                    'netex':[25,15,5]})
+df4
+
+
+# ３国のGDPとその構成要素からなる`DataFrame`である。
+# * `country`：国
+# * `gdp`：GDP
+# * `con`：消費
+# * `inv`：投資
+# * `gov`：政府支出
+# * `netex`：純輸出
+# 
+# この`DataFrame`を使って棒グラフの作成方法を説明するが，次の構文となる。
+#     ```
+#     fig, ax = plt.subplots()
+#     ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜DataFrame＞)
+#     ```
+# 
+# まずA国の`gdp`の棒グラフを表示してみよう。
+
+# In[58]:
+
+
+fig, ax = plt.subplots()
+ax.bar('country','gdp', data=df4)
+pass
+
+
+# **＜基本的な引数＞**
+# 
+# 詳しい引数についての説明は[このリンク](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html)を参照することにして，ここでは基本的な引数だけを紹介する。
+# * `width`：棒の幅（デフォルトは`0.8`）
+# * `bottom`：縦軸での棒の基点（デフォルトは`0`）
+# * `color`：色（リストにして列の順番で指定する; [参照サイト](https://matplotlib.org/3.1.0/gallery/color/named_colors.html)）
+#     * `r`又は`red`：赤
+#     * `k`又は`black`：黒
+#     * `g`又は`green`：グリーン
+# * `edgecolor`又は`ec`：柱の境界線の色
+# * `linewidth`又は`lw`：柱の境界線の幅
+# * `alpha`：透明度（`0`から`1.0`; デフォルトは`1`）
+# * `label`：凡例の表現を指定
+#     * `ax.legend()`と一緒に使う。
+# 
+# これらの引数を使いプロットしてみよう。
+
+# In[59]:
+
+
+fig, ax = plt.subplots()
+ax.bar('country','gdp', data=df4,
+       width=0.5,
+       color='green',
+       ec='black',
+       linewidth=5,
+       alpha=0.5,
+       label='GDP')
+ax.legend()
+ax.tick_params(axis='both', labelsize=15)
+pass
+
+
+# `ax.tick_params()`は縦軸と横軸の文字の大きさを調節している。
+# 
+# 次に複数の列データを表示する場合を考えてみよう。まず単に「軸」にデータを追加する場合を考えてみよう。
+
+# In[60]:
+
+
+fig, ax = plt.subplots()
+ax.bar('country','con', data=df4, label='消費')
+ax.bar('country','inv', data=df4, label='投資')
+ax.legend()
+pass
+
+
+# 縦軸を確認するとわかるが，まず消費（`con`）の棒がプロットされ，それに投資（`ivn`）の棒が重ねてプロットされている。これは引数`base`（縦軸における棒の基点）がデフォルトの`0`に設定されているためである。この点を踏まえ，棒を積み上げる場合を考えよう。その場合，投資の`base`は消費の高さになる必要がある。また政府支出を積み上げる場合は，積み上がった消費の高さが政府支出の基点になる必要がある。純輸出を積み上げる場合も同様に考える必要がある。この点に注意して棒を積み上げるには次のようなコードとなる。
+
+# In[61]:
+
+
+base = df4.iloc[:,2:].cumsum(axis='columns') # 1
+base = base - df4.iloc[:,2:]                 # 2
+
+var_list = df4.columns[2:]                   # 3
+leg_list = ['消費','投資','政府支出','純輸出']    # 4
+
+fig, ax = plt.subplots()
+
+for v, l in zip(var_list, leg_list):
+    ax.bar('country', v, data=df4,
+           label=l,
+           bottom=base.loc[:,v])            # 5
+
+ax.plot('gdp', data=df4,                    # 6
+        color='black', 
+        marker='o',
+        label='GDP')
+ax.legend()
+pass
+
+
+# １〜２行目で棒の基点となる値を`DataFrame`として計算し，それを５行目で使っている。３〜４行目は`for`ループに使うイタラブルを作成している。また６行目では列`gdp`のライン・プロットを追加している。コードを見るとわかるように，少々複雑である。よりシンプルなコードで同じ図を描きたい場合は，[ここで](sec:5-bar)説明している`DataFrame`のメソッド`plot()`を参考にしてほしい。
+
+# 次に，複数の棒（データ）を横に並べたい場合もあるだろう。その場合は主に次の２つの点でコードが少々複雑になってしまう。
+# * 引数`width`を使い，棒の横の位置を調整する必要がある。
+# * 国名`A`，`B`，`C`の位置を手動で調整する必要がある。
+
+# In[62]:
+
+
+idx = df4.index
+wd = 1/5
+x_ticks = df4.loc[:,'country']
+
+fig, ax = plt.subplots(figsize=(8,4))
+
+for i, (v, l) in enumerate(zip(var_list, leg_list)):
+    ax.bar(idx+wd*(i+1), v, data=df4, label=l, width=wd)
+    
+ax.legend()
+ax.set_xticks(idx+wd*2.5, x_ticks, fontsize=10)
+ax.set_xticklabels(x_ticks, rotation=0, fontsize=15)
+pass
+
+
+# コードの説明は割愛するが，その代わりに[ここで](sec:5-bar)説明している`DataFrame`のメソッド`plot()`を使う方法がより簡単なのでそちらを利用しても良いだろう。
+
+# In[ ]:
+
+
+
+
