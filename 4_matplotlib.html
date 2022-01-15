@@ -749,45 +749,45 @@ in English or the language of your choice.
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>本サイトでは「書き方２」に沿って<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>の使い方を説明する。一方で，その裏にある考え方を理解するには、「書き方１」から始めた方が良いと思うので，「書き方１」の簡単な説明をすることにする。<a class="reference internal" href="#fig-4-figure-axes"><span class="std std-numref">Fig. 1</span></a>は，<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>が描画する図の階層的な構造を示している。ここで重要なのは「キャンバス」と「軸」の違いである。</p>
+<p>本サイトでは書き方２に沿って<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>の使い方を説明する。一方で，その裏にある考え方を理解するには、書き方１から始めた方が良いと思うので，書き方１の簡単な説明をすることにする。<a class="reference internal" href="#fig-4-figure-axes"><span class="std std-numref">Fig. 1</span></a>は，<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>が描画する図の階層的な構造を示している。ここで重要なのは「キャンバス」と「軸」の違いである。</p>
 <p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>によるプロットは次の図のような構成となっている。</p>
 <div class="figure align-default" id="fig-4-figure-axes">
 <a class="reference internal image-reference" href="_images/figure_axes_mpl.png"><img alt="_images/figure_axes_mpl.png" src="_images/figure_axes_mpl.png" style="width: 575.2px; height: 425.6px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">「キャンバス」と「軸」の関係</span><a class="headerlink" href="#fig-4-figure-axes" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">キャンバスと軸の関係</span><a class="headerlink" href="#fig-4-figure-axes" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
-<li><p>「キャンバス」とは表示される<strong>領域</strong>であり，実際には表示されない「透明のキャンバス」である。</p>
+<li><p>キャンバスとは表示される<strong>領域</strong>であり，実際には表示されない透明のキャンバ」である。</p>
 <ul>
-<li><p>「書き方１」と「書き方２」では変数<code class="docutils literal notranslate"><span class="pre">fig</span></code>が「キャンバス」を表している。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">figure</span></code>や<code class="docutils literal notranslate"><span class="pre">fig</span></code>などの変数名や引数名があれば、「キャンバス」を指していると理解すれば良いだろう。</p></li>
+<li><p>書き方１と書き方２では変数<code class="docutils literal notranslate"><span class="pre">fig</span></code>がキャンバスを表している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">figure</span></code>や<code class="docutils literal notranslate"><span class="pre">fig</span></code>などの変数名や引数名があれば、キャンバスを指していると理解すれば良いだろう。</p></li>
 </ul>
 </li>
-<li><p>「軸」とは１つの図を表示する<strong>区域</strong>である。</p>
+<li><p>軸とは１つの図を表示する<strong>区域</strong>である。</p>
 <ul>
-<li><p>「書き方１」と「書き方２」では変数<code class="docutils literal notranslate"><span class="pre">ax</span></code>が「軸」を表している。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ax</span></code>や<code class="docutils literal notranslate"><span class="pre">axes</span></code>などの変数名や引数名があれば、「軸」を表していると理解すれば良いだろう。</p></li>
-<li><p>「キャンバス」上に複数のグラフを表示する場合は複数の区域を設定する必要がある。</p></li>
+<li><p>書き方１と書き方２では変数<code class="docutils literal notranslate"><span class="pre">ax</span></code>が軸を表している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax</span></code>や<code class="docutils literal notranslate"><span class="pre">axes</span></code>などの変数名や引数名があれば、軸を表していると理解すれば良いだろう。</p></li>
+<li><p>キャンバス上に複数のグラフを表示する場合は複数の区域を設定する必要がある。</p></li>
 </ul>
 </li>
 </ul>
-<p>これを踏まえて，「書き方１」は次のような手順で描画していと解釈できる。</p>
+<p>これを踏まえて，書き方１は次のような手順で描画していと解釈できる。</p>
 <ol class="simple">
-<li><p>「キャンバス」を用意する。</p>
+<li><p>キャンバスを用意する。</p>
 <ul class="simple">
-<li><p>それを行なっているのが１行目である。右辺の<code class="docutils literal notranslate"><span class="pre">plt.figure()</span></code>で「キャンバス」を作成し、それを変数<code class="docutils literal notranslate"><span class="pre">fig</span></code>に割り当てている。</p></li>
+<li><p>それを行なっているのが１行目である。右辺の<code class="docutils literal notranslate"><span class="pre">plt.figure()</span></code>でキャンバスを作成し、それを変数<code class="docutils literal notranslate"><span class="pre">fig</span></code>に割り当てている。</p></li>
 </ul>
 </li>
-<li><p>「キャンバス」に「軸」を追加する。</p>
+<li><p>キャンバスに軸を追加する。</p>
 <ul class="simple">
-<li><p>これをおこなっているのが２行目である。右辺では、「キャンバス」<code class="docutils literal notranslate"><span class="pre">fig</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">add_subplot()</span></code>を使いキャンバスに「軸」を追加し、それを左辺の変数<code class="docutils literal notranslate"><span class="pre">ax</span></code>に割り当てている。実際に、書き方１の２行のコードを実行すると透明の「キャンバス」上に「軸」が表示される。（試してみよう。）</p></li>
-<li><p>作成された「軸」<code class="docutils literal notranslate"><span class="pre">ax</span></code>にメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>などを使い直線・曲線・点など付け加えたり、タイトルなどの「飾り付け」をおこない作図することになる。</p></li>
-<li><p>１つの「キャンバス」に複数の「軸」を作成し，複数の図を表示することが可能となる。</p></li>
+<li><p>これをおこなっているのが２行目である。右辺では、キャンバス<code class="docutils literal notranslate"><span class="pre">fig</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">add_subplot()</span></code>を使いキャンバスに軸を追加し、それを左辺の変数<code class="docutils literal notranslate"><span class="pre">ax</span></code>に割り当てている。実際に、書き方１の２行のコードを実行すると透明のキャンバス上に軸が表示される。（試してみよう。）</p></li>
+<li><p>作成された軸<code class="docutils literal notranslate"><span class="pre">ax</span></code>にメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>などを使い直線・曲線・点など付け加えたり、タイトルなどの「飾り付け」をおこない作図することになる。</p></li>
+<li><p>１つのキャンバスに複数の軸を作成し，複数の図を表示することが可能となる。</p></li>
 </ul>
 </li>
 </ol>
-<p>この説明でわかることは、<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>で表示される図は透明の「キャンバス」上に描かれ装飾された「軸」ということである。以下の説明では、「図」は「キャンバス」全体に表示されたものを指す場合もあれば，ある一つの「軸」に表示されたものを指す場合もああるので，文脈で判断してほしい。</p>
-<p>さて「書き方２」に話を戻すと、既に察している読者もいるかも知れないが、１行目は「書き方１」の最初の２行を１行に省略したものである。右辺の<code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code>は透明の「キャンバス」と「軸」の２つをタプルとして返す。最初の要素が「キャンバス」でありそれを左辺の<code class="docutils literal notranslate"><span class="pre">fig</span></code>に、２つ目の要素が「軸」であり<code class="docutils literal notranslate"><span class="pre">ax</span></code>に割り当てている。実際、１行目だけを実行すると軸が表示される。後は「書き方１」同様、<code class="docutils literal notranslate"><span class="pre">ax</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>などを使い「軸」を飾り付けして作図することになる。</p>
-<p>ちなみに、書き方３は書き方２の３行を１行に省略した形と解釈して良いだろう。本来は<code class="docutils literal notranslate"><span class="pre">Matlab</span></code>ユーザーの<code class="docutils literal notranslate"><span class="pre">Python</span></code>への移行を促す為に用意された書き方である。</p>
+<p>この説明でわかることは、<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>で表示される図は透明のキャンバス上に描かれ装飾された軸ということである。以下の説明では、「図」はキャンバス全体に表示されたものを指す場合もあれば，ある一つの軸に表示されたものを指す場合もああるので，文脈で判断してほしい。</p>
+<p>さて書き方２に話を戻すと、既に察している読者もいるかも知れないが、１行目は書き方１の最初の２行を１行に省略したものである。右辺の<code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code>は透明のキャンバスと軸の２つをタプルとして返す。最初の要素がキャンバスでありそれを左辺の<code class="docutils literal notranslate"><span class="pre">fig</span></code>に、２つ目の要素が軸であり<code class="docutils literal notranslate"><span class="pre">ax</span></code>に割り当てている。実際、１行目だけを実行すると軸が表示される。後は書き方１同様、<code class="docutils literal notranslate"><span class="pre">ax</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>などを使い軸を飾り付けして作図することになる。</p>
+<p>ちなみに、書き方３は書き方２の３行を１行に省略した形と解釈して良いだろう。本来は<code class="docutils literal notranslate"><span class="pre">Matlab</span></code>（有料）ユーザーの<code class="docutils literal notranslate"><span class="pre">Python</span></code>への移行を促す為に用意された書き方である。</p>
 <p>次に<code class="docutils literal notranslate"><span class="pre">plot()</span></code>のデータに関する引数について説明するが，主に２つの設定方法がある。</p>
 <p><strong>データの引数の書き方１</strong>：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>plot(＜横軸のデータ＞, ＜縦軸のデータ＞)
@@ -847,7 +847,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1158262b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11b3246d0&gt;]
 </pre></div>
 </div>
 <img alt="_images/4_matplotlib_16_1.png" src="_images/4_matplotlib_16_1.png" />
@@ -872,7 +872,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x115922be0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11b422e20&gt;]
 </pre></div>
 </div>
 <img alt="_images/4_matplotlib_20_1.png" src="_images/4_matplotlib_20_1.png" />
@@ -1717,7 +1717,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">investment</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">100</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">100</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="mi">50</span>
 </pre></div>
 </div>
 </div>
@@ -1728,7 +1728,13 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 <p>実質利子率は次のリストで与えられるとする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>   <span class="c1"># %表示の利子率 </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">r_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1 ])
 </pre></div>
 </div>
 </div>
@@ -1741,7 +1747,8 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
     <span class="n">inv</span> <span class="o">=</span> <span class="n">investment</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>   <span class="c1"># 投資の計算</span>
     <span class="n">i_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span>    <span class="c1"># リストに追加</span>
 
-<span class="n">df_inv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Investment&#39;</span><span class="p">:</span><span class="n">i_list</span><span class="p">})</span>   <span class="c1"># DataFrameの作成</span>
+<span class="n">df_inv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;investment&#39;</span><span class="p">:</span><span class="n">i_list</span><span class="p">,</span>     <span class="c1"># DataFrameの作成</span>
+                       <span class="s1">&#39;interest_rate&#39;</span><span class="p">:</span><span class="n">r_list</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -1772,101 +1779,59 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Investment</th>
+      <th>investment</th>
+      <th>interest_rate</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>100.000000</td>
+      <td>60.803882</td>
+      <td>0.01</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>50.000000</td>
+      <td>37.152788</td>
+      <td>0.02</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>33.333333</td>
+      <td>22.810708</td>
+      <td>0.03</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>25.000000</td>
+      <td>14.071262</td>
+      <td>0.04</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>20.000000</td>
+      <td>8.720373</td>
+      <td>0.05</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>最後の5行を表示する。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_inv</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Investment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>45</th>
-      <td>2.173913</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>2.127660</td>
-    </tr>
-    <tr>
-      <th>47</th>
-      <td>2.083333</td>
-    </tr>
-    <tr>
-      <th>48</th>
-      <td>2.040816</td>
-    </tr>
-    <tr>
-      <th>49</th>
-      <td>2.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
+<p>プロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_inv</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;interest_rate&#39;</span><span class="p">,</span> <span class="s1">&#39;investment&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_inv</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_114_0.png" src="_images/4_matplotlib_114_0.png" />
+<img alt="_images/4_matplotlib_113_0.png" src="_images/4_matplotlib_113_0.png" />
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">df_inv</span></code>はデータ・フレームだが、変数が１つしかないため<code class="docutils literal notranslate"><span class="pre">plot()</span></code>の引数に<code class="docutils literal notranslate"><span class="pre">df_inv</span></code>を指定するだけで<code class="docutils literal notranslate"><span class="pre">investment</span></code>のデータが描かれている。</p>
+<p>この図に次の「飾り付け」をしてみよう。</p>
+<ul class="simple">
+<li><p>タイトル<code class="docutils literal notranslate"><span class="pre">投資関数</span></code>を追加</p></li>
+<li><p>横軸ラベル<code class="docutils literal notranslate"><span class="pre">実質利子率</span></code>を追加</p></li>
+<li><p>縦軸ラベル<code class="docutils literal notranslate"><span class="pre">投資</span></code>を追加</p></li>
+</ul>
 </div>
 <div class="section" id="id13">
 <h3>将来価値<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
@@ -2060,7 +2025,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_126_0.png" src="_images/4_matplotlib_126_0.png" />
+<img alt="_images/4_matplotlib_125_0.png" src="_images/4_matplotlib_125_0.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code>が続いているので、<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使う事を推奨する。</p>
@@ -2077,7 +2042,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_128_0.png" src="_images/4_matplotlib_128_0.png" />
+<img alt="_images/4_matplotlib_127_0.png" src="_images/4_matplotlib_127_0.png" />
 </div>
 </div>
 <p>（１）の<code class="docutils literal notranslate"><span class="pre">df_future.columns</span></code>について説明すると、<code class="docutils literal notranslate"><span class="pre">.columns</span></code>はデータ・フレーム<code class="docutils literal notranslate"><span class="pre">df_future</span></code>の属性であり列ラベルを返す。</p>
@@ -2125,7 +2090,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_137_0.png" src="_images/4_matplotlib_137_0.png" />
+<img alt="_images/4_matplotlib_136_0.png" src="_images/4_matplotlib_136_0.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2162,7 +2127,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_139_0.png" src="_images/4_matplotlib_139_0.png" />
+<img alt="_images/4_matplotlib_138_0.png" src="_images/4_matplotlib_138_0.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Z</span></code>の散布図を加えてタイトルなども付け加えてみよう。</p>
@@ -2188,7 +2153,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_141_0.png" src="_images/4_matplotlib_141_0.png" />
+<img alt="_images/4_matplotlib_140_0.png" src="_images/4_matplotlib_140_0.png" />
 </div>
 </div>
 </div>
@@ -2218,7 +2183,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_144_0.png" src="_images/4_matplotlib_144_0.png" />
+<img alt="_images/4_matplotlib_143_0.png" src="_images/4_matplotlib_143_0.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2257,7 +2222,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_146_0.png" src="_images/4_matplotlib_146_0.png" />
+<img alt="_images/4_matplotlib_145_0.png" src="_images/4_matplotlib_145_0.png" />
 </div>
 </div>
 <p>次に複数のデータを並べてプロットする場合を考えよう。方法は簡単で，異なるデータをリストとして指定すれば良い。</p>
@@ -2276,7 +2241,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_148_0.png" src="_images/4_matplotlib_148_0.png" />
+<img alt="_images/4_matplotlib_147_0.png" src="_images/4_matplotlib_147_0.png" />
 </div>
 </div>
 <p>上のコードに引数<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>を加えると，柱を重ねて表示される。試してみよう。また<code class="docutils literal notranslate"><span class="pre">ax.hist()</span></code>を２回使うと，２つのヒストグラムを重ねて表示することができる。この場合，引数<code class="docutils literal notranslate"><span class="pre">alpha</span></code>の値を調整すると良いだろう。</p>
@@ -2302,7 +2267,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_150_0.png" src="_images/4_matplotlib_150_0.png" />
+<img alt="_images/4_matplotlib_149_0.png" src="_images/4_matplotlib_149_0.png" />
 </div>
 </div>
 <p>濃い赤の部分が重なっている部分となる。</p>
@@ -2338,7 +2303,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_155_0.png" src="_images/4_matplotlib_155_0.png" />
+<img alt="_images/4_matplotlib_154_0.png" src="_images/4_matplotlib_154_0.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2382,7 +2347,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_157_0.png" src="_images/4_matplotlib_157_0.png" />
+<img alt="_images/4_matplotlib_156_0.png" src="_images/4_matplotlib_156_0.png" />
 </div>
 </div>
 </div>
@@ -2481,7 +2446,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_162_0.png" src="_images/4_matplotlib_162_0.png" />
+<img alt="_images/4_matplotlib_161_0.png" src="_images/4_matplotlib_161_0.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2523,11 +2488,11 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_164_0.png" src="_images/4_matplotlib_164_0.png" />
+<img alt="_images/4_matplotlib_163_0.png" src="_images/4_matplotlib_163_0.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ax.tick_params()</span></code>は縦軸と横軸の文字の大きさを調節している。</p>
-<p>次に複数の列データを表示する場合を考えてみよう。まず単に「軸」にデータを追加する場合を考えてみよう。</p>
+<p>次に複数の列データを表示する場合を考えてみよう。まず単に軸にデータを追加する場合を考えてみる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -2539,26 +2504,26 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_166_0.png" src="_images/4_matplotlib_166_0.png" />
+<img alt="_images/4_matplotlib_165_0.png" src="_images/4_matplotlib_165_0.png" />
 </div>
 </div>
-<p>縦軸を確認するとわかるが，まず消費（<code class="docutils literal notranslate"><span class="pre">con</span></code>）の棒がプロットされ，それに投資（<code class="docutils literal notranslate"><span class="pre">ivn</span></code>）の棒が重ねてプロットされている。これは引数<code class="docutils literal notranslate"><span class="pre">base</span></code>（縦軸における棒の基点）がデフォルトの<code class="docutils literal notranslate"><span class="pre">0</span></code>に設定されているためである。この点を踏まえ，棒を積み上げる場合を考えよう。その場合，投資の<code class="docutils literal notranslate"><span class="pre">base</span></code>は消費の高さになる必要がある。また政府支出を積み上げる場合は，積み上がった消費の高さが政府支出の基点になる必要がある。純輸出を積み上げる場合も同様に考える必要がある。この点に注意して棒を積み上げるには次のようなコードとなる。</p>
+<p>縦軸を確認するとわかるが，まず消費（<code class="docutils literal notranslate"><span class="pre">con</span></code>）の棒がプロットされ，それに投資（<code class="docutils literal notranslate"><span class="pre">ivn</span></code>）の棒が重ねてプロットされている。これは引数<code class="docutils literal notranslate"><span class="pre">base</span></code>（縦軸における棒の基点）がデフォルトの<code class="docutils literal notranslate"><span class="pre">0</span></code>に設定されており，消費も投資も<code class="docutils literal notranslate"><span class="pre">0</span></code>から始まっているためである。この点を踏まえ，棒を積み上げる場合を考えよう。その場合，投資の<code class="docutils literal notranslate"><span class="pre">base</span></code>は消費の高さになる必要がある。また政府支出を積み上げる場合は，積み上がった消費の高さが政府支出の基点になる必要がある。純輸出を積み上げる場合も同様に考える必要がある。この点に注意して棒を積み上げるには次のようなコードとなる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span> <span class="c1"># 1</span>
-<span class="n">base</span> <span class="o">=</span> <span class="n">base</span> <span class="o">-</span> <span class="n">df4</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:]</span>                 <span class="c1"># 2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span> <span class="c1"># (1)</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span> <span class="o">-</span> <span class="n">df4</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:]</span>                 <span class="c1"># (2)</span>
 
-<span class="n">var_list</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>                   <span class="c1"># 3</span>
-<span class="n">leg_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;消費&#39;</span><span class="p">,</span><span class="s1">&#39;投資&#39;</span><span class="p">,</span><span class="s1">&#39;政府支出&#39;</span><span class="p">,</span><span class="s1">&#39;純輸出&#39;</span><span class="p">]</span>    <span class="c1"># 4</span>
+<span class="n">var_list</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>                   <span class="c1"># (3)</span>
+<span class="n">leg_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;消費&#39;</span><span class="p">,</span><span class="s1">&#39;投資&#39;</span><span class="p">,</span><span class="s1">&#39;政府支出&#39;</span><span class="p">,</span><span class="s1">&#39;純輸出&#39;</span><span class="p">]</span>    <span class="c1"># (4)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">var_list</span><span class="p">,</span> <span class="n">leg_list</span><span class="p">):</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df4</span><span class="p">,</span>
            <span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">,</span>
-           <span class="n">bottom</span><span class="o">=</span><span class="n">base</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">v</span><span class="p">])</span>            <span class="c1"># 5</span>
+           <span class="n">bottom</span><span class="o">=</span><span class="n">base</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">v</span><span class="p">])</span>            <span class="c1"># (5)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;gdp&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df4</span><span class="p">,</span>                    <span class="c1"># 6</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;gdp&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df4</span><span class="p">,</span>                    <span class="c1"># (6)</span>
         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> 
         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;GDP&#39;</span><span class="p">)</span>
@@ -2568,38 +2533,55 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_168_0.png" src="_images/4_matplotlib_168_0.png" />
+<img alt="_images/4_matplotlib_167_0.png" src="_images/4_matplotlib_167_0.png" />
 </div>
 </div>
-<p>１〜２行目で棒の基点となる値を<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>として計算し，それを５行目で使っている。３〜４行目は<code class="docutils literal notranslate"><span class="pre">for</span></code>ループに使うイタラブルを作成している。また６行目では列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>のライン・プロットを追加している。コードを見るとわかるように，少々複雑である。よりシンプルなコードで同じ図を描きたい場合は，<a class="reference internal" href="5_pandas_plot.html#sec-5-bar"><span class="std std-ref">ここで</span></a>説明している<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を参考にしてほしい。</p>
-<p>次に，複数の棒（データ）を横に並べたい場合もあるだろう。その場合は主に次の２つの点でコードが少々複雑になってしまう。</p>
+<p>(1)〜(2)で棒の基点となる値を<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>として計算し，それを(5)で使っている。(3)〜(4)行目は<code class="docutils literal notranslate"><span class="pre">for</span></code>ループに使うイタラブルを作成している。また(6)では列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>のライン・プロットを追加している。コードを見るとわかるように，少々複雑である。よりシンプルなコードで同じ図を描きたい場合は，<a class="reference internal" href="5_pandas_plot.html#sec-5-bar"><span class="std std-ref">ここで</span></a>説明している<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を参考にすると良いだろう。その方法では(1)〜(2)を自動計算するため引数<code class="docutils literal notranslate"><span class="pre">base</span></code>の値を考える必要がない。</p>
+<p>次に，複数の棒（データ）を横に並べたい場合を考えてみよう。主に次の２つの点でコードが少々複雑になってしまう。</p>
 <ul class="simple">
 <li><p>引数<code class="docutils literal notranslate"><span class="pre">width</span></code>を使い，棒の横の位置を調整する必要がある。</p></li>
-<li><p>国名<code class="docutils literal notranslate"><span class="pre">A</span></code>，<code class="docutils literal notranslate"><span class="pre">B</span></code>，<code class="docutils literal notranslate"><span class="pre">C</span></code>の位置を手動で調整する必要がある。</p></li>
+<li><p>国名<code class="docutils literal notranslate"><span class="pre">A</span></code>，<code class="docutils literal notranslate"><span class="pre">B</span></code>，<code class="docutils literal notranslate"><span class="pre">C</span></code>の位置を調整する必要がある。</p></li>
 </ul>
+<p>この２点を考慮すると次のコードとなる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">index</span>
-<span class="n">wd</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">5</span>
-<span class="n">x_ticks</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;country&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">index</span>                 <span class="c1"># (1)</span>
+<span class="n">wd</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">5</span>                        <span class="c1"># (2)</span>
+<span class="n">x_ticks</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;country&#39;</span><span class="p">]</span>  <span class="c1"># (3)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">var_list</span><span class="p">,</span> <span class="n">leg_list</span><span class="p">)):</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="n">wd</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">wd</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="n">wd</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>        <span class="c1"># (4)</span>
+           <span class="n">v</span><span class="p">,</span>
+           <span class="n">data</span><span class="o">=</span><span class="n">df4</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">,</span>
+           <span class="n">width</span><span class="o">=</span><span class="n">wd</span><span class="p">)</span>            <span class="c1"># (5)</span>
     
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="n">wd</span><span class="o">*</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">x_ticks</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">x_ticks</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="n">wd</span><span class="o">*</span><span class="mf">2.5</span><span class="p">,</span>       <span class="c1"># (6)</span>
+              <span class="n">x_ticks</span><span class="p">,</span>          <span class="c1"># (7)</span>
+              <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>      <span class="c1"># (8)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_171_0.png" src="_images/4_matplotlib_171_0.png" />
+<img alt="_images/4_matplotlib_170_0.png" src="_images/4_matplotlib_170_0.png" />
 </div>
 </div>
-<p>コードの説明は割愛するが，その代わりに<a class="reference internal" href="5_pandas_plot.html#sec-5-bar"><span class="std std-ref">ここで</span></a>説明している<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使う方法がより簡単なのでそちらを利用しても良いだろう。</p>
+<p>簡単にコードを説明する。</p>
+<ul class="simple">
+<li><p>(1) <code class="docutils literal notranslate"><span class="pre">df4</span></code>の行インデック（番号）を<code class="docutils literal notranslate"><span class="pre">idx</span></code>に割り当てる。これを図の横軸に使う。そのままでは国名が表示されないので，(7)で設定することになる。</p></li>
+<li><p>(2) 棒の幅を<code class="docutils literal notranslate"><span class="pre">1/5</span></code>として<code class="docutils literal notranslate"><span class="pre">wd</span></code>に割り当てる。</p></li>
+<li><p>(3) 国名を<code class="docutils literal notranslate"><span class="pre">x_ticks</span></code>に割り当てる。(7)で使うことになる。</p></li>
+<li><p>(4) 棒の横軸の位置を指定する。ループが実行されるごとに表示される棒は<code class="docutils literal notranslate"><span class="pre">wd</span></code>だけ右にシフトすることになる。</p></li>
+<li><p>(5) 棒の幅を<code class="docutils literal notranslate"><span class="pre">wd</span></code>にする。</p></li>
+<li><p>(6) 横軸の目盛の位置を指定する。</p></li>
+<li><p>(7) 横軸の目盛ラベルを国名<code class="docutils literal notranslate"><span class="pre">x_ticks</span></code>とする。</p></li>
+<li><p>(8) 目盛ラベルのフォントの大きさを指定する。</p></li>
+</ul>
+<p>よりシンプルなコードで同じ図を書きたい場合は，<a class="reference internal" href="5_pandas_plot.html#sec-5-bar"><span class="std std-ref">ここで</span></a>説明している<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使う方法を利用しても良いだろう。</p>
 </div>
 </div>
 </div>
