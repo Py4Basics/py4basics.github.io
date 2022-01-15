@@ -173,8 +173,7 @@ pass
 
 # df0はDataFrame
 
-df0.plot(title='This Is a Title',
-         style=[':','--','-'],
+df0.plot(style=[':','--','-'],
          linewidth=2,
          color=['r','k','g'],
          marker='o',
@@ -979,7 +978,7 @@ pass
 #     * `DataFrame`の場合はデフォルトは`True`
 # * `label`：凡例の表現を指定
 # * `grid`：グリッド表示（ブール型;デフォルトは`False`)
-# * `rot`：横軸の変数の表示の角度（デフォルトは`90`）
+# * `rot`(rotationの略)：横軸の変数の表示の角度（デフォルトは`90`）
 # * `subplots`：複数の図をプロットする（詳細はライン・プロットを参照）
 # * `ax`：プロットする「軸」を指定する。
 # 
