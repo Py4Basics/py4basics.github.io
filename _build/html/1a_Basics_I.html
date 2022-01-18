@@ -730,7 +730,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/40/v0v2h0rj7p75rngjf0bh9r040000gn/T/ipykernel_93159/664614571.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/40/v0v2h0rj7p75rngjf0bh9r040000gn/T/ipykernel_13805/664614571.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
 <span class="g g-Whitespace">    </span><span class="mi">10</span>
       <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid non-printable character U+3000
@@ -1150,7 +1150,7 @@ in English or the language of your choice.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">40</span><span class="o">/</span><span class="n">v0v2h0rj7p75rngjf0bh9r040000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_93159</span><span class="o">/</span><span class="mf">3456849713.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">40</span><span class="o">/</span><span class="n">v0v2h0rj7p75rngjf0bh9r040000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_13805</span><span class="o">/</span><span class="mf">3456849713.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;1.0&#39;</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
@@ -1223,12 +1223,15 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">5➗２=2余り1</span></code>となるが，<code class="docutils literal notranslate"><span class="pre">5%2</span></code>は<code class="docutils literal notranslate"><span class="pre">1</span></code>を返し，<code class="docutils literal notranslate"><span class="pre">5//2</span></code>は<code class="docutils literal notranslate"><span class="pre">2</span></code>を返すことになる。即ち，</p>
-<div class="math notranslate nohighlight">
-\[
-a　= (a//b)(b) + (a\%b)
-\]</div>
-<p>が成立することになる。</p>
+<p><code class="docutils literal notranslate"><span class="pre">5➗２=2余り1</span></code>となるが，<code class="docutils literal notranslate"><span class="pre">5%2</span></code>は<code class="docutils literal notranslate"><span class="pre">1</span></code>を返し，<code class="docutils literal notranslate"><span class="pre">5//2</span></code>は<code class="docutils literal notranslate"><span class="pre">2</span></code>を返すことになる。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>剰余演算と切り捨て演算には次の関係が成立する（即ち，<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す）。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>　<span class="o">==</span> <span class="p">(</span><span class="n">a</span><span class="o">//</span><span class="n">b</span><span class="p">)(</span><span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">a</span>\<span class="o">%</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a,b&gt;0</span></code>の場合は問題なく理解できる。しかし，<code class="docutils literal notranslate"><span class="pre">a</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">b</span></code>もしくは両方が負の値を取るとエキゾチックな値になるので注意する必要がある。基本的に<code class="docutils literal notranslate"><span class="pre">//</span></code>は「床関数」と同義と考え，上の関係が満たされるように<code class="docutils literal notranslate"><span class="pre">%</span></code>の値が決まることになる。このサイトでは<code class="docutils literal notranslate"><span class="pre">a,b&gt;0</span></code>のみを考える。</p>
+</div>
 <p>最後に，文字列型にも<code class="docutils literal notranslate"><span class="pre">+</span></code>と<code class="docutils literal notranslate"><span class="pre">*</span></code>が使えることも付け加える。<code class="docutils literal notranslate"><span class="pre">+</span></code>は文字列を結合することになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2098,7 +2101,7 @@ a　= (a//b)(b) + (a\%b)
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">40</span><span class="o">/</span><span class="n">v0v2h0rj7p75rngjf0bh9r040000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_93159</span><span class="o">/</span><span class="mf">696972652.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">40</span><span class="o">/</span><span class="n">v0v2h0rj7p75rngjf0bh9r040000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_13805</span><span class="o">/</span><span class="mf">696972652.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tuple0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Kobe&#39;</span>
 
 <span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
