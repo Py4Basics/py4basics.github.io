@@ -209,6 +209,11 @@
    Gapminder
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Moving_Average.html">
+   移動平均
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -1648,7 +1653,10 @@ Name: 評語, dtype: float64
 可 : 33.3
 合格 : 6.7
 認定 : 3.3
-不可 : 6.7
+不可
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> : 6.7
 取消 : 6.7
 -----------
 合計: 100
@@ -1775,11 +1783,11 @@ Name: 評語, dtype: float64
 可 40.0
 合格 13.3
 認定 0.0
-不可 0.0
-取消
+不可
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0.0
+取消 0.0
 -----------
 合計 100
 </pre></div>
@@ -1877,7 +1885,10 @@ Name: 評語, dtype: float64
 合格 0.0
 認定 6.7
 不可 13.3
-取消 13.3
+取消
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13.3
 --------
 合計 100
 </pre></div>
@@ -2188,10 +2199,10 @@ dtype: object
     .quantile()        .rank()            .resample()        .rolling()
     .sample()          .sem()             .shift()           .size()
     .skew()            .std()             .sum()             .tail()
-    .take()            .transform()       .tshift()          .var()
-    .修得学期          .修得年度          .区分              .単位数            .合否
-    .科目              .科目GP            .科目ナンバー    .科目中区分        .科目大区分
-    .評語
+    .take()            .transform()       .tshift()          .value_counts()
+    .var()             .修得学期          .修得年度          .区分              .単位数
+    .合否              .科目              .科目GP            .科目ナンバー    .科目中区分
+    .科目大区分        .評語
 </pre></div>
 </div>
 </div>
@@ -2677,7 +2688,7 @@ dtype: object
     
       By 春山 鉄源  Tetsugen HARUYAMA<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>
