@@ -17,6 +17,7 @@ parts:
   - file: things_to_note
   - file: Grade
   - file: Gapminder
+  - file: Moving_Average
 - caption: "経済学"
   chapters:
   - url: https://py4macro.github.io

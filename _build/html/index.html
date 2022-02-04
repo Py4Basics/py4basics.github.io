@@ -210,6 +210,11 @@
    Gapminder
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Moving_Average.html">
+   移動平均
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -383,7 +388,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Version: 2022年01月09日
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Version: 2022年02月04日
 </pre></div>
 </div>
 </div>
@@ -440,6 +445,8 @@ Pythonやと関連ツール（GitやGitHubなど）のインストールと使�
 神戸大学のウリボーネット上にある成績を使い学業成績分析を行う。成績をコピーして使うので他大学でも使えるかもしれない？</p></li>
 <li><p><strong>Gapminder</strong><br>
 Gapminderは世界経済のGDPなどデータを駆使し興味深い分析をおこなっているサイトである。そのデータを使って，グループ別（例えば，アジア・欧州・アフリカなど）の計算を簡単に行うことができる<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>の<code class="docutils literal notranslate"><span class="pre">groupby</span></code>の使い方と<code class="docutils literal notranslate"><span class="pre">Multi-index</span></code>を紹介する。</p></li>
+<li><p><strong>移動平均</strong><br>
+移動平均の計算方法の解説と<a class="reference external" href="https://py4macro.github.io/11_Macro_Variables.html#id11">インフレ率とマネーストックの増加率</a>で使った<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の作成方法について説明する。</p></li>
 </ul>
 </div>
 <div class="section" id="id2">
@@ -460,7 +467,7 @@ Gapminderは世界経済のGDPなどデータを駆使し興味深い分析を�
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">40</span><span class="o">/</span><span class="n">v0v2h0rj7p75rngjf0bh9r040000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_61625</span><span class="o">/</span><span class="mf">2880793250.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">40</span><span class="o">/</span><span class="n">v0v2h0rj7p75rngjf0bh9r040000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_52026</span><span class="o">/</span><span class="mf">2880793250.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">gapminder</span><span class="o">,</span> <span class="nn">matplotlib</span><span class="o">,</span> <span class="nn">numpy</span><span class="o">,</span> <span class="nn">pandas</span><span class="o">,</span> <span class="nn">scipy</span><span class="o">,</span> <span class="nn">see</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">platform</span> <span class="kn">import</span> <span class="n">python_version</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> 
@@ -526,7 +533,7 @@ Gapminderは世界経済のGDPなどデータを駆使し興味深い分析を�
     
       著者 春山 鉄源  Tetsugen HARUYAMA<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>
