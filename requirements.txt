@@ -7,7 +7,7 @@ matplotlib
 # numba
 numpy
 pandas
-# py4macro
+py4macro
 # py4etrics
 scipy
 see
