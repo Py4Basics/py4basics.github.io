@@ -595,19 +595,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">40</span><span class="o">/</span><span class="n">v0v2h0rj7p75rngjf0bh9r040000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_61575</span><span class="o">/</span><span class="mf">1172222558.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">gapminder</span> <span class="kn">import</span> <span class="n">gapminder</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">see</span> <span class="kn">import</span> <span class="n">see</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;gapminder&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -1734,7 +1721,7 @@ Oceania : 2
       <td>14469.475533</td>
       <td>9355.213498</td>
       <td>973.533195</td>
-      <td>7213.085036</td>
+      <td>7213.085037</td>
       <td>12081.749115</td>
       <td>20461.386162</td>
       <td>49357.19017</td>
@@ -1986,7 +1973,7 @@ Oceania : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-27-11f62f4671e9&gt;:5: FutureWarning: Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/40/v0v2h0rj7p75rngjf0bh9r040000gn/T/ipykernel_28521/3388776761.py:5: FutureWarning: Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
   df_group[&#39;lifeExp&#39;,&#39;pop&#39;,&#39;gdpPercap&#39;].agg(func)
 </pre></div>
 </div>
@@ -2335,6 +2322,10 @@ Oceania : 2
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/40/v0v2h0rj7p75rngjf0bh9r040000gn/T/ipykernel_28521/18837437.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.count(level=1) should use df.groupby(level=1).count().
+  dfm.count(level=0)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2411,6 +2402,10 @@ Oceania : 2
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/40/v0v2h0rj7p75rngjf0bh9r040000gn/T/ipykernel_28521/2159504587.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.median(level=1) should use df.groupby(level=1).median().
+  dfm.mean(level=&#39;continent&#39;)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2485,6 +2480,10 @@ Oceania : 2
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/40/v0v2h0rj7p75rngjf0bh9r040000gn/T/ipykernel_28521/109049444.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.var(level=1) should use df.groupby(level=1).var().
+  dfm.std(level=&#39;continent&#39;)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2559,6 +2558,10 @@ Oceania : 2
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/40/v0v2h0rj7p75rngjf0bh9r040000gn/T/ipykernel_28521/1026016611.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.median(level=1) should use df.groupby(level=1).median().
+  dfm.max(level=&#39;continent&#39;)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2630,6 +2633,10 @@ Oceania : 2
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/40/v0v2h0rj7p75rngjf0bh9r040000gn/T/ipykernel_28521/2681793636.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.median(level=1) should use df.groupby(level=1).median().
+  dfm.min(level=&#39;continent&#39;)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {

@@ -32,7 +32,7 @@ import py4macro
 
 month_list = [f'{i}月' for i in range(1,13)]
 df_ex = pd.DataFrame({'月':month_list,'A':range(10,130,10)})
-df_ex['B'] = df_ex.rolling(3).mean()
+df_ex['B'] = df_ex['A'].rolling(3).mean()
 df_ex['C'] = df_ex['B'].iloc[2::3]
 
 
