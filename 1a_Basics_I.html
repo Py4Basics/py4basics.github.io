@@ -447,7 +447,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id11">
-     累算代入演算子
+     累算割り当て演算子
     </a>
    </li>
   </ul>
@@ -484,19 +484,34 @@
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id18">
-       要素の入れ替え
+       入れ子の場合
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id19">
+       結合
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id20">
+       要素の入れ替え
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id21">
        要素の削除
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id20">
+    <a class="reference internal nav-link" href="#id22">
      辞書
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     まとめ
     </a>
    </li>
   </ul>
@@ -642,7 +657,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id11">
-     累算代入演算子
+     累算割り当て演算子
     </a>
    </li>
   </ul>
@@ -679,19 +694,34 @@
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id18">
-       要素の入れ替え
+       入れ子の場合
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id19">
+       結合
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id20">
+       要素の入れ替え
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id21">
        要素の削除
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id20">
+    <a class="reference internal nav-link" href="#id22">
      辞書
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     まとめ
     </a>
    </li>
   </ul>
@@ -735,7 +765,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6901/664614571.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_1268/664614571.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
 <span class="g g-Whitespace">    </span><span class="mi">10</span>
       <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid character in identifier
@@ -754,10 +784,10 @@ in English or the language of your choice.
 <h2>４つのデータ型<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>には無数のデータ型があるが，まず基本となる3つを考える。</p>
 <ul class="simple">
-<li><p>整数型（<code class="docutils literal notranslate"><span class="pre">int</span></code>と表す）</p></li>
-<li><p>浮動小数点型（<code class="docutils literal notranslate"><span class="pre">float</span></code>と表す）</p></li>
-<li><p>文字列型（<code class="docutils literal notranslate"><span class="pre">str</span></code>と表す）</p></li>
-<li><p>ブール型（<code class="docutils literal notranslate"><span class="pre">bool</span></code>と表す）</p></li>
+<li><p>整数型（<code class="docutils literal notranslate"><span class="pre">int</span></code>と表される; integerの略）</p></li>
+<li><p>浮動小数点型（<code class="docutils literal notranslate"><span class="pre">float</span></code>と表される）</p></li>
+<li><p>文字列型（<code class="docutils literal notranslate"><span class="pre">str</span></code>と表される; stringの略）</p></li>
+<li><p>ブール型（<code class="docutils literal notranslate"><span class="pre">bool</span></code>と表される; booleanの略）</p></li>
 </ul>
 <p>整数型とは文字通り<code class="docutils literal notranslate"><span class="pre">1</span></code>や<code class="docutils literal notranslate"><span class="pre">100</span></code>などの整数のことであり，浮動小数点型とは小数を指す。<code class="docutils literal notranslate"><span class="pre">Python</span></code>では整数と小数を異なるデータ型として区別して扱うので，<code class="docutils literal notranslate"><span class="pre">1</span></code>と<code class="docutils literal notranslate"><span class="pre">1.0</span></code>はデータ型が異なるのである。</p>
 <div class="admonition note">
@@ -830,7 +860,15 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p>整数型は<code class="docutils literal notranslate"><span class="pre">int</span></code>（integer），浮動小数点型は<code class="docutils literal notranslate"><span class="pre">float</span></code>と表示されている。文字列は</p>
+<p>整数型は<code class="docutils literal notranslate"><span class="pre">int</span></code>（integer），浮動小数点型は<code class="docutils literal notranslate"><span class="pre">float</span></code>と表示されている。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>1,000,000,000.0（10億）のような大きな数字は３桁ごとにコンマを入れると読みやすくなりますが，<code class="docutils literal notranslate"><span class="pre">Python</span></code>では<code class="docutils literal notranslate"><span class="pre">,</span></code>の代わりに<code class="docutils literal notranslate"><span class="pre">_</span></code>を使うことができます。例えば，35億を<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てる場合は次の様に書くことができます。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">3_500_000_000.0</span>
+</pre></div>
+</div>
+</div>
+<p>文字列は</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;国内総生産&#39;</span>
@@ -856,7 +894,7 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p>データ型を確認してみよう。</p>
+<p>この例では，外側は<code class="docutils literal notranslate"><span class="pre">'</span></code>と<code class="docutils literal notranslate"><span class="pre">'</span></code>を使っており，内側は<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>と<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>を使っている。データ型を確認してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;神戸大学&#39;</span><span class="p">)</span>
@@ -898,7 +936,7 @@ in English or the language of your choice.
 <p>ブール型には<code class="docutils literal notranslate"><span class="pre">True</span></code>（真）, <code class="docutils literal notranslate"><span class="pre">False</span></code>（偽）がある。名前が示すように「真偽」を示すのがブール型であり，<code class="docutils literal notranslate"><span class="pre">True</span></code>と<code class="docutils literal notranslate"><span class="pre">False</span></code>を真偽値と呼ぶ。例えば，</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">==</span><span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">==</span> <span class="mi">10</span>
 </pre></div>
 </div>
 </div>
@@ -911,7 +949,7 @@ in English or the language of your choice.
 <p>後ほど説明するが，<code class="docutils literal notranslate"><span class="pre">==</span></code>は「等しい」ということを意味する。また，<code class="docutils literal notranslate"><span class="pre">True</span></code>は<code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>は<code class="docutils literal notranslate"><span class="pre">0</span></code>として計算される。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span><span class="o">==</span><span class="mi">1</span> <span class="c1"># Trueは１なのでTrueを返す</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1"># Trueは１なのでTrueを返す</span>
 </pre></div>
 </div>
 </div>
@@ -923,7 +961,7 @@ in English or the language of your choice.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span><span class="o">==</span><span class="mi">0</span> <span class="c1"># Falseは0なのでTrueを返す</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span> <span class="o">==</span> <span class="mi">0</span> <span class="c1"># Falseは0なのでTrueを返す</span>
 </pre></div>
 </div>
 </div>
@@ -1048,13 +1086,59 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>1,000,000,000.0（10億）のような大きな数字は３桁ごとにコンマを入れると読みやすくなりますが，<code class="docutils literal notranslate"><span class="pre">Python</span></code>では<code class="docutils literal notranslate"><span class="pre">,</span></code>の代わりに<code class="docutils literal notranslate"><span class="pre">_</span></code>を使うことができます。例えば，35億を<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てる場合は次の様に書くことができます。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">3_500_000_000.0</span>
-</pre></div>
-</div>
-</div>
+<p><strong>＜まとめ１＞</strong><br></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>データ型</p></th>
+<th class="head"><p>例</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>整数型（<code class="docutils literal notranslate"><span class="pre">int</span></code>）</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>不動小数点型（<code class="docutils literal notranslate"><span class="pre">float</span></code>）</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>文字列型（<code class="docutils literal notranslate"><span class="pre">str</span></code>）</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'10.0'</span></code> もしくは <code class="docutils literal notranslate"><span class="pre">&quot;10.0&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>ブール型（<code class="docutils literal notranslate"><span class="pre">bool</span></code>）</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code> もしくは <code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>＜まとめ２＞</strong><br></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>関数</p></th>
+<th class="head"><p>例</p></th>
+<th class="head"><p>動作・戻り値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">type(10)</span></code>　→　<code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>データ型を返す</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int(10.0)</span></code>　→　<code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+<td><p>整数型に変換</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">float()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float('10.0')</span></code>　→　<code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
+<td><p>不動小数点型に変換</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">str()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str(10)</span></code>　→　<code class="docutils literal notranslate"><span class="pre">'10'</span></code></p></td>
+<td><p>文字列型に変換</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bool()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool(0)</span></code>　→　<code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>真偽値を返す</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="python">
 <h2>計算機としての<code class="docutils literal notranslate"><span class="pre">Python</span></code><a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
@@ -1067,8 +1151,8 @@ in English or the language of your choice.
 <li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>（乗算）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/</span></code>（除算）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">**</span></code>（累乗）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code>（剰余演算）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">//</span></code>（切り捨て除算）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code>（剰余演算）</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1155,7 +1239,7 @@ in English or the language of your choice.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_6901</span><span class="o">/</span><span class="mf">3456849713.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1268</span><span class="o">/</span><span class="mf">3456849713.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;1.0&#39;</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
@@ -1232,7 +1316,7 @@ in English or the language of your choice.
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>剰余演算と切り捨て演算には次の関係が成立する（即ち，<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す）。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>　<span class="o">==</span> <span class="p">(</span><span class="n">a</span><span class="o">//</span><span class="n">b</span><span class="p">)(</span><span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">a</span>\<span class="o">%</span><span class="n">b</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>　<span class="o">==</span> <span class="p">(</span><span class="n">a</span><span class="o">//</span><span class="n">b</span><span class="p">)(</span><span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">a</span><span class="o">%</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">a,b&gt;0</span></code>の場合は問題なく理解できる。しかし，<code class="docutils literal notranslate"><span class="pre">a</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">b</span></code>もしくは両方が負の値を取るとエキゾチックな値になるので注意する必要がある。基本的に<code class="docutils literal notranslate"><span class="pre">//</span></code>は「床関数」と同義と考え，上の関係が満たされるように<code class="docutils literal notranslate"><span class="pre">%</span></code>の値が決まることになる。このサイトでは<code class="docutils literal notranslate"><span class="pre">a,b&gt;0</span></code>のみを考える。</p>
@@ -1313,6 +1397,68 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
+<p><strong>＜まとめ１＞</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>算術演算</p></th>
+<th class="head"><p>例</p></th>
+<th class="head"><p>動作・戻り値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10+2</span></code>　→　<code class="docutils literal notranslate"><span class="pre">12</span></code></p></td>
+<td><p>加算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10-2</span></code>　→　<code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
+<td><p>減算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10*2</span></code>　→　<code class="docutils literal notranslate"><span class="pre">20</span></code></p></td>
+<td><p>乗算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10/2</span></code>　→　<code class="docutils literal notranslate"><span class="pre">5.0</span></code></p></td>
+<td><p>除算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">**</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10**2</span></code>　→　<code class="docutils literal notranslate"><span class="pre">100</span></code></p></td>
+<td><p>累乗</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">//</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">11//2</span></code>　→　<code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td><p>剰余演算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">11%2</span></code>　→　<code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p>切り捨て除算</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>＜まとめ２＞</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>文字列型に使う</p></th>
+<th class="head"><p>例</p></th>
+<th class="head"><p>動作・戻り値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'神戸'</span> <span class="pre">+</span> <span class="pre">'大学'</span></code>　→　<code class="docutils literal notranslate"><span class="pre">'神戸大学'</span></code></p></td>
+<td><p>結合</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">+</span></code>がなくても</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'神戸'</span> <span class="pre">'大学'</span></code>　→　<code class="docutils literal notranslate"><span class="pre">'神戸大学'</span></code></p></td>
+<td><p>結合</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'★'*5</span></code>　→　<code class="docutils literal notranslate"><span class="pre">'★★★★★'</span></code></p></td>
+<td><p>文字列を整数個返す</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="id6">
 <h3>関係演算子<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
@@ -1393,7 +1539,7 @@ in English or the language of your choice.
 </div>
 <div class="section" id="not">
 <h4><code class="docutils literal notranslate"><span class="pre">not</span></code><a class="headerlink" href="#not" title="Permalink to this headline">¶</a></h4>
-<p>まず<code class="docutils literal notranslate"><span class="pre">not</span></code>から考えよう。次の様な挙動となる。</p>
+<p>まず<code class="docutils literal notranslate"><span class="pre">not</span></code>から考えよう。「否定」なので次の様な挙動となる。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>の前に置くと<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Flase</span></code>の前に置くと<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す。</p></li>
@@ -1600,6 +1746,29 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
+<p><strong>＜まとめ＞</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ブール演算</p></th>
+<th class="head"><p>例</p></th>
+<th class="head"><p>意味</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">not</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">True</span></code>　→　<code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>否定</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">and</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">False</span></code>　→　<code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>且つ</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">or</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">or</span> <span class="pre">True</span></code>　→　<code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p>又は</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -1665,6 +1834,10 @@ in English or the language of your choice.
 </div>
 </div>
 <p>「品物と参照記号の関係」は今の段階ではそれ程重要ではないが，先に進むにつれて重要性が増してくるので，今のうちにこのようなイメージを持つと良いだろう。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">10</span></code>を考えてみよう。Pythonの<a class="reference external" href="https://docs.python.org/3/reference/simple_stmts.html">公式ドキュメント</a>では，このように<code class="docutils literal notranslate"><span class="pre">=</span></code>が使われるコードを assignment statement と読んでおり，<a class="reference external" href="https://docs.python.org/ja/3/reference/simple_stmts.html">日本版</a>は「代入文」と訳している。これに従うと<code class="docutils literal notranslate"><span class="pre">=</span></code>は代入演算子と呼ぶことができるだろう。しかし英語では assignment（割り当て）と substitution（代入）は若干異なる意味となり，その違いが参照記号と実態の関係を反映していると考えられる。このサイトでは，参照記号と実態の違いを強調するために「割り当てる（assign）」という表現を使っている。</p>
+</div>
 </div>
 <div class="section" id="id10">
 <h3>複数の変数の割り当て<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
@@ -1711,7 +1884,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="section" id="id11">
-<h3>累算代入演算子<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<h3>累算割り当て演算子<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>上で<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>が出てきたが、これを短縮して<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">1</span></code>と書くことができる。次のコードを考えようてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1754,6 +1927,52 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
+<p><strong>＜まとめ１＞</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>関数</p></th>
+<th class="head"><p>例</p></th>
+<th class="head"><p>意味</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">10</span></code></p></td>
+<td><p>割り当て記号（<code class="docutils literal notranslate"><span class="pre">x</span></code>は参照記号）</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>＜まとめ２＞</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>関数</p></th>
+<th class="head"><p>例（<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">10</span></code>）</p></th>
+<th class="head"><p>動作・戻り値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">+=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">2</span></code>　→　<code class="docutils literal notranslate"><span class="pre">12</span></code></p></td>
+<td><p>加算と同時に再割り当て</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-=</span> <span class="pre">2</span></code>　→　<code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
+<td><p>減算と同時に再割り当て</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*=</span> <span class="pre">2</span></code>　→　<code class="docutils literal notranslate"><span class="pre">20</span></code></p></td>
+<td><p>乗算と同時に再割り当て</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/=</span> <span class="pre">2</span></code>　→　<code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td><p>除算と同時に再割り当て</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">**=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**=</span> <span class="pre">2</span></code>　→　<code class="docutils literal notranslate"><span class="pre">100</span></code></p></td>
+<td><p>累乗と同時に再割り当て</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="section" id="id12">
@@ -1874,6 +2093,19 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
+<p>またリストの中にリストや他のデータ型（以下で説明するタプルや辞書など）を入れることも可能だ。例えば，</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, [1, 2], [3, 4, 5]]
+</pre></div>
+</div>
+</div>
+</div>
 <p>次に説明するタプルをリストに変換したい場合は<code class="docutils literal notranslate"><span class="pre">list()</span></code>を使うことができる。</p>
 </div>
 <div class="section" id="id16">
@@ -1925,7 +2157,20 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p>上で定義した<code class="docutils literal notranslate"><span class="pre">list1</span></code>をタプルに変換したい場合は<code class="docutils literal notranslate"><span class="pre">tuple()</span></code>を使う。</p>
+<p>タプルの中にタプルや他のデータ型（リストや以下で説明する辞書など）を入れることも可能だ。例えば，</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">0</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, [1, 2], (3, 4, 5))
+</pre></div>
+</div>
+</div>
+</div>
+<p>また，上で定義した<code class="docutils literal notranslate"><span class="pre">list1</span></code>をタプルに変換したい場合は<code class="docutils literal notranslate"><span class="pre">tuple()</span></code>を使う。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">tuple</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
@@ -1934,6 +2179,19 @@ in English or the language of your choice.
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;A&#39;, True, 100)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">tuple0</span></code>をリストに変換したい場合は<code class="docutils literal notranslate"><span class="pre">list()</span></code>を使う。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">tuple0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;A&#39;, True, 100]
 </pre></div>
 </div>
 </div>
@@ -2037,6 +2295,60 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="id18">
+<h4>入れ子の場合<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<p>次の例は入れ子のケースである。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">your_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span> <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">)]</span>
+<span class="n">your_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="p">[</span><span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">600</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>この場合でも考え方は変わらない。例えば，<code class="docutils literal notranslate"><span class="pre">['B','C']</span></code>を抽出したいとしよう。<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の要素なので次のコードとなる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">your_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;B&#39;, &#39;C&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>更に，<code class="docutils literal notranslate"><span class="pre">'B'</span></code>を抽出したいとしよう。その場合は，次のように抽出する要素番号を順を追って指定すれば良い。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">your_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;B&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>タプルの場合も同じである。例えば，<code class="docutils literal notranslate"><span class="pre">500</span></code>を抽出するとしよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">your_tuple</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>500
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id19">
+<h4>結合<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">+</span></code>を使い，複数のリストを結合することができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2065,8 +2377,8 @@ in English or the language of your choice.
 </div>
 <p>この場合，元のタプルを変更しているのではなく，新しいタプルを生成している。</p>
 </div>
-<div class="section" id="id18">
-<h4>要素の入れ替え<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id20">
+<h4>要素の入れ替え<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
 <p>要素の入れ替え方法を説明するために，上で作成したリスト<code class="docutils literal notranslate"><span class="pre">list0</span></code>を考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2105,7 +2417,7 @@ in English or the language of your choice.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_6901</span><span class="o">/</span><span class="mf">696972652.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1268</span><span class="o">/</span><span class="mf">696972652.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tuple0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Kobe&#39;</span>
 
 <span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
@@ -2114,8 +2426,8 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<div class="section" id="id19">
-<h4>要素の削除<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id21">
+<h4>要素の削除<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
 <p>要素を削除するには色々な方法が用意されているが，最も簡単なのは<code class="docutils literal notranslate"><span class="pre">del</span></code>（deleteの略）を使うことだろう。<code class="docutils literal notranslate"><span class="pre">del</span></code>の後に削除したい要素を書き実行するだけである。もちろんスライシングにも対応している。例えば，</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2133,8 +2445,8 @@ in English or the language of your choice.
 <p><code class="docutils literal notranslate"><span class="pre">Kobe</span></code>が削除されている。</p>
 </div>
 </div>
-<div class="section" id="id20">
-<h3>辞書<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id22">
+<h3>辞書<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
 <p>辞書（dictionary）はキー（key）と値（value）のペアとなって定義され，<code class="docutils literal notranslate"><span class="pre">:</span></code>を挟んで１つのペアとなる。全てを<code class="docutils literal notranslate"><span class="pre">{}</span></code>で囲み辞書を定義する。もしくは<code class="docutils literal notranslate"><span class="pre">dict()</span></code>でも生成することができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2219,6 +2531,101 @@ in English or the language of your choice.
 </div>
 </div>
 <p>ここでの<code class="docutils literal notranslate"><span class="pre">del</span></code>はリストの要素を削除した際に使った同じ<code class="docutils literal notranslate"><span class="pre">del</span></code>である。</p>
+</div>
+<div class="section" id="id23">
+<h3>まとめ<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<p><strong>＜作成方法＞</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>データ型</p></th>
+<th class="head"><p>例</p></th>
+<th class="head"><p>関数</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>リスト</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[0,1,3]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">list()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>タプル</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(0,1,3)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tuple()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>辞書</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{'a':0,</span> <span class="pre">'b':1}</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dict()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>＜要素アクセス＞</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>データ型</p></th>
+<th class="head"><p>例</p></th>
+<th class="head"><p>抽出方法</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>リスト</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[0,10,30]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x[1]</span></code>　→　<code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>タプル</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">(0,10,30)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">y[1]</span></code>　→　<code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>辞書</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">{'a':0,</span> <span class="pre">'b':10}</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">z['b']</span></code>　→　<code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>＜結合＞</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>データ型</p></th>
+<th class="head"><p>例</p></th>
+<th class="head"><p>結合方法</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>リスト</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[0,10]</span></code><br><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">[30]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>　→　<code class="docutils literal notranslate"><span class="pre">[0,10,30]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>タプル</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">(0,10)</span></code><br><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">(30,)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>　→　<code class="docutils literal notranslate"><span class="pre">(0,10,30)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>辞書</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">{'a':0}</span></code><br><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">{'b':10}</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">|</span> <span class="pre">y</span></code> 又は <code class="docutils literal notranslate"><span class="pre">{**y,**x}</span></code>　→　<code class="docutils literal notranslate"><span class="pre">{'a':0,'b':10}</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>＜要素の削除＞</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>データ型</p></th>
+<th class="head"><p>例</p></th>
+<th class="head"><p>削除方法</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>リスト</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[0,10,30]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">x[1]</span></code>　→　<code class="docutils literal notranslate"><span class="pre">[0,30]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>タプル</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">(0,10,30)</span></code></p></td>
+<td><p>不可</p></td>
+</tr>
+<tr class="row-even"><td><p>辞書</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">{'a':0,'b':10}</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">z['a']</span></code>　→　<code class="docutils literal notranslate"><span class="pre">{'b':10}</span></code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

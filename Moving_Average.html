@@ -424,14 +424,8 @@ in English or the language of your choice.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">month_list</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">月&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">)]</span>
 <span class="n">df_ex</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;月&#39;</span><span class="p">:</span><span class="n">month_list</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">10</span><span class="p">)})</span>
-<span class="n">df_ex</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ex</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df_ex</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ex</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">df_ex</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ex</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">::</span><span class="mi">3</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_10787/3016896911.py:3: FutureWarning: Dropping of nuisance columns in rolling operations is deprecated; in a future version this will raise TypeError. Select only valid columns before calling the operation. Dropped columns were Index([&#39;月&#39;], dtype=&#39;object&#39;)
-  df_ex[&#39;B&#39;] = df_ex.rolling(3).mean()
 </pre></div>
 </div>
 </div>
