@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
@@ -100,30 +103,47 @@
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Python入門
+  Python入門I
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="1a_Basics_I.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Python
-    </span>
-   </code>
-   ：基礎（その１）
+  <a class="reference internal" href="1_Basics_I.html">
+   基本データ型と変数
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="1b_Basics_II.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Python
-    </span>
-   </code>
-   ：基礎（その２）
+  <a class="reference internal" href="1_Basics_II.html">
+   データの操作
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_III.html">
+   関数とメソッド
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_IV.html">
+   制御フロー
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_V.html">
+   モジュールと疑似コード
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_VI.html">
+   図示とシミュレーション
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python入門II
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="2_NumPy.html">
    <code class="docutils literal notranslate">
@@ -165,13 +185,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="6_SciPy_stats.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     SciPy.stats
-    </span>
-   </code>
-   ：確率分布
+  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
+   SciPy.stats：確率分布
   </a>
  </li>
  <li class="toctree-l1">
@@ -654,7 +669,7 @@ in English or the language of your choice.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1364</span><span class="o">/</span><span class="mf">698102514.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">8</span><span class="n">k48jl6d249_n_qfxwsl6xvm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_7174</span><span class="o">/</span><span class="mf">698102514.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a_local</span>
 
 <span class="ne">NameError</span>: name &#39;a_local&#39; is not defined
@@ -1000,7 +1015,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4589525584
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4549461520
 </pre></div>
 </div>
 </div>
@@ -1020,7 +1035,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4589525584
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4549461520
 </pre></div>
 </div>
 </div>
@@ -1047,7 +1062,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4589523376
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4549463120
 </pre></div>
 </div>
 </div>
@@ -1103,7 +1118,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4589764672
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4549689552
 </pre></div>
 </div>
 </div>
@@ -1147,7 +1162,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(True, 4589758656, 4589758656)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(True, 4549557312, 4549557312)
 </pre></div>
 </div>
 </div>
@@ -1188,7 +1203,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(True, 4589758656, 4589758656)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(True, 4549557312, 4549557312)
 </pre></div>
 </div>
 </div>

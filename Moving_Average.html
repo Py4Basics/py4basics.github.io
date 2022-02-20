@@ -38,9 +38,12 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
@@ -99,30 +102,47 @@
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Python入門
+  Python入門I
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="1a_Basics_I.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Python
-    </span>
-   </code>
-   ：基礎（その１）
+  <a class="reference internal" href="1_Basics_I.html">
+   基本データ型と変数
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="1b_Basics_II.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Python
-    </span>
-   </code>
-   ：基礎（その２）
+  <a class="reference internal" href="1_Basics_II.html">
+   データの操作
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_III.html">
+   関数とメソッド
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_IV.html">
+   制御フロー
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_V.html">
+   モジュールと疑似コード
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_VI.html">
+   図示とシミュレーション
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python入門II
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="2_NumPy.html">
    <code class="docutils literal notranslate">
@@ -164,13 +184,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="6_SciPy_stats.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     SciPy.stats
-    </span>
-   </code>
-   ：確率分布
+  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
+   SciPy.stats：確率分布
   </a>
  </li>
  <li class="toctree-l1">

@@ -1,0 +1,1853 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>図示とシミュレーション &#8212; 経済学のためのPython入門</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/my_style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://py4basics.github.io/1_Basics_VI.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="NumPy：高速化" href="2_NumPy.html" />
+    <link rel="prev" title="モジュールと疑似コード" href="1_Basics_V.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-165998213-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">経済学のためのPython入門</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python入門I
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_I.html">
+   基本データ型と変数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_II.html">
+   データの操作
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_III.html">
+   関数とメソッド
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_IV.html">
+   制御フロー
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_V.html">
+   モジュールと疑似コード
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   図示とシミュレーション
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python入門II
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_NumPy.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NumPy
+    </span>
+   </code>
+   ：高速化
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_Pandas.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   ：データ分析
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4_matplotlib.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matplotlib
+    </span>
+   </code>
+   ：図示
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5_pandas_plot.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   ：図示
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
+   SciPy.stats：確率分布
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7_SciPy_optimize.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SciPy.optimize
+    </span>
+   </code>
+   ：解の求め方と最適化問題
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  参考
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0_Preparations.html">
+   ツールのインストールと説明
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="things_to_note.html">
+   Tipsと注意点
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Grade.html">
+   学業成績の分析
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Gapminder.html">
+   Gapminder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Moving_Average.html">
+   移動平均
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  経済学
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4macro.github.io">
+   Pythonで学ぶマクロ経済学（中級＋レベル）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4etrics.github.io">
+   Pythonで学ぶ入門計量経済学
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/1_Basics_VI.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/1_Basics_VI.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/1_Basics_VI.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   ライン・プロット
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     説明
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     値の生成
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#x">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         x
+        </span>
+       </code>
+       軸の値
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#y">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         y
+        </span>
+       </code>
+       軸の値
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     曲線のプロット
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     重ねてプロット
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       plot()
+      </span>
+     </code>
+     の基本的な引数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     その他の「飾り付け」
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   ヒストグラム
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   中心極限定理
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     中心極限定理とは
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     コイントスのシミュレーション
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     関数化
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     ヒストグラム
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       階級区間
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       ヒストグラム
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id16">
+       関数化
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     シミュレーション
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>図示とシミュレーション</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   ライン・プロット
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     説明
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     値の生成
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#x">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         x
+        </span>
+       </code>
+       軸の値
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#y">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         y
+        </span>
+       </code>
+       軸の値
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     曲線のプロット
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     重ねてプロット
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       plot()
+      </span>
+     </code>
+     の基本的な引数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     その他の「飾り付け」
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   ヒストグラム
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   中心極限定理
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     中心極限定理とは
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     コイントスのシミュレーション
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     関数化
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     ヒストグラム
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       階級区間
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       ヒストグラム
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id16">
+       関数化
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     シミュレーション
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>図示とシミュレーション<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>ここでの目的は２つある。第１に，<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>（「マットプロットリブ」と読む）はプロットのための代表的なパッケージであり，外部パッケージとしては<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>のみを使い（<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>や<code class="docutils literal notranslate"><span class="pre">Numpy</span></code>は使わない）データを図示（プロット）する方法を解説する。第２に，統計学の重要な概念をシミュレーションをおこない，データを可視化し理解を深めることである。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>は大きなパッケージであり，その中にある<code class="docutils literal notranslate"><span class="pre">pyplot</span></code>モジュールを使うことになる。慣例に沿って<code class="docutils literal notranslate"><span class="pre">plt</span></code>としてインポートする。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unable to revert mtime: /Library/Fonts
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>ライン・プロット<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>説明<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>次がプロットする際の構文である。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>plt.plot(＜x軸の値＞,＜y軸の値＞)
+</pre></div>
+</div>
+<p>実際にプロットするために次の値を設定しよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>引数に<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y</span></code>を指定するとプロットできる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11c066f70&gt;]
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_11_1.png" src="_images/1_Basics_VI_11_1.png" />
+</div>
+</div>
+<p>コードに<code class="docutils literal notranslate"><span class="pre">marker='o'</span></code>が追加されているが，「●」を表示するために使っている。このような引数の使い方は後で詳しく説明するので，ここでは気にしないで読み進めて欲しい。</p>
+<p>「●」のマーカーがある点が<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y</span></code>の値の組み合わせとして表示されている。</p>
+<ul class="simple">
+<li><p>左下の「●」の座標は<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y</span></code>の<code class="docutils literal notranslate"><span class="pre">0</span></code>番目の値である<code class="docutils literal notranslate"><span class="pre">x=1</span></code>と<code class="docutils literal notranslate"><span class="pre">y=10</span></code>となる。</p></li>
+<li><p>中央上の「●」の座標が<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y</span></code>の<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の値である<code class="docutils literal notranslate"><span class="pre">x=2</span></code>と<code class="docutils literal notranslate"><span class="pre">y=30</span></code>となる。</p></li>
+<li><p>右端の「●」はの座標が<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y</span></code>の<code class="docutils literal notranslate"><span class="pre">2</span></code>番目の値である<code class="docutils literal notranslate"><span class="pre">x=3</span></code>と<code class="docutils literal notranslate"><span class="pre">y=20</span></code>となる。</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">plot()</span></code>はデフォルトでそれらの点を直線で結んでおり，ライン・プロットと呼ばれる。曲線を描くにはどうすれば良いかと，単に座標の点を増やすことによりスムーズな曲線を表示することが可能となる。言い換えると，短い直線を使うことにより曲線を描画することになる。</p>
+</div>
+<div class="section" id="id4">
+<h3>値の生成<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>曲線を描画するためには座標の数を増やす必要がある。ここでは，そのためのコードを考える。</p>
+<div class="section" id="x">
+<h4><code class="docutils literal notranslate"><span class="pre">x</span></code>軸の値<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h4>
+<p>まず<code class="docutils literal notranslate"><span class="pre">x</span></code>軸の複数の値が要素となるリストを作成するが，次の変数を定義しよう。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">l</span></code>：最小値（lowest value）</p>
+<ul>
+<li><p>リストの要素の最小値</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">h</span></code>：最大値（highest value）</p>
+<ul>
+<li><p>リストの要素の最大値</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>：生成する値の数（整数型，number of values）</p>
+<ul>
+<li><p>リストに含まれる要素の総数</p></li>
+</ul>
+</li>
+</ul>
+<p>例えば，次の値を設定しよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>この値のもとで次の内包表記を使い<code class="docutils literal notranslate"><span class="pre">1.0</span></code>から始まる数字から構成されるリストが作成される。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="n">l</span><span class="p">)</span><span class="o">/</span><span class="n">n</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">lst</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">1.0</span></code>から始まり昇順で並んでいる。また要素の数は<code class="docutils literal notranslate"><span class="pre">n+1</span></code>となる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>この手法を使い<code class="docutils literal notranslate"><span class="pre">x</span></code>軸の値を生成するが，関数にまとめた方が使い易いので次の<code class="docutils literal notranslate"><span class="pre">xvalues</span></code>関数を作成する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">xvalues</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;引数</span>
+<span class="sd">        l：最小値（lowest value）</span>
+<span class="sd">        h：最大値（highest value）</span>
+<span class="sd">        n：数値の数（整数型，number of values）</span>
+<span class="sd">    戻り値</span>
+<span class="sd">        リスト&quot;&quot;&quot;</span>
+    
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span> <span class="s2">&quot;n には整数型を使ってください。&quot;</span>
+    
+    <span class="k">return</span> <span class="p">[</span><span class="n">l</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="n">l</span><span class="p">)</span><span class="o">/</span><span class="n">n</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>以前も説明したが，引数などを確認したい場合は次のコードで調べることができるので覚えておこう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">xvalues</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function xvalues in module __main__:
+
+xvalues(l, h, n)
+    引数
+        l：最小値（lowest value）
+        h：最大値（highest value）
+        n：数値の数（整数型，number of values）
+    戻り値
+        リスト
+</pre></div>
+</div>
+</div>
+</div>
+<p>この<code class="docutils literal notranslate"><span class="pre">xvalues</span></code>関数を使い，<code class="docutils literal notranslate"><span class="pre">x</span></code>の値を生成しよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">xvalues</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.0,
+ -0.6,
+ -0.19999999999999996,
+ 0.19999999999999996,
+ 0.6000000000000001,
+ 1.0]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="y">
+<h4><code class="docutils literal notranslate"><span class="pre">y</span></code>軸の値<a class="headerlink" href="#y" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">y</span></code>軸の値は，描きたい関数に依存している。例えば，次の２次関数をプロットしたいとしよう。</p>
+<div class="math notranslate nohighlight">
+\[y=x^2\]</div>
+<p>まず最初にこの関数を捉える<code class="docutils literal notranslate"><span class="pre">Python</span></code>の関数を作成する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quadratic</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>次に，<code class="docutils literal notranslate"><span class="pre">x</span></code>の値を使い内包表記で<code class="docutils literal notranslate"><span class="pre">y</span></code>の値から構成されるリストを作成する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">quadratic</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.0, 0.36, 0.03999999999999998, 0.03999999999999998, 0.3600000000000001, 1.0]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>曲線のプロット<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>上で作成した<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y</span></code>を使いプロットしよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11c180be0&gt;]
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_35_1.png" src="_images/1_Basics_VI_35_1.png" />
+</div>
+</div>
+<p>座標の数が少ないのでスムーズな曲線には見えない。もっと座標を増やしてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">xvalues</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">quadratic</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11c1fc2b0&gt;]
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_37_1.png" src="_images/1_Basics_VI_37_1.png" />
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(y=x^2\)</span>の図らしく見える。</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>上の２つの図の上に文字が表示されているが，表示したくない場合は最後に<code class="docutils literal notranslate"><span class="pre">;</span></code>を加えるか，次の行に<code class="docutils literal notranslate"><span class="pre">pass</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>と書くと表示されなくなる。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>重ねてプロット<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>２つの<code class="docutils literal notranslate"><span class="pre">y</span></code>の値を生成しよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y0</span> <span class="o">=</span> <span class="p">[</span><span class="n">quadratic</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">quadratic</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">y0</span></code>は<code class="docutils literal notranslate"><span class="pre">y</span></code>と同じであり，<code class="docutils literal notranslate"><span class="pre">y1</span></code>は単にマイナスの符号ついた関数の値である。この２つの関数を重ねてプロットしたいとしよう。コードは簡単で同じ<code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>をリピートするだけである。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1_Basics_VI_43_0.png" src="_images/1_Basics_VI_43_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="plot">
+<h3><code class="docutils literal notranslate"><span class="pre">plot()</span></code>の基本的な引数<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">plot()</span></code>に引数を使うことによりデータの表示方法を指定できる。詳しくは<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">このリンク</a>を参照することにして，ここでは基本的な引数だけを紹介する。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">linestyle</span></code>：線のスタイル（リストにして列の順番で指定する;<code class="docutils literal notranslate"><span class="pre">-</span></code>，<code class="docutils literal notranslate"><span class="pre">--</span></code>，<code class="docutils literal notranslate"><span class="pre">-.</span></code>，<code class="docutils literal notranslate"><span class="pre">:</span></code>などがある）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linewidth</span></code> or <code class="docutils literal notranslate"><span class="pre">lw</span></code>：線の幅</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> or <code class="docutils literal notranslate"><span class="pre">c</span></code>：色（<a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html">参照サイト</a>）</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code>又は<code class="docutils literal notranslate"><span class="pre">red</span></code>は赤</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">k</span></code>又は<code class="docutils literal notranslate"><span class="pre">black</span></code>は黒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">g</span></code>又は<code class="docutils literal notranslate"><span class="pre">green</span></code>はグリーン</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">marker</span></code>：観測値のマーカー（<code class="docutils literal notranslate"><span class="pre">o</span></code>，<code class="docutils literal notranslate"><span class="pre">.</span></code>，<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>，<code class="docutils literal notranslate"><span class="pre">^</span></code>などがある; <a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html">参照サイト</a>）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">markersize</span></code>：マーカーの大きさ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>：以下で説明する<code class="docutils literal notranslate"><span class="pre">ax.legend()</span></code>がある場合に有効となる</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">25</span><span class="p">],</span>
+         <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>
+         <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+         <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span>
+         <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>
+         <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span>
+         <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1_Basics_VI_46_0.png" src="_images/1_Basics_VI_46_0.png" />
+</div>
+</div>
+<p>引数をいちいち書くのが面倒な場合、次の３つを簡略して一緒に指定できる。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">linestyle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">marker</span></code></p></li>
+</ul>
+<p>例えば、</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">linestyle=':'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color='red'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">marker='o'</span></code></p></li>
+</ul>
+<p>の場合、<code class="docutils literal notranslate"><span class="pre">:ro</span></code>と書くことができる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">25</span><span class="p">],</span> <span class="s1">&#39;:ro&#39;</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1_Basics_VI_48_0.png" src="_images/1_Basics_VI_48_0.png" />
+</div>
+</div>
+<p>（注意点）</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:ro</span></code>は文字列</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:</span></code>，<code class="docutils literal notranslate"><span class="pre">r</span></code>，<code class="docutils literal notranslate"><span class="pre">o</span></code>の順番を変えても良い。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:</span></code>や<code class="docutils literal notranslate"><span class="pre">:o</span></code>のように１つもしくは２つだけを指定しても良い。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:ro</span></code>は<code class="docutils literal notranslate"><span class="pre">=</span></code>を使う引数の前に置く。</p></li>
+</ul>
+<p>詳細は<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html">参考サイト（英語）</a>を参照。</p>
+</div>
+<div class="section" id="id7">
+<h3>その他の「飾り付け」<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>次の５つは<code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>の下に付け加えることによって表示できる。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.title()</span></code>：タイトルを設定する。</p>
+<ul>
+<li><p>文字列で指定し、大きさは引数<code class="docutils literal notranslate"><span class="pre">size</span></code>で指定する。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.xlabel()</span></code>：横軸ラベル</p>
+<ul>
+<li><p>文字列で指定し、大きさは引数<code class="docutils literal notranslate"><span class="pre">size</span></code>で指定する。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.ylabel()</span></code>：縦軸ラベル</p>
+<ul>
+<li><p>文字列で指定し、大きさは引数<code class="docutils literal notranslate"><span class="pre">size</span></code>で指定する。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code>：凡例を表示する。</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">plot()</span></code>の引数<code class="docutils literal notranslate"><span class="pre">label</span></code>を使って表示する文字列を指定する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fontsize</span></code>：フォントの大きさを指定する。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.grid()</span></code>：グリッド線が表示される。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">25</span><span class="p">],</span> <span class="s1">&#39;:ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;This is a legend&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;This is a Title&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Label for x&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Label for y&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1_Basics_VI_52_0.png" src="_images/1_Basics_VI_52_0.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>このままで日本語を表示できない。一番簡単な方法は外部パッケージの<code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code>を使うことだろう。まずコンピューターにインストールする必要がある。Google Colaboratoryであれば，<strong>毎回</strong>次のコードを最初に実行してインストールする必要がある。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install japanize-matplotlib
+</pre></div>
+</div>
+<p>その後，次を実行すれば他の設定なしに日本語が使える。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">japaneze_matplotlib</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>ヒストグラム<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>基本的には次の構文となる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>plt.hist(＜データ＞)
+</pre></div>
+</div>
+<p>まず標準正規分布からランダム変数を10,000個抽出して変数<code class="docutils literal notranslate"><span class="pre">z0</span></code>に割り当てよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z0</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10_000</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>このデータのヒストグラムを表示してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">z0</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1_Basics_VI_58_0.png" src="_images/1_Basics_VI_58_0.png" />
+</div>
+</div>
+<p><strong>＜基本的な引数＞</strong></p>
+<p>様々な引数があり図に「飾り付け」をすることができる。詳しくは<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html">このリンク</a>を参照することにして，ここでは基本的な引数だけを紹介する。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bins</span></code>：柱の数</p>
+<ul>
+<li><p>整数型を使えば文字通りの柱の数となる。</p></li>
+<li><p>区間の値をリストとして設定することができる。例えば，<code class="docutils literal notranslate"><span class="pre">0</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>を等区間に柱を２つ設定する場合は<code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0.5,</span> <span class="pre">1]</span></code>となる。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linewidth</span></code>又は<code class="docutils literal notranslate"><span class="pre">lw</span></code>：柱の間隔（デフォルトは<code class="docutils literal notranslate"><span class="pre">1</span></code>）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>：色（リストにして列の順番で指定する; <a class="reference external" href="https://matplotlib.org/3.1.0/gallery/color/named_colors.html">参照サイト</a>）</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code>又は<code class="docutils literal notranslate"><span class="pre">red</span></code>：赤</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">k</span></code>又は<code class="docutils literal notranslate"><span class="pre">black</span></code>：黒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">g</span></code>又は<code class="docutils literal notranslate"><span class="pre">green</span></code>：グリーン</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">edgecolor</span></code>又は<code class="docutils literal notranslate"><span class="pre">ec</span></code>：柱の境界線の色</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alpha</span></code>：透明度（<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">1.0</span></code>; デフォルトは<code class="docutils literal notranslate"><span class="pre">1</span></code>）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">density</span></code>：縦軸を相対度数にする（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>：凡例の表現を指定</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.legend()</span></code>が設定されている場合のみ有効</p></li>
+</ul>
+</li>
+</ul>
+<p>上のヒストグラムに引数をしてしてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">z0</span><span class="p">,</span>
+         <span class="n">bins</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+         <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span>
+         <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+<span class="c1">#          alpha=0.5,</span>
+<span class="c1">#          label=&#39;values of z&#39;</span>
+         <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1_Basics_VI_60_0.png" src="_images/1_Basics_VI_60_0.png" />
+</div>
+</div>
+<p>次に複数のデータを重ねてプロットする場合を考えよう。方法は簡単で，ライン・プロットと同じように<code class="docutils literal notranslate"><span class="pre">plt.hist()</span></code>を続けてコードを書くだけである。まず平均<code class="docutils literal notranslate"><span class="pre">4</span></code>標準偏差<code class="docutils literal notranslate"><span class="pre">2</span></code>の正規分布からのランダム変数を用意しよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10_000</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">z0</span></code>と<code class="docutils literal notranslate"><span class="pre">z1</span></code>のヒストグラムを重ねて表示しよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">z0</span><span class="p">,</span>
+         <span class="n">bins</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+         <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">z1</span><span class="p">,</span>
+         <span class="n">bins</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+         <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1_Basics_VI_64_0.png" src="_images/1_Basics_VI_64_0.png" />
+</div>
+</div>
+<p>濃い赤の部分が重なっている部分となる。</p>
+<p>その他の「飾り付け」（タイトルなど）はライン・プロットと同じとなる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">z0</span><span class="p">,</span>
+         <span class="n">bins</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+         <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;z0&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">z1</span><span class="p">,</span>
+         <span class="n">bins</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+         <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;z1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;This is a Title&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Label for x&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Label for y&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1_Basics_VI_66_0.png" src="_images/1_Basics_VI_66_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>中心極限定理<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>中心極限定理とは<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>母集団（大きさが無限）のパラメータを次の様に表記しよう。</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span>：平均</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span>：標準偏差</p></li>
+</ul>
+<p>この母集団から標本<span class="math notranslate nohighlight">\(X_1,X_2\cdots X_n\)</span>を抽出し（<span class="math notranslate nohighlight">\(n\)</span>は標本の大きさ），その平均を<span class="math notranslate nohighlight">\(\overline{X}\)</span>とする。</p>
+<div class="math notranslate nohighlight">
+\[
+\overline{X}=\frac{X_1+X_2+\cdots+X_n}{n}
+\]</div>
+<p>標本を取るごとに<span class="math notranslate nohighlight">\(X_i\)</span>，<span class="math notranslate nohighlight">\(i=1,2...n\)</span>の値は異なるため，<span class="math notranslate nohighlight">\(\overline{X}\)</span>自体もランダム変数となる。更に，標準化した平均を次の様に定義しよう。</p>
+<div class="math notranslate nohighlight" id="equation-eq-1-6-zn">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-1-6-zn" title="Permalink to this equation">¶</a></span>\[
+Z_n = \frac{\overline{X}-\mu}{\sigma/\sqrt{n}}
+\]</div>
+<p>ここで<span class="math notranslate nohighlight">\(Z_n\)</span>は平均<code class="docutils literal notranslate"><span class="pre">0</span></code>，分散<code class="docutils literal notranslate"><span class="pre">1</span></code>となるランダム変数である。これにより，<span class="math notranslate nohighlight">\(Z_n\)</span>の<strong>分布型は不明</strong>だが，少なくとも平均と分散の２つのパラメータに関する限り標準正規分布と共通点がある。</p>
+<p><strong>＜中心極限定理（Central Limit Theorem)＞</strong><br></p>
+<blockquote>
+<div><p>母集団の分布がどのようなものであれ（連続型，離散型），<span class="math notranslate nohighlight">\(\mu\)</span>と<span class="math notranslate nohighlight">\(\sigma\)</span>が有限である限り，<span class="math notranslate nohighlight">\(n\)</span>が大きくなると<span class="math notranslate nohighlight">\(Z_n\)</span>の分布は標準正規分布<span class="math notranslate nohighlight">\(N(0,1)\)</span>に近づいていく。</p>
+</div></blockquote>
+<p>この驚くべき結果は統計学の金字塔である。ではどこが金字塔なのだろうか。データ分析のためには標本を集める必要がある。例えば，大学生の１日の授業以外の勉強時間（単位は分）を考えてみよう。マイナス時間や24時間以上はあり得ないため，母集団の分布は正規分布ではないことは明らかである。標本の中には驚くほど勉強している人もいれば，アルバイトなどに追われ<code class="docutils literal notranslate"><span class="pre">0</span></code>分の学生も含まれるかも知れない。もしかすると，分布には複数のピークがあるかもしれない（例えば，<code class="docutils literal notranslate"><span class="pre">0</span></code>と<code class="docutils literal notranslate"><span class="pre">70</span></code>分）。いずれにしろ，母集団の分布は未知であるため，仮説検定は不可能のように感じられる。しかし中心極限定理は，超えることはできないように見える壁をいとも簡単に飛び越えさせてくれる。ランダム標本を集め，標本の大きさが十分に大きければ，標本平均は正規分布に従う（近似される）ため仮説検定が可能になるのだ。</p>
+<p>ここでの目的は，シミュレーションを使って中心極限定理を視覚的に理解・確認することである。コイントスの例を使い，次のステップで進める。</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code>個のコインを同時に投げることを考え，その標準化平均を計算する。</p></li>
+<li><p>標準化平均を計算するための関数を作成する。</p></li>
+<li><p>コイントスのシミュレーションをおこない，そのヒストグラムをプロットする。</p></li>
+<li><p>コイントスのヒストグラムと標準正規分布を重ねて表示し，標本の大きさ（コインの数<code class="docutils literal notranslate"><span class="pre">c</span></code>）が大きくなると前者は後者に近づいていく事を視覚的に確かめる。</p></li>
+</ol>
+</div>
+<div class="section" id="id11">
+<h3>コイントスのシミュレーション<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>コインの表を<code class="docutils literal notranslate"><span class="pre">1</span></code>，裏を<code class="docutils literal notranslate"><span class="pre">0</span></code>とするコイントスを考えよう。<code class="docutils literal notranslate"><span class="pre">1</span></code>と<code class="docutils literal notranslate"><span class="pre">0</span></code>はそれぞれ確率<span class="math notranslate nohighlight">\(p=0.5\)</span>で発生するベルヌーイ分布に従うと仮定する。従って，以下が成り立つ。</p>
+<ul class="simple">
+<li><p>平均：<span class="math notranslate nohighlight">\(p=0.5\)</span></p></li>
+<li><p>分散：<span class="math notranslate nohighlight">\(p(1-p)=0.5^2\)</span></p></li>
+<li><p>標準偏差：<span class="math notranslate nohighlight">\(\sqrt{p(1-p)}=0.5\)</span></p></li>
+</ul>
+<p>この様なランダム変数は既出の次の関数で表すことができる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p>次に，<code class="docutils literal notranslate"><span class="pre">20</span></code>個のコインを同時に投げる場合を考えよう（<code class="docutils literal notranslate"><span class="pre">1</span></code>個のコインを<code class="docutils literal notranslate"><span class="pre">20</span></code>回投げても同じ）。この場合の<code class="docutils literal notranslate"><span class="pre">20</span></code>が標本の大きさであり，変数<code class="docutils literal notranslate"><span class="pre">c</span></code>（coinsの頭文字）に割り当てよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>標本の大きさが<code class="docutils literal notranslate"><span class="pre">c</span></code>の場合の結果は，次の内包表記を使うと簡単に生成することができる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tosses</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">)]</span>
+<span class="n">tosses</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">1</span></code>（表）が何回発生したかを数えてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heads</span> <span class="o">=</span> <span class="n">tosses</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">heads</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
+</pre></div>
+</div>
+</div>
+</div>
+<p>ここで，<code class="docutils literal notranslate"><span class="pre">count()</span></code>はリストのメソッドであり，引数の値（ここでは<code class="docutils literal notranslate"><span class="pre">1</span></code>）の数を返す。この結果を利用すると平均は次のように計算できる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tosses</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.65
+</pre></div>
+</div>
+</div>
+</div>
+<p>更に，上の式<a class="reference internal" href="#equation-eq-1-6-zn">(1)</a>に従って，この平均を標準化した値を計算すると次の様になる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">heads</span><span class="o">/</span><span class="n">c</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.341640786499874
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>関数化<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>上では一回だけのシミュレーションをおこなった。以下では任意の回数のシミュレーションをおこなうために，上のコードを関数にまとめることにする。２つの関数に分けてコードを書くことにする。</p>
+<p>まず同時に投げるコインの数とその結果のコインの表の数を所与として，平均が標準化された値を計算する関数を作成する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">standardize</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    引数：</span>
+<span class="sd">        c：同時にトスしするコインの数</span>
+<span class="sd">        h：コインの表の数</span>
+<span class="sd">    戻り値：</span>
+<span class="sd">        コインの表の平均を標準化した値&quot;&quot;&quot;</span>
+    
+    <span class="k">return</span> <span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="n">c</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>この関数は<code class="docutils literal notranslate"><span class="pre">c</span></code>と<code class="docutils literal notranslate"><span class="pre">h</span></code>が与えられば，標準化平均を返す。上の数値を使って，この関数を実行してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standardize</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">heads</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.341640786499874
+</pre></div>
+</div>
+</div>
+</div>
+<p>同じ値を返していることが確認できる。</p>
+<p>次に，同時にトスするコインの数は所与とするが，関数の中でランダム変数として<code class="docutils literal notranslate"><span class="pre">1</span></code>の数が決まり，その標準化平均を返す関数を作成しよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean_standardized</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    引数：</span>
+<span class="sd">        c：同時にトスするコインの数</span>
+<span class="sd">    戻り値：</span>
+<span class="sd">        コインの表の平均を標準化した値&quot;&quot;&quot;</span>
+    
+    <span class="n">tosses</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">)]</span>
+    <span class="n">heads</span> <span class="o">=</span> <span class="n">tosses</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">standardize</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">heads</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">c=20</span></code>で実行しよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_standardized</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.341640786499874
+</pre></div>
+</div>
+</div>
+</div>
+<p>この値は<code class="docutils literal notranslate"><span class="pre">20</span></code>個のコインを同時に投げた結果の平均を標準化した値である。<code class="docutils literal notranslate"><span class="pre">mean_standardized()</span></code>関数を実行するたびに，コインが投げられ標本が集められるので，標準化平均の値は上の結果とは異なる。実行するたびに異なる値を取るランダム変数を返すことになる。</p>
+<p>次に，<code class="docutils literal notranslate"><span class="pre">20</span></code>個の同時コイントスを<code class="docutils literal notranslate"><span class="pre">10</span></code>回おこない，毎回標準化平均を計算するとしよう。このシミュレーションの結果は次の内包表記で生成することができる。</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.44721359549995837,
+ 0.44721359549995837,
+ 0.44721359549995837,
+ 0.44721359549995837,
+ 0.8944271909999157,
+ 1.341640786499874,
+ -2.23606797749979,
+ 1.7888543819998315,
+ 0.44721359549995837,
+ -0.44721359549995787,
+ -1.341640786499874,
+ -0.44721359549995787,
+ 0.0,
+ -0.8944271909999157,
+ 0.8944271909999157,
+ -0.44721359549995787,
+ 0.8944271909999157,
+ 0.8944271909999157,
+ 0.0,
+ -0.44721359549995787,
+ 0.44721359549995837,
+ 0.8944271909999157,
+ 0.8944271909999157,
+ 0.0,
+ -0.44721359549995787,
+ 0.8944271909999157,
+ 0.0,
+ 0.44721359549995837,
+ 0.44721359549995837,
+ 0.44721359549995837]
+</pre></div>
+</div>
+</div>
+</div>
+<p>ランダム変数なので，実行する度に異なる値が並ぶ。また同じ値が複数回発生していることも確認できるだろう。</p>
+</div>
+<div class="section" id="id13">
+<h3>ヒストグラム<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h4>階級区間<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<p>ここでは上の説明に従って，コインの数<code class="docutils literal notranslate"><span class="pre">c</span></code>を変化させシミュレーションをおこない，その結果をヒストグラムとして表示するのが目的である。ここで注意する点は，階級の区間によって見え方違ってくるという点だ。以下では，中心極限定理を視覚的に確認できるように次の方法で区間を設定する。</p>
+<p>次の表の１列目は<code class="docutils literal notranslate"><span class="pre">c</span></code>の値（同時にトスするコインの数）を表しており，２列目はコインの表が発生しうる数をまとめている。例えば，<code class="docutils literal notranslate"><span class="pre">c=1</span></code>の場合，<code class="docutils literal notranslate"><span class="pre">{[裏],[表]}</span></code>の可能性しかないため<code class="docutils literal notranslate"><span class="pre">{0,1}</span></code>となっている。<code class="docutils literal notranslate"><span class="pre">c=2</span></code>の場合，<code class="docutils literal notranslate"><span class="pre">{[裏,裏],[表,裏],[裏,表],[表,表]}</span></code>の可能性があるため<code class="docutils literal notranslate"><span class="pre">{0,1,2}</span></code>となっている。</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">c</span></code></p></th>
+<th class="head"><p>発生しうるコインの表の数</p></th>
+<th class="head"><p>標準化した値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{0,1}</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{-1.0,1.0}</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{0,1,2}</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{-1.41,0,1.41}</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{0,1,2,3}</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{-1.73,-0.58,0.58,1.73}</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{0,1,2,3,4}</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{-2.00,-1.00,0,1.00,2.00}</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>３列目は，<code class="docutils literal notranslate"><span class="pre">standardize()</span></code>関数を使い２列目の値を標準化した値が並んでいる。例えば，<code class="docutils literal notranslate"><span class="pre">c=2</span></code>の場合は次のようになる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">　→　</span><span class="si">{</span><span class="n">standardize</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">i</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0　→　-1.41
+1　→　0.00
+2　→　1.41
+</pre></div>
+</div>
+</div>
+</div>
+<p>これからプロットするヒストグラムには３列目の値が横軸に並ぶことになる。</p>
+<p><code class="docutils literal notranslate"><span class="pre">c=1</span></code>を考えよう。この場合，２列目に<code class="docutils literal notranslate"><span class="pre">0</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>の２つの値があるため，ヒストグラムには２本の柱が必要となる。３列目の値<code class="docutils literal notranslate"><span class="pre">-1.0</span></code>と<code class="docutils literal notranslate"><span class="pre">1.0</span></code>を使うと１区間しかないため柱は１にしかならない。一方，<code class="docutils literal notranslate"><span class="pre">c=2</span></code>の３列目には数値が３つあり，２区間が確保できる。更に，<code class="docutils literal notranslate"><span class="pre">c=1</span></code>の３列目の値は<code class="docutils literal notranslate"><span class="pre">c=2</span></code>の３列目の値からなる２区間の間に入ることになる。<code class="docutils literal notranslate"><span class="pre">c=2</span></code>以上の階級区間についても同様のことが言える。この特徴を使って次の様にしよう。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">c=1</span></code>の階級区間には<code class="docutils literal notranslate"><span class="pre">c=2</span></code>の３列目の値を使う</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c=2</span></code>の階級区間には<code class="docutils literal notranslate"><span class="pre">c=3</span></code>の３列目の値を使う</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c=3</span></code>の階級区間には<code class="docutils literal notranslate"><span class="pre">c=4</span></code>の３列目の値を使う</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code></p></li>
+</ul>
+<p>ヒストグラムをプロットする際には，<code class="docutils literal notranslate"><span class="pre">c</span></code>を所与として階級区間を計算する必要があるが，次の内包表記で可能となる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">standardize</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>例えば，<code class="docutils literal notranslate"><span class="pre">c=1</span></code>の階級区間を計算してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">standardize</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.4142135623730951, 0.0, 1.4142135623730951]
+</pre></div>
+</div>
+</div>
+</div>
+<p>２つの階級区間が作られている。</p>
+</div>
+<div class="section" id="id15">
+<h4>ヒストグラム<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<p>では実際にヒストグラムをプロットしてみよう。例として次の数値を使う。</p>
+<ul class="simple">
+<li><p>同時に投げるコインの数（標本の大きさ）：<code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">1</span></code></p></li>
+<li><p>シミュレーションの回数：<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">10</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># パラメータの設定</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># コイントスのシミュレーション</span>
+<span class="n">sim</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+<span class="c1"># ヒストグラム</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sim</span><span class="p">,</span>
+         <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="n">standardize</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)],</span>
+         <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+         <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1_Basics_VI_108_0.png" src="_images/1_Basics_VI_108_0.png" />
+</div>
+</div>
+<p>＜注意点＞</p>
+<ul class="simple">
+<li><p>ヒストグラムの柱の幅は階級区間を示すが，シミュレーションの値がそれぞれの区間内で散らばっているのでは<strong>ない</strong>。左の柱にある値は<code class="docutils literal notranslate"><span class="pre">-1.0</span></code>のみであり，右の柱にある値は<code class="docutils literal notranslate"><span class="pre">1.0</span></code>のみである。柱ではなく<code class="docutils literal notranslate"><span class="pre">-1.0</span></code>と<code class="docutils literal notranslate"><span class="pre">1.0</span></code>に細い縦線だけを表示する方が結果と近い図になる（下では，そのような図を表示している）。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>棒グラフとして表示したい場合は<code class="docutils literal notranslate"><span class="pre">plt.bar()</span></code>を使うことができる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">sim</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">sim_unique</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">sim</span><span class="p">)))</span>
+<span class="n">count_on_y_axis</span> <span class="o">=</span> <span class="p">[</span><span class="n">sim</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sim_unique</span><span class="p">]</span>
+<span class="n">xlabel</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">sim</span><span class="p">)))]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">xlabel</span><span class="p">,</span> <span class="n">count_on_y_axis</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id16">
+<h4>関数化<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<p>ヒストグラムを描くことができたが，<code class="docutils literal notranslate"><span class="pre">c</span></code>と<code class="docutils literal notranslate"><span class="pre">n</span></code>の異なる値ごとに上のコードをコピペして使うの面倒なので，関数としてまとめよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_hist</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    
+    <span class="n">sim</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sim</span><span class="p">,</span>
+             <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="n">standardize</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)],</span>
+             <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+             <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Coins: c=</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">, Repetition: n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> <span class="c1">#1</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;コイントスの唯一の値の数（x軸）：</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">sim</span><span class="p">))</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1">#2</span>
+    
+    <span class="k">return</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1">#3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：タイトルを追加している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">sim</span></code>はコイントスのシミュレーションの結果だが，<code class="docutils literal notranslate"><span class="pre">set()</span></code>関数を使うと唯一の値を返し，<code class="docutils literal notranslate"><span class="pre">len()</span></code>で唯一の数を返している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：戻り値を設定するが，ここでは<code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>を返している。<code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>とは，文字通りこの行の「上で作成された図を表示する」ことを意味している。即ち，「図の表示」を返している。</p></li>
+</ul>
+<p>次の値でヒストグラムを表示してみよう。</p>
+<ul class="simple">
+<li><p>同時に投げるコインの数：<code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">1</span></code></p></li>
+<li><p>シミュレーションの回数：<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">10</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw_hist</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：2
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_115_1.png" src="_images/1_Basics_VI_115_1.png" />
+</div>
+</div>
+<p>上述のように，柱の階級区間内にシミュレーションの値が散らばっているのではなく，この場合は<code class="docutils literal notranslate"><span class="pre">-1.0</span></code>と<code class="docutils literal notranslate"><span class="pre">1.0</span></code>の<code class="docutils literal notranslate"><span class="pre">2</span></code>つの値に全てのデータが集中している。図の上に表示されている数字<code class="docutils literal notranslate"><span class="pre">2</span></code>はその数を示している。</p>
+</div>
+</div>
+<div class="section" id="id17">
+<h3>シミュレーション<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>ここでの目的は中心極限定理をヒストグラムを使って確認することである。そのためには，上で作成したコイントスのヒストグラムを標準正規分布のヒストグラムと比べる必要がある。まず標準正規分布から<code class="docutils literal notranslate"><span class="pre">10_000</span></code>個のランダム変数を抽出し，その結果をヒストグラムとしてプロットしてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val_normal</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10_000</span><span class="p">)]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">val_normal</span><span class="p">,</span> 
+         <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> 
+         <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> 
+         <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1_Basics_VI_119_0.png" src="_images/1_Basics_VI_119_0.png" />
+</div>
+</div>
+<p>ランダム変数なのでギザギザになっているが，典型的なベル型の分布となっている。引数<code class="docutils literal notranslate"><span class="pre">bins=100</span></code>はベル型ははっきりと分かる様であれば，どの値でもよい。</p>
+<p>次に，コイントスのヒストグラムを標準正規分布のヒストグラムに重ねて表示しよう。同時に投げるコインの数<code class="docutils literal notranslate"><span class="pre">c</span></code>（標本の大きさ）を増やすとコイントスのヒストグラムは標準正規分布のヒストグラムに近づいていく事を視覚的に確認するためである。<code class="docutils literal notranslate"><span class="pre">c</span></code>に様々な値を割り当ててプロットするために関数を作成しよう。次の関数は，<code class="docutils literal notranslate"><span class="pre">draw_hist</span></code>関数のコードと標準正規分布のヒストグラムのコードを使って，少しだけ修正を加えてものである。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clt</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10_000</span><span class="p">):</span>  <span class="c1">#1</span>
+
+    
+    <span class="c1"># 標準正規分布のヒストグラム ---------------------------------</span>
+    <span class="n">val_normal</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10_000</span><span class="p">)]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">val_normal</span><span class="p">,</span>
+             <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+<span class="c1">#              ec=&#39;white&#39;,</span>
+             <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Standard Normal&#39;</span><span class="p">)</span> <span class="c1">#2</span>
+
+    <span class="c1"># コイントスのシミュレーションとヒストグラム ---------------------</span>
+    <span class="n">sim</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sim</span><span class="p">,</span>
+             <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="n">standardize</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)],</span>
+             <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+             <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Tossing Coins&#39;</span><span class="p">,</span>   <span class="c1">#3</span>
+             <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>               <span class="c1">#4</span>
+    
+
+    <span class="c1"># タイトル，凡例，x軸の範囲 ---------------------------------</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Coins: c=</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">, Repetition: n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>                      <span class="c1">#5</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>                  <span class="c1">#6</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;コイントスの唯一の値の数（x軸）：</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">sim</span><span class="p">))</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1">#7</span>
+    
+    <span class="k">return</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞<br>
+基本的に上で使ったコードと大きく違わないが，新しく導入した箇所を説明しよう。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：<code class="docutils literal notranslate"><span class="pre">n</span></code>にデフォルトの値<code class="docutils literal notranslate"><span class="pre">10_000</span></code>を設定。関数名の<code class="docutils literal notranslate"><span class="pre">clt</span></code>はCentral Limit Theoremの頭文字。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：凡例のラベルを設定</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：凡例のラベルを設定</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：透過度の設定</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>：凡例の表示をオンにする</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#6</span></code>：<code class="docutils literal notranslate"><span class="pre">x</span></code>軸の表示範囲を<code class="docutils literal notranslate"><span class="pre">-4</span></code>から<code class="docutils literal notranslate"><span class="pre">4</span></code>までに設定する。この設定がないと，<code class="docutils literal notranslate"><span class="pre">c</span></code>の値が増えるにつれて<code class="docutils literal notranslate"><span class="pre">x</span></code>軸も伸びていき，ヒストグラムが小さくなる。それを防ぐために追加している。また標準正規分布のランダム変数は殆どのこの範囲内に収まることになる。</p></li>
+</ul>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># この関数は柱ではなく標準化平均に赤の縦線を表示する。</span>
+
+<span class="k">def</span> <span class="nf">clt_line</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10_000</span><span class="p">):</span>
+
+    
+    <span class="c1"># 標準正規分布のヒストグラム ---------------------------------</span>
+    <span class="n">val_normal</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10_000</span><span class="p">)]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">val_normal</span><span class="p">,</span>
+             <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+             <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Standard Normal&#39;</span><span class="p">)</span>
+
+
+    <span class="c1"># コイントスのシミュレーション --------------------------------</span>
+    <span class="n">sim</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+    <span class="n">counts</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">ignored</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sim</span><span class="p">,</span>
+             <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="n">standardize</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)],</span>
+             <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+             <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+             <span class="n">alpha</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c1"># コイントスの縦線 -----------------------------------------</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mf">0.5</span>  
+    
+    <span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="n">cc</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">counts</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">cc</span><span class="o">/</span><span class="n">k</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+    <span class="c1"># タイトル，凡例，x軸の範囲 ----------------------------------</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Coins: c=</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">, Repetition: n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Standard Normal&#39;</span><span class="p">,</span><span class="s1">&#39;Tossing Coins&#39;</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="p">])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;コイントスの唯一の値の数（x軸）：</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">sim</span><span class="p">))</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>これでシミュレーションの準備は整った。<code class="docutils literal notranslate"><span class="pre">c</span></code>の数値を変えてプロットしてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clt</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：2
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_125_1.png" src="_images/1_Basics_VI_125_1.png" />
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">c=1</span></code>のヒストグラムは標準正規分布と大きく掛け離れている。更に，コイントスのシミュレーションの値は，<code class="docutils literal notranslate"><span class="pre">-1</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>の<code class="docutils literal notranslate"><span class="pre">2</span></code>つの値に集中している事を思い出そう。（直ぐ下に Click to show とあるが，それをクリックするとシミュレーション結果が<code class="docutils literal notranslate"><span class="pre">-1</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>に集中している図が表示されるので参考にしよう。）</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clt_line</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：2
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_127_1.png" src="_images/1_Basics_VI_127_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：3
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_128_1.png" src="_images/1_Basics_VI_128_1.png" />
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">c=2</span></code>のヒストグラムは左右対称に見えるが，これは<code class="docutils literal notranslate"><span class="pre">n</span></code>が大きいためである。シミュレーションの<code class="docutils literal notranslate"><span class="pre">x</span></code>軸の値は<code class="docutils literal notranslate"><span class="pre">3</span></code>つである。標準正規分布とは大きく異なる。</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clt_line</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：3
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_130_1.png" src="_images/1_Basics_VI_130_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clt</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：13
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_131_1.png" src="_images/1_Basics_VI_131_1.png" />
+</div>
+</div>
+<p>標準正規分布に近づいていることが視覚的に分かる。しかし，シミュレーションの<code class="docutils literal notranslate"><span class="pre">x</span></code>軸の値は<code class="docutils literal notranslate"><span class="pre">13</span></code>である。</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clt_line</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：12
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_133_1.png" src="_images/1_Basics_VI_133_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clt</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：30
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_134_1.png" src="_images/1_Basics_VI_134_1.png" />
+</div>
+</div>
+<p>標準正規分布に更に近づいている。シミュレーションの<code class="docutils literal notranslate"><span class="pre">x</span></code>軸の値は<code class="docutils literal notranslate"><span class="pre">29</span></code>である。</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clt_line</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：31
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_136_1.png" src="_images/1_Basics_VI_136_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clt</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：110
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_137_1.png" src="_images/1_Basics_VI_137_1.png" />
+</div>
+</div>
+<p>標準正規分布の近似としては十分な重なり具合と言っていいだろう。</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clt_line</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：111
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_139_1.png" src="_images/1_Basics_VI_139_1.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="1_Basics_V.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">モジュールと疑似コード</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="2_NumPy.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>：高速化</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By 春山 鉄源  Tetsugen HARUYAMA<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

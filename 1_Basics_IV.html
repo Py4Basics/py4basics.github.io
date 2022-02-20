@@ -1,0 +1,2289 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>制御フロー &#8212; 経済学のためのPython入門</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/my_style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://py4basics.github.io/1_Basics_IV.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="モジュールと疑似コード" href="1_Basics_V.html" />
+    <link rel="prev" title="関数とメソッド" href="1_Basics_III.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-165998213-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">経済学のためのPython入門</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python入門I
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_I.html">
+   基本データ型と変数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_II.html">
+   データの操作
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_III.html">
+   関数とメソッド
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   制御フロー
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_V.html">
+   モジュールと疑似コード
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_VI.html">
+   図示とシミュレーション
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python入門II
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_NumPy.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NumPy
+    </span>
+   </code>
+   ：高速化
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_Pandas.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   ：データ分析
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4_matplotlib.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matplotlib
+    </span>
+   </code>
+   ：図示
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5_pandas_plot.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   ：図示
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
+   SciPy.stats：確率分布
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7_SciPy_optimize.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SciPy.optimize
+    </span>
+   </code>
+   ：解の求め方と最適化問題
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  参考
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0_Preparations.html">
+   ツールのインストールと説明
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="things_to_note.html">
+   Tipsと注意点
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Grade.html">
+   学業成績の分析
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Gapminder.html">
+   Gapminder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Moving_Average.html">
+   移動平均
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  経済学
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4macro.github.io">
+   Pythonで学ぶマクロ経済学（中級＋レベル）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4etrics.github.io">
+   Pythonで学ぶ入門計量経済学
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/1_Basics_IV.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/1_Basics_IV.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/1_Basics_IV.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   文
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     説明と簡単な例
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     複数条件
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     関数化
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     直接真偽値を使う
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     数値を返す例
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     While
+    </span>
+   </code>
+   ループ
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     説明と簡単な例
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     近似を考える
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       壁からの距離
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       平方根の近似
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ifcontinue">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     文と
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       continue
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ifbreak">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     文と
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       break
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuebreak">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       continue
+      </span>
+     </code>
+     と
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       break
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   ループ
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     説明
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#print">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       print()
+      </span>
+     </code>
+     を使う例
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#append">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .append()
+      </span>
+     </code>
+     を使う例
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     消費関数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for2">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     ループの２つの書き方（動学分析の基礎）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     将来価値の時系列
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id14">
+   内包表記
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>制御フロー</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   文
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     説明と簡単な例
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     複数条件
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     関数化
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     直接真偽値を使う
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     数値を返す例
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     While
+    </span>
+   </code>
+   ループ
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     説明と簡単な例
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     近似を考える
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       壁からの距離
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       平方根の近似
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ifcontinue">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     文と
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       continue
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ifbreak">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     文と
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       break
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuebreak">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       continue
+      </span>
+     </code>
+     と
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       break
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   ループ
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     説明
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#print">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       print()
+      </span>
+     </code>
+     を使う例
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#append">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .append()
+      </span>
+     </code>
+     を使う例
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     消費関数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for2">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     ループの２つの書き方（動学分析の基礎）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     将来価値の時系列
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id14">
+   内包表記
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>制御フロー<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>制御フロー（control flow）とは，コンピューターがコードを実行する順序を意味する。通常，コードセルの中では「上から下に」実行することになるが，その中でフローが条件分岐したり，ある作業を何百回・何万回も繰り返したりすることになる。ここでは条件分岐と繰り返しに注目し<code class="docutils literal notranslate"><span class="pre">Python</span></code>の使い方を説明する。</p>
+<div class="section" id="if">
+<h2><code class="docutils literal notranslate"><span class="pre">if</span></code>文<a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>説明と簡単な例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div name="html-admonition">
+Do you want to read in a differnt language? Open the 
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+in English or the language of your choice.
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code>文を使うと，指定した条件によって処理を複数パターンに分けることができる。条件をブール型（真偽）（<code class="docutils literal notranslate"><span class="pre">True</span></code>又は<code class="docutils literal notranslate"><span class="pre">False</span></code>）で判断しコードを実行することになる。次の構文となる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if ＜条件１＞:
+    ＜条件１が`True`の場合に実行するコード＞
+    
+elif ＜条件２＞:
+    ＜条件２が`True`の場合に実行するコード＞
+    
+elif ＜条件３＞:
+    ＜条件３が`True`の場合に実行するコード＞
+    ....
+else:
+    ＜全ての条件が`False`の場合に実行するコード＞
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>１行目は<code class="docutils literal notranslate"><span class="pre">if</span></code>で始まり<code class="docutils literal notranslate"><span class="pre">:</span></code>で終わる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">＜条件...がTrueの場合に実行するコード＞</span></code>の行はインデント（４つの半角スペース）されている。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elif</span></code>（else ifの略）の行も<code class="docutils literal notranslate"><span class="pre">:</span></code>で終わる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else</span></code>の行も<code class="docutils literal notranslate"><span class="pre">:</span></code>で終わる。</p></li>
+</ul>
+<p>例を考えよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>                   <span class="c1"># 1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;条件はTrueです。&#39;</span><span class="p">)</span>    <span class="c1"># 2</span>
+
+<span class="k">else</span><span class="p">:</span>                         <span class="c1"># 3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;条件はFalseです。&#39;</span><span class="p">)</span>   <span class="c1"># 4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>条件はTrueです。
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜<code class="docutils literal notranslate"><span class="pre">if</span></code>文の説明＞</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>が<code class="docutils literal notranslate"><span class="pre">10</span></code>と等しいかを評価する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x==10</span></code>が<code class="docutils literal notranslate"><span class="pre">True</span></code>の場合に，<code class="docutils literal notranslate"><span class="pre">条件はTrueです。</span></code>が表示される。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x==10</span></code>が<code class="docutils literal notranslate"><span class="pre">False</span></code>のケースがはじまる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x==10</span></code>が満たされない場合は，<code class="docutils literal notranslate"><span class="pre">条件はFalseです。</span></code>が表示される。</p></li>
+</ol>
+<p>このコードセルの最初で<code class="docutils literal notranslate"><span class="pre">10</span></code>を<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てる。従って，<code class="docutils literal notranslate"><span class="pre">x==10</span></code>は<code class="docutils literal notranslate"><span class="pre">True</span></code>を返し，<code class="docutils literal notranslate"><span class="pre">条件はTrueです。</span></code>が表示されることになる。</p>
+<p>次の例は上の例と似ているが少しだけ異なる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>                   <span class="c1"># 1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;条件はTrueです。&#39;</span><span class="p">)</span>    <span class="c1"># 2</span>
+
+<span class="k">else</span><span class="p">:</span>                         <span class="c1"># 3</span>
+    <span class="k">pass</span>                      <span class="c1"># 4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜<code class="docutils literal notranslate"><span class="pre">if</span></code>文の説明＞</p>
+<ul class="simple">
+<li><p>上の<code class="docutils literal notranslate"><span class="pre">if</span></code>文と異なるのは<code class="docutils literal notranslate"><span class="pre">#4</span></code>だけである。<code class="docutils literal notranslate"><span class="pre">pass</span></code>は「何もしない」という意味</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">20</span></code>が<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てられているので，<code class="docutils literal notranslate"><span class="pre">x==10</span></code>は<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す。従って，<code class="docutils literal notranslate"><span class="pre">#2</span></code>は飛ばして<code class="docutils literal notranslate"><span class="pre">else</span></code>のブロックに移ることになる。その場合の実行コードは<code class="docutils literal notranslate"><span class="pre">pass</span></code>なので何も表示されないことになる。</p>
+<p>このコードで<code class="docutils literal notranslate"><span class="pre">else</span></code>以下を省略してもエラーにはならない（結果も変わらない）。即ち，<code class="docutils literal notranslate"><span class="pre">else</span></code>以下がない場合は，<code class="docutils literal notranslate"><span class="pre">#3</span></code>と<code class="docutils literal notranslate"><span class="pre">#4</span></code>が省略されていると考えることができる。</p>
+</div>
+<div class="section" id="id3">
+<h3>複数条件<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>次に，複数の条件がある例を考える。<code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code>をGDPの変化だとしよう。次の表示がされる<code class="docutils literal notranslate"><span class="pre">if</span></code>文を作成する。</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code>の値が正の場合，<code class="docutils literal notranslate"><span class="pre">GDPは増加しています。</span></code>を表示する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code>の値が負の場合，<code class="docutils literal notranslate"><span class="pre">GDPは減少しています。</span></code>を表示する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code>の値が<code class="docutils literal notranslate"><span class="pre">0</span></code>の場合，<code class="docutils literal notranslate"><span class="pre">GDPは変化していません。</span></code>を表示する。</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">change_in_gdp</span> <span class="o">=</span> <span class="mi">200</span>  <span class="c1">#1</span>
+
+<span class="k">if</span> <span class="n">change_in_gdp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは増加しています。&#39;</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">change_in_gdp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは減少しています。&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは変化していません。&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GDPは増加しています。
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜<code class="docutils literal notranslate"><span class="pre">if</span></code>文の説明＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code>が１つ目の条件, <code class="docutils literal notranslate"><span class="pre">elif</span></code>が２つ目の条件, <code class="docutils literal notranslate"><span class="pre">else</span></code>が３つ目の条件を指定している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> で始まる行の最後は<code class="docutils literal notranslate"><span class="pre">:</span></code>となる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> で始まる行には４つの半角スペースのインデントが入る</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print</span></code> で始まる行には８つの半角スペースのインデントが入る</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else</span></code>の行に<code class="docutils literal notranslate"><span class="pre">change_in_gdp==0</span></code>は不要（残りの可能性は<code class="docutils literal notranslate"><span class="pre">change_in_gdp==0</span></code>しかないため）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elif</span></code>は<code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code>の省略形であり，２つ目の条件を定義する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elif</span></code>は<code class="docutils literal notranslate"><span class="pre">if</span></code>と<code class="docutils literal notranslate"><span class="pre">else</span></code>の間に複数入れることが可能である。</p></li>
+</ul>
+<p>コードを実行すると，<code class="docutils literal notranslate"><span class="pre">#1</span></code>で<code class="docutils literal notranslate"><span class="pre">200</span></code>が<code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code>割り当てられているので<code class="docutils literal notranslate"><span class="pre">GDPは増加しています。</span></code>が表示されることになる。</p>
+<p>このコードを次のように入れ子の<code class="docutils literal notranslate"><span class="pre">if</span></code>文として書くことも可能である。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">change_in_gdp</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="k">if</span> <span class="n">change_in_gdp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>               <span class="c1">#1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは増加しています。&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>                               <span class="c1">#2</span>
+    <span class="k">if</span> <span class="n">change_in_gdp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>           <span class="c1">#3</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは減少しています。&#39;</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>                           <span class="c1">#4</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは変化していません。&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GDPは増加しています。
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜<code class="docutils literal notranslate"><span class="pre">if</span></code>文の説明＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>と<code class="docutils literal notranslate"><span class="pre">#2</span></code>を使って<code class="docutils literal notranslate"><span class="pre">0</span></code>で条件分岐させている。</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：<code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code>が正であれば<code class="docutils literal notranslate"><span class="pre">GDPは増加しています。</span></code>が表示される。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code>が非正の場合は次の条件分岐に進む。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>と<code class="docutils literal notranslate"><span class="pre">#4</span></code>を使って，<code class="docutils literal notranslate"><span class="pre">0</span></code>で条件分岐させている。</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：<code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code>が負であれば<code class="docutils literal notranslate"><span class="pre">GDPは減少しています。</span></code>が表示される。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：<code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code>が<code class="docutils literal notranslate"><span class="pre">0</span></code>であれば<code class="docutils literal notranslate"><span class="pre">GDPは変化していません。</span></code>が表示される。</p></li>
+</ul>
+</li>
+</ul>
+<p>このコードを見ると，複数条件の場合に使う<code class="docutils literal notranslate"><span class="pre">elif</span></code>は<code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code>の略だと気づくとはずだ。またコードを読んで感じることは，入れ子にすると可読性が落ちることである。複数条件の場合は，可能な限り<code class="docutils literal notranslate"><span class="pre">elif</span></code>を使うようにしよう。</p>
+</div>
+<div class="section" id="id4">
+<h3>関数化<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code>文は関数の中で使うことも可能である。GDPに関する例を使って考えてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gdp_change</span><span class="p">(</span><span class="n">change_in_gdp</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">change_in_gdp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは増加しています。&#39;</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">change_in_gdp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは減少しています。&#39;</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは変化していません。&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜関数の説明＞</p>
+<ul class="simple">
+<li><p>引数が<code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code>がないので返り値はなく，単に<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数で表示をするだけとなる。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdp_change</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GDPは増加しています。
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdp_change</span><span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GDPは減少しています。
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdp_change</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GDPは変化していません。
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>直接真偽値を使う<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code>文を実行する上で，条件が真偽値<code class="docutils literal notranslate"><span class="pre">True</span></code>又は<code class="docutils literal notranslate"><span class="pre">False</span></code>を返すかで制御フローが分岐することが分かったと思う。ここで真偽値が重要な役割を果たしているが，<code class="docutils literal notranslate"><span class="pre">bool()</span></code>関数を使って真偽値をできることを思い出そう。空の文字列<code class="docutils literal notranslate"><span class="pre">''</span></code>や<code class="docutils literal notranslate"><span class="pre">0</span></code>などは「空」・「無」なので<code class="docutils literal notranslate"><span class="pre">False</span></code>となるが，それら以外は<code class="docutils literal notranslate"><span class="pre">True</span></code>となる。次の例はこの特性を使った例となる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">truth_value</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">x</span><span class="p">:</span>   <span class="c1"># この行に着目</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;真偽値はTrueです。&#39;</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;真偽値はFalseです。&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>このコードで着目してほしいのは<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">x:</span></code>の行である。引数<code class="docutils literal notranslate"><span class="pre">x</span></code>自体が条件文になっている。もし引数に文字列<code class="docutils literal notranslate"><span class="pre">abc</span></code>が使われると，<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">'abc':</span></code>となり，エラーが発生するのではと思うかも知れないが，そうならない。実は<code class="docutils literal notranslate"><span class="pre">if</span></code>文の場合，下の左と右のコードは同じなのである。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if x:　→　if bool(x):
+</pre></div>
+</div>
+<p>この解釈はどの<code class="docutils literal notranslate"><span class="pre">if</span></code>文でも成立するので覚えておこう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">truth_value</span><span class="p">(</span><span class="s1">&#39;経済学&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>真偽値はTrueです。
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">truth_value</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>真偽値はTrueです。
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">truth_value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>真偽値はFalseです。
+</pre></div>
+</div>
+</div>
+</div>
+<p>真偽値を使ったもう１つの例を紹介しよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_wallet</span><span class="p">(</span><span class="n">money</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">money</span><span class="p">:</span>   <span class="c1">#1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;なに買おうかな😄&#39;</span><span class="p">)</span>
+    
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;一文なしだよ😅&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>実行してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_wallet</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>一文なしだよ😅
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜<code class="docutils literal notranslate"><span class="pre">#1</span></code>の<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">money:</span></code>について＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">money</span> <span class="pre">!=</span> <span class="pre">0</span></code>と同じである。だが<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">money:</span></code>の方がより簡単で<code class="docutils literal notranslate"><span class="pre">Python</span></code>的（Pythonic）だと言える。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">money:</span></code>は「もしお金があれば」と読めるため，より直感的でもある。</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>数値を返す例<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>今までの例では<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使ったが，もちろん数値を返す<code class="docutils literal notranslate"><span class="pre">if</span></code>文を書くことも可能であり，むしろそれが一般的だろう。次の関数を<code class="docutils literal notranslate"><span class="pre">if</span></code>文で表してみよう。</p>
+<div class="math notranslate nohighlight">
+\[
+y = \left|x\right|
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>       <span class="c1"># 0</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>    <span class="c1"># 1</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+    
+<span class="k">else</span><span class="p">:</span>         <span class="c1"># 2</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="n">x</span>
+        
+<span class="n">y</span>             <span class="c1"># 3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜<code class="docutils literal notranslate"><span class="pre">if</span></code>文の説明＞</p>
+<ul class="simple">
+<li><p>(<code class="docutils literal notranslate"><span class="pre">#1</span></code>) <code class="docutils literal notranslate"><span class="pre">x</span></code>が非負であれば，<code class="docutils literal notranslate"><span class="pre">x</span></code>が<code class="docutils literal notranslate"><span class="pre">y</span></code>に割り当てられる。</p></li>
+<li><p>(<code class="docutils literal notranslate"><span class="pre">#2</span></code>) <code class="docutils literal notranslate"><span class="pre">x</span></code>が負であれば，<code class="docutils literal notranslate"><span class="pre">-x</span></code>が<code class="docutils literal notranslate"><span class="pre">y</span></code>に割り当てられる。</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">#0</span></code>で<code class="docutils literal notranslate"><span class="pre">-10</span></code>が<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てられているので，<code class="docutils literal notranslate"><span class="pre">#3</span></code>の<code class="docutils literal notranslate"><span class="pre">y</span></code>には<code class="docutils literal notranslate"><span class="pre">10</span></code>が割り当てられている。従って，<code class="docutils literal notranslate"><span class="pre">y</span></code>を実行すると<code class="docutils literal notranslate"><span class="pre">10</span></code>が表示されることになる。この<code class="docutils literal notranslate"><span class="pre">if</span></code>文を関数にまとめてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="k">return</span> <span class="n">y</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="n">x</span>
+        <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>主な違い：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>を引数に使う。</p></li>
+<li><p>関数の戻り値を設定するために<code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">y</span></code>が追加されている。</p></li>
+</ul>
+<p>更に，短くするには次のように書くこともできる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>違いは変数<code class="docutils literal notranslate"><span class="pre">y</span></code>を使わずに，直接結果を返している。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10, 10, 0)
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p>経済学の例として一般的な生産関数を考えよう。</p>
+<div class="math notranslate nohighlight">
+\[
+Y=F(K,L)
+\]</div>
+<p>要素間の代替の弾力性は次のように定義される。</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma = 
+\dfrac{\log(L/K)}{\log\left(\frac{dF}{dK}/\frac{dF}{dL}\right)}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\sigma\)</span>が一定な生産関数はCES生産関数（Constant Elasticity of Substitution）と呼ばれ，次の式で与えられる。</p>
+<div class="math notranslate nohighlight">
+\[
+Y = A\left[a(bK)^\rho+(1-a)(cL)^\rho\right]^{\frac{1}{\rho}}
+\]</div>
+<p>ここで</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sigma=\dfrac{1}{1-\rho}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\leq 1\)</span>：要素の代替の程度を決定する。</p></li>
+<li><p><span class="math notranslate nohighlight">\(0&lt;a&lt;1\)</span>：要素の貢献度のシェアを決定する。</p></li>
+<li><p><span class="math notranslate nohighlight">\(b&gt;0,c&gt;\)</span>：要素の単位に依存する。</p></li>
+<li><p><span class="math notranslate nohighlight">\(A&gt;0\)</span>：生産の単位に依存する（生産性）。</p></li>
+</ul>
+<p>また，<span class="math notranslate nohighlight">\(\rho\)</span>の値によって次のような生産関数となる。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Y = 
+\begin{cases}
+    &amp;A\left[a bK+(1-a)cL\right],\quad\rho=1\quad \text{（完全代替型）}\\
+    &amp;AK^a L^{1-a},\quad\rho=0\quad\text{（コブ・ダグラス型）}\\
+    &amp;A\cdot\text{min}\left\{bK, cL\right\},\quad\rho=-\infty\quad\text{（完全補完型またはレオンティエフ型）}
+\end{cases}
+\end{split}\]</div>
+<p>次のコードで<span class="math notranslate nohighlight">\(\rho=-\infty\)</span>以外のケースを関数で表している。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ces_production</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">rho</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;rhoには１以下の数字を入力してください。&#39;</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">rho</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">A</span><span class="o">*</span><span class="p">(</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">c</span><span class="o">*</span><span class="n">l</span> <span class="p">)</span>
+    
+    <span class="k">elif</span> <span class="n">rho</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">A</span><span class="o">*</span><span class="n">k</span><span class="o">**</span><span class="n">a</span> <span class="o">*</span> <span class="n">l</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">)</span>
+    
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">A</span><span class="o">*</span><span class="p">(</span> <span class="n">a</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">**</span><span class="n">rho</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">l</span><span class="p">)</span><span class="o">**</span><span class="n">rho</span> <span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">rho</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ces_production</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">rho</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.79746835443038
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="while">
+<h2><code class="docutils literal notranslate"><span class="pre">While</span></code>ループ<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>説明と簡単な例<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>ループとは同じコードを複数回続けて実行できるように書かれたコードを指す。１つのタイプは<code class="docutils literal notranslate"><span class="pre">while</span></code>ループと呼ばれ，名前からその機能を何となく想像できるかも知れない。与えられた条件が<code class="docutils literal notranslate"><span class="pre">True</span></code>の<strong>間</strong>はループ計算を繰り返し続け，<code class="docutils literal notranslate"><span class="pre">False</span></code>になると実行が止まるループとなる。次の書き方となる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>while ＜条件＞:                  # 1
+    ＜条件がTrueの間，実行する内容＞  # 2
+</pre></div>
+</div>
+<p>実行される順番は次の様になる。</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>で条件の真偽値を確認する。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code>であればループ終了。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>であれば<code class="docutils literal notranslate"><span class="pre">#2</span></code>に進む。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>のコードを実行し，終わると<code class="docutils literal notranslate"><span class="pre">#1</span></code>に戻る。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>で条件の真偽値を確認する。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code>であればループ終了。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>であれば<code class="docutils literal notranslate"><span class="pre">#2</span></code>に進む。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>のコードを実行し，終わると<code class="docutils literal notranslate"><span class="pre">#1</span></code>に戻る。</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">#1</span></code>で条件が<code class="docutils literal notranslate"><span class="pre">False</span></code>になる迄この実行フローが続くことになる。</p>
+<p>ここから分かることは，<code class="docutils literal notranslate"><span class="pre">#1</span></code>で<code class="docutils literal notranslate"><span class="pre">＜条件＞</span></code>が<code class="docutils literal notranslate"><span class="pre">False</span></code>になるようにコードを書かなければ無限ループに陥ることになる。</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Jupyter Notebookで無限ループに入ってしまった場合は，次の手順で実行を中止することができる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>メニューの「カーネル」をクリック　→　「中断」をクリック
+</pre></div>
+</div>
+</div>
+<p>もちろん無限ループこそが必要な場合（ウェブサイトで何かを入力する場合など）もあるが，ここでは有限ループを想定してコードを考えることにする。最も基本となるのが次の例である。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>            <span class="c1">#1</span>
+
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>     <span class="c1">#2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>     <span class="c1">#3</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>       <span class="c1">#4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code>は数字を数えるカウンターの役割を果たす。初期値は<code class="docutils literal notranslate"><span class="pre">0</span></code>。このカウンター変数の目的は<code class="docutils literal notranslate"><span class="pre">#2</span></code>で条件が<code class="docutils literal notranslate"><span class="pre">False</span></code>に状況を作ることである。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：条件を設定し，ループを続けるか終わらせるかを判断する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>〜<code class="docutils literal notranslate"><span class="pre">#4</span></code>：条件が<code class="docutils literal notranslate"><span class="pre">True</span></code>の場合に実行するコード</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：カウンター変数の値を変更する。この目的は<code class="docutils literal notranslate"><span class="pre">#2</span></code>で条件が<code class="docutils literal notranslate"><span class="pre">False</span></code>に状況を作ることである。</p></li>
+</ul>
+</li>
+<li><p>1回目のループ</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">count</span></code>の値は<code class="docutils literal notranslate"><span class="pre">0</span></code>なので<code class="docutils literal notranslate"><span class="pre">count&lt;3</span></code>は<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す。条件が満たされたので<code class="docutils literal notranslate"><span class="pre">#3</span></code>に進む。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使い変数<code class="docutils literal notranslate"><span class="pre">count</span></code>の値を表示する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：<code class="docutils literal notranslate"><span class="pre">count</span></code>は<code class="docutils literal notranslate"><span class="pre">1</span></code>増加する。この時点で<code class="docutils literal notranslate"><span class="pre">count=1</span></code>にアップデートされる。</p></li>
+</ul>
+</li>
+<li><p>2回目のループ</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">count</span></code>の値は<code class="docutils literal notranslate"><span class="pre">1</span></code>なので<code class="docutils literal notranslate"><span class="pre">count&lt;3</span></code>は<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す。条件が満たされたので<code class="docutils literal notranslate"><span class="pre">#3</span></code>に進む。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使い変数<code class="docutils literal notranslate"><span class="pre">count</span></code>の値を表示する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：<code class="docutils literal notranslate"><span class="pre">count</span></code>は<code class="docutils literal notranslate"><span class="pre">1</span></code>増加し，この時点で<code class="docutils literal notranslate"><span class="pre">count=2</span></code>にアップデートされる。</p></li>
+</ul>
+</li>
+<li><p>3回目のループ</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">count</span></code>の値は<code class="docutils literal notranslate"><span class="pre">2</span></code>なので<code class="docutils literal notranslate"><span class="pre">count&lt;3</span></code>は<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す。条件が満たされたので<code class="docutils literal notranslate"><span class="pre">#3</span></code>に進む。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使い変数<code class="docutils literal notranslate"><span class="pre">count</span></code>の値を表示する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：<code class="docutils literal notranslate"><span class="pre">count</span></code>は<code class="docutils literal notranslate"><span class="pre">1</span></code>増加し，この時点で<code class="docutils literal notranslate"><span class="pre">count=3</span></code>にアップデートされる。</p></li>
+</ul>
+</li>
+<li><p>4回目のループ</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">count</span></code>の値は<code class="docutils literal notranslate"><span class="pre">3</span></code>なので<code class="docutils literal notranslate"><span class="pre">count&lt;3</span></code>は<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す。条件が満たされないのでループは中断される</p></li>
+</ul>
+</li>
+</ul>
+<p>この例で分かることは，4行目の<code class="docutils literal notranslate"><span class="pre">count+=1</span></code>がなければ<code class="docutils literal notranslate"><span class="pre">count</span></code>の値は<code class="docutils literal notranslate"><span class="pre">0</span></code>のままなため無限ループが発生することになる。</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code>文に<code class="docutils literal notranslate"><span class="pre">else</span></code>があったが，<code class="docutils literal notranslate"><span class="pre">while</span></code>ループでも使うことができる。上の例に使ってみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1">#1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="k">else</span><span class="p">:</span>             <span class="c1">#2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ループは無事終わったよ🥳&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+ループは無事終わったよ🥳
+</pre></div>
+</div>
+</div>
+</div>
+<p>4回目のループの初めに<code class="docutils literal notranslate"><span class="pre">count&lt;3</span></code>は<code class="docutils literal notranslate"><span class="pre">False</span></code>を返したので，<code class="docutils literal notranslate"><span class="pre">else</span></code>に進みメッセージを表示している。このコードを見ると，<code class="docutils literal notranslate"><span class="pre">if</span></code>文と構造が非常に似ていることが分かる。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：条件の真偽値を確認する。<code class="docutils literal notranslate"><span class="pre">True</span></code>であれば，続くコードを実行する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：条件が<code class="docutils literal notranslate"><span class="pre">False</span></code>の場合に実行する。</p></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>近似を考える<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h4>壁からの距離<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>壁から１メートル離れて立ち，毎回壁までの半分の距離を進むとしよう。壁までの距離を変数<code class="docutils literal notranslate"><span class="pre">distance</span></code>で表すと，初期値は<code class="docutils literal notranslate"><span class="pre">1</span></code>となる。またループをストップする距離を<code class="docutils literal notranslate"><span class="pre">0.001</span></code>（1mm）とする。<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを書いて距離の推移を表示してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span> <span class="o">=</span> <span class="mi">1</span>                   <span class="c1"># 1</span>
+
+<span class="k">while</span> <span class="n">distance</span> <span class="o">&gt;</span> <span class="mf">0.001</span><span class="p">:</span>        <span class="c1"># 2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>            <span class="c1"># 3</span>
+    <span class="n">distance</span> <span class="o">-=</span> <span class="n">distance</span><span class="o">/</span><span class="mi">2</span>     <span class="c1"># 4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+0.5
+0.25
+0.125
+0.0625
+0.03125
+0.015625
+0.0078125
+0.00390625
+0.001953125
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞</p>
+<ul class="simple">
+<li><p>1行目</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">distance</span></code>はカウンターの役割を果たす。初期値は<code class="docutils literal notranslate"><span class="pre">1</span></code>。</p></li>
+</ul>
+</li>
+<li><p>2行目</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">distance&gt;0.001</span></code>が条件であり，この条件が<code class="docutils literal notranslate"><span class="pre">False</span></code>，即ち，<code class="docutils literal notranslate"><span class="pre">distance&lt;=0.001</span></code>になる手前までループが続く。</p></li>
+</ul>
+</li>
+<li><p>1回目のループ</p>
+<ul>
+<li><p>2行目：<code class="docutils literal notranslate"><span class="pre">distance</span></code>の値は<code class="docutils literal notranslate"><span class="pre">1</span></code>なので<code class="docutils literal notranslate"><span class="pre">distance&gt;0.001</span></code>は<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す。条件が満たされたのでループの内容を実行する。</p></li>
+<li><p>3行目：<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使い変数<code class="docutils literal notranslate"><span class="pre">distance</span></code>の値を表示する。</p></li>
+<li><p>4行目：<code class="docutils literal notranslate"><span class="pre">distance</span></code>は<code class="docutils literal notranslate"><span class="pre">0.5</span></code>に減少し，この時点で<code class="docutils literal notranslate"><span class="pre">distance=0.5</span></code>にアップデートされる。</p></li>
+</ul>
+</li>
+<li><p>2回目のループ</p>
+<ul>
+<li><p>2行目：<code class="docutils literal notranslate"><span class="pre">distance</span></code>の値は<code class="docutils literal notranslate"><span class="pre">0.5</span></code>なので<code class="docutils literal notranslate"><span class="pre">distance&gt;0.001</span></code>は<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す。条件が満たされたのでループの内容を実行する。</p></li>
+<li><p>3行目：<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使い変数<code class="docutils literal notranslate"><span class="pre">distance</span></code>の値を表示する。</p></li>
+<li><p>4行目：<code class="docutils literal notranslate"><span class="pre">distance</span></code>は<code class="docutils literal notranslate"><span class="pre">0.25</span></code>に減少し，この時点で<code class="docutils literal notranslate"><span class="pre">distance=0.25</span></code>にアップデートされる。</p></li>
+</ul>
+</li>
+<li><p>3回目以降のループ</p>
+<ul>
+<li><p>同様の計算が行われ，<code class="docutils literal notranslate"><span class="pre">distance&lt;=0.001</span></code>が成立するとループは停止する。</p></li>
+</ul>
+</li>
+</ul>
+<p>最後のループでは<code class="docutils literal notranslate"><span class="pre">0.001953125</span></code>が表示されているが，中止された時点での<code class="docutils literal notranslate"><span class="pre">distance</span></code>を調べてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0009765625
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">0.001</span></code>よりも小さいことが確認できる。もちろん，条件にある<code class="docutils literal notranslate"><span class="pre">0.001</span></code>を変えることにより，どこまで壁に近づけれるかを設定できる。もっと小さくすれば，より壁に近づき壁からの「誤差」を縮めることができる。</p>
+<p>上の<code class="docutils literal notranslate"><span class="pre">while</span></code>ループは何回ループ計算をしたかは分からない。次のコードはそれを確認するために変数<code class="docutils literal notranslate"><span class="pre">counter</span></code>を追加している。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">distance</span> <span class="o">&gt;</span> <span class="mf">1e-100</span><span class="p">:</span>
+    <span class="n">distance</span> <span class="o">-=</span> <span class="n">distance</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;残りの距離は</span><span class="si">{</span><span class="n">distance</span><span class="si">}</span><span class="s1">です。&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s1">回ループ計算しました🚀&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>残りの距離は5.714936956411375e-101です。
+333回ループ計算しました🚀
+</pre></div>
+</div>
+</div>
+</div>
+<p>ここで<code class="docutils literal notranslate"><span class="pre">1e-100</span></code>は<span class="math notranslate nohighlight">\(10^{-100}\)</span>である。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>科学的表記（scientific notation）は次のような書き方となる。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1.5e0</span></code> = <span class="math notranslate nohighlight">\(1.5\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1.5e10</span></code> = <span class="math notranslate nohighlight">\(1.5\times 10^{10}\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-8e100</span></code> = <span class="math notranslate nohighlight">\(-8\times 10^{100}\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1e-100</span></code> = <span class="math notranslate nohighlight">\(10^{-100}\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-5.2e-10</span></code> = <span class="math notranslate nohighlight">\(-5.2\times 10^{-10}\)</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id10">
+<h4>平方根の近似<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<p>近似値の例として，紀元前数千年前のメソポタミア地域で発達したバビロン数学の例を考えよう。数字<code class="docutils literal notranslate"><span class="pre">s</span></code>の平方根（<span class="math notranslate nohighlight">\(\sqrt{s}\)</span>）は次式で近似されることが知られている。</p>
+<div class="math notranslate nohighlight">
+\[
+x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
+\quad \text{初期値 }x_0,
+\quad n=0,1,2,3,..N
+\]</div>
+<p>この式は数学で学ぶ漸化式の形となっている。<span class="math notranslate nohighlight">\(N\)</span>は任意の計算回数。<span class="math notranslate nohighlight">\(N\)</span>が大きくれば，それだけ誤差が小さくなり，<span class="math notranslate nohighlight">\(x_n\)</span>は真の値に近づいていく。実際にコードを書いてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sqrt_approx</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">x0</span><span class="p">):</span>  <span class="c1">#1</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>               <span class="c1">#2</span>
+    
+    <span class="k">while</span> <span class="nb">abs</span><span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">s</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.0001</span><span class="p">:</span> <span class="c1">#3</span>
+        
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="n">s</span> <span class="o">/</span> <span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>        <span class="c1">#4</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                     <span class="c1">#5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：引数</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">s</span></code>：平方根を計算する対象の数字</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x0</span></code>：漸化式の初期値</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：初期値<code class="docutils literal notranslate"><span class="pre">x0</span></code>を<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：<code class="docutils literal notranslate"><span class="pre">abs()</span></code>は絶対値を返す組込み関数である。引数の<code class="docutils literal notranslate"><span class="pre">x*x-s</span></code>は近似の誤差であり，誤差が<code class="docutils literal notranslate"><span class="pre">0.0001</span></code>よりも大きい間は漸化式の計算がおこなわれる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：漸化式</p>
+<ul>
+<li><p>右辺は漸化式の右辺を表している。最初のループでは，<span class="math notranslate nohighlight">\(x_n\)</span>に<code class="docutils literal notranslate"><span class="pre">x0</span></code>の値が代入される。その結果が左辺の<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てられ（<span class="math notranslate nohighlight">\(x_{n+1}\)</span>に対応している），それと同時に<code class="docutils literal notranslate"><span class="pre">#2</span></code>の<code class="docutils literal notranslate"><span class="pre">x=x0</span></code>は無効となる。</p></li>
+<li><p>その後のループも同様の計算が続く。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>：<code class="docutils literal notranslate"><span class="pre">x</span></code>の値を表示する。</p></li>
+</ul>
+<p>ではコードを実行してみるが，<code class="docutils literal notranslate"><span class="pre">100</span></code>を初期値として<code class="docutils literal notranslate"><span class="pre">4</span></code>の平方根を計算してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqrt_approx</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.02
+25.04998400639744
+12.604832373535453
+6.4610854923746075
+3.5400882555851294
+2.335001794270127
+2.0240312882070577
+2.0001426615330145
+2.000000005087715
+</pre></div>
+</div>
+</div>
+</div>
+<p>紀元前に使われていたアルゴリズムとは信じられない程，真の値<code class="docutils literal notranslate"><span class="pre">2</span></code>への収束が速いことが伺える。</p>
+<ul class="simple">
+<li><p>上のコードで誤差は<code class="docutils literal notranslate"><span class="pre">0.0001</span></code>以下になっているが，この閾値を少しでも下回ると計算はストップする。より正確な近似を得るためにはより低い閾値を設定する必要がある。しかし，小さな誤差はより長い計算時間が必要になる。即ち，精度と計算速度にはトレード・オフが存在するということである。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Python</span></code>は広く科学計算に使われ，（様々なパッケージを使うことにより）簡単に方程式の解を求めることができる。しかし，全てのケースで真の解そのものを計算できるとは限らない。この例の様に解を近似値として求める場合が多くあり，複雑な方程式であればなおさらである。計算過程で誤差が減少し解に収束していくことになるが，その収束速度が速い解法がより良いアルゴリズムだと言えるだろう。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="ifcontinue">
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#ifcontinue" title="Permalink to this headline">¶</a></h3>
+<p>次の<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを考えてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>  <span class="c1">#1</span>
+
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>    <span class="c1">#2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>  <span class="c1">#2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p>このコードは最初のコードと殆ど同じで異なるのは次の２点だけである。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：<code class="docutils literal notranslate"><span class="pre">3</span></code>ではなく<code class="docutils literal notranslate"><span class="pre">5</span></code>を設定している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">print(count)</span></code>と<code class="docutils literal notranslate"><span class="pre">count+=1</span></code>の位置を変えている。</p></li>
+</ul>
+<p>この２つの違いにより<code class="docutils literal notranslate"><span class="pre">1</span></code>〜<code class="docutils literal notranslate"><span class="pre">5</span></code>まで表示されている。</p>
+<p>ここで<code class="docutils literal notranslate"><span class="pre">3</span></code>を飛ばして<code class="docutils literal notranslate"><span class="pre">1</span></code>，<code class="docutils literal notranslate"><span class="pre">2</span></code>，<code class="docutils literal notranslate"><span class="pre">4</span></code>，<code class="docutils literal notranslate"><span class="pre">5</span></code>を表示したいとしよう。その場合に重宝するのが<code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">continue</span></code>（対象コードの実行を飛ばすコード）の組み合わせである。上の例を修正して説明する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>    <span class="c1">#1</span>
+
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>      <span class="c1">#2</span>
+    
+    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1">#3</span>
+        <span class="k">continue</span>    <span class="c1">#4</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>    <span class="c1">#5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜<code class="docutils literal notranslate"><span class="pre">while</span></code>ループの説明＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：<code class="docutils literal notranslate"><span class="pre">count&lt;5</span></code>が<code class="docutils literal notranslate"><span class="pre">True</span></code>である限り<code class="docutils literal notranslate"><span class="pre">#2</span></code>に進む。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">count</span></code>の値が<code class="docutils literal notranslate"><span class="pre">1</span></code>増える。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">count==3</span></code>が<code class="docutils literal notranslate"><span class="pre">False</span></code>の場合，<code class="docutils literal notranslate"><span class="pre">#5</span></code>に進む。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count==3</span></code>が<code class="docutils literal notranslate"><span class="pre">True</span></code>の場合，<code class="docutils literal notranslate"><span class="pre">#4</span></code>に進む。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：<code class="docutils literal notranslate"><span class="pre">continue</span></code>が実行されると，<code class="docutils literal notranslate"><span class="pre">#1</span></code>に戻る。即ち，<code class="docutils literal notranslate"><span class="pre">#5</span></code>は飛ばされる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>：<code class="docutils literal notranslate"><span class="pre">cont</span></code>の値を表示する。</p></li>
+</ul>
+<p>このように<code class="docutils literal notranslate"><span class="pre">while</span></code>ループでコードをスキップする場合に<code class="docutils literal notranslate"><span class="pre">continue</span></code>を使う。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>を<code class="docutils literal notranslate"><span class="pre">#4</span></code>の下に置くと，<code class="docutils literal notranslate"><span class="pre">count</span></code>の値は<code class="docutils literal notranslate"><span class="pre">3</span></code>でストップして無限ループになってしまうので注意しよう。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>を<code class="docutils literal notranslate"><span class="pre">#3</span></code>の上に置くと，<code class="docutils literal notranslate"><span class="pre">3</span></code>も表示されるので注意しよう。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="ifbreak">
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#ifbreak" title="Permalink to this headline">¶</a></h3>
+<p>上の例から分かることは</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>while true:
+    ＜実行コード＞
+</pre></div>
+</div>
+<p>と書くと無限ループになってしまうということである。一方，この書き方でもループを停止させる方法がある。それが<code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">break</span></code>（ループを中断するコード）を組み合わせる方法である。例を考えよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>          <span class="c1">#1</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>        <span class="c1">#2</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>   <span class="c1">#3</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>     <span class="c1">#4</span>
+
+    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>  <span class="c1">#5</span>
+        <span class="k">break</span>      <span class="c1">#6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜<code class="docutils literal notranslate"><span class="pre">while</span></code>ループの説明＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：カウンター変数の初期化（<code class="docutils literal notranslate"><span class="pre">0</span></code>に設定する）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：条件は<code class="docutils literal notranslate"><span class="pre">True</span></code>なので，必ず<code class="docutils literal notranslate"><span class="pre">#3</span></code>以下のコードを実行する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：<code class="docutils literal notranslate"><span class="pre">count</span></code>を表示する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：<code class="docutils literal notranslate"><span class="pre">count</span></code>の値に<code class="docutils literal notranslate"><span class="pre">1</span></code>を加える。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>：</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">count&gt;2</span></code>が<code class="docutils literal notranslate"><span class="pre">False</span></code>の場合は<code class="docutils literal notranslate"><span class="pre">#2</span></code>に戻る。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count&gt;2</span></code>が<code class="docutils literal notranslate"><span class="pre">True</span></code>の場合は<code class="docutils literal notranslate"><span class="pre">#6</span></code>に進む。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#6</span></code>：<code class="docutils literal notranslate"><span class="pre">break</span></code>を実行しループは終了となる。</p></li>
+</ul>
+</div>
+<div class="section" id="continuebreak">
+<h3><code class="docutils literal notranslate"><span class="pre">continue</span></code>と<code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#continuebreak" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">continue</span></code>と<code class="docutils literal notranslate"><span class="pre">break</span></code>を一緒に使うことも可能である。次の例を考えよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>         <span class="c1">#1</span>
+
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>      <span class="c1">#2</span>
+    
+    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1">#3</span>
+        <span class="k">continue</span>    <span class="c1">#4</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>    <span class="c1">#5</span>
+    
+    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>   <span class="c1">#6</span>
+        <span class="k">break</span>       <span class="c1">#7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜<code class="docutils literal notranslate"><span class="pre">while</span></code>ループの説明＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：条件は<code class="docutils literal notranslate"><span class="pre">True</span></code>なので，必ず<code class="docutils literal notranslate"><span class="pre">#2</span></code>に進む。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">count</span></code>の値に<code class="docutils literal notranslate"><span class="pre">1</span></code>を加える。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">count==3</span></code>が<code class="docutils literal notranslate"><span class="pre">False</span></code>の場合，<code class="docutils literal notranslate"><span class="pre">#5</span></code>に進む。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count==3</span></code>が<code class="docutils literal notranslate"><span class="pre">True</span></code>の場合，<code class="docutils literal notranslate"><span class="pre">#4</span></code>に進む。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：<code class="docutils literal notranslate"><span class="pre">continue</span></code>が実行されると，<code class="docutils literal notranslate"><span class="pre">#1</span></code>に戻る。即ち，<code class="docutils literal notranslate"><span class="pre">#5</span></code>以下は飛ばされる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>：<code class="docutils literal notranslate"><span class="pre">cont</span></code>の値を表示する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#6</span></code>：</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">count&gt;4</span></code>が<code class="docutils literal notranslate"><span class="pre">False</span></code>の場合は<code class="docutils literal notranslate"><span class="pre">#2</span></code>に戻る。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count&gt;4</span></code>が<code class="docutils literal notranslate"><span class="pre">True</span></code>の場合は<code class="docutils literal notranslate"><span class="pre">#7</span></code>に進む。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#7</span></code>：</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">break</span></code>を実行しループを終了する。</p></li>
+</ul>
+</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">continue</span></code>と<code class="docutils literal notranslate"><span class="pre">break</span></code>それぞれに<code class="docutils literal notranslate"><span class="pre">if</span></code>文が必要となる。</p>
+</div>
+</div>
+<div class="section" id="for">
+<h2><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ<a class="headerlink" href="#for" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h3>説明<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループは，指定した回数だけ処理を繰り返す計算手続きである。次のような書き方となる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for ＜イタラブルの要素を割り当てる変数＞ in ＜イタラブル＞:
+    ＜毎回実行したい内容１＞
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>1行目</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">＜イタラブル＞</span></code>（iterable）とはリストやタプルのように要素を１つずつ返すことができる反復可能なデータ型（オブジェクト）を指す。文字列や後に説明する<code class="docutils literal notranslate"><span class="pre">Numpy</span></code>の<code class="docutils literal notranslate"><span class="pre">array</span></code>も含まれる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">＜イタラブルの要素を割り当てる変数＞</span></code>とはループを１回実行する際に<code class="docutils literal notranslate"><span class="pre">＜イタラブル＞</span></code>の要素の値を割り当てる変数のこと。よく<code class="docutils literal notranslate"><span class="pre">i</span></code>や<code class="docutils literal notranslate"><span class="pre">j</span></code>などが使われ，比較的に短い変数名が使われる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code>で始まり<code class="docutils literal notranslate"><span class="pre">:</span></code>で終わり，<code class="docutils literal notranslate"><span class="pre">＜イタラブル＞</span></code>の前に<code class="docutils literal notranslate"><span class="pre">in</span></code>が入る。</p></li>
+</ul>
+</li>
+<li><p>2行目以降</p>
+<ul>
+<li><p>慣例では4つの半角スペースのインデント後に実行したいコードを書く。</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループでは無限ループは発生しない。リストなどのイタラブルの最後の要素が使われると，自動でループが終了する仕様となっている。</p>
+</div>
+<p>以下では例を使って説明しよう。</p>
+</div>
+<div class="section" id="print">
+<h3><code class="docutils literal notranslate"><span class="pre">print()</span></code>を使う例<a class="headerlink" href="#print" title="Permalink to this headline">¶</a></h3>
+<p>次のリストにはGDPの構成要素が並んでいる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdp_components</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;消費&#39;</span><span class="p">,</span> <span class="s1">&#39;投資&#39;</span><span class="p">,</span> <span class="s1">&#39;政府支出&#39;</span><span class="p">,</span> <span class="s1">&#39;純輸出&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>このリストにある文字列を表示したいとしよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gdp_components</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>消費
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>投資
+政府支出
+純輸出
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞</p>
+<ul class="simple">
+<li><p>１回目のループ</p>
+<ul>
+<li><p>1行目で<code class="docutils literal notranslate"><span class="pre">gdp_components</span></code>の0番目の要素<code class="docutils literal notranslate"><span class="pre">消費</span></code>を<code class="docutils literal notranslate"><span class="pre">i</span></code>に割り当てる。</p></li>
+<li><p>2行目で<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使い変数<code class="docutils literal notranslate"><span class="pre">i</span></code>の値を表示する。</p></li>
+</ul>
+</li>
+<li><p>２回目のループ</p>
+<ul>
+<li><p>1行目で<code class="docutils literal notranslate"><span class="pre">gdp_components</span></code>の1番目の要素<code class="docutils literal notranslate"><span class="pre">投資</span></code>を<code class="docutils literal notranslate"><span class="pre">i</span></code>に割り当てる。</p></li>
+<li><p>2行目で<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使い変数<code class="docutils literal notranslate"><span class="pre">i</span></code>の値を表示する。</p></li>
+</ul>
+</li>
+<li><p>３回目のループ</p>
+<ul>
+<li><p>1行目で<code class="docutils literal notranslate"><span class="pre">gdp_components</span></code>の2番目の要素<code class="docutils literal notranslate"><span class="pre">政府支出</span></code>を<code class="docutils literal notranslate"><span class="pre">i</span></code>に割り当てる。</p></li>
+<li><p>2行目で<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使い変数<code class="docutils literal notranslate"><span class="pre">i</span></code>の値を表示する。</p></li>
+</ul>
+</li>
+<li><p>４回目のループ</p>
+<ul>
+<li><p>1行目で<code class="docutils literal notranslate"><span class="pre">gdp_components</span></code>の最後の要素<code class="docutils literal notranslate"><span class="pre">純輸出</span></code>を<code class="docutils literal notranslate"><span class="pre">i</span></code>に割り当てる。</p></li>
+<li><p>2行目で<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使い変数<code class="docutils literal notranslate"><span class="pre">i</span></code>の値を表示する。</p></li>
+</ul>
+</li>
+</ul>
+<p>この例では<code class="docutils literal notranslate"><span class="pre">gdp_components</span></code>の要素の数だけループが行われる。</p>
+</div>
+<div class="section" id="append">
+<h3><code class="docutils literal notranslate"><span class="pre">.append()</span></code>を使う例<a class="headerlink" href="#append" title="Permalink to this headline">¶</a></h3>
+<p>リストにはメソッド<code class="docutils literal notranslate"><span class="pre">.append()</span></code>が実装されており，これを使うとリストに値を追加することができる。<code class="docutils literal notranslate"><span class="pre">.append()</span></code>と<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使い，空のリストに値を追加し新たなリストを作成する方法を紹介する。まず元になるリストを作成しよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>以下では，<code class="docutils literal notranslate"><span class="pre">var_list</span></code>のそれぞれの要素の10倍からなるリストを新たに作成する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[]</span>              <span class="c1"># 1</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">var_list</span><span class="p">:</span>        <span class="c1"># 2</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">i</span>              <span class="c1"># 3</span>
+    <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>     <span class="c1"># 4</span>
+
+<span class="n">my_list</span>                   <span class="c1"># 5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 20, 30, 40, 50]
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞</p>
+<ol class="simple">
+<li><p>空のリストの作成（<code class="docutils literal notranslate"><span class="pre">my_list</span></code>に10倍にした数字を格納する）</p></li>
+<li><p>ここから<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの始まり。<code class="docutils literal notranslate"><span class="pre">i</span></code>はリスト<code class="docutils literal notranslate"><span class="pre">[1,2,3,4,5]</span></code>の要素を割り当てる変数。</p>
+<ul class="simple">
+<li><p>１回目のループでは<code class="docutils literal notranslate"><span class="pre">i</span></code>に<code class="docutils literal notranslate"><span class="pre">1</span></code>を割り当てる。</p></li>
+<li><p>２回目のループでは<code class="docutils literal notranslate"><span class="pre">i</span></code>に<code class="docutils literal notranslate"><span class="pre">2</span></code>を割り当てる。</p></li>
+<li><p>３回目のループでは<code class="docutils literal notranslate"><span class="pre">i</span></code>に<code class="docutils literal notranslate"><span class="pre">3</span></code>を割り当てる。</p></li>
+<li><p>４回目のループでは<code class="docutils literal notranslate"><span class="pre">i</span></code>に<code class="docutils literal notranslate"><span class="pre">4</span></code>を割り当てる。</p></li>
+<li><p>５回目のループでは<code class="docutils literal notranslate"><span class="pre">i</span></code>に<code class="docutils literal notranslate"><span class="pre">5</span></code>を割り当てる。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10*i</span></code>を計算し<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.append()</span></code>を使い<code class="docutils literal notranslate"><span class="pre">x</span></code>の値を<code class="docutils literal notranslate"><span class="pre">my_list</span></code>に追加する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_list</span></code>を表示する。</p></li>
+</ol>
+</div>
+<div class="section" id="id12">
+<h3>消費関数<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使い，所得によって消費がどのように変化するかを考えてみよう。まず消費関数を次のように仮定する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">consumption</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">100</span> <span class="o">+</span> <span class="mf">0.7</span> <span class="o">*</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">100</span></code>：自発的消費（autonomous consumption）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0.7</span></code>：限界消費性向（marginal propensity to consume）</p></li>
+</ul>
+<p>所得は次のリストで与えられるとする。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">income_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1100</span><span class="p">,</span> <span class="mi">1500</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2300</span><span class="p">,</span> <span class="mi">3000</span><span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c_list</span> <span class="o">=</span> <span class="p">[]</span>               <span class="c1"># 1</span>
+
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">income_list</span><span class="p">:</span>     <span class="c1"># 2</span>
+    <span class="n">con</span> <span class="o">=</span> <span class="n">consumption</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># 3</span>
+    <span class="n">c_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">con</span><span class="p">)</span>    <span class="c1"># 4</span>
+
+<span class="n">c_list</span>                    <span class="c1"># 5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[800.0, 870.0, 1150.0, 1500.0, 1710.0, 2200.0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞</p>
+<ol class="simple">
+<li><p>空のリストの作成（消費の値を格納する）</p></li>
+<li><p>ここから<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの始まり。<code class="docutils literal notranslate"><span class="pre">y</span></code>はリスト<code class="docutils literal notranslate"><span class="pre">income_list</span></code>の要素を割り当てる変数。</p>
+<ul class="simple">
+<li><p>１回目のループでは<code class="docutils literal notranslate"><span class="pre">y</span></code>に<code class="docutils literal notranslate"><span class="pre">1000</span></code>を割り当てる。</p></li>
+<li><p>２回目のループでは<code class="docutils literal notranslate"><span class="pre">y</span></code>に<code class="docutils literal notranslate"><span class="pre">1100</span></code>を割り当てる。</p></li>
+<li><p>３回目のループでは<code class="docutils literal notranslate"><span class="pre">y</span></code>に<code class="docutils literal notranslate"><span class="pre">1500</span></code>を割り当てる。</p></li>
+<li><p>４回目のループでは<code class="docutils literal notranslate"><span class="pre">y</span></code>に<code class="docutils literal notranslate"><span class="pre">2000</span></code>を割り当てる。</p></li>
+<li><p>５回目のループでは<code class="docutils literal notranslate"><span class="pre">y</span></code>に<code class="docutils literal notranslate"><span class="pre">2300</span></code>を割り当てる。</p></li>
+<li><p>６回目のループでは<code class="docutils literal notranslate"><span class="pre">y</span></code>に<code class="docutils literal notranslate"><span class="pre">3000</span></code>を割り当てる。</p></li>
+</ul>
+</li>
+<li><p>関数<code class="docutils literal notranslate"><span class="pre">consumption(y)</span></code>を計算し<code class="docutils literal notranslate"><span class="pre">con</span></code>に割り当てる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.append()</span></code>を使い<code class="docutils literal notranslate"><span class="pre">con</span></code>の値を<code class="docutils literal notranslate"><span class="pre">c_list</span></code>に追加する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c_list</span></code>を表示する。</p></li>
+</ol>
+</div>
+<div class="section" id="for2">
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code>ループの２つの書き方（動学分析の基礎）<a class="headerlink" href="#for2" title="Permalink to this headline">¶</a></h3>
+<p>上で説明した３つの<code class="docutils literal notranslate"><span class="pre">for</span></code>ループは次の特徴を持っている。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code>を使った例</p>
+<ul>
+<li><p>イタラブルの要素を使い，それを表示する。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.append()</span></code>を使った例</p>
+<ul>
+<li><p>イタラブルの要素を使い，それを予め準備したリストに追加する。</p></li>
+</ul>
+</li>
+<li><p>消費関数の例</p>
+<ul>
+<li><p>イタラブルの要素を使い消費を計算し，予め準備したリストに追加する。</p></li>
+</ul>
+</li>
+</ul>
+<p>３つに共通することは，<code class="docutils literal notranslate"><span class="pre">n</span></code>回目に計算した値は<code class="docutils literal notranslate"><span class="pre">n-1</span></code>回目に計算した値から独立だということである。例えば，消費関数を考えてみよう。３回目のループで計算した消費量はその回の所得に依存するが，２回目ループの消費量や所得には依存しない。<code class="docutils literal notranslate"><span class="pre">print()</span></code>と<code class="docutils literal notranslate"><span class="pre">.append()</span></code>の例も同じである。</p>
+<p>一方，マクロ経済学では，今期の値は前期の値に依存する場合が頻繁に出てくる。典型的な例が資本ストックである。<code class="docutils literal notranslate"><span class="pre">t</span></code>期末の資本ストックは<code class="docutils literal notranslate"><span class="pre">t</span></code>期の投資と<code class="docutils literal notranslate"><span class="pre">t-1</span></code>期末の資本ストックによって決定される。ここでは，このように動的に変化する変数を捉えるための<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの書き方を紹介するのが目的である。</p>
+<p>例を使って説明するために，次のリストを作成したいとしよう。</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">10</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+</pre></div>
+</div>
+</div>
+</div>
+<p>次のコードが一つ目の方法である。変数<code class="docutils literal notranslate"><span class="pre">k</span></code>を資本ストック，３行目の<code class="docutils literal notranslate"><span class="pre">10</span></code>を投資，<code class="docutils literal notranslate"><span class="pre">t</span></code>を時間と考えればより分かり易いだろう。１行目の<code class="docutils literal notranslate"><span class="pre">my_list</span></code>には初期値<code class="docutils literal notranslate"><span class="pre">0</span></code>が置いある。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>             <span class="c1">#1</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>       <span class="c1">#2</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">k_list</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10</span>   <span class="c1">#3</span>
+    <span class="n">k_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>     <span class="c1">#4</span>
+    
+<span class="n">k_list</span>                   <span class="c1">#5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：<code class="docutils literal notranslate"><span class="pre">k_list</span></code>の最初の要素として<code class="docutils literal notranslate"><span class="pre">0</span></code>を入れている。以下では<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に値を追加して目的のリストを作成する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：ループの開始。</p>
+<ul>
+<li><p>イタラブルとして<code class="docutils literal notranslate"><span class="pre">range(9)</span></code>を使っている。<code class="docutils literal notranslate"><span class="pre">list(range(9))</span></code>と置いても良いが，<code class="docutils literal notranslate"><span class="pre">range(9)</span></code>で役目は果たす。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range(9)</span></code>は<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">8</span></code>までの整数を準備し，9回ループが実行されることになる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">8</span></code>までの整数を順次<code class="docutils literal notranslate"><span class="pre">t</span></code>に割り当てることになる。</p></li>
+</ul>
+</li>
+<li><p>１回目のループ</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：<code class="docutils literal notranslate"><span class="pre">k_list</span></code>の<code class="docutils literal notranslate"><span class="pre">0</span></code>番目の要素である<code class="docutils literal notranslate"><span class="pre">0</span></code>を抽出し，それに<code class="docutils literal notranslate"><span class="pre">10</span></code>をを足すことにより右辺は<code class="docutils literal notranslate"><span class="pre">10</span></code>となる。それを<code class="docutils literal notranslate"><span class="pre">k</span></code>に割り当てる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：<code class="docutils literal notranslate"><span class="pre">k</span></code>の値<code class="docutils literal notranslate"><span class="pre">10</span></code>を<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に追加する。<code class="docutils literal notranslate"><span class="pre">10</span></code>は<code class="docutils literal notranslate"><span class="pre">k_list</span></code>の1番目の要素となる。</p></li>
+</ul>
+</li>
+<li><p>２回目のループ</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：<code class="docutils literal notranslate"><span class="pre">k_list</span></code>の<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の要素である<code class="docutils literal notranslate"><span class="pre">10</span></code>を抽出し，それに<code class="docutils literal notranslate"><span class="pre">10</span></code>をを足すことにより右辺は<code class="docutils literal notranslate"><span class="pre">20</span></code>となる。それを<code class="docutils literal notranslate"><span class="pre">k</span></code>に割り当てる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：<code class="docutils literal notranslate"><span class="pre">k</span></code>の値<code class="docutils literal notranslate"><span class="pre">20</span></code>を<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に追加する。<code class="docutils literal notranslate"><span class="pre">20</span></code>は<code class="docutils literal notranslate"><span class="pre">k_list</span></code>の2番目の要素となる。</p></li>
+</ul>
+</li>
+<li><p>３回目のループ</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：<code class="docutils literal notranslate"><span class="pre">k_list</span></code>の<code class="docutils literal notranslate"><span class="pre">2</span></code>番目の要素である<code class="docutils literal notranslate"><span class="pre">20</span></code>を抽出し，それに<code class="docutils literal notranslate"><span class="pre">10</span></code>をを足すことにより右辺は<code class="docutils literal notranslate"><span class="pre">30</span></code>となる。それを<code class="docutils literal notranslate"><span class="pre">k</span></code>に割り当てる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：<code class="docutils literal notranslate"><span class="pre">k</span></code>の値<code class="docutils literal notranslate"><span class="pre">30</span></code>を<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に追加する。<code class="docutils literal notranslate"><span class="pre">30</span></code>は<code class="docutils literal notranslate"><span class="pre">k_list</span></code>の3番目の要素となる。</p></li>
+</ul>
+</li>
+<li><p>同様のループ計算が合計で9回繰り返される。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>：<code class="docutils literal notranslate"><span class="pre">k_list</span></code>を表示する。</p></li>
+</ul>
+<p>この例では，ループ用の変数<code class="docutils literal notranslate"><span class="pre">t</span></code>が３行目で使われており，比較的に分かりやすいと思う人も多いだろう。一方で，<code class="docutils literal notranslate"><span class="pre">t</span></code>に対応する変数（即ち，<code class="docutils literal notranslate"><span class="pre">my_list[t]</span></code>）が何を指しているのかを考える必要があり少し煩雑と感じる人もいるだろう。</p>
+<p>次のコードでも同じ結果となるが，<code class="docutils literal notranslate"><span class="pre">t</span></code>に対応する変数の値を考える必要はない。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>                   <span class="c1">#1</span>
+
+<span class="n">k_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="p">]</span>            <span class="c1">#2</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>    <span class="c1">#3</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">10</span>          <span class="c1">#4</span>
+    <span class="n">k_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>    <span class="c1">#5</span>
+    
+<span class="n">k_list</span>                  <span class="c1">#6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：最初の<code class="docutils literal notranslate"><span class="pre">k</span></code>の値を設定する。また<code class="docutils literal notranslate"><span class="pre">k</span></code>はループのアップデート用の変数として使われる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：最初の<code class="docutils literal notranslate"><span class="pre">k</span></code>の値<code class="docutils literal notranslate"><span class="pre">0</span></code>からなるリストの作成する。以下では<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に値を追加して目的のリストを作成する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：ループの開始。</p>
+<ul>
+<li><p>イタラブルとして<code class="docutils literal notranslate"><span class="pre">range(9)</span></code>を使っている。<code class="docutils literal notranslate"><span class="pre">list(range(9))</span></code>と置いても良いが，<code class="docutils literal notranslate"><span class="pre">range(9)</span></code>で役目は果たす。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range(9)</span></code>は<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">8</span></code>までの整数を準備し，9回ループが実行されることになる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">8</span></code>までの整数を順次<code class="docutils literal notranslate"><span class="pre">t</span></code>に割り当てることになる。</p></li>
+<li><p>４〜５行目に<code class="docutils literal notranslate"><span class="pre">t</span></code>は使われていない。従って，<code class="docutils literal notranslate"><span class="pre">t</span></code>の役割は<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">8</span></code>までの整数の「捨て場」のようなものである。そのような場合，<code class="docutils literal notranslate"><span class="pre">t</span></code>の代わりに<code class="docutils literal notranslate"><span class="pre">_</span></code>を使うこともある。</p></li>
+</ul>
+</li>
+<li><p>１回目のループ</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：右辺の<code class="docutils literal notranslate"><span class="pre">k</span></code>の値は１行目で割り当てた<code class="docutils literal notranslate"><span class="pre">0</span></code>である。それに<code class="docutils literal notranslate"><span class="pre">10</span></code>を足し右辺は<code class="docutils literal notranslate"><span class="pre">10</span></code>となり，それを左辺の<code class="docutils literal notranslate"><span class="pre">k</span></code>に割り当てる。この時点で，１行目の<code class="docutils literal notranslate"><span class="pre">k=0</span></code>は「無効」となり，<code class="docutils literal notranslate"><span class="pre">k=10</span></code>として更新される。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>：<code class="docutils literal notranslate"><span class="pre">k</span></code>の値<code class="docutils literal notranslate"><span class="pre">10</span></code>を<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に追加する。</p></li>
+</ul>
+</li>
+<li><p>２回目のループ</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：右辺の<code class="docutils literal notranslate"><span class="pre">k</span></code>の値は<code class="docutils literal notranslate"><span class="pre">10</span></code>である。それに<code class="docutils literal notranslate"><span class="pre">10</span></code>を足し右辺は<code class="docutils literal notranslate"><span class="pre">20</span></code>となり，それを左辺の<code class="docutils literal notranslate"><span class="pre">k</span></code>に割り当てる。この時点で<code class="docutils literal notranslate"><span class="pre">k=10</span></code>は「無効」となり，<code class="docutils literal notranslate"><span class="pre">k=20</span></code>として更新される。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>：<code class="docutils literal notranslate"><span class="pre">k</span></code>の値<code class="docutils literal notranslate"><span class="pre">20</span></code>を<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に追加する。</p></li>
+</ul>
+</li>
+<li><p>３回目のループ</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：右辺の<code class="docutils literal notranslate"><span class="pre">k</span></code>の値は<code class="docutils literal notranslate"><span class="pre">20</span></code>である。それに<code class="docutils literal notranslate"><span class="pre">10</span></code>を足し右辺は<code class="docutils literal notranslate"><span class="pre">30</span></code>となり，それを左辺の<code class="docutils literal notranslate"><span class="pre">k</span></code>に割り当てる。この時点で<code class="docutils literal notranslate"><span class="pre">k=20</span></code>は「無効」となり，<code class="docutils literal notranslate"><span class="pre">k=30</span></code>として更新される。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>：<code class="docutils literal notranslate"><span class="pre">k</span></code>の値<code class="docutils literal notranslate"><span class="pre">30</span></code>を<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に追加する。</p></li>
+</ul>
+</li>
+<li><p>同様のループ計算が合計で9回繰り返される。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#6</span></code>：<code class="docutils literal notranslate"><span class="pre">k_list</span></code>を表示する。</p></li>
+</ul>
+<p>１行目で<code class="docutils literal notranslate"><span class="pre">k=0</span></code>を設定していたが，ループ終了後の値を確認してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">k_list</span></code>の最後の要素と同じであり，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ内で更新用の変数として使われたのがわかる。</p>
+<p>２つの書き方を紹介した。基本的にどちらを使っても良い。上でも書いたが，最初の方法は<code class="docutils literal notranslate"><span class="pre">t</span></code>に対応する変数の値を追う必要があるので，それを分かりやすいと感じる人もいるだろうし，面倒と感じる人もいるかも知れない。一方，２つ目の方法は<code class="docutils literal notranslate"><span class="pre">t</span></code>を確認する必要がない。もちろん，初期値の変数<code class="docutils literal notranslate"><span class="pre">k=0</span></code>を<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの外に作る必要があるが，これは次の例で説明するように，関数の中で使う場合はそれほど問題にはならないだろう。このサイトでは主に２つ目の手法を多用することになる。</p>
+</div>
+<div class="section" id="id13">
+<h3>将来価値の時系列<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>元本<code class="docutils literal notranslate"><span class="pre">x0</span></code>万円を投資すると実質年率<code class="docutils literal notranslate"><span class="pre">r</span></code>％の利息を得る金融商品を考えよう。<code class="docutils literal notranslate"><span class="pre">t</span></code>年間の将来価値（期首の値）をリストで示す関数を作成する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_futre_value</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>  <span class="c1">#1</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>                            <span class="c1">#2</span>
+    
+    <span class="n">value_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>                  <span class="c1">#3</span>
+    
+    <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>         <span class="c1">#4</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span>                   <span class="c1">#5</span>
+        <span class="n">value_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>          <span class="c1">#6</span>
+    
+    <span class="k">return</span> <span class="n">value_list</span>                 <span class="c1">#7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：引数</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">x0</span></code>は元本，<code class="docutils literal notranslate"><span class="pre">r</span></code>実質利子率，<code class="docutils literal notranslate"><span class="pre">t</span></code>投資期間</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">x</span></code>が<code class="docutils literal notranslate"><span class="pre">for</span></code>ループでのアップデート用の変数として使われる。初期値として元本<code class="docutils literal notranslate"><span class="pre">x0</span></code>を設定する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：<code class="docutils literal notranslate"><span class="pre">value_list</span></code>に将来価値を追加して目的のリストを作成する。初期値の値である元本<code class="docutils literal notranslate"><span class="pre">x</span></code>がリストの0番目の要素として入っている。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：<code class="docutils literal notranslate"><span class="pre">range(1,t+1)</span></code>を使って<code class="docutils literal notranslate"><span class="pre">1</span></code>から<code class="docutils literal notranslate"><span class="pre">t</span></code>までの整数を準備する。<code class="docutils literal notranslate"><span class="pre">year</span></code>は<code class="docutils literal notranslate"><span class="pre">1</span></code>から<code class="docutils literal notranslate"><span class="pre">t</span></code>までの値を割り当てるだけで他の役割はない。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>：右辺の<code class="docutils literal notranslate"><span class="pre">x</span></code>は今期の価値であり，来季の価値は<code class="docutils literal notranslate"><span class="pre">x*(1+r)</span></code>になる。それを左辺の<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てる。その時点で<code class="docutils literal notranslate"><span class="pre">x</span></code>がアップデートされる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#6</span></code>：<code class="docutils literal notranslate"><span class="pre">x</span></code>の値を<code class="docutils literal notranslate"><span class="pre">value_list</span></code>に追加される。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#7</span></code>：戻り値として<code class="docutils literal notranslate"><span class="pre">value_list</span></code>を設定する。</p></li>
+</ul>
+<p>次の値を使って将来価値を計算してみよう。</p>
+<ul class="simple">
+<li><p>元本：<code class="docutils literal notranslate"><span class="pre">x0=100</span></code></p></li>
+<li><p>実質利子率：<code class="docutils literal notranslate"><span class="pre">r=0.02</span></code></p></li>
+<li><p>期間：<code class="docutils literal notranslate"><span class="pre">t=5</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="n">calculate_futre_value</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[100, 102.0, 104.04, 106.1208, 108.243216, 110.40808032000001]
+</pre></div>
+</div>
+</div>
+</div>
+<p>次に<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使って見易く表示してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>   <span class="c1">#1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">期：</span><span class="si">{</span><span class="n">v</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">万円&#39;</span><span class="p">)</span>   <span class="c1">#2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0期：100.0万円
+1期：102.0万円
+2期：104.0万円
+3期：106.1万円
+4期：108.2万円
+5期：110.4万円
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞</p>
+<p>このコードでは<code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>が重要な役割を果たしている。<code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>ついて説明するために次のリストを考えよう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">0</span></code>番目の要素は<code class="docutils literal notranslate"><span class="pre">A</span></code>，<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の要素は<code class="docutils literal notranslate"><span class="pre">B</span></code>である。ここで<code class="docutils literal notranslate"><span class="pre">0</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>が要素インデックスであり，<code class="docutils literal notranslate"><span class="pre">emunerate()</span></code>はリストの要素インデックスと要素をタプルとして返す。このことは次のコードで確認できる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, &#39;A&#39;), (1, &#39;B&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>ここでは<code class="docutils literal notranslate"><span class="pre">list()</span></code>を使ってリストとして表示している。また次のコードで<code class="docutils literal notranslate"><span class="pre">a</span></code>と<code class="docutils literal notranslate"><span class="pre">b</span></code>に<code class="docutils literal notranslate"><span class="pre">0</span></code>と<code class="docutils literal notranslate"><span class="pre">A</span></code>を割り当てることができる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>この特徴を利用して，上のコードでは<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを実行している。</p>
+<ul class="simple">
+<li><p>１回目のループ</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：<code class="docutils literal notranslate"><span class="pre">enumerate(values)</span></code>から<code class="docutils literal notranslate"><span class="pre">(0,100.0)</span></code>が引き出され，それぞれが<code class="docutils literal notranslate"><span class="pre">i</span></code>と<code class="docutils literal notranslate"><span class="pre">v</span></code>に割り当てられる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使い<code class="docutils literal notranslate"><span class="pre">i</span></code>と<code class="docutils literal notranslate"><span class="pre">v</span></code>を表示する。</p>
+<ul>
+<li><p>f-stringを使っている。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{v:.1f}</span></code>の<code class="docutils literal notranslate"><span class="pre">:.1f</span></code>は小数点第一位までの表示を指定している。</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>２回目のループ</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：<code class="docutils literal notranslate"><span class="pre">enumerate(values)</span></code>から<code class="docutils literal notranslate"><span class="pre">(1,102.0)</span></code>が引き出され，それぞれが<code class="docutils literal notranslate"><span class="pre">i</span></code>と<code class="docutils literal notranslate"><span class="pre">v</span></code>に割り当てられる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使い<code class="docutils literal notranslate"><span class="pre">i</span></code>と<code class="docutils literal notranslate"><span class="pre">v</span></code>を表示する。</p></li>
+</ul>
+</li>
+<li><p>同様のループが合計6回おこなわれる。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>内包表記<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>内包表記とは<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの考えを使い、リストや辞書などを簡単に１行で生成する方法である。リストの場合、次のような書き方となる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[＜実行したい内容＞ for i in ＜イタラブル＞]
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">＜イタラブル＞</span></code>の箇所は<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの１行目と同じとなる。</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">＜イタラブル＞</span></code>はリストやタプルなどを指す。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>は<code class="docutils literal notranslate"><span class="pre">＜イタラブル＞</span></code>の要素を割り当てる変数。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">＜実行したい内容＞</span></code>の箇所でループで実行したいコードを書く。</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">＜イタラブル＞</span></code>の例として<code class="docutils literal notranslate"><span class="pre">range(5)</span></code>を考えよう。まず<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使って、それぞれの要素を２乗にしたリストを生成するとしよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">lst</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うと３行のコードとなるが、内包表記を使うと１行で済む。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16]
+</pre></div>
+</div>
+</div>
+</div>
+<p>次のように並べると<code class="docutils literal notranslate"><span class="pre">for</span></code>ループと内包表記の関係がより分かりやすくなるだろう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>次の例として<code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素を全て文字列に変換してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;0&#39;, &#39;1&#39;, &#39;4&#39;, &#39;9&#39;, &#39;16&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>上のコードの<code class="docutils literal notranslate"><span class="pre">str()</span></code>は組込み関数だが，<code class="docutils literal notranslate"><span class="pre">def</span></code>を使って作成した自前の関数を使うことも可能である。試してみよう。</p>
+<p>また内包表記にも<code class="docutils literal notranslate"><span class="pre">if</span></code>文を追加することも可能である。例えば，<code class="docutils literal notranslate"><span class="pre">1</span></code>から<code class="docutils literal notranslate"><span class="pre">10</span></code>までの整数で<code class="docutils literal notranslate"><span class="pre">5</span></code>以下であれば２乗し，それ以外は<code class="docutils literal notranslate"><span class="pre">0</span></code>にするとしよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">if</span> <span class="n">x</span><span class="o">&lt;=</span><span class="mi">5</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 9, 16, 25, 0, 0, 0, 0, 0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>しかし複雑になると可読性が落ちるので注意しよう。</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="1_Basics_III.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">関数とメソッド</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="1_Basics_V.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">モジュールと疑似コード</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By 春山 鉄源  Tetsugen HARUYAMA<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
