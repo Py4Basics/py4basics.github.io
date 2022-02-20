@@ -1,15 +1,22 @@
 format: jb-book
 root: index
 parts:
-- caption: "Python入門"
+- caption: "Python入門I"
   chapters:
-  - file: 1a_Basics_I
-  - file: 1b_Basics_II
+  - file: 1_Basics_I
+  - file: 1_Basics_II
+  - file: 1_Basics_III
+  - file: 1_Basics_IV
+  - file: 1_Basics_V
+  - file: 1_Basics_VI
+- caption: "Python入門II"
+  chapters:
   - file: 2_NumPy
   - file: 3_Pandas
   - file: 4_matplotlib
   - file: 5_pandas_plot
-  - file: 6_SciPy_stats
+  - url: https://py4etrics.github.io/5_SciPy_stats.html
+    title: "SciPy.stats：確率分布"
   - file: 7_SciPy_optimize
 - caption: "参考"
   chapters:

@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="ツールのインストールと説明" href="0_Preparations.html" />
-    <link rel="prev" title="SciPy.stats：確率分布" href="6_SciPy_stats.html" />
+    <link rel="prev" title="Pandas：図示" href="5_pandas_plot.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -100,30 +100,47 @@
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Python入門
+  Python入門I
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_I.html">
+   基本データ型と変数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_II.html">
+   データの操作
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_III.html">
+   関数とメソッド
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_IV.html">
+   制御フロー
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_V.html">
+   モジュールと疑似コード
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_VI.html">
+   図示とシミュレーション
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python入門II
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1a_Basics_I.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Python
-    </span>
-   </code>
-   ：基礎（その１）
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1b_Basics_II.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Python
-    </span>
-   </code>
-   ：基礎（その２）
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_NumPy.html">
    <code class="docutils literal notranslate">
@@ -165,13 +182,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="6_SciPy_stats.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     SciPy.stats
-    </span>
-   </code>
-   ：確率分布
+  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
+   SciPy.stats：確率分布
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -1106,7 +1118,7 @@ x_1 = x_0 - \dfrac{f(x_0)}{f^{\prime}(x_0)}
 </div>
 <p>即ち、<span class="math notranslate nohighlight">\(x_0\)</span>が与えられ<span class="math notranslate nohighlight">\(f^{\prime}(x_0)\)</span>が分かれば、<span class="math notranslate nohighlight">\(x_1\)</span>を求めることができる。更に、<span class="math notranslate nohighlight">\(x_1\)</span>が与えられ、<span class="math notranslate nohighlight">\(f^{\prime}(x_1)\)</span>が分かれば、<span class="math notranslate nohighlight">\(x_2\)</span>を求めることができる。一般的には次の差分方程式が成り立つことになる。</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-newton">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eq-scipy-newton" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-scipy-newton" title="Permalink to this equation">¶</a></span>\[
 x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 \]</div>
 <p>この式に従って<span class="math notranslate nohighlight">\(x_{t+1}\)</span>の計算を続けると、<span class="math notranslate nohighlight">\(x_{t+1}\)</span>は<span class="math notranslate nohighlight">\(f(x)=0\)</span>を満たす<span class="math notranslate nohighlight">\(x\)</span>に漸近的に近づいていき、根に十分に近い値を計算することが可能となる。</p>
@@ -1506,7 +1518,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 <p><span class="math notranslate nohighlight">\(k\)</span>の定常状態<span class="math notranslate nohighlight">\(k_*\)</span>は次式で定義される。</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-kss">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eq-scipy-kss" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-scipy-kss" title="Permalink to this equation">¶</a></span>\[
 0 = sAk_*^a + (1-d)k_* - k_{*}
 \]</div>
 <p>この方程式の解を求めるが，関数<code class="docutils literal notranslate"><span class="pre">kss()</span></code>を定義しよう。</p>
@@ -1518,7 +1530,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 </div>
-<p>まず式<a class="reference internal" href="#equation-eq-scipy-kss">(2)</a>をプロットするが，そのために<span class="math notranslate nohighlight">\(k\)</span>の値を設定しよう。</p>
+<p>まず式<a class="reference internal" href="#equation-eq-scipy-kss">(3)</a>をプロットするが，そのために<span class="math notranslate nohighlight">\(k\)</span>の値を設定しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1864,7 +1876,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 <div class="section" id="id16">
 <h3>ソロー・モデル：黄金律<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
-<p>資本の黄金律水準とは、長期均衡において一人当たり消費を最大化する資本ストックであり、貯蓄率<span class="math notranslate nohighlight">\(s\)</span>に依存している。それを示すために、まず定常状態の資本ストック<span class="math notranslate nohighlight">\(k_*\)</span>をパラメータで示すが，次式は式<a class="reference internal" href="#equation-eq-scipy-kss">(2)</a>から導出できる。</p>
+<p>資本の黄金律水準とは、長期均衡において一人当たり消費を最大化する資本ストックであり、貯蓄率<span class="math notranslate nohighlight">\(s\)</span>に依存している。それを示すために、まず定常状態の資本ストック<span class="math notranslate nohighlight">\(k_*\)</span>をパラメータで示すが，次式は式<a class="reference internal" href="#equation-eq-scipy-kss">(3)</a>から導出できる。</p>
 <div class="math notranslate nohighlight">
 \[
 k_*=\left(
@@ -1977,7 +1989,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </li>
 <li><p>制約式：</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-pcwl">
-<span class="eqno">(3)<a class="headerlink" href="#equation-eq-scipy-pcwl" title="Permalink to this equation">¶</a></span>\[pc=wl\]</div>
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-scipy-pcwl" title="Permalink to this equation">¶</a></span>\[pc=wl\]</div>
 </li>
 </ul>
 <p>制約式のもとで消費者は<span class="math notranslate nohighlight">\(c\)</span>と<span class="math notranslate nohighlight">\(l\)</span>を選択し効用を最大化する。</p>
@@ -2041,7 +2053,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </div>
 <p>予算制約式から消費量は</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-c">
-<span class="eqno">(4)<a class="headerlink" href="#equation-eq-scipy-c" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-scipy-c" title="Permalink to this equation">¶</a></span>\[
 c=\frac{wl}{p}
 \]</div>
 <p>となるので，</p>
@@ -2071,7 +2083,7 @@ c=\frac{wl}{p}
 </div>
 <p>結果を図示するために、効用関数を<span class="math notranslate nohighlight">\(c\)</span>で解くと次式となる。</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-cc">
-<span class="eqno">(5)<a class="headerlink" href="#equation-eq-scipy-cc" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-scipy-cc" title="Permalink to this equation">¶</a></span>\[
 c=
 \left(
     \frac{e^u}{(1-l)^{1-a}}
@@ -2094,7 +2106,7 @@ c=
 </div>
 </div>
 </div>
-<p>（注意）次のコードで<span class="math notranslate nohighlight">\(l=1\)</span>になると警告が出てしまう。理由は式<a class="reference internal" href="#equation-eq-scipy-cc">(5)</a>の右辺の分母がゼロになるためである。それを避けるために，<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">0.999</span></code>の間の値を100個生成している。</p>
+<p>（注意）次のコードで<span class="math notranslate nohighlight">\(l=1\)</span>になると警告が出てしまう。理由は式<a class="reference internal" href="#equation-eq-scipy-cc">(6)</a>の右辺の分母がゼロになるためである。それを避けるために，<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">0.999</span></code>の間の値を100個生成している。</p>
 <p>これらを使い、無差別曲線の値を計算する。この際、<code class="docutils literal notranslate"><span class="pre">res_u.fun</span></code>を利用する（マイナスになることに注意しよう）。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2117,7 +2129,7 @@ c=
 </div>
 </div>
 </div>
-<p>ここで式<a class="reference internal" href="#equation-eq-scipy-c">(4)</a>を使っている。</p>
+<p>ここで式<a class="reference internal" href="#equation-eq-scipy-c">(5)</a>を使っている。</p>
 <p>値を<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>にまとめる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2558,7 +2570,7 @@ y+z\leq 1
 </div>
 </div>
 </div>
-<p>次に制約式<a class="reference internal" href="#equation-eq-scipy-pcwl">(3)</a>だが、下のように書き換えることができる。</p>
+<p>次に制約式<a class="reference internal" href="#equation-eq-scipy-pcwl">(4)</a>だが、下のように書き換えることができる。</p>
 <div class="math notranslate nohighlight">
 \[
 pc=wl
@@ -2668,11 +2680,11 @@ wl-pc=0
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="6_SciPy_stats.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="5_pandas_plot.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">SciPy.stats</span></code>：確率分布</p>
+            <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="0_Preparations.html" title="next page">
