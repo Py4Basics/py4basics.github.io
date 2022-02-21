@@ -548,13 +548,13 @@ pass
 # この母集団から標本$X_1,X_2\cdots X_n$を抽出し（$n$は標本の大きさ），その平均を$\overline{X}$とする。
 # 
 # $$
-# \overline{X}=\frac{X_1+X_2+\cdots+X_n}{n}
+# \overline{X}_n=\frac{X_1+X_2+\cdots+X_n}{n}
 # $$
 # 
 # 標本を取るごとに$X_i$，$i=1,2...n$の値は異なるため，$\overline{X}$自体もランダム変数となる。更に，標準化した平均を次の様に定義しよう。
 # 
 # $$
-# Z_n = \frac{\overline{X}-\mu}{\sigma/\sqrt{n}}
+# Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 # $$ (eq:1-6-Zn)
 # 
 # ここで$Z_n$は平均`0`，分散`1`となるランダム変数である。これにより，$Z_n$の**分布型は不明**だが，少なくとも平均と分散の２つのパラメータに関する限り標準正規分布と共通点がある。

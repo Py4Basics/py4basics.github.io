@@ -691,7 +691,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe6fa53bfa0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd830712fa0&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_11_1.png" src="_images/1_Basics_VI_11_1.png" />
@@ -865,7 +865,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe6fa6219a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd842ae55e0&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_35_1.png" src="_images/1_Basics_VI_35_1.png" />
@@ -882,7 +882,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe6fa72c190&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd8308331c0&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_37_1.png" src="_images/1_Basics_VI_37_1.png" />
@@ -1215,7 +1215,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -1238,7 +1238,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1]
 </pre></div>
 </div>
 </div>
@@ -1251,7 +1251,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
 </pre></div>
 </div>
 </div>
@@ -1265,7 +1265,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
 </pre></div>
 </div>
 </div>
@@ -1278,7 +1278,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.65
 </pre></div>
 </div>
 </div>
@@ -1348,12 +1348,12 @@ xvalues(l, h, n)
 <p>この母集団から標本<span class="math notranslate nohighlight">\(X_1,X_2\cdots X_n\)</span>を抽出し（<span class="math notranslate nohighlight">\(n\)</span>は標本の大きさ），その平均を<span class="math notranslate nohighlight">\(\overline{X}\)</span>とする。</p>
 <div class="math notranslate nohighlight">
 \[
-\overline{X}=\frac{X_1+X_2+\cdots+X_n}{n}
+\overline{X}_n=\frac{X_1+X_2+\cdots+X_n}{n}
 \]</div>
 <p>標本を取るごとに<span class="math notranslate nohighlight">\(X_i\)</span>，<span class="math notranslate nohighlight">\(i=1,2...n\)</span>の値は異なるため，<span class="math notranslate nohighlight">\(\overline{X}\)</span>自体もランダム変数となる。更に，標準化した平均を次の様に定義しよう。</p>
 <div class="math notranslate nohighlight" id="equation-eq-1-6-zn">
 <span class="eqno">(1)<a class="headerlink" href="#equation-eq-1-6-zn" title="Permalink to this equation">¶</a></span>\[
-Z_n = \frac{\overline{X}-\mu}{\sigma/\sqrt{n}}
+Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 \]</div>
 <p>ここで<span class="math notranslate nohighlight">\(Z_n\)</span>は平均<code class="docutils literal notranslate"><span class="pre">0</span></code>，分散<code class="docutils literal notranslate"><span class="pre">1</span></code>となるランダム変数である。これにより，<span class="math notranslate nohighlight">\(Z_n\)</span>の<strong>分布型は不明</strong>だが，少なくとも平均と分散の２つのパラメータに関する限り標準正規分布と共通点がある。</p>
 <p><strong>＜中心極限定理（Central Limit Theorem)＞</strong><br></p>
@@ -1388,7 +1388,7 @@ Z_n = \frac{\overline{X}-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.35
 </pre></div>
 </div>
 </div>
@@ -1401,7 +1401,7 @@ Z_n = \frac{\overline{X}-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.788854381999832
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.341640786499874
 </pre></div>
 </div>
 </div>
@@ -1435,7 +1435,7 @@ Z_n = \frac{\overline{X}-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.788854381999832
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.341640786499874
 </pre></div>
 </div>
 </div>
@@ -1467,7 +1467,7 @@ Z_n = \frac{\overline{X}-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.788854381999832
 </pre></div>
 </div>
 </div>
@@ -1481,36 +1481,36 @@ Z_n = \frac{\overline{X}-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.341640786499874,
- 0.44721359549995837,
- 0.44721359549995837,
- -0.8944271909999157,
- 0.0,
- -1.341640786499874,
- -0.8944271909999157,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.8944271909999157,
+ 1.341640786499874,
+ 1.341640786499874,
+ 1.341640786499874,
  -0.44721359549995787,
- 0.44721359549995837,
- 0.44721359549995837,
- -2.23606797749979,
  0.0,
  -0.8944271909999157,
  0.8944271909999157,
+ -0.44721359549995787,
+ -1.341640786499874,
+ 2.23606797749979,
+ -0.8944271909999157,
+ -1.341640786499874,
+ 0.44721359549995837,
+ -0.44721359549995787,
+ -0.44721359549995787,
+ 0.44721359549995837,
+ -1.341640786499874,
+ 1.341640786499874,
+ -0.44721359549995787,
+ -1.788854381999832,
+ 0.8944271909999157,
+ 0.0,
+ 1.341640786499874,
+ 0.44721359549995837,
+ 0.44721359549995837,
+ -0.44721359549995787,
  1.7888543819998315,
- 1.341640786499874,
- 0.8944271909999157,
- -1.341640786499874,
- 0.8944271909999157,
- -0.44721359549995787,
- 1.341640786499874,
- 0.44721359549995837,
- 1.341640786499874,
- 0.8944271909999157,
  0.0,
- -1.341640786499874,
- 0.0,
- 0.0,
- 0.44721359549995837,
- 1.341640786499874]
+ 0.44721359549995837]
 </pre></div>
 </div>
 </div>
@@ -1860,7 +1860,7 @@ Z_n = \frac{\overline{X}-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：13
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：12
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_150_1.png" src="_images/1_Basics_VI_150_1.png" />
@@ -1901,7 +1901,7 @@ Z_n = \frac{\overline{X}-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：30
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：31
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_155_1.png" src="_images/1_Basics_VI_155_1.png" />
@@ -1928,7 +1928,7 @@ Z_n = \frac{\overline{X}-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：110
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>コイントスの唯一の値の数（x軸）：109
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_158_1.png" src="_images/1_Basics_VI_158_1.png" />

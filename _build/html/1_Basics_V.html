@@ -732,7 +732,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
@@ -745,7 +745,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5, 1, 6, 4, 4, 6, 5, 5, 5, 3]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 5, 4, 2, 5, 2, 5, 4, 6, 6]
 </pre></div>
 </div>
 </div>
@@ -776,7 +776,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.817701098447877
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.2831627301795
 </pre></div>
 </div>
 </div>
@@ -789,16 +789,16 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.35574291616796205,
- 0.5383767643225486,
- -0.014409997237799422,
- -0.3987341747217857,
- -0.5470820580635185,
- 2.4960801885836297,
- 0.7089553954613231,
- -0.958036511830756,
- 0.24191738251775333,
- 0.6712665351043462]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.022236967718866733,
+ -0.18909559463434256,
+ -0.3164647954121543,
+ 2.2790989528535603,
+ 0.6053485056363845,
+ 0.8615844905760058,
+ -0.15749285407761293,
+ -0.5746950280502848,
+ 0.19135911537257633,
+ -0.4369466706657782]
 </pre></div>
 </div>
 </div>
@@ -1169,6 +1169,7 @@ Buzz
 <blockquote>
 <div><p>リスト（タプル）の要素の合計を返す関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うこと。</p>
 </div></blockquote>
+<hr class="docutils" />
 <p>＜Ver. 1＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">合計</span><span class="p">(</span><span class="n">リスト</span><span class="p">)</span>
 
@@ -1177,10 +1178,10 @@ Buzz
     <span class="n">その合計を返す</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p>全体像はイメージできるが，<code class="docutils literal notranslate"><span class="pre">#1</span></code>で要素をどう足し合わせるか不明。要素ごとに何をするかを書き表そう。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 2＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 合計(リスト)
 
@@ -1195,10 +1196,10 @@ Buzz
     return その合計
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p>具体性が芽生えてきたが，まだコードに落とせない。特に，<code class="docutils literal notranslate"><span class="pre">#1</span></code>にある「それに」をどう扱うかを考えよう。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 3＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 合計(リスト)
 
@@ -1213,10 +1214,10 @@ Buzz
     return x
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p>より具体的になってきたが，<code class="docutils literal notranslate"><span class="pre">#1</span></code>の<code class="docutils literal notranslate"><span class="pre">x</span></code>をどう扱うかを考える必要がある。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 4＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 合計(リスト)
 
@@ -1233,10 +1234,10 @@ Buzz
     return x
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p>骨格ができてきた。<code class="docutils literal notranslate"><span class="pre">#1</span></code>で似た作業がリピートされているのでループを使おう。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 5＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">合計</span><span class="p">(</span><span class="n">リスト</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1247,10 +1248,10 @@ Buzz
     <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>の<code class="docutils literal notranslate"><span class="pre">i</span></code>はリストのインデックス番号になっているが，要素自体で良いのでは？</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 6＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">合計</span><span class="p">(</span><span class="n">リスト</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1261,10 +1262,10 @@ Buzz
     <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p>ここまで来るとゴールは目の前‼️</p></li>
 </ul>
+<hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_for_loop</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
@@ -1299,6 +1300,7 @@ Buzz
 <div><p>リスト（タプル）の要素の合計を返す関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使うこと。</p>
 </div></blockquote>
 <p>リストの合計（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）の＜Ver. 4＞まで同じ。</p>
+<hr class="docutils" />
 <p>＜Ver. 4＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 合計(リスト)
 
@@ -1315,10 +1317,10 @@ Buzz
     return x
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p>骨格ができてきた。<code class="docutils literal notranslate"><span class="pre">#1</span></code>で似た作業がリピートされているのでループを使おう。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 5＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">合計</span><span class="p">(</span><span class="n">リスト</span><span class="p">)</span>
 
@@ -1330,11 +1332,11 @@ Buzz
     <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>の条件は何にするのか。</p></li>
 <li><p>無限ループに入らないように<code class="docutils literal notranslate"><span class="pre">#1</span></code>と<code class="docutils literal notranslate"><span class="pre">#3</span></code>に付け加えることはないか。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 6＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">合計</span><span class="p">(</span><span class="n">リスト</span><span class="p">)</span>
 
@@ -1348,10 +1350,10 @@ Buzz
     <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>の<code class="docutils literal notranslate"><span class="pre">i</span></code>と<code class="docutils literal notranslate"><span class="pre">#1</span></code>，<code class="docutils literal notranslate"><span class="pre">#2</span></code>，<code class="docutils literal notranslate"><span class="pre">#4</span></code>の<code class="docutils literal notranslate"><span class="pre">count</span></code>はどう関係しているのか？同じ？</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 7＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">合計</span><span class="p">(</span><span class="n">リスト</span><span class="p">)</span>
 
@@ -1365,10 +1367,10 @@ Buzz
     <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p>ここまで来るとゴールは目の前‼️</p></li>
 </ul>
+<hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_while_loop</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
@@ -1405,6 +1407,7 @@ Buzz
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">n</span></code>回コイントスし，表と裏の回数を表示する関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">random.randint()</span></code>と<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うこと。</p>
 </div></blockquote>
+<hr class="docutils" />
 <p>＜Ver. 1＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def コイントス(n)
    
@@ -1420,11 +1423,11 @@ Buzz
     表の合計と裏の合計を返す
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>で表と裏をどう表す？</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>の合計の計算はどうする？</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 2＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def コイントス(n)
     
@@ -1443,11 +1446,11 @@ Buzz
     表の合計と裏の合計を返す
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>は似たコードになるのでループを使おう。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>の合計の計算はどうする？</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 3＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">コイントス</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     
@@ -1463,11 +1466,11 @@ Buzz
     <span class="n">表の合計と裏の合計を返す</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>が実行されるたびに<code class="docutils literal notranslate"><span class="pre">0</span></code>又は<code class="docutils literal notranslate"><span class="pre">1</span></code>が出るが，記録されていない。記録する変数を導入する必要がある。</p></li>
 <li><p>その記録を使って<code class="docutils literal notranslate"><span class="pre">#2</span></code>の合計の計算できる。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 4＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def コイントス(n)
     
@@ -1485,11 +1488,11 @@ Buzz
     return heads, tails
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>で使うイタラブルは何か？</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>で使うイタラブル用の変数は何か？</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 5＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def コイントス(n)
     
@@ -1507,7 +1510,6 @@ Buzz
     return heads, tails
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>で<code class="docutils literal notranslate"><span class="pre">_</span></code>を使っている理由：</p>
 <ul>
@@ -1516,6 +1518,7 @@ Buzz
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>を<code class="docutils literal notranslate"><span class="pre">if</span></code>文に書き換える必要がある。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 6＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">コイントス</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     
@@ -1538,10 +1541,10 @@ Buzz
     <span class="k">return</span> <span class="n">heads</span><span class="p">,</span> <span class="n">tails</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p>ここまで来ればゴールは目の前‼️</p></li>
 </ul>
+<hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coin_toss_for_loop</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -1572,7 +1575,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(47, 53)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(51, 49)
 </pre></div>
 </div>
 </div>
@@ -1585,6 +1588,7 @@ Buzz
 <div><p><code class="docutils literal notranslate"><span class="pre">n</span></code>回コイントスし，表と裏の回数を表示する関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">random.randint()</span></code>と<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使うこと。</p>
 </div></blockquote>
 <p>コイントス（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）の＜Ver. 2＞まで同じ。</p>
+<hr class="docutils" />
 <p>＜Ver. 2＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def コイントス(n)
     
@@ -1603,11 +1607,11 @@ Buzz
     表の合計と裏の合計を返す
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>は似たコードになるのでループを使おう。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>の合計の計算はどうする？</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 3＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">コイントス</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     
@@ -1623,11 +1627,11 @@ Buzz
     <span class="n">表の合計と裏の合計を返す</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>で結果を記録する必要がある。</p></li>
 <li><p>その記録を使って<code class="docutils literal notranslate"><span class="pre">#2</span></code>の合計の計算できる。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 4＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def コイントス(n)
     
@@ -1646,11 +1650,11 @@ Buzz
     return heads, tails
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>の条件は何にするのか。</p></li>
 <li><p>無限ループに入らないように<code class="docutils literal notranslate"><span class="pre">#1</span></code>と<code class="docutils literal notranslate"><span class="pre">#3</span></code>に何を付け加える必要があるか。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 5＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def コイントス(n)
     
@@ -1668,10 +1672,10 @@ Buzz
     return heads, tails
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>を<code class="docutils literal notranslate"><span class="pre">if</span></code>文として書く。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 6＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">コイントス</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     
@@ -1694,10 +1698,10 @@ Buzz
     <span class="k">return</span> <span class="n">heads</span><span class="p">,</span> <span class="n">tails</span>
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p>ここまで来ればゴールは目の前‼️</p></li>
 </ul>
+<hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coin_toss_while_loop</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -1731,7 +1735,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(51, 49)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(52, 48)
 </pre></div>
 </div>
 </div>
@@ -1743,6 +1747,7 @@ Buzz
 <blockquote>
 <div><p>リスト（又はタプル）を引数とし，含まれる要素の中から最大値を返す関数を作成する。</p>
 </div></blockquote>
+<hr class="docutils" />
 <p>＜Ver. 1＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト）:
 
@@ -1751,11 +1756,11 @@ Buzz
     最大値を返す
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p>ぼやっとした全体像となっているのは否めない。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>の「比較」をどうするかが重要となる。。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>の「比較」をどうするかが重要となる。。:</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 2＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
     
@@ -1778,7 +1783,6 @@ Buzz
     最大値を返す
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>良さそうにも見えるが，問題がある。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;0&gt;</span></code>では<code class="docutils literal notranslate"><span class="pre">N</span></code>回の比較をおこなう。</p></li>
@@ -1788,6 +1792,7 @@ Buzz
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;N&gt;</span></code>では<code class="docutils literal notranslate"><span class="pre">1</span></code>回の比較をおこなう。</p></li>
 <li><p>比較する回数の合計は<code class="docutils literal notranslate"><span class="pre">1+2+3+・・・+N=N(N+1)/2</span></code>。比較回数が非常に多い。もっと良い方法があるのでは？</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 3＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
 
@@ -1802,11 +1807,11 @@ Buzz
     最大値を返す
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p>比較する回数は<code class="docutils literal notranslate"><span class="pre">N</span></code>回で＜Ver. 2＞より少ない。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>の「大きい方を残す」はどうする？</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 4＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
 
@@ -1823,11 +1828,11 @@ Buzz
     return max_
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>だけを見ると最大値は求められそう。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>では最大値が<code class="docutils literal notranslate"><span class="pre">-1_000_000</span></code>未満の場合をカバーできない。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 5＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
 
@@ -1844,10 +1849,10 @@ Buzz
     return max_
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>は似たようなコードになるのでループを使おう。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 5＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
 
@@ -1861,10 +1866,10 @@ Buzz
     return max_
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>は条件分岐させる必要がある。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 6＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
 
@@ -1879,11 +1884,11 @@ Buzz
     return max_
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>のイタラブルは何にする？</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>のイタラブル用の変数は何にする？</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 7＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
 
@@ -1898,10 +1903,10 @@ Buzz
     return max_
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>の<code class="docutils literal notranslate"><span class="pre">i</span></code>はリストのインデックス番号だが，直接要素自体を使う方が<code class="docutils literal notranslate"><span class="pre">Python</span></code>的である。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 8＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
 
@@ -1916,10 +1921,10 @@ Buzz
     return max_
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>は<code class="docutils literal notranslate"><span class="pre">if</span></code>文に書き換える。</p></li>
 </ul>
+<hr class="docutils" />
 <p>＜Ver. 9＞</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
 
@@ -1935,10 +1940,10 @@ Buzz
     return max_
 </pre></div>
 </div>
-<hr class="docutils" />
 <ul class="simple">
 <li><p>後は<code class="docutils literal notranslate"><span class="pre">Python</span></code>コードを書くだけ‼️</p></li>
 </ul>
+<hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_max</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
@@ -1966,7 +1971,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.9493496572198223
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.6618590489623317
 </pre></div>
 </div>
 </div>
