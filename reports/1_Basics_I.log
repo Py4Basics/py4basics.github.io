@@ -25,7 +25,7 @@ x | y
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_2036/446412135.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_3011/446412135.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      2[0m [0my[0m [0;34m=[0m [0;34m{[0m[0;34m'ham'[0m[0;34m:[0m[0;36m300[0m[0;34m,[0m [0;34m'bread'[0m[0;34m:[0m[0;36m250[0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      3[0m [0;34m[0m[0m
 [0;32m----> 4[0;31m [0mx[0m [0;34m|[0m [0my[0m[0;34m[0m[0;34m[0m[0m
