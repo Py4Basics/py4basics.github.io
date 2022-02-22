@@ -12,6 +12,14 @@ import math
 
 # ここでの目的は２つある。第１に，`Matplotlib`（「マットプロットリブ」と読む）はプロットのための代表的なパッケージであり，外部パッケージとしては`Matplotlib`のみを使い（`Pandas`や`Numpy`は使わない）データを図示（プロット）する方法を解説する。第２に，統計学の重要な概念をシミュレーションをおこない，データを可視化し理解を深めることである。
 
+# ```{margin}
+# <div name="html-admonition">
+# Do you want to read in a differnt language? Start
+# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+# in English or the language of your choice.
+# </div>
+# ```
+
 # `Matplotlib`は大きなパッケージであり，その中にある`pyplot`モジュールを使うことになる。慣例に沿って`plt`としてインポートする。
 
 # In[2]:
@@ -337,6 +345,7 @@ pass
 # * `edgecolor`又は`ec`：柱の境界線の色
 # * `alpha`：透明度（`0`から`1.0`; デフォルトは`1`）
 # * `density`：縦軸を相対度数にする（デフォルトは`False`）
+#     * 全ての柱の**面積**の合計が`1`になるように縦軸が調整される。１つの柱の高さが`1`よりも大きくなる場合もある。
 # * `label`：凡例の表現を指定
 #     * `ax.legend()`が設定されている場合のみ有効
 #     

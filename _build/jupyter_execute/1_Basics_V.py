@@ -7,21 +7,21 @@
 
 # ### 説明
 
-# Pythonには組み込み関数が多く用意されているが，Jupyter Notebookで`Python`のセッションを開始しても全ての関数が使える状態になっていない。使えるようにするためには，モジュール（modules）やパッケージ（package）と呼ばれるものを読み込む必要がある。２つの違いを簡単にいうと
+# Pythonには組み込み関数が多く用意されているが，Jupyter Notebookで`Python`のセッションを開始しても全ての関数が使える状態になっていない。使えるようにするためには，モジュール（modules）やパッケージ（package）と呼ばれるものを読み込む必要がある。２つの違いを簡単にいうと次のようになる。
 # * モジュール（module）は**１つ**のファイル（拡張子が`.py`）にまとめられた関数群であり，
 # * パッケージは（package）**複数**つのファイル（拡張子が`.py`）で構成されている（フォルダーにまとめられている）
-# 
-# となる。従って，モジュール全体を読み込んだり，あるパッケージの１つのモジュールだけを読み込むということも可能である。授業では，`NumPy`，`SciPy`，`Pandas`を使うが，ここでは例として数学用の`math`モジュール，ランダム変数用の`random`モジュール，オブジェクトの属性を表示する`see`モジュールを取り上げる。
-# 
-# 含まれる関数を使うためには`import`を使って読み込む必要がある。モジュールの全てを読み込むとモジュール内の全ての関数が使用可能となる。
 
 # ```{margin}
 # <div name="html-admonition">
-# Do you want to read in a differnt language? Open the 
-# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+# Do you want to read in a differnt language? Start
+# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
 # in English or the language of your choice.
 # </div>
 # ```
+
+# 従って，モジュール全体を読み込んだり，あるパッケージの１つのモジュールだけを読み込むということも可能である。授業では，`NumPy`，`SciPy`，`Pandas`を使うが，ここでは例として数学用の`math`モジュール，ランダム変数用の`random`モジュール，オブジェクトの属性を表示する`see`モジュールを取り上げる。
+# 
+# 含まれる関数を使うためには`import`を使って読み込む必要がある。モジュールの全てを読み込むとモジュール内の全ての関数が使用可能となる。
 
 # ````{note}
 # 更に付け加えると，サブパッケージ（subpackage）とサブモジュール（submodule）がある大きなパッケージもある。次の章で説明する[Numpy](chap:numpy)パッケージを例として挙げることができる。フォルダーのの構成で考えると次のようになる。

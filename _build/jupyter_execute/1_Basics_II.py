@@ -10,22 +10,20 @@
 # * 不動小数点型
 # * 文字列型
 # * ブール型
-# 
-# ここでは，それぞれのデータ型を他のデータ系に変換することを考える。次の関数を使うことができる。
+
+# ```{margin}
+# <div name="html-admonition">
+# Do you want to read in a differnt language? Start
+# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+# in English or the language of your choice.
+# </div>
+# ```
+
+# ここでは，それぞれのデータ型を他のデータ系に変換する次の関数を紹介する。
 # * `int()`：整数型への変換
 # * `float()`：不動小数点型への変換
 # * `str()`：文字列型への変換
 # * `bool()`：ブール型への変換（真偽値の確認）
-# 
-# 次の文字列を考えよう。
-
-# ```{margin}
-# <div name="html-admonition">
-# Do you want to read in a differnt language? Open the 
-# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
-# in English or the language of your choice.
-# </div>
-# ```
 
 # ### 整数型・不動小数点型　→　不動小数点型・整数型
 

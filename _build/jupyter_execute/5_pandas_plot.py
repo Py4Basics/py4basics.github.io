@@ -16,8 +16,8 @@ import japanize_matplotlib
 
 # ```{margin}
 # <div name="html-admonition">
-# Do you want to read in a differnt language? Open the 
-# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+# Do you want to read in a differnt language? Start
+# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
 # in English or the language of your choice.
 # </div>
 # ```
@@ -684,6 +684,7 @@ pass
 # * `edgecolor`又は`ec`：柱の境界線の色
 # * `alpha`：透明度（`0`から`1.0`; デフォルトは`1`）
 # * `density`：縦軸を相対度数にする（デフォルトは`False`）
+#     * 全ての柱の**面積**の合計が`1`になるように縦軸が調整される。１つの柱の高さが`1`よりも大きくなる場合もある。
 # * `fontsize`：横軸・縦軸の数字のフォントサイズの設定
 # * `figsize`：図の大きさ
 #     * `figsize=(キャンバスの横幅、キャンバスの縦の長さ)`

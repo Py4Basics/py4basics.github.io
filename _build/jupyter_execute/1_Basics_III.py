@@ -12,19 +12,19 @@
 # 名前から想像できるが，プログラミングの関数は数学の関数と非常に似ている。数学の$y=f(x)$という関数を考えてみよう。より具体的に$f(x)=x^2$と置いてみよう。$x$は$-\infty$から$\infty$の実数を取ることができ，それらに対応する$y$の値が返される関数である。`Python`でも同じ関数を簡単に作ることができる。例えば，`func(x)`という関数だとしよう。`Python`では次の用語を使う。
 # * `func`：関数名
 # * `x`：引数
-# 
+
+# ```{margin}
+# <div name="html-admonition">
+# Do you want to read in a differnt language? Start
+# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+# in English or the language of your choice.
+# </div>
+# ```
+
 # 次に，実際に関数を実行し計算するためには$x$に値（例えば，2）を指定する必要がある。数学の関数$f(x)$であれば$f(2)$と置くが，`Python`の関数でも同様に`func(2)`と書き，`4`が返される。この場合，次の用語を使う。
 # * **引数値**：引数に指定した値である`2`
 # 
 # まとめると，引数とは関数を実行する前に定義することになり，引数値を指定することにより関数を実行することができる。
-
-# ```{margin}
-# <div name="html-admonition">
-# Do you want to read in a differnt language? Open the 
-# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
-# in English or the language of your choice.
-# </div>
-# ```
 
 # ## 組み込み関数
 

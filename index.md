@@ -3,8 +3,10 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -19,7 +21,7 @@ kernelspec:
 神戸大学経済学研究科
 ```
 
-```{code-cell} python3
+```{code-cell} ipython3
 import datetime
 dt = datetime.datetime.now()
 print('Version:',dt.strftime('%Y年%m月%d日'))
@@ -31,10 +33,11 @@ dt = datetime.datetime.now()
 dt = datetime.datetime.today()
 -->
 
+
 ```{margin}
 <div name="html-admonition">
-Do you want to read in a differnt language? Open the
-<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+Do you want to read in a differnt language? Start
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
 in English or the language of your choice.
 </div>
 ```
@@ -87,7 +90,8 @@ in English or the language of your choice.
   移動平均の計算方法の解説と[インフレ率とマネーストックの増加率](https://py4macro.github.io/11_Macro_Variables.html#id11)で使った`DataFrame`の作成方法について説明する。
 
 ## 本サイトで使うPythonとパッケージのバージョン
-```{code-cell} python3
+
+```{code-cell} ipython3
 import gapminder, matplotlib, numpy, pandas, scipy, see
 from platform import python_version
 
