@@ -46,12 +46,11 @@
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://py4basics.github.io/Grade.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -719,8 +718,8 @@
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div name="html-admonition">
-Do you want to read in a differnt language? Open the 
-<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+Do you want to read in a differnt language? Start
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
 in English or the language of your choice.
 </div>
 </div>
@@ -1638,9 +1637,7 @@ Name: 評語, dtype: float64
 良 : 3.3333333333333335
 可 : 33.333333333333336
 合格 : 6.666666666666667
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>認定 : 3.3333333333333335
+認定 : 3.3333333333333335
 不可 : 6.666666666666667
 取消 : 6.666666666666667
 -----------
@@ -1671,7 +1668,10 @@ Name: 評語, dtype: float64
 合格 : 6.7
 認定 : 3.3
 不可 : 6.7
-取消 : 6.7
+取消
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> : 6.7
 -----------
 合計: 100
 </pre></div>
@@ -1849,10 +1849,7 @@ Name: 評語, dtype: int64
 合格 0
 認定 1
 不可 2
-取消 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+取消 2
 --------
 合計 15
 </pre></div>
@@ -1896,7 +1893,10 @@ Name: 評語, dtype: float64
 優 13.3
 良 6.7
 可 26.7
-合格 0.0
+合格
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0.0
 認定 6.7
 不可 13.3
 取消 13.3

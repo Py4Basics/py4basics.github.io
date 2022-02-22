@@ -46,15 +46,14 @@
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://py4basics.github.io/1_Basics_V.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -612,21 +611,21 @@
 <h2>モジュールとパッケージ<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
 <h3>説明<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>Pythonには組み込み関数が多く用意されているが，Jupyter Notebookで<code class="docutils literal notranslate"><span class="pre">Python</span></code>のセッションを開始しても全ての関数が使える状態になっていない。使えるようにするためには，モジュール（modules）やパッケージ（package）と呼ばれるものを読み込む必要がある。２つの違いを簡単にいうと</p>
+<p>Pythonには組み込み関数が多く用意されているが，Jupyter Notebookで<code class="docutils literal notranslate"><span class="pre">Python</span></code>のセッションを開始しても全ての関数が使える状態になっていない。使えるようにするためには，モジュール（modules）やパッケージ（package）と呼ばれるものを読み込む必要がある。２つの違いを簡単にいうと次のようになる。</p>
 <ul class="simple">
 <li><p>モジュール（module）は<strong>１つ</strong>のファイル（拡張子が<code class="docutils literal notranslate"><span class="pre">.py</span></code>）にまとめられた関数群であり，</p></li>
 <li><p>パッケージは（package）<strong>複数</strong>つのファイル（拡張子が<code class="docutils literal notranslate"><span class="pre">.py</span></code>）で構成されている（フォルダーにまとめられている）</p></li>
 </ul>
-<p>となる。従って，モジュール全体を読み込んだり，あるパッケージの１つのモジュールだけを読み込むということも可能である。授業では，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>，<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>，<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>を使うが，ここでは例として数学用の<code class="docutils literal notranslate"><span class="pre">math</span></code>モジュール，ランダム変数用の<code class="docutils literal notranslate"><span class="pre">random</span></code>モジュール，オブジェクトの属性を表示する<code class="docutils literal notranslate"><span class="pre">see</span></code>モジュールを取り上げる。</p>
-<p>含まれる関数を使うためには<code class="docutils literal notranslate"><span class="pre">import</span></code>を使って読み込む必要がある。モジュールの全てを読み込むとモジュール内の全ての関数が使用可能となる。</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div name="html-admonition">
-Do you want to read in a differnt language? Open the 
-<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+Do you want to read in a differnt language? Start
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
 in English or the language of your choice.
 </div>
 </div>
+<p>従って，モジュール全体を読み込んだり，あるパッケージの１つのモジュールだけを読み込むということも可能である。授業では，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>，<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>，<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>を使うが，ここでは例として数学用の<code class="docutils literal notranslate"><span class="pre">math</span></code>モジュール，ランダム変数用の<code class="docutils literal notranslate"><span class="pre">random</span></code>モジュール，オブジェクトの属性を表示する<code class="docutils literal notranslate"><span class="pre">see</span></code>モジュールを取り上げる。</p>
+<p>含まれる関数を使うためには<code class="docutils literal notranslate"><span class="pre">import</span></code>を使って読み込む必要がある。モジュールの全てを読み込むとモジュール内の全ての関数が使用可能となる。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>更に付け加えると，サブパッケージ（subpackage）とサブモジュール（submodule）がある大きなパッケージもある。次の章で説明する<a class="reference internal" href="2_NumPy.html#chap-numpy"><span class="std std-ref">Numpy</span></a>パッケージを例として挙げることができる。フォルダーのの構成で考えると次のようになる。</p>
@@ -735,7 +734,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -748,7 +747,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 6, 2, 5, 3, 6, 3, 5, 4, 5]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 4, 6, 6, 3, 4, 5, 6, 1, 1]
 </pre></div>
 </div>
 </div>
@@ -779,7 +778,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.157519108246104
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.126882964459453
 </pre></div>
 </div>
 </div>
@@ -792,16 +791,16 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.4168628585347536,
- 0.9078616198313473,
- 1.3019469727612232,
- 1.329269452698025,
- -0.5789994280884885,
- -0.2786758984241066,
- 0.8162931028160171,
- -0.846769757455888,
- -0.3455378099514242,
- -2.127953932321023]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.6684669646279158,
+ 0.08971817663385602,
+ -0.7246567567726936,
+ 1.5311577895420263,
+ -0.082968348260624,
+ 1.6513802287509483,
+ -2.431420498562581,
+ 0.2421342098601055,
+ 1.673760027312393,
+ 0.4281364881506173]
 </pre></div>
 </div>
 </div>
@@ -1576,7 +1575,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(55, 45)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(49, 51)
 </pre></div>
 </div>
 </div>
@@ -1736,7 +1735,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(46, 54)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(50, 50)
 </pre></div>
 </div>
 </div>
@@ -1972,7 +1971,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1704362257619265
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1118773665213206
 </pre></div>
 </div>
 </div>

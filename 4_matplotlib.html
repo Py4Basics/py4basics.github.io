@@ -46,15 +46,14 @@
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://py4basics.github.io/4_matplotlib.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -742,8 +741,8 @@
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div name="html-admonition">
-Do you want to read in a differnt language? Open the 
-<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+Do you want to read in a differnt language? Start
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
 in English or the language of your choice.
 </div>
 </div>
@@ -862,7 +861,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11b592c40&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x115226c10&gt;]
 </pre></div>
 </div>
 <img alt="_images/4_matplotlib_16_1.png" src="_images/4_matplotlib_16_1.png" />
@@ -887,7 +886,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11b6a4880&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x115333250&gt;]
 </pre></div>
 </div>
 <img alt="_images/4_matplotlib_20_1.png" src="_images/4_matplotlib_20_1.png" />
@@ -1644,6 +1643,16 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">32</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">japanize_matplotlib</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;japanize_matplotlib&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2215,7 +2224,11 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">edgecolor</span></code>又は<code class="docutils literal notranslate"><span class="pre">ec</span></code>：柱の境界線の色</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">alpha</span></code>：透明度（<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">1.0</span></code>; デフォルトは<code class="docutils literal notranslate"><span class="pre">1</span></code>）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">density</span></code>：縦軸を相対度数にする（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">density</span></code>：縦軸を相対度数にする（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）</p>
+<ul>
+<li><p>全ての柱の<strong>面積</strong>の合計が<code class="docutils literal notranslate"><span class="pre">1</span></code>になるように縦軸が調整される。１つの柱の高さが<code class="docutils literal notranslate"><span class="pre">1</span></code>よりも大きくなる場合もある。</p></li>
+</ul>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>：凡例の表現を指定</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">ax.legend()</span></code>が設定されている場合のみ有効</p></li>
