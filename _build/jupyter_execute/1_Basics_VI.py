@@ -804,31 +804,28 @@ draw_hist(64)
 # In[46]:
 
 
-# 標準正規分布 ------------------------------------
-from scipy.stats import norm
-l = -4
-h = 4
-m = 100
-x = [l + k*(h-l)/m for k in range(m+1)]
-plt.plot(x, norm.pdf(x,0,1))
+def draw_hist_normal(n, N=10_000):
+    
+    # 標準正規分布 ------------------------------------
+    from scipy.stats import norm
+    l = -4
+    h = 4
+    m = 100
+    x = [l + k*(h-l)/m for k in range(m+1)]
+    plt.plot(x, norm.pdf(x,0,1))
 
-# コイントスのシミュレーション -------------------------
-n = 1000
-N = 10_000
-tosses = [mean_standardized(n) for _ in range(N)]
-unique = len(set(tosses))
-print(f'標準化平均の唯一の値の数（x軸）：{unique}')
-plt.hist(tosses,
-         bins=[standardize(n+1, h) for h in range(n+1+1)],
-         ec='white', density=True)
-plt.title(f'Coins: n={n},\n Repetition: N={N}',size=23)
-plt.xlabel('Standardized Mean', size=15)
-plt.xlim([-4,4])
-pass
+    # コイントスのシミュレーション -------------------------
+    tosses = [mean_standardized(n) for _ in range(N)]
+    unique = len(set(tosses))
+    print(f'標準化平均の唯一の値の数（x軸）：{unique}')
+    plt.hist(tosses,
+             bins=[standardize(n+1, h) for h in range(n+1+1)],
+             ec='white', density=True)
+    plt.title(f'Coins: n={n},\n Repetition: N={N}',size=23)
+    plt.xlabel('Standardized Mean', size=15)
+    plt.xlim([-4,4])
+    
+    return plt.show()
 
-
-# In[ ]:
-
-
-
+draw_hist_normal(1000)
 
