@@ -7,8 +7,6 @@
 
 # ## `if`文
 
-# ### 説明と簡単な例
-
 # ```{margin}
 # <div name="html-admonition">
 # Do you want to read in a differnt language? Start
@@ -16,6 +14,8 @@
 # in English or the language of your choice.
 # </div>
 # ```
+
+# ### 説明と簡単な例
 
 # `if`文を使うと，指定した条件によって処理を複数パターンに分けることができる。条件をブール型（真偽）（`True`又は`False`）で判断しコードを実行することになる。次の構文となる。
 # ```
