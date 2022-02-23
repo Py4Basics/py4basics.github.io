@@ -639,6 +639,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unable to revert mtime: /Library/Fonts
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
+</pre></div>
+</div>
 </div>
 </div>
 <p>ここでの目的は２つある。第１に，<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>（「マットプロットリブ」と読む）はプロットのための代表的なパッケージであり，外部パッケージとしては<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>のみを使い（<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>や<code class="docutils literal notranslate"><span class="pre">Numpy</span></code>は使わない）データを図示（プロット）する方法を解説する。第２に，統計学の重要な概念をシミュレーションをおこない，データを可視化し理解を深めることである。</p>
@@ -676,7 +679,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1160d1ac0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11b10bac0&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_11_1.png" src="_images/1_Basics_VI_11_1.png" />
@@ -850,7 +853,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1161e1f70&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11b21beb0&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_35_1.png" src="_images/1_Basics_VI_35_1.png" />
@@ -867,7 +870,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x116254ac0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11b28ea30&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_37_1.png" src="_images/1_Basics_VI_37_1.png" />
@@ -1227,7 +1230,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1]
 </pre></div>
 </div>
 </div>
@@ -1240,7 +1243,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
 </pre></div>
 </div>
 </div>
@@ -1254,7 +1257,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
 </pre></div>
 </div>
 </div>
@@ -1267,7 +1270,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.45
 </pre></div>
 </div>
 </div>
@@ -1377,7 +1380,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6
 </pre></div>
 </div>
 </div>
@@ -1390,7 +1393,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.8944271909999157
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8944271909999157
 </pre></div>
 </div>
 </div>
@@ -1424,7 +1427,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.8944271909999157
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8944271909999157
 </pre></div>
 </div>
 </div>
@@ -1456,7 +1459,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.44721359549995787
 </pre></div>
 </div>
 </div>
@@ -1470,36 +1473,36 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0,
- -0.8944271909999157,
- -0.44721359549995787,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.788854381999832,
  0.44721359549995837,
- -0.8944271909999157,
- -0.8944271909999157,
- -0.44721359549995787,
- -0.8944271909999157,
- -0.44721359549995787,
- -0.8944271909999157,
- -1.341640786499874,
- -1.341640786499874,
- 1.341640786499874,
- -0.8944271909999157,
- -1.341640786499874,
- 0.44721359549995837,
- 0.44721359549995837,
- 1.341640786499874,
- -1.341640786499874,
- -0.8944271909999157,
- -0.8944271909999157,
- 0.44721359549995837,
- -0.44721359549995787,
  0.0,
- 1.7888543819998315,
+ 0.8944271909999157,
+ -0.44721359549995787,
+ -1.788854381999832,
+ 0.0,
+ 0.44721359549995837,
  0.44721359549995837,
  0.8944271909999157,
- 0.44721359549995837,
+ -0.8944271909999157,
  1.341640786499874,
- 0.8944271909999157]
+ 0.0,
+ -0.44721359549995787,
+ 0.44721359549995837,
+ 0.44721359549995837,
+ 0.44721359549995837,
+ 0.44721359549995837,
+ 0.44721359549995837,
+ -1.341640786499874,
+ 1.7888543819998315,
+ 2.23606797749979,
+ -3.577708763999664,
+ 1.7888543819998315,
+ -1.788854381999832,
+ -1.341640786499874,
+ 1.7888543819998315,
+ 0.8944271909999157,
+ 0.8944271909999157,
+ -0.44721359549995787]
 </pre></div>
 </div>
 </div>
@@ -1638,7 +1641,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：2
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_129_1.png" src="_images/1_Basics_VI_129_1.png" />
@@ -1657,11 +1660,11 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：7
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_131_1.png" src="_images/1_Basics_VI_131_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：13
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_131_3.png" src="_images/1_Basics_VI_131_3.png" />
@@ -1680,7 +1683,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_133_1.png" src="_images/1_Basics_VI_133_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：32
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：31
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_133_3.png" src="_images/1_Basics_VI_133_3.png" />
@@ -1690,32 +1693,35 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 <p>更に<code class="docutils literal notranslate"><span class="pre">n</span></code>が増加すると，分布は標準正規分布に収束していくことになる。次のコードは<code class="docutils literal notranslate"><span class="pre">n=1000</span></code>と<code class="docutils literal notranslate"><span class="pre">N=10_000</span></code>の下でのヒストグラムと標準正規分布を重ねてプロットしている。標準正規分布の近似としては十分な重なり具合と言っていいだろう。</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 標準正規分布 ------------------------------------</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
-<span class="n">l</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>
-<span class="n">h</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">m</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="o">+</span> <span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="n">l</span><span class="p">)</span><span class="o">/</span><span class="n">m</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_hist_normal</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">10_000</span><span class="p">):</span>
+    
+    <span class="c1"># 標準正規分布 ------------------------------------</span>
+    <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="o">+</span> <span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="n">l</span><span class="p">)</span><span class="o">/</span><span class="n">m</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 
-<span class="c1"># コイントスのシミュレーション -------------------------</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">10_000</span>
-<span class="n">tosses</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-<span class="n">unique</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">tosses</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;標準化平均の唯一の値の数（x軸）：</span><span class="si">{</span><span class="n">unique</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">tosses</span><span class="p">,</span>
-         <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="n">standardize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)],</span>
-         <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Coins: n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">,</span><span class="se">\n</span><span class="s1"> Repetition: N=</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">23</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Standardized Mean&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
-<span class="k">pass</span>
+    <span class="c1"># コイントスのシミュレーション -------------------------</span>
+    <span class="n">tosses</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+    <span class="n">unique</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">tosses</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;標準化平均の唯一の値の数（x軸）：</span><span class="si">{</span><span class="n">unique</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">tosses</span><span class="p">,</span>
+             <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="n">standardize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)],</span>
+             <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Coins: n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">,</span><span class="se">\n</span><span class="s1"> Repetition: N=</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">23</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Standardized Mean&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+    
+    <span class="k">return</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">draw_hist_normal</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：110
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：116
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_135_1.png" src="_images/1_Basics_VI_135_1.png" />
