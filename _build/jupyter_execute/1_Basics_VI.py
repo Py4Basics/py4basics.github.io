@@ -820,11 +820,15 @@ unique = len(set(tosses))
 print(f'標準化平均の唯一の値の数（x軸）：{unique}')
 plt.hist(tosses,
          bins=[standardize(n+1, h) for h in range(n+1+1)],
-         ec='white',
-         density=True)
-plt.title(f'Coins: n={n},\n Repetition: N={N}',
-          size=23)
-plt.xlabel('Standardized Mean', size=15)
+         ec='white', density=True)
+# plt.title(f'Coins: n={n},\n Repetition: N={N}',size=23)
+# plt.xlabel('Standardized Mean', size=15)
 plt.xlim([-4,4])
 pass
+
+
+# In[ ]:
+
+
+
 
