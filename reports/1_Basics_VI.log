@@ -34,6 +34,6 @@ Here is a preview of the cell contents:
 -------------------
 ['# 標準正規分布 ------------------------------------', 'from scipy.stats import norm', 'l = -4', 'h = 4', 'm = 100']
 ...
-["plt.title(f'Coins: n={n},\\n Repetition: N={N}',", '          size=23)', "plt.xlabel('Standardized Mean', size=15)", 'plt.xlim([-4,4])', 'pass']
+["         ec='white', density=True)", "plt.title(f'Coins: n={n},\\n Repetition: N={N}',size=23)", "plt.xlabel('Standardized Mean', size=15)", 'plt.xlim([-4,4])', 'pass']
 -------------------
 
