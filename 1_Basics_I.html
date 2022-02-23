@@ -924,11 +924,6 @@ const thebe_selector_output = ".output, .cell_output"
 <blockquote>
 <div><p><strong>半角</strong>を基本としてコード（スペースも含めて）を書くこと。</p>
 </div></blockquote>
-<p>次の２つケース以外で全角を使うとエラーが発生する。</p>
-<ul class="simple">
-<li><p>以下で説明する文字列型のデータ型の場合は全角を使っても構わない。</p></li>
-<li><p>半角の<code class="docutils literal notranslate"><span class="pre">#</span></code>の後であれば全角を使っても構わない（<code class="docutils literal notranslate"><span class="pre">Python</span></code>は<code class="docutils literal notranslate"><span class="pre">#</span></code>の後に続くコードを無視するためであり，よくコメントを書くのに使われる）。</p></li>
-</ul>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div name="html-admonition">
@@ -937,6 +932,11 @@ Do you want to read in a differnt language? Start
 in English or the language of your choice.
 </div>
 </div>
+<p>次の２つケース以外で全角を使うとエラーが発生する。</p>
+<ul class="simple">
+<li><p>以下で説明する文字列型のデータ型の場合は全角を使っても構わない。</p></li>
+<li><p>半角の<code class="docutils literal notranslate"><span class="pre">#</span></code>の後であれば全角を使っても構わない（<code class="docutils literal notranslate"><span class="pre">Python</span></code>は<code class="docutils literal notranslate"><span class="pre">#</span></code>の後に続くコードを無視するためであり，よくコメントを書くのに使われる）。</p></li>
+</ul>
 <p>例えば，次のコード・セルには半角の<code class="docutils literal notranslate"><span class="pre">10</span></code>の後に全角のスペースが紛れ込んでいるためエラーが発生している。</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -948,7 +948,7 @@ in English or the language of your choice.
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="g g-Whitespace">    </span><span class="mi">10</span>
       <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid character in identifier
+<span class="ne">SyntaxError</span>: invalid non-printable character U+3000
 </pre></div>
 </div>
 </div>
@@ -1420,6 +1420,7 @@ in English or the language of your choice.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;False&#39;,
  &#39;None&#39;,
  &#39;True&#39;,
+ &#39;__peg_parser__&#39;,
  &#39;and&#39;,
  &#39;as&#39;,
  &#39;assert&#39;,
@@ -2572,14 +2573,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">98</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;egg&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ham&#39;</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span> <span class="s1">&#39;bread&#39;</span><span class="p">:</span><span class="mi">250</span><span class="p">}</span> 
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">x</span> <span class="o">|</span> <span class="n">y</span>
-
-<span class="ne">TypeError</span>: unsupported operand type(s) for |: &#39;dict&#39; and &#39;dict&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;egg&#39;: 100, &#39;ham&#39;: 300, &#39;bread&#39;: 250}
 </pre></div>
 </div>
 </div>
