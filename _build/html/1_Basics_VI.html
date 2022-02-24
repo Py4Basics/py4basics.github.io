@@ -669,7 +669,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f84a046bf10&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fabb2d9bf10&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_11_1.png" src="_images/1_Basics_VI_11_1.png" />
@@ -682,7 +682,7 @@ in English or the language of your choice.
 <li><p>中央上の「●」の座標が<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y</span></code>の<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の値である<code class="docutils literal notranslate"><span class="pre">x=2</span></code>と<code class="docutils literal notranslate"><span class="pre">y=30</span></code>となる。</p></li>
 <li><p>右端の「●」はの座標が<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y</span></code>の<code class="docutils literal notranslate"><span class="pre">2</span></code>番目の値である<code class="docutils literal notranslate"><span class="pre">x=3</span></code>と<code class="docutils literal notranslate"><span class="pre">y=20</span></code>となる。</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">plot()</span></code>はデフォルトでそれらの点を直線で結んでおり，ライン・プロットと呼ばれる。曲線を描くにはどうすれば良いかと，単に座標の点を増やすことによりスムーズな曲線を表示することが可能となる。言い換えると，短い直線を使うことにより曲線を描画することになる。</p>
+<p><code class="docutils literal notranslate"><span class="pre">plot()</span></code>はデフォルトでそれらの点を直線で結んでおり，ライン・プロットと呼ばれる。曲線を描くには，単に座標の点を増やすことによりスムーズな曲線を表示することが可能となる。言い換えると，短い直線を使うことにより曲線を描画することになる。</p>
 </div>
 <div class="section" id="id4">
 <h3>値の生成<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
@@ -843,7 +843,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f848005f340&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fab901df460&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_35_1.png" src="_images/1_Basics_VI_35_1.png" />
@@ -860,7 +860,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8490555eb0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fabb2f4dee0&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_37_1.png" src="_images/1_Basics_VI_37_1.png" />
@@ -1220,7 +1220,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0]
 </pre></div>
 </div>
 </div>
@@ -1233,7 +1233,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
 </pre></div>
 </div>
 </div>
@@ -1247,7 +1247,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
 </pre></div>
 </div>
 </div>
@@ -1260,7 +1260,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.55
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6
 </pre></div>
 </div>
 </div>
@@ -1342,7 +1342,26 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 <blockquote>
 <div><p>母集団の分布がどのようなものであれ（連続型，離散型），<span class="math notranslate nohighlight">\(\mu\)</span>と<span class="math notranslate nohighlight">\(\sigma\)</span>が有限である限り，<span class="math notranslate nohighlight">\(n\)</span>が大きくなると<span class="math notranslate nohighlight">\(Z_n\)</span>の分布は標準正規分布<span class="math notranslate nohighlight">\(N(0,1)\)</span>に近づいていく。</p>
 </div></blockquote>
-<p>この驚くべき結果は統計学の金字塔である。ではどこが金字塔なのだろうか。データ分析のためには標本を集める必要がある。例えば，大学生の１日の授業以外の勉強時間（単位は分）を考えてみよう。マイナス時間や24時間以上はあり得ないため，母集団の分布は正規分布ではないことは明らかである。標本の中には驚くほど勉強している人もいれば，アルバイトなどに追われ<code class="docutils literal notranslate"><span class="pre">0</span></code>分の学生も含まれるかも知れない。もしかすると，分布には複数のピークがあるかもしれない（例えば，<code class="docutils literal notranslate"><span class="pre">0</span></code>と<code class="docutils literal notranslate"><span class="pre">70</span></code>分）。いずれにしろ，母集団の分布は未知であるため，仮説検定は不可能のように感じられる。しかし中心極限定理は，超えることはできないように見える壁をいとも簡単に飛び越えさせてくれる。ランダム標本を集め，標本の大きさが十分に大きければ，標本平均は正規分布に従う（近似される）ため仮説検定が可能になるのだ。</p>
+<p>下の図は標準正規分布をプロットしている。左右対称のベル型の分布であり，横軸の値は<span class="math notranslate nohighlight">\(-\infty\)</span>から<span class="math notranslate nohighlight">\(\infty\)</span>まで全ての実数をカバーしている。</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 標準正規分布 ------------------------------------</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="n">l</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="o">+</span> <span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="n">l</span><span class="p">)</span><span class="o">/</span><span class="n">m</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Standard Normal Distribution&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1_Basics_VI_95_0.png" src="_images/1_Basics_VI_95_0.png" />
+</div>
+</div>
+<p>この驚くべき結果は統計学の金字塔である。ではどこが金字塔なのだろうか。データ分析のためには標本を集める必要がある。例えば，大学生の１日の授業以外の勉強時間（単位は分）を考えてみよう。マイナス時間や24時間以上はあり得ないため，母集団の分布は正規分布ではないことは明らかである。標本の中には驚くほど勉強している人もいれば，アルバイトなどに追われ<code class="docutils literal notranslate"><span class="pre">0</span></code>分の学生も含まれるかも知れない。もしかすると，分布には複数のピークがあるかもしれない（例えば，<code class="docutils literal notranslate"><span class="pre">0</span></code>と<code class="docutils literal notranslate"><span class="pre">60</span></code>分）。いずれにしろ，母集団の分布は未知であるため，仮説検定は不可能のように感じられる。しかし中心極限定理は，超えることはできないように見える壁をいとも簡単に飛び越えさせてくれる。ランダム標本を集め，標本の大きさが十分に大きければ，標本平均は正規分布に従う（近似される）ため仮説検定が可能になるのだ。</p>
 <p>ここでの目的は，シミュレーションを使って中心極限定理を視覚的に理解・確認することである。コイントスの例を使い，次のステップで進める。</p>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>個のコインを同時に投げることを考え，その標準化平均を計算する。</p></li>
@@ -1370,7 +1389,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.25
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.45
 </pre></div>
 </div>
 </div>
@@ -1383,7 +1402,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.23606797749979
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.44721359549995787
 </pre></div>
 </div>
 </div>
@@ -1417,7 +1436,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.23606797749979
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.44721359549995787
 </pre></div>
 </div>
 </div>
@@ -1449,7 +1468,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.44721359549995837
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
 </pre></div>
 </div>
 </div>
@@ -1463,36 +1482,36 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.8944271909999157,
- 2.23606797749979,
- -0.44721359549995787,
- 0.44721359549995837,
- 0.0,
- -0.8944271909999157,
- 0.8944271909999157,
- -0.44721359549995787,
- 1.7888543819998315,
- -0.44721359549995787,
- 0.0,
- 0.0,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.44721359549995787,
+ -1.341640786499874,
  1.341640786499874,
  -0.44721359549995787,
+ 0.0,
  0.8944271909999157,
- -0.8944271909999157,
  0.8944271909999157,
  0.0,
- -0.44721359549995787,
  1.341640786499874,
- -0.8944271909999157,
- -0.44721359549995787,
- -0.8944271909999157,
+ 0.0,
+ 0.8944271909999157,
  0.0,
  -1.341640786499874,
- -0.44721359549995787,
  -0.8944271909999157,
- 1.341640786499874,
+ 0.0,
+ 0.44721359549995837,
+ 0.0,
  0.8944271909999157,
- 0.8944271909999157]
+ 0.0,
+ -0.8944271909999157,
+ -1.341640786499874,
+ 0.0,
+ -0.8944271909999157,
+ 0.0,
+ 1.341640786499874,
+ 0.44721359549995837,
+ 1.341640786499874,
+ 0.44721359549995837,
+ 0.44721359549995837,
+ -1.788854381999832]
 </pre></div>
 </div>
 </div>
@@ -1535,7 +1554,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_117_1.png" src="_images/1_Basics_VI_117_1.png" />
+<img alt="_images/1_Basics_VI_118_1.png" src="_images/1_Basics_VI_118_1.png" />
 </div>
 </div>
 <p>＜コードの説明＞</p>
@@ -1615,11 +1634,11 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_127_1.png" src="_images/1_Basics_VI_127_1.png" />
+<img alt="_images/1_Basics_VI_128_1.png" src="_images/1_Basics_VI_128_1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_127_3.png" src="_images/1_Basics_VI_127_3.png" />
+<img alt="_images/1_Basics_VI_128_3.png" src="_images/1_Basics_VI_128_3.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が小さい（<code class="docutils literal notranslate"><span class="pre">10</span></code>）とランダムな影響が強く現れるが，大きくなると（<code class="docutils literal notranslate"><span class="pre">10000</span></code>）大数の法則によって<code class="docutils literal notranslate"><span class="pre">-1</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>の割合は<code class="docutils literal notranslate"><span class="pre">0.5</span></code>に近づいている。一方で，<code class="docutils literal notranslate"><span class="pre">N</span></code>が大きくなっても，分布は標準正規分布とは大きく異なっている。</p>
@@ -1634,11 +1653,11 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：3
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_129_1.png" src="_images/1_Basics_VI_129_1.png" />
+<img alt="_images/1_Basics_VI_130_1.png" src="_images/1_Basics_VI_130_1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：3
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_129_3.png" src="_images/1_Basics_VI_129_3.png" />
+<img alt="_images/1_Basics_VI_130_3.png" src="_images/1_Basics_VI_130_3.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が大きくなると，大数の法則によって左右対称の分布となっている。しかし，依然として標準正規分布とは異なっている。</p>
@@ -1653,11 +1672,11 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：7
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_131_1.png" src="_images/1_Basics_VI_131_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：12
+<img alt="_images/1_Basics_VI_132_1.png" src="_images/1_Basics_VI_132_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：13
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_131_3.png" src="_images/1_Basics_VI_131_3.png" />
+<img alt="_images/1_Basics_VI_132_3.png" src="_images/1_Basics_VI_132_3.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が小さいとランダムな要素が際立ち明確ではないが，<code class="docutils literal notranslate"><span class="pre">n</span></code>増加すると標準正規分布に近づいていることが分かる。</p>
@@ -1669,14 +1688,14 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：20
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：18
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_133_1.png" src="_images/1_Basics_VI_133_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：31
+<img alt="_images/1_Basics_VI_134_1.png" src="_images/1_Basics_VI_134_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：30
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_133_3.png" src="_images/1_Basics_VI_133_3.png" />
+<img alt="_images/1_Basics_VI_134_3.png" src="_images/1_Basics_VI_134_3.png" />
 </div>
 </div>
 <p>標準正規分布に大きく近づいたことが確認できる。</p>
@@ -1711,10 +1730,10 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：107
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：108
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_135_1.png" src="_images/1_Basics_VI_135_1.png" />
+<img alt="_images/1_Basics_VI_136_1.png" src="_images/1_Basics_VI_136_1.png" />
 </div>
 </div>
 </div>
