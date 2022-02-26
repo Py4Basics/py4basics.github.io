@@ -78,5 +78,7 @@ repository:
 sphinx:
   config:
     html_baseurl: 'https://py4basics.github.io/'
+    redirects: {'1a_Basics_I': 'index.html', '1b_Basics_II': 'index.html', '6_Scipy_stats': 'https://py4etrics.github.io/5_SciPy_stats.html'}
   extra_extensions:
     - sphinx_sitemap
+    - sphinx_reredirects

@@ -11,6 +11,7 @@ py4macro
 # py4etrics
 scipy
 see
+sphinx-reredirects
 sphinx-sitemap
 statsmodels
 # wooldridge
