@@ -9,7 +9,6 @@ https://py4basics.github.io/2_NumPy.html
 https://py4basics.github.io/3_Pandas.html
 https://py4basics.github.io/4_matplotlib.html
 https://py4basics.github.io/5_pandas_plot.html
-https://py4basics.github.io/6_SciPy_stats.html
 https://py4basics.github.io/7_SciPy_optimize.html
 https://py4basics.github.io/0_Preparations.html
 https://py4basics.github.io/things_to_note.html

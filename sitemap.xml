@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<!--  created with free sitemap generation system www.sitemapxml.jp  --> 
+<url>
+  <loc>https://py4basics.github.io/</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/1_Basics_I.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/1_Basics_II.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/1_Basics_III.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/1_Basics_IV.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/1_Basics_V.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/1_Basics_VI.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/2_NumPy.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/3_Pandas.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/4_matplotlib.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/5_pandas_plot.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/6_SciPy_stats.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/7_SciPy_optimize.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/0_Preparations.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/things_to_note.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/Grade.html</loc>
+</url>
+<url>
+  <loc>https://py4basics.github.io/Gapminder.html</loc>
+</url>
+</urlset>
