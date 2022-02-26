@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>経済学のためのPython入門 &#8212; 経済学のためのPython入門</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/my_style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://py4basics.github.io/index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="基本データ型と変数" href="1_Basics_I.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-165998213-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="#">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">経済学のためのPython入門</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="この本を検索..." aria-label="この本を検索..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python入門I
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_I.html">
+   基本データ型と変数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_II.html">
+   データの操作
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_III.html">
+   関数とメソッド
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_IV.html">
+   制御フロー
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_V.html">
+   モジュールと疑似コード
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_Basics_VI.html">
+   図示とシミュレーション
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python入門II
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_NumPy.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NumPy
+    </span>
+   </code>
+   ：高速化
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_Pandas.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   ：データ分析
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4_matplotlib.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matplotlib
+    </span>
+   </code>
+   ：図示
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5_pandas_plot.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   ：図示
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
+   SciPy.stats：確率分布
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7_SciPy_optimize.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     SciPy.optimize
+    </span>
+   </code>
+   ：解の求め方と最適化問題
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  参考
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0_Preparations.html">
+   ツールのインストールと説明
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="things_to_note.html">
+   Tipsと注意点
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Grade.html">
+   学業成績の分析
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Gapminder.html">
+   Gapminder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Moving_Average.html">
+   移動平均
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  経済学
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4macro.github.io">
+   Pythonで学ぶマクロ経済学（中級＋レベル）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4etrics.github.io">
+   Pythonで学ぶ入門計量経済学
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="ナビゲーションを切り替え" aria-controls="site-navigation"
+                title="ナビゲーションを切り替え" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="このページをダウンロード"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/index.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="ノートブックファイルをダウンロード" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/index.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="ソースファイルをダウンロード" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="PDFに印刷"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全画面モード"
+        title="全画面モード"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/index.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="発売 Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> 目次
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   はじめに
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   本サイトで使うPythonとパッケージのバージョン
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>経済学のためのPython入門</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> 目次 </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   はじめに
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   本サイトで使うPythonとパッケージのバージョン
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="python">
+<h1>経済学のためのPython入門<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<blockquote class="epigraph">
+<div><p><strong>Python Basics for Economics</strong></p>
+<p><a class="reference external" href="https://t-haruyama.github.io">春山 鉄源</a></p>
+<p>神戸大学経済学研究科</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Version:&#39;</span><span class="p">,</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y年%m月</span><span class="si">%d</span><span class="s1">日&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Version: 2022年02月26日
+</pre></div>
+</div>
+</div>
+</div>
+<!---
+%H:%M:%S
+dt = datetime.datetime.now()
+dt = datetime.datetime.today()
+-->
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div name="html-admonition">
+Do you want to read in a differnt language? Start
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
+in English or the language of your choice.
+</div>
+</div>
+<p>本サイトに関するコメント等はGitHubの<a class="reference external" href="https://github.com/Py4Basics/py4basics.github.io/discussions">Discussions</a>もしくは<a class="reference external" href="mailto:haruyama&#37;&#52;&#48;econ&#46;kobe-u&#46;ac&#46;jp">mailto:haruyama<span>&#64;</span>econ<span>&#46;</span>kobe-u<span>&#46;</span>ac<span>&#46;</span>jp</a>にご連絡ください。</p>
+<br>
+<div class="section" id="id1">
+<h2>はじめに<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>本サイトの目的は次の２つのサイトを学習するために必要な<code class="docutils literal notranslate"><span class="pre">Python</span></code>の基礎の解説である。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://py4macro.github.io">Pythonで学ぶマクロ経済学（中級＋レベル）</a></p></li>
+<li><p><a class="reference external" href="https://py4etrics.github.io">Pythonで学ぶ入門計量経済学</a></p></li>
+</ul>
+<!-- 新聞，雑誌やインターネット上で「AI」，「ビッグデータ」，「機械学習」どのプログラミングに関連するキーワードを頻繁に見聞きすると思うが，それらの分野で`Python`は広く使われている。一方で`Python` -->
+<p>次の8章から構成されている。</p>
+<ol class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Python</span></code>入門I</strong><br>
+プログラミング言語である<code class="docutils literal notranslate"><span class="pre">Python</span></code>は，日本語と同様に文法・表現・単語が決まっており，それらの使い方を説明する。外国語を学ぶことと似た様なものかと不安になる人もいるかも知れないが，そうではない。殆どの人は英語を学んだと思うが，実は<code class="docutils literal notranslate"><span class="pre">Python</span></code>は英語で書かれているため，英語感覚でコードを読み書きすることができるのが一つの大きな利点である。しかし，英作文をイメージすると間違いである。理由は，正確性が要求されるからである。話し言葉・書き言葉は曖昧な表現になり得る。例えば，I kind of like him.（もしくは，I kinda like him.）ここでの”kind of”は「種類」と言う意味ではなく「曖昧さ」を表している。訳すと「まぁ，好きかなぁ，，，」の様なイメージだろうか。しかし，話すタイミングや語調によっては「実はそうでもないかも」の含みがある様にも聞こえるかも知れない。このように正確さにかける英語ではコンピュータに命令を伝えることは難しい。一般的にプログラミング言語は正確性が重視されるため，味気ない「文章」になる。更には少しでも間違えると「何言ってるか分かんない」という意味でエラーが発生する。一つのスペルミスでもエラーが発生するのである。この章では，「<code class="docutils literal notranslate"><span class="pre">Python</span></code>語」を使いコンピュータに正確に命令を伝えて実行させる方法を学習する。このパートは次の６章から構成されており，神戸大学経済学部の「プログラミング入門」の教科書として使用する予定である。</p>
+<ul class="simple">
+<li><p><strong>データ型と変数</strong></p></li>
+<li><p><strong>データの操作</strong></p></li>
+<li><p><strong>関数とメソッド</strong></p></li>
+<li><p><strong>制御フロー</strong></p></li>
+<li><p><strong>モジュールと疑似コード</strong></p></li>
+<li><p><strong>図示とシミュレーション</strong></p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Python</span></code>入門II</strong><br></p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>： 高速化</strong><br>
+インストールした<code class="docutils literal notranslate"><span class="pre">Python</span></code>をそのままの「素」で使うことができる。しかし用途によっては物足りないと感じる場合がある。「素」の<code class="docutils literal notranslate"><span class="pre">Python</span></code>を４人乗りの家族用乗用車とイメージしてみよう。通常の生活では十分だが，自動車レースに参加するとなると明らかに不十分である。目的によって機能を補ってくれるのがパッケージと呼ばれるもので，この章を含めて残りの章を使って主な（外部）パッケージについて説明する。<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>（Numerical Pythonの略でナンパイと読む）は，名前が示すように計算を高速化させるパッケージであり，乗用車をレース用にチューンアップしてくれる。シミュレーションを行う際には欠かせないパッケージである。</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>： データ分析</strong><br>
+データを扱う際に欠かせないパッケージである。イメージ的には，<code class="docutils literal notranslate"><span class="pre">Python</span></code>版のExcelと思えば良いだろう。名前は計量経済学の授業で出てきたパネル・データ（Panel Data）から派生した可愛らしい名前になっている。データを扱うのであれば<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>で良いのではと思うかも知れない。実際，<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>のデータの部分は<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の<code class="docutils literal notranslate"><span class="pre">array</span></code>と呼ばれるデータ型に簡単に変換できるようになっている。どこに利点があるかと言うと，行・列にラベル名（例えば，「Real GDP」）が使えるためデータの直感的な操作が可能となる。またデータを整形するのに便利な関数が多く用意されている。このパッケージ無ければデータを扱いが非常に面倒に感じる事になるだろう。</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>： 図示</strong><br>
+データをプロット（図示）するためのパッケージである。<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>，<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>，<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>と並んで<code class="docutils literal notranslate"><span class="pre">Python</span></code>のエコシステムを構成している。プロットするためのパッケージには様々なものが開発されているが，<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>が基本となっている。プロットのためのコードには幾つかのパターンがあり，オブジェクト指向と呼ばれる考えに基づく方法を紹介する。</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>： 図示</strong><br>
+上で紹介した<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>にもプロットする機能が備わっている。裏では<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>が動いているが，手っ取り早くプロットしたい場合に重宝する。図の細かい所まで設定したい場合は<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>を直接使った方が良いが，<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>のプロット機能を知っていると非常に便利に感じるだろう。</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">SciPy.stats</span></code>： 確率分布</strong><br>
+<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>はScientific Pythonの略であり，科学技術計算用のパッケージである。非常に大きなパッケージであり，その中には様々な用途（積分，統計，最適化問題など）に合わせたサブパッケージが用意されている。その中の一つである統計学用の<code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>の使い方について簡単に説明する。統計学の授業で学んだ概念などを実際にコードを書いて実行することができる。ちなみに，<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>には<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>と重複する機能も含んでおり，仕様が微妙に違ったりする。このサイトと上述の経済学のサイトでは，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>にあるものは<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>のものを使うことにする。</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>： 解の求め方と最適化問題</strong><br>
+経済学では最適化問題が至る所で出てくる。消費者の効用最大化問題，企業の利潤最大化もしくは費用最小化問題など。<code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>はそのためのツールを提供してくれる。また単なる最大化・最小化問題を数値的に解くのではなく，制約式の下での最適化問題も解くことが可能である。また等式制約と不等式制約の両方に対応している。経済学を勉強する上で欠かせないツールである。</p></li>
+</ul>
+</li>
+</ol>
+<p>また次のトピックについても取り上げているので参考にして欲しい。</p>
+<ul class="simple">
+<li><p><strong>ツールのインストールと説明</strong><br>
+Pythonやと関連ツール（GitやGitHubなど）のインストールと使い方について説明する。</p></li>
+<li><p><strong>Tipsと注意点</strong><br>
+コードを書く上で役に立つ点をまとめる。是非読んでみよう！</p></li>
+<li><p><strong>学業成績の分析</strong><br>
+神戸大学のウリボーネット上にある成績を使い学業成績分析を行う。成績をコピーして使うので他大学でも使えるかもしれない？</p></li>
+<li><p><strong>Gapminder</strong><br>
+Gapminderは世界経済のGDPなどデータを駆使し興味深い分析をおこなっているサイトである。そのデータを使って，グループ別（例えば，アジア・欧州・アフリカなど）の計算を簡単に行うことができる<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>の<code class="docutils literal notranslate"><span class="pre">groupby</span></code>の使い方と<code class="docutils literal notranslate"><span class="pre">Multi-index</span></code>を紹介する。</p></li>
+<li><p><strong>移動平均</strong><br>
+移動平均の計算方法の解説と<a class="reference external" href="https://py4macro.github.io/11_Macro_Variables.html#id11">インフレ率とマネーストックの増加率</a>で使った<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の作成方法について説明する。</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>本サイトで使うPythonとパッケージのバージョン<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gapminder</span><span class="o">,</span> <span class="nn">matplotlib</span><span class="o">,</span> <span class="nn">numpy</span><span class="o">,</span> <span class="nn">pandas</span><span class="o">,</span> <span class="nn">scipy</span><span class="o">,</span> <span class="nn">see</span>
+<span class="kn">from</span> <span class="nn">platform</span> <span class="kn">import</span> <span class="n">python_version</span>
+
+<span class="n">packages</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;gapminder&#39;</span><span class="p">,</span> <span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">,</span><span class="s1">&#39;pandas&#39;</span><span class="p">,</span> <span class="s1">&#39;scipy&#39;</span><span class="p">,</span><span class="s1">&#39;see&#39;</span><span class="p">]</span>
+<span class="n">versions</span> <span class="o">=</span> <span class="p">[</span><span class="n">python_version</span><span class="p">(),</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">pandas</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">scipy</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">see</span><span class="o">.</span><span class="n">__version__</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">pack</span><span class="p">,</span> <span class="n">ver</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">packages</span><span class="p">,</span> <span class="n">versions</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0:14}{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pack</span><span class="p">,</span><span class="n">ver</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python        3.9.0
+gapminder     0.1
+matplotlib    3.5.1
+numpy         1.21.5
+pandas        1.4.1
+scipy         1.6.2
+see           1.4.1
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a class="reference external" href="http://inesad.edu.bo/developmentroast/2012/10/21-reasons-why-you-should-never-date-an-economist/">Economists（経済学を勉強する人も含めて(?)）と付き合わない方が良い２１＋<span class="math notranslate nohighlight">\(\alpha\)</span>の理由</a></p>
+<hr class="docutils" />
+<p><a class="reference external" href="https://mybinder.org/v2/gh/Haruyama-KobeU/for_binder/main?filepath=for_binder.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a> for an interactive Jupyter Notebook session with empty code cells.</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="1_Basics_I.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">基本データ型と変数</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      著者 春山 鉄源  Tetsugen HARUYAMA<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
