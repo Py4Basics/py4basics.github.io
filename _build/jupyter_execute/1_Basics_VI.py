@@ -108,13 +108,14 @@ def xvalues(l, h, n):
     """引数
         l：最小値（lowest value）
         h：最大値（highest value）
-        n：数値の数（整数型，number of values）
+        n：作成する数値の数を指定する（正の整数型，number of values）
     戻り値
-        リスト"""
+        n+1個の要素から構成されるリスト"""
     
-    assert isinstance(n, int), "n には整数型を使ってください。"
+    if n>0 and isinstance(n, int):
+        return [l + x*(h-l)/n for x in range(n+1)]        
     
-    return [l + x*(h-l)/n for x in range(n+1)]
+    raise ValueError(f"n には正の整数型を使う必要があります。n={n}となっています。")
 
 
 # 以前も説明したが，引数などを確認したい場合は次のコードで調べることができるので覚えておこう。
