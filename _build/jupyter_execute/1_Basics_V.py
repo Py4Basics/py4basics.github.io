@@ -38,6 +38,9 @@
 
 # ### `math`モジュール
 
+# (sec:V-solow)=
+# ### `math`モジュール
+
 # 名前が示すように数学に関する関数がまとめられているモジュールとなる（[詳細はこのリンクを参照](https://docs.python.org/ja/3/library/math.html)）。`math`を次のコードで読み込むことができる。
 
 # In[1]:
