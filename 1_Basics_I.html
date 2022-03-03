@@ -2165,13 +2165,35 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p>近似値を見る限り，<code class="docutils literal notranslate"><span class="pre">0.3</span> <span class="pre">==</span> <span class="pre">0.1</span> <span class="pre">+</span> <span class="pre">0.1</span> <span class="pre">+</span> <span class="pre">0.1</span></code>が<code class="docutils literal notranslate"><span class="pre">False</span></code>を返すことは正しい結果である。この事から，次のことが言える。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="s1">&#39;.55f&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0.9000000000000000222044604925031308084726333618164062500&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>近似値と<code class="docutils literal notranslate"><span class="pre">0.1</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">0.3</span></code>との差は非常に小さく，殆どの計算には支障がない程度になっている。これで<code class="docutils literal notranslate"><span class="pre">0.3</span> <span class="pre">==</span> <span class="pre">0.1</span> <span class="pre">+</span> <span class="pre">0.1</span> <span class="pre">+</span> <span class="pre">0.1</span></code>が<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す理由が分かったが，この事から次のことが言える。</p>
 <blockquote>
-<div><p>浮動小数点型に<code class="docutils literal notranslate"><span class="pre">==</span></code>を使い真偽を確かめるのは<strong>危険</strong>である。</p>
+<div><p>浮動小数点型に<code class="docutils literal notranslate"><span class="pre">==</span></code>を使い真偽を確かめるのは<strong>危険</strong>である。使わないように！</p>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>解決策として<code class="docutils literal notranslate"><span class="pre">numpy</span></code>の<code class="docutils literal notranslate"><span class="pre">isclose()</span></code>関数を使うことができる。この関数は２つの値が十分に近い場合は<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す。では、どれだけ近い場合に<code class="docutils literal notranslate"><span class="pre">True</span></code>を返すのか？詳細は<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.isclose.html">マニュアル</a>を参照。次のコードは<code class="docutils literal notranslate"><span class="pre">True</span></code>を返すことになる。</p>
+<p>では２つの浮動小数点型の真偽をどのように確かめれば良いのだろうか。２つの方法を紹介する。</p>
+<ol class="simple">
+<li><p><a class="reference internal" href="1_Basics_V.html#sec-v-solow"><span class="std std-ref">このセクション</span></a>で説明する<code class="docutils literal notranslate"><span class="pre">math</span></code>モジュールにある<code class="docutils literal notranslate"><span class="pre">isclose</span></code>関数を使うことができる。この関数は２つの値が十分に近い場合は<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す。例えば，次のコードは<code class="docutils literal notranslate"><span class="pre">True</span></code>を返すことになる。</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.1</span><span class="o">+</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p><a class="reference internal" href="2_NumPy.html#chap-numpy"><span class="std std-ref">この章</span></a>で説明する<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>と呼ばれる外部パッケージに含まれる<code class="docutils literal notranslate"><span class="pre">isclose()</span></code>関数を使うことができる。この関数も２つの値が十分に近い場合は<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す。次のコードは<code class="docutils literal notranslate"><span class="pre">True</span></code>を返すことになる。</p></li>
+</ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.1</span><span class="o">+</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
