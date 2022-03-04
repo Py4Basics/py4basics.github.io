@@ -342,22 +342,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     整数型・不動小数点型　→　不動小数点型・整数型
+     整数型・浮動小数点型　→　浮動小数点型・整数型
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     文字列型　→　整数型・不動小数点型
+     文字列型　→　整数型・浮動小数点型
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id5">
-     整数型・不動小数点型　→　文字列型
+     整数型・浮動小数点型　→　文字列型
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     整数型・不動小数点型・文字列型　→　ブール型
+     整数型・浮動小数点型・文字列型　→　ブール型
     </a>
    </li>
   </ul>
@@ -535,22 +535,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     整数型・不動小数点型　→　不動小数点型・整数型
+     整数型・浮動小数点型　→　浮動小数点型・整数型
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     文字列型　→　整数型・不動小数点型
+     文字列型　→　整数型・浮動小数点型
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id5">
-     整数型・不動小数点型　→　文字列型
+     整数型・浮動小数点型　→　文字列型
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     整数型・不動小数点型・文字列型　→　ブール型
+     整数型・浮動小数点型・文字列型　→　ブール型
     </a>
    </li>
   </ul>
@@ -714,10 +714,10 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>データの操作<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2>基本データ型の変換<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>次の３つの基本データ型を考えよう。</p>
+<p>次の４つの基本データ型を考えよう。</p>
 <ul class="simple">
 <li><p>整数型</p></li>
-<li><p>不動小数点型</p></li>
+<li><p>浮動小数点型</p></li>
 <li><p>文字列型</p></li>
 <li><p>ブール型</p></li>
 </ul>
@@ -732,12 +732,12 @@ in English or the language of your choice.
 <p>ここでは，それぞれのデータ型を他のデータ系に変換する次の関数を紹介する。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">int()</span></code>：整数型への変換</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">float()</span></code>：不動小数点型への変換</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float()</span></code>：浮動小数点型への変換</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">str()</span></code>：文字列型への変換</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bool()</span></code>：ブール型への変換（真偽値の確認）</p></li>
 </ul>
 <div class="section" id="id3">
-<h3>整数型・不動小数点型　→　不動小数点型・整数型<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>整数型・浮動小数点型　→　浮動小数点型・整数型<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f0</span> <span class="o">=</span> <span class="mf">10.0</span>
@@ -746,7 +746,7 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">f0</span></code>を整数型へ，<code class="docutils literal notranslate"><span class="pre">i1</span></code>を不動小数点型に変換してみよう。</p>
+<p><code class="docutils literal notranslate"><span class="pre">f0</span></code>を整数型へ，<code class="docutils literal notranslate"><span class="pre">i1</span></code>を浮動小数点型に変換してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="n">f0</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span><span class="n">f0</span><span class="p">)</span> <span class="p">)</span>
@@ -773,7 +773,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="section" id="id4">
-<h3>文字列型　→　整数型・不動小数点型<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>文字列型　→　整数型・浮動小数点型<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>次に文字列を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -782,7 +782,7 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">int()</span></code>を使うと整数に変換できる。また<code class="docutils literal notranslate"><span class="pre">float()</span></code>関数を適用すると不動小数点型に変換できる。</p>
+<p><code class="docutils literal notranslate"><span class="pre">int()</span></code>を使うと整数に変換できる。また<code class="docutils literal notranslate"><span class="pre">float()</span></code>関数を適用すると浮動小数点型に変換できる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="n">s0</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span><span class="n">s0</span><span class="p">)</span> <span class="p">)</span>
@@ -828,7 +828,7 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p>まず<code class="docutils literal notranslate"><span class="pre">float()</span></code>を使って不動小数点型に変換してみよう。</p>
+<p>まず<code class="docutils literal notranslate"><span class="pre">float()</span></code>を使って浮動小数点型に変換してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">s1</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span> <span class="nb">float</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="p">)</span>
@@ -873,7 +873,7 @@ in English or the language of your choice.
 </div>
 </div>
 <p>直感的には，<code class="docutils literal notranslate"><span class="pre">s1</span></code>の小数点以下の<code class="docutils literal notranslate"><span class="pre">0</span></code>があるからである。この場合，整数型に変換するには次の２ステップ必要となる。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>s1　→　不動小数点型　→　整数型
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>s1　→　浮動小数点型　→　整数型
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -902,7 +902,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="section" id="id5">
-<h3>整数型・不動小数点型　→　文字列型<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>整数型・浮動小数点型　→　文字列型<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>文字列型への変換は簡単で，元の値をそのままクォテーション<code class="docutils literal notranslate"><span class="pre">''</span></code>に入れて返すことになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -918,7 +918,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="section" id="id6">
-<h3>整数型・不動小数点型・文字列型　→　ブール型<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3>整数型・浮動小数点型・文字列型　→　ブール型<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>この変換は既出の<code class="docutils literal notranslate"><span class="pre">bool()</span></code>を使い，対象となるデータのブール値（真偽値）の確認となる。即ち，対象となるオブジェクトが「空・無」かどうかを確かめるの使われる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

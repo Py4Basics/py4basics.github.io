@@ -1140,7 +1140,7 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<p>ここで気づくのは，商のみが不動小数点型が返されている。更に，式の数値に不動小数点型が入ると，不動小数点型が返されることになる。（試してみよう。）</p>
+<p>ここで気づくのは，商のみが浮動小数点型が返されている。更に，式の数値に不動小数点型が１つでも入ると，浮動小数点型が返されることになる。例えば，上のコードの<code class="docutils literal notranslate"><span class="pre">2</span></code>を<code class="docutils literal notranslate"><span class="pre">2.0</span></code>に変えて計算してみると，全て浮動小数点型が返ってくる（試してみよう。）</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>1,000,000,000.0（10億）のような大きな数字は３桁ごとにコンマを入れると読みやすくなりますが，<code class="docutils literal notranslate"><span class="pre">Python</span></code>では<code class="docutils literal notranslate"><span class="pre">,</span></code>の代わりに<code class="docutils literal notranslate"><span class="pre">_</span></code>を使うことができる。例えば，35億は次の様に書くことができます。</p>

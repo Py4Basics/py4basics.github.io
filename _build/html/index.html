@@ -399,7 +399,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Version: 2022年02月27日
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Version: 2022年03月04日
 </pre></div>
 </div>
 </div>
@@ -427,7 +427,7 @@ in English or the language of your choice.
 <li><p><a class="reference external" href="https://py4etrics.github.io">Pythonで学ぶ入門計量経済学</a></p></li>
 </ul>
 <!-- 新聞，雑誌やインターネット上で「AI」，「ビッグデータ」，「機械学習」どのプログラミングに関連するキーワードを頻繁に見聞きすると思うが，それらの分野で`Python`は広く使われている。一方で`Python` -->
-<p>次の8章から構成されている。</p>
+<p>次の12章から構成されている。</p>
 <ol class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">Python</span></code>入門I</strong><br>
 プログラミング言語である<code class="docutils literal notranslate"><span class="pre">Python</span></code>は，日本語と同様に文法・表現・単語が決まっており，それらの使い方を説明する。外国語を学ぶことと似た様なものかと不安になる人もいるかも知れないが，そうではない。殆どの人は英語を学んだと思うが，実は<code class="docutils literal notranslate"><span class="pre">Python</span></code>は英語で書かれているため，英語感覚でコードを読み書きすることができるのが一つの大きな利点である。しかし，英作文をイメージすると間違いである。理由は，正確性が要求されるからである。話し言葉・書き言葉は曖昧な表現になり得る。例えば，I kind of like him.（もしくは，I kinda like him.）ここでの”kind of”は「種類」と言う意味ではなく「曖昧さ」を表している。訳すと「まぁ，好きかなぁ，，，」の様なイメージだろうか。しかし，話すタイミングや語調によっては「実はそうでもないかも」の含みがある様にも聞こえるかも知れない。このように正確さにかける英語ではコンピュータに命令を伝えることは難しい。一般的にプログラミング言語は正確性が重視されるため，味気ない「文章」になる。更には少しでも間違えると「何言ってるか分かんない」という意味でエラーが発生する。一つのスペルミスでもエラーが発生するのである。この章では，「<code class="docutils literal notranslate"><span class="pre">Python</span></code>語」を使いコンピュータに正確に命令を伝えて実行させる方法を学習する。このパートは次の６章から構成されており，神戸大学経済学部の「プログラミング入門」の教科書として使用する予定である。</p>
@@ -482,7 +482,7 @@ Gapminderは世界経済のGDPなどデータを駆使し興味深い分析を�
 <span class="n">versions</span> <span class="o">=</span> <span class="p">[</span><span class="n">python_version</span><span class="p">(),</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">pandas</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">scipy</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">see</span><span class="o">.</span><span class="n">__version__</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">pack</span><span class="p">,</span> <span class="n">ver</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">packages</span><span class="p">,</span> <span class="n">versions</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0:14}{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pack</span><span class="p">,</span><span class="n">ver</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pack</span><span class="si">:</span><span class="s1">14</span><span class="si">}{</span><span class="n">ver</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
