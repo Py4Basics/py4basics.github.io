@@ -619,7 +619,7 @@ Do you want to read in a differnt language? Start
 in English or the language of your choice.
 </div>
 </div>
-<p>プロット用のパッケージ<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>を紹介したが，実は<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>の<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>と<code class="docutils literal notranslate"><span class="pre">Series</span></code>にはメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>が備えられており，それを使えば基本的なプロットをより簡単んコードで実現できる。裏で動いているのは<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>であり，より複雑な図を作成する場合は、<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>のコードを直接書くことが必要になるだろうが，手っ取り早くプロットしたい場合には重宝する手法である。詳細は<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">参考サイト（英語）</a>を参考にして欲しいが，ここでは基本的な使い方を紹介する。</p>
+<p>プロット用のパッケージ<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>を紹介したが，実は<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>の<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>と<code class="docutils literal notranslate"><span class="pre">Series</span></code>にはメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>が備えられており，それを使えば基本的なプロットをより簡単なコードで実現できる。裏で動いているのは<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>であり，より複雑な図を作成する場合は、<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>のコードを直接書くことが必要になるだろうが，手っ取り早くプロットしたい場合には重宝する手法である。詳細は<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">参考サイト（英語）</a>を参考にして欲しいが，ここでは基本的な使い方を紹介する。</p>
 <p>次の<code class="docutils literal notranslate"><span class="pre">df0</span></code>を使って説明する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -877,7 +877,7 @@ Name: X, dtype: int64
 <img alt="_images/5_pandas_plot_23_0.png" src="_images/5_pandas_plot_23_0.png" />
 </div>
 </div>
-<p>デフォルトでは横軸に行インデックが使われるが，横軸を指定したい場合は，次の引数を使う。</p>
+<p>デフォルトでは横軸に行インデックスが使われるが，横軸を指定したい場合は，次の引数を使う。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>：横軸に使う列ラベル</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>：縦軸に使う列ラベル（複数の場合はリスト）</p></li>
@@ -901,7 +901,7 @@ Name: X, dtype: int64
 <p><code class="docutils literal notranslate"><span class="pre">plot()</span></code>には様々な引数があり図に「飾り付け」をすることができる。詳しくは<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html">このリンク</a>を参照することにして，ここでは基本的な引数だけを紹介する。</p>
 <!-- * `title`：図のタイトル（文字列型で指定） -->
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code>：線のスタイル（複数ある場合はリストにして列の順番で指定する;<code class="docutils literal notranslate"><span class="pre">-``--``-.``:</span></code>）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code>：線のスタイル（複数ある場合はリストにして列の順番で指定する;<code class="docutils literal notranslate"><span class="pre">-</span></code>，<code class="docutils literal notranslate"><span class="pre">--</span></code>，<code class="docutils literal notranslate"><span class="pre">-.</span></code>，<code class="docutils literal notranslate"><span class="pre">:</span></code>）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">linewidth</span></code> or <code class="docutils literal notranslate"><span class="pre">lw</span></code>：線の幅</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>：色（リストにして列の順番で指定する; <a class="reference external" href="https://matplotlib.org/3.1.0/gallery/color/named_colors.html">参照サイト</a>）</p>
 <ul>
@@ -1043,7 +1043,7 @@ Name: X, dtype: int64
 <li><p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>と異なる「飾り付け」を<code class="docutils literal notranslate"><span class="pre">Z</span></code>に簡単に施すことができる。</p></li>
 <li><p>２行目に<code class="docutils literal notranslate"><span class="pre">df0</span></code>ではなく別の<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使うことも可能となる。</p></li>
 </ol>
-<p>もちろん，タイトルや軸ラベルのメソッドをつか加えることも可能である。</p>
+<p>もちろん，タイトルや軸ラベルのメソッドをつけ加えることも可能である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -1070,7 +1070,7 @@ Name: X, dtype: int64
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ax_.legend(['Xの凡例','Yの凡例','Zの凡例'])</span></code></p>
 <ul>
-<li><p>凡例に列ラベルではなく他の表現を指定いたい場合に使う。</p></li>
+<li><p>凡例に列ラベルではなく他の表現を指定したい場合に使う。</p></li>
 </ul>
 </li>
 </ul>
@@ -1871,7 +1871,7 @@ Name: X, dtype: int64
 <p>様々な引数があり図に「飾り付け」をすることができる。詳しくは<a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.kde.html">このリンク</a>を参照することにして，ここでは基本的な引数だけを紹介する。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">title</span></code>：図のタイトル（文字列型で指定）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">linestyle</span></code>又は<code class="docutils literal notranslate"><span class="pre">style</span></code>：線のスタイル（リストにして列の順番で指定する;<code class="docutils literal notranslate"><span class="pre">-``--``-.``:</span></code>）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linestyle</span></code>又は<code class="docutils literal notranslate"><span class="pre">style</span></code>：線のスタイル（リストにして列の順番で指定する;<code class="docutils literal notranslate"><span class="pre">-</span></code>，<code class="docutils literal notranslate"><span class="pre">--</span></code>，<code class="docutils literal notranslate"><span class="pre">-.</span></code>，<code class="docutils literal notranslate"><span class="pre">:</span></code>）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">linewidth</span></code> or <code class="docutils literal notranslate"><span class="pre">lw</span></code>：線の幅</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>：色（リストにして列の順番で指定する; <a class="reference external" href="https://matplotlib.org/3.1.0/gallery/color/named_colors.html">参照サイト</a>）</p>
 <ul>
@@ -1982,7 +1982,7 @@ Name: X, dtype: int64
 <li><p><code class="docutils literal notranslate"><span class="pre">ymax</span></code>：<code class="docutils literal notranslate"><span class="pre">axvline</span></code>の縦軸における最大値（<code class="docutils literal notranslate"><span class="pre">0</span></code>~<code class="docutils literal notranslate"><span class="pre">1</span></code>の値; デフォルト<code class="docutils literal notranslate"><span class="pre">1</span></code>）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">xmin</span></code>：<code class="docutils literal notranslate"><span class="pre">axhline</span></code>の横軸における最小値（<code class="docutils literal notranslate"><span class="pre">0</span></code>~<code class="docutils literal notranslate"><span class="pre">1</span></code>の値; デフォルト<code class="docutils literal notranslate"><span class="pre">0</span></code>）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">xmax</span></code>：<code class="docutils literal notranslate"><span class="pre">axhline</span></code>の横軸における最大値（<code class="docutils literal notranslate"><span class="pre">0</span></code>~<code class="docutils literal notranslate"><span class="pre">1</span></code>の値; デフォルト<code class="docutils literal notranslate"><span class="pre">1</span></code>）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">linestyle</span></code>：線のスタイル（リストにして列の順番で指定する;<code class="docutils literal notranslate"><span class="pre">-``--``-.``:</span></code>）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linestyle</span></code>：線のスタイル（リストにして列の順番で指定する;<code class="docutils literal notranslate"><span class="pre">-</span></code> <code class="docutils literal notranslate"><span class="pre">--</span></code> <code class="docutils literal notranslate"><span class="pre">-.</span></code> <code class="docutils literal notranslate"><span class="pre">:</span></code>）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">linewidth</span></code> or <code class="docutils literal notranslate"><span class="pre">lw</span></code>：線の幅</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>：色（リストにして列の順番で指定する; <a class="reference external" href="https://matplotlib.org/3.1.0/gallery/color/named_colors.html">参照サイト</a>）</p>
 <ul>
