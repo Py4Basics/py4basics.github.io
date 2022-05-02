@@ -671,7 +671,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11c028460&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1131f1490&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_11_1.png" src="_images/1_Basics_VI_11_1.png" />
@@ -743,12 +743,15 @@ in English or the language of your choice.
 <span class="sd">        h：最大値（highest value）</span>
 <span class="sd">        n：作成する数値の数を指定する（正の整数型，number of values）</span>
 <span class="sd">    戻り値</span>
-<span class="sd">        n+1個の要素から構成されるリスト&quot;&quot;&quot;</span>
+<span class="sd">        n個の要素から構成されるリスト&quot;&quot;&quot;</span>
     
     <span class="c1">#1</span>
     <span class="k">if</span> <span class="p">(</span> <span class="n">n</span><span class="o">&lt;=</span><span class="mi">1</span> <span class="p">)</span> <span class="ow">or</span> <span class="p">(</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n には2以上の整数型を使う必要があります。n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">となっています。&quot;</span><span class="p">)</span>
-    <span class="c1">#2    </span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;引数 n には2以上の整数型を使う必要があります。n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">となっています。&quot;</span><span class="p">)</span>
+    <span class="c1">#2</span>
+    <span class="k">elif</span> <span class="n">l</span><span class="o">&gt;=</span><span class="n">h</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;引数 l と h の値では l&gt;h もしくは l=h となります。l&lt;h となるように値を設定し直してください。&quot;</span><span class="p">)</span>
+    <span class="c1">#3    </span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">l</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="n">l</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
 </pre></div>
@@ -764,7 +767,12 @@ in English or the language of your choice.
 <li><p><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>関数は，第１引数である<code class="docutils literal notranslate"><span class="pre">n</span></code>が，第２引数である<code class="docutils literal notranslate"><span class="pre">int</span></code>（即ち，整数型）である場合に<code class="docutils literal notranslate"><span class="pre">True</span></code>を返し，他のデータ型であれば<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す。しかし，<code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>関数の前に<code class="docutils literal notranslate"><span class="pre">not</span></code>があり，返り値は反転されるため，<code class="docutils literal notranslate"><span class="pre">n</span></code>が整数型以外であれば<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す。</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>の<code class="docutils literal notranslate"><span class="pre">else</span></code>ブロックは，<code class="docutils literal notranslate"><span class="pre">#1</span></code>の条件が満たされない場合にのみ，上で使った内包表記の結果が返される。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>の<code class="docutils literal notranslate"><span class="pre">elif</span></code>ブロックは，次の条件が満たされた場合に，その下の行のエラーメッセージを表示する。</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">l&gt;h</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">l=h</span></code>の場合に<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>の<code class="docutils literal notranslate"><span class="pre">else</span></code>ブロックは，<code class="docutils literal notranslate"><span class="pre">#1</span></code>の条件が満たされない場合にのみ，上で使った内包表記の結果が返される。</p></li>
 </ul>
 </div>
 <p>以前も説明したが，引数などを確認したい場合は次のコードで調べることができるので覚えておこう。</p>
@@ -783,7 +791,7 @@ xvalues(l, h, n)
         h：最大値（highest value）
         n：作成する数値の数を指定する（正の整数型，number of values）
     戻り値
-        n+1個の要素から構成されるリスト
+        n個の要素から構成されるリスト
 </pre></div>
 </div>
 </div>
@@ -843,7 +851,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11c135c10&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x113302c40&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_33_1.png" src="_images/1_Basics_VI_33_1.png" />
@@ -860,7 +868,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11c1b6310&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11337b700&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_35_1.png" src="_images/1_Basics_VI_35_1.png" />
@@ -1225,7 +1233,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1]
 </pre></div>
 </div>
 </div>
@@ -1396,7 +1404,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.35
 </pre></div>
 </div>
 </div>
@@ -1409,7 +1417,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8944271909999157
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.341640786499874
 </pre></div>
 </div>
 </div>
@@ -1443,7 +1451,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8944271909999157
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.341640786499874
 </pre></div>
 </div>
 </div>
@@ -1475,7 +1483,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8944271909999157
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.44721359549995837
 </pre></div>
 </div>
 </div>
@@ -1489,36 +1497,36 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.8944271909999157,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.8944271909999157,
+ -0.44721359549995787,
+ 0.8944271909999157,
+ -0.8944271909999157,
+ -0.8944271909999157,
+ 0.8944271909999157,
  -1.341640786499874,
- 0.0,
- 1.341640786499874,
- -2.6832815729997477,
- -0.8944271909999157,
- 0.0,
- 0.44721359549995837,
  1.341640786499874,
  0.0,
- 1.7888543819998315,
- 0.0,
- -0.44721359549995787,
- 0.44721359549995837,
- 1.341640786499874,
- 1.7888543819998315,
- 1.7888543819998315,
- 0.44721359549995837,
- 0.0,
- -1.788854381999832,
- -0.8944271909999157,
- 0.44721359549995837,
- -0.44721359549995787,
- 1.7888543819998315,
+ -1.341640786499874,
  -0.8944271909999157,
  -0.44721359549995787,
  -0.8944271909999157,
+ 1.7888543819998315,
+ -0.44721359549995787,
+ 0.0,
+ 0.44721359549995837,
+ 0.44721359549995837,
+ 0.44721359549995837,
  -1.341640786499874,
  -2.23606797749979,
- -0.8944271909999157]
+ 0.44721359549995837,
+ 0.44721359549995837,
+ 0.0,
+ 0.0,
+ 1.341640786499874,
+ -1.788854381999832,
+ 0.44721359549995837,
+ -0.8944271909999157,
+ 0.8944271909999157]
 </pre></div>
 </div>
 </div>
@@ -1695,11 +1703,11 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：20
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：17
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_132_1.png" src="_images/1_Basics_VI_132_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：31
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：28
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_132_3.png" src="_images/1_Basics_VI_132_3.png" />
@@ -1734,7 +1742,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：110
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：111
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_134_1.png" src="_images/1_Basics_VI_134_1.png" />
