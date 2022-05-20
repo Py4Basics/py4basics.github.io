@@ -722,11 +722,11 @@ in English or the language of your choice.
 <li><p>第１引数：最小値（整数型）</p></li>
 <li><p>第２引数：最大値（整数型）</p></li>
 </ul>
-<p>次のコードは<span class="math notranslate nohighlight">\([1,10]\)</span>の間の整数を返す（<code class="docutils literal notranslate"><span class="pre">1</span></code>と<code class="docutils literal notranslate"><span class="pre">10</span></code>は戻り値に含まれる）。</p>
+<p>次のコードは<span class="math notranslate nohighlight">\([1,10]\)</span>の間の整数を返す。<code class="docutils literal notranslate"><span class="pre">1</span></code>と<code class="docutils literal notranslate"><span class="pre">10</span></code>は戻り値に含まれることに注意しよう。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>次のコードは，サイコロの目（1~6）の１つを返す。</p>
+<p>では実際にコードを実行してみよう。次のコードはサイコロの目（1~6）を１つを返す。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
@@ -734,7 +734,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
@@ -747,18 +747,19 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 4, 1, 3, 3, 5, 2, 1, 1, 6]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 3, 5, 5, 5, 5, 3, 1, 6, 4]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>内包表記に<code class="docutils literal notranslate"><span class="pre">_</span></code>を使っている。<code class="docutils literal notranslate"><span class="pre">i</span></code>や<code class="docutils literal notranslate"><span class="pre">j</span></code>を使っても良いが，回数を数える以外に役目はない。その様な場合に良く使われるのが<code class="docutils literal notranslate"><span class="pre">_</span></code>である。<code class="docutils literal notranslate"><span class="pre">for</span></code>ループでも同じことが言える。次のコードが例として挙げられる。</p>
+<p>内包表記に<code class="docutils literal notranslate"><span class="pre">_</span></code>（アンダースコア）を使っている。<code class="docutils literal notranslate"><span class="pre">i</span></code>や<code class="docutils literal notranslate"><span class="pre">j</span></code>を使っても良いが，回数を数える以外に役目はない。その様な場合に良く使われるのが<code class="docutils literal notranslate"><span class="pre">_</span></code>である。<code class="docutils literal notranslate"><span class="pre">for</span></code>ループでも同じことが言える。次のコードが例として挙げられる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>２行目に<code class="docutils literal notranslate"><span class="pre">_</span></code>は入っていないので，ループの回数を数える以外の役割はない。</p>
 </div>
 <p>次に，<code class="docutils literal notranslate"><span class="pre">gauss()</span></code>を紹介する。この関数は，正規分布から生成されたランダム変数を１つ返す。引数は次の様になっている。</p>
 <ul class="simple">
@@ -778,7 +779,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.680445118281
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.664256200294528
 </pre></div>
 </div>
 </div>
@@ -791,16 +792,16 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.7608953262084198,
- -0.5857033152208612,
- -1.2571240319295547,
- 0.5947698763345877,
- -0.765150879727373,
- 1.6497402080566934,
- 0.0002734880189436603,
- 1.306595071416083,
- 0.0056327096331050715,
- -0.5432816410744414]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.4520675952132097,
+ -1.7151158847891055,
+ 1.110617587752809,
+ -0.15595819387417692,
+ 2.008415167467744,
+ -0.674658479779637,
+ 0.24209736462504836,
+ -0.1278227625706953,
+ -0.061647972671744614,
+ -0.6955721985153688]
 </pre></div>
 </div>
 </div>
@@ -808,7 +809,12 @@ in English or the language of your choice.
 </div>
 <div class="section" id="see">
 <h3><code class="docutils literal notranslate"><span class="pre">see</span></code>モジュール<a class="headerlink" href="#see" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference internal" href="1_Basics_III.html#object"><span class="std std-ref">オブジェクトと属性</span></a>の節で属性を確認する<code class="docutils literal notranslate"><span class="pre">dir()</span></code>関数について説明した。<code class="docutils literal notranslate"><span class="pre">dir()</span></code>は組み込み関数であるため，パッケージやモジュールをインポートしなくても使えるので便利である。しかし通常使う必要がないダンダー<code class="docutils literal notranslate"><span class="pre">__</span></code>が付いている属性（例えば，<code class="docutils literal notranslate"><span class="pre">__init__</span></code>）まで表示される。それらを省いて，属性のリストを見やすく表示する<code class="docutils literal notranslate"><span class="pre">see</span></code>モジュールを紹介する。使い方は簡単で，まず次のコードでインポートする。</p>
+<p><a class="reference internal" href="1_Basics_III.html#object"><span class="std std-ref">オブジェクトと属性</span></a>の節で属性を確認する<code class="docutils literal notranslate"><span class="pre">dir()</span></code>関数について説明した。<code class="docutils literal notranslate"><span class="pre">dir()</span></code>は組み込み関数であるため，パッケージやモジュールをインポートしなくても使えるので便利である。しかし通常使う必要がない<code class="docutils literal notranslate"><span class="pre">__</span></code>（<code class="docutils literal notranslate"><span class="pre">_</span></code>が２つ並んでいる）が付いている属性（例えば，<code class="docutils literal notranslate"><span class="pre">.__init__</span></code>）まで表示されてしまう。それらを省いて，属性のリストを見やすく表示するのが<code class="docutils literal notranslate"><span class="pre">see</span></code>モジュールである。</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><code class="docutils literal notranslate"><span class="pre">_</span></code>はunderscoreと読む。<code class="docutils literal notranslate"><span class="pre">_</span></code>が2つ並んだ<code class="docutils literal notranslate"><span class="pre">__</span></code>はdouble underscoresだが，略してdunder（ダンダー）と呼ばれる。また，<code class="docutils literal notranslate"><span class="pre">.__init__</span></code>のような属性は特殊属性と呼ばれるが，ダンダー属性と呼ぶこともある。</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">see</span></code>モジュールの使い方は簡単で，まず次のコードでインポートする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">see</span> <span class="kn">import</span> <span class="n">see</span>
@@ -939,6 +945,14 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ここでは<code class="docutils literal notranslate"><span class="pre">see</span></code>関数を直接インポートして使ったが，次のようにインポートすることも可能である。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">see</span>
+</pre></div>
+</div>
+<p>上の例を使うと，この場合は<code class="docutils literal notranslate"><span class="pre">see.see(x)</span></code>として<code class="docutils literal notranslate"><span class="pre">x</span></code>の属性を確認できる。</p>
+</div>
 </div>
 </div>
 <div class="section" id="id4">
@@ -965,7 +979,7 @@ in English or the language of your choice.
 <div><p>問題を解くためのものであって，明確に定義され，順序付けられた有限個の規則からなる集合</p>
 </div></blockquote>
 <p>平たく言えば，コンピューターが実行すると正しい結果が保証された計算手続である。更に，その計算手続きはどのプログラミング言語でも使える問題解決の明確な考え方である。</p>
-<p>例えば，カレーを作るとしよう。アルゴリズムはその場合のレシピである。ある程度料理ができる人であれば，書かれている手順に沿って作れば美味しいカレーが出来上がるレシピがアルゴリズムである。様々な問題には異なるアルゴリズムがある。また１つの問題には複数のアルゴリズムが存在する。カレーでも色々なレシピがあるのとおなじである。</p>
+<p>例えば，カレーを作るとしよう。アルゴリズムはその場合のレシピである。ある程度料理ができる人であれば，書かれている手順に沿って作れば美味しいカレーが出来上がるレシピがアルゴリズムである。様々な問題には異なるアルゴリズムがある。また１つの問題には複数のアルゴリズムが存在する。カレーでも色々なレシピがあるのと同じである。</p>
 <p>ではどのプログラミング言語にも使えるアルゴリズムをどのように表現するのだろう。１つの方法が<a class="reference external" href="https://www.google.co.jp/search?q=%E3%83%95%E3%83%AD%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC%E3%83%88%E3%80%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0">フローチャート</a>である。そしてもう１つが疑似コードである。以下では疑似コードに基づいてコードの書き方を検討する。</p>
 </div>
 <div class="section" id="id5">
@@ -1577,7 +1591,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(63, 37)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(55, 45)
 </pre></div>
 </div>
 </div>
@@ -1737,7 +1751,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(48, 52)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(46, 54)
 </pre></div>
 </div>
 </div>
@@ -1973,7 +1987,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.191909243448966
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.65612435404276
 </pre></div>
 </div>
 </div>
