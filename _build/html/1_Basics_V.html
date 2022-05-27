@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>モジュールと疑似コード &#8212; 経済学のためのPython入門</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,12 +20,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,17 +30,21 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -73,7 +75,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,9 +98,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -94,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="この本を検索..." aria-label="この本を検索..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -247,96 +264,182 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="ナビゲーションを切り替え" aria-controls="site-navigation"
-                title="ナビゲーションを切り替え" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="このページをダウンロード"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/1_Basics_V.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="ソースファイルをダウンロード" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="PDFに印刷"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全画面モード"
-        title="全画面モード"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/1_Basics_V.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="発売 Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/1_Basics_V.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="発売 Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> 目次
+            <div class="navbar_extra_footer">
+            <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/1_Basics_V.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/1_Basics_V.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/1_Basics_V.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    モジュールとパッケージ
@@ -457,12 +560,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>モジュールと疑似コード</h1>
@@ -471,7 +573,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> 目次 </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -599,28 +701,29 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>モジュールと疑似コード<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id2">
-<h2>モジュールとパッケージ<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>説明<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>モジュールと疑似コード<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>モジュールとパッケージ<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>説明<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p>Pythonには組み込み関数が多く用意されているが，Jupyter Notebookで<code class="docutils literal notranslate"><span class="pre">Python</span></code>のセッションを開始しても全ての関数が使える状態になっていない。使えるようにするためには，モジュール（modules）やパッケージ（package）と呼ばれるものを読み込む必要がある。２つの違いを簡単にいうと次のようになる。</p>
 <ul class="simple">
 <li><p>モジュール（module）は<strong>１つ</strong>のファイル（拡張子が<code class="docutils literal notranslate"><span class="pre">.py</span></code>）にまとめられた関数群であり，</p></li>
 <li><p>パッケージは（package）<strong>複数</strong>つのファイル（拡張子が<code class="docutils literal notranslate"><span class="pre">.py</span></code>）で構成されている（フォルダーにまとめられている）</p></li>
 </ul>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div name="html-admonition">
 Do you want to read in a differnt language? Start
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
 in English or the language of your choice.
 </div>
-</div>
+</aside>
 <p>従って，モジュール全体を読み込んだり，あるパッケージの１つのモジュールだけを読み込むということも可能である。授業では，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>，<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>，<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>を使うが，ここでは例として数学用の<code class="docutils literal notranslate"><span class="pre">math</span></code>モジュール，ランダム変数用の<code class="docutils literal notranslate"><span class="pre">random</span></code>モジュール，オブジェクトの属性を表示する<code class="docutils literal notranslate"><span class="pre">see</span></code>モジュールを取り上げる。</p>
 <p>含まれる関数を使うためには<code class="docutils literal notranslate"><span class="pre">import</span></code>を使って読み込む必要がある。モジュールの全てを読み込むとモジュール内の全ての関数が使用可能となる。</p>
 <div class="admonition note">
@@ -636,9 +739,9 @@ in English or the language of your choice.
 </div>
 <p>ここで<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>はパッケージとサブパッケージのフォルダーに必ず必要なファイルであり，空の場合もあれば関数が含まれる場合もある。</p>
 </div>
-</div>
-<div class="section" id="math">
-<span id="sec-v-solow"></span><h3><code class="docutils literal notranslate"><span class="pre">math</span></code>モジュール<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="math">
+<span id="sec-v-solow"></span><h3><code class="docutils literal notranslate"><span class="pre">math</span></code>モジュール<a class="headerlink" href="#math" title="Permalink to this headline">#</a></h3>
 <p>名前が示すように数学に関する関数がまとめられているモジュールとなる（<a class="reference external" href="https://docs.python.org/ja/3/library/math.html">詳細はこのリンクを参照</a>）。<code class="docutils literal notranslate"><span class="pre">math</span></code>を次のコードで読み込むことができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -703,9 +806,9 @@ in English or the language of your choice.
 </div>
 </div>
 <p>ただ、この場合は他のモジュールやパッケージ、もしくは自分が定義した関数をバッティングしないように注意する必要がある。</p>
-</div>
-<div class="section" id="random">
-<h3><code class="docutils literal notranslate"><span class="pre">random</span></code>モジュール<a class="headerlink" href="#random" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="random">
+<h3><code class="docutils literal notranslate"><span class="pre">random</span></code>モジュール<a class="headerlink" href="#random" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">random</span></code>モジュールを使うことにより乱数を発生させることができる（<a class="reference external" href="https://docs.python.org/ja/3/library/random.html">詳細はこのリンクを参照</a>）。まず<code class="docutils literal notranslate"><span class="pre">random</span></code>をインポートしよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -719,11 +822,11 @@ in English or the language of your choice.
 <li><p>第１引数：最小値（整数型）</p></li>
 <li><p>第２引数：最大値（整数型）</p></li>
 </ul>
-<p>次のコードは<span class="math notranslate nohighlight">\([1,10]\)</span>の間の整数を返す（<code class="docutils literal notranslate"><span class="pre">1</span></code>と<code class="docutils literal notranslate"><span class="pre">10</span></code>は戻り値に含まれる）。</p>
+<p>次のコードは<span class="math notranslate nohighlight">\([1,10]\)</span>の間の整数を返す。<code class="docutils literal notranslate"><span class="pre">1</span></code>と<code class="docutils literal notranslate"><span class="pre">10</span></code>は戻り値に含まれることに注意しよう。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>次のコードは，サイコロの目（1~6）の１つを返す。</p>
+<p>では実際にコードを実行してみよう。次のコードはサイコロの目（1~6）を１つを返す。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
@@ -731,7 +834,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -744,18 +847,19 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 5, 4, 5, 6, 4, 3, 5, 5, 2]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 6, 3, 4, 5, 3, 2, 2, 6]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>内包表記に<code class="docutils literal notranslate"><span class="pre">_</span></code>を使っている。<code class="docutils literal notranslate"><span class="pre">i</span></code>や<code class="docutils literal notranslate"><span class="pre">j</span></code>を使っても良いが，回数を数える以外に役目はない。その様な場合に良く使われるのが<code class="docutils literal notranslate"><span class="pre">_</span></code>である。<code class="docutils literal notranslate"><span class="pre">for</span></code>ループでも同じことが言える。次のコードが例として挙げられる。</p>
+<p>内包表記に<code class="docutils literal notranslate"><span class="pre">_</span></code>（アンダースコア）を使っている。<code class="docutils literal notranslate"><span class="pre">i</span></code>や<code class="docutils literal notranslate"><span class="pre">j</span></code>を使っても良いが，回数を数える以外に役目はない。その様な場合に良く使われるのが<code class="docutils literal notranslate"><span class="pre">_</span></code>である。<code class="docutils literal notranslate"><span class="pre">for</span></code>ループでも同じことが言える。次のコードが例として挙げられる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>２行目に<code class="docutils literal notranslate"><span class="pre">_</span></code>は入っていないので，ループの回数を数える以外の役割はない。</p>
 </div>
 <p>次に，<code class="docutils literal notranslate"><span class="pre">gauss()</span></code>を紹介する。この関数は，正規分布から生成されたランダム変数を１つ返す。引数は次の様になっている。</p>
 <ul class="simple">
@@ -775,7 +879,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.57497224510547
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.912098184712713
 </pre></div>
 </div>
 </div>
@@ -788,24 +892,29 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.46248128006866795,
- 1.0748269404085045,
- -0.16967127875632176,
- 1.3252343271494234,
- 0.8077182751488317,
- 1.3947458905067716,
- 1.0354102228635655,
- 0.3628179523766903,
- 2.226136569241921,
- -1.4546398498909046]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.9635492451548949,
+ 0.02452408024492866,
+ -0.6563485786034139,
+ 1.0636959906650292,
+ 0.514341254177755,
+ -0.24591015767815716,
+ 0.6563603261434607,
+ 0.47741164716292905,
+ -1.0098393190051695,
+ -1.1961258527167815]
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="see">
+<h3><code class="docutils literal notranslate"><span class="pre">see</span></code>モジュール<a class="headerlink" href="#see" title="Permalink to this headline">#</a></h3>
+<p><a class="reference internal" href="1_Basics_III.html#object"><span class="std std-ref">オブジェクトと属性</span></a>の節で属性を確認する<code class="docutils literal notranslate"><span class="pre">dir()</span></code>関数について説明した。<code class="docutils literal notranslate"><span class="pre">dir()</span></code>は組み込み関数であるため，パッケージやモジュールをインポートしなくても使えるので便利である。しかし通常使う必要がない<code class="docutils literal notranslate"><span class="pre">__</span></code>（<code class="docutils literal notranslate"><span class="pre">_</span></code>が２つ並んでいる）が付いている属性（例えば，<code class="docutils literal notranslate"><span class="pre">.__init__</span></code>）まで表示されてしまう。それらを省いて，属性のリストを見やすく表示するのが<code class="docutils literal notranslate"><span class="pre">see</span></code>モジュールである。</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><code class="docutils literal notranslate"><span class="pre">_</span></code>はunderscoreと読む。<code class="docutils literal notranslate"><span class="pre">_</span></code>が2つ並んだ<code class="docutils literal notranslate"><span class="pre">__</span></code>はdouble underscoresだが，略してdunder（ダンダー）と呼ばれる。また，<code class="docutils literal notranslate"><span class="pre">.__init__</span></code>のような属性は特殊属性と呼ばれるが，ダンダー属性と呼ぶこともある。</p>
 </div>
-<div class="section" id="see">
-<h3><code class="docutils literal notranslate"><span class="pre">see</span></code>モジュール<a class="headerlink" href="#see" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference internal" href="1_Basics_III.html#object"><span class="std std-ref">オブジェクトと属性</span></a>の節で属性を確認する<code class="docutils literal notranslate"><span class="pre">dir()</span></code>関数について説明した。<code class="docutils literal notranslate"><span class="pre">dir()</span></code>は組み込み関数であるため，パッケージやモジュールをインポートしなくても使えるので便利である。しかし通常使う必要がないダンダー<code class="docutils literal notranslate"><span class="pre">__</span></code>が付いている属性（例えば，<code class="docutils literal notranslate"><span class="pre">__init__</span></code>）まで表示される。それらを省いて，属性のリストを見やすく表示する<code class="docutils literal notranslate"><span class="pre">see</span></code>モジュールを紹介する。使い方は簡単で，まず次のコードでインポートする。</p>
+<p><code class="docutils literal notranslate"><span class="pre">see</span></code>モジュールの使い方は簡単で，まず次のコードでインポートする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">see</span> <span class="kn">import</span> <span class="n">see</span>
@@ -936,10 +1045,18 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ここでは<code class="docutils literal notranslate"><span class="pre">see</span></code>関数を直接インポートして使ったが，次のようにインポートすることも可能である。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">see</span>
+</pre></div>
 </div>
+<p>上の例を使うと，この場合は<code class="docutils literal notranslate"><span class="pre">see.see(x)</span></code>として<code class="docutils literal notranslate"><span class="pre">x</span></code>の属性を確認できる。</p>
 </div>
-<div class="section" id="id4">
-<h2>アルゴリズム<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id4">
+<h2>アルゴリズム<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>コンピューターは<code class="docutils literal notranslate"><span class="pre">0</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>で書かれている機械語しか理解できないが，プログラマーにとって機械語は非常に難解である。つまりプログラマーとコンピューターは直接「会話」ができない。この問題を解決するために，プログラミング言語が開発され「通訳・翻訳」の役割を担っている。<code class="docutils literal notranslate"><span class="pre">Python</span></code>を使う場合は，<code class="docutils literal notranslate"><span class="pre">Python</span></code>コードを書き，それを<code class="docutils literal notranslate"><span class="pre">Python</span></code>が機械語に「通訳」し，コンピューターが命令を実行することになる。結果が表示されると，プログラマーは内容を確認し，コードを追加・修正などをおこない開発が進んでいく。Jupyter Notebookでコードを書く場合でも同じである。</p>
 <pre>
 +--------------+　　Pythonが「通訳」 　+-------+
@@ -962,11 +1079,11 @@ in English or the language of your choice.
 <div><p>問題を解くためのものであって，明確に定義され，順序付けられた有限個の規則からなる集合</p>
 </div></blockquote>
 <p>平たく言えば，コンピューターが実行すると正しい結果が保証された計算手続である。更に，その計算手続きはどのプログラミング言語でも使える問題解決の明確な考え方である。</p>
-<p>例えば，カレーを作るとしよう。アルゴリズムはその場合のレシピである。ある程度料理ができる人であれば，書かれている手順に沿って作れば美味しいカレーが出来上がるレシピがアルゴリズムである。様々な問題には異なるアルゴリズムがある。また１つの問題には複数のアルゴリズムが存在する。カレーでも色々なレシピがあるのとおなじである。</p>
+<p>例えば，カレーを作るとしよう。アルゴリズムはその場合のレシピである。ある程度料理ができる人であれば，書かれている手順に沿って作れば美味しいカレーが出来上がるレシピがアルゴリズムである。様々な問題には異なるアルゴリズムがある。また１つの問題には複数のアルゴリズムが存在する。カレーでも色々なレシピがあるのと同じである。</p>
 <p>ではどのプログラミング言語にも使えるアルゴリズムをどのように表現するのだろう。１つの方法が<a class="reference external" href="https://www.google.co.jp/search?q=%E3%83%95%E3%83%AD%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC%E3%83%88%E3%80%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0">フローチャート</a>である。そしてもう１つが疑似コードである。以下では疑似コードに基づいてコードの書き方を検討する。</p>
-</div>
-<div class="section" id="id5">
-<h2>疑似コード<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id5">
+<h2>疑似コード<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>疑似コードとは，自然言語（日本語や英語）で書かれたコードである。<code class="docutils literal notranslate"><span class="pre">Python</span></code>は実行できない箇条書きのような文章となっている。レポートを書く際に，まずアウトラインを考えて書き出す人もいると思うが，それをイメージすれば良いだろう。次の点が重要となる。</p>
 <ul class="simple">
 <li><p>明確さ</p></li>
@@ -992,8 +1109,8 @@ in English or the language of your choice.
 </li>
 </ul>
 <p>これら以外は，箇条書きスタイルとしよう。</p>
-<div class="section" id="fizzbuzz">
-<h3><code class="docutils literal notranslate"><span class="pre">FizzBuzz</span></code>問題<a class="headerlink" href="#fizzbuzz" title="Permalink to this headline">¶</a></h3>
+<section id="fizzbuzz">
+<h3><code class="docutils literal notranslate"><span class="pre">FizzBuzz</span></code>問題<a class="headerlink" href="#fizzbuzz" title="Permalink to this headline">#</a></h3>
 <p>まず例として有名な<code class="docutils literal notranslate"><span class="pre">FizzBuzz</span></code>問題を考えよう。</p>
 <blockquote>
 <div><p>1から100までの数字を表示する。ただし，</p>
@@ -1161,9 +1278,9 @@ Buzz
 <div><p>プログラミング言語の構文について特に注意を払わずに（エラーを心配せずに），コードの内容を計画・検討することを可能にする。</p>
 </div></blockquote>
 <p>この特性を活かして，コードの書き方を検討しようというのがここでの目的である。言い換えると，漠然とした曖昧な疑似コードを<strong>修正する過程</strong>を通して，アルゴリズムを<code class="docutils literal notranslate"><span class="pre">Python</span></code>コードに落とし込むことを考える。５つの例を使うが，疑似コードの修正プロセスがコードを書く上でのヒントになるのではないかと期待している。</p>
-</div>
-<div class="section" id="for">
-<h3>リストの合計（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）<a class="headerlink" href="#for" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="for">
+<h3>リストの合計（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）<a class="headerlink" href="#for" title="Permalink to this headline">#</a></h3>
 <p>ここでの目的：</p>
 <blockquote>
 <div><p>リスト（タプル）の要素の合計を返す関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うこと。</p>
@@ -1291,9 +1408,9 @@ Buzz
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="while">
-<h3>リストの合計（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループ）<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="while">
+<h3>リストの合計（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループ）<a class="headerlink" href="#while" title="Permalink to this headline">#</a></h3>
 <p>ここでの目的：</p>
 <blockquote>
 <div><p>リスト（タプル）の要素の合計を返す関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使うこと。</p>
@@ -1399,9 +1516,9 @@ Buzz
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id6">
-<h3>コイントス（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id6">
+<h3>コイントス（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>ここでの目的：</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">n</span></code>回コイントスし，表と裏の回数を表示する関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">random.randint()</span></code>と<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うこと。</p>
@@ -1574,14 +1691,14 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(49, 51)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(46, 54)
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id7">
-<h3>コイントス（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループ）<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id7">
+<h3>コイントス（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループ）<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>ここでの目的：</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">n</span></code>回コイントスし，表と裏の回数を表示する関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">random.randint()</span></code>と<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使うこと。</p>
@@ -1734,14 +1851,14 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(47, 53)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(50, 50)
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id8">
-<h3>リストの最大値<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id8">
+<h3>リストの最大値<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>ここでの目的：</p>
 <blockquote>
 <div><p>リスト（又はタプル）を引数とし，含まれる要素の中から最大値を返す関数を作成する。</p>
@@ -1970,7 +2087,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1208030919133742
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.99434191046804
 </pre></div>
 </div>
 </div>
@@ -1978,40 +2095,40 @@ Buzz
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>＜Ver. 2＞をコードで書くと次の様になる。上のコードと比べると実行時間が1000倍近く長くなる。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def search_max(l):
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_max</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
     
-    max_ = l[0]
+    <span class="n">max_</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     
-    # 最後の要素はカバーしていない
-    for idx, val in enumerate(l[:-1]):
+    <span class="c1"># 最後の要素はカバーしていない</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
         
-        temp = max_
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">max_</span>
         
 
-        for k in l[idx+1:]:
-            if val &lt;= k:
-                continue
-            else:
-                temp = val
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">l</span><span class="p">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">temp</span> <span class="o">=</span> <span class="n">val</span>
         
-        if temp &gt; max_:
-            max_ = temp
+        <span class="k">if</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="n">max_</span><span class="p">:</span>
+            <span class="n">max_</span> <span class="o">=</span> <span class="n">temp</span>
     
-    # 最後の要素について
-    if max_ &lt; l[-1]:
-        max_ = l[-1]
+    <span class="c1"># 最後の要素について</span>
+    <span class="k">if</span> <span class="n">max_</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">max_</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-    return max_```
+    <span class="k">return</span> <span class="n">max_</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="id9">
-<h3>最後に<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id9">
+<h3>最後に<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>コードを書くことに慣れてくると，簡単なコードに疑似コードの修正プロセスは必要なくなるだろう。しかし，その段階になればより複雑なコードを書くことになるはずだ。その時には疑似コードが役に立つのではないかと思われる。少し頭をひねるような問題であれば，疑似コードを試してみるのも一案である。</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2035,9 +2152,11 @@ Buzz
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="1_Basics_IV.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2053,24 +2172,28 @@ Buzz
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By 春山 鉄源  Tetsugen HARUYAMA<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      著者 春山 鉄源  Tetsugen HARUYAMA<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

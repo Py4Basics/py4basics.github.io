@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>基本データ型と変数 &#8212; 経済学のためのPython入門</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,12 +20,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,17 +30,21 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -73,7 +75,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,9 +98,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -94,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="この本を検索..." aria-label="この本を検索..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -247,96 +264,182 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="ナビゲーションを切り替え" aria-controls="site-navigation"
-                title="ナビゲーションを切り替え" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="このページをダウンロード"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/1_Basics_I.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="ソースファイルをダウンロード" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="PDFに印刷"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全画面モード"
-        title="全画面モード"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/1_Basics_I.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="発売 Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/1_Basics_I.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="発売 Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> 目次
+            <div class="navbar_extra_footer">
+            <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/1_Basics_I.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/1_Basics_I.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/1_Basics_I.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    最初の注意点
@@ -617,12 +720,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>基本データ型と変数</h1>
@@ -631,7 +733,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> 目次 </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -919,26 +1021,27 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>基本データ型と変数<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id2">
-<h2>最初の注意点<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>半角と全角<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>基本データ型と変数<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>最初の注意点<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>半角と全角<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p><strong>半角</strong>を基本としてコード（スペースも含めて）を書くこと。</p>
 </div></blockquote>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div name="html-admonition">
 Do you want to read in a differnt language? Start
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
 in English or the language of your choice.
 </div>
-</div>
+</aside>
 <p>次の２つケース以外で全角を使うとエラーが発生する。</p>
 <ul class="simple">
 <li><p>以下で説明する文字列型のデータ型の場合は全角を使っても構わない。</p></li>
@@ -961,25 +1064,25 @@ in English or the language of your choice.
 </div>
 </div>
 <p>「全角スペース忍者」には要注意！</p>
-</div>
-<div class="section" id="id4">
-<h3>左詰め<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>左詰め<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>ではインデントが重要な役割を果たします。原則，コード・セルの中で左詰めでコードを書くようにすること。一方で，以下で説明するようにインデントが必須な場合（例えば，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループや関数を定義する場合）もあり，その様な場合は<strong>半角スペース4つ</strong>を入れるのが慣例となっている。Jupyter Notebookでは<code class="docutils literal notranslate"><span class="pre">Tab</span></code>を押すことにより半角スペース4つが自動で挿入されるので覚えておこう。</p>
-</div>
-<div class="section" id="id5">
-<h3>括弧<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id5">
+<h3>括弧<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>コードでは括弧が多用されるが，次の呼称とする。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">()</span></code>：丸括弧（parentheses）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">[]</span></code>：角括弧（brackets）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{}</span></code>：波括弧（braces, curly braces, curly brackets）</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>２つのデータ型と算術演算<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id7">
-<h3>２つのデータ型<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id6">
+<h2>２つのデータ型と算術演算<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<section id="id7">
+<h3>２つのデータ型<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>には無数のデータ型があるが，まず基本となる2つを考える。</p>
 <ul class="simple">
 <li><p>整数型（<code class="docutils literal notranslate"><span class="pre">int</span></code>と表される; integerの略）</p></li>
@@ -1066,9 +1169,9 @@ in English or the language of your choice.
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="python">
-<h3>計算機としての<code class="docutils literal notranslate"><span class="pre">Python</span></code><a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="python">
+<h3>計算機としての<code class="docutils literal notranslate"><span class="pre">Python</span></code><a class="headerlink" href="#python" title="Permalink to this headline">#</a></h3>
 <p>基本的な算術演算子として以下を挙げることができる。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">+</span></code>（加算）</p></li>
@@ -1196,12 +1299,12 @@ in English or the language of your choice.
 </div>
 <p>ここで<code class="docutils literal notranslate"><span class="pre">==</span></code>は両辺が等しいことを確認するための演算子であり<code class="docutils literal notranslate"><span class="pre">True</span></code>を返すことになるが，詳細は後に説明するので両辺は等しいとだけ理解すれば良いだろう。<code class="docutils literal notranslate"><span class="pre">a,b&gt;0</span></code>の場合は問題なく理解できると思う。しかし，<code class="docutils literal notranslate"><span class="pre">a</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">b</span></code>もしくは両方が負の値を取るとエキゾチックな値になるので注意する必要がある。基本的に<code class="docutils literal notranslate"><span class="pre">//</span></code>は「床関数」と同義と考え，上の関係が満たされるように<code class="docutils literal notranslate"><span class="pre">%</span></code>の値が決まることになる。このサイトでは<code class="docutils literal notranslate"><span class="pre">a,b&gt;0</span></code>のみを考える。</p>
 </div>
-</div>
-</div>
-<div class="section" id="id8">
-<h2><code class="docutils literal notranslate"><span class="pre">=</span></code>による変数の割り当て<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id9">
-<h3><code class="docutils literal notranslate"><span class="pre">=</span></code>の役割<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id8">
+<h2><code class="docutils literal notranslate"><span class="pre">=</span></code>による変数の割り当て<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<section id="id9">
+<h3><code class="docutils literal notranslate"><span class="pre">=</span></code>の役割<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>数学では<code class="docutils literal notranslate"><span class="pre">=</span></code>は等号であり，両辺が等しいことを示すが，<code class="docutils literal notranslate"><span class="pre">Python</span></code>では別の意味で使われる。<strong>変数にデータを割り当てる</strong>場合にのみ使われる。即ち，「等号」ではなく「割り当て演算子」である。次の例では値<code class="docutils literal notranslate"><span class="pre">10</span></code>を変数<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1288,9 +1391,9 @@ in English or the language of your choice.
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">10</span></code>を考えてみよう。Pythonの<a class="reference external" href="https://docs.python.org/3/reference/simple_stmts.html">公式ドキュメント</a>では，このように<code class="docutils literal notranslate"><span class="pre">=</span></code>が使われるコードを assignment statement と呼んでおり，<a class="reference external" href="https://docs.python.org/ja/3/reference/simple_stmts.html">日本語版</a>は「代入文」と訳している。これに従い<code class="docutils literal notranslate"><span class="pre">=</span></code>は「代入演算子」と呼ばれる。しかし英語では assignment（割り当て）と substitution（代入）は異なる意味となり，その違いが参照記号と実態の関係を反映していると考えられる。このサイトでは，参照記号と実態の違いを強調するために「割り当てる（assign）」という表現を使っている。</p>
 </div>
-</div>
-<div class="section" id="id10">
-<h3>複数の変数の割り当て<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id10">
+<h3>複数の変数の割り当て<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">=</span></code>を使い１つの変数への割り当てを考えたが、同時に複数の変数への割り当ても可能である。次の例を考えよう。（<code class="docutils literal notranslate"><span class="pre">=</span></code>の右辺から読む！）</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1338,9 +1441,9 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id11">
-<h3>累算割り当て演算子<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id11">
+<h3>累算割り当て演算子<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>上で<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>が出てきたが、これを短縮して<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">1</span></code>と書くことができる。次のコードを考えようてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1400,9 +1503,9 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id12">
-<h3>予約語<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id12">
+<h3>予約語<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>変数に値を割り当てることができるが，２つ注意点がある。</p>
 <ol class="simple">
 <li><p>変数名をアルファベットで分かりやすい変数名にするのが可読性が高いコードを書くコツである。自分が書いたコードを数ヶ月後に読むと<code class="docutils literal notranslate"><span class="pre">x</span></code>や<code class="docutils literal notranslate"><span class="pre">y</span></code>が何の値を意味するのか分からない，という場合を避けるためである。</p></li>
@@ -1469,12 +1572,12 @@ in English or the language of your choice.
 <li><p>変数の頭文字は小文字とする</p></li>
 </ul>
 <p>というのが慣例（エラーにはならない）であり，大文字で始まる変数は通常<code class="docutils literal notranslate"><span class="pre">class</span></code>と呼ばれるオブジェクトに使う。</p>
-</div>
-</div>
-<div class="section" id="id13">
-<h2>文字列型<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id14">
-<h3>説明<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id13">
+<h2>文字列型<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
+<section id="id14">
+<h3>説明<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <p>３つ目の基本データ型として文字列型を説明する。文字列は</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1558,9 +1661,9 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id15">
-<h3><code class="docutils literal notranslate"><span class="pre">+</span></code>と<code class="docutils literal notranslate"><span class="pre">*</span></code><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id15">
+<h3><code class="docutils literal notranslate"><span class="pre">+</span></code>と<code class="docutils literal notranslate"><span class="pre">*</span></code><a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">+</span></code>は文字列型と他のデータ型とは一緒に使えないが，文字列同士であれば使うことができる。<code class="docutils literal notranslate"><span class="pre">+</span></code>は文字列を結合することになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1637,12 +1740,12 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id16">
-<h2>ブール型<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id17">
-<h3>説明<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id16">
+<h2>ブール型<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
+<section id="id17">
+<h3>説明<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
 <p>次にブール型（boolでありbooleanの略）と呼ばれるデータ型を考える。ブール型には次の２つの値しかない。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>（真）</p></li>
@@ -1674,9 +1777,9 @@ in English or the language of your choice.
 </div>
 </div>
 <p>２つの値しかないが活躍の幅は広く，至る所で使うことになる。特に，ある条件が満たされる場合（<code class="docutils literal notranslate"><span class="pre">True</span></code>）と満たされない場合（<code class="docutils literal notranslate"><span class="pre">False</span></code>）を使い分けることで，様々な計算が可能となる。この点を説明するためには，比較演算子を説明する必要がある。</p>
-</div>
-<div class="section" id="id18">
-<h3>比較演算<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id18">
+<h3>比較演算<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
 <p>次の演算子を使うことにより，変数の真偽を確認することができる。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">==</span></code>（等号）</p></li>
@@ -1766,9 +1869,9 @@ in English or the language of your choice.
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">=</span></code>が含まれる比較演算子は必ず２つの記号（<code class="docutils literal notranslate"><span class="pre">==</span></code>，<code class="docutils literal notranslate"><span class="pre">!=</span></code>，<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>，<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>）から構成されているので覚えておこう。</p>
 </div>
-</div>
-<div class="section" id="id19">
-<h3>ブール値（真偽値）<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id19">
+<h3>ブール値（真偽値）<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">10+5</span></code>は何？もちろん<code class="docutils literal notranslate"><span class="pre">15</span></code>である。では<code class="docutils literal notranslate"><span class="pre">10</span></code>は<code class="docutils literal notranslate"><span class="pre">True</span></code>と<code class="docutils literal notranslate"><span class="pre">False</span></code>のどっち？「えっ？どういうこと？」と考えるかもしれないが，答えは<code class="docutils literal notranslate"><span class="pre">True</span></code>である。「<code class="docutils literal notranslate"><span class="pre">Python</span></code>では全てがオブジェクトである」と言われるが（「オブジェクト」については後述する），全てのオブジェクトにはブール値がある。それを確かめる関数が<code class="docutils literal notranslate"><span class="pre">bool()</span></code>である。<code class="docutils literal notranslate"><span class="pre">10</span></code>のブール値を確認してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1860,9 +1963,9 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id20">
-<h3>ブール演算<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id20">
+<h3>ブール演算<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
 <p>関連する演算としてブール演算がある。次の演算子となる。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">not</span></code>：でない（反転もしくは否定）</p></li>
@@ -1878,8 +1981,8 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-<div class="section" id="not">
-<h4><code class="docutils literal notranslate"><span class="pre">not</span></code><a class="headerlink" href="#not" title="Permalink to this headline">¶</a></h4>
+<section id="not">
+<h4><code class="docutils literal notranslate"><span class="pre">not</span></code><a class="headerlink" href="#not" title="Permalink to this headline">#</a></h4>
 <p>まず<code class="docutils literal notranslate"><span class="pre">not</span></code>から考えよう。「否定」なので次の様な挙動となる。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>の前に置くと<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す。</p></li>
@@ -1934,9 +2037,9 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="and">
-<h4><code class="docutils literal notranslate"><span class="pre">and</span></code><a class="headerlink" href="#and" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="and">
+<h4><code class="docutils literal notranslate"><span class="pre">and</span></code><a class="headerlink" href="#and" title="Permalink to this headline">#</a></h4>
 <p>次に<code class="docutils literal notranslate"><span class="pre">and</span></code>を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1988,9 +2091,9 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="or">
-<h4><code class="docutils literal notranslate"><span class="pre">or</span></code><a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="or">
+<h4><code class="docutils literal notranslate"><span class="pre">or</span></code><a class="headerlink" href="#or" title="Permalink to this headline">#</a></h4>
 <p>簡単なので解説は不要であろう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2016,9 +2119,9 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="andor">
-<h4><code class="docutils literal notranslate"><span class="pre">and</span></code>と<code class="docutils literal notranslate"><span class="pre">or</span></code>は何を返しているのか<a class="headerlink" href="#andor" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="andor">
+<h4><code class="docutils literal notranslate"><span class="pre">and</span></code>と<code class="docutils literal notranslate"><span class="pre">or</span></code>は何を返しているのか<a class="headerlink" href="#andor" title="Permalink to this headline">#</a></h4>
 <p>上の例を見ると<code class="docutils literal notranslate"><span class="pre">and</span></code>と<code class="docutils literal notranslate"><span class="pre">or</span></code>は<code class="docutils literal notranslate"><span class="pre">True</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">False</span></code>のみを返しているような印象を持つかも知れないが，実はそうではない。次の条件に従って，<code class="docutils literal notranslate"><span class="pre">and</span></code>は左の変数もしくは右の変数を返している。<code class="docutils literal notranslate"><span class="pre">or</span></code>も同様である。</p>
 <table class="colwidths-auto table">
 <thead>
@@ -2061,10 +2164,10 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id21">
-<h3>ブール値と数値<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id21">
+<h3>ブール値と数値<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
 <p>全てのオブジェクトにはブール値があることを説明した。一方で，ブール値は次の数値と同値して扱われる。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>　→　<code class="docutils literal notranslate"><span class="pre">1</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></li>
@@ -2120,10 +2223,10 @@ in English or the language of your choice.
 </div>
 </div>
 <p>今の段階でこの用途は明確ではないと思うが，データを扱う際は非常に便利に感じることだろう。</p>
-</div>
-</div>
-<div class="section" id="id22">
-<h2>精度<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id22">
+<h2>精度<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h2>
 <p>「コンピューターは非常に正確だ」というイメージを持っていないだろうか（私がそうだった）。実は，全くその逆である。次の計算をしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2259,19 +2362,19 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id23">
-<h2>コンテナデータ型<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id23">
+<h2>コンテナデータ型<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h2>
 <p>上では基本となるデータ型を説明したが，そのような（それらだけではないが）データ型の集合となるデータ型も存在する。それがコンテナデータ型（Container Datatypes）と呼ばれるものであり，次の３種類について説明する</p>
 <ul class="simple">
 <li><p>リスト（<code class="docutils literal notranslate"><span class="pre">list</span></code>）</p></li>
 <li><p>タプル（<code class="docutils literal notranslate"><span class="pre">tuple</span></code>，「チュープル」とも呼ばれる）</p></li>
 <li><p>辞書（<code class="docutils literal notranslate"><span class="pre">dict</span></code>，dictionaryの略）</p></li>
 </ul>
-<div class="section" id="id24">
-<h3>リスト<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id25">
-<h4>説明<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<section id="id24">
+<h3>リスト<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
+<section id="id25">
+<h4>説明<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h4>
 <p>リストは最も基本となるコンテナデータ型であり，次の特徴を持っている。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[]</span></code>を使って作成する。</p></li>
@@ -2413,9 +2516,9 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id26">
-<h4><code class="docutils literal notranslate"><span class="pre">+</span></code>と<code class="docutils literal notranslate"><span class="pre">*</span></code><a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id26">
+<h4><code class="docutils literal notranslate"><span class="pre">+</span></code>と<code class="docutils literal notranslate"><span class="pre">*</span></code><a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h4>
 <p>リストにも<code class="docutils literal notranslate"><span class="pre">+</span></code>を使うことができる。文字列と同じように，複数のリストを結合することができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2454,12 +2557,12 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id27">
-<h3>タプル<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id28">
-<h4>説明<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="id27">
+<h3>タプル<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h3>
+<section id="id28">
+<h4>説明<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h4>
 <p>主な特徴：</p>
 <ul class="simple">
 <li><p>基本的には<code class="docutils literal notranslate"><span class="pre">()</span></code>を使って作成する。</p>
@@ -2582,9 +2685,9 @@ in English or the language of your choice.
 </div>
 </div>
 <p>ここで<code class="docutils literal notranslate"><span class="pre">['egg',</span> <span class="pre">100]</span></code>はリストである。</p>
-</div>
-<div class="section" id="id29">
-<h4><code class="docutils literal notranslate"><span class="pre">+</span></code>と<code class="docutils literal notranslate"><span class="pre">*</span></code><a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id29">
+<h4><code class="docutils literal notranslate"><span class="pre">+</span></code>と<code class="docutils literal notranslate"><span class="pre">*</span></code><a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h4>
 <p>リストと同じように，<code class="docutils literal notranslate"><span class="pre">+</span></code>は結合に使うことができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2611,12 +2714,12 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id30">
-<h3>辞書<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id31">
-<h4>説明<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="id30">
+<h3>辞書<a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h3>
+<section id="id31">
+<h4>説明<a class="headerlink" href="#id31" title="Permalink to this headline">#</a></h4>
 <p>主な特徴：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">{}</span></code>を使って作成する。</p></li>
@@ -2704,9 +2807,9 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id32">
-<h4>辞書の結合<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id32">
+<h4>辞書の結合<a class="headerlink" href="#id32" title="Permalink to this headline">#</a></h4>
 <p>リストとタプルの結合には<code class="docutils literal notranslate"><span class="pre">+</span></code>を使うことができたが，辞書では使えない。その代わりに，<code class="docutils literal notranslate"><span class="pre">Python</span></code>3.9以降であれば<code class="docutils literal notranslate"><span class="pre">|</span></code>（「パイプ」と読む）が使える。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2737,10 +2840,10 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id33">
-<h3>所属検査演算<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id33">
+<h3>所属検査演算<a class="headerlink" href="#id33" title="Permalink to this headline">#</a></h3>
 <p>次の演算子を使うと所属関係を確認することができる。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">in</span></code>：あるデータがコンテナデータの要素であれば<code class="docutils literal notranslate"><span class="pre">True</span></code>，そうでなければ<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す。</p></li>
@@ -2835,10 +2938,10 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id34">
-<h2>まとめ<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id34">
+<h2>まとめ<a class="headerlink" href="#id34" title="Permalink to this headline">#</a></h2>
 <p><strong>＜基本データ型＞</strong></p>
 <table class="colwidths-auto table">
 <thead>
@@ -3042,8 +3145,8 @@ in English or the language of your choice.
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -3067,9 +3170,11 @@ in English or the language of your choice.
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -3085,24 +3190,28 @@ in English or the language of your choice.
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By 春山 鉄源  Tetsugen HARUYAMA<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      著者 春山 鉄源  Tetsugen HARUYAMA<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

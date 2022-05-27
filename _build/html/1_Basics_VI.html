@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>図示とシミュレーション &#8212; 経済学のためのPython入門</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,12 +20,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,17 +30,21 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -73,7 +75,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,9 +98,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -94,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="この本を検索..." aria-label="この本を検索..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -247,96 +264,182 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="ナビゲーションを切り替え" aria-controls="site-navigation"
-                title="ナビゲーションを切り替え" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="このページをダウンロード"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/1_Basics_VI.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="ソースファイルをダウンロード" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="PDFに印刷"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全画面モード"
-        title="全画面モード"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/1_Basics_VI.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="発売 Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/1_Basics_VI.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="発売 Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> 目次
+            <div class="navbar_extra_footer">
+            <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/1_Basics_VI.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/1_Basics_VI.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/1_Basics_VI.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    ライン・プロット
@@ -467,12 +570,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>図示とシミュレーション</h1>
@@ -481,7 +583,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> 目次 </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -619,11 +721,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>図示とシミュレーション<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>図示とシミュレーション<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -634,19 +737,19 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>ここでの目的は２つある。第１に，<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>（「マットプロットリブ」と読む）はプロットのための代表的なパッケージであり，外部パッケージとしては<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>のみを使い（<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>や<code class="docutils literal notranslate"><span class="pre">Numpy</span></code>は使わない）データを図示（プロット）する方法を解説する。第２に，統計学の重要な概念をシミュレーションをおこない，データを可視化し理解を深めることである。</p>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div name="html-admonition">
 Do you want to read in a differnt language? Start
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
 in English or the language of your choice.
 </div>
-</div>
+</aside>
 <p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>は大きなパッケージであり，その中にある<code class="docutils literal notranslate"><span class="pre">pyplot</span></code>モジュールを使うことになる。慣例に沿って<code class="docutils literal notranslate"><span class="pre">plt</span></code>としてインポートしている。</p>
-<div class="section" id="id2">
-<h2>ライン・プロット<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>説明<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<section id="id2">
+<h2>ライン・プロット<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>説明<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p>次がプロットする際の構文である。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>plt.plot(＜x軸の値＞,＜y軸の値＞)
 </pre></div>
@@ -668,7 +771,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fecfaf6e280&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb928bcf070&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_11_1.png" src="_images/1_Basics_VI_11_1.png" />
@@ -682,12 +785,12 @@ in English or the language of your choice.
 <li><p>右端の「●」はの座標が<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y</span></code>の<code class="docutils literal notranslate"><span class="pre">2</span></code>番目の値である<code class="docutils literal notranslate"><span class="pre">x=3</span></code>と<code class="docutils literal notranslate"><span class="pre">y=20</span></code>となる。</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">plot()</span></code>はデフォルトでそれらの点を直線で結んでおり，ライン・プロットと呼ばれる。曲線を描くには，単に座標の点を増やすことによりスムーズな曲線を表示することが可能となる。言い換えると，短い直線を使うことにより曲線を描画することになる。</p>
-</div>
-<div class="section" id="id4">
-<h3>値の生成<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>値の生成<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>曲線を描画するためには座標の数を増やす必要がある。ここでは，そのためのコードを考える。</p>
-<div class="section" id="x">
-<h4><code class="docutils literal notranslate"><span class="pre">x</span></code>軸の値<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h4>
+<section id="x">
+<h4><code class="docutils literal notranslate"><span class="pre">x</span></code>軸の値<a class="headerlink" href="#x" title="Permalink to this headline">#</a></h4>
 <p>まず<code class="docutils literal notranslate"><span class="pre">x</span></code>軸の複数の値が要素となるリストを作成するが，次の変数を定義しよう。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">l</span></code>：最小値（lowest value）</p>
@@ -807,9 +910,9 @@ xvalues(l, h, n)
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="y">
-<h4><code class="docutils literal notranslate"><span class="pre">y</span></code>軸の値<a class="headerlink" href="#y" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="y">
+<h4><code class="docutils literal notranslate"><span class="pre">y</span></code>軸の値<a class="headerlink" href="#y" title="Permalink to this headline">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">y</span></code>軸の値は，描きたい関数に依存している。例えば，次の２次関数をプロットしたいとしよう。</p>
 <div class="math notranslate nohighlight">
 \[y=x^2\]</div>
@@ -836,10 +939,10 @@ xvalues(l, h, n)
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id5">
-<h3>曲線のプロット<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id5">
+<h3>曲線のプロット<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>上で作成した<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y</span></code>を使いプロットしよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -848,7 +951,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fecfb11fa90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb91866b160&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_33_1.png" src="_images/1_Basics_VI_33_1.png" />
@@ -865,7 +968,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fecfb15b610&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb93a2e95e0&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_35_1.png" src="_images/1_Basics_VI_35_1.png" />
@@ -881,9 +984,9 @@ xvalues(l, h, n)
 <li><p>最後の行を<code class="docutils literal notranslate"><span class="pre">_</span> <span class="pre">=</span> <span class="pre">plt.plot(x,y)</span></code>とする。これは，返されるオブジェクトを変数<code class="docutils literal notranslate"><span class="pre">_</span></code>に割り当てることにより表示を消している。もちろん<code class="docutils literal notranslate"><span class="pre">_</span></code>でなくても良いが，重要でないオブジェクトには<code class="docutils literal notranslate"><span class="pre">_</span></code>がよく使われる。</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="id6">
-<h3>重ねてプロット<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id6">
+<h3>重ねてプロット<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>２つの<code class="docutils literal notranslate"><span class="pre">y</span></code>の値を生成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -906,9 +1009,9 @@ xvalues(l, h, n)
 <img alt="_images/1_Basics_VI_41_0.png" src="_images/1_Basics_VI_41_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="plot">
-<h3><code class="docutils literal notranslate"><span class="pre">plot()</span></code>の基本的な引数<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plot">
+<h3><code class="docutils literal notranslate"><span class="pre">plot()</span></code>の基本的な引数<a class="headerlink" href="#plot" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">plot()</span></code>に引数を使うことによりデータの表示方法を指定できる。詳しくは<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">このリンク</a>を参照することにして，ここでは基本的な引数だけを紹介する。
 =* <code class="docutils literal notranslate"><span class="pre">linestyle</span></code>：線のスタイル（リストにして列の順番で指定する;<code class="docutils literal notranslate"><span class="pre">-</span></code>，<code class="docutils literal notranslate"><span class="pre">--</span></code>，<code class="docutils literal notranslate"><span class="pre">-.</span></code>，<code class="docutils literal notranslate"><span class="pre">:</span></code>などがある）</p>
 <ul class="simple">
@@ -978,9 +1081,9 @@ xvalues(l, h, n)
 <li><p><code class="docutils literal notranslate"><span class="pre">:ro</span></code>は<code class="docutils literal notranslate"><span class="pre">=</span></code>を使う引数の前に置く。</p></li>
 </ul>
 <p>詳細は<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html">参考サイト（英語）</a>を参照。</p>
-</div>
-<div class="section" id="id7">
-<h3>その他の「飾り付け」<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id7">
+<h3>その他の「飾り付け」<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>次の５つは<code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>の下に付け加えることによって表示できる。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">plt.title()</span></code>：タイトルを設定する。</p>
@@ -1033,10 +1136,10 @@ xvalues(l, h, n)
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id8">
-<h2>ヒストグラム<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id8">
+<h2>ヒストグラム<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <p>基本的には次の構文となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>plt.hist(＜データ＞)
 </pre></div>
@@ -1170,34 +1273,34 @@ xvalues(l, h, n)
 <img alt="_images/1_Basics_VI_64_0.png" src="_images/1_Basics_VI_64_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id9">
-<h2>大数の法則<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id10">
-<h3>大数の法則とは<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id9">
+<h2>大数の法則<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<section id="id10">
+<h3>大数の法則とは<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>母集団のパラメータを次の様に表記しよう。</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mu\)</span>：平均</p></li>
 </ul>
 <p>この母集団から標本<span class="math notranslate nohighlight">\(X_1,X_2\cdots X_n\)</span>を抽出し（<span class="math notranslate nohighlight">\(n\)</span>は標本の大きさ），その平均を<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>とする。</p>
-<div class="math notranslate nohighlight">
-\[
+<div class="math notranslate nohighlight" id="equation-eq-1-average">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-1-average" title="Permalink to this equation">#</a></span>\[
 \overline{X}_n=\frac{X_1+X_2+\cdots+X_n}{n}
 \]</div>
 <p>標本を取るごとに<span class="math notranslate nohighlight">\(X_i\)</span>，<span class="math notranslate nohighlight">\(i=1,2...n\)</span>の値は異なるため，<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>自体もランダム変数となる。ここでは<span class="math notranslate nohighlight">\(n\)</span>回の試行を考えているが，大数の法則は同じ試行を数多く繰り返した場合の結果に関する法則である。</p>
 <p><strong>＜大数の法則（Law of Large Numbers）＞</strong><br></p>
 <blockquote>
 <div><p>母集団の分布がどのようなものであれ（連続型，離散型），<span class="math notranslate nohighlight">\(\mu\)</span>が有限である限り，<span class="math notranslate nohighlight">\(n\)</span>が大きくなると<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>は<span class="math notranslate nohighlight">\(\mu\)</span>に近づいていく。</p>
-<div class="math notranslate nohighlight">
-\[\lim_{n\rightarrow\infty}\overline{X}_n\;\rightarrow\;\mu\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-1-lln">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-1-lln" title="Permalink to this equation">#</a></span>\[\lim_{n\rightarrow\infty}\overline{X}_n\;\rightarrow\;\mu\]</div>
 </div></blockquote>
-<p>実社会とどの様な関係があるのだろうか。ビジネスの中で直接関係するのは保険業だ。自動車事故を考えてみよう。個々人にしてみれば，交通事故が起こると大変だが，滅多に起こらない。一方，保険会社からすると，多くの個人・企業と契約しているため，交通事故は日常茶飯事となる。ここで，全ての顧客の事故の確率が同じであり，顧客数が十分に大きいとすると，顧客の中で交通事故に遭遇する<strong>割合</strong>は，個々の顧客の事故の確率に近づくことになる。これに基づいて保険料を決めてビジネスが成り立つことになる。もちろん，現実はこれより複雑だが，保険業の基本的なアイデアは大数の法則に基づいている。</p>
-</div>
-<div class="section" id="id11">
-<h3>コイントス<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
-<p>コインの表を<code class="docutils literal notranslate"><span class="pre">1</span></code>，裏を<code class="docutils literal notranslate"><span class="pre">0</span></code>とするコイントスを考えよう。<code class="docutils literal notranslate"><span class="pre">1</span></code>と<code class="docutils literal notranslate"><span class="pre">0</span></code>はそれぞれ確率<span class="math notranslate nohighlight">\(0.5\)</span>で発生するベルヌーイ分布に従うと仮定する。従って，以下が成り立つ。</p>
+<p>実社会とどの様な関係があるのだろうか。ビジネスの中で直接関係するのは保険業だ。自動車事故を考えてみよう。個々人にしてみれば，交通事故に遭うと大変だが，滅多に起こらない。一方，保険会社からすると，多くの個人・企業と契約しているため，交通事故は日常茶飯事となる。この例を考えるために，自動車免許を持っている人を母集団とし，その人数を<span class="math notranslate nohighlight">\(N\)</span>としよう。ここで<span class="math notranslate nohighlight">\(N\)</span>は非常に大きな数となる（日本の場合は約8,200万人）。また，１年間でドライバーが交通事故に遭遇する確率を<span class="math notranslate nohighlight">\(\mu\)</span>とし，全てのトライバーにとって<span class="math notranslate nohighlight">\(\mu\)</span>は同じと想定する。更に，トライバー<span class="math notranslate nohighlight">\(j\)</span>に事故が発生すると<span class="math notranslate nohighlight">\(X_j=1\)</span>，発生しない場合は<span class="math notranslate nohighlight">\(X_j=0\)</span>とすると，母集団での事故の平均発生回数は<span class="math notranslate nohighlight">\(\sum_{j=1}^NX_j/N=\mu\)</span>となる。<span class="math notranslate nohighlight">\(\mu\)</span>は母集団の中で事故に遭遇するトライバーの<strong>割合</strong>と等しいことになる。ここまでは母集団の話であり，次はある保険会社を考えよう。母集団の内，ドライバー<span class="math notranslate nohighlight">\(i=1,2,3,...n\)</span>が保険会社Aと自動車保険を契約したとする。<span class="math notranslate nohighlight">\(n\)</span>は母集団から「抽出」された顧客の総数となり，<span class="math notranslate nohighlight">\(n&lt;N\)</span>である。ここで，事故の平均発生回数は式<a class="reference internal" href="#equation-eq-1-average">(1)</a>と同じ<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>となり，<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>は事故に遭遇する顧客の<strong>割合</strong>と等しい。ここで重要な点は，<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>はランダム変数であり，必ずしも<span class="math notranslate nohighlight">\(\overline{X}_n=\mu\)</span>とはならない，ということである。例えば，<span class="math notranslate nohighlight">\(n=10\)</span>の場合を想像すると，直感的にも理解できるだろう。従って，母集団の<span class="math notranslate nohighlight">\(\mu\)</span>が既知だとしても，保険会社Aにとって事故に遭う顧客数は毎年変化する。その数の変化が大きいと，保険金の支払いの変動幅が大きくなり，ビジネスに支障をきたすことになるかも知れない。しかし，顧客数<span class="math notranslate nohighlight">\(n\)</span>が十分に大きいと，式<a class="reference internal" href="#equation-eq-1-lln">(2)</a>が成立する。即ち，事故に遭う顧客の割合<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>は，事故の確率<span class="math notranslate nohighlight">\(\mu\)</span>に近づくことになり，毎年の<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>の変化小さくなる。将来の<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>を予測しやすくなり，それに従って保険料を決めればビジネスが成り立つことになる。もちろん，現実はこれより複雑だが，保険業の基本的なアイデアは大数の法則に基づいている。</p>
+</section>
+<section id="id11">
+<h3>コイントス<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<p>この節と次の節の目的は，コイントスのシミュレーションを使い大数の法則を理解することである。コインの表を<code class="docutils literal notranslate"><span class="pre">1</span></code>，裏を<code class="docutils literal notranslate"><span class="pre">0</span></code>とするコイントスを考えよう。<code class="docutils literal notranslate"><span class="pre">1</span></code>と<code class="docutils literal notranslate"><span class="pre">0</span></code>はそれぞれ確率<span class="math notranslate nohighlight">\(0.5\)</span>で発生するベルヌーイ分布に従うと仮定する。従って，以下が成り立つ。</p>
 <ul class="simple">
-<li><p>平均：<span class="math notranslate nohighlight">\(\mu=0.5\)</span></p></li>
+<li><p>平均：<span class="math notranslate nohighlight">\(\mu=0.5\times 1 +0.5\times 0 = 0.5\)</span></p></li>
 </ul>
 <p>この様なランダム変数は既出の次の関数で表すことができる。</p>
 <div class="cell docutils container">
@@ -1207,7 +1310,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
 </div>
@@ -1230,7 +1333,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0]
 </pre></div>
 </div>
 </div>
@@ -1243,7 +1346,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
 </pre></div>
 </div>
 </div>
@@ -1257,7 +1360,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
 </pre></div>
 </div>
 </div>
@@ -1270,15 +1373,15 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.45
 </pre></div>
 </div>
 </div>
 </div>
 <p>この値は上のコードを実行する度に異なる値になる。理論的な平均<code class="docutils literal notranslate"><span class="pre">0.5</span></code>と同じ場合もあれば，そうでない場合もある。</p>
-</div>
-<div class="section" id="id12">
-<h3>シミュレーション<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id12">
+<h3>シミュレーション<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>上の説明では同時にトスするコインの数を<code class="docutils literal notranslate"><span class="pre">n=20</span></code>として計算したが，ここでは<code class="docutils literal notranslate"><span class="pre">n=1</span></code>から<code class="docutils literal notranslate"><span class="pre">n=200</span></code>までの値を使って平均を計算する。基本的には，上のコードを再利用して，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループとしてまとめることにする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1307,7 +1410,7 @@ xvalues(l, h, n)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">200</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">mean_list</span><span class="p">)</span>     <span class="c1">#1</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Average of Heads&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>  <span class="c1">#2</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Average No. of Heads&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>  <span class="c1">#2</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of Coins&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>  <span class="c1">#3</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>           <span class="c1">#4</span>
 <span class="k">pass</span>
@@ -1326,12 +1429,12 @@ xvalues(l, h, n)
 <li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：<code class="docutils literal notranslate"><span class="pre">plt.axhline()</span></code>は横線を引く関数。引数は<code class="docutils literal notranslate"><span class="pre">y</span></code>軸の値（<code class="docutils literal notranslate"><span class="pre">0.5</span></code>），色は赤を指定。</p></li>
 </ul>
 <p>この図から標本の大きさ（同時に投げるコインの数）である<code class="docutils literal notranslate"><span class="pre">n</span></code>が増えると，平均は理論値<code class="docutils literal notranslate"><span class="pre">0.5</span></code>に収束していることが確認できる。</p>
-</div>
-</div>
-<div class="section" id="id13">
-<h2>中心極限定理<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id14">
-<h3>中心極限定理とは<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id13">
+<h2>中心極限定理<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
+<section id="id14">
+<h3>中心極限定理とは<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <p>母集団（大きさが無限）のパラメータを次の様に表記しよう。</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mu\)</span>：平均</p></li>
@@ -1344,7 +1447,7 @@ xvalues(l, h, n)
 \]</div>
 <p>標本を取るごとに<span class="math notranslate nohighlight">\(X_i\)</span>，<span class="math notranslate nohighlight">\(i=1,2...n\)</span>の値は異なるため，<span class="math notranslate nohighlight">\(\overline{X}\)</span>自体もランダム変数となる。更に，標準化した平均を次の様に定義しよう。</p>
 <div class="math notranslate nohighlight" id="equation-eq-1-6-zn">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eq-1-6-zn" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-1-6-zn" title="Permalink to this equation">#</a></span>\[
 Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 \]</div>
 <p>ここで<span class="math notranslate nohighlight">\(Z_n\)</span>は平均<code class="docutils literal notranslate"><span class="pre">0</span></code>，分散<code class="docutils literal notranslate"><span class="pre">1</span></code>となるランダム変数である。これにより，<span class="math notranslate nohighlight">\(Z_n\)</span>の<strong>分布型は不明</strong>だが，少なくとも平均と分散の２つのパラメータに関する限り標準正規分布と共通点がある。</p>
@@ -1381,9 +1484,9 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 <li><p>コイントスのシミュレーションをおこない，そのヒストグラムをプロットする。</p></li>
 <li><p>コイントスのヒストグラムと標準正規分布を重ねて表示し，中心極限定理の成立を視覚的に確認する。</p></li>
 </ol>
-</div>
-<div class="section" id="id15">
-<h3>コイントス（再考）<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id15">
+<h3>コイントス（再考）<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <p>大数の法則を説明する際に説明したコイントスを再考しよう。表を<code class="docutils literal notranslate"><span class="pre">1</span></code>，裏を<code class="docutils literal notranslate"><span class="pre">0</span></code>とし，それぞれの確率は<span class="math notranslate nohighlight">\(p=0.5\)</span>とする。以下が成り立つ。</p>
 <ul class="simple">
 <li><p>平均：<span class="math notranslate nohighlight">\(p=0.5\)</span></p></li>
@@ -1401,12 +1504,12 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.45
 </pre></div>
 </div>
 </div>
 </div>
-<p>ここまでのコードを利用して，上の式<a class="reference internal" href="#equation-eq-1-6-zn">(1)</a>に従って，この平均を標準化した値を計算してみよう</p>
+<p>ここまでのコードを利用して，上の式<a class="reference internal" href="#equation-eq-1-6-zn">(3)</a>に従って，この平均を標準化した値を計算してみよう</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">heads</span><span class="o">/</span><span class="n">n</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">)</span>
@@ -1414,15 +1517,15 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8944271909999157
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.44721359549995787
 </pre></div>
 </div>
 </div>
 </div>
 <p>このような値を数多く計算して中心極限定理を考えていくことになる。</p>
-</div>
-<div class="section" id="id16">
-<h3>関数化<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id16">
+<h3>関数化<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <p>上では一回だけのシミュレーションをおこなった。以下では任意の回数のシミュレーションをおこなうために，上のコードを関数にまとめることにする。２つの関数に分けてコードを書くことにしよう。</p>
 <p>まず同時に投げるコインの数とその結果のコインの表の数を所与として，平均が標準化された値を計算する関数を作成する。</p>
 <div class="cell docutils container">
@@ -1448,7 +1551,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8944271909999157
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.44721359549995787
 </pre></div>
 </div>
 </div>
@@ -1494,44 +1597,44 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.8944271909999157,
- 0.0,
- 0.44721359549995837,
- 0.0,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.44721359549995837,
  -1.341640786499874,
- 1.7888543819998315,
+ 0.0,
  -0.8944271909999157,
+ 0.8944271909999157,
+ -2.23606797749979,
  -0.44721359549995787,
  0.8944271909999157,
- 0.0,
  0.8944271909999157,
+ 0.0,
+ -2.6832815729997477,
+ 0.0,
  -0.44721359549995787,
  0.0,
+ 1.341640786499874,
+ -0.44721359549995787,
+ -0.8944271909999157,
+ -0.8944271909999157,
  0.0,
+ -0.8944271909999157,
  -1.788854381999832,
- 0.44721359549995837,
- 0.0,
- -1.788854381999832,
- -0.44721359549995787,
  0.8944271909999157,
- -0.44721359549995787,
- -0.44721359549995787,
- -0.44721359549995787,
+ 1.7888543819998315,
  0.0,
- -0.44721359549995787,
- 0.44721359549995837,
+ -0.8944271909999157,
+ 0.0,
+ 1.341640786499874,
  0.8944271909999157,
- -1.341640786499874,
  0.44721359549995837,
- -1.341640786499874]
+ -0.44721359549995787]
 </pre></div>
 </div>
 </div>
 </div>
 <p>ランダム変数なので，実行する度に異なる値が並ぶ。また同じ値が複数回発生していることも確認できるだろう。</p>
-</div>
-<div class="section" id="id17">
-<h3>ヒストグラム<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id17">
+<h3>ヒストグラム<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
 <p>では実際にヒストグラムをプロットしてみよう。例として次の数値を使う。</p>
 <ul class="simple">
 <li><p>同時に投げるコインの数（標本の大きさ）：<code class="docutils literal notranslate"><span class="pre">n=1</span></code></p></li>
@@ -1597,9 +1700,9 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="id18">
-<h3>ヒストグラムの関数化<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id18">
+<h3>ヒストグラムの関数化<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
 <p>ヒストグラムを描くことができたが，<code class="docutils literal notranslate"><span class="pre">n</span></code>と<code class="docutils literal notranslate"><span class="pre">N</span></code>が異なる値を取る度に上のコードをコピペして使うの面倒なので，関数としてまとめよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1631,9 +1734,9 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：関数名を<code class="docutils literal notranslate"><span class="pre">draw_hist</span></code>として，引数は<code class="docutils literal notranslate"><span class="pre">n</span></code>と<code class="docutils literal notranslate"><span class="pre">N</span></code>。ただし，<code class="docutils literal notranslate"><span class="pre">N</span></code>のデフォルトの値を<code class="docutils literal notranslate"><span class="pre">10_000</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>とは，文字通りこの行の「上で作成された図を表示する」ことを意味している。即ち，「図の表示」を返している。</p></li>
 </ul>
-</div>
-<div class="section" id="id19">
-<h3>シミュレーション<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id19">
+<h3>シミュレーション<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
 <p>これでシミュレーションの準備は整った。<code class="docutils literal notranslate"><span class="pre">n</span></code>（と<code class="docutils literal notranslate"><span class="pre">N</span></code>）の数値を変えてプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1669,10 +1772,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：3
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<img alt="_images/1_Basics_VI_128_4.png" src="_images/1_Basics_VI_128_4.png" />
+<img alt="_images/1_Basics_VI_128_3.png" src="_images/1_Basics_VI_128_3.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が大きくなると，大数の法則によって左右対称の分布となっている。しかし，依然として標準正規分布とは異なっている。</p>
@@ -1688,13 +1788,10 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_130_1.png" src="_images/1_Basics_VI_130_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：13
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<img alt="_images/1_Basics_VI_130_4.png" src="_images/1_Basics_VI_130_4.png" />
+<img alt="_images/1_Basics_VI_130_3.png" src="_images/1_Basics_VI_130_3.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が小さいとランダムな要素が際立ち明確ではないが，<code class="docutils literal notranslate"><span class="pre">n</span></code>増加すると標準正規分布に近づいていることが分かる。</p>
@@ -1706,7 +1803,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：19
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：17
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_132_1.png" src="_images/1_Basics_VI_132_1.png" />
@@ -1745,15 +1842,15 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：111
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：106
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_134_1.png" src="_images/1_Basics_VI_134_1.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1777,9 +1874,11 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="1_Basics_V.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1795,24 +1894,28 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By 春山 鉄源  Tetsugen HARUYAMA<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      著者 春山 鉄源  Tetsugen HARUYAMA<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
