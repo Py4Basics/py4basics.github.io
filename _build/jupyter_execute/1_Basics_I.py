@@ -269,7 +269,7 @@ x
 # このように`=`を使う度に，右辺のデータが左辺の参照記号に割り当てられたり，割り当てが変更されたりすることになる。「品物と参照記号の関係」は今の段階ではそれ程重要ではないが，先に進むにつれて重要性が増してくるので，今のうちにこのようなイメージを持つと良いだろう。
 # 
 # ```{note}
-# `x = 10`を考えてみよう。Pythonの[公式ドキュメント](https://docs.python.org/3/reference/simple_stmts.html)では，このように`=`が使われるコードを assignment statement と呼んでおり，[日本語版](https://docs.python.org/ja/3/reference/simple_stmts.html)は「代入文」と訳している。これに従い`=`は「代入演算子」と呼ばれる。しかし英語では assignment（割り当て）と substitution（代入）は異なる意味となり，その違いが参照記号と実態の関係を反映していると考えられる。このサイトでは，参照記号と実態の違いを強調するために「割り当てる（assign）」という表現を使っている。
+# `x = 10`を考えてみよう。Pythonの[公式ドキュメント](https://docs.python.org/3/reference/simple_stmts.html)では，このように`=`が使われるコードを assignment statement と呼んでいる。一方，[日本語版](https://docs.python.org/ja/3/reference/simple_stmts.html)は assignment statement を「代入文」と訳し，`=`を「代入演算子」と呼んでいる。しかし英語では assignment（割り当て）と substitution（代入）は異なる意味を持ち，前者が参照記号と実態の関係をより正確に反映していると考えられる。このサイトでは参照記号と実態の違いを強調するために，「代入」ではなく「割り当てる（assign）」という表現を使っている。
 # ```
 
 # ### 複数の変数の割り当て

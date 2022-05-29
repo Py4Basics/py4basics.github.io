@@ -771,7 +771,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb928bcf070&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8fca537070&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_11_1.png" src="_images/1_Basics_VI_11_1.png" />
@@ -951,7 +951,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb91866b160&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8fca608c40&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_33_1.png" src="_images/1_Basics_VI_33_1.png" />
@@ -968,7 +968,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb93a2e95e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8fca67f820&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_35_1.png" src="_images/1_Basics_VI_35_1.png" />
@@ -1285,7 +1285,7 @@ xvalues(l, h, n)
 <p>この母集団から標本<span class="math notranslate nohighlight">\(X_1,X_2\cdots X_n\)</span>を抽出し（<span class="math notranslate nohighlight">\(n\)</span>は標本の大きさ），その平均を<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>とする。</p>
 <div class="math notranslate nohighlight" id="equation-eq-1-average">
 <span class="eqno">(1)<a class="headerlink" href="#equation-eq-1-average" title="Permalink to this equation">#</a></span>\[
-\overline{X}_n=\frac{X_1+X_2+\cdots+X_n}{n}
+\overline{X}_n=\frac{X_1+X_2+\cdots+X_n}{n}=\frac{\sum_{i=1}^nX_i}{n}
 \]</div>
 <p>標本を取るごとに<span class="math notranslate nohighlight">\(X_i\)</span>，<span class="math notranslate nohighlight">\(i=1,2...n\)</span>の値は異なるため，<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>自体もランダム変数となる。ここでは<span class="math notranslate nohighlight">\(n\)</span>回の試行を考えているが，大数の法則は同じ試行を数多く繰り返した場合の結果に関する法則である。</p>
 <p><strong>＜大数の法則（Law of Large Numbers）＞</strong><br></p>
@@ -1294,7 +1294,7 @@ xvalues(l, h, n)
 <div class="math notranslate nohighlight" id="equation-eq-1-lln">
 <span class="eqno">(2)<a class="headerlink" href="#equation-eq-1-lln" title="Permalink to this equation">#</a></span>\[\lim_{n\rightarrow\infty}\overline{X}_n\;\rightarrow\;\mu\]</div>
 </div></blockquote>
-<p>実社会とどの様な関係があるのだろうか。ビジネスの中で直接関係するのは保険業だ。自動車事故を考えてみよう。個々人にしてみれば，交通事故に遭うと大変だが，滅多に起こらない。一方，保険会社からすると，多くの個人・企業と契約しているため，交通事故は日常茶飯事となる。この例を考えるために，自動車免許を持っている人を母集団とし，その人数を<span class="math notranslate nohighlight">\(N\)</span>としよう。ここで<span class="math notranslate nohighlight">\(N\)</span>は非常に大きな数となる（日本の場合は約8,200万人）。また，１年間でドライバーが交通事故に遭遇する確率を<span class="math notranslate nohighlight">\(\mu\)</span>とし，全てのトライバーにとって<span class="math notranslate nohighlight">\(\mu\)</span>は同じと想定する。更に，トライバー<span class="math notranslate nohighlight">\(j\)</span>に事故が発生すると<span class="math notranslate nohighlight">\(X_j=1\)</span>，発生しない場合は<span class="math notranslate nohighlight">\(X_j=0\)</span>とすると，母集団での事故の平均発生回数は<span class="math notranslate nohighlight">\(\sum_{j=1}^NX_j/N=\mu\)</span>となる。<span class="math notranslate nohighlight">\(\mu\)</span>は母集団の中で事故に遭遇するトライバーの<strong>割合</strong>と等しいことになる。ここまでは母集団の話であり，次はある保険会社を考えよう。母集団の内，ドライバー<span class="math notranslate nohighlight">\(i=1,2,3,...n\)</span>が保険会社Aと自動車保険を契約したとする。<span class="math notranslate nohighlight">\(n\)</span>は母集団から「抽出」された顧客の総数となり，<span class="math notranslate nohighlight">\(n&lt;N\)</span>である。ここで，事故の平均発生回数は式<a class="reference internal" href="#equation-eq-1-average">(1)</a>と同じ<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>となり，<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>は事故に遭遇する顧客の<strong>割合</strong>と等しい。ここで重要な点は，<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>はランダム変数であり，必ずしも<span class="math notranslate nohighlight">\(\overline{X}_n=\mu\)</span>とはならない，ということである。例えば，<span class="math notranslate nohighlight">\(n=10\)</span>の場合を想像すると，直感的にも理解できるだろう。従って，母集団の<span class="math notranslate nohighlight">\(\mu\)</span>が既知だとしても，保険会社Aにとって事故に遭う顧客数は毎年変化する。その数の変化が大きいと，保険金の支払いの変動幅が大きくなり，ビジネスに支障をきたすことになるかも知れない。しかし，顧客数<span class="math notranslate nohighlight">\(n\)</span>が十分に大きいと，式<a class="reference internal" href="#equation-eq-1-lln">(2)</a>が成立する。即ち，事故に遭う顧客の割合<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>は，事故の確率<span class="math notranslate nohighlight">\(\mu\)</span>に近づくことになり，毎年の<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>の変化小さくなる。将来の<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>を予測しやすくなり，それに従って保険料を決めればビジネスが成り立つことになる。もちろん，現実はこれより複雑だが，保険業の基本的なアイデアは大数の法則に基づいている。</p>
+<p>実社会とどの様な関係があるのだろうか。ビジネスの中で直接関係するのは保険業だ。自動車事故を考えてみよう。個々人にしてみれば，交通事故に遭うと大変だが，滅多に起こらない。一方，保険会社からすると，多くの個人・企業と契約しているため，交通事故は日常茶飯事となる。この例を考えるために，自動車免許を持つ人を母集団とし，その人数を<span class="math notranslate nohighlight">\(N\)</span>としよう。ここで<span class="math notranslate nohighlight">\(N\)</span>は非常に大きな数となる（日本の場合は約8,200万人）。また，１年間でドライバーが交通事故に遭遇する確率を<span class="math notranslate nohighlight">\(\mu\)</span>とし，全てのトライバーにとって<span class="math notranslate nohighlight">\(\mu\)</span>は同じと想定する。更に，トライバー<span class="math notranslate nohighlight">\(j\)</span>に事故が発生すると<span class="math notranslate nohighlight">\(X_j=1\)</span>，発生しない場合は<span class="math notranslate nohighlight">\(X_j=0\)</span>とし，<span class="math notranslate nohighlight">\(\sum_{j=1}^NX_j\)</span>は事故の発生回数となる。母集団での事故の平均発生回数を<span class="math notranslate nohighlight">\(\dfrac{\sum_{j=1}^NX_j}{N}=\mu\)</span>とすると，<span class="math notranslate nohighlight">\(\mu\)</span>は母集団の中で事故に遭遇するトライバーの<strong>割合</strong>と等しいことになる。ここまでは母集団の話であり，次はある保険会社を考えよう。母集団の内，ドライバー<span class="math notranslate nohighlight">\(i=1,2,3,...n\)</span>が保険会社Aと自動車保険を契約したとする。<span class="math notranslate nohighlight">\(n\)</span>は母集団から「抽出」された顧客の総数となり，<span class="math notranslate nohighlight">\(n&lt;N\)</span>である。ここで，事故の平均発生回数は式<a class="reference internal" href="#equation-eq-1-average">(1)</a>と同じ<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>となり，<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>は事故に遭遇する顧客の<strong>割合</strong>と等しい。ここで重要な点は，<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>はランダム変数であり，必ずしも<span class="math notranslate nohighlight">\(\overline{X}_n=\mu\)</span>とはならない，ということである。例えば，<span class="math notranslate nohighlight">\(n=10\)</span>の場合を想像すると，直感的にも理解できるだろう。従って，母集団の<span class="math notranslate nohighlight">\(\mu\)</span>が既知だとしても，保険会社Aにとって事故に遭う顧客数は毎年変化する。その変化が大きいと，保険金支払いの変動幅が大きくなり，ビジネスに支障をきたすことになるかも知れない。しかし，顧客数<span class="math notranslate nohighlight">\(n\)</span>が十分に大きいと，式<a class="reference internal" href="#equation-eq-1-lln">(2)</a>が成立する。即ち，事故に遭う顧客の割合<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>は，事故の確率<span class="math notranslate nohighlight">\(\mu\)</span>に近づくことになり，毎年の<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>の変化が小さくなる。将来の<span class="math notranslate nohighlight">\(\overline{X}_n\)</span>を予測しやすくなり，それに従って保険料を決めればビジネスが成り立つことになる。もちろん，現実はこれより複雑だが，保険業の基本的なアイデアは大数の法則に基づいている。</p>
 </section>
 <section id="id11">
 <h3>コイントス<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
@@ -1310,7 +1310,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -1333,7 +1333,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0]
 </pre></div>
 </div>
 </div>
@@ -1346,7 +1346,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
@@ -1360,7 +1360,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
@@ -1373,7 +1373,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.45
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
 </pre></div>
 </div>
 </div>
@@ -1504,7 +1504,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.45
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4
 </pre></div>
 </div>
 </div>
@@ -1517,7 +1517,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.44721359549995787
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.8944271909999157
 </pre></div>
 </div>
 </div>
@@ -1551,7 +1551,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.44721359549995787
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.8944271909999157
 </pre></div>
 </div>
 </div>
@@ -1583,7 +1583,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.341640786499874
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
 </pre></div>
 </div>
 </div>
@@ -1597,36 +1597,36 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.44721359549995837,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.44721359549995787,
+ -0.44721359549995787,
+ 2.23606797749979,
  -1.341640786499874,
+ -1.788854381999832,
+ 0.0,
+ 0.8944271909999157,
+ 0.8944271909999157,
+ 2.23606797749979,
+ -0.44721359549995787,
+ -0.8944271909999157,
+ -1.341640786499874,
+ 1.7888543819998315,
+ 0.44721359549995837,
+ -1.788854381999832,
+ 0.0,
+ -0.44721359549995787,
+ -0.8944271909999157,
+ -2.23606797749979,
+ 0.44721359549995837,
+ -0.44721359549995787,
  0.0,
  -0.8944271909999157,
+ 0.0,
  0.8944271909999157,
  -2.23606797749979,
- -0.44721359549995787,
- 0.8944271909999157,
- 0.8944271909999157,
- 0.0,
- -2.6832815729997477,
- 0.0,
- -0.44721359549995787,
- 0.0,
- 1.341640786499874,
- -0.44721359549995787,
+ -1.341640786499874,
  -0.8944271909999157,
- -0.8944271909999157,
- 0.0,
- -0.8944271909999157,
- -1.788854381999832,
- 0.8944271909999157,
- 1.7888543819998315,
- 0.0,
- -0.8944271909999157,
- 0.0,
- 1.341640786499874,
- 0.8944271909999157,
- 0.44721359549995837,
- -0.44721359549995787]
+ 2.23606797749979,
+ 1.341640786499874]
 </pre></div>
 </div>
 </div>
@@ -1784,7 +1784,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：7
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_130_1.png" src="_images/1_Basics_VI_130_1.png" />
@@ -1803,11 +1803,11 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：17
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：18
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_132_1.png" src="_images/1_Basics_VI_132_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：31
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：33
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_132_3.png" src="_images/1_Basics_VI_132_3.png" />
@@ -1842,7 +1842,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：106
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：111
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_134_1.png" src="_images/1_Basics_VI_134_1.png" />
