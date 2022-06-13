@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>SciPy.optimize：解の求め方と最適化問題 &#8212; 経済学のためのPython入門</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/my_style.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -40,12 +38,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -76,7 +75,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -85,9 +98,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -183,11 +197,6 @@ const thebe_selector_output = ".output, .cell_output"
    ：図示
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
-   SciPy.stats：確率分布
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    <code class="docutils literal notranslate">
@@ -196,6 +205,11 @@ const thebe_selector_output = ".output, .cell_output"
     </span>
    </code>
    ：解の求め方と最適化問題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
+   SciPy.stats：確率分布
   </a>
  </li>
 </ul>
@@ -250,96 +264,182 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/7_SciPy_optimize.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/7_SciPy_optimize.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/7_SciPy_optimize.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/7_SciPy_optimize.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/7_SciPy_optimize.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/7_SciPy_optimize.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
    はじめに
@@ -531,12 +631,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>SciPy.optimize：解の求め方と最適化問題</h1>
@@ -744,12 +843,15 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="scipy-optimize">
-<h1><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題<a class="headerlink" href="#scipy-optimize" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="scipy-optimize">
+<h1><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題<a class="headerlink" href="#scipy-optimize" title="Permalink to this headline">#</a></h1>
+<div name="html-admonition" style="font-size: 0.8em">
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
+</div><br><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">op</span>
@@ -758,25 +860,17 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>はじめに<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<div name="html-admonition">
-Do you want to read in a differnt language? Start
-<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
-in English or the language of your choice.
-</div>
-</div>
+<section id="id1">
+<h2>はじめに<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>線形の方程式の解を求めることは比較的簡単である。１変数の場合，式を変形すれば解を簡単に求めることができる。変数が複数ある場合でも，<a class="reference internal" href="2_NumPy.html#sec-2-simultaneouseq"><span class="std std-ref">「連立一次方程式の解」の節</span></a>で説明したように，<code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code>を使えば簡単に解を求めることができる。例えば，<a class="reference external" href="https://py4macro.github.io/7_DifferenceEq.html">差分方程式と経済分析</a>で扱う45度線モデルと蜘蛛の巣モデルは線形であるため、長期的な均衡の値を簡単に計算することができる。またソロー・モデルも線形ではないが、定常状態の資本ストック（<span class="math notranslate nohighlight">\(k_*\)</span>）について解くことができるので、長期的な値を計算することが可能である。しかし非線形モデルによっては、長期的均衡の値を簡単に求めることができない場合もあり、その場合に使う手法をここで説明する。</p>
 <p>コードを書いて非線形の方程式の解を求めるには色々な方法があるり，ここではその代表的な方法の考え方についてまず説明する。その後<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>（「サイパイ」と読み，Scientific Pythonの略）というパッケージにある<code class="docutils literal notranslate"><span class="pre">optimize</span></code>というモジュールを紹介する。<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>は<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の大幅な拡張版と理解して良いだろう。<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>を読み込むと<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の関数などを利用できるようになる。しかし<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>は大きなパッケージであり，全てを読み込む必要もない。従って，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>を読み込んで<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>のサブパッケージや関数を読み込むということで十分であろう。そして<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>のモジュール<code class="docutils literal notranslate"><span class="pre">optimize</span></code>に非線形の方程式の解を簡単に求めることができる関数が含まれている。もちろんこれらの関数は線形の方程式の解を求める為にも使える。また<code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>には最適化問題のための関数も用意されており，<code class="docutils literal notranslate"><span class="pre">Python</span></code>で経済学を学ぶ為には必須となるツールと言えるだろう。消費者の効用最大化問題やソロー・モデルの資本の黄金律水準などに応用して使い方を説明する。</p>
-</div>
-<div class="section" id="id2">
-<h2>解の求め方と考え方<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="bisection">
-<h3>Bisection法<a class="headerlink" href="#bisection" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id3">
-<h4>説明<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id2">
+<h2>解の求め方と考え方<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="bisection">
+<h3>Bisection法<a class="headerlink" href="#bisection" title="Permalink to this headline">#</a></h3>
+<section id="id3">
+<h4>説明<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <p>Bisection法の考え方について説明するために，次の関数を考えよう。</p>
 <div class="math notranslate nohighlight">
 \[f(x)=x^3+4x^2-3\]</div>
@@ -884,9 +978,9 @@ in English or the language of your choice.
 <li><p>求めた値は近似となる。</p></li>
 <li><p>求めた値は収束値なので収束する速度が一つの「壁」になり得る。</p></li>
 </ul>
-</div>
-<div class="section" id="id4">
-<h4>手計算<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id4">
+<h4>手計算<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <p>実際にコードを書き，Bisection法の考え理解しよう。次の関数を定義する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1024,12 +1118,12 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="scipy">
-<h4><code class="docutils literal notranslate"><span class="pre">Scipy</span></code>の関数<a class="headerlink" href="#scipy" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="scipy">
+<h4><code class="docutils literal notranslate"><span class="pre">Scipy</span></code>の関数<a class="headerlink" href="#scipy" title="Permalink to this headline">#</a></h4>
 <p>上で考えた<code class="docutils literal notranslate"><span class="pre">my_bisect()</span></code>関数は，解法の考えを理解するために使ったが，実際にBisection法を使う場合は，<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>パッケージの<code class="docutils literal notranslate"><span class="pre">optimize</span></code>モジュールに用意されている<code class="docutils literal notranslate"><span class="pre">bisect()</span></code>関数を使おう。基本的な考えは同じであり，<code class="docutils literal notranslate"><span class="pre">my_bisect()</span></code>より格段に洗練された関数と考えれば良いだろう。またBisection法だけではなく他にも様々な方法があり，その一つであるBrent法に基づく関数もここで紹介することにする。</p>
-<div class="section" id="bisect">
-<h5><code class="docutils literal notranslate"><span class="pre">bisect</span></code>関数<a class="headerlink" href="#bisect" title="Permalink to this headline">¶</a></h5>
+<section id="bisect">
+<h5><code class="docutils literal notranslate"><span class="pre">bisect</span></code>関数<a class="headerlink" href="#bisect" title="Permalink to this headline">#</a></h5>
 <p>使い方は、上で定義した<code class="docutils literal notranslate"><span class="pre">my_bisect</span></code>関数と基本的に同じであり、近似値が十分に近い数値になるように<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ回数の引数<code class="docutils literal notranslate"><span class="pre">N</span></code>は自動で決定される。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
@@ -1063,9 +1157,9 @@ in English or the language of your choice.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="brentq">
-<h5><code class="docutils literal notranslate"><span class="pre">brentq</span></code>関数<a class="headerlink" href="#brentq" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="brentq">
+<h5><code class="docutils literal notranslate"><span class="pre">brentq</span></code>関数<a class="headerlink" href="#brentq" title="Permalink to this headline">#</a></h5>
 <p><code class="docutils literal notranslate"><span class="pre">brentq</span></code>関数はBrent法に基づいており、<code class="docutils literal notranslate"><span class="pre">bisect</span></code>関数を拡張した手法（ここでは説明を割愛）である。より安定的により速く解への収束が可能となっている。基本的に使い方は<code class="docutils literal notranslate"><span class="pre">bisect</span></code>と同じである。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brentq</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
@@ -1100,13 +1194,13 @@ in English or the language of your choice.
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">bisect</span></code>と<code class="docutils literal notranslate"><span class="pre">brentq</span></code>のどちらを使っても良いが、<code class="docutils literal notranslate"><span class="pre">brentq</span></code>を使うことを推奨する。</p>
-</div>
-</div>
-</div>
-<div class="section" id="newton">
-<h3>Newton法<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id5">
-<h4>説明<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+</section>
+<section id="newton">
+<h3>Newton法<a class="headerlink" href="#newton" title="Permalink to this headline">#</a></h3>
+<section id="id5">
+<h4>説明<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
 <p>ここではもう一つの解法であるNewton法について説明する。図にある関数<code class="docutils literal notranslate"><span class="pre">f(x)</span></code>を考えよう。<span class="math notranslate nohighlight">\(x_1\)</span>での傾きは<span class="math notranslate nohighlight">\(f^{\prime}(x_1)\)</span>であり、次の式が成り立つことが確認できる。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1114,13 +1208,15 @@ f^{\prime}(x_0)=\dfrac{f(x_0)}{x_0-x_1}
 \quad\Rightarrow\quad
 x_1 = x_0 - \dfrac{f(x_0)}{f^{\prime}(x_0)}
 \]</div>
-<div class="figure align-default" id="fig-scipy-newton">
+<figure class="align-default" id="fig-scipy-newton">
 <a class="reference internal image-reference" href="_images/newton.jpeg"><img alt="_images/newton.jpeg" src="_images/newton.jpeg" style="width: 406.2px; height: 300.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Newton法</span><a class="headerlink" href="#fig-scipy-newton" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Newton法</span><a class="headerlink" href="#fig-scipy-newton" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>即ち、<span class="math notranslate nohighlight">\(x_0\)</span>が与えられ<span class="math notranslate nohighlight">\(f^{\prime}(x_0)\)</span>が分かれば、<span class="math notranslate nohighlight">\(x_1\)</span>を求めることができる。更に、<span class="math notranslate nohighlight">\(x_1\)</span>が与えられ、<span class="math notranslate nohighlight">\(f^{\prime}(x_1)\)</span>が分かれば、<span class="math notranslate nohighlight">\(x_2\)</span>を求めることができる。一般的には次の差分方程式が成り立つことになる。</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-newton">
-<span class="eqno">(4)<a class="headerlink" href="#equation-eq-scipy-newton" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-scipy-newton" title="Permalink to this equation">#</a></span>\[
 x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 \]</div>
 <p>この式に従って<span class="math notranslate nohighlight">\(x_{t+1}\)</span>の計算を続けると、<span class="math notranslate nohighlight">\(x_{t+1}\)</span>は<span class="math notranslate nohighlight">\(f(x)=0\)</span>を満たす<span class="math notranslate nohighlight">\(x\)</span>に漸近的に近づいていき、根に十分に近い値を計算することが可能となる。</p>
@@ -1130,9 +1226,9 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 <li><p><code class="docutils literal notranslate"><span class="pre">bisec</span></code>関数と<code class="docutils literal notranslate"><span class="pre">brentq</span></code>関数よりも早い率で解に収束する特徴がある。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bisec</span></code>関数と<code class="docutils literal notranslate"><span class="pre">brentq</span></code>関数と違って、必ず解を求めることができるとは限らない。解探索の<code class="docutils literal notranslate"><span class="pre">x</span></code>の初期値の設定が重要となる。</p></li>
 </ul>
-</div>
-<div class="section" id="id6">
-<h4>手計算<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id6">
+<h4>手計算<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
 <p>Newton法の基本的な考えを説明するために式<a class="reference internal" href="#fig-scipy-newton"><span class="std std-ref">Newton法</span></a>を捉える関数を定義しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1238,9 +1334,9 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id7">
-<h4><code class="docutils literal notranslate"><span class="pre">Scipy</span></code>の関数<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id7">
+<h4><code class="docutils literal notranslate"><span class="pre">Scipy</span></code>の関数<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Scipy</span></code>パッケージの<code class="docutils literal notranslate"><span class="pre">optimize</span></code>モジュールには<code class="docutils literal notranslate"><span class="pre">newton</span></code>法の関数が用意されており、説明で使った手計算の<code class="docutils literal notranslate"><span class="pre">my_newton()</span></code>関数と比べると格段に洗練れている。使い方は簡単で、引数に関数と<code class="docutils literal notranslate"><span class="pre">x</span></code>の初期値を指定するだけであり、近似の誤差とループの回数は自動的に設定される。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">)</span>
 </pre></div>
@@ -1299,12 +1395,12 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id8">
-<h3>マクロ経済学への応用<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id9">
-<h4>45度線モデル<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="id8">
+<h3>マクロ経済学への応用<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<section id="id9">
+<h4>45度線モデル<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
 <p>ケインズの45度線モデルでは，所得<span class="math notranslate nohighlight">\(Y\)</span>以外の変数は外生変数として所得が決定されるマクロ経済学の基本的なモデルである。次の記号・仮定を使う。</p>
 <ul class="simple">
 <li><p>所得：<span class="math notranslate nohighlight">\(Y\)</span></p></li>
@@ -1406,9 +1502,9 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="is">
-<h4>IS曲線の導出<a class="headerlink" href="#is" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="is">
+<h4>IS曲線の導出<a class="headerlink" href="#is" title="Permalink to this headline">#</a></h4>
 <p>ここでも45度線モデルを使い財市場の均衡で決定される所得<span class="math notranslate nohighlight">\(Y\)</span>を考えるが，投資は利子率<span class="math notranslate nohighlight">\(r\)</span>の非線形の減少関数と仮定する。この仮定により，利子率<span class="math notranslate nohighlight">\(r\)</span>を所与とした所得の均衡を考えることが可能となり，非線形の<span class="math notranslate nohighlight">\(IS\)</span>曲線をプロットすることができる。</p>
 <p>45度線モデルの投資<span class="math notranslate nohighlight">\(I\)</span>を次のように変更する。</p>
 <div class="math notranslate nohighlight">
@@ -1482,9 +1578,9 @@ I = \dfrac{j}{r^{b}}
 <img alt="_images/7_SciPy_optimize_88_0.png" src="_images/7_SciPy_optimize_88_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id10">
-<h4>ソロー・モデル<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id10">
+<h4>ソロー・モデル<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
 <p>モデルの簡単な説明は<a class="reference external" href="https://py4macro.github.io/8_Solow.html">「ソロー・モデル」の章</a>を参照してほしい。</p>
 <ul>
 <li><p>産出量：<span class="math notranslate nohighlight">\(y_t\)</span></p></li>
@@ -1520,7 +1616,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 <p><span class="math notranslate nohighlight">\(k\)</span>の定常状態<span class="math notranslate nohighlight">\(k_*\)</span>は次式で定義される。</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-kss">
-<span class="eqno">(5)<a class="headerlink" href="#equation-eq-scipy-kss" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-scipy-kss" title="Permalink to this equation">#</a></span>\[
 0 = sAk_*^a + (1-d)k_* - k_{*}
 \]</div>
 <p>この方程式の解を求めるが，関数<code class="docutils literal notranslate"><span class="pre">kss()</span></code>を定義しよう。</p>
@@ -1605,9 +1701,9 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id11">
-<h4>投資<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id11">
+<h4>投資<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
 <p>企業の投資問題を考える。初期投資<code class="docutils literal notranslate"><span class="pre">fc</span></code>を投入すると<span class="math notranslate nohighlight">\(T\)</span>期間<span class="math notranslate nohighlight">\(\pi\)</span>の利潤を得るとする。実質利子率は<span class="math notranslate nohighlight">\(r\)</span>とすると<span class="math notranslate nohighlight">\(T\)</span>期間の利潤の現在価値の合計は次のようになる。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1654,13 +1750,13 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="id12">
-<h2>最適化問題：１変数の場合<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id13">
-<h3>説明<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="id12">
+<h2>最適化問題：１変数の場合<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+<section id="id13">
+<h3>説明<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>最適化問題は経済学の根幹をなすが、ここでは<code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>の<code class="docutils literal notranslate"><span class="pre">minimize_scalar</span></code>関数の使い方を簡単に説明する。様々な引数が用意されているが、基本的には次のようなコードの書き方となる。</p>
 <ol>
 <li><p>デフォルトではBrent法が使われる。</p>
@@ -1688,9 +1784,9 @@ I = \dfrac{j}{r^{b}}
 <li><p>返り値は、関数を最小化する変数の値だけではなく、様々な情報が整理されたオブジェクトとして返される。</p></li>
 <li><p>最大化のための関数は用意されていない。従って、最大化したい関数にマイナスの符号をつけて<code class="docutils literal notranslate"><span class="pre">minimize_scalar()</span></code>関数を評価する必要がある。</p></li>
 </ol>
-</div>
-<div class="section" id="id14">
-<h3>例１<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id14">
+<h3>例１<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">f_ex1</span></code>関数を例として考えよう。最小化される<code class="docutils literal notranslate"><span class="pre">x</span></code>を計算する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1758,9 +1854,9 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id15">
-<h3>例２<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id15">
+<h3>例２<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <p>次に最小値が複数ある場合を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1881,9 +1977,9 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id16">
-<h3>ソロー・モデル：黄金律<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id16">
+<h3>ソロー・モデル：黄金律<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <p>資本の黄金律水準とは、長期均衡において一人当たり消費を最大化する資本ストックであり、貯蓄率<span class="math notranslate nohighlight">\(s\)</span>に依存している。それを示すために、まず定常状態の資本ストック<span class="math notranslate nohighlight">\(k_*\)</span>をパラメータで示すが，次式は式<a class="reference internal" href="#equation-eq-scipy-kss">(5)</a>から導出できる。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1980,9 +2076,9 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id17">
-<h3>労働供給問題<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id17">
+<h3>労働供給問題<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
 <p>ミクロ経済学で学ぶ消費者の労働供給問題を考えよう。消費者は消費財と余暇の２財を消費し，効用を最大化する消費財と余暇を選択すると考える。</p>
 <p>変数の定義：</p>
 <ul>
@@ -1999,7 +2095,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </li>
 <li><p>制約式：</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-pcwl">
-<span class="eqno">(6)<a class="headerlink" href="#equation-eq-scipy-pcwl" title="Permalink to this equation">¶</a></span>\[pc=wl\]</div>
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-scipy-pcwl" title="Permalink to this equation">#</a></span>\[pc=wl\]</div>
 </li>
 </ul>
 <p>制約式のもとで消費者は<span class="math notranslate nohighlight">\(c\)</span>と<span class="math notranslate nohighlight">\(l\)</span>を選択し効用を最大化する。</p>
@@ -2064,7 +2160,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </div>
 <p>予算制約式から消費量は</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-c">
-<span class="eqno">(7)<a class="headerlink" href="#equation-eq-scipy-c" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq-scipy-c" title="Permalink to this equation">#</a></span>\[
 c=\frac{wl}{p}
 \]</div>
 <p>となるので，</p>
@@ -2094,7 +2190,7 @@ c=\frac{wl}{p}
 </div>
 <p>結果を図示するために、効用関数を<span class="math notranslate nohighlight">\(c\)</span>で解くと次式となる。</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-cc">
-<span class="eqno">(8)<a class="headerlink" href="#equation-eq-scipy-cc" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq-scipy-cc" title="Permalink to this equation">#</a></span>\[
 c=
 \left(
     \frac{e^u}{(1-l)^{1-a}}
@@ -2173,12 +2269,12 @@ c=
 <li><p><code class="docutils literal notranslate"><span class="pre">set_ylim()</span></code>は軸<code class="docutils literal notranslate"><span class="pre">ax_</span></code>のメソッドであり、縦軸の表示範囲を指定する。</p></li>
 </ol>
 </div>
-</div>
-</div>
-<div class="section" id="id18">
-<h2>最適化問題：２変数の場合<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id19">
-<h3>説明<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id18">
+<h2>最適化問題：２変数の場合<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h2>
+<section id="id19">
+<h3>説明<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
 <p>２変数の場合は<code class="docutils literal notranslate"><span class="pre">minimize</span></code>関数を使う。様々な引数が用意されているが、基本的には次のようなコードの書き方となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">minimize</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span> <span class="n">constraints</span><span class="p">)</span>
 </pre></div>
@@ -2212,9 +2308,9 @@ c=
 <li><p>返り値は、関数を最小化るる変数の値だけではなく、様々な情報が整理されたオブジェクトとして返される。</p></li>
 <li><p>最大化のための関数は用意されていない。従って、最大化した関数にマイナスの符号をつけて<code class="docutils literal notranslate"><span class="pre">minimize()</span></code>関数を評価する必要がある。</p></li>
 </ol>
-</div>
-<div class="section" id="id20">
-<h3>例１<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id20">
+<h3>例１<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
 <p>次の最小化問題を考えよう。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2346,9 +2442,9 @@ c=
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id21">
-<h3>例２<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id21">
+<h3>例２<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
 <p>次の最大化問題を考えよう。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2407,9 +2503,9 @@ c=
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id22">
-<h3>例３<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id22">
+<h3>例３<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
 <p>ここでは制約付き最大化問題を考える。次の制約のもとで例２の<code class="docutils literal notranslate"><span class="pre">f_ex4</span></code>を最大化するとしよう。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2506,9 +2602,9 @@ y+z-1=0
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id23">
-<h3>例４<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id23">
+<h3>例４<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h3>
 <p>制約が不等式の場合を簡単に説明する。例３の制約式を</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2567,9 +2663,9 @@ y+z\leq 1
 </div>
 </div>
 <p>当たり前だが例３の解と同じになっている。</p>
-</div>
-<div class="section" id="id24">
-<h3>労働供給問題<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id24">
+<h3>労働供給問題<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
 <p>労働供給問題を再考する。まず効用関数を設定し直そう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2658,13 +2754,13 @@ wl-pc=0
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">minimize_scalar()</span></code>で解いた値と同じであることが確認できる。</p>
-</div>
-<div class="section" id="id25">
-<h3>練習問題<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id25">
+<h3>練習問題<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h3>
 <p>予算制約式が不等号の場合の労働供給問題を解きなさい。</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2688,9 +2784,11 @@ wl-pc=0
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="5_pandas_plot.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2706,24 +2804,28 @@ wl-pc=0
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By 春山 鉄源  Tetsugen HARUYAMA<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By 春山 鉄源  Tetsugen HARUYAMA<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
