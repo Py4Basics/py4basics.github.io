@@ -11,9 +11,9 @@ kernelspec:
 
 # ツールのインストールと説明
 
-If you come here without expecting Japanese, please click [Google translated version](https://translate.google.com/translate?hl=&sl=ja&tl=en&u=https%3A%2F%2Fpy4etrics.github.io%2F0_Preparations.html) in English or the language of your choice.
-
------
+<div name="html-admonition" style="font-size: 0.8em">
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
+</div><br>
 
 ## 説明
 
@@ -27,14 +27,6 @@ Pythonのインストールと関連ツールについて簡単な説明をす�
 * GitHubの設定
 * pipを使うパッケージのインストール
 * Jupyter Notebookの使い方
-
-```{margin}
-<div name="html-admonition">
-Do you want to read in a differnt language? Open the 
-<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
-in English or the language of your choice.
-</div>
-```
 
 また次の点についても述べる。
 * ゼミ終了後毎回おこなう作業
@@ -222,21 +214,25 @@ $ conda deactivate
 * Git Bashで以下を実行する。
     * （ケース１）の場合
     ```
-    echo ". /c/Users/myName/Anaconda3/etc/profile.d/conda.sh" >> ~/.profile
+    echo ". /c/Users/myName/Anaconda3/etc/profile.d/conda.sh" >> ~/.bash_profile
     ```
     * （ケース２）の場合
     ```
-    echo ". /c/Anaconda3/etc/profile.d/conda.sh" >> ~/.profile
+    echo ". /c/Anaconda3/etc/profile.d/conda.sh" >> ~/.bash_profile
     ```
     * 両方のケースに当てはまらない場合は，`/c/`と`/etc/`の間を適宜変更する。
-    * この作業によりホーム・ディレクトリに`.profile`というファイルが作成され，Pythonに「パスがとおる」（即ち、Git Bashのカレント・ディレクトリがどこであれ使うことができる）ことになる。
-* Git Bashを再起動する。これによりGit Bashは`.profile`の設定ファイルを読み込んむことになる。
+    * この作業によりホーム・ディレクトリに`.bash_profile`というファイルが作成され，Pythonに「パスがとおる」（即ち、Git Bashのカレント・ディレクトリがどこであれ使うことができる）ことになる。
+* Git Bashを再起動する。これによりGit Bashは`.bash_profile`の設定ファイルを読み込んむことになる。
 * Git Bashで以下を実行する（どのカレント・ディレクトリでも構わない）。
 ```
 $ conda activate
 $ which python
 ```
-を実行してみること。ここで
+を実行してみること。以下のように表示されれたパスにanaconda3が入っていれば成功。
+```
+/c/Users/myName/Anaconda3/python
+```
+また
 ```
 $ conda activate
 ```
@@ -244,10 +240,17 @@ $ conda activate
 ```
 $ conda deactivate
 ```
-である。以下のように表示されれたパスにanaconda3が入っていれば成功。
+である。
+
+````{note}
+* `Git
+  Bash`を起動する度に同じディレクトリを開きたい場合がある。例えば，`~/Documents/zemi`を毎回開きたいとしよう。
+その場合，`.bash_profile`に次の行を追加する。
 ```
-/c/Users/myName/Anaconda3/python
+cd ~/Documents/zemi
 ```
+ここで`~`はホームディレクトリ（例えば，`C:\Users\MyName`を指す。）
+````
 
 ## GitHubの設定
 GitHubとは，コードとコードの履歴をクラウド上で管理し，コード作成の共同作業を手助けするアプリである。アップロードしたコードを公開・非公開に設定することができる。ゼミ生がアップロードしたコードは外部からは春山のみが閲覧可能となる。
