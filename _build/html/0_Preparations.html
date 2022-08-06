@@ -27,8 +27,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/my_style.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -45,6 +44,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -196,11 +196,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
-   SciPy.stats：確率分布
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="7_SciPy_optimize.html">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -208,6 +203,11 @@ const thebe_selector_output = ".output, .cell_output"
     </span>
    </code>
    ：解の求め方と最適化問題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
+   SciPy.stats：確率分布
   </a>
  </li>
 </ul>
@@ -808,8 +808,9 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>ツールのインストールと説明<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
-<p>If you come here without expecting Japanese, please click <a class="reference external" href="https://translate.google.com/translate?hl=&amp;sl=ja&amp;tl=en&amp;u=https%3A%2F%2Fpy4etrics.github.io%2F0_Preparations.html">Google translated version</a> in English or the language of your choice.</p>
-<hr class="docutils" />
+<div name="html-admonition" style="font-size: 0.8em">
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
+</div><br>
 <section id="id2">
 <h2>説明<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Pythonのインストールと関連ツールについて簡単な説明をする。</p>
@@ -824,14 +825,6 @@ title="Print to PDF"
 <li><p>pipを使うパッケージのインストール</p></li>
 <li><p>Jupyter Notebookの使い方</p></li>
 </ul>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<div name="html-admonition">
-Do you want to read in a differnt language? Open the 
-<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translated version" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
-in English or the language of your choice.
-</div>
-</aside>
 <p>また次の点についても述べる。</p>
 <ul class="simple">
 <li><p>ゼミ終了後毎回おこなう作業</p></li>
@@ -1072,28 +1065,32 @@ $ which python
 <ul class="simple">
 <li><p>（ケース１）の場合</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;. /c/Users/myName/Anaconda3/etc/profile.d/conda.sh&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">profile</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;. /c/Users/myName/Anaconda3/etc/profile.d/conda.sh&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bash_profile</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>（ケース２）の場合</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;. /c/Anaconda3/etc/profile.d/conda.sh&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">profile</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;. /c/Anaconda3/etc/profile.d/conda.sh&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bash_profile</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>両方のケースに当てはまらない場合は，<code class="docutils literal notranslate"><span class="pre">/c/</span></code>と<code class="docutils literal notranslate"><span class="pre">/etc/</span></code>の間を適宜変更する。</p></li>
-<li><p>この作業によりホーム・ディレクトリに<code class="docutils literal notranslate"><span class="pre">.profile</span></code>というファイルが作成され，Pythonに「パスがとおる」（即ち、Git Bashのカレント・ディレクトリがどこであれ使うことができる）ことになる。</p></li>
+<li><p>この作業によりホーム・ディレクトリに<code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code>というファイルが作成され，Pythonに「パスがとおる」（即ち、Git Bashのカレント・ディレクトリがどこであれ使うことができる）ことになる。</p></li>
 </ul>
 </li>
-<li><p>Git Bashを再起動する。これによりGit Bashは<code class="docutils literal notranslate"><span class="pre">.profile</span></code>の設定ファイルを読み込んむことになる。</p></li>
+<li><p>Git Bashを再起動する。これによりGit Bashは<code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code>の設定ファイルを読み込んむことになる。</p></li>
 <li><p>Git Bashで以下を実行する（どのカレント・ディレクトリでも構わない）。</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda activate
 $ which python
 </pre></div>
 </div>
-<p>を実行してみること。ここで</p>
+<p>を実行してみること。以下のように表示されれたパスにanaconda3が入っていれば成功。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">myName</span><span class="o">/</span><span class="n">Anaconda3</span><span class="o">/</span><span class="n">python</span>
+</pre></div>
+</div>
+<p>また</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda activate
 </pre></div>
 </div>
@@ -1101,9 +1098,17 @@ $ which python
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda deactivate
 </pre></div>
 </div>
-<p>である。以下のように表示されれたパスにanaconda3が入っていれば成功。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">myName</span><span class="o">/</span><span class="n">Anaconda3</span><span class="o">/</span><span class="n">python</span>
+<p>である。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">Bash</span></code>を起動する度に同じディレクトリを開きたい場合がある。例えば，<code class="docutils literal notranslate"><span class="pre">~/Documents/zemi</span></code>を毎回開きたいとしよう。
+その場合，<code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code>に次の行を追加する。</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">Documents</span><span class="o">/</span><span class="n">zemi</span>
 </pre></div>
+</div>
+<p>ここで<code class="docutils literal notranslate"><span class="pre">~</span></code>はホームディレクトリ（例えば，<code class="docutils literal notranslate"><span class="pre">C:\Users\MyName</span></code>を指す。）</p>
 </div>
 </section>
 </section>

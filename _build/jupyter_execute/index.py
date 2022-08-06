@@ -10,6 +10,10 @@
 # 
 # 神戸大学経済学研究科
 # ```
+# 
+# <div name="html-admonition" style="font-size: 0.8em">
+# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
+# </div><br>
 
 # In[1]:
 
@@ -26,13 +30,13 @@ print('Version:',dt.strftime('%Y年%m月%d日'))
 # -->
 # 
 # 
-# ```{margin}
-# <div name="html-admonition">
-# Do you want to read in a differnt language? Start
-# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
-# in English or the language of your choice.
-# </div>
-# ```
+# <!--```{margin}-->
+# <!--<div name="html-admonition">-->
+# <!--Do you want to read in a differnt language? Start-->
+# <!--<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>-->
+# <!--in English or the language of your choice.-->
+# <!--</div>-->
+# <!--```-->
 # 
 # 本サイトに関するコメント等はGitHubの[Discussions](https://github.com/Py4Basics/py4basics.github.io/discussions)もしくは<haruyama@econ.kobe-u.ac.jp>にご連絡ください。
 # 
@@ -47,7 +51,7 @@ print('Version:',dt.strftime('%Y年%m月%d日'))
 # 
 # 次の12章から構成されている。
 # 1. **`Python`入門I**<br>
-#   プログラミング言語である`Python`は，日本語と同様に文法・表現・単語が決まっており，それらの使い方を説明する。外国語を学ぶことと似た様なものかと不安になる人もいるかも知れないが，そうではない。殆どの人は英語を学んだと思うが，実は`Python`は英語で書かれているため，英語感覚でコードを読み書きすることができるのが一つの大きな利点である。しかし，英作文をイメージすると間違いである。理由は，正確性が要求されるからである。話し言葉・書き言葉は曖昧な表現になり得る。例えば，I kind of like him.（もしくは，I kinda like him.）ここでの"kind of"は「種類」と言う意味ではなく「曖昧さ」を表している。訳すと「まぁ，好きかなぁ，，，」の様なイメージだろうか。しかし，話すタイミングや語調によっては「実はそうでもないかも」の含みがある様にも聞こえるかも知れない。このように正確さにかける英語ではコンピュータに命令を伝えることは難しい。一般的にプログラミング言語は正確性が重視されるため，味気ない「文章」になる。更には少しでも間違えると「何言ってるか分かんない」という意味でエラーが発生する。一つのスペルミスでもエラーが発生するのである。この章では，「`Python`語」を使いコンピュータに正確に命令を伝えて実行させる方法を学習する。このパートは次の６章から構成されており，神戸大学経済学部の「プログラミング入門」の教科書として使用する予定である。
+#   プログラミング言語である`Python`は，日本語と同様に文法・表現・単語が決まっており，それらの使い方を説明する。外国語を学ぶことと似た様なものかと不安になる人もいるかも知れないが，そうではない。殆どの人は英語を学んだと思うが，実は`Python`は英語で書かれているため，英語感覚でコードを読み書きすることができるのが一つの大きな利点である。しかし，英作文をイメージすると間違いである。理由は，正確性が要求されるからである。話し言葉・書き言葉は曖昧な表現になり得る。例えば，I kind of like him.（もしくは，I kinda like him.）ここでの"kind of"は「種類」と言う意味ではなく「曖昧さ」を表している。訳すと「まぁ，好きかなぁ，，，」の様なイメージだろうか。しかし，話すタイミングや語調によっては「実はそうでもないかも」の含みがある様にも聞こえるかも知れない。このように正確さにかける英語ではコンピュータに命令を伝えることは難しい。一般的にプログラミング言語は正確性が重視されるため，味気ない「文章」になる。更には少しでも間違えると「何言ってるか分かんない」という意味でエラーが発生する。一つのスペルミスでもエラーが発生するのである。このパートでは，「`Python`語」を使いコンピュータに正確に命令を伝えて実行させる方法を学習する。（このパートは次の６章から構成されており，神戸大学経済学部の「プログラミング入門」の教科書として使用する予定である。）
 #     * **データ型と変数**
 #     * **データの操作**
 #     * **関数とメソッド**
@@ -64,10 +68,10 @@ print('Version:',dt.strftime('%Y年%m月%d日'))
 #       データをプロット（図示）するためのパッケージである。`NumPy`，`Pandas`，`SciPy`と並んで`Python`のエコシステムを構成している。プロットするためのパッケージには様々なものが開発されているが，`Matplotlib`が基本となっている。プロットのためのコードには幾つかのパターンがあり，オブジェクト指向と呼ばれる考えに基づく方法を紹介する。
 #     * **`Pandas`： 図示**<br>
 #       上で紹介した`Pandas`にもプロットする機能が備わっている。裏では`Matplotlib`が動いているが，手っ取り早くプロットしたい場合に重宝する。図の細かい所まで設定したい場合は`Matplotlib`を直接使った方が良いが，`Pandas`のプロット機能を知っていると非常に便利に感じるだろう。
-#     * **`SciPy.stats`： 確率分布**<br>
-#       `SciPy`はScientific Pythonの略であり，科学技術計算用のパッケージである。非常に大きなパッケージであり，その中には様々な用途（積分，統計，最適化問題など）に合わせたサブパッケージが用意されている。その中の一つである統計学用の`scipy.stats`の使い方について簡単に説明する。統計学の授業で学んだ概念などを実際にコードを書いて実行することができる。ちなみに，`SciPy`には`NumPy`と重複する機能も含んでおり，仕様が微妙に違ったりする。このサイトと上述の経済学のサイトでは，`NumPy`にあるものは`NumPy`のものを使うことにする。
 #     * **`SciPy.optimize`： 解の求め方と最適化問題**<br>
 #       経済学では最適化問題が至る所で出てくる。消費者の効用最大化問題，企業の利潤最大化もしくは費用最小化問題など。`scipy.optimize`はそのためのツールを提供してくれる。また単なる最大化・最小化問題を数値的に解くのではなく，制約式の下での最適化問題も解くことが可能である。また等式制約と不等式制約の両方に対応している。経済学を勉強する上で欠かせないツールである。
+#     * **`SciPy.stats`： 確率分布**<br>
+#       `SciPy`はScientific Pythonの略であり，科学技術計算用のパッケージである。非常に大きなパッケージであり，その中には様々な用途（積分，統計，最適化問題など）に合わせたサブパッケージが用意されている。その中の一つである統計学用の`scipy.stats`の使い方について簡単に説明する。統計学の授業で学んだ概念などを実際にコードを書いて実行することができる。ちなみに，`SciPy`には`NumPy`と重複する機能も含んでおり，仕様が微妙に違ったりする。このサイトと上述の経済学のサイトでは，`NumPy`にあるものは`NumPy`のものを使うことにする。
 # 
 # また次のトピックについても取り上げているので参考にして欲しい。
 # * **ツールのインストールと説明**<br>

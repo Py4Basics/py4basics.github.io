@@ -27,8 +27,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/my_style.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -45,6 +44,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -198,11 +198,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
-   SciPy.stats：確率分布
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="7_SciPy_optimize.html">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -210,6 +205,11 @@ const thebe_selector_output = ".output, .cell_output"
     </span>
    </code>
    ：解の求め方と最適化問題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
+   SciPy.stats：確率分布
   </a>
  </li>
 </ul>
@@ -707,7 +707,9 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>モジュールと疑似コード<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
-<section id="id2">
+<div name="html-admonition" style="font-size: 0.8em">
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
+</div><br><section id="id2">
 <h2>モジュールとパッケージ<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <section id="id3">
 <h3>説明<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
@@ -716,14 +718,6 @@ title="Print to PDF"
 <li><p>モジュール（module）は<strong>１つ</strong>のファイル（拡張子が<code class="docutils literal notranslate"><span class="pre">.py</span></code>）にまとめられた関数群であり，</p></li>
 <li><p>パッケージは（package）<strong>複数</strong>つのファイル（拡張子が<code class="docutils literal notranslate"><span class="pre">.py</span></code>）で構成されている（フォルダーにまとめられている）</p></li>
 </ul>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<div name="html-admonition">
-Do you want to read in a differnt language? Start
-<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
-in English or the language of your choice.
-</div>
-</aside>
 <p>従って，モジュール全体を読み込んだり，あるパッケージの１つのモジュールだけを読み込むということも可能である。授業では，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>，<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>，<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>を使うが，ここでは例として数学用の<code class="docutils literal notranslate"><span class="pre">math</span></code>モジュール，ランダム変数用の<code class="docutils literal notranslate"><span class="pre">random</span></code>モジュール，オブジェクトの属性を表示する<code class="docutils literal notranslate"><span class="pre">see</span></code>モジュールを取り上げる。</p>
 <p>含まれる関数を使うためには<code class="docutils literal notranslate"><span class="pre">import</span></code>を使って読み込む必要がある。モジュールの全てを読み込むとモジュール内の全ての関数が使用可能となる。</p>
 <div class="admonition note">
@@ -834,7 +828,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -847,7 +841,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 2, 4, 6, 3, 3, 3, 2, 2, 5]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 1, 5, 6, 2, 5, 3, 1, 2, 6]
 </pre></div>
 </div>
 </div>
@@ -879,7 +873,7 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.138541065601682
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.135111089406964
 </pre></div>
 </div>
 </div>
@@ -892,16 +886,16 @@ in English or the language of your choice.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.45252734050338983,
- 0.739452259730816,
- -1.0823658641527343,
- 0.2696459727593992,
- 0.42915582834305643,
- 1.2515194232539502,
- 0.19481103587004392,
- 0.8815205843374359,
- -0.015121873166198202,
- -0.9174614230011569]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.9500218262964856,
+ -0.08060624730616629,
+ -0.6271099455960885,
+ 0.9070164291325422,
+ 0.051927801155923874,
+ 1.1486920008380013,
+ 0.11533268144902062,
+ 0.056867245898207776,
+ -0.4232736516182304,
+ 1.1137084830349528]
 </pre></div>
 </div>
 </div>
@@ -1691,7 +1685,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(50, 50)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(54, 46)
 </pre></div>
 </div>
 </div>
@@ -1851,7 +1845,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(53, 47)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(56, 44)
 </pre></div>
 </div>
 </div>
@@ -2087,7 +2081,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0697087844870485
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.4070459960445585
 </pre></div>
 </div>
 </div>

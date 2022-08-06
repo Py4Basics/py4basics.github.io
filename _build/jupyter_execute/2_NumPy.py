@@ -4,6 +4,10 @@
 # (chap:numpy)=
 # # `NumPy`：高速化
 
+# <div name="html-admonition" style="font-size: 0.8em">
+# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
+# </div><br>
+
 # `NumPy`は，数値計算をする上で重要な役割を果たすパッケージであり，特に，行列計算に威力を発揮する。`NumPy`は「ナンパイ」と読む。慣例として`np`としてインポートする。
 
 # In[1]:
@@ -22,14 +26,6 @@ import numpy as np
 arr = np.array([10, 20, 30, 40, 50])
 arr
 
-
-# ```{margin}
-# <div name="html-admonition">
-# Do you want to read in a differnt language? Start
-# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
-# in English or the language of your choice.
-# </div>
-# ```
 
 # 次に２次元配列を作成しよう。
 

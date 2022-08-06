@@ -3,6 +3,10 @@
 
 # # データの操作
 
+# <div name="html-admonition" style="font-size: 0.8em">
+# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
+# </div><br>
+
 # ## 基本データ型の変換
 
 # 次の４つの基本データ型を考えよう。
@@ -10,14 +14,6 @@
 # * 浮動小数点型
 # * 文字列型
 # * ブール型
-
-# ```{margin}
-# <div name="html-admonition">
-# Do you want to read in a differnt language? Start
-# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
-# in English or the language of your choice.
-# </div>
-# ```
 
 # ここでは，それぞれのデータ型を他のデータ系に変換する次の関数を紹介する。
 # * `int()`：整数型への変換
@@ -760,7 +756,7 @@ list(mval)
 
 # ### 文字の抽出
 
-# ここではコンテナデータ型の次の操作について説明する。
+# ここでは文字列型の次の操作について説明する。
 # * 要素の抽出（アクセス）
 # * 基本的なメソッド
 # 

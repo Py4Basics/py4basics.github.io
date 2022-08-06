@@ -27,8 +27,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/my_style.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -45,6 +44,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -198,11 +198,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
-   SciPy.stats：確率分布
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="7_SciPy_optimize.html">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -210,6 +205,11 @@ const thebe_selector_output = ".output, .cell_output"
     </span>
    </code>
    ：解の求め方と最適化問題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
+   SciPy.stats：確率分布
   </a>
  </li>
 </ul>
@@ -505,8 +505,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     複数の変数の割り当て
+    <a class="reference internal nav-link" href="#sec-1-multiple-assignment">
+     複数の変数の同時割り当て
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -802,8 +802,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     複数の変数の割り当て
+    <a class="reference internal nav-link" href="#sec-1-multiple-assignment">
+     複数の変数の同時割り当て
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1027,21 +1027,15 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>基本データ型と変数<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
-<section id="id2">
+<div name="html-admonition" style="font-size: 0.8em">
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
+</div><br><section id="id2">
 <h2>最初の注意点<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <section id="id3">
 <h3>半角と全角<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p><strong>半角</strong>を基本としてコード（スペースも含めて）を書くこと。</p>
 </div></blockquote>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<div name="html-admonition">
-Do you want to read in a differnt language? Start
-<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
-in English or the language of your choice.
-</div>
-</aside>
 <p>次の２つケース以外で全角を使うとエラーが発生する。</p>
 <ul class="simple">
 <li><p>以下で説明する文字列型のデータ型の場合は全角を使っても構わない。</p></li>
@@ -1164,7 +1158,7 @@ in English or the language of your choice.
 <p>整数型は<code class="docutils literal notranslate"><span class="pre">int</span></code>（integerの略），浮動小数点型は<code class="docutils literal notranslate"><span class="pre">float</span></code>（floating point numberの略）と表示されている。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>1,000,000,000.0（10億）のような大きな数字は３桁ごとにコンマを入れると読みやすくなりますが，<code class="docutils literal notranslate"><span class="pre">Python</span></code>では<code class="docutils literal notranslate"><span class="pre">,</span></code>の代わりに<code class="docutils literal notranslate"><span class="pre">_</span></code>を使うことができます。例えば，35億を<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てる場合は次の様に書くことができます。</p>
+<p>1,000,000,000.0（10億）のような大きな数字は３桁ごとにコンマを入れると読みやすくなるが，<code class="docutils literal notranslate"><span class="pre">Python</span></code>では<code class="docutils literal notranslate"><span class="pre">,</span></code>の代わりに<code class="docutils literal notranslate"><span class="pre">_</span></code>を使うことができる。例えば，35億を<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てる場合は次の様に書くことができる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">3_500_000_000.0</span>
 </pre></div>
 </div>
@@ -1244,13 +1238,6 @@ in English or the language of your choice.
 </div>
 </div>
 <p>ここで気づくのは，商のみが浮動小数点型が返されている。更に，式の数値に不動小数点型が１つでも入ると，浮動小数点型が返されることになる。例えば，上のコードの<code class="docutils literal notranslate"><span class="pre">2</span></code>を<code class="docutils literal notranslate"><span class="pre">2.0</span></code>に変えて計算してみると，全て浮動小数点型が返ってくる（試してみよう。）</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>1,000,000,000.0（10億）のような大きな数字は３桁ごとにコンマを入れると読みやすくなりますが，<code class="docutils literal notranslate"><span class="pre">Python</span></code>では<code class="docutils literal notranslate"><span class="pre">,</span></code>の代わりに<code class="docutils literal notranslate"><span class="pre">_</span></code>を使うことができる。例えば，35億は次の様に書くことができます。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">3_500_000_000.0</span>
-</pre></div>
-</div>
-</div>
 <p>数学では<code class="docutils literal notranslate"><span class="pre">()</span></code>の中が先に計算されるが，<code class="docutils literal notranslate"><span class="pre">Python</span></code>でも同じである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1350,17 +1337,17 @@ in English or the language of your choice.
 <li><p>３行目：<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code>が評価され，その値が<code class="docutils literal notranslate"><span class="pre">z</span></code>に割り当てられる。</p></li>
 <li><p>４行目：<code class="docutils literal notranslate"><span class="pre">z</span></code>が評価され，値<code class="docutils literal notranslate"><span class="pre">10.0</span></code>が返される。</p></li>
 </ul>
-<p>上の説明では「代入する」ではなく「割り当てる」という表現を使ったが，その理由を解説しよう。簡単にいうと，<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">10</span></code>は全く別物であるためである。この点を理解するために、多くの品物が保管されている大きな倉庫を考えてみよう。倉庫の管理者はどの品物がどこに保管されているかを記録する在庫リストを作成し、そこに品物が保管されている棚を示す記号を記入するとしよう。この例を使うと、</p>
+<p>上の説明では「代入する」ではなく「割り当てる」という表現を使ったが，その理由を解説しよう。簡単にいうと，<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">100</span></code>は全く別物であるためである。この点を理解するために、多くの品物が保管されている大きな倉庫を考えてみよう。倉庫の管理者はどの品物がどこに保管されているかを記録する在庫リストを作成し、そこに品物が保管されている棚を示す記号を記入するとしよう。この例を使うと、</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>　→　倉庫の棚に保管されている品物</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">100</span></code>　→　倉庫の棚に保管されている品物</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>　→　在庫リストに記載されている棚の記号</p></li>
 </ul>
 <p>となる。品物と棚の記号は別物である。<code class="docutils literal notranslate"><span class="pre">Python</span></code>では、品物である<code class="docutils literal notranslate"><span class="pre">10</span></code>がコンピューター内のメモリーの所定の場所に保存され、その場所を示すのが変数<code class="docutils literal notranslate"><span class="pre">x</span></code>となる。即ち、<code class="docutils literal notranslate"><span class="pre">x</span></code>は品物<code class="docutils literal notranslate"><span class="pre">10</span></code>の実態とは異なる単なる「参照記号」なのである。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>　→　PCのメモリーに保存されているデータ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">100</span></code>　→　PCのメモリーに保存されているデータ</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>　→　参照記号</p></li>
 </ul>
-<p>この点を明確にするために、上のコードは「<code class="docutils literal notranslate"><span class="pre">10</span></code>を変数<code class="docutils literal notranslate"><span class="pre">x</span></code>に<strong>割り当てる</strong>」と考える。ここで<code class="docutils literal notranslate"><span class="pre">=</span></code>の<strong>右辺</strong>を先に読み，その次に<strong>左辺</strong>を読んでいることに注意しよう。<code class="docutils literal notranslate"><span class="pre">=</span></code>を右から左に読む（考える）ことを習慣づけることが、今後<code class="docutils literal notranslate"><span class="pre">Python</span></code>を勉強する上で重要となる。この点を示すために次のコードを考えてみよう。</p>
+<p>この点を明確にするために、上のコードは「<code class="docutils literal notranslate"><span class="pre">100</span></code>を変数<code class="docutils literal notranslate"><span class="pre">x</span></code>に<strong>割り当てる</strong>」と考える。ここで<code class="docutils literal notranslate"><span class="pre">=</span></code>の<strong>右辺</strong>を先に読み，その次に<strong>左辺</strong>を読んでいることに注意しよう。<code class="docutils literal notranslate"><span class="pre">=</span></code>を右から左に読む（考える）ことを習慣づけることが、今後<code class="docutils literal notranslate"><span class="pre">Python</span></code>を勉強する上で重要となる。この点を示すために次のコードを考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
@@ -1370,8 +1357,8 @@ in English or the language of your choice.
 </div>
 <p>「？」と思うかもしれない。暗に方程式として考えるためであろう（私がそうだった）。これを右から左に読むとスッキリする。</p>
 <ol class="simple">
-<li><p>上で<code class="docutils literal notranslate"><span class="pre">10</span></code>を<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てたが、問題のコードの右辺の<code class="docutils literal notranslate"><span class="pre">x</span></code>がその<code class="docutils literal notranslate"><span class="pre">10</span></code>である。<code class="docutils literal notranslate"><span class="pre">10</span></code>に<code class="docutils literal notranslate"><span class="pre">1</span></code>を加えたものが<code class="docutils literal notranslate"><span class="pre">11</span></code>であり、それが右辺である。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">=</span></code>を使い右辺の<code class="docutils literal notranslate"><span class="pre">11</span></code>を左辺の<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てている。この時点で、<code class="docutils literal notranslate"><span class="pre">10</span></code>の参照記号であった<code class="docutils literal notranslate"><span class="pre">x</span></code>は<code class="docutils literal notranslate"><span class="pre">11</span></code>の参照記号に変更される。</p></li>
+<li><p>上で<code class="docutils literal notranslate"><span class="pre">100</span></code>を<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てたが、問題のコードの右辺の<code class="docutils literal notranslate"><span class="pre">x</span></code>がその<code class="docutils literal notranslate"><span class="pre">100</span></code>である。<code class="docutils literal notranslate"><span class="pre">100</span></code>に<code class="docutils literal notranslate"><span class="pre">1</span></code>を加えたものが<code class="docutils literal notranslate"><span class="pre">101</span></code>であり、それが右辺である。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=</span></code>を使い右辺の<code class="docutils literal notranslate"><span class="pre">101</span></code>を左辺の<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てている。この時点で、<code class="docutils literal notranslate"><span class="pre">100</span></code>の参照記号であった<code class="docutils literal notranslate"><span class="pre">x</span></code>は<code class="docutils literal notranslate"><span class="pre">101</span></code>の参照記号に変更される。</p></li>
 </ol>
 <p>実際に<code class="docutils literal notranslate"><span class="pre">x</span></code>を表示してみよう。</p>
 <div class="cell docutils container">
@@ -1389,11 +1376,11 @@ in English or the language of your choice.
 <p>このように<code class="docutils literal notranslate"><span class="pre">=</span></code>を使う度に，右辺のデータが左辺の参照記号に割り当てられたり，割り当てが変更されたりすることになる。「品物と参照記号の関係」は今の段階ではそれ程重要ではないが，先に進むにつれて重要性が増してくるので，今のうちにこのようなイメージを持つと良いだろう。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">10</span></code>を考えてみよう。Pythonの<a class="reference external" href="https://docs.python.org/3/reference/simple_stmts.html">公式ドキュメント</a>では，このように<code class="docutils literal notranslate"><span class="pre">=</span></code>が使われるコードを assignment statement と呼んでいる。一方，<a class="reference external" href="https://docs.python.org/ja/3/reference/simple_stmts.html">日本語版</a>は assignment statement を「代入文」と訳し，<code class="docutils literal notranslate"><span class="pre">=</span></code>を「代入演算子」と呼んでいる。しかし英語では assignment（割り当て）と substitution（代入）は異なる意味を持ち，前者が参照記号と実態の関係をより正確に反映していると考えられる。このサイトでは参照記号と実態の違いを強調するために，「代入」ではなく「割り当てる（assign）」という表現を使っている。</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">101</span></code>を考えてみよう。Pythonの<a class="reference external" href="https://docs.python.org/3/reference/simple_stmts.html">公式ドキュメント</a>では，このように<code class="docutils literal notranslate"><span class="pre">=</span></code>が使われるコードを assignment statement と呼んでいる。一方，<a class="reference external" href="https://docs.python.org/ja/3/reference/simple_stmts.html">日本語版</a>は assignment statement を「代入文」と訳し，<code class="docutils literal notranslate"><span class="pre">=</span></code>を「代入演算子」と呼んでいる。しかし英語では assignment（割り当て）と substitution（代入）は異なる意味を持ち，前者が参照記号と実態の関係をより正確に反映していると考えられる。このサイトでは参照記号と実態の違いを強調するために，「代入する」ではなく「割り当てる（assign）」という表現を使っている。</p>
 </div>
 </section>
-<section id="id10">
-<h3>複数の変数の割り当て<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<section id="sec-1-multiple-assignment">
+<span id="id10"></span><h3>複数の変数の同時割り当て<a class="headerlink" href="#sec-1-multiple-assignment" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">=</span></code>を使い１つの変数への割り当てを考えたが、同時に複数の変数への割り当ても可能である。次の例を考えよう。（<code class="docutils literal notranslate"><span class="pre">=</span></code>の右辺から読む！）</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

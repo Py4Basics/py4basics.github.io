@@ -3,6 +3,10 @@
 
 # # モジュールと疑似コード
 
+# <div name="html-admonition" style="font-size: 0.8em">
+# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
+# </div><br>
+
 # ## モジュールとパッケージ
 
 # ### 説明
@@ -10,14 +14,6 @@
 # Pythonには組み込み関数が多く用意されているが，Jupyter Notebookで`Python`のセッションを開始しても全ての関数が使える状態になっていない。使えるようにするためには，モジュール（modules）やパッケージ（package）と呼ばれるものを読み込む必要がある。２つの違いを簡単にいうと次のようになる。
 # * モジュール（module）は**１つ**のファイル（拡張子が`.py`）にまとめられた関数群であり，
 # * パッケージは（package）**複数**つのファイル（拡張子が`.py`）で構成されている（フォルダーにまとめられている）
-
-# ```{margin}
-# <div name="html-admonition">
-# Do you want to read in a differnt language? Start
-# <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/><input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="translation" style="color:#ffffff;background-color:#008080;" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/>
-# in English or the language of your choice.
-# </div>
-# ```
 
 # 従って，モジュール全体を読み込んだり，あるパッケージの１つのモジュールだけを読み込むということも可能である。授業では，`NumPy`，`SciPy`，`Pandas`を使うが，ここでは例として数学用の`math`モジュール，ランダム変数用の`random`モジュール，オブジェクトの属性を表示する`see`モジュールを取り上げる。
 # 
