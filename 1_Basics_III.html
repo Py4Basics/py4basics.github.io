@@ -21,7 +21,7 @@
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -598,7 +598,7 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id17">
+  <a class="reference internal nav-link" href="#sec-3-scope">
    スコープ
   </a>
   <ul class="nav section-nav flex-column">
@@ -796,7 +796,7 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id17">
+  <a class="reference internal nav-link" href="#sec-3-scope">
    スコープ
   </a>
   <ul class="nav section-nav flex-column">
@@ -1425,51 +1425,15 @@ print(...)
 </div>
 </div>
 </div>
-<p>この場合、戻り値はタプルとして返される（タプルは<code class="docutils literal notranslate"><span class="pre">,</span></code>で定義されることを思い出そう）。これを利用して、関数を実行する際に変数にに戻り値のを割り当てることができる。</p>
+<p>この場合、戻り値はタプルとして返される（タプルは<code class="docutils literal notranslate"><span class="pre">,</span></code>で定義されることを思い出そう）。次のコードは，変数<code class="docutils literal notranslate"><span class="pre">d</span></code>に戻り値を割り当てている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">func_3</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-16
-64
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">func_3</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>上のコードの戻り値はタプルなため，それに合わせて次のように書くこともできる。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">=</span> <span class="n">func_3</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>しかしタプルは<code class="docutils literal notranslate"><span class="pre">,</span></code>で定義されるので、<code class="docutils literal notranslate"><span class="pre">()</span></code>を省いても問題ない。</p>
-</div>
-<p>また次のコードでも同じ結果となる。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">func_3</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-16
-64
-</pre></div>
-</div>
-</div>
-</div>
-<p>ここでは返り値のタプル自体を<code class="docutils literal notranslate"><span class="pre">d</span></code>に割り当て、その各要素を<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数で表示している。</p>
+<p><code class="docutils literal notranslate"><span class="pre">d</span></code>を実行すると次の表示となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span>
@@ -1477,10 +1441,87 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, 16, 64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 9, 27)
 </pre></div>
 </div>
 </div>
+</div>
+<p>従って，次のようにそれぞれの要素にアクセスすることができる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d0</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">d0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+9
+27
+</pre></div>
+</div>
+</div>
+</div>
+<p>一方，タプルのアンパッキングという方法を使うと<code class="docutils literal notranslate"><span class="pre">d0</span></code>，<code class="docutils literal notranslate"><span class="pre">d1</span></code>，<code class="docutils literal notranslate"><span class="pre">d2</span></code>への割り当てをより簡単におこなうことができる。アンパッキングを説明するために，次のコードを考えよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e0</span><span class="p">,</span> <span class="n">e1</span><span class="p">,</span> <span class="n">e2</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;神戸&#39;</span><span class="p">,</span> <span class="s1">&#39;大学&#39;</span><span class="p">,</span> <span class="s1">&#39;経済&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">e0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>神戸
+大学
+経済
+</pre></div>
+</div>
+</div>
+</div>
+<p>このコードは次の割り当てを同時におこなっている。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">神戸</span></code>　→　<code class="docutils literal notranslate"><span class="pre">e0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">大学</span></code>　→　<code class="docutils literal notranslate"><span class="pre">e1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">経済</span></code>　→　<code class="docutils literal notranslate"><span class="pre">e2</span></code></p></li>
+</ul>
+<p>アンパッキングとは，「荷物をパッキングする」の反対の意味であり，上のコードは右辺の<code class="docutils literal notranslate"><span class="pre">()</span></code>で囲まれた要素を取り出して（アンパッキングして）左辺の変数に割り当てている。また，タプルはコンマ<code class="docutils literal notranslate"><span class="pre">,</span></code>で定義されるのを思い出そう。従って，右辺の<code class="docutils literal notranslate"><span class="pre">()</span></code>を省いて次のコードでも同じ結果となる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e0</span><span class="p">,</span> <span class="n">e1</span><span class="p">,</span> <span class="n">e2</span> <span class="o">=</span> <span class="s1">&#39;神戸&#39;</span><span class="p">,</span> <span class="s1">&#39;大学&#39;</span><span class="p">,</span> <span class="s1">&#39;経済&#39;</span>
+</pre></div>
+</div>
+<p>これが<a class="reference internal" href="1_Basics_I.html#sec-1-multiple-assignment"><span class="std std-ref">複数の変数の同時割り当て</span></a>で説明した<code class="docutils literal notranslate"><span class="pre">=</span></code>の「複数の変数の同時割り当て」である。</p>
+<p>これを利用して，関数<code class="docutils literal notranslate"><span class="pre">func_3</span></code>の実行時に戻り値を<code class="docutils literal notranslate"><span class="pre">d0</span></code>,<code class="docutils literal notranslate"><span class="pre">d1</span></code>,<code class="docutils literal notranslate"><span class="pre">d2</span></code>に同時に割り当てることができる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d0</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">func_3</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+9
+27
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>上のコードの左辺もタプルなため，次のように書くこともできる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">d0</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span> <span class="o">=</span> <span class="n">func_3</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>しかしタプルは<code class="docutils literal notranslate"><span class="pre">,</span></code>で定義されるので、<code class="docutils literal notranslate"><span class="pre">()</span></code>を省いても問題ない。</p>
 </div>
 </section>
 <section id="id11">
@@ -1704,7 +1745,7 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <section id="object">
 <span id="id16"></span><h2>オブジェクトと属性<a class="headerlink" href="#object" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>を習うと「オブジェクト」という単語が必ず出てくる。今の内にイメージをつかむために自転車をオブジェクトの例として考えてみよう。通常の自転車には車輪が２つあり、サドルが１つあり、左右にペダルが２つある。これらの数字が自転車に関する<strong>データ</strong>である。またペダルを踏むことにより前に動き、ハンドルを右にきると右方向に進むことになる。即ち、あることを実行すると、ある結果が返されるのである。これは数学の<strong>関数</strong>と同じように理解できる。<span class="math notranslate nohighlight">\(y=x^2\)</span>の場合、<span class="math notranslate nohighlight">\(x\)</span>が<code class="docutils literal notranslate"><span class="pre">2</span></code>であれば<span class="math notranslate nohighlight">\(y\)</span>の値として<code class="docutils literal notranslate"><span class="pre">4</span></code>が返される。このように自転車はデータと関数が備わっているオブジェクトとして考えることができる。また、車輪の数やペダルを踏むことは自転車特有のデータと関数であり、他のオブジェクト（例えば、冷蔵庫）にはない。即ち、世の中の「オブジェクト」にはそれぞれ異なるデータと関数が存在していると考えることができる。</p>
-<p><code class="docutils literal notranslate"><span class="pre">Python</span></code>の世界でも「すべて」をこれと同じように考える。上のコードの<code class="docutils literal notranslate"><span class="pre">10</span></code>にもデータと関数が備わっており、それらを<strong>属性</strong>（attributes）と呼ぶ。<code class="docutils literal notranslate"><span class="pre">10</span></code>は単なる数字に見えるが、実は様々な属性から構成されるオブジェクトなのである。上の例の自転車のように、<code class="docutils literal notranslate"><span class="pre">Python</span></code>の「属性」は次の２つに分類される。<code class="docutils literal notranslate"><span class="pre">10</span></code>を例にとると、</p>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code>の世界でもすべてをこれと同じように考える。コードセルに書いた<code class="docutils literal notranslate"><span class="pre">10</span></code>を実行すると，その<code class="docutils literal notranslate"><span class="pre">10</span></code>がオブジェクトであり，データと関数が備わることになる。それらを<strong>属性</strong>（attributes）と呼ぶ。<code class="docutils literal notranslate"><span class="pre">10</span></code>は単なる数字に見えるが、実は様々な属性から構成されるオブジェクトなのである。上の例の自転車のように、属性は次の２つに分類される。<code class="docutils literal notranslate"><span class="pre">10</span></code>を例にとると、</p>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>が持つ様々な<strong>データ属性</strong>（data attribute）（例えば、<code class="docutils literal notranslate"><span class="pre">10</span></code>という値や整数という情報）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>特有の関数である<strong>メソッド</strong>（method）（例えば、加算、除算のように<code class="docutils literal notranslate"><span class="pre">10</span></code>というデータに働きかける関数）</p></li>
@@ -1903,8 +1944,8 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <p>即ち，オブジェクトに備わっている関数がメソッドとなる。もう一点付け加えると，<code class="docutils literal notranslate"><span class="pre">x.append()</span></code>の場合，裏では<code class="docutils literal notranslate"><span class="pre">()</span></code>の中に<code class="docutils literal notranslate"><span class="pre">x</span></code>が引数として設定されことになる。</p>
 </div>
 </section>
-<section id="id17">
-<h2>スコープ<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
+<section id="sec-3-scope">
+<span id="id17"></span><h2>スコープ<a class="headerlink" href="#sec-3-scope" title="Permalink to this headline">#</a></h2>
 <section id="id18">
 <h3>説明<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
 <p>スコープとは、変数が所属し直接アクセスできるコードの中の「領域」を示す。類似する概念に名前空間（Namespace）もあるが、スコープの情報を記す「表」のことであり、スコープ（Scope）と同義と理解すれば良い。</p>
@@ -1983,7 +2024,7 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [58],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="nn">Input In [60],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s_local</span>
 
 <span class="ne">NameError</span>: name &#39;s_local&#39; is not defined
@@ -2003,17 +2044,12 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <p>次の例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">a</span></code>は既に定義されたが，この値を忘れて（知らずに）<code class="docutils literal notranslate"><span class="pre">10</span></code>だったと勘違いして次の関数を定義したとしよう。</p>
+<p>ここで<code class="docutils literal notranslate"><span class="pre">a</span></code>に<code class="docutils literal notranslate"><span class="pre">4</span></code>を割り当てたが，この値を忘れて（知らずに）<code class="docutils literal notranslate"><span class="pre">10</span></code>だったと勘違いして次の関数を定義したとしよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scope_3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -2051,7 +2087,7 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 </div>
 </div>
 </div>
-<p>この場合、関数<code class="docutils literal notranslate"><span class="pre">scope_4(x,a)</span></code>の<code class="docutils literal notranslate"><span class="pre">a</span></code>はローカス・スコープで定義され、グルーバル・スコープの<code class="docutils literal notranslate"><span class="pre">a</span></code>とは異なる。実際、グルーバル・スコープの<code class="docutils literal notranslate"><span class="pre">a</span></code>の値を確認してみると以前と同じ値である。</p>
+<p>この場合、関数<code class="docutils literal notranslate"><span class="pre">scope_4(x,a)</span></code>の<code class="docutils literal notranslate"><span class="pre">a</span></code>はローカス・スコープで定義され、グルーバル・スコープの<code class="docutils literal notranslate"><span class="pre">a</span></code>とは異なる。実際、グルーバル・スコープの<code class="docutils literal notranslate"><span class="pre">a</span></code>の値を確認してみると以前と同じ値<code class="docutils literal notranslate"><span class="pre">4</span></code>である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
@@ -2072,9 +2108,10 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a	 b	 c	 calculate_yt	 current_value	 d	 func_0	 func_1	 func_100	 
-func_2	 func_3	 func_kobe	 future_value	 gdp_component	 l	 my_list	 s	 scope_0	 
-scope_1	 scope_2	 scope_3	 scope_4	 t	 x	 x_list	 y	 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a	 calculate_yt	 current_value	 d	 d0	 d1	 d2	 e0	 e1	 
+e2	 func_0	 func_1	 func_100	 func_2	 func_3	 func_kobe	 future_value	 gdp_component	 
+l	 my_list	 s	 scope_0	 scope_1	 scope_2	 scope_3	 scope_4	 t	 
+x	 x_list	 y	 
 </pre></div>
 </div>
 </div>
@@ -2086,6 +2123,7 @@ scope_1	 scope_2	 scope_3	 scope_4	 t	 x	 x_list	 y
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループの１行目に使う変数は再割り当てされても構わない変数を使おう。</p>
 </div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループは次の章で出てくるので，この箇所はスキップして良いだろう。だが，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを学んだ後，もう一度こちらに戻ってきて読んでみよう。</p>
 <p>例を使って説明しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2117,7 +2155,7 @@ scope_1	 scope_2	 scope_3	 scope_4	 t	 x	 x_list	 y
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループで使う変数は、ループ用の変数（例えば，<code class="docutils literal notranslate"><span class="pre">i</span></code>，<code class="docutils literal notranslate"><span class="pre">j</span></code>，<code class="docutils literal notranslate"><span class="pre">k</span></code>など）を使うのが良いだろう。</p>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループで使う変数は、ループ用の変数を使うようにしよう。</p>
 </section>
 </section>
 </section>
