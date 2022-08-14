@@ -1176,7 +1176,18 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">//</span></code>（切り捨て除算）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%</span></code>（剰余演算）</p></li>
 </ul>
-<p>例を挙げて説明しよう。まず整数型の四則演算と累乗を考えてみよう。</p>
+<p><code class="docutils literal notranslate"><span class="pre">a÷b</span></code>を考えよう。除算，切り捨て除算，剰余演算の関係は次の式で与えられる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="n">X</span> <span class="n">q</span> <span class="o">+</span> <span class="n">r</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code>：割られる数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">b</span></code>：割る数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q</span></code>：商（quotient）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code>：剰余（余り, remainder）</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">q</span></code>を求めるには<code class="docutils literal notranslate"><span class="pre">//</span></code>を使い，<code class="docutils literal notranslate"><span class="pre">r</span></code>を求めるには<code class="docutils literal notranslate"><span class="pre">%</span></code>を使う。</p>
+<p>例を挙げて考えよう。まず整数型の四則演算と累乗を考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">+</span> <span class="mi">2</span>
@@ -1251,7 +1262,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>次に切り捨て演算を考えよう。<code class="docutils literal notranslate"><span class="pre">x/y</span></code>を計算すると，結果は整数部分と余り（<code class="docutils literal notranslate"><span class="pre">0</span></code>の場合もある）に分けることができるが，整数部分を返すの切り捨て演算となる。次の例では整数型<code class="docutils literal notranslate"><span class="pre">7</span></code>を不動小数点型で割り，計算結果の整数部分を不動小数点型で返している（<code class="docutils literal notranslate"><span class="pre">2.0</span></code>ではなく<code class="docutils literal notranslate"><span class="pre">2</span></code>で割ると整数型<code class="docutils literal notranslate"><span class="pre">3</span></code>が返される。試してみよう）。</p>
+<p>次に切り捨て演算を考えよう。<code class="docutils literal notranslate"><span class="pre">a/b</span></code>を計算すると，結果は整数部分である商と余り（<code class="docutils literal notranslate"><span class="pre">0</span></code>の場合もある）に分けることができるが，整数部分を返すのが切り捨て演算となる。次の例では整数型<code class="docutils literal notranslate"><span class="pre">7</span></code>を不動小数点型で割り，計算結果の整数部分を不動小数点型で返している（<code class="docutils literal notranslate"><span class="pre">2.0</span></code>ではなく<code class="docutils literal notranslate"><span class="pre">2</span></code>で割ると整数型<code class="docutils literal notranslate"><span class="pre">3</span></code>が返される。試してみよう）。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">//</span> <span class="mf">2.0</span>
@@ -1427,6 +1438,10 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>複数の変数同時割り当ては，<a class="reference internal" href="1_Basics_III.html#sec-3-unpacking"><span class="std std-ref">ここで</span></a>説明するタプルのアンパッキングと呼ばれる特徴を使っている。</p>
 </div>
 </section>
 <section id="id11">
@@ -2921,6 +2936,19 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(True, False)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">in</span></code>演算子は文字列にも使うことができる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;egg&#39;</span> <span class="ow">in</span> <span class="s1">&#39;breadeggham&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
