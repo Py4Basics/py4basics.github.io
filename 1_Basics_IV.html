@@ -1563,7 +1563,12 @@ Y =
 </ul>
 <p>３つに共通することは，<code class="docutils literal notranslate"><span class="pre">n</span></code>回目に計算した値は<code class="docutils literal notranslate"><span class="pre">n-1</span></code>回目に計算した値から独立だということである。例えば，消費関数を考えてみよう。３回目のループで計算した消費量はその回の所得に依存するが，２回目ループの消費量や所得には依存しない。<code class="docutils literal notranslate"><span class="pre">print()</span></code>と<code class="docutils literal notranslate"><span class="pre">.append()</span></code>の例も同じである。</p>
 <p>一方，マクロ経済学では，今期の値は前期の値に依存する場合が頻繁に出てくる。典型的な例が資本ストックである。<code class="docutils literal notranslate"><span class="pre">t</span></code>期末の資本ストックは<code class="docutils literal notranslate"><span class="pre">t</span></code>期の投資と<code class="docutils literal notranslate"><span class="pre">t-1</span></code>期末の資本ストックによって決定される。ここでは，このように動的に変化する変数を捉えるための<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの書き方を紹介するのが目的である。</p>
-<p>例を使って説明するために，次の例を考えよう。初期の資本ストックは<code class="docutils literal notranslate"><span class="pre">0</span></code>であり，初期以降毎期ごと<code class="docutils literal notranslate"><span class="pre">10</span></code>単位の投資が<code class="docutils literal notranslate"><span class="pre">5</span></code>期間おこなわれるとしよう。即ち，次のリストを作成したいとしよう。</p>
+<p>投資と資本ストックはフローとストックの関係にあるが，お風呂の浴槽にバケツで水を足していくことをイメージすれば簡単に理解できるだろう。</p>
+<ul class="simple">
+<li><p>浴槽に溜った水　→　資本ストック（ストックの概念）</p></li>
+<li><p>バケツの水　→　投資（フローの概念）</p></li>
+</ul>
+<p>初期の資本ストック（浴槽の水）<code class="docutils literal notranslate"><span class="pre">0</span></code>であり，毎期ごと<code class="docutils literal notranslate"><span class="pre">10</span></code>単位の投資（<code class="docutils literal notranslate"><span class="pre">10</span></code>リットルのバケツで水を追加）するとしよう。問題を簡単にするために<code class="docutils literal notranslate"><span class="pre">5</span></code>期間（水を追加するのは<code class="docutils literal notranslate"><span class="pre">5</span></code>回）とする。資本ストック（浴槽の水量）の推移は次のリストで表すことができる。<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使って，このリストを作成することが目的である。</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">10</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
@@ -1694,7 +1699,24 @@ Y =
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">k_list</span></code>の最後の要素と同じであり，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ内で更新用の変数として使われたのがわかる。この点に関する注意点として<a class="reference internal" href="1_Basics_III.html#sec-3-scope"><span class="std std-ref">スコープ</span></a>の箇所を復習することを勧める。</p>
+<p><code class="docutils literal notranslate"><span class="pre">k_list</span></code>の最後の要素と同じであり，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ内で更新用の変数として使われたのがわかる。この点に関する注意点として<a class="reference internal" href="1_Basics_III.html#sec-3-scope"><span class="std std-ref">ここの箇所</span></a>を復習を勧める。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>初期時点の資本ストック<code class="docutils literal notranslate"><span class="pre">k0</span></code>と期間<code class="docutils literal notranslate"><span class="pre">period</span></code>を引数として，資本蓄積の<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを関数化してみよう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">capital_accumulation</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">period</span><span class="p">):</span>
+
+    <span class="n">k</span> <span class="o">=</span> <span class="n">k0</span>
+
+    <span class="n">k_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">period</span><span class="p">):</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">10</span>
+        <span class="n">k_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">k_list</span>
+</pre></div>
+</div>
+</div>
 <p>２つの書き方を紹介した。基本的にどちらを使っても良い。上でも書いたが，最初の方法は<code class="docutils literal notranslate"><span class="pre">t</span></code>に対応する変数の値を追う必要があるので，それを分かりやすいと感じる人もいるだろうし，面倒と感じる人もいるかも知れない。一方，２つ目の方法は<code class="docutils literal notranslate"><span class="pre">t</span></code>を確認する必要がない。もちろん，初期値の変数<code class="docutils literal notranslate"><span class="pre">k=0</span></code>を<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの外に作る必要があるが，これは次の例で説明するように，関数の中で使う場合は問題にはならない。このサイトでは主に２つ目の手法を多用することになる。</p>
 </section>
 <section id="sec-4-future-values">
@@ -2181,6 +2203,7 @@ A
 </section>
 <section id="id12">
 <h3>近似を考える<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code>ループと<code class="docutils literal notranslate"><span class="pre">for</span></code>ループをどう使い分けすれば良いだろうか。扱うデータ構造と目的が判断基準となるだろう。リストやタプルのようなイタラブルが用意できるのであれば，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの実行速度が断然速い。この場合はループの回数が事前に分かっているケースとなるが，分からない場合もあり得る。そういう場合は<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使うべきである。このセクションでは，その例を2つ取り上げる。</p>
 <section id="id13">
 <h4>壁からの距離<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
 <p>壁から１メートル離れて立ち，毎回壁までの半分の距離を進むとしよう。壁までの距離を変数<code class="docutils literal notranslate"><span class="pre">distance</span></code>で表すと，初期値は<code class="docutils literal notranslate"><span class="pre">1</span></code>となる。またループをストップする距離を<code class="docutils literal notranslate"><span class="pre">0.001</span></code>（1mm）とする。<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを書いて距離の推移を表示してみよう。</p>

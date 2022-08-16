@@ -765,7 +765,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x114d4f850&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1203b9f70&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_11_1.png" src="_images/1_Basics_VI_11_1.png" />
@@ -945,7 +945,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x114e6f550&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1204d4e50&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_33_1.png" src="_images/1_Basics_VI_33_1.png" />
@@ -962,7 +962,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x114edeca0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12054b850&gt;]
 </pre></div>
 </div>
 <img alt="_images/1_Basics_VI_35_1.png" src="_images/1_Basics_VI_35_1.png" />
@@ -1019,7 +1019,7 @@ xvalues(l, h, n)
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">marker</span></code>：観測値のマーカー（<code class="docutils literal notranslate"><span class="pre">o</span></code>，<code class="docutils literal notranslate"><span class="pre">.</span></code>，<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>，<code class="docutils literal notranslate"><span class="pre">^</span></code>などがある; <a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html">参照サイト</a>）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">markersize</span></code>：マーカーの大きさ</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>：以下で説明する<code class="docutils literal notranslate"><span class="pre">ax.legend()</span></code>がある場合に有効となる</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>：以下で説明する<code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code>がある場合に有効となる</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1119,6 +1119,33 @@ xvalues(l, h, n)
 <img alt="_images/1_Basics_VI_50_0.png" src="_images/1_Basics_VI_50_0.png" />
 </div>
 </div>
+<p>最後に，図の大きさの指定方法を例を使って説明しよう。変更方法は簡単で，次の行を<code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>の<strong>上</strong>に付け加えるだけである。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>この例では，横の長さを<code class="docutils literal notranslate"><span class="pre">7</span></code>，縦の長さを<code class="docutils literal notranslate"><span class="pre">3</span></code>に指定している（単位はインチ）。デフォルトの値は<code class="docutils literal notranslate"><span class="pre">(6.4,</span> <span class="pre">4.8)</span></code>である。このコードの意味を簡単に説明しよう。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.figure()</span></code>は透明のキャンバスを作成する。</p></li>
+<li><p>引数<code class="docutils literal notranslate"><span class="pre">figsize=(8,4)</span></code>は，そのキャンバスのサイズを指定する。</p></li>
+<li><p>透明のキャンバス上に，<code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>は図をプロットすることになる。従って，<code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>は<code class="docutils literal notranslate"><span class="pre">plt.figure()</span></code>の後に書く必要がある。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">25</span><span class="p">],</span> <span class="s1">&#39;:ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;This is a legend&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;This is a Title&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Label for x&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Label for y&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1_Basics_VI_52_0.png" src="_images/1_Basics_VI_52_0.png" />
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>このままで日本語を表示できない。一番簡単な方法は外部パッケージの<code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code>を使うことだろう。まずコンピューターにインストールする必要がある。Google Colaboratoryであれば，<strong>毎回</strong>次のコードを最初に実行してインストールする必要がある。</p>
@@ -1155,20 +1182,20 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1_Basics_VI_56_0.png" src="_images/1_Basics_VI_56_0.png" />
+<img alt="_images/1_Basics_VI_58_0.png" src="_images/1_Basics_VI_58_0.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
 <p>様々な引数があり図に「飾り付け」をすることができる。詳しくは<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html">このリンク</a>を参照することにして，ここでは基本的な引数だけを紹介する。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">bins</span></code>：柱の数</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">bins</span></code>：階級の数（柱の数）</p>
 <ul>
 <li><p>整数型を使えば文字通りの柱の数となる。</p></li>
 <li><p>区間の値をリストとして設定することができる。例えば，<code class="docutils literal notranslate"><span class="pre">0</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>を等区間に柱を２つ設定する場合は<code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0.5,</span> <span class="pre">1]</span></code>となる。</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">linewidth</span></code>又は<code class="docutils literal notranslate"><span class="pre">lw</span></code>：柱の間隔（デフォルトは<code class="docutils literal notranslate"><span class="pre">1</span></code>）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>：色（リストにして列の順番で指定する; <a class="reference external" href="https://matplotlib.org/3.1.0/gallery/color/named_colors.html">参照サイト</a>）</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code>：色（リストにして列の順番で指定する; <a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html">参照サイト</a>）</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">r</span></code>又は<code class="docutils literal notranslate"><span class="pre">red</span></code>：赤</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">k</span></code>又は<code class="docutils literal notranslate"><span class="pre">black</span></code>：黒</p></li>
@@ -1205,7 +1232,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1_Basics_VI_58_0.png" src="_images/1_Basics_VI_58_0.png" />
+<img alt="_images/1_Basics_VI_60_0.png" src="_images/1_Basics_VI_60_0.png" />
 </div>
 </div>
 <p>次に複数のデータを重ねてプロットする場合を考えよう。方法は簡単で，ライン・プロットと同じように<code class="docutils literal notranslate"><span class="pre">plt.hist()</span></code>を続けてコードを書くだけである。まず平均<code class="docutils literal notranslate"><span class="pre">4</span></code>標準偏差<code class="docutils literal notranslate"><span class="pre">2</span></code>の正規分布からのランダム変数を用意しよう。</p>
@@ -1234,7 +1261,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1_Basics_VI_62_0.png" src="_images/1_Basics_VI_62_0.png" />
+<img alt="_images/1_Basics_VI_64_0.png" src="_images/1_Basics_VI_64_0.png" />
 </div>
 </div>
 <p>濃い赤の部分が重なっている部分となる。</p>
@@ -1264,7 +1291,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1_Basics_VI_64_0.png" src="_images/1_Basics_VI_64_0.png" />
+<img alt="_images/1_Basics_VI_66_0.png" src="_images/1_Basics_VI_66_0.png" />
 </div>
 </div>
 </section>
@@ -1327,7 +1354,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1]
 </pre></div>
 </div>
 </div>
@@ -1340,7 +1367,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
@@ -1354,7 +1381,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
@@ -1367,7 +1394,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.35
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
 </pre></div>
 </div>
 </div>
@@ -1412,7 +1439,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1_Basics_VI_87_0.png" src="_images/1_Basics_VI_87_0.png" />
+<img alt="_images/1_Basics_VI_89_0.png" src="_images/1_Basics_VI_89_0.png" />
 </div>
 </div>
 <p>＜コードの説明＞</p>
@@ -1467,7 +1494,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1_Basics_VI_93_0.png" src="_images/1_Basics_VI_93_0.png" />
+<img alt="_images/1_Basics_VI_95_0.png" src="_images/1_Basics_VI_95_0.png" />
 </div>
 </div>
 <p>この驚くべき結果は統計学の金字塔である。ではどこが金字塔なのだろうか。データ分析のためには標本を集める必要がある。例えば，大学生の１日の授業以外の勉強時間（単位は分）を考えてみよう。マイナス時間や24時間以上はあり得ないため，母集団の分布は正規分布ではないことは明らかである。標本の中には驚くほど勉強している人もいれば，アルバイトなどに追われ<code class="docutils literal notranslate"><span class="pre">0</span></code>分の学生も含まれるかも知れない。もしかすると，分布には複数のピークがあるかもしれない（例えば，<code class="docutils literal notranslate"><span class="pre">0</span></code>と<code class="docutils literal notranslate"><span class="pre">60</span></code>分）。いずれにしろ，母集団の分布は未知であるため，仮説検定は不可能のように感じられる。しかし中心極限定理は，超えることはできないように見える壁をいとも簡単に飛び越えさせてくれる。ランダム標本を集め，標本の大きさが十分に大きければ，標本平均は正規分布に従う（近似される）ため仮説検定が可能になるのだ。</p>
@@ -1498,7 +1525,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.45
 </pre></div>
 </div>
 </div>
@@ -1511,7 +1538,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.44721359549995787
 </pre></div>
 </div>
 </div>
@@ -1545,7 +1572,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.44721359549995787
 </pre></div>
 </div>
 </div>
@@ -1577,7 +1604,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.341640786499874
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.341640786499874
 </pre></div>
 </div>
 </div>
@@ -1591,36 +1618,36 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.8944271909999157,
- 0.8944271909999157,
- 1.341640786499874,
- 0.8944271909999157,
- 0.0,
- -0.44721359549995787,
- 1.341640786499874,
- 0.44721359549995837,
- 0.44721359549995837,
- -1.341640786499874,
- 0.0,
- 0.44721359549995837,
- -0.44721359549995787,
- 2.23606797749979,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.44721359549995837,
+ 1.7888543819998315,
  0.0,
  0.8944271909999157,
- 0.44721359549995837,
- 1.341640786499874,
- -0.44721359549995787,
- -0.44721359549995787,
- -2.23606797749979,
+ 0.8944271909999157,
  0.0,
- -1.341640786499874,
  -1.788854381999832,
  -0.44721359549995787,
+ -2.23606797749979,
+ -0.44721359549995787,
+ 0.44721359549995837,
+ 0.0,
+ 0.0,
+ 1.7888543819998315,
+ -1.341640786499874,
+ -1.788854381999832,
  0.8944271909999157,
- 0.0,
- 0.0,
+ -1.341640786499874,
  1.341640786499874,
- 1.341640786499874]
+ -1.341640786499874,
+ -1.788854381999832,
+ 0.44721359549995837,
+ -0.8944271909999157,
+ 1.7888543819998315,
+ 0.8944271909999157,
+ -1.788854381999832,
+ 0.0,
+ 0.0,
+ 0.44721359549995837,
+ -0.8944271909999157]
 </pre></div>
 </div>
 </div>
@@ -1663,7 +1690,7 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_116_1.png" src="_images/1_Basics_VI_116_1.png" />
+<img alt="_images/1_Basics_VI_118_1.png" src="_images/1_Basics_VI_118_1.png" />
 </div>
 </div>
 <p>＜コードの説明＞</p>
@@ -1740,14 +1767,14 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：1
+</pre></div>
+</div>
+<img alt="_images/1_Basics_VI_128_1.png" src="_images/1_Basics_VI_128_1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_126_1.png" src="_images/1_Basics_VI_126_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：2
-</pre></div>
-</div>
-<img alt="_images/1_Basics_VI_126_3.png" src="_images/1_Basics_VI_126_3.png" />
+<img alt="_images/1_Basics_VI_128_3.png" src="_images/1_Basics_VI_128_3.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が小さい（<code class="docutils literal notranslate"><span class="pre">10</span></code>）とランダムな影響が強く現れるが，大きくなると（<code class="docutils literal notranslate"><span class="pre">10000</span></code>）大数の法則によって<code class="docutils literal notranslate"><span class="pre">-1</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>の割合は<code class="docutils literal notranslate"><span class="pre">0.5</span></code>に近づいている。一方で，<code class="docutils literal notranslate"><span class="pre">N</span></code>が大きくなっても，分布は標準正規分布とは大きく異なっている。</p>
@@ -1762,11 +1789,11 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：3
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_128_1.png" src="_images/1_Basics_VI_128_1.png" />
+<img alt="_images/1_Basics_VI_130_1.png" src="_images/1_Basics_VI_130_1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：3
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_128_3.png" src="_images/1_Basics_VI_128_3.png" />
+<img alt="_images/1_Basics_VI_130_3.png" src="_images/1_Basics_VI_130_3.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が大きくなると，大数の法則によって左右対称の分布となっている。しかし，依然として標準正規分布とは異なっている。</p>
@@ -1778,14 +1805,14 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：9
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：7
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_130_1.png" src="_images/1_Basics_VI_130_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：12
+<img alt="_images/1_Basics_VI_132_1.png" src="_images/1_Basics_VI_132_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：13
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_130_3.png" src="_images/1_Basics_VI_130_3.png" />
+<img alt="_images/1_Basics_VI_132_3.png" src="_images/1_Basics_VI_132_3.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が小さいとランダムな要素が際立ち明確ではないが，<code class="docutils literal notranslate"><span class="pre">n</span></code>増加すると標準正規分布に近づいていることが分かる。</p>
@@ -1797,14 +1824,14 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：20
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：21
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_132_1.png" src="_images/1_Basics_VI_132_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：30
+<img alt="_images/1_Basics_VI_134_1.png" src="_images/1_Basics_VI_134_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：29
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_132_3.png" src="_images/1_Basics_VI_132_3.png" />
+<img alt="_images/1_Basics_VI_134_3.png" src="_images/1_Basics_VI_134_3.png" />
 </div>
 </div>
 <p>標準正規分布に大きく近づいたことが確認できる。</p>
@@ -1836,10 +1863,10 @@ Z_n = \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：105
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：114
 </pre></div>
 </div>
-<img alt="_images/1_Basics_VI_134_1.png" src="_images/1_Basics_VI_134_1.png" />
+<img alt="_images/1_Basics_VI_136_1.png" src="_images/1_Basics_VI_136_1.png" />
 </div>
 </div>
 </section>
