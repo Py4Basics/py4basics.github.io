@@ -262,6 +262,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  JupyterLite
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4class.netlify.app">
+   JupyterLiteを始める
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav></div>
@@ -5581,14 +5593,47 @@ dtype: float64
 <li><p><code class="docutils literal notranslate"><span class="pre">.max()</span></code>：最大値</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.min()</span></code>：最小値</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.mean()</span></code>：（算術）平均</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.std()</span></code>：標準偏差</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.var()</span></code>：分散</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.std()</span></code>：標準偏差</p>
+<ul>
+<li><p>引数<code class="docutils literal notranslate"><span class="pre">ddof=1</span></code>はデフォルトで<code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std()</span></code>はデフォルトで不偏標準偏差を計算する</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.var()</span></code>：分散</p>
+<ul>
+<li><p>引数<code class="docutils literal notranslate"><span class="pre">ddof=1</span></code>はデフォルトで<code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var()</span></code>はデフォルトで不偏分散を計算する</p></li>
+</ul>
+</li>
 </ul>
 <p>次の２つも便利である。計算する際，欠損値は無視され，結果は<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>として返される。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">.cov()</span></code>：分散共分散行列</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.cov()</span></code>：分散共分散行列</p>
+<ul>
+<li><p>引数<code class="docutils literal notranslate"><span class="pre">ddof=1</span></code>はデフォルトで<code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cov()</span></code>はデフォルトで不偏分散・共分散を計算する</p></li>
+</ul>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.corr()</span></code>：相関係数</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">pandas</span></code>と<code class="docutils literal notranslate"><span class="pre">numpy</span></code>では，標準偏差，分散，共分散を計算する際の引数<code class="docutils literal notranslate"><span class="pre">ddof</span></code>のデフォルトの値が異なるので注意が必要！</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code>のメソッド</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">.std()</span></code>，<code class="docutils literal notranslate"><span class="pre">.var()</span></code>，<code class="docutils literal notranslate"><span class="pre">.cov()</span></code>の全てで<code class="docutils literal notranslate"><span class="pre">ddof=1</span></code>がデフォルト</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>の関数</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">.std()</span></code>，<code class="docutils literal notranslate"><span class="pre">.var()</span></code>では<code class="docutils literal notranslate"><span class="pre">ddof=0</span></code>がデフォルト</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.cov()</span></code>では<code class="docutils literal notranslate"><span class="pre">ddof=1</span></code>がデフォルト</p></li>
+</ul>
+</li>
+</ul>
+<p>母集団の標準偏差・分散・共分散の不偏推定量を計算するには<code class="docutils literal notranslate"><span class="pre">ddof=1</span></code>が必要！！</p>
+</div>
 <p>例えば，<code class="docutils literal notranslate"><span class="pre">.cov()</span></code>を計算してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6112,6 +6157,10 @@ Name: gdp, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/runner/hostedtoolcache/Python/3.9.14/x64/lib/python3.9/site-packages/see/inspector.py:117: FutureWarning: is_monotonic is deprecated and will be removed in a future version. Use is_monotonic_increasing instead.
+  prop = getattr(obj, attr)
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    .*               []               in               +                +=
     -                -=               *                *=               @
     /                /=               //               //=              %
@@ -6314,7 +6363,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x120589820&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x11a6828e0&gt;
 </pre></div>
 </div>
 </div>
@@ -6335,7 +6384,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x120589fa0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x11a654a60&gt;
 </pre></div>
 </div>
 </div>

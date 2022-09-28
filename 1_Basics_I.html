@@ -262,6 +262,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  JupyterLite
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4class.netlify.app">
+   JupyterLiteを始める
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav></div>
@@ -1049,7 +1061,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="g g-Whitespace">    </span><span class="mi">10</span>
       <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid non-printable character U+3000
@@ -1173,8 +1185,11 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>（乗算）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/</span></code>（除算）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">**</span></code>（累乗）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">//</span></code>（切り捨て除算）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code>（剰余演算）</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">a/b</span></code>を計算すると，整数部分である商と余り（0の場合もある）に分けることができる。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">//</span></code>（切り捨て除算）：整数部分を返す</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code>（剰余演算）：余り返す</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">a÷b</span></code>を考えよう。除算，切り捨て除算，剰余演算の関係は次の式で与えられる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="n">X</span> <span class="n">q</span> <span class="o">+</span> <span class="n">r</span>
@@ -1655,7 +1670,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [32],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">32</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;1.0&#39;</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
