@@ -262,6 +262,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  JupyterLite
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4class.netlify.app">
+   JupyterLiteを始める
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav></div>
@@ -1351,7 +1363,7 @@ Y =
 <h2><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ<a class="headerlink" href="#for" title="Permalink to this headline">#</a></h2>
 <section id="id7">
 <h3>説明<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループは，指定した回数だけ処理を繰り返す計算手続きである。次のような書き方となる。</p>
+<p>ループとは同じコードを複数回続けて実行できるように書かれたコードを指す。ループには２つのタイプがあるが，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループは指定した回数だけ処理を繰り返す計算手続きである。次のような書き方となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for ＜イタラブルの要素を割り当てる変数＞ in ＜イタラブル＞:
     ＜毎回実行したい内容１＞
 </pre></div>
@@ -1982,27 +1994,20 @@ A
 <section id="id10">
 <h2>内包表記<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>内包表記とは<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの考えを使い、リストや辞書などを簡単に１行で生成する方法である。リストの場合、次のような書き方となる。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[＜実行したい内容＞ for i in ＜イタラブル＞]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[＜実行したい内容＞ for ＜要素を割り当てる変数＞ in ＜イタラブル＞]
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">＜イタラブル＞</span></code>の箇所は<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの１行目と同じとなる。</p>
-<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">＜要素を割り当てる変数＞</span> <span class="pre">in</span> <span class="pre">＜イタラブル＞</span></code>の箇所は<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの１行目と同じとなる。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">＜イタラブル＞</span></code>はリストやタプルなどを指す。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>は<code class="docutils literal notranslate"><span class="pre">＜イタラブル＞</span></code>の要素を割り当てる変数。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">＜要素を割り当てる変数＞</span></code>には<code class="docutils literal notranslate"><span class="pre">i</span></code>などを使う。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:</span></code>は入らない。</p></li>
-</ul>
-</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">＜実行したい内容＞</span></code>の箇所でループで実行したいコードを書く。</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">＜イタラブル＞</span></code>の例として<code class="docutils literal notranslate"><span class="pre">range(5)</span></code>を考えよう。まず<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使って、それぞれの要素を２乗にしたリストを生成するとしよう。</p>
+<p><code class="docutils literal notranslate"><span class="pre">＜イタラブル＞</span></code>の例として<code class="docutils literal notranslate"><span class="pre">range(5)</span></code>を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
 <span class="n">lst</span>
 </pre></div>
 </div>
@@ -2013,21 +2018,9 @@ A
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うと３行のコードとなるが、内包表記を使うと１行で済む。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16]
-</pre></div>
-</div>
-</div>
-</div>
-<p>次のように並べると<code class="docutils literal notranslate"><span class="pre">for</span></code>ループと内包表記の関係がより分かりやすくなるだろう。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループと内包表記を並べると２つの関係がより分かりやすくなるだろう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span>
@@ -2081,7 +2074,7 @@ A
 <h2><code class="docutils literal notranslate"><span class="pre">While</span></code>ループ<a class="headerlink" href="#while" title="Permalink to this headline">#</a></h2>
 <section id="id11">
 <h3>説明と簡単な例<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
-<p>ループとは同じコードを複数回続けて実行できるように書かれたコードを指す。１つのタイプは<code class="docutils literal notranslate"><span class="pre">while</span></code>ループと呼ばれ，名前からその機能を何となく想像できるかも知れない。与えられた条件が<code class="docutils literal notranslate"><span class="pre">True</span></code>の<strong>間</strong>はループ計算を繰り返し続け，<code class="docutils literal notranslate"><span class="pre">False</span></code>になると実行が止まるループとなる。次の書き方となる。</p>
+<p>ループの2つの目タイプは<code class="docutils literal notranslate"><span class="pre">while</span></code>ループと呼ばれ，名前からその機能を何となく想像できるかも知れない。与えられた条件が<code class="docutils literal notranslate"><span class="pre">True</span></code>の<strong>間</strong>はループ計算を繰り返し続け，<code class="docutils literal notranslate"><span class="pre">False</span></code>になると実行が止まるループとなる。主に，ループの回数が決まっていない場合に使われる。次の書き方となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>while ＜条件＞:                  # 1
     ＜条件がTrueの間，実行する内容＞  # 2
 </pre></div>
@@ -2216,7 +2209,7 @@ A
     <span class="n">distance</span> <span class="o">-=</span> <span class="n">distance</span><span class="o">/</span><span class="mi">2</span>     <span class="c1">#4</span>
 
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;残りの距離は</span><span class="si">{</span><span class="n">distance</span><span class="si">}</span><span class="s1">です。&#39;</span><span class="p">)</span>  <span class="c1">#5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;残りの距離は</span><span class="si">{</span><span class="n">distance</span><span class="o">*</span><span class="mi">1000</span><span class="si">}</span><span class="s1">mmです。&#39;</span><span class="p">)</span>  <span class="c1">#5</span>
 </pre></div>
 </div>
 </div>
@@ -2231,7 +2224,7 @@ A
 0.0078125
 0.00390625
 0.001953125
-残りの距離は0.0009765625です。
+残りの距離は0.9765625mmです。
 </pre></div>
 </div>
 </div>

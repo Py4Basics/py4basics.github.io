@@ -31,3 +31,7 @@ parts:
     title: "Pythonで学ぶマクロ経済学（中級＋レベル）"
   - url: https://py4etrics.github.io
     title: "Pythonで学ぶ入門計量経済学"
+- caption: "JupyterLite"
+  chapters:
+    - url: https://py4class.netlify.app
+      title: JupyterLiteを始める
