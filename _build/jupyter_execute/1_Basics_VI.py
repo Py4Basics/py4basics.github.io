@@ -220,7 +220,7 @@ pass
 # ### `plot()`の基本的な引数
 
 # `plot()`に引数を使うことによりデータの表示方法を指定できる。詳しくは[このリンク](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html)を参照することにして，ここでは基本的な引数だけを紹介する。
-# =* `linestyle`：線のスタイル（リストにして列の順番で指定する;`-`，`--`，`-.`，`:`などがある）
+# * `linestyle`：線のスタイル（リストにして列の順番で指定する;`-`，`--`，`-.`，`:`などがある）
 # * `linewidth` or `lw`：線の幅
 # * `color` or `c`：色（[参照サイト](https://matplotlib.org/stable/gallery/color/named_colors.html)）
 #     * `r`又は`red`は赤
@@ -736,9 +736,9 @@ N = 10
 # コイントスのシミュレーション
 tosses = [mean_standardized(n) for _ in range(N)] #1
 
-# 標準化平均の唯一の値の数
+# 標準化平均の重複しない値の数
 unique = len(set(tosses))                         #2
-print(f'標準化平均の唯一の値の数（x軸）：{unique}')       #3
+print(f'標準化平均の重複しない値の数（x軸）：{unique}')       #3
 
 # ヒストグラム
 plt.hist(tosses,
@@ -789,9 +789,9 @@ def draw_hist(n, N=10_000):   #1
     # コイントスのシミュレーション
     tosses = [mean_standardized(n) for _ in range(N)]
 
-    # 標準化平均の唯一の値の数
+    # 標準化平均の重複しない値の数
     unique = len(set(tosses))
-    print(f'標準化平均の唯一の値の数（x軸）：{unique}')
+    print(f'標準化平均の重複しない値の数（x軸）：{unique}')
 
     # ヒストグラム
     plt.hist(tosses,

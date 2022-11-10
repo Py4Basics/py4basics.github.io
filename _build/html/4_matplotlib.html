@@ -247,18 +247,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  JupyterLite
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4class.netlify.app">
-   JupyterLiteを始める
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   経済学
  </span>
 </p>
@@ -271,6 +259,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference external" href="https://py4etrics.github.io">
    Pythonで学ぶ入門計量経済学
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  JupyterLite
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4class.netlify.app">
+   JupyterLiteを始める
   </a>
  </li>
 </ul>
@@ -969,7 +969,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9248e7bd60&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fad1232bdc0&gt;]
 </pre></div>
 </div>
 <img alt="_images/4_matplotlib_16_1.png" src="_images/4_matplotlib_16_1.png" />
@@ -994,7 +994,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9248f6c670&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fad2027b760&gt;]
 </pre></div>
 </div>
 <img alt="_images/4_matplotlib_20_1.png" src="_images/4_matplotlib_20_1.png" />
@@ -1387,11 +1387,8 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 <li><p><code class="docutils literal notranslate"><span class="pre">ncols</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">1</span></code>）：軸の数を指定するために使う引数（「図を並べる」のセクションで説明する）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sharex</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sharey</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tight_layout</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">constrained_layout</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">constrained_layout</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）：複数の軸がある場合に使う引数であり，図の間隔を自動調整する（「図を並べる」のセクションで説明する）</p></li>
 </ul>
-<p>＜コメント＞<br>
-<code class="docutils literal notranslate"><span class="pre">tight_layout</span></code>と<code class="docutils literal notranslate"><span class="pre">constrained_layout</span></code>は同じ目的に使われるが，図の配置の計算方法が異なる。どちらを使っても大きく変わらない場合もあれば，一方がより良い表示結果になる場合もある。上手くいかない場合は，もう一方を試してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
@@ -1539,7 +1536,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </pre></div>
 </div>
 <p>２行・３列の配置になっており、左上から軸の番号が振られている。このような場合、<code class="docutils literal notranslate"><span class="pre">subplots()</span></code>の２つの引数が必須であり、別の２つの引数が有用である。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subplots</span><span class="p">(</span><span class="n">行の数</span><span class="p">,</span> <span class="n">列の数</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tight_layout</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subplots</span><span class="p">(</span><span class="n">行の数</span><span class="p">,</span> <span class="n">列の数</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -1547,7 +1544,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 <li><p>列の数（デフォルトは<code class="docutils literal notranslate"><span class="pre">1</span></code>）：上の例では<code class="docutils literal notranslate"><span class="pre">3</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sharex</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）：<code class="docutils literal notranslate"><span class="pre">True</span></code>にすると、全ての図で横軸が同じになり、不要な横軸の数字などを非表示になる。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sharey</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）：<code class="docutils literal notranslate"><span class="pre">Ture</span></code>にすると、全ての図で縦軸が同じになり、不要な縦軸の数字などを非表示にする</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tight_layout</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）：<code class="docutils literal notranslate"><span class="pre">Ture</span></code>にすると、全ての図の間隔を調整して見やすくなる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">constrained_layout</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）：<code class="docutils literal notranslate"><span class="pre">Ture</span></code>にすると、全ての図の間隔を調整して見やすくなる。</p></li>
 </ul>
 <p>上の例を使うと次のようになる。</p>
 <div class="cell docutils container">
@@ -1638,7 +1635,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
                        <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                       <span class="n">tight_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                       <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ax[0,0]&#39;</span><span class="p">)</span>
 

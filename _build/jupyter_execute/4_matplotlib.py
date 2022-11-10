@@ -335,11 +335,7 @@ df2.head()
 # * `ncols`（デフォルトは`1`）：軸の数を指定するために使う引数（「図を並べる」のセクションで説明する）
 # * `sharex`（デフォルトは`False`）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）
 # * `sharey`（デフォルトは`False`）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）
-# * `tight_layout`（デフォルトは`False`）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）
-# * `constrained_layout`（デフォルトは`False`）：複数の軸がある場合に使う引数（「図を並べる」のセクションで説明する）
-# 
-# ＜コメント＞<br>
-# `tight_layout`と`constrained_layout`は同じ目的に使われるが，図の配置の計算方法が異なる。どちらを使っても大きく変わらない場合もあれば，一方がより良い表示結果になる場合もある。上手くいかない場合は，もう一方を試してみよう。
+# * `constrained_layout`（デフォルトは`False`）：複数の軸がある場合に使う引数であり，図の間隔を自動調整する（「図を並べる」のセクションで説明する）
 
 # In[20]:
 
@@ -452,13 +448,13 @@ pass
 # ```
 # ２行・３列の配置になっており、左上から軸の番号が振られている。このような場合、`subplots()`の２つの引数が必須であり、別の２つの引数が有用である。
 # ```
-# subplots(行の数, 列の数, sharex=False, sharey=False, tight_layout=False)
+# subplots(行の数, 列の数, sharex=False, sharey=False, constrained_layout=False)
 # ```
 # * 行の数（デフォルトは`1`）：上の例では`2`
 # * 列の数（デフォルトは`1`）：上の例では`3`
 # * `sharex`（デフォルトは`False`）：`True`にすると、全ての図で横軸が同じになり、不要な横軸の数字などを非表示になる。
 # * `sharey`（デフォルトは`False`）：`Ture`にすると、全ての図で縦軸が同じになり、不要な縦軸の数字などを非表示にする
-# * `tight_layout`（デフォルトは`False`）：`Ture`にすると、全ての図の間隔を調整して見やすくなる。
+# * `constrained_layout`（デフォルトは`False`）：`Ture`にすると、全ての図の間隔を調整して見やすくなる。
 # 
 # 上の例を使うと次のようになる。
 
@@ -531,7 +527,7 @@ pass
 
 fig, ax = plt.subplots(2, 3, figsize=(8,3),
                        sharex=True, sharey=True,
-                       tight_layout=True)
+                       constrained_layout=True)
 ax[0,0].plot('X', data=df2)
 ax[0,0].set_title('ax[0,0]')
 

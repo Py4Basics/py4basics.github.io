@@ -247,18 +247,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  JupyterLite
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4class.netlify.app">
-   JupyterLiteを始める
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   経済学
  </span>
 </p>
@@ -271,6 +259,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference external" href="https://py4etrics.github.io">
    Pythonで学ぶ入門計量経済学
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  JupyterLite
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://py4class.netlify.app">
+   JupyterLiteを始める
   </a>
  </li>
 </ul>
@@ -3489,6 +3489,11 @@ Name: gdp, dtype: bool
 </div>
 </div>
 </div>
+<p>＜注意＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code>を使っている。理由は，<code class="docutils literal notranslate"><span class="pre">cond1</span></code>と<code class="docutils literal notranslate"><span class="pre">cond2</span></code>のそれぞれの行の要素を比較して真偽値から構成される<code class="docutils literal notranslate"><span class="pre">Series</span></code>を返すためである。従って，一つの値をもう一つの値と比べて真偽値を計算する<code class="docutils literal notranslate"><span class="pre">and</span></code>を使うとエラーが発生する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>や<code class="docutils literal notranslate"><span class="pre">Series</span></code>で<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>を使う場合は，比較コードを<code class="docutils literal notranslate"><span class="pre">()</span></code>の中に入れることを推奨する。<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>は優先されて計算されるためである。（上の例では問題は発生しなし。）</p></li>
+</ul>
 <p><code class="docutils literal notranslate"><span class="pre">cond</span></code>を引数に使い行を抽出する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3640,6 +3645,16 @@ Name: gdp, dtype: bool
 </table>
 </div></div></div>
 </div>
+<p>＜注意＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">|</span></code>を使っている。理由は，<code class="docutils literal notranslate"><span class="pre">cond1</span></code>と<code class="docutils literal notranslate"><span class="pre">cond2</span></code>のそれぞれの行の要素を比較して真偽値から構成される<code class="docutils literal notranslate"><span class="pre">Series</span></code>を返すためである。従って，一つの値をもう一つの値と比べて真偽値を計算する<code class="docutils literal notranslate"><span class="pre">or</span></code>を使うとエラーが発生する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>や<code class="docutils literal notranslate"><span class="pre">Series</span></code>で<code class="docutils literal notranslate"><span class="pre">|</span></code>を使う場合は，比較コードを<code class="docutils literal notranslate"><span class="pre">()</span></code>の中に入れることを推奨する。<code class="docutils literal notranslate"><span class="pre">|</span></code>は優先されて計算されるためである。（上の例では問題は発生しなし。）</p></li>
+</ul>
+<p>＜コメント＞</p>
+<ul class="simple">
+<li><p>上の例では，<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>が<code class="docutils literal notranslate"><span class="pre">and</span></code>，<code class="docutils literal notranslate"><span class="pre">|</span></code>が<code class="docutils literal notranslate"><span class="pre">or</span></code>の役割を果たしている。同様に<code class="docutils literal notranslate"><span class="pre">~</span></code>が<code class="docutils literal notranslate"><span class="pre">not</span></code>（真偽値の反転）の代わりに使われる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>や<code class="docutils literal notranslate"><span class="pre">Series</span></code>で<code class="docutils literal notranslate"><span class="pre">~</span></code>を使う場合は，コードを<code class="docutils literal notranslate"><span class="pre">()</span></code>の中に入れることを推奨する。<code class="docutils literal notranslate"><span class="pre">~</span></code>は優先されて計算されるためである。</p></li>
+</ul>
 </section>
 <section id="id10">
 <h4>例５<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
@@ -5620,7 +5635,7 @@ dtype: float64
 <p class="admonition-title">Warning</p>
 <p><code class="docutils literal notranslate"><span class="pre">pandas</span></code>と<code class="docutils literal notranslate"><span class="pre">numpy</span></code>では，標準偏差，分散，共分散を計算する際の引数<code class="docutils literal notranslate"><span class="pre">ddof</span></code>のデフォルトの値が異なるので注意が必要！</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code>のメソッド</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のメソッド</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">.std()</span></code>，<code class="docutils literal notranslate"><span class="pre">.var()</span></code>，<code class="docutils literal notranslate"><span class="pre">.cov()</span></code>の全てで<code class="docutils literal notranslate"><span class="pre">ddof=1</span></code>がデフォルト</p></li>
 </ul>
@@ -5633,6 +5648,10 @@ dtype: float64
 </li>
 </ul>
 <p>母集団の標準偏差・分散・共分散の不偏推定量を計算するには<code class="docutils literal notranslate"><span class="pre">ddof=1</span></code>が必要！！</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">.cov()</span></code>と<code class="docutils literal notranslate"><span class="pre">.corr()</span></code>は欠損値を自動的に無視する。従って，相関係数の場合，<code class="docutils literal notranslate"><span class="pre">.corr()</span></code>の結果と<code class="docutils literal notranslate"><span class="pre">.std()</span></code>を使う「手計算」の結果を比べる際は欠損値がどのように扱われているかに注意する必要がある。</p>
 </div>
 <p>例えば，<code class="docutils literal notranslate"><span class="pre">.cov()</span></code>を計算してみよう。</p>
 <div class="cell docutils container">
@@ -6359,7 +6378,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f98e384a910&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fa7308b3910&gt;
 </pre></div>
 </div>
 </div>
@@ -6380,7 +6399,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x7f98e384a8e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x7fa7308b3280&gt;
 </pre></div>
 </div>
 </div>
