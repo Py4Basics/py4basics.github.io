@@ -1712,12 +1712,14 @@ Y =
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">k_list</span></code>の最後の要素と同じであり，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ内で更新用の変数として使われたのがわかる。この点に関する注意点として<a class="reference internal" href="1_Basics_III.html#sec-3-scope"><span class="std std-ref">ここの箇所</span></a>を復習を勧める。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>初期時点の資本ストック<code class="docutils literal notranslate"><span class="pre">k0</span></code>と期間<code class="docutils literal notranslate"><span class="pre">period</span></code>を引数として，資本蓄積の<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを関数化してみよう。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">capital_accumulation</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">period</span><span class="p">):</span>
+<p>２つの書き方を紹介した。基本的にどちらを使っても良い。上でも書いたが，最初の方法は<code class="docutils literal notranslate"><span class="pre">t</span></code>に対応する変数の値を追う必要があるので，それを分かりやすいと感じる人もいるだろうし，面倒と感じる人もいるかも知れない。一方，２つ目の方法は<code class="docutils literal notranslate"><span class="pre">t</span></code>を確認する必要がない。もちろん，初期値の変数<code class="docutils literal notranslate"><span class="pre">k=0</span></code>を<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの外に作る必要があるが，これは次の例で説明するように，関数の中で使う場合は問題にはならない。このサイトでは主に２つ目の手法を多用することになる。</p>
+<p>次に上のコードを関数化してみよう。
+初期時点の資本ストック<code class="docutils literal notranslate"><span class="pre">k0</span></code>と期間<code class="docutils literal notranslate"><span class="pre">period</span></code>を引数とする。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">capital_accumulation</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">period</span><span class="p">):</span>
 
-    <span class="n">k</span> <span class="o">=</span> <span class="n">k0</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">k0</span>   <span class="c1"># アップデート用の変数の生成</span>
 
     <span class="n">k_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="p">]</span>
 
@@ -1726,10 +1728,46 @@ Y =
         <span class="n">k_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">k_list</span>
+
+<span class="n">capital_accumulation</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>２つの書き方を紹介した。基本的にどちらを使っても良い。上でも書いたが，最初の方法は<code class="docutils literal notranslate"><span class="pre">t</span></code>に対応する変数の値を追う必要があるので，それを分かりやすいと感じる人もいるだろうし，面倒と感じる人もいるかも知れない。一方，２つ目の方法は<code class="docutils literal notranslate"><span class="pre">t</span></code>を確認する必要がない。もちろん，初期値の変数<code class="docutils literal notranslate"><span class="pre">k=0</span></code>を<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの外に作る必要があるが，これは次の例で説明するように，関数の中で使う場合は問題にはならない。このサイトでは主に２つ目の手法を多用することになる。</p>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 10, 20, 30, 40, 50]
+</pre></div>
+</div>
+</div>
+</div>
+<p>このコードでは<code class="docutils literal notranslate"><span class="pre">k=k0</span></code>でアップデート用の変数の生成している。実は，このコードをもう少し縮めることができる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">capital_accumulation_shorter</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">period</span><span class="p">):</span>
+
+    <span class="n">k_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">period</span><span class="p">):</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">10</span>
+        <span class="n">k_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">k_list</span>
+
+<span class="n">capital_accumulation_shorter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 10, 20, 30, 40, 50]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">capital_accumulation</span></code>関数と<code class="docutils literal notranslate"><span class="pre">capital_accumulation_shorter</span></code>関数には２箇所違いがある。</p>
+<ul class="simple">
+<li><p>後者では引数に<code class="docutils literal notranslate"><span class="pre">k</span></code>が使われている。</p></li>
+<li><p>後者では<code class="docutils literal notranslate"><span class="pre">k=k0</span></code>の行がない。</p></li>
+</ul>
+<p>後者の引数<code class="docutils literal notranslate"><span class="pre">k</span></code>が，初期値の設定とアップデート用変数の作成の２つの役割を同時に果たしている。<code class="docutils literal notranslate"><span class="pre">capital_accumulation(0,5)</span></code>を実行すると<code class="docutils literal notranslate"><span class="pre">k=0</span></code>が実行され，<code class="docutils literal notranslate"><span class="pre">0</span></code>が初期値に設定される。それと同時に，変数<code class="docutils literal notranslate"><span class="pre">k</span></code>がメモリー上に生成され，それがアップデート用の変数として使われることになる。</p>
 </section>
 <section id="sec-4-future-values">
 <span id="id9"></span><h3>将来価値の時系列<a class="headerlink" href="#sec-4-future-values" title="Permalink to this headline">#</a></h3>
