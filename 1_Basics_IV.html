@@ -87,7 +87,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint"><p><a href='http://www.econ.kobe-u.ac.jp/topics/pdf/221212-2.pdf'>✴️<<font color='white'>特別講演「UCバークレー校における経済学とデータサイエンス教育」(2023年1月6日) ← クリック！✴️</font></a></p></div>
 <div class="header header-item noprint"></div>
 
     
@@ -933,13 +933,13 @@ else:
 <p>例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = 10
 
-<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>                   <span class="c1"># 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;条件はTrueです。&#39;</span><span class="p">)</span>    <span class="c1"># 2</span>
+if x == 10:                   # 1
+    print(&#39;条件はTrueです。&#39;)    # 2
 
-<span class="k">else</span><span class="p">:</span>                         <span class="c1"># 3</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;条件はFalseです。&#39;</span><span class="p">)</span>   <span class="c1"># 4</span>
+else:                         # 3
+    print(&#39;条件はFalseです。&#39;)   # 4
 </pre></div>
 </div>
 </div>
@@ -960,13 +960,13 @@ else:
 <p>次の例は上の例と似ているが少しだけ異なる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = 20
 
-<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>                   <span class="c1"># 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;条件はTrueです。&#39;</span><span class="p">)</span>    <span class="c1"># 2</span>
+if x == 10:                   # 1
+    print(&#39;条件はTrueです。&#39;)    # 2
 
-<span class="k">else</span><span class="p">:</span>                         <span class="c1"># 3</span>
-    <span class="k">pass</span>                      <span class="c1"># 4</span>
+else:                         # 3
+    pass                      # 4
 </pre></div>
 </div>
 </div>
@@ -988,16 +988,16 @@ else:
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">change_in_gdp</span> <span class="o">=</span> <span class="mi">200</span>  <span class="c1">#1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>change_in_gdp = 200  #1
 
-<span class="k">if</span> <span class="n">change_in_gdp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは増加しています。&#39;</span><span class="p">)</span>
+if change_in_gdp &gt; 0:
+    print(&#39;GDPは増加しています。&#39;)
 
-<span class="k">elif</span> <span class="n">change_in_gdp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは減少しています。&#39;</span><span class="p">)</span>
+elif change_in_gdp &lt; 0:
+    print(&#39;GDPは減少しています。&#39;)
 
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは変化していません。&#39;</span><span class="p">)</span>
+else:
+    print(&#39;GDPは変化していません。&#39;)
 </pre></div>
 </div>
 </div>
@@ -1020,17 +1020,17 @@ else:
 <p>このコードを次のように入れ子の<code class="docutils literal notranslate"><span class="pre">if</span></code>文として書くことも可能である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">change_in_gdp</span> <span class="o">=</span> <span class="mi">200</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>change_in_gdp = 200
 
-<span class="k">if</span> <span class="n">change_in_gdp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>               <span class="c1">#1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは増加しています。&#39;</span><span class="p">)</span>
+if change_in_gdp &gt; 0:               #1
+    print(&#39;GDPは増加しています。&#39;)
 
-<span class="k">else</span><span class="p">:</span>                               <span class="c1">#2</span>
-    <span class="k">if</span> <span class="n">change_in_gdp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>           <span class="c1">#3</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは減少しています。&#39;</span><span class="p">)</span>
+else:                               #2
+    if change_in_gdp &lt; 0:           #3
+        print(&#39;GDPは減少しています。&#39;)
 
-    <span class="k">else</span><span class="p">:</span>                           <span class="c1">#4</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは変化していません。&#39;</span><span class="p">)</span>
+    else:                           #4
+        print(&#39;GDPは変化していません。&#39;)
 </pre></div>
 </div>
 </div>
@@ -1062,16 +1062,16 @@ else:
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code>文は関数の中で使うことも可能である。GDPに関する例を使って考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gdp_change</span><span class="p">(</span><span class="n">change_in_gdp</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def gdp_change(change_in_gdp):
     
-    <span class="k">if</span> <span class="n">change_in_gdp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは増加しています。&#39;</span><span class="p">)</span>
+    if change_in_gdp &gt; 0:
+        print(&#39;GDPは増加しています。&#39;)
 
-    <span class="k">elif</span> <span class="n">change_in_gdp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは減少しています。&#39;</span><span class="p">)</span>
+    elif change_in_gdp &lt; 0:
+        print(&#39;GDPは減少しています。&#39;)
 
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは変化していません。&#39;</span><span class="p">)</span>
+    else:
+        print(&#39;GDPは変化していません。&#39;)
 </pre></div>
 </div>
 </div>
@@ -1085,7 +1085,7 @@ else:
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdp_change</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gdp_change(200)
 </pre></div>
 </div>
 </div>
@@ -1097,7 +1097,7 @@ else:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdp_change</span><span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gdp_change(-200)
 </pre></div>
 </div>
 </div>
@@ -1109,7 +1109,7 @@ else:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdp_change</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gdp_change(0)
 </pre></div>
 </div>
 </div>
@@ -1125,13 +1125,13 @@ else:
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code>文を実行する上で，条件が真偽値<code class="docutils literal notranslate"><span class="pre">True</span></code>又は<code class="docutils literal notranslate"><span class="pre">False</span></code>を返すかで制御フローが分岐することが分かったと思う。ここで真偽値が重要な役割を果たしているが，<code class="docutils literal notranslate"><span class="pre">bool()</span></code>関数を使って真偽値をできることを思い出そう。空の文字列<code class="docutils literal notranslate"><span class="pre">''</span></code>や<code class="docutils literal notranslate"><span class="pre">0</span></code>などは「空」・「無」なので<code class="docutils literal notranslate"><span class="pre">False</span></code>となるが，それら以外は<code class="docutils literal notranslate"><span class="pre">True</span></code>となる。次の例はこの特性を使った例となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">truth_value</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def truth_value(x):
 
-    <span class="k">if</span> <span class="n">x</span><span class="p">:</span>   <span class="c1"># この行に着目</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;真偽値はTrueです。&#39;</span><span class="p">)</span>
+    if x:   # この行に着目
+        print(&#39;真偽値はTrueです。&#39;)
 
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;真偽値はFalseです。&#39;</span><span class="p">)</span>
+    else:
+        print(&#39;真偽値はFalseです。&#39;)
 </pre></div>
 </div>
 </div>
@@ -1143,7 +1143,7 @@ else:
 <p>この解釈はどの<code class="docutils literal notranslate"><span class="pre">if</span></code>文でも成立するので覚えておこう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">truth_value</span><span class="p">(</span><span class="s1">&#39;経済学&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>truth_value(&#39;経済学&#39;)
 </pre></div>
 </div>
 </div>
@@ -1155,7 +1155,7 @@ else:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">truth_value</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>truth_value(&#39;0&#39;)
 </pre></div>
 </div>
 </div>
@@ -1167,7 +1167,7 @@ else:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">truth_value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>truth_value(0)
 </pre></div>
 </div>
 </div>
@@ -1180,13 +1180,13 @@ else:
 <p>真偽値を使ったもう１つの例を紹介しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_wallet</span><span class="p">(</span><span class="n">money_in_my_wallet</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def my_wallet(money_in_my_wallet):
     
-    <span class="k">if</span> <span class="n">money_in_my_wallet</span><span class="p">:</span>   <span class="c1">#1</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;なに買おうかな😄&#39;</span><span class="p">)</span>
+    if money_in_my_wallet:   #1
+        print(&#39;なに買おうかな😄&#39;)
     
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;一文なしだよ😅&#39;</span><span class="p">)</span>
+    else:
+        print(&#39;一文なしだよ😅&#39;)
 </pre></div>
 </div>
 </div>
@@ -1194,7 +1194,7 @@ else:
 <p>実行してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_wallet</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_wallet(0)
 </pre></div>
 </div>
 </div>
@@ -1219,15 +1219,15 @@ y = \left|x\right|
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>       <span class="c1"># 0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = -10       # 0
 
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>    <span class="c1"># 1</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+if x &gt;= 0:    # 1
+    y = x
     
-<span class="k">else</span><span class="p">:</span>         <span class="c1"># 2</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="n">x</span>
+else:         # 2
+    y = -x
         
-<span class="n">y</span>             <span class="c1"># 3</span>
+y             # 3
 </pre></div>
 </div>
 </div>
@@ -1245,15 +1245,15 @@ y = \left|x\right|
 <p><code class="docutils literal notranslate"><span class="pre">#0</span></code>で<code class="docutils literal notranslate"><span class="pre">-10</span></code>が<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てられているので，<code class="docutils literal notranslate"><span class="pre">#3</span></code>の<code class="docutils literal notranslate"><span class="pre">y</span></code>には<code class="docutils literal notranslate"><span class="pre">10</span></code>が割り当てられている。従って，<code class="docutils literal notranslate"><span class="pre">y</span></code>を実行すると<code class="docutils literal notranslate"><span class="pre">10</span></code>が表示されることになる。この<code class="docutils literal notranslate"><span class="pre">if</span></code>文を関数にまとめてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def f(x):
     
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="k">return</span> <span class="n">y</span>
+    if x &gt;= 0:
+        y = x
+        return y
 
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="n">x</span>
-        <span class="k">return</span> <span class="n">y</span>
+    else:
+        y = -x
+        return y
 </pre></div>
 </div>
 </div>
@@ -1266,13 +1266,13 @@ y = \left|x\right|
 <p>更に，短くするには次のように書くこともできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def f(x):
     
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">x</span>
+    if x &gt;= 0:
+        return x
 
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
+    else:
+        return -x
 </pre></div>
 </div>
 </div>
@@ -1280,7 +1280,7 @@ y = \left|x\right|
 <p>違いは変数<code class="docutils literal notranslate"><span class="pre">y</span></code>を使わずに，直接結果を返している。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>f(10), f(-10), f(0)
 </pre></div>
 </div>
 </div>
@@ -1328,26 +1328,26 @@ Y =
 <p>次のコードで<span class="math notranslate nohighlight">\(\rho=-\infty\)</span>以外のケースを関数で表している。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ces_production</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def ces_production(k, l, rho=0, A=1, a=0.3, b=1, c=1):
     
-    <span class="k">if</span> <span class="n">rho</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;rhoには１以下の数字を入力してください。&#39;</span><span class="p">)</span>
+    if rho &gt; 1:
+        print(&#39;rhoには１以下の数字を入力してください。&#39;)
 
-    <span class="k">elif</span> <span class="n">rho</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">A</span><span class="o">*</span><span class="p">(</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">c</span><span class="o">*</span><span class="n">l</span> <span class="p">)</span>
+    elif rho == 1:
+        return A*( a*b*k + (1-a)*c*l )
     
-    <span class="k">elif</span> <span class="n">rho</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">A</span><span class="o">*</span><span class="n">k</span><span class="o">**</span><span class="n">a</span> <span class="o">*</span> <span class="n">l</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">)</span>
+    elif rho == 0:
+        return A*k**a * l**(1-a)
     
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">A</span><span class="o">*</span><span class="p">(</span> <span class="n">a</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">**</span><span class="n">rho</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">l</span><span class="p">)</span><span class="o">**</span><span class="n">rho</span> <span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">rho</span><span class="p">)</span>
+    else:
+        return A*( a*(b*k)**rho + (1-a)*(c*l)**rho )**(1/rho)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ces_production</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">rho</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ces_production(10, 3, rho=-1)
 </pre></div>
 </div>
 </div>
@@ -1393,7 +1393,7 @@ Y =
 <p>次のリストにはGDPの構成要素が並んでいる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdp_components</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;消費&#39;</span><span class="p">,</span> <span class="s1">&#39;投資&#39;</span><span class="p">,</span> <span class="s1">&#39;政府支出&#39;</span><span class="p">,</span> <span class="s1">&#39;純輸出&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gdp_components = [&#39;消費&#39;, &#39;投資&#39;, &#39;政府支出&#39;, &#39;純輸出&#39;]
 </pre></div>
 </div>
 </div>
@@ -1401,8 +1401,8 @@ Y =
 <p>このリストにある文字列を表示したいとしよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gdp_components</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for i in gdp_components:
+    print(i)
 </pre></div>
 </div>
 </div>
@@ -1449,7 +1449,7 @@ Y =
 <p>リストにはメソッド<code class="docutils literal notranslate"><span class="pre">.append()</span></code>が実装されており，これを使うとリストに値を追加することができる。<code class="docutils literal notranslate"><span class="pre">.append()</span></code>と<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使い，空のリストに値を追加し新たなリストを作成する方法を紹介する。まず元になるリストを作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>var_list = [1,2,3,4,5]
 </pre></div>
 </div>
 </div>
@@ -1457,13 +1457,13 @@ Y =
 <p>以下では，<code class="docutils literal notranslate"><span class="pre">var_list</span></code>のそれぞれの要素の10倍からなるリストを新たに作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[]</span>              <span class="c1"># 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_list = []              # 1
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">var_list</span><span class="p">:</span>        <span class="c1"># 2</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">i</span>              <span class="c1"># 3</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>     <span class="c1"># 4</span>
+for i in var_list:        # 2
+    x = 10*i              # 3
+    my_list.append(x)     # 4
 
-<span class="n">my_list</span>                   <span class="c1"># 5</span>
+my_list                   # 5
 </pre></div>
 </div>
 </div>
@@ -1512,20 +1512,20 @@ Y =
 <p>所得は次のリストで与えられるとする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">income_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1100</span><span class="p">,</span> <span class="mi">1500</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2300</span><span class="p">,</span> <span class="mi">3000</span><span class="p">]</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>income_list = [1000, 1100, 1500, 2000, 2300, 3000] 
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c_list</span> <span class="o">=</span> <span class="p">[]</span>               <span class="c1"># 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>c_list = []               # 1
 
-<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">income_list</span><span class="p">:</span>     <span class="c1"># 2</span>
-    <span class="n">con</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">+</span> <span class="mf">0.7</span> <span class="o">*</span> <span class="n">y</span>   <span class="c1"># 3</span>
-    <span class="n">c_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">con</span><span class="p">)</span>    <span class="c1"># 4</span>
+for y in income_list:     # 2
+    con = 100 + 0.7 * y   # 3
+    c_list.append(con)    # 4
 
-<span class="n">c_list</span>                    <span class="c1"># 5</span>
+c_list                    # 5
 </pre></div>
 </div>
 </div>
@@ -1583,7 +1583,7 @@ Y =
 <p>初期の資本ストック（浴槽の水）<code class="docutils literal notranslate"><span class="pre">0</span></code>であり，毎期ごと<code class="docutils literal notranslate"><span class="pre">10</span></code>単位の投資（<code class="docutils literal notranslate"><span class="pre">10</span></code>リットルのバケツで水を追加）するとしよう。問題を簡単にするために<code class="docutils literal notranslate"><span class="pre">5</span></code>期間（水を追加するのは<code class="docutils literal notranslate"><span class="pre">5</span></code>回）とする。資本ストック（浴槽の水量）の推移は次のリストで表すことができる。<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使って，このリストを作成することが目的である。</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">10</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[10*i for i in range(5+1)]
 </pre></div>
 </div>
 </div>
@@ -1596,13 +1596,13 @@ Y =
 <p>次のコードが一つ目の方法である。変数<code class="docutils literal notranslate"><span class="pre">k</span></code>を資本ストック，<code class="docutils literal notranslate"><span class="pre">#3</span></code>の<code class="docutils literal notranslate"><span class="pre">10</span></code>を投資，<code class="docutils literal notranslate"><span class="pre">t</span></code>を時間と考えればより分かり易いだろう。<code class="docutils literal notranslate"><span class="pre">k_list</span></code>に資本ストックの時系列の値が格納されることになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>              <span class="c1">#1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>k_list = [0]              #1
 
-<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>      <span class="c1">#2</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">k_list</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10</span>  <span class="c1">#3</span>
-    <span class="n">k_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>      <span class="c1">#4</span>
+for t in range(1,6):      #2
+    k = k_list[t-1] + 10  #3
+    k_list.append(k)      #4
     
-<span class="n">k_list</span>                    <span class="c1">#5</span>
+k_list                    #5
 </pre></div>
 </div>
 </div>
@@ -1647,15 +1647,15 @@ Y =
 <p>次のコードでも同じ結果となるが，<code class="docutils literal notranslate"><span class="pre">t</span></code>に対応する変数の値を考える必要はない。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>                   <span class="c1">#1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>k = 0                   #1
 
-<span class="n">k_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="p">]</span>            <span class="c1">#2</span>
+k_list = [k]            #2
 
-<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>      <span class="c1">#3</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">10</span>          <span class="c1">#4</span>
-    <span class="n">k_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>    <span class="c1">#5</span>
+for t in range(5):      #3
+    k = k + 10          #4
+    k_list.append(k)    #5
     
-<span class="n">k_list</span>                  <span class="c1">#6</span>
+k_list                  #6
 </pre></div>
 </div>
 </div>
@@ -1701,7 +1701,7 @@ Y =
 <p>１行目で<code class="docutils literal notranslate"><span class="pre">k=0</span></code>を設定していたが，ループ終了後の値を確認してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>k
 </pre></div>
 </div>
 </div>
@@ -1717,19 +1717,19 @@ Y =
 初期時点の資本ストック<code class="docutils literal notranslate"><span class="pre">k0</span></code>と期間<code class="docutils literal notranslate"><span class="pre">period</span></code>を引数とする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">capital_accumulation</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">period</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def capital_accumulation(k0, period):
 
-    <span class="n">k</span> <span class="o">=</span> <span class="n">k0</span>   <span class="c1"># アップデート用の変数の生成</span>
+    k = k0   # アップデート用の変数の生成
 
-    <span class="n">k_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    k_list = [k]
 
-    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">period</span><span class="p">):</span>
-        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">10</span>
-        <span class="n">k_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    for t in range(period):
+        k = k + 10
+        k_list.append(k)
 
-    <span class="k">return</span> <span class="n">k_list</span>
+    return k_list
 
-<span class="n">capital_accumulation</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+capital_accumulation(0, 5)
 </pre></div>
 </div>
 </div>
@@ -1742,17 +1742,17 @@ Y =
 <p>このコードでは<code class="docutils literal notranslate"><span class="pre">k=k0</span></code>でアップデート用の変数の生成している。実は，このコードをもう少し縮めることができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">capital_accumulation_shorter</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">period</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def capital_accumulation_shorter(k, period):
 
-    <span class="n">k_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    k_list = [k]
 
-    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">period</span><span class="p">):</span>
-        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">10</span>
-        <span class="n">k_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    for t in range(period):
+        k = k + 10
+        k_list.append(k)
 
-    <span class="k">return</span> <span class="n">k_list</span>
+    return k_list
 
-<span class="n">capital_accumulation_shorter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+capital_accumulation_shorter(0, 5)
 </pre></div>
 </div>
 </div>
@@ -1774,17 +1774,17 @@ Y =
 <p>元本<code class="docutils literal notranslate"><span class="pre">x0</span></code>万円を投資すると実質年率<code class="docutils literal notranslate"><span class="pre">r</span></code>％の利息を得る金融商品を考えよう。<code class="docutils literal notranslate"><span class="pre">t</span></code>年後の将来価値（期首の値）をリストで示す関数を作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_futre_value</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>  <span class="c1">#1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def calculate_futre_value(x0, r, t):  #1
     
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>                            <span class="c1">#2</span>
+    x = x0                            #2
     
-    <span class="n">value_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>                  <span class="c1">#3</span>
+    value_list = [x]                  #3
     
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>                <span class="c1">#4</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span>                   <span class="c1">#5</span>
-        <span class="n">value_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>          <span class="c1">#6</span>
+    for _ in range(t):                #4
+        x = x*(1+r)                   #5
+        value_list.append(x)          #6
     
-    <span class="k">return</span> <span class="n">value_list</span>                 <span class="c1">#7</span>
+    return value_list                 #7
 </pre></div>
 </div>
 </div>
@@ -1811,8 +1811,8 @@ Y =
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="n">calculate_futre_value</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>values = calculate_futre_value(100, 0.02, 5)
+values
 </pre></div>
 </div>
 </div>
@@ -1839,8 +1839,8 @@ Y =
 <p>このことは確認するために<code class="docutils literal notranslate"><span class="pre">list()</span></code>関数を使って実行してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">])</span> <span class="p">)</span>
-<span class="n">z</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>z = list( enumerate([&#39;A&#39;,&#39;B&#39;]) )
+z
 </pre></div>
 </div>
 </div>
@@ -1853,7 +1853,7 @@ Y =
 <p><code class="docutils literal notranslate"><span class="pre">0</span></code>番目の要素はタプル<code class="docutils literal notranslate"><span class="pre">(0,'A')</span></code>であり，<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の要素はタプル<code class="docutils literal notranslate"><span class="pre">(1,'B')</span></code>となっている。最初の要素を表示してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>z[0]
 </pre></div>
 </div>
 </div>
@@ -1866,10 +1866,10 @@ Y =
 <p>要素<code class="docutils literal notranslate"><span class="pre">A</span></code>のインデックス番号と要素<code class="docutils literal notranslate"><span class="pre">A</span></code>の組み合わせのタプルである。タプルのアンパッキングを使い，2つの変数に同時割り当てすることができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>i, v = z[0]
 
-<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+print(i)
+print(v)
 </pre></div>
 </div>
 </div>
@@ -1883,8 +1883,8 @@ A
 <p>この特徴を利用して，将来価値の時系列の例の結果のリストである<code class="docutils literal notranslate"><span class="pre">values</span></code>を見やすく表示する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>   <span class="c1">#1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">期：</span><span class="si">{</span><span class="n">v</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">万円&#39;</span><span class="p">)</span>   <span class="c1">#2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for i, v in enumerate(values):   #1
+    print(f&#39;{i}期：{v:.1f}万円&#39;)   #2
 </pre></div>
 </div>
 </div>
@@ -1927,7 +1927,7 @@ A
 <p>より具体的な例を考えるために，所得は<code class="docutils literal notranslate"><span class="pre">income_list</span></code>に従って変化し，限界消費性向は次のリストによって与えられるとしよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpc_list</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.71</span><span class="p">,</span> <span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>mpc_list = [0.7, 0.71, 0.72, 0.73, 0.74, 0.75]
 </pre></div>
 </div>
 </div>
@@ -1936,8 +1936,8 @@ A
 <p><code class="docutils literal notranslate"><span class="pre">zip()</span></code>関数の引数に<code class="docutils literal notranslate"><span class="pre">income_list</span></code>と<code class="docutils literal notranslate"><span class="pre">mpc_list</span></code>を指定して実行してみる。下のコードでは内容が表示されるように<code class="docutils literal notranslate"><span class="pre">list()</span></code>関数を使っている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span><span class="n">income_list</span><span class="p">,</span> <span class="n">mpc_list</span><span class="p">)</span> <span class="p">)</span>
-<span class="n">z</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>z = list( zip(income_list, mpc_list) )
+z
 </pre></div>
 </div>
 </div>
@@ -1959,7 +1959,7 @@ A
 <p><code class="docutils literal notranslate"><span class="pre">0</span></code>番目の要素を抽出してみる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>z[0];
 </pre></div>
 </div>
 </div>
@@ -1967,10 +1967,10 @@ A
 <p><code class="docutils literal notranslate"><span class="pre">0</span></code>番目の要素が所得であり，<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の要素は限界消費性向である。タプルのアンパッキングを使い，2つの変数に同時割り当てすることができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="p">,</span> <span class="n">mpc</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>y, mpc = z[0]
 
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mpc</span><span class="p">)</span>
+print(y)
+print(mpc)
 </pre></div>
 </div>
 </div>
@@ -1984,13 +1984,13 @@ A
 <p>この特徴を利用して，消費の変化を<code class="docutils literal notranslate"><span class="pre">for</span></code>ループで計算することができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c_list</span> <span class="o">=</span> <span class="p">[]</span>                               <span class="c1"># 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>c_list = []                               # 1
 
-<span class="k">for</span> <span class="n">y</span><span class="p">,</span> <span class="n">mpc</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">income_list</span><span class="p">,</span> <span class="n">mpc_list</span><span class="p">):</span> <span class="c1"># 2</span>
-    <span class="n">con</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">+</span> <span class="n">mpc</span> <span class="o">*</span> <span class="n">y</span>                   <span class="c1"># 3</span>
-    <span class="n">c_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">con</span><span class="p">)</span>                    <span class="c1"># 4</span>
+for y, mpc in zip(income_list, mpc_list): # 2
+    con = 100 + mpc * y                   # 3
+    c_list.append(con)                    # 4
 
-<span class="n">c_list</span>                                    <span class="c1"># 5</span>
+c_list                                    # 5
 </pre></div>
 </div>
 </div>
@@ -2021,7 +2021,7 @@ A
 <p><code class="docutils literal notranslate"><span class="pre">zip()</span></code>関数の引数には，任意の数のイタラブルが使える。例えば，自発的消費（上の例では<code class="docutils literal notranslate"><span class="pre">100</span></code>）が次のリストに従って変化する場合の消費の計算も簡単におこなうことができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">auto_con</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">75</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>auto_con = [100, 95, 90, 85, 80, 75]
 </pre></div>
 </div>
 </div>
@@ -2045,8 +2045,8 @@ A
 <p><code class="docutils literal notranslate"><span class="pre">＜イタラブル＞</span></code>の例として<code class="docutils literal notranslate"><span class="pre">range(5)</span></code>を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
-<span class="n">lst</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = [i**2 for i in range(5)]
+lst
 </pre></div>
 </div>
 </div>
@@ -2068,7 +2068,7 @@ A
 <p>次の例として<code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素を全て文字列に変換してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[str(i) for i in lst]
 </pre></div>
 </div>
 </div>
@@ -2082,7 +2082,7 @@ A
 <p>また内包表記にも<code class="docutils literal notranslate"><span class="pre">if</span></code>文を追加することも可能である。例えば，<code class="docutils literal notranslate"><span class="pre">1</span></code>から<code class="docutils literal notranslate"><span class="pre">10</span></code>までの整数で<code class="docutils literal notranslate"><span class="pre">5</span></code>以下であれば２乗し，それ以外は<code class="docutils literal notranslate"><span class="pre">0</span></code>にするとしよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">if</span> <span class="n">x</span><span class="o">&lt;=</span><span class="mi">5</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[x**2 if x&lt;=5 else 0 for x in range(1,10+1)]
 </pre></div>
 </div>
 </div>
@@ -2146,11 +2146,11 @@ A
 <p>もちろん無限ループこそが必要な場合（ウェブサイトで何かを入力する場合など）もあるが，ここでは有限ループを想定してコードを考えることにする。最も基本となるのが次の例である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>            <span class="c1">#1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>count = 0            #1
 
-<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>     <span class="c1">#2</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>     <span class="c1">#3</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>       <span class="c1">#4</span>
+while count &lt; 3:     #2
+    print(count)     #3
+    count += 1       #4
 </pre></div>
 </div>
 </div>
@@ -2206,14 +2206,14 @@ A
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code>文に<code class="docutils literal notranslate"><span class="pre">else</span></code>があったが，<code class="docutils literal notranslate"><span class="pre">while</span></code>ループでも使うことができる。上の例に使ってみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>count = 0
 
-<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1">#1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+while count &lt; 3:  #1
+    print(count)
+    count += 1
     
-<span class="k">else</span><span class="p">:</span>             <span class="c1">#2</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ループは無事終わったよ🥳&#39;</span><span class="p">)</span>
+else:             #2
+    print(&#39;ループは無事終わったよ🥳&#39;)
 </pre></div>
 </div>
 </div>
@@ -2240,14 +2240,14 @@ A
 <p>壁から１メートル離れて立ち，毎回壁までの半分の距離を進むとしよう。壁までの距離を変数<code class="docutils literal notranslate"><span class="pre">distance</span></code>で表すと，初期値は<code class="docutils literal notranslate"><span class="pre">1</span></code>となる。またループをストップする距離を<code class="docutils literal notranslate"><span class="pre">0.001</span></code>（1mm）とする。<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを書いて距離の推移を表示してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span> <span class="o">=</span> <span class="mi">1</span>                   <span class="c1">#1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distance = 1                   #1
 
-<span class="k">while</span> <span class="n">distance</span> <span class="o">&gt;</span> <span class="mf">0.001</span><span class="p">:</span>        <span class="c1">#2</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>            <span class="c1">#3</span>
-    <span class="n">distance</span> <span class="o">-=</span> <span class="n">distance</span><span class="o">/</span><span class="mi">2</span>     <span class="c1">#4</span>
+while distance &gt; 0.001:        #2
+    print(distance)            #3
+    distance -= distance/2     #4
 
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;残りの距離は</span><span class="si">{</span><span class="n">distance</span><span class="o">*</span><span class="mi">1000</span><span class="si">}</span><span class="s1">mmです。&#39;</span><span class="p">)</span>  <span class="c1">#5</span>
+else:
+    print(f&#39;残りの距離は{distance*1000}mmです。&#39;)  #5
 </pre></div>
 </div>
 </div>
@@ -2304,22 +2304,24 @@ A
 <p>上の<code class="docutils literal notranslate"><span class="pre">while</span></code>ループは何回ループ計算をしたかは分からない。次のコードはそれを確認するために変数<code class="docutils literal notranslate"><span class="pre">counter</span></code>を追加している。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>distance = 1
+counter = 0
 
-<span class="k">while</span> <span class="n">distance</span> <span class="o">&gt;</span> <span class="mf">1e-100</span><span class="p">:</span>
-    <span class="n">distance</span> <span class="o">-=</span> <span class="n">distance</span><span class="o">/</span><span class="mi">2</span>
-    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+while distance &gt; 1e-100:
+    distance -= distance/2
+    counter += 1
     
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;残りの距離は</span><span class="si">{</span><span class="n">distance</span><span class="si">}</span><span class="s1">です。&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s1">回ループ計算しました🚀&#39;</span><span class="p">)</span>
+else:
+    print(f&#39;残りの距離は{distance}です。&#39;)
+    print(f&#39;{counter}回ループ計算しました🚀&#39;)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>残りの距離は5.714936956411375e-101です。
-333回ループ計算しました🚀
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>333回ループ計算しました🚀
 </pre></div>
 </div>
 </div>
@@ -2349,14 +2351,14 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 <p>この式は数学で学ぶ漸化式の形となっている。<span class="math notranslate nohighlight">\(N\)</span>は任意の計算回数。<span class="math notranslate nohighlight">\(N\)</span>が大きくれば，それだけ誤差が小さくなり，<span class="math notranslate nohighlight">\(x_n\)</span>は真の値に近づいていく。実際にコードを書いてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sqrt_approx</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">x0</span><span class="p">):</span>  <span class="c1">#1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def sqrt_approx(s, x0):  #1
     
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>               <span class="c1">#2</span>
+    x = x0               #2
     
-    <span class="k">while</span> <span class="nb">abs</span><span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">s</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.0001</span><span class="p">:</span> <span class="c1">#3</span>
+    while abs((x * x) - s) &gt; 0.0001: #3
         
-        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="n">s</span> <span class="o">/</span> <span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>        <span class="c1">#4</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                     <span class="c1">#5</span>
+        x = (x + (s / x)) / 2        #4
+        print(x)                     #5
 </pre></div>
 </div>
 </div>
@@ -2382,7 +2384,7 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 <p>ではコードを実行してみるが，<code class="docutils literal notranslate"><span class="pre">100</span></code>を初期値として<code class="docutils literal notranslate"><span class="pre">4</span></code>の平方根を計算してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqrt_approx</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sqrt_approx(4,100)
 </pre></div>
 </div>
 </div>
@@ -2412,12 +2414,12 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 <p>次の<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>count = 0
 
-<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>  <span class="c1">#1</span>
+while count &lt; 5:  #1
 
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>    <span class="c1">#2</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>  <span class="c1">#2</span>
+    count += 1    #2
+    print(count)  #2
 </pre></div>
 </div>
 </div>
@@ -2440,16 +2442,16 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 <p>ここで<code class="docutils literal notranslate"><span class="pre">3</span></code>を飛ばして<code class="docutils literal notranslate"><span class="pre">1</span></code>，<code class="docutils literal notranslate"><span class="pre">2</span></code>，<code class="docutils literal notranslate"><span class="pre">4</span></code>，<code class="docutils literal notranslate"><span class="pre">5</span></code>を表示したいとしよう。その場合に重宝するのが<code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">continue</span></code>（対象コードの実行を飛ばすコード）の組み合わせである。上の例を修正して説明する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>count = 0
 
-<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>    <span class="c1">#1</span>
+while count &lt; 5:    #1
 
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>      <span class="c1">#2</span>
+    count += 1      #2
     
-    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1">#3</span>
-        <span class="k">continue</span>    <span class="c1">#4</span>
+    if count == 3:  #3
+        continue    #4
     
-    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>    <span class="c1">#5</span>
+    print(count)    #5
 </pre></div>
 </div>
 </div>
@@ -2494,15 +2496,15 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 <p>と書くと無限ループになってしまうということである。一方，この書き方でもループを停止させる方法がある。それが<code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">break</span></code>（ループを中断するコード）を組み合わせる方法である。例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>          <span class="c1">#1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>count = 0          #1
 
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>        <span class="c1">#2</span>
+while True:        #2
     
-    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>   <span class="c1">#3</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>     <span class="c1">#4</span>
+    print(count)   #3
+    count += 1     #4
 
-    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>  <span class="c1">#5</span>
-        <span class="k">break</span>      <span class="c1">#6</span>
+    if count &gt; 2:  #5
+        break      #6
 </pre></div>
 </div>
 </div>
@@ -2534,19 +2536,19 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 <p><code class="docutils literal notranslate"><span class="pre">continue</span></code>と<code class="docutils literal notranslate"><span class="pre">break</span></code>を一緒に使うことも可能である。次の例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>count = 0
 
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>         <span class="c1">#1</span>
+while True:         #1
 
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>      <span class="c1">#2</span>
+    count += 1      #2
     
-    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1">#3</span>
-        <span class="k">continue</span>    <span class="c1">#4</span>
+    if count == 3:  #3
+        continue    #4
         
-    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>    <span class="c1">#5</span>
+    print(count)    #5
     
-    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>   <span class="c1">#6</span>
-        <span class="k">break</span>       <span class="c1">#7</span>
+    if count &gt; 4:   #6
+        break       #7
 </pre></div>
 </div>
 </div>

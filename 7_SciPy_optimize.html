@@ -87,7 +87,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint"><p><a href='http://www.econ.kobe-u.ac.jp/topics/pdf/221212-2.pdf'>✴️<<font color='white'>特別講演「UCバークレー校における経済学とデータサイエンス教育」(2023年1月6日) ← クリック！✴️</font></a></p></div>
 <div class="header header-item noprint"></div>
 
     
@@ -865,9 +865,9 @@ title="Print to PDF"
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">op</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import numpy as np
+import scipy.optimize as op
+import pandas as pd
 </pre></div>
 </div>
 </div>
@@ -888,8 +888,8 @@ title="Print to PDF"
 \[f(x)=x^3+4x^2-3\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span><span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def f(x):
+    return x**3 + 4*x**2 -3
 </pre></div>
 </div>
 </div>
@@ -897,9 +897,9 @@ title="Print to PDF"
 <p>次に３つの変数<code class="docutils literal notranslate"><span class="pre">a</span></code>，<code class="docutils literal notranslate"><span class="pre">b</span></code>，<code class="docutils literal notranslate"><span class="pre">c</span></code>に下の値を割り当てる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.0</span>
-<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>a = -3.0
+b = -0.5
+c = 0.5*(a+b)
 </pre></div>
 </div>
 </div>
@@ -907,7 +907,7 @@ title="Print to PDF"
 <p><span class="math notranslate nohighlight">\(x\)</span>が<code class="docutils literal notranslate"><span class="pre">a</span></code>，<code class="docutils literal notranslate"><span class="pre">b</span></code>，<code class="docutils literal notranslate"><span class="pre">c</span></code>の値を取る場合の<span class="math notranslate nohighlight">\(f(x)\)</span>の値を計算してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>f(a), f(b), f(c)
 </pre></div>
 </div>
 </div>
@@ -920,19 +920,19 @@ title="Print to PDF"
 <p>これらの情報を図示すると次のようになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">3.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>          <span class="c1"># 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = np.linspace(-3.1, 0, 100)          # 1
 
-<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;X&#39;</span><span class="p">:</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)})</span>  <span class="c1"># 2</span>
+df1 = pd.DataFrame({&#39;X&#39;:x, &#39;Y&#39;:f(x)})  # 2
 
-<span class="n">ax</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>     <span class="c1"># 3</span>
+ax = df1.plot(&#39;X&#39;,&#39;Y&#39;)     # 3
 
-<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>  <span class="c1"># 4</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>          <span class="c1"># 5</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">],</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">),</span><span class="n">f</span><span class="p">(</span><span class="n">c</span><span class="p">)],</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>  <span class="c1"># 6</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="k">pass</span>
+ax.axhline(0, c=&#39;orange&#39;)  # 4
+ax.text(a,-1,&quot;a&quot;)          # 5
+ax.text(b,-1,&quot;b&quot;)
+ax.text(c,-1,&quot;c&quot;)
+ax.scatter([a,b,c], [f(a), f(b),f(c)], s=50, c=&#39;k&#39;)  # 6
+ax.scatter([a,b,c], [0,0,0], s=50, c=&#39;red&#39;)
+pass
 </pre></div>
 </div>
 </div>
@@ -996,51 +996,51 @@ title="Print to PDF"
 <p>実際にコードを書き，Bisection法の考え理解しよう。次の関数を定義する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; [a,b]におけるf(x)=0の近似解（bisection法）   # 1</span>
-<span class="sd">    </span>
-<span class="sd">    引数</span>
-<span class="sd">    ----------</span>
-<span class="sd">    f : f(x)=0の連続関数</span>
-<span class="sd">    a,b : 根を挟む初期の値</span>
-<span class="sd">    N : 中間値を計算するプロセスの回数</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def my_bisect(f,a,b,N):
+    &quot;&quot;&quot; [a,b]におけるf(x)=0の近似解（bisection法）   # 1
+    
+    引数
+    ----------
+    f : f(x)=0の連続関数
+    a,b : 根を挟む初期の値
+    N : 中間値を計算するプロセスの回数
 
-<span class="sd">    返り値</span>
-<span class="sd">    -------</span>
-<span class="sd">    N回ループ後の解の近似値</span>
-<span class="sd">    * f(a)*f(b) &gt;= 0 の場合、メッセージが返される。</span>
-<span class="sd">    * c=(a+b)/2とし、f(a)、f(b)、f(c)が同じ符号の場合、メッセージが返される。</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+    返り値
+    -------
+    N回ループ後の解の近似値
+    * f(a)*f(b) &gt;= 0 の場合、メッセージが返される。
+    * c=(a+b)/2とし、f(a)、f(b)、f(c)が同じ符号の場合、メッセージが返される。
+    &quot;&quot;&quot;
     
-    <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>       <span class="c1"># 2</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f(a)とf(b)は同じ符号です。a、bの値を変えてください。&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span>
+    if f(a)*f(b) &gt;= 0:       # 2
+        print(&quot;f(a)とf(b)は同じ符号です。a、bの値を変えてください。&quot;)
+        return None
     
-    <span class="n">a_</span> <span class="o">=</span> <span class="n">a</span>                   <span class="c1"># 3</span>
-    <span class="n">b_</span> <span class="o">=</span> <span class="n">b</span>                   <span class="c1"># 4</span>
+    a_ = a                   # 3
+    b_ = b                   # 4
     
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>       <span class="c1"># 5</span>
+    for n in range(N):       # 5
         
-        <span class="n">c_</span> <span class="o">=</span> <span class="p">(</span><span class="n">a_</span> <span class="o">+</span> <span class="n">b_</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>     <span class="c1"># 6</span>
-        <span class="n">fc</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">c_</span><span class="p">)</span>           <span class="c1"># 7</span>
+        c_ = (a_ + b_)/2     # 6
+        fc = f(c_)           # 7
         
-        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a_</span><span class="p">)</span><span class="o">*</span><span class="n">fc</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>     <span class="c1"># 8</span>
-            <span class="n">b_</span> <span class="o">=</span> <span class="n">c_</span>
+        if f(a_)*fc &lt; 0:     # 8
+            b_ = c_
             
-        <span class="k">elif</span> <span class="n">f</span><span class="p">(</span><span class="n">b_</span><span class="p">)</span><span class="o">*</span><span class="n">fc</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>   <span class="c1"># 9</span>
-            <span class="n">a_</span> <span class="o">=</span> <span class="n">c_</span>
+        elif f(b_)*fc &lt; 0:   # 9
+            a_ = c_
             
-        <span class="k">elif</span> <span class="n">fc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>        <span class="c1"># 10</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;正確な根が求められました。&quot;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">c_</span>
+        elif fc == 0:        # 10
+            print(&quot;正確な根が求められました。&quot;)
+            return c_
         
-        <span class="k">else</span><span class="p">:</span>                <span class="c1"># 11</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;計算に失敗しました。&quot;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="kc">None</span>
+        else:                # 11
+            print(&quot;計算に失敗しました。&quot;)
+            return None
         
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s1">回ループ後の値です。&#39;</span><span class="p">)</span>
+    print(f&#39;{N}回ループ後の値です。&#39;)
         
-    <span class="k">return</span> <span class="p">(</span><span class="n">a_</span> <span class="o">+</span> <span class="n">b_</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>       <span class="c1"># 12</span>
+    return (a_ + b_)/2       # 12
 </pre></div>
 </div>
 </div>
@@ -1065,8 +1065,8 @@ title="Print to PDF"
 <p>次の例を使って実際に計算してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_ex1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def f_ex1(x):
+    return x**2 - 2
 </pre></div>
 </div>
 </div>
@@ -1074,7 +1074,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">f_ex1</span></code>には次の正と負の２つの解が存在する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>np.sqrt(2), -np.sqrt(2)
 </pre></div>
 </div>
 </div>
@@ -1087,7 +1087,7 @@ title="Print to PDF"
 <p>まず<span class="math notranslate nohighlight">\(x&gt;0\)</span>の解を計算してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_bisect</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_bisect(f_ex1, 0, 2, 10)
 </pre></div>
 </div>
 </div>
@@ -1103,7 +1103,7 @@ title="Print to PDF"
 <p>次に<span class="math notranslate nohighlight">\(x&lt;0\)</span>の解をしてみる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_bisect</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_bisect(f_ex1, -2, 0, 10)
 </pre></div>
 </div>
 </div>
@@ -1120,7 +1120,7 @@ title="Print to PDF"
 <p>次の場合は計算に失敗する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_bisect</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_bisect(f_ex1, -2, 2, 10)
 </pre></div>
 </div>
 </div>
@@ -1147,7 +1147,7 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">bisect</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.bisect(f_ex1, 0, 2)
 </pre></div>
 </div>
 </div>
@@ -1159,7 +1159,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">bisect</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.bisect(f_ex1, -2, 0)
 </pre></div>
 </div>
 </div>
@@ -1183,7 +1183,7 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">brentq</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.brentq(f_ex1, 0, 2)
 </pre></div>
 </div>
 </div>
@@ -1195,7 +1195,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">brentq</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.brentq(f_ex1, -2, 0)
 </pre></div>
 </div>
 </div>
@@ -1244,38 +1244,38 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 <p>Newton法の基本的な考えを説明するために式<a class="reference internal" href="#fig-scipy-newton"><span class="std std-ref">Newton法</span></a>を捉える関数を定義しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">Df</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Newton法でf(x)=0の根を近似する。</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def my_newton(f,Df,x0,N):
+    &quot;&quot;&quot; Newton法でf(x)=0の根を近似する。
 
-<span class="sd">    引数</span>
-<span class="sd">    ----------</span>
-<span class="sd">    f : f(x)=0の関数名f</span>
-<span class="sd">    Df : f(x)の導関数</span>
-<span class="sd">    x0 : 解探索の初期のxの値</span>
-<span class="sd">    N : ループの回数</span>
+    引数
+    ----------
+    f : f(x)=0の関数名f
+    Df : f(x)の導関数
+    x0 : 解探索の初期のxの値
+    N : ループの回数
 
-<span class="sd">    返り値</span>
-<span class="sd">    -------</span>
-<span class="sd">    根の近似値</span>
-<span class="sd">    Df(x) == 0の場合は None がメッセージが表示される。</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+    返り値
+    -------
+    根の近似値
+    Df(x) == 0の場合は None がメッセージが表示される。
+    &quot;&quot;&quot;
     
-    <span class="n">x_</span> <span class="o">=</span> <span class="n">x0</span>              <span class="c1"># 1</span>
+    x_ = x0              # 1
     
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>   <span class="c1"># 2</span>
+    for n in range(N):   # 2
         
-        <span class="n">fx</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x_</span><span class="p">)</span>       <span class="c1"># 3</span>
-        <span class="n">Dfx</span> <span class="o">=</span> <span class="n">Df</span><span class="p">(</span><span class="n">x_</span><span class="p">)</span>     <span class="c1"># 4</span>
+        fx = f(x_)       # 3
+        Dfx = Df(x_)     # 4
         
-        <span class="k">if</span> <span class="n">Dfx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>     <span class="c1"># 5</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;導関数はゼロです。解は見つかりませんでした&#39;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="kc">None</span>
+        if Dfx == 0:     # 5
+            print(&#39;導関数はゼロです。解は見つかりませんでした&#39;)
+            return None
         
-        <span class="k">else</span><span class="p">:</span>            <span class="c1"># 6</span>
-            <span class="n">x_</span> <span class="o">=</span> <span class="n">x_</span> <span class="o">-</span> <span class="n">fx</span><span class="o">/</span><span class="n">Dfx</span>
+        else:            # 6
+            x_ = x_ - fx/Dfx
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s1">回ループ後の値です。&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">x_</span>            <span class="c1"># 7</span>
+    print(f&#39;{N}回ループ後の値です。&#39;)
+    return x_            # 7
 </pre></div>
 </div>
 </div>
@@ -1295,8 +1295,8 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 <p>例として<code class="docutils literal notranslate"><span class="pre">f_ex(x)</span></code>を使うが、まず導関数を定義する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Df_ex1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def Df_ex1(x):
+    return 2*x
 </pre></div>
 </div>
 </div>
@@ -1304,7 +1304,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 <p>まず<span class="math notranslate nohighlight">\(x&gt;0\)</span>の解を求めよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_newton</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">,</span> <span class="n">Df_ex1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_newton(f_ex1, Df_ex1, 1, 10)
 </pre></div>
 </div>
 </div>
@@ -1320,7 +1320,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 <p>次に<span class="math notranslate nohighlight">\(x&lt;0\)</span>の解を求める。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_newton</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">,</span> <span class="n">Df_ex1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_newton(f_ex1, Df_ex1, -1, 10)
 </pre></div>
 </div>
 </div>
@@ -1336,7 +1336,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 <p>次は計算に失敗するケースとなる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_newton</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">,</span> <span class="n">Df_ex1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_newton(f_ex1, Df_ex1, 0, 10)
 </pre></div>
 </div>
 </div>
@@ -1359,7 +1359,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">newton</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.newton(f_ex1, 1)
 </pre></div>
 </div>
 </div>
@@ -1371,7 +1371,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">newton</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.newton(f_ex1, -1)
 </pre></div>
 </div>
 </div>
@@ -1384,7 +1384,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 <p>またリストとして<code class="docutils literal notranslate"><span class="pre">x</span></code>の初期値を複数設定することも可能である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">newton</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.newton(f_ex1, [1,10])
 </pre></div>
 </div>
 </div>
@@ -1397,7 +1397,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 <p>これを利用して、複数の根を同時に計算することも可能となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">newton</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.newton(f_ex1, [-1,1])
 </pre></div>
 </div>
 </div>
@@ -1443,15 +1443,15 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">h0</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def h0(y):
     
-    <span class="n">a</span> <span class="o">=</span> <span class="mf">0.8</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="mf">0.7</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="mi">10</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">15</span>
-    <span class="n">g</span> <span class="o">=</span> <span class="mi">10</span>
+    a = 0.8
+    c = 0.7
+    d = 10
+    i = 15
+    g = 10
 
-    <span class="k">return</span> <span class="n">y</span> <span class="o">-</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">g</span> <span class="o">+</span> <span class="n">d</span> <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="n">a</span><span class="p">)</span>
+    return y - (i + g + d + c*y**a)
 </pre></div>
 </div>
 </div>
@@ -1459,13 +1459,13 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 <p>プロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>yy = np.linspace(20,100,100)
 
-<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Y&#39;</span><span class="p">:</span><span class="n">yy</span><span class="p">,</span> <span class="s1">&#39;h0(Y)&#39;</span><span class="p">:</span><span class="n">h0</span><span class="p">(</span><span class="n">yy</span><span class="p">)})</span>
+df1 = pd.DataFrame({&#39;Y&#39;:yy, &#39;h0(Y)&#39;:h0(yy)})
 
-<span class="n">ax_</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;h0(Y)&#39;</span><span class="p">)</span>
-<span class="n">ax_</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="k">pass</span>
+ax_ = df1.plot(&#39;Y&#39;,&#39;h0(Y)&#39;)
+ax_.axhline(0,c=&#39;red&#39;)
+pass
 </pre></div>
 </div>
 </div>
@@ -1478,7 +1478,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 <p>＜Bisection法＞</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">bisect</span><span class="p">(</span><span class="n">h0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.bisect(h0, 40, 60)
 </pre></div>
 </div>
 </div>
@@ -1491,7 +1491,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 <p>＜Brent法＞</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">brentq</span><span class="p">(</span><span class="n">h0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.brentq(h0, 40, 60)
 </pre></div>
 </div>
 </div>
@@ -1504,7 +1504,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 <p>＜Newton法＞</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">newton</span><span class="p">(</span><span class="n">h0</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.newton(h0, 40)
 </pre></div>
 </div>
 </div>
@@ -1536,17 +1536,17 @@ I = \dfrac{j}{r^{b}}
 <p>まず関数を再定義するが，<span class="math notranslate nohighlight">\(y\)</span>と<span class="math notranslate nohighlight">\(r\)</span>を引数とする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">h1</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def h1(y,r):
     
-    <span class="n">a</span> <span class="o">=</span> <span class="mf">0.8</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="mf">0.5</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="mf">0.7</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="mi">10</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">15</span>
-    <span class="n">j</span> <span class="o">=</span> <span class="mi">15</span>
-    <span class="n">g</span> <span class="o">=</span> <span class="mi">10</span>
+    a = 0.8
+    b = 0.5
+    c = 0.7
+    d = 10
+    i = 15
+    j = 15
+    g = 10
 
-    <span class="k">return</span> <span class="n">y</span> <span class="o">-</span> <span class="p">(</span> <span class="n">j</span><span class="o">/</span><span class="n">r</span><span class="o">**</span><span class="n">b</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="n">g</span> <span class="o">+</span> <span class="n">d</span> <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="n">a</span> <span class="p">)</span>
+    return y - ( j/r**b + i + g + d + c*y**a )
 </pre></div>
 </div>
 </div>
@@ -1554,7 +1554,7 @@ I = \dfrac{j}{r^{b}}
 <p><span class="math notranslate nohighlight">\(r\)</span>の複数の値を設定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>r_arr = np.linspace(0.01, 0.1, 100)
 </pre></div>
 </div>
 </div>
@@ -1562,13 +1562,13 @@ I = \dfrac{j}{r^{b}}
 <p>次に<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使い、財市場での均衡が成立する<code class="docutils literal notranslate"><span class="pre">r</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>の組み合わせを計算する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_list</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>y_list = []
 
-<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">r_arr</span><span class="p">:</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">newton</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">r</span><span class="p">,))</span>    <span class="c1"># 1</span>
-    <span class="n">y_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+for r in r_arr:
+    y = op.newton(h1, 30, args=(r,))    # 1
+    y_list.append(y)
 
-<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Y&#39;</span><span class="p">:</span><span class="n">y_list</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span><span class="n">r_arr</span><span class="p">})</span>
+df2 = pd.DataFrame({&#39;Y&#39;:y_list, &#39;r&#39;:r_arr})
 </pre></div>
 </div>
 </div>
@@ -1581,8 +1581,8 @@ I = \dfrac{j}{r^{b}}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="k">pass</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df2.plot(&#39;Y&#39;,&#39;r&#39;)
+pass
 </pre></div>
 </div>
 </div>
@@ -1618,10 +1618,10 @@ I = \dfrac{j}{r^{b}}
 <p>パラメターを次の値とする</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.2</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mf">0.3</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">A</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>s = 0.2
+a = 0.3
+d = 0.1
+A = 10
 </pre></div>
 </div>
 </div>
@@ -1634,8 +1634,8 @@ I = \dfrac{j}{r^{b}}
 <p>この方程式の解を求めるが，関数<code class="docutils literal notranslate"><span class="pre">kss()</span></code>を定義しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kss</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">s</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">k</span><span class="o">**</span><span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">k</span> <span class="o">-</span> <span class="n">k</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def kss(k):
+    return s*A*k**a + (1-d)*k - k
 </pre></div>
 </div>
 </div>
@@ -1643,7 +1643,7 @@ I = \dfrac{j}{r^{b}}
 <p>まず式<a class="reference internal" href="#equation-eq-scipy-kss">(5)</a>をプロットするが，そのために<span class="math notranslate nohighlight">\(k\)</span>の値を設定しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>k_arr = np.linspace(0,100, 1000)
 </pre></div>
 </div>
 </div>
@@ -1651,21 +1651,21 @@ I = \dfrac{j}{r^{b}}
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループで<code class="docutils literal notranslate"><span class="pre">kss(k_*)</span></code>を計算し、結果を<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>に格納する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_list</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>k_list = []
 
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">k_arr</span><span class="p">:</span>
-    <span class="n">k_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kss</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+for k in k_arr:
+    k_list.append(kss(k))
 
-<span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;k&#39;</span><span class="p">:</span><span class="n">k_arr</span><span class="p">,</span> <span class="s1">&#39;kss(k)&#39;</span><span class="p">:</span><span class="n">k_list</span><span class="p">})</span>
+df3 = pd.DataFrame({&#39;k&#39;:k_arr, &#39;kss(k)&#39;:k_list})
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;kss(k)&#39;</span><span class="p">)</span>
-<span class="n">ax_</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="k">pass</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ax_ = df3.plot(&#39;k&#39;, &#39;kss(k)&#39;)
+ax_.axhline(0, c=&#39;red&#39;)
+pass
 </pre></div>
 </div>
 </div>
@@ -1677,7 +1677,7 @@ I = \dfrac{j}{r^{b}}
 <p>＜Bisection法＞</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">bisect</span><span class="p">(</span><span class="n">kss</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.bisect(kss, 60, 100)
 </pre></div>
 </div>
 </div>
@@ -1690,7 +1690,7 @@ I = \dfrac{j}{r^{b}}
 <p>＜Brent法＞</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">brentq</span><span class="p">(</span><span class="n">kss</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.brentq(kss, 60, 100)
 </pre></div>
 </div>
 </div>
@@ -1703,7 +1703,7 @@ I = \dfrac{j}{r^{b}}
 <p>＜Newton法＞</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">newton</span><span class="p">(</span><span class="n">kss</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.newton(kss, 60)
 </pre></div>
 </div>
 </div>
@@ -1724,9 +1724,9 @@ I = \dfrac{j}{r^{b}}
 <p>パラメータは次の値としよう</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="mf">0.07</span>
-<span class="n">pi</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">fc</span> <span class="o">=</span> <span class="mi">100</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>r = 0.07
+pi = 10
+fc = 100
 </pre></div>
 </div>
 </div>
@@ -1743,8 +1743,8 @@ I = \dfrac{j}{r^{b}}
 <p>で与えられる。この式を捉える関数を作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">npv</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">r</span><span class="p">))</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="n">r</span> <span class="o">-</span> <span class="n">fc</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def npv(x):
+    return (1-np.exp(-x*r))*pi/r - fc
 </pre></div>
 </div>
 </div>
@@ -1752,7 +1752,7 @@ I = \dfrac{j}{r^{b}}
 <p>Newton法を使い<code class="docutils literal notranslate"><span class="pre">npv()</span></code>がゼロになる<span class="math notranslate nohighlight">\(T\)</span>を計算する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">newton</span><span class="p">(</span><span class="n">npv</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.newton(npv,10)
 </pre></div>
 </div>
 </div>
@@ -1802,8 +1802,8 @@ I = \dfrac{j}{r^{b}}
 <p><code class="docutils literal notranslate"><span class="pre">f_ex1</span></code>関数を例として考えよう。最小化される<code class="docutils literal notranslate"><span class="pre">x</span></code>を計算する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res1</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">minimize_scalar</span><span class="p">(</span><span class="n">f_ex1</span><span class="p">)</span>
-<span class="n">res1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res1 = op.minimize_scalar(f_ex1)
+res1
 </pre></div>
 </div>
 </div>
@@ -1832,7 +1832,7 @@ I = \dfrac{j}{r^{b}}
 <p>それぞれは次のように属性としてアクセスできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res1</span><span class="o">.</span><span class="n">fun</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res1.fun
 </pre></div>
 </div>
 </div>
@@ -1844,7 +1844,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res1</span><span class="o">.</span><span class="n">success</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res1.success
 </pre></div>
 </div>
 </div>
@@ -1856,7 +1856,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res1</span><span class="o">.</span><span class="n">x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res1.x
 </pre></div>
 </div>
 </div>
@@ -1872,8 +1872,8 @@ I = \dfrac{j}{r^{b}}
 <p>次に最小値が複数ある場合を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_ex2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def f_ex2(x):
+    return x**4 - x**2
 </pre></div>
 </div>
 </div>
@@ -1881,11 +1881,11 @@ I = \dfrac{j}{r^{b}}
 <p>まずこの関数を図示しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">df_ex2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;X&#39;</span><span class="p">:</span><span class="n">xx</span><span class="p">,</span> <span class="s1">&#39;f_ex2&#39;</span><span class="p">:</span><span class="n">f_ex2</span><span class="p">(</span><span class="n">xx</span><span class="p">)})</span>
-<span class="n">ax_</span> <span class="o">=</span> <span class="n">df_ex2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;f_ex2&#39;</span><span class="p">)</span>
-<span class="n">ax_</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="k">pass</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>xx = np.linspace(-1.1, 1.1, 100)
+df_ex2 = pd.DataFrame({&#39;X&#39;:xx, &#39;f_ex2&#39;:f_ex2(xx)})
+ax_ = df_ex2.plot(&#39;X&#39;,&#39;f_ex2&#39;)
+ax_.axhline(0,c=&#39;red&#39;)
+pass
 </pre></div>
 </div>
 </div>
@@ -1896,8 +1896,8 @@ I = \dfrac{j}{r^{b}}
 <p>まず<code class="docutils literal notranslate"><span class="pre">method</span></code>のデフォルトである<code class="docutils literal notranslate"><span class="pre">brent</span></code>法を使ってみよう。解が２つあるため、次のコードでは<code class="docutils literal notranslate"><span class="pre">Python</span></code>が選んだ解しか求めることができない。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res2</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">minimize_scalar</span><span class="p">(</span><span class="n">f_ex2</span><span class="p">)</span>
-<span class="n">res2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res2 = op.minimize_scalar(f_ex2)
+res2
 </pre></div>
 </div>
 </div>
@@ -1915,8 +1915,8 @@ I = \dfrac{j}{r^{b}}
 <p>次に引数<code class="docutils literal notranslate"><span class="pre">bracket</span></code>を使ってみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res3</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">minimize_scalar</span><span class="p">(</span><span class="n">f_ex2</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">))</span>
-<span class="n">res3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res3 = op.minimize_scalar(f_ex2, bracket=(-1,-0.5))
+res3
 </pre></div>
 </div>
 </div>
@@ -1934,8 +1934,8 @@ I = \dfrac{j}{r^{b}}
 <p>しかし次の２つ例は<code class="docutils literal notranslate"><span class="pre">bracket</span></code>内に必ず解が存在するとは限らないことを示している。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res3</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">minimize_scalar</span><span class="p">(</span><span class="n">f_ex2</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.8</span><span class="p">))</span>
-<span class="n">res3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res3 = op.minimize_scalar(f_ex2, bracket=(-1,-0.8))
+res3
 </pre></div>
 </div>
 </div>
@@ -1952,8 +1952,8 @@ I = \dfrac{j}{r^{b}}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res3</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">minimize_scalar</span><span class="p">(</span><span class="n">f_ex2</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="p">))</span>
-<span class="n">res3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res3 = op.minimize_scalar(f_ex2, bracket=(-1,-0.1))
+res3
 </pre></div>
 </div>
 </div>
@@ -1972,8 +1972,8 @@ I = \dfrac{j}{r^{b}}
 <p>一方、<code class="docutils literal notranslate"><span class="pre">method='bounded'</span></code>を使うと、<code class="docutils literal notranslate"><span class="pre">bounds</span></code>で指定された区間の解が探索される。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res4</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">minimize_scalar</span><span class="p">(</span><span class="n">f_ex2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;bounded&#39;</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
-<span class="n">res4</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res4 = op.minimize_scalar(f_ex2, method=&#39;bounded&#39;, bounds=(-1,0))
+res4
 </pre></div>
 </div>
 </div>
@@ -2014,26 +2014,26 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 <p>関数として定義し図示してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sの値</span>
-<span class="n">s_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># sの値
+s_arr = np.linspace(0,1,100)
 
-<span class="c1"># 消費関数</span>
-<span class="k">def</span> <span class="nf">c</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">s</span><span class="o">/</span><span class="n">d</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">))</span>
+# 消費関数
+def c(s):
+    return (1-s)*A*(A*s/d)**(a/(1-a))
 
-<span class="c1"># 消費の値を入れるリスト</span>
-<span class="n">c_list</span> <span class="o">=</span> <span class="p">[]</span>
+# 消費の値を入れるリスト
+c_list = []
 
-<span class="c1"># 消費の計算</span>
-<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">s_arr</span><span class="p">:</span>
-    <span class="n">c_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+# 消費の計算
+for s in s_arr:
+    c_list.append(c(s))
 
-<span class="c1"># DataFrameの作成</span>
-<span class="n">df4</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;s&#39;</span><span class="p">:</span><span class="n">s_arr</span><span class="p">,</span> <span class="s1">&#39;c(s)&#39;</span><span class="p">:</span><span class="n">c_list</span><span class="p">})</span>
+# DataFrameの作成
+df4 = pd.DataFrame({&#39;s&#39;:s_arr, &#39;c(s)&#39;:c_list})
 
-<span class="c1"># プロット</span>
-<span class="n">df4</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;c(s)&#39;</span><span class="p">)</span>
-<span class="k">pass</span>
+# プロット
+df4.plot(&#39;s&#39;,&#39;c(s)&#39;)
+pass
 </pre></div>
 </div>
 </div>
@@ -2044,8 +2044,8 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 <p>次に一人当たり消費を最大化する貯蓄率を求めるために関数を定義する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">c_minus</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">s</span><span class="o">/</span><span class="n">d</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def c_minus(s):
+    return -(1-s)*A*(A*s/d)**(a/(1-a))
 </pre></div>
 </div>
 </div>
@@ -2054,7 +2054,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 <p>デフォルトのBrent法を使い消費を最大化する貯蓄率<span class="math notranslate nohighlight">\(s\)</span>を求める。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">minimize_scalar</span><span class="p">(</span><span class="n">c_minus</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.minimize_scalar(c_minus)
 </pre></div>
 </div>
 </div>
@@ -2072,7 +2072,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 <p>Bounded法でも同じ解が求められる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">minimize_scalar</span><span class="p">(</span><span class="n">c_minus</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;bounded&#39;</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.minimize_scalar(c_minus, method=&#39;bounded&#39;, bounds=(0, 1))
 </pre></div>
 </div>
 </div>
@@ -2122,9 +2122,9 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 <p>次の値を仮定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">0.6</span>
-<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">w</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>a = 0.6
+p = 1
+w = 10
 </pre></div>
 </div>
 </div>
@@ -2132,8 +2132,8 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 <p>目的関数（最大化する対象となる関数）を定義する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">u_minus</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
-    <span class="k">return</span> <span class="o">-</span><span class="p">(</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">l</span><span class="o">/</span><span class="n">p</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">l</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def u_minus(l):
+    return -( a*np.log(w*l/p)+(1-a)*np.log(1-l) )
 </pre></div>
 </div>
 </div>
@@ -2141,8 +2141,8 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 <p>効用を最大化する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res_u</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">minimize_scalar</span><span class="p">(</span><span class="n">u_minus</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;bounded&#39;</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="n">res_u</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res_u = op.minimize_scalar(u_minus, method=&#39;bounded&#39;, bounds=(0,1))
+res_u
 </pre></div>
 </div>
 </div>
@@ -2160,7 +2160,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;最適な労働供給は</span><span class="si">{</span><span class="n">res_u</span><span class="o">.</span><span class="n">x</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">である。&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(f&#39;最適な労働供給は{res_u.x:.2f}である。&#39;)
 </pre></div>
 </div>
 </div>
@@ -2178,7 +2178,7 @@ c=\frac{wl}{p}
 <p>となるので，</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;最適な消費量は</span><span class="si">{</span><span class="n">res_u</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">w</span><span class="o">/</span><span class="n">p</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">である。&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(f&#39;最適な消費量は{res_u.x*w/p:.2f}である。&#39;)
 </pre></div>
 </div>
 </div>
@@ -2190,7 +2190,7 @@ c=\frac{wl}{p}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;最大化された効用水準は</span><span class="si">{</span><span class="o">-</span><span class="n">res_u</span><span class="o">.</span><span class="n">fun</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">である。&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(f&#39;最大化された効用水準は{-res_u.fun:.2f}である。&#39;)
 </pre></div>
 </div>
 </div>
@@ -2211,8 +2211,8 @@ c=
 <p>この関数を捉える関数を作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">c_utility</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">res_u</span><span class="o">.</span><span class="n">fun</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">l</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">a</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def c_utility(l):
+    return ( np.exp(-res_u.fun)/(1-l)**(1-a) )**(1/a)
 </pre></div>
 </div>
 </div>
@@ -2220,7 +2220,7 @@ c=
 <p>プロットするために図の横軸になる労働供給<span class="math notranslate nohighlight">\(l\)</span>の値を生成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.999</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>l_arr = np.linspace(0,0.999,100)
 </pre></div>
 </div>
 </div>
@@ -2229,10 +2229,10 @@ c=
 <p>これらを使い、無差別曲線の値を計算する。この際、<code class="docutils literal notranslate"><span class="pre">res_u.fun</span></code>を利用する（マイナスになることに注意しよう）。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c_utility_list</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>c_utility_list = []
 
-<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">l_arr</span><span class="p">:</span>
-    <span class="n">c_utility_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c_utility</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+for l in l_arr:
+    c_utility_list.append(c_utility(l))
 </pre></div>
 </div>
 </div>
@@ -2240,10 +2240,10 @@ c=
 <p>次に制約線の値を生成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c_constraint_list</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>c_constraint_list = []
 
-<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">l_arr</span><span class="p">:</span>
-    <span class="n">c_constraint_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">l</span><span class="o">/</span><span class="n">p</span><span class="p">)</span>
+for l in l_arr:
+    c_constraint_list.append(w*l/p)
 </pre></div>
 </div>
 </div>
@@ -2252,9 +2252,9 @@ c=
 <p>値を<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>にまとめる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_5</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;l&#39;</span><span class="p">:</span><span class="n">l_arr</span><span class="p">,</span>
-                     <span class="s1">&#39;c_utility&#39;</span><span class="p">:</span><span class="n">c_utility_list</span><span class="p">,</span>
-                     <span class="s1">&#39;c_constraint&#39;</span><span class="p">:</span><span class="n">c_constraint_list</span><span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_5 = pd.DataFrame({&#39;l&#39;:l_arr,
+                     &#39;c_utility&#39;:c_utility_list,
+                     &#39;c_constraint&#39;:c_constraint_list})
 </pre></div>
 </div>
 </div>
@@ -2262,10 +2262,10 @@ c=
 <p><code class="docutils literal notranslate"><span class="pre">df_5</span></code>を使いプロットする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df_5</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">,</span><span class="s1">&#39;c_utility&#39;</span><span class="p">)</span>       <span class="c1"># 1</span>
-<span class="n">df_5</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">,</span><span class="s1">&#39;c_constraint&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">)</span>  <span class="c1"># 2</span>
-<span class="n">ax_</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">])</span>                   <span class="c1"># 3</span>
-<span class="k">pass</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ax_ = df_5.plot(&#39;l&#39;,&#39;c_utility&#39;)       # 1
+df_5.plot(&#39;l&#39;,&#39;c_constraint&#39;, ax=ax_)  # 2
+ax_.set_ylim([0,20])                   # 3
+pass
 </pre></div>
 </div>
 </div>
@@ -2340,10 +2340,10 @@ c=
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_ex3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>   <span class="c1"># 1</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>    <span class="c1"># 2</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>    <span class="c1"># 3</span>
-    <span class="k">return</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">z</span> <span class="o">+</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">10</span>  <span class="c1"># 4</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def f_ex3(x):   # 1
+    y = x[0]    # 2
+    z = x[1]    # 3
+    return y**2 + y*z + z**2 + 10  # 4
 </pre></div>
 </div>
 </div>
@@ -2360,7 +2360,7 @@ c=
 <p>次に解探索の初期値を設定しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x0 = [0.3, 0.5]
 </pre></div>
 </div>
 </div>
@@ -2368,8 +2368,8 @@ c=
 <p><code class="docutils literal notranslate"><span class="pre">x0</span></code>の第0要素は<code class="docutils literal notranslate"><span class="pre">y</span></code>の初期値、第1要素は<code class="docutils literal notranslate"><span class="pre">z</span></code>の初期値となる。これは関数<code class="docutils literal notranslate"><span class="pre">f_ex3</span></code>の引数である<code class="docutils literal notranslate"><span class="pre">x</span></code>の要素の順番に対応している。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res3</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">f_ex3</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">)</span>
-<span class="n">res3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res3 = op.minimize(f_ex3, x0=x0)
+res3
 </pre></div>
 </div>
 </div>
@@ -2408,7 +2408,7 @@ c=
 <p>それぞれは次のように属性としてアクセスできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res3</span><span class="o">.</span><span class="n">fun</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res3.fun
 </pre></div>
 </div>
 </div>
@@ -2420,7 +2420,7 @@ c=
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res3</span><span class="o">.</span><span class="n">message</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res3.message
 </pre></div>
 </div>
 </div>
@@ -2432,7 +2432,7 @@ c=
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res3</span><span class="o">.</span><span class="n">success</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res3.success
 </pre></div>
 </div>
 </div>
@@ -2444,7 +2444,7 @@ c=
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res3</span><span class="o">.</span><span class="n">x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res3.x
 </pre></div>
 </div>
 </div>
@@ -2475,10 +2475,10 @@ c=
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_ex4</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">return</span> <span class="o">-</span><span class="p">(</span> <span class="o">-</span><span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">z</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="n">z</span><span class="o">+</span><span class="n">y</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def f_ex4(x):
+    y = x[0]
+    z = x[1]
+    return -( -z**2-y**2+z*y+z+y )
 </pre></div>
 </div>
 </div>
@@ -2486,7 +2486,7 @@ c=
 <p>次に解探索の初期値を設定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x0 = [0.5, 0.5]
 </pre></div>
 </div>
 </div>
@@ -2494,8 +2494,8 @@ c=
 <p>解探索の初期値として<code class="docutils literal notranslate"><span class="pre">[0.5,</span> <span class="pre">0.5]</span></code>を設定し計算する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res4</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">f_ex4</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
-<span class="n">res4</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res4 = op.minimize(f_ex4, x0=[0.5, 0.5])
+res4
 </pre></div>
 </div>
 </div>
@@ -2534,10 +2534,10 @@ y+z-1=0
 この式の左辺が返り値となる関数を定義する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_const</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def f_const(x):
+    y = x[0]
+    z = x[1]
+    return x[0]+x[1]-1
 </pre></div>
 </div>
 </div>
@@ -2547,7 +2547,7 @@ y+z-1=0
 この関数を使い次のように引数<code class="docutils literal notranslate"><span class="pre">constraints</span></code>に設定する変数を作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="n">f_const</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>const = {&#39;type&#39;:&#39;eq&#39;, &#39;fun&#39;: f_const}
 </pre></div>
 </div>
 </div>
@@ -2570,8 +2570,8 @@ y+z-1=0
 引数<code class="docutils literal notranslate"><span class="pre">constraints</span></code>に変数<code class="docutils literal notranslate"><span class="pre">const</span></code>を指定し計算する（初期値を<code class="docutils literal notranslate"><span class="pre">[5.0,</span> <span class="pre">0.6]</span></code>とする）。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res5</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">f_ex4</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span> <span class="n">constraints</span><span class="o">=</span><span class="n">const</span><span class="p">)</span>
-<span class="n">res5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>res5 = op.minimize(f_ex4, x0=[5.0, 0.6], constraints=const)
+res5
 </pre></div>
 </div>
 </div>
@@ -2591,7 +2591,7 @@ y+z-1=0
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;yは</span><span class="si">{</span><span class="n">res5</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">であり、zは</span><span class="si">{</span><span class="n">res5</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">です。&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(f&#39;yは{res5.x[0]:.1f}であり、zは{res5.x[1]:.1f}です。&#39;)
 </pre></div>
 </div>
 </div>
@@ -2604,7 +2604,7 @@ y+z-1=0
 <p><code class="docutils literal notranslate"><span class="pre">y</span></code>の値と<code class="docutils literal notranslate"><span class="pre">z</span></code>の値は制約式を満たすことがわかる。また制約式がない場合と比べて、<code class="docutils literal notranslate"><span class="pre">y</span></code>の値と<code class="docutils literal notranslate"><span class="pre">z</span></code>の値は異なり、最大化された関数の値も異なる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;制約式がない場合の関数の最大値は</span><span class="si">{</span><span class="o">-</span><span class="n">res4</span><span class="o">.</span><span class="n">fun</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">であり、制約がある場合は</span><span class="si">{</span><span class="o">-</span><span class="n">res5</span><span class="o">.</span><span class="n">fun</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">となる。&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(f&#39;制約式がない場合の関数の最大値は{-res4.fun:.2f}であり、制約がある場合は{-res5.fun:.2f}となる。&#39;)
 </pre></div>
 </div>
 </div>
@@ -2634,10 +2634,10 @@ y+z\leq 1
 この不等式の左辺を制約式としてコードを書くが、上の<code class="docutils literal notranslate"><span class="pre">f_const</span></code>と異なることがわかる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_const_ineq</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">return</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def f_const_ineq(x):
+    y = x[0]
+    z = x[1]
+    return 1-x[0]-x[1]
 </pre></div>
 </div>
 </div>
@@ -2646,7 +2646,7 @@ y+z\leq 1
 この場合の引数<code class="docutils literal notranslate"><span class="pre">constraint</span></code>に使う辞書は次のようになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">const_ineq</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;ineq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="n">f_const_ineq</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>const_ineq = {&#39;type&#39;:&#39;ineq&#39;, &#39;fun&#39;: f_const_ineq}
 </pre></div>
 </div>
 </div>
@@ -2656,7 +2656,7 @@ y+z\leq 1
 計算すると同じ結果になることが確認できる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">f_ex4</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span> <span class="n">constraints</span><span class="o">=</span><span class="n">const_ineq</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>op.minimize(f_ex4, x0=[5.0, 0.6], constraints=const_ineq)
 </pre></div>
 </div>
 </div>
@@ -2681,10 +2681,10 @@ y+z\leq 1
 <p>労働供給問題を再考する。まず効用関数を設定し直そう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">u</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">l</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">return</span> <span class="o">-</span><span class="p">(</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">l</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def u(x):
+    c = x[0]
+    l = x[1]
+    return -( a*np.log(c)+(1-a)*np.log(1-l) )
 </pre></div>
 </div>
 </div>
@@ -2701,10 +2701,10 @@ wl-pc=0
 <p>これを使い制約式を定義する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">budget</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">l</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">w</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">p</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def budget(x):
+    c = x[0]
+    l = x[1]
+    return w*x[1]-p*x[0]
 </pre></div>
 </div>
 </div>
@@ -2712,7 +2712,7 @@ wl-pc=0
 <p>引数<code class="docutils literal notranslate"><span class="pre">constraint</span></code>に使う辞書は次のように書くことができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="n">budget</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>const = {&#39;type&#39;:&#39;eq&#39;, &#39;fun&#39;: budget}
 </pre></div>
 </div>
 </div>
@@ -2736,18 +2736,18 @@ wl-pc=0
 <p>となる。これらの値を使い引数<code class="docutils literal notranslate"><span class="pre">bounds</span></code>に設定する値を次のようにする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bnds</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="n">w</span><span class="o">/</span><span class="n">p</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>bnds = [(0,w/p),(0,1)]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 初期値</span>
-<span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># 初期値
+x0 = [4.0, 0.3]
 
-<span class="c1"># 計算</span>
-<span class="n">op</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bnds</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">const</span><span class="p">)</span>
+# 計算
+op.minimize(u, x0, bounds=bnds, constraints=const)
 </pre></div>
 </div>
 </div>

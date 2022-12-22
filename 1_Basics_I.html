@@ -87,7 +87,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint"><p><a href='http://www.econ.kobe-u.ac.jp/topics/pdf/221212-2.pdf'>✴️<<font color='white'>特別講演「UCバークレー校における経済学とデータサイエンス教育」(2023年1月6日) ← クリック！✴️</font></a></p></div>
 <div class="header header-item noprint"></div>
 
     
@@ -1056,12 +1056,12 @@ title="Print to PDF"
 <p>例えば，次のコード・セルには半角の<code class="docutils literal notranslate"><span class="pre">10</span></code>の後に全角のスペースが紛れ込んでいるためエラーが発生している。</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span>　
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>10　
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="g g-Whitespace">    </span><span class="mi">10</span>
       <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid non-printable character U+3000
@@ -1119,7 +1119,7 @@ title="Print to PDF"
 <p>整数型の<code class="docutils literal notranslate"><span class="pre">1</span></code>を実行すると，<code class="docutils literal notranslate"><span class="pre">1</span></code>が返され表示されることになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>1 
 </pre></div>
 </div>
 </div>
@@ -1132,7 +1132,7 @@ title="Print to PDF"
 <p>同様に不動小数点型の<code class="docutils literal notranslate"><span class="pre">1.0</span></code>を実行すると<code class="docutils literal notranslate"><span class="pre">1.0</span></code>が返される。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 </div>
@@ -1145,7 +1145,7 @@ title="Print to PDF"
 <p>データ型を確認するために<code class="docutils literal notranslate"><span class="pre">type()</span></code>という関数が用意されているので，それを使ってみよう（関数に関しては後述する）。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>type(1)
 </pre></div>
 </div>
 </div>
@@ -1157,7 +1157,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>type(1.0)
 </pre></div>
 </div>
 </div>
@@ -1205,7 +1205,7 @@ title="Print to PDF"
 <p>例を挙げて考えよう。まず整数型の四則演算と累乗を考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">+</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>100 + 2
 </pre></div>
 </div>
 </div>
@@ -1217,7 +1217,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">-</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>100 - 2
 </pre></div>
 </div>
 </div>
@@ -1229,7 +1229,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">*</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>100 * 2
 </pre></div>
 </div>
 </div>
@@ -1241,7 +1241,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">/</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>100 / 2
 </pre></div>
 </div>
 </div>
@@ -1253,7 +1253,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">**</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>100 ** 2
 </pre></div>
 </div>
 </div>
@@ -1267,7 +1267,7 @@ title="Print to PDF"
 <p>数学では<code class="docutils literal notranslate"><span class="pre">()</span></code>の中が先に計算されるが，<code class="docutils literal notranslate"><span class="pre">Python</span></code>でも同じである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">100</span> <span class="o">-</span> <span class="mi">50</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(100 - 50) / 2
 </pre></div>
 </div>
 </div>
@@ -1280,7 +1280,7 @@ title="Print to PDF"
 <p>次に切り捨て演算を考えよう。<code class="docutils literal notranslate"><span class="pre">a/b</span></code>を計算すると，結果は整数部分である商と余り（<code class="docutils literal notranslate"><span class="pre">0</span></code>の場合もある）に分けることができるが，整数部分を返すのが切り捨て演算となる。次の例では整数型<code class="docutils literal notranslate"><span class="pre">7</span></code>を不動小数点型で割り，計算結果の整数部分を不動小数点型で返している（<code class="docutils literal notranslate"><span class="pre">2.0</span></code>ではなく<code class="docutils literal notranslate"><span class="pre">2</span></code>で割ると整数型<code class="docutils literal notranslate"><span class="pre">3</span></code>が返される。試してみよう）。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">//</span> <span class="mf">2.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>7 // 2.0
 </pre></div>
 </div>
 </div>
@@ -1293,7 +1293,7 @@ title="Print to PDF"
 <p>切り捨て演算と関係が深いのが剰余演算<code class="docutils literal notranslate"><span class="pre">%</span></code>である。<code class="docutils literal notranslate"><span class="pre">x/y</span></code>の例を使うと，余り返すのが剰余演算となる。上と同じ例を使うと次の値が返される。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">%</span> <span class="mf">2.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>7 % 2.0
 </pre></div>
 </div>
 </div>
@@ -1321,7 +1321,7 @@ title="Print to PDF"
 <p>数学では<code class="docutils literal notranslate"><span class="pre">=</span></code>は等号であり，両辺が等しいことを示すが，<code class="docutils literal notranslate"><span class="pre">Python</span></code>では別の意味で使われる。<strong>変数にデータを割り当てる</strong>場合にのみ使われる。即ち，「等号」ではなく「割り当て演算子」である。次の例では値<code class="docutils literal notranslate"><span class="pre">10</span></code>を変数<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = 10
 </pre></div>
 </div>
 </div>
@@ -1330,7 +1330,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">x</span></code>の値を返す（表示する）には，<code class="docutils literal notranslate"><span class="pre">x</span></code>を書いたセルを実行するだけである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x
 </pre></div>
 </div>
 </div>
@@ -1343,10 +1343,10 @@ title="Print to PDF"
 <p>もちろん変数を使って算術演算を行うことも可能である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
-<span class="n">z</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = 100
+y = 10
+z = x / y
+z
 </pre></div>
 </div>
 </div>
@@ -1376,7 +1376,7 @@ title="Print to PDF"
 <p>この点を明確にするために、上のコードは「<code class="docutils literal notranslate"><span class="pre">100</span></code>を変数<code class="docutils literal notranslate"><span class="pre">x</span></code>に<strong>割り当てる</strong>」と考える。ここで<code class="docutils literal notranslate"><span class="pre">=</span></code>の<strong>右辺</strong>を先に読み，その次に<strong>左辺</strong>を読んでいることに注意しよう。<code class="docutils literal notranslate"><span class="pre">=</span></code>を右から左に読む（考える）ことを習慣づけることが、今後<code class="docutils literal notranslate"><span class="pre">Python</span></code>を勉強する上で重要となる。この点を示すために次のコードを考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = x + 1
 </pre></div>
 </div>
 </div>
@@ -1389,7 +1389,7 @@ title="Print to PDF"
 <p>実際に<code class="docutils literal notranslate"><span class="pre">x</span></code>を表示してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x
 </pre></div>
 </div>
 </div>
@@ -1410,7 +1410,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">=</span></code>を使い１つの変数への割り当てを考えたが、同時に複数の変数への割り当ても可能である。次の例を考えよう。（<code class="docutils literal notranslate"><span class="pre">=</span></code>の右辺から読む！）</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mi">10_000</span><span class="p">,</span> <span class="mi">2022</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>a, b, c = 3.14, 10_000, 2022
 </pre></div>
 </div>
 </div>
@@ -1424,7 +1424,7 @@ title="Print to PDF"
 <p>それぞれの変数を<code class="docutils literal notranslate"><span class="pre">,</span></code>で区切っていることにも留意しよう。同様に，<code class="docutils literal notranslate"><span class="pre">,</span></code>で区切って変数を並べて実行すると全てを丸括弧で挟んで返すことになる。ここでの<code class="docutils literal notranslate"><span class="pre">()</span></code>は，後に説明するタプルと呼ばれるデータ型を表している。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>a, b, c
 </pre></div>
 </div>
 </div>
@@ -1437,14 +1437,14 @@ title="Print to PDF"
 <p>また同時複数割り当ては，変数の値を入れ替える場合に便利である。次の例では<code class="docutils literal notranslate"><span class="pre">a</span></code>と<code class="docutils literal notranslate"><span class="pre">b</span></code>の値を入れ替えている。（右辺から読む！）</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>a, b = b, a
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>a, b, c
 </pre></div>
 </div>
 </div>
@@ -1464,13 +1464,13 @@ title="Print to PDF"
 <p>上で<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>が出てきたが、これを短縮して<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">1</span></code>と書くことができる。次のコードを考えようてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = 10
+x += 1
+x += 1
+x += 1
+x += 1
+x += 1
+x
 </pre></div>
 </div>
 </div>
@@ -1492,10 +1492,10 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">2</span>
-<span class="n">x</span> <span class="o">**=</span> <span class="mi">2</span>
-<span class="n">x</span> <span class="o">**=</span> <span class="mi">2</span>
-<span class="n">x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x=2
+x **= 2
+x **= 2
+x
 </pre></div>
 </div>
 </div>
@@ -1507,10 +1507,10 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">201</span>
-<span class="n">x</span> <span class="o">//=</span> <span class="mi">2</span>
-<span class="n">x</span> <span class="o">//=</span> <span class="mi">2</span>
-<span class="n">x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x=201
+x //= 2
+x //= 2
+x
 </pre></div>
 </div>
 </div>
@@ -1538,8 +1538,8 @@ title="Print to PDF"
 </ol>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">keyword</span>
-<span class="n">keyword</span><span class="o">.</span><span class="n">kwlist</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import keyword
+keyword.kwlist
 </pre></div>
 </div>
 </div>
@@ -1598,7 +1598,7 @@ title="Print to PDF"
 <p>３つ目の基本データ型として文字列型を説明する。文字列は</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;国内総生産&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;国内総生産&#39;
 </pre></div>
 </div>
 </div>
@@ -1611,7 +1611,7 @@ title="Print to PDF"
 <p>のように<code class="docutils literal notranslate"><span class="pre">'</span></code>（シングル・クォーテーション）もしくは<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>（ダブル・クォーテーション）で挟まれて定義される。どちらを使っても同じだが，クォートの中でクォートを使う必要がある場合は，それぞれ違ったものを使う。例えば，</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;He said &quot;Python is very useful!&quot; to me.&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;He said &quot;Python is very useful!&quot; to me.&#39;
 </pre></div>
 </div>
 </div>
@@ -1624,7 +1624,7 @@ title="Print to PDF"
 <p>この例では，外側は<code class="docutils literal notranslate"><span class="pre">'</span></code>と<code class="docutils literal notranslate"><span class="pre">'</span></code>を使っており，内側は<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>と<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>を使っている。データ型を確認してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;神戸大学&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>type(&#39;神戸大学&#39;)
 </pre></div>
 </div>
 </div>
@@ -1637,7 +1637,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">str</span></code>はstringの略である。次も文字列型となることには注意しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;0.1&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;0.1&#39;
 </pre></div>
 </div>
 </div>
@@ -1649,7 +1649,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>  <span class="nb">type</span><span class="p">(</span><span class="s1">&#39;0.1&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>  type(&#39;0.1&#39;)
 </pre></div>
 </div>
 </div>
@@ -1663,14 +1663,14 @@ title="Print to PDF"
 <p>従って，<code class="docutils literal notranslate"><span class="pre">0.1</span></code>を使って算術演算をすることエラーが発生する。</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;1.0&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>1 + &#39;1.0&#39;
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">32</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;1.0&#39;</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
@@ -1684,7 +1684,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">+</span></code>は文字列型と他のデータ型とは一緒に使えないが，文字列同士であれば使うことができる。<code class="docutils literal notranslate"><span class="pre">+</span></code>は文字列を結合することになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;一人当たり&#39;</span> <span class="o">+</span> <span class="s1">&#39;GDP&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;一人当たり&#39; + &#39;GDP&#39;
 </pre></div>
 </div>
 </div>
@@ -1696,7 +1696,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;1.0&#39;</span> <span class="o">+</span> <span class="s1">&#39;1.00&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;1.0&#39; + &#39;1.00&#39;
 </pre></div>
 </div>
 </div>
@@ -1709,7 +1709,7 @@ title="Print to PDF"
 <p>一方で<code class="docutils literal notranslate"><span class="pre">+</span></code>がなくても同じように文字列を結合して返すことになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;一人当たり&#39;</span> <span class="s1">&#39;GDP&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;一人当たり&#39; &#39;GDP&#39;
 </pre></div>
 </div>
 </div>
@@ -1723,7 +1723,7 @@ title="Print to PDF"
 <p>また<code class="docutils literal notranslate"><span class="pre">*</span></code>を使うと文字列をリピートすることができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;(^o^)/   &#39;</span><span class="o">*</span><span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;(^o^)/   &#39;*3
 </pre></div>
 </div>
 </div>
@@ -1735,7 +1735,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;-★&#39;</span><span class="o">*</span><span class="mi">20</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;-★&#39;*20
 </pre></div>
 </div>
 </div>
@@ -1747,7 +1747,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;😎🚀&#39;</span><span class="o">*</span><span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;😎🚀&#39;*10
 </pre></div>
 </div>
 </div>
@@ -1771,7 +1771,7 @@ title="Print to PDF"
 <p>名前が示すように「真偽」を示すのがブール型であり，<code class="docutils literal notranslate"><span class="pre">True</span></code>と<code class="docutils literal notranslate"><span class="pre">False</span></code>をブール値（真偽値, truth value）と呼ぶ。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -1783,7 +1783,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -1809,7 +1809,7 @@ title="Print to PDF"
 <p>最初の<code class="docutils literal notranslate"><span class="pre">==</span></code>は「等号」が２つ並んでいるが，<code class="docutils literal notranslate"><span class="pre">Python</span></code>ではこれが正しく「等号」を意味する。即ち，両辺が同値かどうかを確認することができるのである。例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">==</span> <span class="mf">10.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>10 == 10.0
 </pre></div>
 </div>
 </div>
@@ -1822,7 +1822,7 @@ title="Print to PDF"
 <p>データ型は異なるが，<code class="docutils literal notranslate"><span class="pre">10</span></code>という数値は同じなので<code class="docutils literal notranslate"><span class="pre">True</span></code>が返されている。次の例で<code class="docutils literal notranslate"><span class="pre">False</span></code>が返されるのも簡単に理解できる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">10.1</span> <span class="o">==</span> <span class="mf">10.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>10.1 == 10.0
 </pre></div>
 </div>
 </div>
@@ -1835,7 +1835,7 @@ title="Print to PDF"
 <p>一方，<code class="docutils literal notranslate"><span class="pre">!=</span></code>は<code class="docutils literal notranslate"><span class="pre">==</span></code>と逆の結果を返すことになる</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">!=</span> <span class="mf">10.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>10 != 10.0
 </pre></div>
 </div>
 </div>
@@ -1847,7 +1847,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">10.1</span> <span class="o">!=</span> <span class="mf">10.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>10.1 != 10.0
 </pre></div>
 </div>
 </div>
@@ -1860,7 +1860,7 @@ title="Print to PDF"
 <p>残り４つの比較演算子は数学の不等号と同じように解釈すれば良いので問題ないだろう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>1 &lt;= 10
 </pre></div>
 </div>
 </div>
@@ -1872,7 +1872,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>1 &gt;= 10
 </pre></div>
 </div>
 </div>
@@ -1892,7 +1892,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">10+5</span></code>は何？もちろん<code class="docutils literal notranslate"><span class="pre">15</span></code>である。では<code class="docutils literal notranslate"><span class="pre">10</span></code>は<code class="docutils literal notranslate"><span class="pre">True</span></code>と<code class="docutils literal notranslate"><span class="pre">False</span></code>のどっち？「えっ？どういうこと？」と考えるかもしれないが，答えは<code class="docutils literal notranslate"><span class="pre">True</span></code>である。「<code class="docutils literal notranslate"><span class="pre">Python</span></code>では全てがオブジェクトである」と言われるが（「オブジェクト」については後述する），全てのオブジェクトにはブール値がある。それを確かめる関数が<code class="docutils literal notranslate"><span class="pre">bool()</span></code>である。<code class="docutils literal notranslate"><span class="pre">10</span></code>のブール値を確認してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>bool(10)
 </pre></div>
 </div>
 </div>
@@ -1919,7 +1919,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">None</span></code>は「無」の状態を表す値である。データ型を調べると次のようになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>type(None)
 </pre></div>
 </div>
 </div>
@@ -1932,7 +1932,7 @@ title="Print to PDF"
 <p>上のリストには説明していないものも含まれるが，<code class="docutils literal notranslate"><span class="pre">False</span></code>と評価されるのは「無」，「空」に対応する値と覚えておけば良いだろう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>bool(0)
 </pre></div>
 </div>
 </div>
@@ -1944,7 +1944,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>bool(&quot;&quot;)
 </pre></div>
 </div>
 </div>
@@ -1957,7 +1957,7 @@ title="Print to PDF"
 <p>スペースも含めて，それら以外は全て<code class="docutils literal notranslate"><span class="pre">True</span></code>と評価される。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>bool(&#39; &#39;)
 </pre></div>
 </div>
 </div>
@@ -1970,7 +1970,7 @@ title="Print to PDF"
 <p>ついでに「経済学はおもしろい！」という意見について<code class="docutils literal notranslate"><span class="pre">Python</span></code>が同意するか尋ねてみよう😎</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;経済学はおもしろい！&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>bool(&#39;経済学はおもしろい！&#39;)
 </pre></div>
 </div>
 </div>
@@ -1992,8 +1992,8 @@ title="Print to PDF"
 <p>英語の意味のままなので，分かり易いのではないだろうか。例を考えるために，まず次の変数を設定しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>a = 1
+b = -1
 </pre></div>
 </div>
 </div>
@@ -2007,7 +2007,7 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>not True
 </pre></div>
 </div>
 </div>
@@ -2019,7 +2019,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>not (a &gt; 1)
 </pre></div>
 </div>
 </div>
@@ -2032,7 +2032,7 @@ title="Print to PDF"
 <p>この結果は次のように解釈できる。まず<code class="docutils literal notranslate"><span class="pre">()</span></code>の中が優先的に評価され<code class="docutils literal notranslate"><span class="pre">False</span></code>が返される。更に，<code class="docutils literal notranslate"><span class="pre">not</span></code>で否定されるので結果は<code class="docutils literal notranslate"><span class="pre">True</span></code>となる。（<code class="docutils literal notranslate"><span class="pre">(not</span> <span class="pre">a)</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>は異なる結果となるので注意しよう。）次の結果も同様に解釈することができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="kc">False</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>not False
 </pre></div>
 </div>
 </div>
@@ -2044,7 +2044,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>not (a &lt; 1)
 </pre></div>
 </div>
 </div>
@@ -2060,7 +2060,7 @@ title="Print to PDF"
 <p>次に<code class="docutils literal notranslate"><span class="pre">and</span></code>を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>True and True
 </pre></div>
 </div>
 </div>
@@ -2073,7 +2073,7 @@ title="Print to PDF"
 <p>「<code class="docutils literal notranslate"><span class="pre">True</span></code>且つ<code class="docutils literal notranslate"><span class="pre">True</span></code>」なので全体では<code class="docutils literal notranslate"><span class="pre">True</span></code>となる。簡単に理解できるはずである。次も基本的には同じである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(a &gt; 0) and (b &lt; 0)
 </pre></div>
 </div>
 </div>
@@ -2086,7 +2086,7 @@ title="Print to PDF"
 <p>次の例には<code class="docutils literal notranslate"><span class="pre">False</span></code>が入っている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>False and True
 </pre></div>
 </div>
 </div>
@@ -2098,7 +2098,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(a &lt; 0) and (b &lt; 0)
 </pre></div>
 </div>
 </div>
@@ -2114,7 +2114,7 @@ title="Print to PDF"
 <p>簡単なので解説は不要であろう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>True or False
 </pre></div>
 </div>
 </div>
@@ -2126,7 +2126,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(a &gt; 0) and (b &gt; 0)
 </pre></div>
 </div>
 </div>
@@ -2158,7 +2158,7 @@ title="Print to PDF"
 <p>ここで<code class="docutils literal notranslate"><span class="pre">True</span></code>か<code class="docutils literal notranslate"><span class="pre">False</span></code>は，上で説明したブール値が使われる。次の例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&#39;</span> <span class="ow">or</span> <span class="mi">5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;&#39; or 5
 </pre></div>
 </div>
 </div>
@@ -2171,7 +2171,7 @@ title="Print to PDF"
 <p>空の文字列<code class="docutils literal notranslate"><span class="pre">''</span></code>のブール値は<code class="docutils literal notranslate"><span class="pre">False</span></code>になるため，上の表に従って<code class="docutils literal notranslate"><span class="pre">5</span></code>が返されている。上の表に従うと，次の例も理解できるだろう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="mi">5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;&#39; and 5
 </pre></div>
 </div>
 </div>
@@ -2193,7 +2193,7 @@ title="Print to PDF"
 <p>コードで確かめてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1"># Trueは１なのでTrueを返す</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>True == 1 # Trueは１なのでTrueを返す
 </pre></div>
 </div>
 </div>
@@ -2205,7 +2205,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span> <span class="o">==</span> <span class="mi">0</span> <span class="c1"># Falseは0なのでTrueを返す</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>False == 0 # Falseは0なのでTrueを返す
 </pre></div>
 </div>
 </div>
@@ -2217,7 +2217,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="o">+</span> <span class="kc">True</span> <span class="o">+</span> <span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>True + True + True
 </pre></div>
 </div>
 </div>
@@ -2229,7 +2229,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="o">*</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>True * 10
 </pre></div>
 </div>
 </div>
@@ -2247,7 +2247,7 @@ title="Print to PDF"
 <p>「コンピューターは非常に正確だ」というイメージを持っていないだろうか（私がそうだった）。実は，全くその逆である。次の計算をしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.3</span> <span class="o">==</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>0.3 == 0.1 + 0.1 + 0.1
 </pre></div>
 </div>
 </div>
@@ -2264,8 +2264,8 @@ title="Print to PDF"
 <p>では<code class="docutils literal notranslate"><span class="pre">0.1</span></code>と<code class="docutils literal notranslate"><span class="pre">0.3</span></code>の近似値を表示してみよう。</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;0.1の近似値</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="nb">format</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;.55f&#39;</span><span class="p">),</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">0.3の近似値</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="nb">format</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="s1">&#39;.55f&#39;</span><span class="p">),</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(&#39;0.1の近似値\n&#39;,&#39;-&#39;*9,&#39;\n&#39;,format(0.1, &#39;.55f&#39;),sep=&#39;&#39;)
+print(&#39;\n\n0.3の近似値\n&#39;,&#39;-&#39;*9,&#39;\n&#39;,format(0.3, &#39;.55f&#39;),sep=&#39;&#39;)
 </pre></div>
 </div>
 </div>
@@ -2284,7 +2284,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="s1">&#39;.55f&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>format(0.9, &#39;.55f&#39;)
 </pre></div>
 </div>
 </div>
@@ -2319,7 +2319,7 @@ title="Print to PDF"
 <p>上の例では小さな値を考えたが，大きい値の場合にも類似する問題が存在する。次を計算してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">2.0</span><span class="o">**</span><span class="mi">52</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>2.0**52
 </pre></div>
 </div>
 </div>
@@ -2331,7 +2331,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">2.0</span><span class="o">**</span><span class="mi">52</span> <span class="o">==</span> <span class="mf">2.0</span><span class="o">**</span><span class="mi">52</span> <span class="o">+</span> <span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>2.0**52 == 2.0**52 + 1
 </pre></div>
 </div>
 </div>
@@ -2344,7 +2344,7 @@ title="Print to PDF"
 <p>この結果は期待どおりであるが，次の例はそうではない。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">2.0</span><span class="o">**</span><span class="mi">53</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>2.0**53
 </pre></div>
 </div>
 </div>
@@ -2356,7 +2356,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">2.0</span><span class="o">**</span><span class="mi">53</span> <span class="o">==</span> <span class="mf">2.0</span><span class="o">**</span><span class="mi">53</span> <span class="o">+</span> <span class="mf">1.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>2.0**53 == 2.0**53 + 1.0
 </pre></div>
 </div>
 </div>
@@ -2369,7 +2369,7 @@ title="Print to PDF"
 <p>これは浮動小数点型で正確に表示できる最大の数（有効桁数）に制限があるために発生する。<code class="docutils literal notranslate"><span class="pre">2.0**53</span></code>の例は有効桁数を超えているため対応不可能になり間違った結果を返している。一方，整数型には有効桁数に制限はないため，このような問題は発生しない。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">53</span> <span class="o">==</span> <span class="mi">2</span><span class="o">**</span><span class="mi">53</span> <span class="o">+</span> <span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>2**53 == 2**53 + 1
 </pre></div>
 </div>
 </div>
@@ -2401,7 +2401,7 @@ title="Print to PDF"
 <p>例としてショッピング・リストを考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;bread&#39;</span><span class="p">,</span> <span class="s1">&#39;egg&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[&#39;bread&#39;, &#39;egg&#39;, &#39;ham&#39;]
 </pre></div>
 </div>
 </div>
@@ -2414,7 +2414,7 @@ title="Print to PDF"
 <p>もちろん日本語でも構わない。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;パン&#39;</span><span class="p">,</span> <span class="s1">&#39;玉子&#39;</span><span class="p">,</span> <span class="s1">&#39;ハム&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[&#39;パン&#39;, &#39;玉子&#39;, &#39;ハム&#39;]
 </pre></div>
 </div>
 </div>
@@ -2427,7 +2427,7 @@ title="Print to PDF"
 <p>その価格を表すリストも作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">250</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[100, 300, 250]
 </pre></div>
 </div>
 </div>
@@ -2440,8 +2440,8 @@ title="Print to PDF"
 <p>もちろん変数に割り当てることも可能である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">price_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span> <span class="p">,</span> <span class="mi">250</span><span class="p">]</span>
-<span class="n">price_list</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>price_list = [100, 300 , 250]
+price_list
 </pre></div>
 </div>
 </div>
@@ -2454,7 +2454,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">type()</span></code>関数を使ってデータ型を確認してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">price_list</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>type(price_list)
 </pre></div>
 </div>
 </div>
@@ -2467,7 +2467,7 @@ title="Print to PDF"
 <p>リストのデータ型は<code class="docutils literal notranslate"><span class="pre">list</span></code>と表示されることがわかる。また異なるデータ型が要素として入ることも可能である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;egg&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[&#39;egg&#39;, 100, True]
 </pre></div>
 </div>
 </div>
@@ -2481,7 +2481,7 @@ title="Print to PDF"
 <p>要素が１つのリストの生成も可能である（玉子の価格のみ）。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">100</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[100]
 </pre></div>
 </div>
 </div>
@@ -2494,7 +2494,7 @@ title="Print to PDF"
 <p>空のリストも作成可能であり，白紙ショッピング・リストと考えれば良いだろう。後々活躍することになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
 </div>
@@ -2507,7 +2507,7 @@ title="Print to PDF"
 <p>またリストの中にリストや他のデータ型（以下で説明するタプルや辞書など）を入れることも可能だ。ショッピング・リストの例から離れるが次の様に書くことできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[0, [], [1], [2,3],[4,5,6]]
 </pre></div>
 </div>
 </div>
@@ -2521,9 +2521,9 @@ title="Print to PDF"
 <p>次の例は行列のように要素が並んでいる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
- <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
- <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[[1,2,3],
+ [4,5,6],
+ [7,8,9]]
 </pre></div>
 </div>
 </div>
@@ -2539,7 +2539,7 @@ title="Print to PDF"
 <p>リストにも<code class="docutils literal notranslate"><span class="pre">+</span></code>を使うことができる。文字列と同じように，複数のリストを結合することができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">250</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;egg&#39;</span><span class="p">,</span><span class="s1">&#39;ham&#39;</span><span class="p">,</span><span class="s1">&#39;bread&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[100,300,250] + [&#39;egg&#39;,&#39;ham&#39;,&#39;bread&#39;]
 </pre></div>
 </div>
 </div>
@@ -2552,7 +2552,7 @@ title="Print to PDF"
 <p>また<code class="docutils literal notranslate"><span class="pre">*</span></code>は整数型の値を使うことにより，要素をリピートして一つのリストとして返すことになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;egg&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[&#39;egg&#39;, 100] * 3
 </pre></div>
 </div>
 </div>
@@ -2564,7 +2564,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="s1">&#39;egg&#39;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;ham&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;bread&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[[&#39;egg&#39;]+[100], [&#39;ham&#39;]*2, &#39;bread&#39;]
 </pre></div>
 </div>
 </div>
@@ -2593,7 +2593,7 @@ title="Print to PDF"
 <p>まずリストで使ったショッピング・リストの例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;egg&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">,</span> <span class="s1">&#39;bread&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(&#39;egg&#39;, &#39;ham&#39;, &#39;bread&#39;)
 </pre></div>
 </div>
 </div>
@@ -2606,9 +2606,9 @@ title="Print to PDF"
 <p>変数に割り当てて，データ型を確認してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">price_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span> <span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>price_tuple = (100, 300 , 250)
 
-<span class="nb">type</span><span class="p">(</span><span class="n">price_tuple</span><span class="p">)</span>
+type(price_tuple)
 </pre></div>
 </div>
 </div>
@@ -2621,7 +2621,7 @@ title="Print to PDF"
 <p>タプルのデータ型は<code class="docutils literal notranslate"><span class="pre">tuple</span></code>と表示される。次の例では異なるデータ型が要素として入っている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;egg&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(&#39;egg&#39;, 100, True)
 </pre></div>
 </div>
 </div>
@@ -2634,7 +2634,7 @@ title="Print to PDF"
 <p>上でも触れたが，タプルは<code class="docutils literal notranslate"><span class="pre">(</span></code>と<code class="docutils literal notranslate"><span class="pre">)</span></code>が無くても作成できる。例えば、次のコードでもタプルとなる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;egg&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;egg&#39;, 100, True
 </pre></div>
 </div>
 </div>
@@ -2648,10 +2648,10 @@ title="Print to PDF"
 <p>上の例が示すように，コードセルで<code class="docutils literal notranslate"><span class="pre">,</span></code>を使いコードを書き実行するとタプルが変えることがわかる。例えば，次のコードもタプルを返し，個々の要素がそれぞれのコードの実行結果となっている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = 10
+y = 3
 
-<span class="kc">True</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">==</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+True * 3 == y, x/y, type(y)
 </pre></div>
 </div>
 </div>
@@ -2664,7 +2664,7 @@ title="Print to PDF"
 <p>また要素が１つのタプルも生成可能だが，その場合も必ず<code class="docutils literal notranslate"><span class="pre">,</span></code>を付ける事を忘れないように。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(&#39;1&#39;,)
 </pre></div>
 </div>
 </div>
@@ -2677,7 +2677,7 @@ title="Print to PDF"
 <p>例えば，次のコードは整数型の<code class="docutils literal notranslate"><span class="pre">10</span></code>になる。<code class="docutils literal notranslate"><span class="pre">type()</span></code>関数を使って確認してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="nb">type</span><span class="p">((</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(10), type((10))
 </pre></div>
 </div>
 </div>
@@ -2691,7 +2691,7 @@ title="Print to PDF"
 <p>タプルの中にタプルや他のデータ型を入れることも可能だ。例えば，</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;egg&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(0, [&#39;egg&#39;, 100], (3,4,5))
 </pre></div>
 </div>
 </div>
@@ -2708,7 +2708,7 @@ title="Print to PDF"
 <p>リストと同じように，<code class="docutils literal notranslate"><span class="pre">+</span></code>は結合に使うことができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;egg&#39;</span><span class="p">,</span><span class="s1">&#39;ham&#39;</span><span class="p">,</span><span class="s1">&#39;bread&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(100, 300, 250) + (&#39;egg&#39;,&#39;ham&#39;,&#39;bread&#39;)
 </pre></div>
 </div>
 </div>
@@ -2721,7 +2721,7 @@ title="Print to PDF"
 <p>また<code class="docutils literal notranslate"><span class="pre">*</span></code>を使うと要素を整数回リピートしたタプルを作成することができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;egg&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(&#39;egg&#39;, 100) * 3
 </pre></div>
 </div>
 </div>
@@ -2747,7 +2747,7 @@ title="Print to PDF"
 <p>ショッピング・リストの例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;egg&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span> <span class="s1">&#39;bread&#39;</span><span class="p">:</span><span class="mi">250</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>{&#39;egg&#39;:100, &#39;ham&#39;:300, &#39;bread&#39;:250}
 </pre></div>
 </div>
 </div>
@@ -2761,9 +2761,9 @@ title="Print to PDF"
 <p>変数に割り当てて，データ型を調べてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;失業率&#39;</span><span class="p">:</span><span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;インフレ率&#39;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dic = {&#39;失業率&#39;:0.05, &#39;インフレ率&#39;:0.01}
 
-<span class="nb">type</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+type(dic)
 </pre></div>
 </div>
 </div>
@@ -2777,7 +2777,7 @@ title="Print to PDF"
 <p>値は様々なデータ型を設定できる。リストやタプル，辞書も値として指定できる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;b&#39;</span><span class="p">:[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:{</span><span class="s1">&#39;県&#39;</span><span class="p">:</span><span class="s1">&#39;兵庫&#39;</span><span class="p">,</span> <span class="s1">&#39;市&#39;</span><span class="p">:</span><span class="s1">&#39;神戸&#39;</span><span class="p">}}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;:(1,2), &#39;b&#39;:[3,4], &#39;c&#39;:True, &#39;d&#39;:{&#39;県&#39;:&#39;兵庫&#39;, &#39;市&#39;:&#39;神戸&#39;}}
 </pre></div>
 </div>
 </div>
@@ -2790,10 +2790,10 @@ title="Print to PDF"
 <p>この特性を利用して，学生の成績を格納しておくことも考えられる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mark</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;1234567e&#39;</span><span class="p">:{</span><span class="s1">&#39;経済学&#39;</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span> <span class="s1">&#39;統計学&#39;</span><span class="p">:</span><span class="mi">83</span><span class="p">,</span> <span class="s1">&#39;ゼミ&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">},</span>
-        <span class="s1">&#39;7654321e&#39;</span><span class="p">:{</span><span class="s1">&#39;経済学&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">,</span> <span class="s1">&#39;統計学&#39;</span><span class="p">:</span><span class="mi">73</span><span class="p">,</span> <span class="s1">&#39;ゼミ&#39;</span><span class="p">:</span><span class="mi">85</span><span class="p">},</span>
-        <span class="s1">&#39;1234321e&#39;</span><span class="p">:{</span><span class="s1">&#39;経済学&#39;</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;統計学&#39;</span><span class="p">:</span><span class="mi">99</span><span class="p">,</span> <span class="s1">&#39;ゼミ&#39;</span><span class="p">:</span><span class="mi">65</span><span class="p">}}</span>
-<span class="n">mark</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>mark = {&#39;1234567e&#39;:{&#39;経済学&#39;:95, &#39;統計学&#39;:83, &#39;ゼミ&#39;:100},
+        &#39;7654321e&#39;:{&#39;経済学&#39;:65, &#39;統計学&#39;:73, &#39;ゼミ&#39;:85},
+        &#39;1234321e&#39;:{&#39;経済学&#39;:60, &#39;統計学&#39;:99, &#39;ゼミ&#39;:65}}
+mark
 </pre></div>
 </div>
 </div>
@@ -2814,7 +2814,7 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;egg&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1.001</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span><span class="s1">&#39;B&#39;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>{&#39;egg&#39;:100, 5:100, 1.001: False, (1,2):&#39;B&#39;}
 </pre></div>
 </div>
 </div>
@@ -2830,10 +2830,10 @@ title="Print to PDF"
 <p>リストとタプルの結合には<code class="docutils literal notranslate"><span class="pre">+</span></code>を使うことができたが，辞書では使えない。その代わりに，<code class="docutils literal notranslate"><span class="pre">Python</span></code>3.9以降であれば<code class="docutils literal notranslate"><span class="pre">|</span></code>（「パイプ」と読む）が使える。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;egg&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ham&#39;</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span> <span class="s1">&#39;bread&#39;</span><span class="p">:</span><span class="mi">250</span><span class="p">}</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = {&#39;egg&#39;:100, &#39;ham&#39;:100}
+y = {&#39;ham&#39;:300, &#39;bread&#39;:250} 
 
-<span class="n">x</span> <span class="o">|</span> <span class="n">y</span>
+x | y
 </pre></div>
 </div>
 </div>
@@ -2847,7 +2847,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>3.8以前であれば次の構文となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">**</span><span class="n">x</span><span class="p">,</span> <span class="o">**</span><span class="n">y</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>{**x, **y}
 </pre></div>
 </div>
 </div>
@@ -2869,11 +2869,11 @@ title="Print to PDF"
 <p>例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;egg&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">],</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = [[&#39;egg&#39;, &#39;ham&#39;], 100, 300]
 
-<span class="n">tpl</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;egg&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">),</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+tpl = ((&#39;egg&#39;, &#39;ham&#39;), 100, 300)
 
-<span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;egg&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">:</span><span class="mi">300</span><span class="p">}</span>
+dic = {&#39;egg&#39;:100, &#39;ham&#39;:300}
 </pre></div>
 </div>
 </div>
@@ -2881,7 +2881,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">100</span></code>が<code class="docutils literal notranslate"><span class="pre">lst</span></code>に含まれるかは次のコードで確認できる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="ow">in</span> <span class="n">lst</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>100 in lst
 </pre></div>
 </div>
 </div>
@@ -2894,7 +2894,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>の場合は次のようになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">lst</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>100 not in lst
 </pre></div>
 </div>
 </div>
@@ -2907,7 +2907,7 @@ title="Print to PDF"
 <p>入れ子の場合は，次のような挙動となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;egg&#39;</span> <span class="ow">in</span> <span class="n">lst</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;egg&#39; in lst
 </pre></div>
 </div>
 </div>
@@ -2919,7 +2919,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;egg&#39;</span><span class="p">,</span><span class="s1">&#39;ham&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">lst</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[&#39;egg&#39;,&#39;ham&#39;] in lst
 </pre></div>
 </div>
 </div>
@@ -2932,7 +2932,7 @@ title="Print to PDF"
 <p>タプルの場合も同じである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="ow">in</span> <span class="n">tpl</span><span class="p">,</span> <span class="mi">100</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">tpl</span><span class="p">,</span> <span class="s1">&#39;egg&#39;</span> <span class="ow">in</span> <span class="n">tpl</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;egg&#39;</span><span class="p">,</span><span class="s1">&#39;ham&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">tpl</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>100 in tpl, 100 not in tpl, &#39;egg&#39; in tpl, (&#39;egg&#39;,&#39;ham&#39;) in tpl
 </pre></div>
 </div>
 </div>
@@ -2945,7 +2945,7 @@ title="Print to PDF"
 <p>辞書の場合は，キーの確認に対応している。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;egg&#39;</span> <span class="ow">in</span> <span class="n">dic</span><span class="p">,</span> <span class="s1">&#39;egg&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dic</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;egg&#39; in dic, &#39;egg&#39; not in dic
 </pre></div>
 </div>
 </div>
@@ -2958,7 +2958,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">in</span></code>演算子は文字列にも使うことができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;egg&#39;</span> <span class="ow">in</span> <span class="s1">&#39;breadeggham&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;egg&#39; in &#39;breadeggham&#39;
 </pre></div>
 </div>
 </div>

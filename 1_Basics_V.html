@@ -87,7 +87,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint"><p><a href='http://www.econ.kobe-u.ac.jp/topics/pdf/221212-2.pdf'>✴️<<font color='white'>特別講演「UCバークレー校における経済学とデータサイエンス教育」(2023年1月6日) ← クリック！✴️</font></a></p></div>
 <div class="header header-item noprint"></div>
 
     
@@ -751,7 +751,7 @@ title="Print to PDF"
 <p>名前が示すように数学に関する関数がまとめられているモジュールとなる（<a class="reference external" href="https://docs.python.org/ja/3/library/math.html">詳細はこのリンクを参照</a>）。<code class="docutils literal notranslate"><span class="pre">math</span></code>を次のコードで読み込むことができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import math
 </pre></div>
 </div>
 </div>
@@ -759,7 +759,7 @@ title="Print to PDF"
 <p>最初の例として平方根を計算してみよう。使う関数名は，square rootの略となる<code class="docutils literal notranslate"><span class="pre">sqrt()</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>math.sqrt(4)
 </pre></div>
 </div>
 </div>
@@ -773,14 +773,14 @@ title="Print to PDF"
 <p>モジュール名が長い場合は，短い名前で読み込むことも可能である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import math as m
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>m.sqrt(9)
 </pre></div>
 </div>
 </div>
@@ -793,7 +793,7 @@ title="Print to PDF"
 <p>モジュール内の特定の関数だけを読み込むことも可能である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">log</span>   <span class="c1"># logは自然対数で, sqrtの両方を読み込む</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from math import sqrt, log   # logは自然対数で, sqrtの両方を読み込む
 </pre></div>
 </div>
 </div>
@@ -801,7 +801,7 @@ title="Print to PDF"
 <p>このコードは「<code class="docutils literal notranslate"><span class="pre">math</span></code>モジュールから<code class="docutils literal notranslate"><span class="pre">sqrt</span></code>と<code class="docutils literal notranslate"><span class="pre">log</span></code>を読み込む」と読むことができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqrt</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sqrt(10), log(10)
 </pre></div>
 </div>
 </div>
@@ -818,7 +818,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">random</span></code>モジュールを使うことにより乱数を発生させることができる（<a class="reference external" href="https://docs.python.org/ja/3/library/random.html">詳細はこのリンクを参照</a>）。まず<code class="docutils literal notranslate"><span class="pre">random</span></code>をインポートしよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import random
 </pre></div>
 </div>
 </div>
@@ -835,7 +835,7 @@ title="Print to PDF"
 <p>では実際にコードを実行してみよう。次のコードはサイコロの目（1~6）を１つを返す。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>random.randint(1,6)
 </pre></div>
 </div>
 </div>
@@ -848,12 +848,12 @@ title="Print to PDF"
 <p>内包表記を使って10回サイコロを振った結果を表示してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[random.randint(1,6) for _ in range(10)]
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 1, 3, 4, 2, 5, 6, 1, 3, 6]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 5, 5, 6, 6, 5, 1, 3, 5, 4]
 </pre></div>
 </div>
 </div>
@@ -880,12 +880,12 @@ title="Print to PDF"
 <p>次のコードは，平均<code class="docutils literal notranslate"><span class="pre">10</span></code>，標準偏差<code class="docutils literal notranslate"><span class="pre">2</span></code>からランダム変数を生成している。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>random.gauss(10,2)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.239238304913133
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.553992333140231
 </pre></div>
 </div>
 </div>
@@ -893,21 +893,21 @@ title="Print to PDF"
 <p>内包表記を使って，標準正規分布から生成された<code class="docutils literal notranslate"><span class="pre">10</span></code>のランダム変数からなるリストを作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>[random.gauss(0,1) for _ in range(10)]
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2.0561298834488535,
- 0.39449384189713266,
- 0.08327047602811573,
- 0.4746375502610271,
- -1.1647338504191314,
- 0.7388719720665301,
- -1.3825437002988912,
- 1.7702583334089876,
- -1.2220333094589142,
- -0.2692075209730124]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.5576381823893997,
+ -0.2819588108478535,
+ 0.04789806416358387,
+ 0.39857095634372663,
+ -0.6643300259083047,
+ -0.507131027460762,
+ -0.2659704817230571,
+ 0.8396256667038849,
+ -0.06390076164011343,
+ -0.8432151074108849]
 </pre></div>
 </div>
 </div>
@@ -923,7 +923,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">see</span></code>モジュールの使い方は簡単で，まず次のコードでインポートする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">see</span> <span class="kn">import</span> <span class="n">see</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from see import see
 </pre></div>
 </div>
 </div>
@@ -931,7 +931,7 @@ title="Print to PDF"
 <p>後はインポートした関数を<code class="docutils literal notranslate"><span class="pre">dir()</span></code>と同じように使うだけである。簡単な例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">10.99</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = 10.99
 </pre></div>
 </div>
 </div>
@@ -939,7 +939,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">dir()</span></code>を使うと通常は必要ないものまで表示される。</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dir(x)
 </pre></div>
 </div>
 </div>
@@ -1010,7 +1010,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">see()</span></code>を使うとダンダー属性は表示されない。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">see</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>see(x)
 </pre></div>
 </div>
 </div>
@@ -1029,7 +1029,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">see()</span></code>を使う利点がもう一つある。表示されたリストを見ると，メソッドには<code class="docutils literal notranslate"><span class="pre">()</span></code>が付けられているが，単なるデータ属性には付いていない。（表示さている属性・メソッドが全て使えるわけではないので注意しよう）。例えば，<code class="docutils literal notranslate"><span class="pre">is_integer()</span></code>は整数であれば<code class="docutils literal notranslate"><span class="pre">True</span></code>を返すメソッドであり，<code class="docutils literal notranslate"><span class="pre">.real</span></code>と<code class="docutils literal notranslate"><span class="pre">.imag</span></code>は複素数の実部と虚部を返す属性となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">is_integer</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x.is_integer()
 </pre></div>
 </div>
 </div>
@@ -1041,7 +1041,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">imag</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x.real, x.imag
 </pre></div>
 </div>
 </div>
@@ -1129,21 +1129,21 @@ title="Print to PDF"
 <p>次のコードでは<code class="docutils literal notranslate"><span class="pre">fizzbuzz</span></code>関数として書いている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fizzbuzz</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def fizzbuzz():
     
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    for i in range(1,100+1):
         
-        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FizzBuzz&#39;</span><span class="p">)</span>
+        if i % 3 == 0 and i % 5 == 0:
+            print(&#39;FizzBuzz&#39;)
             
-        <span class="k">elif</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fizz&#39;</span><span class="p">)</span>
+        elif i % 3 == 0:
+            print(&#39;Fizz&#39;)
             
-        <span class="k">elif</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Buzz&#39;</span><span class="p">)</span>
+        elif i % 5 == 0:
+            print(&#39;Buzz&#39;)
             
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        else:
+            print(i)
 </pre></div>
 </div>
 </div>
@@ -1151,7 +1151,7 @@ title="Print to PDF"
 <p>ここで<code class="docutils literal notranslate"><span class="pre">%</span></code>は除算の余りを返す演算子である。実行してみよう。</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fizzbuzz</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fizzbuzz()
 </pre></div>
 </div>
 </div>
@@ -1390,13 +1390,13 @@ Buzz
 <hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_for_loop</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def sum_for_loop(lst):
+    x = 0
     
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
-        <span class="n">x</span> <span class="o">+=</span> <span class="n">i</span>
+    for i in lst:
+        x += i
     
-    <span class="k">return</span> <span class="n">x</span>
+    return x
 </pre></div>
 </div>
 </div>
@@ -1404,7 +1404,7 @@ Buzz
 <p>実行してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sum_for_loop</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]),</span> <span class="n">sum_for_loop</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sum_for_loop([1,2,3]), sum_for_loop(range(0,100))
 </pre></div>
 </div>
 </div>
@@ -1495,16 +1495,16 @@ Buzz
 <hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_while_loop</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def sum_while_loop(lst):
     
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    x = 0
+    count = 0
     
-    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">+=</span> <span class="n">lst</span><span class="p">[</span><span class="n">count</span><span class="p">]</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    while count &lt; len(lst):
+        x += lst[count]
+        count += 1
     
-    <span class="k">return</span> <span class="n">x</span>
+    return x
 </pre></div>
 </div>
 </div>
@@ -1512,7 +1512,7 @@ Buzz
 <p>関数を実行しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sum_while_loop</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]),</span> <span class="n">sum_while_loop</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sum_while_loop([1,2,3]), sum_while_loop(range(0,100))
 </pre></div>
 </div>
 </div>
@@ -1669,22 +1669,22 @@ Buzz
 <hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coin_toss_for_loop</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def coin_toss_for_loop(n):
     
-    <span class="n">heads</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">tails</span> <span class="o">=</span> <span class="mi">0</span>
+    heads = 0
+    tails = 0
     
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    for _ in range(n):
         
-        <span class="n">result</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        result = random.randint(0,1)
         
-        <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">heads</span> <span class="o">+=</span> <span class="mi">1</span>
+        if result == 1:
+            heads += 1
             
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">tails</span> <span class="o">+=</span> <span class="mi">1</span>
+        else:
+            tails += 1
     
-    <span class="k">return</span> <span class="n">heads</span><span class="p">,</span> <span class="n">tails</span>
+    return heads, tails
 </pre></div>
 </div>
 </div>
@@ -1692,12 +1692,12 @@ Buzz
 <p>実行しよう</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coin_toss_for_loop</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>coin_toss_for_loop(100)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(43, 57)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(50, 50)
 </pre></div>
 </div>
 </div>
@@ -1826,25 +1826,25 @@ Buzz
 <hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coin_toss_while_loop</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def coin_toss_while_loop(n):
     
-    <span class="n">heads</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">tails</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    heads = 0
+    tails = 0
+    count = 0
     
-    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+    while count &lt; n:
         
-        <span class="n">result</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        result = random.randint(0,1)
         
-        <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">heads</span> <span class="o">+=</span> <span class="mi">1</span>
+        if result == 1:
+            heads += 1
             
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">tails</span> <span class="o">+=</span> <span class="mi">1</span>
+        else:
+            tails += 1
         
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        count += 1
     
-    <span class="k">return</span> <span class="n">heads</span><span class="p">,</span> <span class="n">tails</span>
+    return heads, tails
 </pre></div>
 </div>
 </div>
@@ -1852,12 +1852,12 @@ Buzz
 <p>コードを実行しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coin_toss_while_loop</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>coin_toss_while_loop(100)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(55, 45)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(45, 55)
 </pre></div>
 </div>
 </div>
@@ -2068,17 +2068,17 @@ Buzz
 <hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_max</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def search_max(l):
     
-    <span class="n">max_</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    max_ = l[0]
     
-    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="n">max_</span><span class="p">:</span>
-            <span class="n">max_</span> <span class="o">=</span> <span class="n">v</span>
-        <span class="k">else</span><span class="p">:</span>         <span class="c1"># 省略可</span>
-            <span class="k">pass</span>      <span class="c1"># 省略可</span>
+    for v in l:
+        if v &gt; max_:
+            max_ = v
+        else:         # 省略可
+            pass      # 省略可
     
-    <span class="k">return</span> <span class="n">max_</span>
+    return max_
 </pre></div>
 </div>
 </div>
@@ -2086,14 +2086,14 @@ Buzz
 <p>実行してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = [random.gauss(0,1) for _ in range(1000)]
 
-<span class="n">search_max</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+search_max(lst)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.399701770339526
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.3534910458963187
 </pre></div>
 </div>
 </div>

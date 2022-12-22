@@ -86,7 +86,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint"><p><a href='http://www.econ.kobe-u.ac.jp/topics/pdf/221212-2.pdf'>✴️<<font color='white'>特別講演「UCバークレー校における経済学とデータサイエンス教育」(2023年1月6日) ← クリック！✴️</font></a></p></div>
 <div class="header header-item noprint"></div>
 
     
@@ -528,14 +528,14 @@ title="Print to PDF"
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Version:&#39;</span><span class="p">,</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y年%m月</span><span class="si">%d</span><span class="s1">日&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import datetime
+dt = datetime.datetime.now()
+print(&#39;Version:&#39;,dt.strftime(&#39;%Y年%m月%d日&#39;))
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Version: 2022年11月10日
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Version: 2022年12月22日
 </pre></div>
 </div>
 </div>
@@ -610,23 +610,23 @@ Gapminderは世界経済のGDPなどデータを駆使し興味深い分析を�
 <h2>本サイトで使うPythonとパッケージのバージョン<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gapminder</span><span class="o">,</span> <span class="nn">matplotlib</span><span class="o">,</span> <span class="nn">numpy</span><span class="o">,</span> <span class="nn">pandas</span><span class="o">,</span> <span class="nn">scipy</span><span class="o">,</span> <span class="nn">see</span>
-<span class="kn">from</span> <span class="nn">platform</span> <span class="kn">import</span> <span class="n">python_version</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import gapminder, matplotlib, numpy, pandas, scipy, see
+from platform import python_version
 
-<span class="n">packages</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;gapminder&#39;</span><span class="p">,</span> <span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">,</span><span class="s1">&#39;pandas&#39;</span><span class="p">,</span> <span class="s1">&#39;scipy&#39;</span><span class="p">,</span><span class="s1">&#39;see&#39;</span><span class="p">]</span>
-<span class="n">versions</span> <span class="o">=</span> <span class="p">[</span><span class="n">python_version</span><span class="p">(),</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">pandas</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">scipy</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="n">see</span><span class="o">.</span><span class="n">__version__</span><span class="p">]</span>
+packages = [&#39;Python&#39;, &#39;gapminder&#39;, &#39;matplotlib&#39;, &#39;numpy&#39;,&#39;pandas&#39;, &#39;scipy&#39;,&#39;see&#39;]
+versions = [python_version(), gapminder.__version__, matplotlib.__version__, numpy.__version__, pandas.__version__, scipy.__version__, see.__version__]
 
-<span class="k">for</span> <span class="n">pack</span><span class="p">,</span> <span class="n">ver</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">packages</span><span class="p">,</span> <span class="n">versions</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pack</span><span class="si">:</span><span class="s1">14</span><span class="si">}{</span><span class="n">ver</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+for pack, ver in zip(packages, versions):
+    print(f&#39;{pack:14}{ver}&#39;)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python        3.9.14
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python        3.9.16
 gapminder     0.1
 matplotlib    3.6.2
-numpy         1.23.4
-pandas        1.5.1
+numpy         1.24.0
+pandas        1.5.2
 scipy         1.9.3
 see           1.4.1
 </pre></div>

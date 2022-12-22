@@ -85,7 +85,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint"><p><a href='http://www.econ.kobe-u.ac.jp/topics/pdf/221212-2.pdf'>✴️<<font color='white'>特別講演「UCバークレー校における経済学とデータサイエンス教育」(2023年1月6日) ← クリック！✴️</font></a></p></div>
 <div class="header header-item noprint"></div>
 
     
@@ -849,8 +849,8 @@ title="Print to PDF"
 <h3>整数型・浮動小数点型　→　浮動小数点型・整数型<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f0</span> <span class="o">=</span> <span class="mf">10.0</span>
-<span class="n">i0</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>f0 = 10.0
+i0 = 10
 </pre></div>
 </div>
 </div>
@@ -858,7 +858,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">f0</span></code>を整数型へ，<code class="docutils literal notranslate"><span class="pre">i1</span></code>を浮動小数点型に変換してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="n">f0</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span><span class="n">f0</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>int(f0), type( int(f0) )
 </pre></div>
 </div>
 </div>
@@ -870,7 +870,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">i0</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span> <span class="nb">float</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>float(i0), type( float(i0) )
 </pre></div>
 </div>
 </div>
@@ -886,7 +886,7 @@ title="Print to PDF"
 <p>次に文字列を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s0</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>s0 = &#39;10&#39;
 </pre></div>
 </div>
 </div>
@@ -894,7 +894,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">int()</span></code>を使うと整数に変換できる。また<code class="docutils literal notranslate"><span class="pre">float()</span></code>関数を適用すると浮動小数点型に変換できる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="n">s0</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span><span class="n">s0</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>int(s0), type( int(s0) )
 </pre></div>
 </div>
 </div>
@@ -906,7 +906,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">s0</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span><span class="n">s0</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>float(s0), type( type(s0) )
 </pre></div>
 </div>
 </div>
@@ -919,7 +919,7 @@ title="Print to PDF"
 <p>これを利用して次の演算が可能となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">s0</span><span class="p">),</span> <span class="mi">2</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">s0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>2 + int(s0), 2 + float(s0)
 </pre></div>
 </div>
 </div>
@@ -932,7 +932,7 @@ title="Print to PDF"
 <p>次に以下の文字列を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;10.0&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>s1 = &#39;10.0&#39;
 </pre></div>
 </div>
 </div>
@@ -940,7 +940,7 @@ title="Print to PDF"
 <p>まず<code class="docutils literal notranslate"><span class="pre">float()</span></code>を使って浮動小数点型に変換してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">s1</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span> <span class="nb">float</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>float(s1), type( float(s1) )
 </pre></div>
 </div>
 </div>
@@ -953,7 +953,7 @@ title="Print to PDF"
 <p>これにより算術演算が可能となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>float(s1) // 3
 </pre></div>
 </div>
 </div>
@@ -966,14 +966,14 @@ title="Print to PDF"
 <p>一方で<code class="docutils literal notranslate"><span class="pre">int()</span></code>を使うとエラーが発生する。</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>int(s1)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">int</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 
 <span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;10.0&#39;
@@ -987,7 +987,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span> <span class="nb">float</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>int( float(s1) )
 </pre></div>
 </div>
 </div>
@@ -999,7 +999,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span> <span class="nb">float</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="p">)</span> <span class="o">**</span> <span class="mi">5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>int( float(s1) ) ** 5
 </pre></div>
 </div>
 </div>
@@ -1015,7 +1015,7 @@ title="Print to PDF"
 <p>文字列型への変換は簡単で，元の値をそのままクォテーション<code class="docutils literal notranslate"><span class="pre">''</span></code>に入れて返すことになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="n">f0</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>str(f0), str(i0)
 </pre></div>
 </div>
 </div>
@@ -1031,7 +1031,7 @@ title="Print to PDF"
 <p>この変換は既出の<code class="docutils literal notranslate"><span class="pre">bool()</span></code>を使い，対象となるデータのブール値（真偽値）の確認となる。即ち，対象となるオブジェクトが「空・無」かどうかを確かめるの使われる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>bool(100)
 </pre></div>
 </div>
 </div>
@@ -1043,7 +1043,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>bool(0)
 </pre></div>
 </div>
 </div>
@@ -1055,7 +1055,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;神戸大学&#39;</span><span class="p">),</span> <span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>bool(&#39;神戸大学&#39;), bool(&#39;&#39;)
 </pre></div>
 </div>
 </div>
@@ -1092,7 +1092,7 @@ title="Print to PDF"
 <p>例えば，次のリストを考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_list = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;]
 </pre></div>
 </div>
 </div>
@@ -1100,7 +1100,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">'A'</span></code>は０番目，<code class="docutils literal notranslate"><span class="pre">'B'</span></code>１番目，<code class="docutils literal notranslate"><span class="pre">'C'</span></code>は２番目と数える。<code class="docutils literal notranslate"><span class="pre">A</span></code>を抽出したい場合は<code class="docutils literal notranslate"><span class="pre">[]</span></code>を使い<code class="docutils literal notranslate"><span class="pre">A</span></code>のインデックス番号<code class="docutils literal notranslate"><span class="pre">0</span></code>を指定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_list[0]
 </pre></div>
 </div>
 </div>
@@ -1113,7 +1113,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">E</span></code>にアクセスしたい場合は，インデックス番号は<code class="docutils literal notranslate"><span class="pre">4</span></code>なので次のようになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_list[4]
 </pre></div>
 </div>
 </div>
@@ -1126,7 +1126,7 @@ title="Print to PDF"
 <p>または右から数えたインデックス番号<code class="docutils literal notranslate"><span class="pre">-2</span></code>を使っても同じ結果となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_list[-2]
 </pre></div>
 </div>
 </div>
@@ -1150,7 +1150,7 @@ title="Print to PDF"
 <p>即ち，<code class="docutils literal notranslate"><span class="pre">:</span></code>の右側にあるインデックスの要素は抽出されない。例えば，<code class="docutils literal notranslate"><span class="pre">my_list</span></code>の１番目から３番目の要素を抽出したい場合は<code class="docutils literal notranslate"><span class="pre">1:4</span></code>となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_list[1:4]
 </pre></div>
 </div>
 </div>
@@ -1163,7 +1163,7 @@ title="Print to PDF"
 <p>次のように書くとより直感的になるのではないだろうか。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_list[1:3+1]
 </pre></div>
 </div>
 </div>
@@ -1181,7 +1181,7 @@ title="Print to PDF"
 <p>次のコードは最初からスライスしている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[:</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_list[:3+1]
 </pre></div>
 </div>
 </div>
@@ -1194,7 +1194,7 @@ title="Print to PDF"
 <p>最後までスライスする場合は次のコードとなる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_list[3:]
 </pre></div>
 </div>
 </div>
@@ -1207,8 +1207,8 @@ title="Print to PDF"
 <p>では<code class="docutils literal notranslate"><span class="pre">:</span></code>の左右の番号を省略するとどうなるのだろう。「最初から最後まで」，即ち，全てとなり，リストのコピーを作成することと同じである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">your_list</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[:]</span>
-<span class="n">your_list</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>your_list = my_list[:]
+your_list
 </pre></div>
 </div>
 </div>
@@ -1242,7 +1242,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">step</span></code>のデフォルトは<code class="docutils literal notranslate"><span class="pre">1</span></code>なので，設定しなければ増分は<code class="docutils literal notranslate"><span class="pre">1</span></code>となり，上で説明したスライシングとなる。ここでは<code class="docutils literal notranslate"><span class="pre">step</span></code>を指定した場合について触れる。次の例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 </pre></div>
 </div>
 </div>
@@ -1250,7 +1250,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">step</span></code>を<code class="docutils literal notranslate"><span class="pre">2</span></code>にすると，インデックス番号が一つおきとなり偶数だけが抽出される。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst[::2]
 </pre></div>
 </div>
 </div>
@@ -1263,7 +1263,7 @@ title="Print to PDF"
 <p>ここでは<code class="docutils literal notranslate"><span class="pre">start</span></code>と<code class="docutils literal notranslate"><span class="pre">end</span></code>は指定されていないので，全てのインデックス番号が抽出の対象となっている。もちろん<code class="docutils literal notranslate"><span class="pre">step</span></code>を<code class="docutils literal notranslate"><span class="pre">3</span></code>にすると２つおきのインデックス番号の要素が抽出される。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="p">[::</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst[::3]
 </pre></div>
 </div>
 </div>
@@ -1276,7 +1276,7 @@ title="Print to PDF"
 <p>また<code class="docutils literal notranslate"><span class="pre">step</span></code>に負の整数を使うと，要素を逆に並べて結果を返すことになる。次の例は，全ての要素を逆に並べている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst[::-1]
 </pre></div>
 </div>
 </div>
@@ -1289,7 +1289,7 @@ title="Print to PDF"
 <p>もちろん<code class="docutils literal notranslate"><span class="pre">-2</span></code>にすると，逆順で一つおきの要素が抽出される。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="p">[::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst[::-2]
 </pre></div>
 </div>
 </div>
@@ -1305,7 +1305,7 @@ title="Print to PDF"
 <p>次の例は入れ子のケースである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_list2 = [&#39;A&#39;, [&#39;B&#39;, &#39;C&#39;], [&#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;]]
 </pre></div>
 </div>
 </div>
@@ -1313,8 +1313,8 @@ title="Print to PDF"
 <p>この場合でも考え方は変わらない。例えば，<code class="docutils literal notranslate"><span class="pre">['B','C']</span></code>を抽出したいとしよう。<code class="docutils literal notranslate"><span class="pre">['B','C']</span></code>は<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の要素として入っているので次のコードでアクセスできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">element1</span> <span class="o">=</span> <span class="n">my_list2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">element1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>element1 = my_list2[1]
+element1
 </pre></div>
 </div>
 </div>
@@ -1327,7 +1327,7 @@ title="Print to PDF"
 <p>更に，<code class="docutils literal notranslate"><span class="pre">element1</span></code>の<code class="docutils literal notranslate"><span class="pre">B</span></code>を抽出したいとしよう。その場合も同じ考えで次のコードとなる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">element1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>element1[0]
 </pre></div>
 </div>
 </div>
@@ -1340,7 +1340,7 @@ title="Print to PDF"
 <p>また別々に書いたコードを続けて書いても同じ結果となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_list[1][0]
 </pre></div>
 </div>
 </div>
@@ -1353,7 +1353,7 @@ title="Print to PDF"
 <p>もちろんスライシングも使える。<code class="docutils literal notranslate"><span class="pre">D</span></code>，<code class="docutils literal notranslate"><span class="pre">E</span></code>，<code class="docutils literal notranslate"><span class="pre">F</span></code>を抽出したい場合は次のコードとなる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][:</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_list2[-1][:2+1]
 </pre></div>
 </div>
 </div>
@@ -1369,8 +1369,8 @@ title="Print to PDF"
 <p>要素の入れ替え方法を説明するために，次のリスト<code class="docutils literal notranslate"><span class="pre">lst0</span></code>を作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">lst0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst0 = [0, 1, 2 ,3, 4, 5]
+lst0
 </pre></div>
 </div>
 </div>
@@ -1383,8 +1383,8 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">0</span></code>番目の要素は<code class="docutils literal notranslate"><span class="pre">0</span></code>だが，これを文字列<code class="docutils literal notranslate"><span class="pre">'Kobe'</span></code>に入れ替えてみよう。方法は簡単で，入れ替えたい要素を選び<code class="docutils literal notranslate"><span class="pre">=</span></code>の左辺に置き，右辺には新しい要素を配置し実行するだけである。次のコードとなる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Kobe&#39;</span>
-<span class="n">lst0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst0[0] = &#39;Kobe&#39;
+lst0
 </pre></div>
 </div>
 </div>
@@ -1397,8 +1397,8 @@ title="Print to PDF"
 <p>右辺から読めば理解できる。「<code class="docutils literal notranslate"><span class="pre">Kobe</span></code>を<code class="docutils literal notranslate"><span class="pre">lst0[1]</span></code>に割り当てる」となり，これで「入れ替え」となる。この例の右辺は文字列だが，他のデータ型でも可能である。例えば，</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span>
-<span class="n">lst0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst0[1] = {&#39;a&#39;:100}
+lst0
 </pre></div>
 </div>
 </div>
@@ -1411,8 +1411,8 @@ title="Print to PDF"
 <p>スライシングを使い要素入れ替えも可能である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst0</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-<span class="n">lst0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst0[-2:] = (40, 60)
+lst0
 </pre></div>
 </div>
 </div>
@@ -1425,8 +1425,8 @@ title="Print to PDF"
 <p>この場合，左辺の要素数と右辺の要素数が同じになる必要がある。また右辺に辞書を置くとキーの値が割り当てられることになる。試してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst0</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">60</span><span class="p">}</span>
-<span class="n">lst0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst0[-2:] = {&#39;A&#39;:40, &#39;B&#39;:60}
+lst0
 </pre></div>
 </div>
 </div>
@@ -1442,8 +1442,8 @@ title="Print to PDF"
 <p>要素を削除するには色々な方法が用意されているが，最も簡単なのは<code class="docutils literal notranslate"><span class="pre">del</span></code>（deleteの略）を使うことだろう。<code class="docutils literal notranslate"><span class="pre">del</span></code>の後に削除したい要素を書き実行するだけである。例えば，</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">lst0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">lst0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>del lst0[0]
+lst0
 </pre></div>
 </div>
 </div>
@@ -1456,8 +1456,8 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">Kobe</span></code>が削除されている。次の例はスライシングを使い<code class="docutils literal notranslate"><span class="pre">A</span></code>と<code class="docutils literal notranslate"><span class="pre">B</span></code>を削除している。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">lst0</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
-<span class="n">lst0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>del lst0[-2:]
+lst0
 </pre></div>
 </div>
 </div>
@@ -1476,8 +1476,8 @@ title="Print to PDF"
 <p>次のタプルを考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tpl</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">)</span>
-<span class="n">tpl</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>tpl = (1, 3.14, &#39;A&#39;)
+tpl
 </pre></div>
 </div>
 </div>
@@ -1490,7 +1490,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">list()</span></code>を使うとリストに変換される。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">tpl</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>list(tpl)
 </pre></div>
 </div>
 </div>
@@ -1503,8 +1503,8 @@ title="Print to PDF"
 <p>次に辞書を考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
-<span class="n">dic</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dic = {&#39;a&#39;:1,&#39;b&#39;:2,&#39;c&#39;:3}
+dic
 </pre></div>
 </div>
 </div>
@@ -1517,7 +1517,7 @@ title="Print to PDF"
 <p>この場合は，キーだけが抽出されリストが作成される。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>list(dic)
 </pre></div>
 </div>
 </div>
@@ -1545,7 +1545,7 @@ title="Print to PDF"
 <p>全てのリストにはリスト自体に働きかける関数が備わっており，それをメソッドと呼ぶ。より詳細な説明は後に回すとして，ここではリストの最後に要素を追加する<code class="docutils literal notranslate"><span class="pre">append()</span></code>というメソッドを紹介する。空のリストを考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = []
 </pre></div>
 </div>
 </div>
@@ -1557,7 +1557,7 @@ title="Print to PDF"
 <p>ここで<code class="docutils literal notranslate"><span class="pre">.</span></code>はメソッドにアクセスするための記号であり，その後にメソッド<code class="docutils literal notranslate"><span class="pre">append()</span></code>を置く。では<code class="docutils literal notranslate"><span class="pre">100</span></code>を<code class="docutils literal notranslate"><span class="pre">lst</span></code>に追加してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst.append(100)
 </pre></div>
 </div>
 </div>
@@ -1565,7 +1565,7 @@ title="Print to PDF"
 <p>何も表示されないが，<code class="docutils literal notranslate"><span class="pre">lst</span></code>は変更されている。<code class="docutils literal notranslate"><span class="pre">lst</span></code>を実行すると<code class="docutils literal notranslate"><span class="pre">100</span></code>が追加されていることが確認できる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst
 </pre></div>
 </div>
 </div>
@@ -1578,9 +1578,9 @@ title="Print to PDF"
 <p>次は<code class="docutils literal notranslate"><span class="pre">50</span></code>を追加しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst.append(50)
 
-<span class="n">lst</span>
+lst
 </pre></div>
 </div>
 </div>
@@ -1600,16 +1600,16 @@ title="Print to PDF"
 <p>まず次の様に<code class="docutils literal notranslate"><span class="pre">tpl1</span></code>と<code class="docutils literal notranslate"><span class="pre">tpl2</span></code>を定義しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tpl1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>tpl1 = (10, 20, 30, 40, (&#39;a&#39;, &#39;b&#39;))
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tpl2</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
-        <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
-        <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>tpl2 = ((1,2,3),
+        (4,5,6),
+        (7,8,9))
 </pre></div>
 </div>
 </div>
@@ -1651,8 +1651,8 @@ title="Print to PDF"
 <p>この関数も<code class="docutils literal notranslate"><span class="pre">list()</span></code>と非常に似ている。次のリストを考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">]</span>
-<span class="n">lst</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = [1, 3.14, &#39;A&#39;]
+lst
 </pre></div>
 </div>
 </div>
@@ -1664,7 +1664,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">tuple</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>tuple(lst)
 </pre></div>
 </div>
 </div>
@@ -1677,8 +1677,8 @@ title="Print to PDF"
 <p>辞書の場合はキーのタプルとなる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
-<span class="nb">tuple</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dic = {&#39;a&#39;:1,&#39;b&#39;:2,&#39;c&#39;:3}
+tuple(dic)
 </pre></div>
 </div>
 </div>
@@ -1709,7 +1709,7 @@ title="Print to PDF"
 <p>次の例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macro</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;inflation&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;unemployment&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;interest_rate&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>macro = {&#39;inflation&#39;:2, &#39;unemployment&#39;:5, &#39;interest_rate&#39;: 3}
 </pre></div>
 </div>
 </div>
@@ -1717,7 +1717,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">0</span></code>番目の要素は<code class="docutils literal notranslate"><span class="pre">inflation</span></code>（インフレ）と<code class="docutils literal notranslate"><span class="pre">2</span></code>（％）には２つのペアであり，<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の要素は<code class="docutils literal notranslate"><span class="pre">unemployment</span></code>（失業）と<code class="docutils literal notranslate"><span class="pre">5</span></code>（％）のペアとなっている。辞書の場合，要素にアクセスするには<code class="docutils literal notranslate"><span class="pre">0</span></code>や<code class="docutils literal notranslate"><span class="pre">1</span></code>のインデックス番号を使わずに，キーを指定しペアとなる値を抽出する。その際，リストとタプルと同じように<code class="docutils literal notranslate"><span class="pre">[]</span></code>を使う。<code class="docutils literal notranslate"><span class="pre">inflation</span></code>の<code class="docutils literal notranslate"><span class="pre">2</span></code>にアクセスしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macro</span><span class="p">[</span><span class="s1">&#39;inflation&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>macro[&#39;inflation&#39;]
 </pre></div>
 </div>
 </div>
@@ -1730,7 +1730,7 @@ title="Print to PDF"
 <p>同様に<code class="docutils literal notranslate"><span class="pre">unemployment</span></code>の値にアクセスするには次の様にする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macro</span><span class="p">[</span><span class="s1">&#39;unemployment&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>macro[&#39;unemployment&#39;]
 </pre></div>
 </div>
 </div>
@@ -1747,7 +1747,7 @@ title="Print to PDF"
 <p>次の例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;AB&#39;</span><span class="p">:{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,},</span> <span class="s1">&#39;C&#39;</span><span class="p">:[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dic2 = {&#39;AB&#39;:{&#39;a&#39;:1, &#39;b&#39;:2,}, &#39;C&#39;:[10, 20]}
 </pre></div>
 </div>
 </div>
@@ -1755,8 +1755,8 @@ title="Print to PDF"
 <p>次のコードで<code class="docutils literal notranslate"><span class="pre">AB</span></code>の値を抽出できることは理解できるだろう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic3</span> <span class="o">=</span> <span class="n">dic2</span><span class="p">[</span><span class="s1">&#39;AB&#39;</span><span class="p">]</span>
-<span class="n">dic3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dic3 = dic2[&#39;AB&#39;]
+dic3
 </pre></div>
 </div>
 </div>
@@ -1769,7 +1769,7 @@ title="Print to PDF"
 <p>更に，<code class="docutils literal notranslate"><span class="pre">b</span></code>の値<code class="docutils literal notranslate"><span class="pre">2</span></code>にアクセスしたいとしよう。その場合は，</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic3</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dic3[&#39;b&#39;]
 </pre></div>
 </div>
 </div>
@@ -1782,7 +1782,7 @@ title="Print to PDF"
 <p>とすれば良い。２つのコードを一緒に書くと次の様になる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic2</span><span class="p">[</span><span class="s1">&#39;AB&#39;</span><span class="p">][</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dic2[&#39;AB&#39;][&#39;b&#39;]
 </pre></div>
 </div>
 </div>
@@ -1795,7 +1795,7 @@ title="Print to PDF"
 <p>同じ要領で，<code class="docutils literal notranslate"><span class="pre">20</span></code>にアクセスしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic2</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dic2[&#39;C&#39;][1]
 </pre></div>
 </div>
 </div>
@@ -1812,8 +1812,8 @@ title="Print to PDF"
 <p>辞書はキーと値のペアとなっているが，変更できるのは値だけである。方法はリストと同じで，<code class="docutils literal notranslate"><span class="pre">=</span></code>の左辺に変更したいキーを選び，右辺に変更後の値を配置し実行するだけである。例えば，<code class="docutils literal notranslate"><span class="pre">macro</span></code>にある<code class="docutils literal notranslate"><span class="pre">unemployment</span></code>の値を<code class="docutils literal notranslate"><span class="pre">10.5</span></code>に入れ替えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">macro</span><span class="p">[</span><span class="s1">&#39;unemployment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.5</span>
-<span class="n">macro</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>macro[&#39;unemployment&#39;] = 10.5
+macro
 </pre></div>
 </div>
 </div>
@@ -1829,11 +1829,11 @@ title="Print to PDF"
 <p>どうしてもキーを変更したい場合は，キー・値のペアを削除し，新たに追加することになる。例えば，<code class="docutils literal notranslate"><span class="pre">'unemployment':10.5</span></code>を<code class="docutils literal notranslate"><span class="pre">'失業率':10.5</span></code>に「変更」するには次のコードとなる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">macro</span><span class="p">[</span><span class="s1">&#39;unemployment&#39;</span><span class="p">]</span>  <span class="c1"># 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>del macro[&#39;unemployment&#39;]  # 1
 
-<span class="n">macro</span><span class="p">[</span><span class="s1">&#39;失業率&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.5</span>      <span class="c1"># 2</span>
+macro[&#39;失業率&#39;] = 10.5      # 2
 
-<span class="n">macro</span>                      <span class="c1"># 3</span>
+macro                      # 3
 </pre></div>
 </div>
 </div>
@@ -1859,8 +1859,8 @@ title="Print to PDF"
 <p>まず<code class="docutils literal notranslate"><span class="pre">macro</span></code>を使って<code class="docutils literal notranslate"><span class="pre">keys()</span></code>から考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mkey</span> <span class="o">=</span> <span class="n">macro</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-<span class="n">mkey</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>mkey = macro.keys()
+mkey
 </pre></div>
 </div>
 </div>
@@ -1873,7 +1873,7 @@ title="Print to PDF"
 <p>３つのキーが並んでいるのが確認できる。一方で表示の最初に<code class="docutils literal notranslate"><span class="pre">dict_keys</span></code>と書かれており，リストやタプルと異なる様である。データ型を確認してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">mkey</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>type(mkey)
 </pre></div>
 </div>
 </div>
@@ -1886,7 +1886,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">dict_keys</span></code>というデータ型であり，やはりリストやタプルとは異なる。リストに変換するには関数<code class="docutils literal notranslate"><span class="pre">list()</span></code>を使えば良い。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">mkey</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>list(mkey)
 </pre></div>
 </div>
 </div>
@@ -1900,9 +1900,9 @@ title="Print to PDF"
 <p>次にメソッド<code class="docutils literal notranslate"><span class="pre">values()</span></code>を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mval</span> <span class="o">=</span> <span class="n">macro</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>mval = macro.values()
 
-<span class="n">mval</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">mval</span><span class="p">)</span>
+mval, type(mval)
 </pre></div>
 </div>
 </div>
@@ -1915,7 +1915,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">dict_values</span></code>というデータ型となっている。リストに変換するには次のコードとなる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">mval</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>list(mval)
 </pre></div>
 </div>
 </div>
@@ -1941,7 +1941,7 @@ title="Print to PDF"
 <p>次の文字列を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;It is fun to learn Python!&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>s = &#39;It is fun to learn Python!&#39;
 </pre></div>
 </div>
 </div>
@@ -1949,7 +1949,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">s</span></code>にはアルファベットと半角スペースが使われているが，それぞれが要素となる文字列である。従って，リスト同様<code class="docutils literal notranslate"><span class="pre">[]</span></code>を使って文字を抽出することができる。<code class="docutils literal notranslate"><span class="pre">0</span></code>番目と最後の文字は次のコードでアクセスできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>s[0], s[-1]
 </pre></div>
 </div>
 </div>
@@ -1962,7 +1962,7 @@ title="Print to PDF"
 <p>スライシングも使える。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>s[3:10+1]
 </pre></div>
 </div>
 </div>
@@ -1983,7 +1983,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">s</span></code>の<code class="docutils literal notranslate"><span class="pre">Python</span></code>を<code class="docutils literal notranslate"><span class="pre">economics</span></code>に変更するには，新しい文字列を<code class="docutils literal notranslate"><span class="pre">s</span></code>に再割り当てすることになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;It is fun to learn economics!&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>s = &#39;It is fun to learn economics!&#39;
 </pre></div>
 </div>
 </div>
@@ -1994,7 +1994,7 @@ title="Print to PDF"
 <p>文字列に<code class="docutils literal notranslate"><span class="pre">list()</span></code>や<code class="docutils literal notranslate"><span class="pre">tuple()</span></code>を使うと，１つの文字が要素となるリストもしくはタプルを返すことになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>list(&#39;Python&#39;)
 </pre></div>
 </div>
 </div>
@@ -2006,7 +2006,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">tuple</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>tuple(&#39;Python&#39;)
 </pre></div>
 </div>
 </div>
@@ -2028,7 +2028,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">s</span></code>に<code class="docutils literal notranslate"><span class="pre">split()</span></code>を使ってみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>s.split()
 </pre></div>
 </div>
 </div>
@@ -2041,7 +2041,7 @@ title="Print to PDF"
 <p>デフォルトでは区切りに半角スペースが使われ，単語がリストの構成要素となっている。<code class="docutils literal notranslate"><span class="pre">()</span></code>に分割に使う文字列を指定することもできる。例えば，<code class="docutils literal notranslate"><span class="pre">is</span></code>で分割してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;is&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>s.split(&#39;is&#39;)
 </pre></div>
 </div>
 </div>
@@ -2059,14 +2059,14 @@ title="Print to PDF"
 <p>まずリストを作成して説明しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s_new</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;t&#39;</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;n&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>s_new = [&#39;P&#39;,&#39;y&#39;,&#39;t&#39;,&#39;h&#39;,&#39;o&#39;,&#39;n&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;-&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s_new</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;-&#39;.join(s_new)
 </pre></div>
 </div>
 </div>
@@ -2079,7 +2079,7 @@ title="Print to PDF"
 <p>それぞれの文字が<code class="docutils literal notranslate"><span class="pre">-</span></code>で結合されているのがわかる。次も同じ結果を返す。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;-&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;-&#39;.join(&#39;Python&#39;)
 </pre></div>
 </div>
 </div>
@@ -2097,7 +2097,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">'-'.join(s_new)</span></code>の<code class="docutils literal notranslate"><span class="pre">s_new</span></code>の代わりに<code class="docutils literal notranslate"><span class="pre">s</span></code>を使ってみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;-&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;-&#39;.join(s)
 </pre></div>
 </div>
 </div>
@@ -2110,7 +2110,7 @@ title="Print to PDF"
 <p>半角スペースを含めて全ての文字の間に<code class="docutils literal notranslate"><span class="pre">-</span></code>が入っている。単語の間にだけ<code class="docutils literal notranslate"><span class="pre">-</span></code>が入るようにするには次のコードで可能である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;-&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&#39;-&#39;.join( s.split() )
 </pre></div>
 </div>
 </div>
@@ -2124,7 +2124,7 @@ title="Print to PDF"
 <p>メソッド<code class="docutils literal notranslate"><span class="pre">replace()</span></code>を使っても同じ結果を得ることができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>s.replace(&#39; &#39;, &#39;-&#39;)
 </pre></div>
 </div>
 </div>
@@ -2140,7 +2140,7 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;😁&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="s1">&#39;‼️&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>s.replace(&#39; &#39;, &#39;😁&#39;).replace(&#39;!&#39;, &#39;‼️&#39;)
 </pre></div>
 </div>
 </div>
