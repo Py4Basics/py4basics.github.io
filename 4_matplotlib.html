@@ -87,7 +87,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"><p><a href='http://www.econ.kobe-u.ac.jp/topics/pdf/221212-2.pdf'>✴️<<font color='white'>特別講演「UCバークレー校における経済学とデータサイエンス教育」(2023年1月6日) ← クリック！✴️</font></a></p></div>
+<div class="announcement header-item noprint"></div>
 <div class="header header-item noprint"></div>
 
     
@@ -845,9 +845,9 @@ title="Print to PDF"
 <h2>説明<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -935,8 +935,8 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 <p>プロットするデータを生成しよう。変数<code class="docutils literal notranslate"><span class="pre">x</span></code>に横軸に使うデータを次のように割り当てる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = np.linspace(-2, 2, 3)
-x
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">x</span>
 </pre></div>
 </div>
 </div>
@@ -949,8 +949,8 @@ x
 <p>３つの要素からなる<code class="docutils literal notranslate"><span class="pre">array</span></code>である。縦軸のデータとして<code class="docutils literal notranslate"><span class="pre">y0</span></code>を用意する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>y0 = x**2
-y0
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y0</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">y0</span>
 </pre></div>
 </div>
 </div>
@@ -963,13 +963,13 @@ y0
 <p>同じように<code class="docutils literal notranslate"><span class="pre">y0</span></code>も３つの要素からなる<code class="docutils literal notranslate"><span class="pre">array</span></code>である。プロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.plot(x, y0, marker=&#39;o&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1194f30a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x118423dc0&gt;]
 </pre></div>
 </div>
 <img alt="_images/4_matplotlib_16_1.png" src="_images/4_matplotlib_16_1.png" />
@@ -979,8 +979,8 @@ ax.plot(x, y0, marker=&#39;o&#39;)
 <p>「●」のマーカーがある点が<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y0</span></code>の<code class="docutils literal notranslate"><span class="pre">array</span></code>要素の組み合わせとして表示されている。<code class="docutils literal notranslate"><span class="pre">plot()</span></code>はデフォルトでそれらの点を直線で結んでいる。この場合，データの組み合わせが３点しかないため<span class="math notranslate nohighlight">\(y=x^2\)</span>の形を明確に表示できていない。言い換えると，データの組み合わせの数を増やすことにより<span class="math notranslate nohighlight">\(y=x^2\)</span>をより正確に表示されることになる。もう一度，<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y0</span></code>のデータを生成しなおす。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = np.linspace(-2, 2, 100)
-y0 = x**2
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
 </div>
@@ -988,13 +988,13 @@ y0 = x**2
 <p><code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y0</span></code>にはそれぞれ100の要素があり，これらを使うことにより100のデータの組み合わせが成立することになる。プロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.plot(x, y0, marker=&#39;o&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1195fd6d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x118544340&gt;]
 </pre></div>
 </div>
 <img alt="_images/4_matplotlib_20_1.png" src="_images/4_matplotlib_20_1.png" />
@@ -1009,8 +1009,8 @@ ax.plot(x, y0, marker=&#39;o&#39;)
 <p>次に縦軸のデータとして，２つを用意する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>y1 = x+1
-y2 = np.exp(x)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y1</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1018,11 +1018,11 @@ y2 = np.exp(x)
 <p><code class="docutils literal notranslate"><span class="pre">y0</span></code>，<code class="docutils literal notranslate"><span class="pre">y1</span></code>，<code class="docutils literal notranslate"><span class="pre">y2</span></code>を同じ軸にプロットしてみよう。コードは簡単で<code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code>をリピートするだけである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.plot(x, y0)           
-ax.plot(x, y1)
-ax.plot(x, y2)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>           
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1033,12 +1033,12 @@ pass
 <p>それぞれの<code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code>を「軸<code class="docutils literal notranslate"><span class="pre">ax</span></code>にデータの組み合わせをプロットする」と読めば理解しやすいと思う。また同じようなコードが続いているので，次のように<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うことより短いコードで同じ図を表示することができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
-for y in [y0, y1, y2]:
-    ax.plot(x, y)           
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">[</span><span class="n">y0</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">]:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>           
 
-pass
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1052,11 +1052,11 @@ pass
 <p>まず<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dic = {&#39;X&#39;:x, &#39;Y0&#39;:y0, &#39;Y1&#39;:y1, &#39;Y2&#39;:y2}  # 辞書の作成
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;X&#39;</span><span class="p">:</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;Y0&#39;</span><span class="p">:</span><span class="n">y0</span><span class="p">,</span> <span class="s1">&#39;Y1&#39;</span><span class="p">:</span><span class="n">y1</span><span class="p">,</span> <span class="s1">&#39;Y2&#39;</span><span class="p">:</span><span class="n">y2</span><span class="p">}</span>  <span class="c1"># 辞書の作成</span>
 
-df0 = pd.DataFrame(dic)      # DataFrameの作成
+<span class="n">df0</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>      <span class="c1"># DataFrameの作成</span>
 
-df0.head()
+<span class="n">df0</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1128,9 +1128,9 @@ df0.head()
 <p>横軸に<code class="docutils literal notranslate"><span class="pre">X</span></code>，縦軸に<code class="docutils literal notranslate"><span class="pre">Y0</span></code>をプロットしてみる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.plot(df0[&#39;X&#39;],df0[&#39;Y0&#39;])
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df0</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span><span class="n">df0</span><span class="p">[</span><span class="s1">&#39;Y0&#39;</span><span class="p">])</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1141,11 +1141,11 @@ pass
 <p>横軸に<code class="docutils literal notranslate"><span class="pre">X</span></code>，縦軸に<code class="docutils literal notranslate"><span class="pre">Y0</span></code>，<code class="docutils literal notranslate"><span class="pre">Y1</span></code>，<code class="docutils literal notranslate"><span class="pre">Y2</span></code>をプロットしてみる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.plot(df0[&#39;X&#39;],df0[&#39;Y0&#39;])
-ax.plot(df0[&#39;X&#39;],df0[&#39;Y1&#39;])
-ax.plot(df0[&#39;X&#39;],df0[&#39;Y2&#39;])
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df0</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span><span class="n">df0</span><span class="p">[</span><span class="s1">&#39;Y0&#39;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df0</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span><span class="n">df0</span><span class="p">[</span><span class="s1">&#39;Y1&#39;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df0</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span><span class="n">df0</span><span class="p">[</span><span class="s1">&#39;Y2&#39;</span><span class="p">])</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1156,9 +1156,9 @@ pass
 <p>引数の書き方１の簡略形として，横軸の変数を省略できることを紹介した。その場合はどうなるかを考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.plot(df0[&#39;Y0&#39;])
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df0</span><span class="p">[</span><span class="s1">&#39;Y0&#39;</span><span class="p">])</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1177,9 +1177,9 @@ pass
 <p>横軸に<code class="docutils literal notranslate"><span class="pre">X</span></code>，縦軸に<code class="docutils literal notranslate"><span class="pre">Y0</span></code>を指定してプロットしてみる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.plot(&#39;X&#39;, &#39;Y0&#39;, data=df0)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y0&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df0</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1190,11 +1190,11 @@ pass
 <p>変数<code class="docutils literal notranslate"><span class="pre">Y1</span></code>と<code class="docutils literal notranslate"><span class="pre">Y2</span></code>も同じ軸<code class="docutils literal notranslate"><span class="pre">ax</span></code>にプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.plot(&#39;X&#39;, &#39;Y0&#39;, data=df0)
-ax.plot(&#39;X&#39;, &#39;Y1&#39;, data=df0)
-ax.plot(&#39;X&#39;, &#39;Y2&#39;, data=df0)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y0&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y1&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y2&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df0</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1214,9 +1214,9 @@ pass
 <p>横軸の<code class="docutils literal notranslate"><span class="pre">X</span></code>を指定せずにプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.plot(&#39;Y0&#39;, data=df0)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Y0&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df0</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1231,9 +1231,9 @@ pass
 <p>別の<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dic = {&#39;X&#39;:x, &#39;Y3&#39;:-x-1, &#39;Y4&#39;:-x**2}
-df1 = pd.DataFrame(dic)
-df1.head()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;X&#39;</span><span class="p">:</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;Y3&#39;</span><span class="p">:</span><span class="o">-</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Y4&#39;</span><span class="p">:</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">}</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1299,10 +1299,10 @@ df1.head()
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>を横軸として<code class="docutils literal notranslate"><span class="pre">df0</span></code>の<code class="docutils literal notranslate"><span class="pre">Y0</span></code>，<code class="docutils literal notranslate"><span class="pre">Y3</span></code>を横軸として<code class="docutils literal notranslate"><span class="pre">df1</span></code>の<code class="docutils literal notranslate"><span class="pre">Y3</span></code>を同じ図に表示してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.plot(&#39;X&#39;, &#39;Y0&#39;, data=df0)
-ax.plot(&#39;Y3&#39;, &#39;Y4&#39;, data=df1)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y0&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Y3&#39;</span><span class="p">,</span> <span class="s1">&#39;Y4&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df1</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1318,11 +1318,11 @@ pass
 <p>引数・メソッドがもたらす違いを際立たせるために新たな<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使おう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dic = {&#39;X&#39;:[10, 20, 30],
-       &#39;Y&#39;:[5.0, 30.0, 15.0],
-       &#39;Z&#39;:[7.0, 2.0, 10.0]}
-df2 = pd.DataFrame(dic)
-df2.head()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;X&#39;</span><span class="p">:[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
+       <span class="s1">&#39;Y&#39;</span><span class="p">:[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">],</span>
+       <span class="s1">&#39;Z&#39;</span><span class="p">:[</span><span class="mf">7.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">]}</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1391,9 +1391,9 @@ df2.head()
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fix, ax = plt.subplots(figsize=(8,4))
-ax.plot(&#39;X&#39;, data=df2)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1421,24 +1421,24 @@ pass
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fix, ax = plt.subplots()
-ax.plot(&#39;X&#39;
-           , data=df2
-           , linestyle=&#39;:&#39;
-           , linewidth=2
-           , color=&#39;red&#39;
-           , marker=&#39;o&#39;
-           , markersize=10
-           , label=&#39;X series&#39;)
-ax.plot(&#39;Y&#39;
-           , data=df2
-           , linestyle=&#39;-&#39;
-           , linewidth=2
-           , color=&#39;k&#39;
-           , marker=&#39;^&#39;
-           , markersize=10
-           , label=&#39;X series&#39;)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span>
+           <span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span>
+           <span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span>
+           <span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span>
+           <span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span>
+           <span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span>
+           <span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span>
+           <span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X series&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span>
+           <span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span>
+           <span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span>
+           <span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span>
+           <span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span>
+           <span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span>
+           <span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span>
+           <span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X series&#39;</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1461,9 +1461,9 @@ pass
 <p>の場合、<code class="docutils literal notranslate"><span class="pre">:ro</span></code>と書くことができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fix, ax = plt.subplots()
-ax.plot(&#39;Y&#39;, &#39;:ro&#39;, data=df2)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;:ro&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1509,14 +1509,14 @@ pass
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.plot(&#39;X&#39;, data=df2, label=&#39;X series&#39;)
-ax.set_title(&#39;A Large Title&#39;, size= 30)     # タイトルの設定
-ax.set_xlabel(&#39;Horizontal Axis&#39;, size=20)   # 横軸ラベルの設定
-ax.set_ylabel(&#39;Vertical Axis&#39;, size=20)     # 縦軸ラベルの設定
-ax.legend()
-ax.grid()
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X series&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;A Large Title&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span> <span class="mi">30</span><span class="p">)</span>     <span class="c1"># タイトルの設定</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Horizontal Axis&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>   <span class="c1"># 横軸ラベルの設定</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Vertical Axis&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>     <span class="c1"># 縦軸ラベルの設定</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1549,7 +1549,7 @@ pass
 <p>上の例を使うと次のようになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots(2,3)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1560,7 +1560,7 @@ pass
 <p>６つの軸が表示されているが、それらは<code class="docutils literal notranslate"><span class="pre">ax</span></code>に割り当てられている。<code class="docutils literal notranslate"><span class="pre">ax</span></code>を表示してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ax
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span>
 </pre></div>
 </div>
 </div>
@@ -1574,7 +1574,7 @@ pass
 <p><code class="docutils literal notranslate"><span class="pre">&lt;AxesSubplot:&gt;</span></code>が軸を示しており、それぞれの軸に対応している。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ax.shape
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -1596,14 +1596,14 @@ pass
 <p>これを使い次のように６つのを図示できる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots(2,3,figsize=(8,3))
-ax[0,0].plot(&#39;X&#39;, data=df2)
-ax[0,1].plot(&#39;Y&#39;, data=df2)
-ax[0,2].plot(&#39;Z&#39;, data=df2)
-ax[1,0].plot(&#39;X&#39;, data=df2)
-ax[1,1].plot(&#39;Y&#39;, data=df2)
-ax[1,2].plot(&#39;Z&#39;, data=df2)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1614,14 +1614,14 @@ pass
 <p>横軸と縦軸を共有するには次のようにする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots(2,3,figsize=(8,3),sharex=True,sharey=True)
-ax[0,0].plot(&#39;X&#39;, data=df2)
-ax[0,1].plot(&#39;Y&#39;, data=df2)
-ax[0,2].plot(&#39;Z&#39;, data=df2)
-ax[1,0].plot(&#39;X&#39;, data=df2)
-ax[1,1].plot(&#39;Y&#39;, data=df2)
-ax[1,2].plot(&#39;Z&#39;, data=df2)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1633,29 +1633,29 @@ pass
 <p>次に、キャンバス全体のタイトルを設定したいとしよう。キャンバスは<code class="docutils literal notranslate"><span class="pre">fig</span></code>に割り当てられているので、そのメソッド<code class="docutils literal notranslate"><span class="pre">suptitle</span></code>を使い表示することができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots(2, 3, figsize=(8,3),
-                       sharex=True, sharey=True,
-                       constrained_layout=True)
-ax[0,0].plot(&#39;X&#39;, data=df2)
-ax[0,0].set_title(&#39;ax[0,0]&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
+                       <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                       <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ax[0,0]&#39;</span><span class="p">)</span>
 
-ax[0,1].plot(&#39;Y&#39;, data=df2)
-ax[0,1].set_title(&#39;ax[0,1]&#39;)
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ax[0,1]&#39;</span><span class="p">)</span>
 
-ax[0,2].plot(&#39;Z&#39;, data=df2)
-ax[0,2].set_title(&#39;ax[0,2]&#39;)
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ax[0,2]&#39;</span><span class="p">)</span>
 
-ax[1,0].plot(&#39;X&#39;, data=df2)
-ax[1,0].set_title(&#39;ax[1,0]&#39;)
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ax[1,0]&#39;</span><span class="p">)</span>
 
-ax[1,1].plot(&#39;Y&#39;, data=df2)
-ax[1,1].set_title(&#39;ax[1,1]&#39;)
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ax[1,1]&#39;</span><span class="p">)</span>
 
-ax[1,2].plot(&#39;Z&#39;, data=df2)
-ax[1,2].set_title(&#39;ax[1,2]&#39;)
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ax[1,2]&#39;</span><span class="p">)</span>
 
-fig.suptitle(&quot;Grand Title&quot;, fontsize=20)
-pass
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Grand Title&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1669,13 +1669,13 @@ pass
 <p>複数のデータを表示する際、右の縦軸を使いデータを表示したい場合がある。例を使って説明することにする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax1 = plt.subplots()  # (1)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>  <span class="c1"># (1)</span>
 
-ax2 = ax1.twinx()          # (2)
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>          <span class="c1"># (2)</span>
 
-ax1.plot(&#39;X&#39;, data=df2)    # (3)
-ax2.plot(&#39;Z&#39;, data=df2)    # (4)
-pass
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>    <span class="c1"># (3)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>    <span class="c1"># (4)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1695,20 +1695,20 @@ pass
 <p>また上で説明した方法で様々な「飾り付け」をすることができる。ただ、凡例については少し追加的なコードが必要となるので、それについても簡単に以下で説明する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax1 = plt.subplots()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
-ax2 = ax1.twinx()
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
 
-ax1.plot(&#39;X&#39;, &#39;k-o&#39;, data=df2, label=&#39;X series&#39;)
-ax2.plot(&#39;Z&#39;, &#39;r:&#39;, data=df2, label=&#39;Z series&#39;)
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;k-o&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X series&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="s1">&#39;r:&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Z series&#39;</span><span class="p">)</span>
 
-ax1.set_title(&#39;Title&#39;, size=20)    # (1)
-ax1.set_ylabel(&#39;X data&#39;, size=15)  # (2)
-ax2.set_ylabel(&#39;Z data&#39;, size=15)  # (3)
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Title&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>    <span class="c1"># (1)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;X data&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>  <span class="c1"># (2)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Z data&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>  <span class="c1"># (3)</span>
 
-ax1.legend()                       # (4)
-ax2.legend(loc=(0.015,0.81))        # (5)
-pass
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>                       <span class="c1"># (4)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">0.015</span><span class="p">,</span><span class="mf">0.81</span><span class="p">))</span>        <span class="c1"># (5)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1744,20 +1744,20 @@ pass
 <p>使い方は到って簡単で、<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>と同様にインポートするだけである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import japanize_matplotlib
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">japanize_matplotlib</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fix, ax = plt.subplots()
-ax.plot(&#39;X&#39;, &#39;Y&#39;, &#39;r-o&#39;, data=df2)
-ax.set_title(&#39;縦横タイトル&#39;, size= 30)
-ax.set_xlabel(&#39;横軸&#39;, size=20)
-ax.set_ylabel(&#39;縦軸&#39;, size=20)
-ax.legend()
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;r-o&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;縦横タイトル&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;横軸&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;縦軸&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1797,15 +1797,15 @@ pass
 <p>上の例を使い、設定方法の例を示す。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>jfont = &#39;IPAexGothic&#39;    # (1)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jfont</span> <span class="o">=</span> <span class="s1">&#39;IPAexGothic&#39;</span>    <span class="c1"># (1)</span>
 
-fix, ax = plt.subplots()
-ax.plot(&#39;X&#39;, &#39;Y&#39;, &#39;ro-&#39;, data=df2)
-ax.set_title(&#39;縦横タイトル&#39;, size= 30, fontname=jfont)   # (2)
-ax.set_xlabel(&#39;横軸&#39;, size=20, fontname=jfont)          # (3)
-ax.set_ylabel(&#39;縦軸&#39;, size=20, fontname=jfont)          # (4)
-ax.legend(prop={&#39;family&#39;:jfont, &#39;size&#39;:17})            # (5)
-pass
+<span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;ro-&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;縦横タイトル&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="n">jfont</span><span class="p">)</span>   <span class="c1"># (2)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;横軸&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="n">jfont</span><span class="p">)</span>          <span class="c1"># (3)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;縦軸&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="n">jfont</span><span class="p">)</span>          <span class="c1"># (4)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;family&#39;</span><span class="p">:</span><span class="n">jfont</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">17</span><span class="p">})</span>            <span class="c1"># (5)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1835,8 +1835,8 @@ pass
 <p>実質利子率<code class="docutils literal notranslate"><span class="pre">r</span></code>によって投資がどのように変化するかを考えてみよう。まず投資関数を次のように仮定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def investment(y):
-    return 100/(1+r)**50
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">investment</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">100</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="mi">50</span>
 </pre></div>
 </div>
 </div>
@@ -1847,8 +1847,8 @@ pass
 <p>実質利子率は次のリストで与えられるとする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>r_list = np.arange(0.01, 0.11, 0.01)
-r_list
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">r_list</span>
 </pre></div>
 </div>
 </div>
@@ -1860,14 +1860,14 @@ r_list
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>i_list = []   # 空のリスト
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i_list</span> <span class="o">=</span> <span class="p">[]</span>   <span class="c1"># 空のリスト</span>
 
-for r in r_list:
-    inv = investment(r)   # 投資の計算
-    i_list.append(inv)    # リストに追加
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">r_list</span><span class="p">:</span>
+    <span class="n">inv</span> <span class="o">=</span> <span class="n">investment</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>   <span class="c1"># 投資の計算</span>
+    <span class="n">i_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span>    <span class="c1"># リストに追加</span>
 
-df_inv = pd.DataFrame({&#39;investment&#39;:i_list,     # DataFrameの作成
-                       &#39;interest_rate&#39;:r_list})
+<span class="n">df_inv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;investment&#39;</span><span class="p">:</span><span class="n">i_list</span><span class="p">,</span>     <span class="c1"># DataFrameの作成</span>
+                       <span class="s1">&#39;interest_rate&#39;</span><span class="p">:</span><span class="n">r_list</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -1875,7 +1875,7 @@ df_inv = pd.DataFrame({&#39;investment&#39;:i_list,     # DataFrameの作成
 <p>最初の5行を表示する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_inv.head()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_inv</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1935,9 +1935,9 @@ df_inv = pd.DataFrame({&#39;investment&#39;:i_list,     # DataFrameの作成
 <p>プロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fix, ax = plt.subplots()
-ax.plot(&#39;interest_rate&#39;, &#39;investment&#39;, data=df_inv)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;interest_rate&#39;</span><span class="p">,</span> <span class="s1">&#39;investment&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_inv</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1957,15 +1957,15 @@ pass
 <p><code class="docutils literal notranslate"><span class="pre">x</span></code>万円を実質年率<code class="docutils literal notranslate"><span class="pre">r</span></code>%の利息を得る金融商品に投資し，<code class="docutils literal notranslate"><span class="pre">t</span></code>年間の将来価値（期首の値）をリストで示す関数は以下で与えられた。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def calculate_futre_value(x, r, t):
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_futre_value</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
     
-    value_list = [x]           # 初期値が入ったリスト
+    <span class="n">value_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>           <span class="c1"># 初期値が入ったリスト</span>
     
-    for year in range(1,t+1):  # 1からtまでの期間
-        x = x*(1+r)            # 来期のxの値の計算
-        value_list.append(x)   # リストに追加
+    <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># 1からtまでの期間</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span>            <span class="c1"># 来期のxの値の計算</span>
+        <span class="n">value_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>   <span class="c1"># リストに追加</span>
     
-    return value_list          # リストを返す
+    <span class="k">return</span> <span class="n">value_list</span>          <span class="c1"># リストを返す</span>
 </pre></div>
 </div>
 </div>
@@ -1978,13 +1978,13 @@ pass
 <p>の下で実質利子率が次のリストで与えられる値を取る場合の将来価値を図示する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>r_list = [0.01, 0.03, 0.06]   # 実質利子率のリスト
-dic = {}                      # 空の辞書
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_list</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">]</span>   <span class="c1"># 実質利子率のリスト</span>
+<span class="n">dic</span> <span class="o">=</span> <span class="p">{}</span>                      <span class="c1"># 空の辞書</span>
 
-for r in r_list:
-    dic[&#39;r=&#39;+str(r)] = calculate_futre_value(100, r, 30)  # 辞書に追加
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">r_list</span><span class="p">:</span>
+    <span class="n">dic</span><span class="p">[</span><span class="s1">&#39;r=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">)]</span> <span class="o">=</span> <span class="n">calculate_futre_value</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>  <span class="c1"># 辞書に追加</span>
 
-df_future = pd.DataFrame(dic) # DataFrameの作成
+<span class="n">df_future</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span> <span class="c1"># DataFrameの作成</span>
 </pre></div>
 </div>
 </div>
@@ -2003,7 +2003,7 @@ df_future = pd.DataFrame(dic) # DataFrameの作成
 <p>最初の5行を表示する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_future.head()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_future</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2069,7 +2069,7 @@ df_future = pd.DataFrame(dic) # DataFrameの作成
 <p>最後の5行を表示する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_future.tail()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_future</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2134,12 +2134,12 @@ df_future = pd.DataFrame(dic) # DataFrameの作成
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fix, ax = plt.subplots()
-ax.plot(&#39;r=0.01&#39;, data=df_future)
-ax.plot(&#39;r=0.03&#39;, data=df_future)
-ax.plot(&#39;r=0.06&#39;, data=df_future)
-ax.legend()
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;r=0.01&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_future</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;r=0.03&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_future</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;r=0.06&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_future</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2150,13 +2150,13 @@ pass
 <p><code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code>が続いているので、<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使う事を推奨する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fix, ax = plt.subplots()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
-for col in df_future.columns:     # (1)
-    ax.plot(col, data=df_future)
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df_future</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>     <span class="c1"># (1)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_future</span><span class="p">)</span>
 
-ax.legend()
-pass
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2175,9 +2175,9 @@ pass
 <p>説明には次のコードで生成する<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使う。列<code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>には標準正規分布（平均<code class="docutils literal notranslate"><span class="pre">0</span></code>，標準偏差<code class="docutils literal notranslate"><span class="pre">1</span></code>）から生成した100個のランダム変数が含まれている。<code class="docutils literal notranslate"><span class="pre">Z</span></code>には正規分布（平均<code class="docutils literal notranslate"><span class="pre">2</span></code>，標準偏差<code class="docutils literal notranslate"><span class="pre">1</span></code>）から抽出した100個のランダム変数が格納されている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df3 = pd.DataFrame({&#39;X&#39;:np.random.normal(size=100),
-                    &#39;Y&#39;:np.random.normal(size=100),
-                    &#39;Z&#39;:np.random.normal(loc=2, size=100)})
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;X&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span>
+                    <span class="s1">&#39;Y&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span>
+                    <span class="s1">&#39;Z&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)})</span>
 </pre></div>
 </div>
 </div>
@@ -2202,9 +2202,9 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 <p><code class="docutils literal notranslate"><span class="pre">df1</span></code>を使って列<code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>を使ってプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.scatter(&#39;X&#39;, &#39;Y&#39;, data=df3)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df3</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2234,14 +2234,14 @@ pass
 <p>実際に引数を指定してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.scatter(&#39;X&#39;, &#39;Y&#39;, data=df3,
-            color = &#39;black&#39;,
-            marker = &#39;D&#39;,
-            s = 20,
-            label= &#39;Xの凡例&#39;)
-ax.legend()
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df3</span><span class="p">,</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+            <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span> <span class="s1">&#39;Xの凡例&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2252,22 +2252,22 @@ pass
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Z</span></code>の散布図を加えてタイトルなども付け加えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.scatter(&#39;X&#39;, &#39;Y&#39;, data=df3,
-            color = &#39;black&#39;,
-            marker = &#39;D&#39;,
-            s = 20,
-            label= &#39;Xの凡例&#39;)
-ax.scatter(&#39;X&#39;, &#39;Z&#39;, data=df3,
-            color = &#39;red&#39;,
-            marker = &#39;1&#39;,
-            s = 80,
-            label= &#39;Xの凡例&#39;)
-ax.legend()
-ax.set_title(&#39;散布図&#39;, size=20)
-ax.set_xlabel(&#39;Xの値&#39;, size=15)
-ax.set_ylabel(&#39;YとZの値&#39;, size=15)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df3</span><span class="p">,</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+            <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span> <span class="s1">&#39;Xの凡例&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df3</span><span class="p">,</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+            <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span> <span class="s1">&#39;Xの凡例&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;散布図&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Xの値&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;YとZの値&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2295,9 +2295,9 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 <p><code class="docutils literal notranslate"><span class="pre">df3</span></code>の列<code class="docutils literal notranslate"><span class="pre">X</span></code>を使ってプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.hist(&#39;X&#39;, data=df3)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df3</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2333,14 +2333,14 @@ pass
 <p>上のヒストグラムに引数をしてしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.hist(df3[&#39;X&#39;],
-        color=&#39;green&#39;,
-        bins = 20,
-        ec=&#39;white&#39;,
-        lw=3,
-        density=True)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span>
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+        <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2351,15 +2351,15 @@ pass
 <p>次に複数のデータを並べてプロットする場合を考えよう。方法は簡単で，異なるデータをリストとして指定すれば良い。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.hist([df3[&#39;X&#39;],df3[&#39;Z&#39;]],
-        bins = 20,
-        color = [&#39;black&#39;,&#39;red&#39;],
-        ec=&#39;black&#39;,
-        label=[&#39;Xの凡例&#39;,&#39;Yの凡例&#39;])
-ax.legend()
-ax.set_title(&#39;ヒストグラム&#39;, size=20)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">([</span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]],</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">],</span>
+        <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Xの凡例&#39;</span><span class="p">,</span><span class="s1">&#39;Yの凡例&#39;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ヒストグラム&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2370,22 +2370,22 @@ pass
 <p>上のコードに引数<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>を加えると，柱を重ねて表示される。試してみよう。また<code class="docutils literal notranslate"><span class="pre">ax.hist()</span></code>を２回使うと，２つのヒストグラムを重ねて表示することができる。この場合，引数<code class="docutils literal notranslate"><span class="pre">alpha</span></code>の値を調整すると良いだろう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.hist(df3[&#39;X&#39;],
-        bins = 20,
-        color = &#39;black&#39;,
-        ec=&#39;black&#39;,
-        alpha=0.5,
-        label=&#39;Xの凡例&#39;)
-ax.hist(df3[&#39;Z&#39;],
-        bins = 20,
-        color = &#39;red&#39;,
-        ec=&#39;black&#39;,
-        alpha=0.5,
-        label=&#39;Zの凡例&#39;)
-ax.legend()
-ax.set_title(&#39;ヒストグラム&#39;, size=20)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+        <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Xの凡例&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">],</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+        <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Zの凡例&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ヒストグラム&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2417,11 +2417,11 @@ pass
 <p>ヒストグラムを使ってプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.hist(df3[&#39;X&#39;], alpha=0.2)
-ax.axhline(10)
-ax.axvline(0)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2449,23 +2449,23 @@ pass
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.hist(df3[&#39;X&#39;], alpha=0.2)
-ax.axvline(0,
-           ymin=0.3,
-           ymax=0.95,
-           linestyle=&#39;:&#39;,
-           linewidth=5,
-           color=&#39;g&#39;,
-           alpha=0.8)
-ax.axhline(10,
-           xmin=0.05,
-           xmax=0.7,
-           linestyle=&#39;-.&#39;,
-           linewidth=3,
-           color=&#39;k&#39;,
-           alpha=0.5)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span>
+           <span class="n">ymin</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+           <span class="n">ymax</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+           <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>
+           <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+           <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span>
+           <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span>
+           <span class="n">xmin</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+           <span class="n">xmax</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+           <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span>
+           <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+           <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+           <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2479,13 +2479,13 @@ pass
 <p>まず次のコードでデータを準備しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df4 = pd.DataFrame({&#39;country&#39;:[&#39;A&#39;,&#39;B&#39;,&#39;C&#39;],
-                    &#39;gdp&#39;:[100,90,110],
-                    &#39;con&#39;:[50,60,55],
-                    &#39;inv&#39;:[15,10,20],
-                    &#39;gov&#39;:[10,5,30],
-                    &#39;netex&#39;:[25,15,5]})
-df4
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df4</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;country&#39;</span><span class="p">:[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;gdp&#39;</span><span class="p">:[</span><span class="mi">100</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">110</span><span class="p">],</span>
+                    <span class="s1">&#39;con&#39;</span><span class="p">:[</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">55</span><span class="p">],</span>
+                    <span class="s1">&#39;inv&#39;</span><span class="p">:[</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">],</span>
+                    <span class="s1">&#39;gov&#39;</span><span class="p">:[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">30</span><span class="p">],</span>
+                    <span class="s1">&#39;netex&#39;</span><span class="p">:[</span><span class="mi">25</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">]})</span>
+<span class="n">df4</span>
 </pre></div>
 </div>
 </div>
@@ -2562,9 +2562,9 @@ df4
 <p>まずA国の<code class="docutils literal notranslate"><span class="pre">gdp</span></code>の棒グラフを表示してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.bar(&#39;country&#39;,&#39;gdp&#39;, data=df4)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span><span class="s1">&#39;gdp&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df4</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2596,17 +2596,17 @@ pass
 <p>これらの引数を使いプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.bar(&#39;country&#39;,&#39;gdp&#39;, data=df4,
-       width=0.5,
-       color=&#39;green&#39;,
-       ec=&#39;black&#39;,
-       linewidth=5,
-       alpha=0.5,
-       label=&#39;GDP&#39;)
-ax.legend()
-ax.tick_params(axis=&#39;both&#39;, labelsize=15)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span><span class="s1">&#39;gdp&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df4</span><span class="p">,</span>
+       <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+       <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span>
+       <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+       <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+       <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+       <span class="n">label</span><span class="o">=</span><span class="s1">&#39;GDP&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2618,11 +2618,11 @@ pass
 <p>次に複数の列データを表示する場合を考えてみよう。まず単に軸にデータを追加する場合を考えてみる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
-ax.bar(&#39;country&#39;,&#39;con&#39;, data=df4, label=&#39;消費&#39;)
-ax.bar(&#39;country&#39;,&#39;inv&#39;, data=df4, label=&#39;投資&#39;)
-ax.legend()
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span><span class="s1">&#39;con&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;消費&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span><span class="s1">&#39;inv&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;投資&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2633,25 +2633,25 @@ pass
 <p>縦軸を確認するとわかるが，まず消費（<code class="docutils literal notranslate"><span class="pre">con</span></code>）の棒がプロットされ，それに投資（<code class="docutils literal notranslate"><span class="pre">ivn</span></code>）の棒が重ねてプロットされている。これは引数<code class="docutils literal notranslate"><span class="pre">base</span></code>（縦軸における棒の基点）がデフォルトの<code class="docutils literal notranslate"><span class="pre">0</span></code>に設定されており，消費も投資も<code class="docutils literal notranslate"><span class="pre">0</span></code>から始まっているためである。この点を踏まえ，棒を積み上げる場合を考えよう。その場合，投資の<code class="docutils literal notranslate"><span class="pre">base</span></code>は消費の高さになる必要がある。また政府支出を積み上げる場合は，積み上がった消費の高さが政府支出の基点になる必要がある。純輸出を積み上げる場合も同様に考える必要がある。この点に注意して棒を積み上げるには次のようなコードとなる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>base = df4.iloc[:,2:].cumsum(axis=&#39;columns&#39;) # (1)
-base = base - df4.iloc[:,2:]                 # (2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span> <span class="c1"># (1)</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span> <span class="o">-</span> <span class="n">df4</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:]</span>                 <span class="c1"># (2)</span>
 
-var_list = df4.columns[2:]                   # (3)
-leg_list = [&#39;消費&#39;,&#39;投資&#39;,&#39;政府支出&#39;,&#39;純輸出&#39;]    # (4)
+<span class="n">var_list</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>                   <span class="c1"># (3)</span>
+<span class="n">leg_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;消費&#39;</span><span class="p">,</span><span class="s1">&#39;投資&#39;</span><span class="p">,</span><span class="s1">&#39;政府支出&#39;</span><span class="p">,</span><span class="s1">&#39;純輸出&#39;</span><span class="p">]</span>    <span class="c1"># (4)</span>
 
-fig, ax = plt.subplots()
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
-for v, l in zip(var_list, leg_list):
-    ax.bar(&#39;country&#39;, v, data=df4,
-           label=l,
-           bottom=base.loc[:,v])            # (5)
+<span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">var_list</span><span class="p">,</span> <span class="n">leg_list</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df4</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">,</span>
+           <span class="n">bottom</span><span class="o">=</span><span class="n">base</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">v</span><span class="p">])</span>            <span class="c1"># (5)</span>
 
-ax.plot(&#39;gdp&#39;, data=df4,                    # (6)
-        color=&#39;black&#39;, 
-        marker=&#39;o&#39;,
-        label=&#39;GDP&#39;)
-ax.legend()
-pass
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;gdp&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df4</span><span class="p">,</span>                    <span class="c1"># (6)</span>
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> 
+        <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;GDP&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2668,24 +2668,24 @@ pass
 <p>この２点を考慮すると次のコードとなる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>idx = df4.index                 # (1)
-wd = 1/5                        # (2)
-x_ticks = df4.loc[:,&#39;country&#39;]  # (3)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">index</span>                 <span class="c1"># (1)</span>
+<span class="n">wd</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">5</span>                        <span class="c1"># (2)</span>
+<span class="n">x_ticks</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;country&#39;</span><span class="p">]</span>  <span class="c1"># (3)</span>
 
-fig, ax = plt.subplots(figsize=(8,4))
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 
-for i, (v, l) in enumerate(zip(var_list, leg_list)):
-    ax.bar(idx+wd*(i+1),        # (4)
-           v,
-           data=df4,
-           label=l,
-           width=wd)            # (5)
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">var_list</span><span class="p">,</span> <span class="n">leg_list</span><span class="p">)):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="n">wd</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>        <span class="c1"># (4)</span>
+           <span class="n">v</span><span class="p">,</span>
+           <span class="n">data</span><span class="o">=</span><span class="n">df4</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">,</span>
+           <span class="n">width</span><span class="o">=</span><span class="n">wd</span><span class="p">)</span>            <span class="c1"># (5)</span>
     
-ax.legend()
-ax.set_xticks(idx+wd*2.5,       # (6)
-              x_ticks,          # (7)
-              fontsize=15)      # (8)
-pass
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="n">wd</span><span class="o">*</span><span class="mf">2.5</span><span class="p">,</span>       <span class="c1"># (6)</span>
+              <span class="n">x_ticks</span><span class="p">,</span>          <span class="c1"># (7)</span>
+              <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>      <span class="c1"># (8)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>

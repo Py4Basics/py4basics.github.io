@@ -85,7 +85,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"><p><a href='http://www.econ.kobe-u.ac.jp/topics/pdf/221212-2.pdf'>✴️<<font color='white'>特別講演「UCバークレー校における経済学とデータサイエンス教育」(2023年1月6日) ← クリック！✴️</font></a></p></div>
+<div class="announcement header-item noprint"></div>
 <div class="header header-item noprint"></div>
 
     
@@ -715,11 +715,11 @@ title="Print to PDF"
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from gapminder import gapminder
-from see import see
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">gapminder</span> <span class="kn">import</span> <span class="n">gapminder</span>
+<span class="kn">from</span> <span class="nn">see</span> <span class="kn">import</span> <span class="n">see</span>
 </pre></div>
 </div>
 </div>
@@ -737,8 +737,8 @@ from see import see
 <h2>データ<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df = gapminder
-df.head()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">gapminder</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -821,7 +821,7 @@ df.head()
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df.tail()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -904,7 +904,7 @@ df.head()
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df.info()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -928,7 +928,7 @@ memory usage: 80.0+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df.describe()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1021,8 +1021,8 @@ memory usage: 80.0+ KB
 <p><strong>含まれる国名</strong></p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>countries = df.loc[:,&#39;country&#39;].unique()
-countries
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">countries</span>
 </pre></div>
 </div>
 </div>
@@ -1063,7 +1063,7 @@ countries
 <p><strong>国数</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>len(countries)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1076,10 +1076,10 @@ countries
 <p><strong><code class="docutils literal notranslate"><span class="pre">continent</span></code>の内訳</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># continentのリスト
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># continentのリスト</span>
 
-continent_list = np.sort(df.loc[:,&#39;continent&#39;].unique()).tolist()
-continent_list
+<span class="n">continent_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">continent_list</span>
 </pre></div>
 </div>
 </div>
@@ -1091,28 +1091,28 @@ continent_list
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># 国数を入れる空のリスト
-num_countries = []
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 国数を入れる空のリスト</span>
+<span class="n">num_countries</span> <span class="o">=</span> <span class="p">[]</span>
 
-for i in continent_list:
-    # 条件
-    con = df.loc[:,&#39;continent&#39;] == i
-    #　条件が満たされる行を抽出
-    series_countries = df.loc[con,&#39;country&#39;]
-    # 重複をなくす
-    series_countries_unique = series_countries.unique()
-    # 国数を数える
-    num = len(series_countries_unique)
-    # 上のリストに追加
-    num_countries.append(num)
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">continent_list</span><span class="p">:</span>
+    <span class="c1"># 条件</span>
+    <span class="n">con</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span>
+    <span class="c1">#　条件が満たされる行を抽出</span>
+    <span class="n">series_countries</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">con</span><span class="p">,</span><span class="s1">&#39;country&#39;</span><span class="p">]</span>
+    <span class="c1"># 重複をなくす</span>
+    <span class="n">series_countries_unique</span> <span class="o">=</span> <span class="n">series_countries</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="c1"># 国数を数える</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">series_countries_unique</span><span class="p">)</span>
+    <span class="c1"># 上のリストに追加</span>
+    <span class="n">num_countries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for name, num in zip(continent_list,num_countries):
-    print(f&#39;{name}: {num}&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">continent_list</span><span class="p">,</span><span class="n">num_countries</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1128,7 +1128,7 @@ Oceania: 2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sum(num_countries)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">num_countries</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1143,14 +1143,14 @@ Oceania: 2
 <h2>groupby()<a class="headerlink" href="#groupby" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_group = df.groupby(&#39;continent&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>see(df_group)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">see</span><span class="p">(</span><span class="n">df_group</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1185,10 +1185,10 @@ Oceania: 2
 <h3>continentの内訳（again）<a class="headerlink" href="#continent-again" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Seriesを返し，要素はarray
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Seriesを返し，要素はarray</span>
 
-country_names = df_group[&#39;country&#39;].unique()
-country_names
+<span class="n">country_names</span> <span class="o">=</span> <span class="n">df_group</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">country_names</span>
 </pre></div>
 </div>
 </div>
@@ -1206,20 +1206,17 @@ Name: country, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>N = len(country_names)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">country_names</span><span class="p">)</span>
 
-for i in range(N):
-    t0 = country_names[i]
-    t1 = len(t0)
-    print(country_names.index[i],&#39;:&#39;,t1)
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">country_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">country_names</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="n">t1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Africa
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> : 52
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Africa : 52
 Americas : 25
 Asia : 33
 Europe : 30
@@ -1233,7 +1230,7 @@ Oceania : 2
 <h3>統計量<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>three_vars=[&#39;lifeExp&#39;,&#39;pop&#39;,&#39;gdpPercap&#39;]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">three_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span><span class="s1">&#39;pop&#39;</span><span class="p">,</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1242,7 +1239,7 @@ Oceania : 2
 <h4>データ数<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_group.count()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1327,8 +1324,8 @@ Oceania : 2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_group.size().plot(kind=&#39;bar&#39;)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -1341,7 +1338,7 @@ pass
 <h4>平均<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_group[three_vars].mean()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="p">[</span><span class="n">three_vars</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1412,13 +1409,13 @@ pass
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_group.mean().plot(kind=&#39;scatter&#39;, x=&#39;gdpPercap&#39;, y=&#39;lifeExp&#39;)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6304/4101256343.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6923/4101256343.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   df_group.mean().plot(kind=&#39;scatter&#39;, x=&#39;gdpPercap&#39;, y=&#39;lifeExp&#39;)
 </pre></div>
 </div>
@@ -1430,7 +1427,7 @@ pass
 <h4>標準偏差<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_group[three_vars].std()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="p">[</span><span class="n">three_vars</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1504,7 +1501,7 @@ pass
 <h4>最大値<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_group.max()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1592,7 +1589,7 @@ pass
 <h4>最小値<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_group.min()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1678,7 +1675,7 @@ pass
 <p><strong>基本的統計</strong></p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_group[three_vars].describe()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="p">[</span><span class="n">three_vars</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1892,12 +1889,12 @@ pass
 <p><code class="docutils literal notranslate"><span class="pre">()</span></code>の中に関数を入れる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_group.agg(np.mean)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6304/1221305653.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6923/1221305653.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   df_group.agg(np.mean)
 </pre></div>
 </div>
@@ -1974,7 +1971,7 @@ pass
 </div>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_group[three_vars].agg([np.max, np.min, np.mean])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="p">[</span><span class="n">three_vars</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -2097,16 +2094,16 @@ pass
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># 自作の関数もOK
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 自作の関数もOK</span>
 
-func = lambda x : (np.max(x)-np.min(x))/np.mean(x)
+<span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-df_group[&#39;lifeExp&#39;,&#39;pop&#39;,&#39;gdpPercap&#39;].agg(func)
+<span class="n">df_group</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span><span class="s1">&#39;pop&#39;</span><span class="p">,</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6304/3388776761.py:5: FutureWarning: Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6923/3388776761.py:5: FutureWarning: Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
   df_group[&#39;lifeExp&#39;,&#39;pop&#39;,&#39;gdpPercap&#39;].agg(func)
 </pre></div>
 </div>
@@ -2180,15 +2177,15 @@ df_group[&#39;lifeExp&#39;,&#39;pop&#39;,&#39;gdpPercap&#39;].agg(func)
 <p><strong><code class="docutils literal notranslate"><span class="pre">continent</span></code>平均</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_lifeExp_continent = df_group[&#39;lifeExp&#39;].mean()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_continent</span> <span class="o">=</span> <span class="n">df_group</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_lifeExp_continent.plot(kind=&#39;bar&#39;)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_continent</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2200,15 +2197,15 @@ pass
 <h4>クロス・セクション<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_mean = df_group.mean()
-df_mean[&#39;ln_pop&#39;] = np.log(df_mean[&#39;pop&#39;])
-df_mean[&#39;ln_gdpPercap&#39;] = np.log(df_mean[&#39;gdpPercap&#39;])
-df_mean[&#39;lifeExp_10&#39;] = df_mean[&#39;lifeExp&#39;]/10
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_mean</span> <span class="o">=</span> <span class="n">df_group</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;ln_pop&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">])</span>
+<span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;ln_gdpPercap&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">])</span>
+<span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;lifeExp_10&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">10</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6304/1026628758.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6923/1026628758.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   df_mean = df_group.mean()
 </pre></div>
 </div>
@@ -2216,8 +2213,8 @@ df_mean[&#39;lifeExp_10&#39;] = df_mean[&#39;lifeExp&#39;]/10
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_mean[[&#39;lifeExp_10&#39;, &#39;ln_gdpPercap&#39;]].plot(kind=&#39;bar&#39;)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_mean</span><span class="p">[[</span><span class="s1">&#39;lifeExp_10&#39;</span><span class="p">,</span> <span class="s1">&#39;ln_gdpPercap&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2232,19 +2229,19 @@ pass
 <p><code class="docutils literal notranslate"><span class="pre">continent</span></code>別の平均時系列を考えるときに有用。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_group2 = df.groupby([&#39;continent&#39;,&#39;year&#39;])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span><span class="s1">&#39;year&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_group2.mean().head()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group2</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6304/1491278850.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6923/1491278850.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   df_group2.mean().head()
 </pre></div>
 </div>
@@ -2317,14 +2314,14 @@ pass
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># lifeExpの列だけを選択した後，行はyear列はcontinentになるDataFrameに変換
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lifeExpの列だけを選択した後，行はyear列はcontinentになるDataFrameに変換</span>
 
-df_lifeExp_group = df_group2.mean().loc[:,&#39;lifeExp&#39;].unstack(level=0)
+<span class="n">df_lifeExp_group</span> <span class="o">=</span> <span class="n">df_group2</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6304/1061286802.py:3: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6923/1061286802.py:3: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   df_lifeExp_group = df_group2.mean().loc[:,&#39;lifeExp&#39;].unstack(level=0)
 </pre></div>
 </div>
@@ -2332,9 +2329,9 @@ df_lifeExp_group = df_group2.mean().loc[:,&#39;lifeExp&#39;].unstack(level=0)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_lifeExp_group.plot()
-plt.ylabel(&#39;Average Life Expectancy&#39;)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_group</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Average Life Expectancy&#39;</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2345,19 +2342,19 @@ pass
 <p><strong>世界平均との比較</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_group_year = df.groupby(&#39;year&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group_year</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>world_lifeExp = df_group_year.mean()[&#39;lifeExp&#39;].values.reshape(1,12).T
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world_lifeExp</span> <span class="o">=</span> <span class="n">df_group_year</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6304/4010867319.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6923/4010867319.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   world_lifeExp = df_group_year.mean()[&#39;lifeExp&#39;].values.reshape(1,12).T
 </pre></div>
 </div>
@@ -2365,9 +2362,9 @@ pass
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_lifeExp_diff = df_lifeExp_group - world_lifeExp
-df_lifeExp_diff.plot()
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_diff</span> <span class="o">=</span> <span class="n">df_lifeExp_group</span> <span class="o">-</span> <span class="n">world_lifeExp</span>
+<span class="n">df_lifeExp_diff</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2381,16 +2378,16 @@ pass
 <h2>Multi-index<a class="headerlink" href="#multi-index" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># sort_index()がないとWarningがでる場合がある(順番で並ぶとPythonが変数を探しやすくなる)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sort_index()がないとWarningがでる場合がある(順番で並ぶとPythonが変数を探しやすくなる)</span>
 
-dfm = df.set_index([&#39;continent&#39;,&#39;country&#39;,&#39;year&#39;]).sort_index()
+<span class="n">dfm</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span><span class="s1">&#39;country&#39;</span><span class="p">,</span><span class="s1">&#39;year&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dfm.head()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfm</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2472,12 +2469,12 @@ dfm = df.set_index([&#39;continent&#39;,&#39;country&#39;,&#39;year&#39;]).sort_
 <h4>データ数<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dfm.count(level=0)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfm</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6304/18837437.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.count(level=1) should use df.groupby(level=1).count().
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6923/18837437.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.count(level=1) should use df.groupby(level=1).count().
   dfm.count(level=0)
 </pre></div>
 </div>
@@ -2550,14 +2547,14 @@ dfm = df.set_index([&#39;continent&#39;,&#39;country&#39;,&#39;year&#39;]).sort_
 <h4>平均の計算<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dfm.mean(level=&#39;continent&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfm</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
 
-# dfm.mean(level=0) も同じ
+<span class="c1"># dfm.mean(level=0) も同じ</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6304/2159504587.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.median(level=1) should use df.groupby(level=1).median().
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6923/2159504587.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.median(level=1) should use df.groupby(level=1).median().
   dfm.mean(level=&#39;continent&#39;)
 </pre></div>
 </div>
@@ -2630,12 +2627,12 @@ dfm = df.set_index([&#39;continent&#39;,&#39;country&#39;,&#39;year&#39;]).sort_
 <h4>標準偏差<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dfm.std(level=&#39;continent&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfm</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6304/109049444.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.var(level=1) should use df.groupby(level=1).var().
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6923/109049444.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.var(level=1) should use df.groupby(level=1).var().
   dfm.std(level=&#39;continent&#39;)
 </pre></div>
 </div>
@@ -2708,12 +2705,12 @@ dfm = df.set_index([&#39;continent&#39;,&#39;country&#39;,&#39;year&#39;]).sort_
 <h4>最大値・最小値<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dfm.max(level=&#39;continent&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfm</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6304/1026016611.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.median(level=1) should use df.groupby(level=1).median().
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6923/1026016611.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.median(level=1) should use df.groupby(level=1).median().
   dfm.max(level=&#39;continent&#39;)
 </pre></div>
 </div>
@@ -2783,12 +2780,12 @@ dfm = df.set_index([&#39;continent&#39;,&#39;country&#39;,&#39;year&#39;]).sort_
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dfm.min(level=&#39;continent&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfm</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6304/2681793636.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.median(level=1) should use df.groupby(level=1).median().
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6923/2681793636.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.median(level=1) should use df.groupby(level=1).median().
   dfm.min(level=&#39;continent&#39;)
 </pre></div>
 </div>
@@ -2863,17 +2860,17 @@ dfm = df.set_index([&#39;continent&#39;,&#39;country&#39;,&#39;year&#39;]).sort_
 <p><strong>図（５カ国の時系列）</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dfm_2 = dfm.droplevel(level=0,axis=0)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfm_2</span> <span class="o">=</span> <span class="n">dfm</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>countries = [&#39;Japan&#39;, &#39;United Kingdom&#39;, &#39;United States&#39;, &#39;China&#39;, &#39;Thailand&#39;]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Japan&#39;</span><span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="s1">&#39;China&#39;</span><span class="p">,</span> <span class="s1">&#39;Thailand&#39;</span><span class="p">]</span>
 
-dfm_2.loc[(countries),&#39;lifeExp&#39;].unstack(level=0).plot()
-pass
+<span class="n">dfm_2</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">countries</span><span class="p">),</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2884,20 +2881,20 @@ pass
 <p><strong><code class="docutils literal notranslate"><span class="pre">lifeExp</span></code>の世界平均との差</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_lifeExp_mi = pd.DataFrame()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_mi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
-for i in continent_list:
-    temp = dfm.loc[(i,),&#39;lifeExp&#39;].unstack(level=0).mean(axis=1)
-    df_lifeExp_mi[i] = temp
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">continent_list</span><span class="p">:</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">dfm</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">i</span><span class="p">,),</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">df_lifeExp_mi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_lifeExp_mi.plot()
-plt.title(&#39;Average Life Expectancy&#39;)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_mi</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Average Life Expectancy&#39;</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2907,22 +2904,22 @@ pass
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>world_lifeExp_mi = dfm_2[&#39;lifeExp&#39;].unstack(level=0).mean(axis=1).values.reshape(12,1)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world_lifeExp_mi</span> <span class="o">=</span> <span class="n">dfm_2</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_lifeExp_diff_mi = df_lifeExp_mi - world_lifeExp_mi
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_diff_mi</span> <span class="o">=</span> <span class="n">df_lifeExp_mi</span> <span class="o">-</span> <span class="n">world_lifeExp_mi</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_lifeExp_diff_mi.plot()
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_diff_mi</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>

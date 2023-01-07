@@ -86,7 +86,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"><p><a href='http://www.econ.kobe-u.ac.jp/topics/pdf/221212-2.pdf'>✴️<<font color='white'>特別講演「UCバークレー校における経済学とデータサイエンス教育」(2023年1月6日) ← クリック！✴️</font></a></p></div>
+<div class="announcement header-item noprint"></div>
 <div class="header header-item noprint"></div>
 
     
@@ -526,9 +526,9 @@ title="Print to PDF"
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import numpy as np
-import pandas as pd
-import py4macro
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">py4macro</span>
 </pre></div>
 </div>
 </div>
@@ -542,17 +542,17 @@ import py4macro
 <p>次の<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>（変数名は<code class="docutils literal notranslate"><span class="pre">df_ex</span></code>）を使って移動平均について説明する。</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>month_list = [f&#39;{i}月&#39; for i in range(1,13)]
-df_ex = pd.DataFrame({&#39;月&#39;:month_list,&#39;A&#39;:range(10,130,10)})
-df_ex[&#39;B&#39;] = df_ex[&#39;A&#39;].rolling(3).mean()
-df_ex[&#39;C&#39;] = df_ex[&#39;B&#39;].iloc[2::3]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">month_list</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">月&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">)]</span>
+<span class="n">df_ex</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;月&#39;</span><span class="p">:</span><span class="n">month_list</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">10</span><span class="p">)})</span>
+<span class="n">df_ex</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ex</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df_ex</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ex</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">::</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_ex
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_ex</span>
 </pre></div>
 </div>
 </div>
@@ -688,7 +688,7 @@ df_ex[&#39;C&#39;] = df_ex[&#39;B&#39;].iloc[2::3]
 <p>実際に<code class="docutils literal notranslate"><span class="pre">df_ex</span></code>の列<code class="docutils literal notranslate"><span class="pre">A</span></code>の移動平均を作成してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_ex.loc[:,&#39;A&#39;].rolling(3).mean()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_ex</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -770,7 +770,7 @@ Name: A, dtype: float64
 <p>実際に実行してみよう。<code class="docutils literal notranslate"><span class="pre">df_ex['A'].rolling(3).mean()</span></code>は<code class="docutils literal notranslate"><span class="pre">Series</span></code>を返すので<code class="docutils literal notranslate"><span class="pre">.iloc[2::3]</span></code>となっている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_ex[&#39;A&#39;].rolling(3).mean().iloc[2::3]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_ex</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">::</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -800,8 +800,8 @@ Name: A, dtype: float64
 <p>では実際に<code class="docutils literal notranslate"><span class="pre">jpn-money</span></code>のデータを使いデータを整形しよう。まず月次データを読み込み<code class="docutils literal notranslate"><span class="pre">month</span></code>に割り当てる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>month = py4macro.data(&#39;jpn-money&#39;)
-month.tail()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">month</span> <span class="o">=</span> <span class="n">py4macro</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="s1">&#39;jpn-money&#39;</span><span class="p">)</span>
+<span class="n">month</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -866,7 +866,7 @@ month.tail()
 <p>いつもの通り<code class="docutils literal notranslate"><span class="pre">.info()</span></code>を使ってデータの内容を確認しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>month.info()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">month</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -888,7 +888,7 @@ memory usage: 18.8 KB
 <p>四半期データに変換して変数<code class="docutils literal notranslate"><span class="pre">quarter</span></code>に割り当てることにする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>quarter = month.rolling(3).mean().iloc[2::3,:]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quarter</span> <span class="o">=</span> <span class="n">month</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">::</span><span class="mi">3</span><span class="p">,:]</span>
 </pre></div>
 </div>
 </div>
@@ -896,7 +896,7 @@ memory usage: 18.8 KB
 <p>これで３ヶ月の値の平均からなる四半期データを作成した事になる。確かめてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>quarter.head()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quarter</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -961,8 +961,8 @@ memory usage: 18.8 KB
 <p>四半期の最後の日が行ラベルになっていることが分かる。同様に，年次データと3年期データを作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>annual= month.rolling(12).mean().iloc[11::12,:]
-annual.head()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">annual</span><span class="o">=</span> <span class="n">month</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">11</span><span class="p">::</span><span class="mi">12</span><span class="p">,:]</span>
+<span class="n">annual</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1026,8 +1026,8 @@ annual.head()
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>annual3= month.rolling(36).mean().iloc[35::36,:]
-annual3.head()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">annual3</span><span class="o">=</span> <span class="n">month</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">35</span><span class="p">::</span><span class="mi">36</span><span class="p">,:]</span>
+<span class="n">annual3</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>

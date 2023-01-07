@@ -85,7 +85,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"><p><a href='http://www.econ.kobe-u.ac.jp/topics/pdf/221212-2.pdf'>✴️<<font color='white'>特別講演「UCバークレー校における経済学とデータサイエンス教育」(2023年1月6日) ← クリック！✴️</font></a></p></div>
+<div class="announcement header-item noprint"></div>
 <div class="header header-item noprint"></div>
 
     
@@ -821,9 +821,9 @@ title="Print to PDF"
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import pandas as pd
-import matplotlib.pyplot as plt
-from see import see
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">see</span> <span class="kn">import</span> <span class="n">see</span>
 </pre></div>
 </div>
 </div>
@@ -836,28 +836,28 @@ from see import see
 <p>「うりぼー」→ 成績修得情報　→　成績表を選択しコピー</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#ーーーーー dfに成績表を割り当てる ーーーーー
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ーーーーー dfに成績表を割り当てる ーーーーー</span>
 
-# df = pd.read_clipboard()
-# df.head()
+<span class="c1"># df = pd.read_clipboard()</span>
+<span class="c1"># df.head()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#ーーーーー csvに保存 ーーーーー
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ーーーーー csvに保存 ーーーーー</span>
 
-# df.to_csv(&#39;成績表20200708.csv&#39;)
+<span class="c1"># df.to_csv(&#39;成績表20200708.csv&#39;)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#ーーーーー 保存先のフォルダの確認 ーーーーー
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ーーーーー 保存先のフォルダの確認 ーーーーー</span>
 
-# %pwd
+<span class="c1"># %pwd</span>
 </pre></div>
 </div>
 </div>
@@ -868,8 +868,8 @@ from see import see
 <p>例のファイルを使う場合。</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df = pd.read_csv(&#39;https://raw.githubusercontent.com/Haruyama-KobeU/Py4Basics/master/data/data_for_mark.csv&#39;)
-df
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Haruyama-KobeU/Py4Basics/master/data/data_for_mark.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -1368,8 +1368,8 @@ df
 <p>ステップ１：<code class="docutils literal notranslate"><span class="pre">for</span></code>ループによる列のラベルの表示</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>col = df.columns
-col
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">col</span>
 </pre></div>
 </div>
 </div>
@@ -1383,8 +1383,8 @@ col
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for c in col:
-    print(c)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">col</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1408,7 +1408,7 @@ col
 <p>ステップ２：それぞれの列の要素の種類を表示方法</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df[&#39;区分&#39;].unique()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;区分&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1421,9 +1421,9 @@ col
 <p>スッテプ３：スッテプ１と２を同時に</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for c in col[1:]:      # Noの列を除外
-    x = df[c].unique()
-    print(c, x)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">col</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>      <span class="c1"># Noの列を除外</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1448,15 +1448,15 @@ col
 <h2><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の作成<a class="headerlink" href="#dataframe" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_other = df.query(&#39;区分 == &quot;全学共通授業科目&quot; or 区分 == &quot;高度教養科目&quot;&#39;)
-df_econ = df.query(&#39;区分 == &quot;専門科目&quot;&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_other</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;区分 == &quot;全学共通授業科目&quot; or 区分 == &quot;高度教養科目&quot;&#39;</span><span class="p">)</span>
+<span class="n">df_econ</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;区分 == &quot;専門科目&quot;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>len(df),len(df_other),len(df_econ)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">df_other</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">df_econ</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1469,10 +1469,10 @@ df_econ = df.query(&#39;区分 == &quot;専門科目&quot;&#39;)
 <p>全角文字を使わない方法</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>kubun = df.loc[:,col[1]]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kubun</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">col</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
 
-kubun_arr = kubun.unique()
-kubun_arr
+<span class="n">kubun_arr</span> <span class="o">=</span> <span class="n">kubun</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">kubun_arr</span>
 </pre></div>
 </div>
 </div>
@@ -1484,23 +1484,23 @@ kubun_arr
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>other = ( ( kubun == kubun_arr[0] ) | ( kubun == kubun_arr[1] ) )
-econ = ( kubun == kubun_arr[2] )
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">other</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span> <span class="n">kubun</span> <span class="o">==</span> <span class="n">kubun_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span> <span class="o">|</span> <span class="p">(</span> <span class="n">kubun</span> <span class="o">==</span> <span class="n">kubun_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">econ</span> <span class="o">=</span> <span class="p">(</span> <span class="n">kubun</span> <span class="o">==</span> <span class="n">kubun_arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_other = df.loc[other,:]
-df_econ = df.loc[econ,:]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_other</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">other</span><span class="p">,:]</span>
+<span class="n">df_econ</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">econ</span><span class="p">,:]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>len(df),len(df_other),len(df_econ)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">df_other</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">df_econ</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1518,8 +1518,8 @@ df_econ = df.loc[econ,:]
 <p><code class="docutils literal notranslate"><span class="pre">f-string</span></code>を使うと文字列の<code class="docutils literal notranslate"><span class="pre">{}</span></code>の中の変数を評価して表示することが可能となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x=&#39;春山&#39;
-print(f&#39;私は{x}ゼミに所属しています。&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;春山&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;私は</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">ゼミに所属しています。&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1531,8 +1531,8 @@ print(f&#39;私は{x}ゼミに所属しています。&#39;)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>l = [1,2,3]
-print(f&#39;合計は{sum(l)}です。&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;合計は</span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="si">}</span><span class="s1">です。&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1550,7 +1550,7 @@ print(f&#39;合計は{sum(l)}です。&#39;)
 <p><code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>を使うと簡単になる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df.loc[:,&#39;評語&#39;].value_counts()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;評語&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1574,8 +1574,8 @@ Name: 評語, dtype: int64
 <p>評語の種類</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>m = df.loc[:,&#39;評語&#39;].unique()
-m
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;評語&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">m</span>
 </pre></div>
 </div>
 </div>
@@ -1587,8 +1587,8 @@ m
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>mark = [m[2],m[3],m[4],m[1],m[0],m[-1],m[-2],m[-3]]
-mark
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mark</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">m</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">m</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span><span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]]</span>
+<span class="n">mark</span>
 </pre></div>
 </div>
 </div>
@@ -1600,10 +1600,10 @@ mark
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for m in mark:
-    print(m)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 
-print(&#39;--------\n合計&#39;)
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--------</span><span class="se">\n</span><span class="s1">合計&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1624,13 +1624,13 @@ print(&#39;--------\n合計&#39;)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = []
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
 
-for m in mark:
-    no = len(df.query(&#39;評語 == @m&#39;))
-    lst.append(no)
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    <span class="n">no</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;評語 == @m&#39;</span><span class="p">))</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">no</span><span class="p">)</span>
 
-lst
+<span class="n">lst</span>
 </pre></div>
 </div>
 </div>
@@ -1642,14 +1642,14 @@ lst
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = []
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
 
-for m in mark:
-    no = len(df.query(&#39;評語 == @m&#39;))
-    lst.append(no)
-    print(m, no)
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    <span class="n">no</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;評語 == @m&#39;</span><span class="p">))</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">no</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">no</span><span class="p">)</span>
 
-print(&#39;--------\n合計&#39;,sum(lst))
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--------</span><span class="se">\n</span><span class="s1">合計&#39;</span><span class="p">,</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1676,7 +1676,7 @@ print(&#39;--------\n合計&#39;,sum(lst))
 <h4>簡単な方法<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(100 * df.loc[:,&#39;評語&#39;].value_counts() / len(df.loc[:,&#39;評語&#39;]) ).round(1)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;評語&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;評語&#39;</span><span class="p">])</span> <span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1700,13 +1700,13 @@ Name: 評語, dtype: float64
 <p>％だけを表示する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = []
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
 
-for m in mark:
-    percent = 100 * len(df.query(&#39;評語 == @m&#39;)) / len(df)
-    lst.append(percent)
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;評語 == @m&#39;</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">percent</span><span class="p">)</span>
 
-lst
+<span class="n">lst</span>
 </pre></div>
 </div>
 </div>
@@ -1726,14 +1726,14 @@ lst
 <p>％と評語も表示する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = []
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
 
-for m in mark:
-    percent = 100 * len(df.query(&#39;評語 == @m&#39;)) / len(df)
-    lst.append(percent)
-    print(m, f&#39;: {percent}&#39;)
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;評語 == @m&#39;</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">percent</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;: </span><span class="si">{</span><span class="n">percent</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     
-print(f&#39;-----------\n合計: {sum(lst)}&#39;)
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;-----------</span><span class="se">\n</span><span class="s1">合計: </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1755,14 +1755,14 @@ print(f&#39;-----------\n合計: {sum(lst)}&#39;)
 <p>小数点の表示を調整する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = []
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
 
-for m in mark:
-    percent = 100 * len(df.query(&#39;評語 == @m&#39;)) / len(df)
-    lst.append(percent)
-    print(m, f&#39;: {percent:.1f}&#39;)   # 小数点第ー位まで表示
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;評語 == @m&#39;</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">percent</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;: </span><span class="si">{</span><span class="n">percent</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>   <span class="c1"># 小数点第ー位まで表示</span>
     
-print(f&#39;-----------\n合計: {sum(lst):.0f}&#39;)  # 小数点は表示しない
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;-----------</span><span class="se">\n</span><span class="s1">合計: </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># 小数点は表示しない</span>
 </pre></div>
 </div>
 </div>
@@ -1784,14 +1784,14 @@ print(f&#39;-----------\n合計: {sum(lst):.0f}&#39;)  # 小数点は表示し�
 <p>上のコードでは<code class="docutils literal notranslate"><span class="pre">f-string</span></code>を使った。その代わりに<code class="docutils literal notranslate"><span class="pre">format()</span></code>を使うことも可能。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = []
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
 
-for m in mark:
-    percent = 100 * len(df.query(&#39;評語 == @m&#39;)) / len(df)
-    lst.append(percent)
-    print(m, &#39;{:.1f}&#39;.format(percent))
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;評語 == @m&#39;</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">percent</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{:.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">percent</span><span class="p">))</span>
     
-print(&#39;----------\n合計 {:.0f}&#39;.format(sum(lst)))
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;----------</span><span class="se">\n</span><span class="s1">合計 </span><span class="si">{:.0f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -1819,7 +1819,7 @@ print(&#39;----------\n合計 {:.0f}&#39;.format(sum(lst)))
 <h3>数<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_other.loc[:,&#39;評語&#39;].value_counts()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_other</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;評語&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1835,14 +1835,14 @@ Name: 評語, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = []
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
 
-for m in mark:
-    no = len(df_other.query(&#39;評語 == @m&#39;))
-    lst.append(no)
-    print(m,no)
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    <span class="n">no</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_other</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;評語 == @m&#39;</span><span class="p">))</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">no</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">no</span><span class="p">)</span>
     
-print(f&#39;--------\n合計 {sum(lst)}&#39;)
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;--------</span><span class="se">\n</span><span class="s1">合計 </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1866,7 +1866,7 @@ print(f&#39;--------\n合計 {sum(lst)}&#39;)
 <h3>割合<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(100 * df_other.loc[:,&#39;評語&#39;].value_counts() / len(df_other.loc[:,&#39;評語&#39;]) ).round(1)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">df_other</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;評語&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_other</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;評語&#39;</span><span class="p">])</span> <span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1882,14 +1882,14 @@ Name: 評語, dtype: float64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = []
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
 
-for m in mark:
-    percent = 100 * len(df_other.query(&#39;評語 == @m&#39;)) / len(df_other)
-    lst.append(percent)
-    print(m, f&#39;{percent:.1f}&#39;)
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_other</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;評語 == @m&#39;</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_other</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">percent</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">percent</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     
-print(f&#39;-----------\n合計 {sum(lst):.0f}&#39;)
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;-----------</span><span class="se">\n</span><span class="s1">合計 </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1914,7 +1914,7 @@ print(f&#39;-----------\n合計 {sum(lst):.0f}&#39;)
 <h2>専門科目<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_econ.loc[:,&#39;評語&#39;].value_counts()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_econ</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;評語&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1933,14 +1933,14 @@ Name: 評語, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = []
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
 
-for m in mark:
-    no = len(df_econ.query(&#39;評語 == @m&#39;))
-    lst.append(no)
-    print(m,no)
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    <span class="n">no</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_econ</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;評語 == @m&#39;</span><span class="p">))</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">no</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">no</span><span class="p">)</span>
     
-print(f&#39;--------\n合計 {sum(lst)}&#39;)
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;--------</span><span class="se">\n</span><span class="s1">合計 </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1961,7 +1961,7 @@ print(f&#39;--------\n合計 {sum(lst)}&#39;)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(100 * df_econ.loc[:,&#39;評語&#39;].value_counts() / len(df_econ.loc[:,&#39;評語&#39;]) ).round(1)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">df_econ</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;評語&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_econ</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;評語&#39;</span><span class="p">])</span> <span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1980,14 +1980,14 @@ Name: 評語, dtype: float64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lst = []
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
 
-for m in mark:
-    percent = 100 * len(df_econ.query(&#39;評語 == @m&#39;)) / len(df_econ)
-    lst.append(percent)
-    print(m, f&#39;{percent:.1f}&#39;)
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_econ</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;評語 == @m&#39;</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_econ</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">percent</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">percent</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     
-print(f&#39;--------\n合計 {sum(lst):.0f}&#39;)
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;--------</span><span class="se">\n</span><span class="s1">合計 </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2014,7 +2014,7 @@ print(f&#39;--------\n合計 {sum(lst):.0f}&#39;)
 <p>科目GPの要素の種類</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df.loc[:,&#39;科目GP&#39;].unique()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;科目GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2028,8 +2028,8 @@ print(f&#39;--------\n合計 {sum(lst):.0f}&#39;)
 <p>後で「科目GP」のデータ型を変更する際に警告がでないようにメソッド<code class="docutils literal notranslate"><span class="pre">.copy()</span></code>を使い<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のコピーを作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gpa = df.query(&quot;科目GP not in [&#39;-&#39;, &#39;*&#39;]&quot;).copy()
-gpa.head()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;科目GP not in [&#39;-&#39;, &#39;*&#39;]&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">gpa</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2148,7 +2148,7 @@ gpa.head()
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gpa[&#39;科目GP&#39;].unique()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa</span><span class="p">[</span><span class="s1">&#39;科目GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2162,7 +2162,7 @@ gpa.head()
 <p>属性<code class="docutils literal notranslate"><span class="pre">.dtypes</span></code>を使って確認することもできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gpa[&#39;科目GP&#39;].dtypes
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa</span><span class="p">[</span><span class="s1">&#39;科目GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span>
 </pre></div>
 </div>
 </div>
@@ -2179,14 +2179,14 @@ gpa.head()
 <p>科目GPは<code class="docutils literal notranslate"><span class="pre">object</span></code>（文字列）となっているので，メソッド<code class="docutils literal notranslate"><span class="pre">astype()</span></code>を使って<code class="docutils literal notranslate"><span class="pre">float</span></code>に変換する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gpa[&#39;科目GP&#39;] = gpa[&#39;科目GP&#39;].astype(float)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa</span><span class="p">[</span><span class="s1">&#39;科目GP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gpa</span><span class="p">[</span><span class="s1">&#39;科目GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gpa.dtypes
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa</span><span class="o">.</span><span class="n">dtypes</span>
 </pre></div>
 </div>
 </div>
@@ -2216,14 +2216,14 @@ dtype: object
 <p><code class="docutils literal notranslate"><span class="pre">groupby</span></code>は<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>や<code class="docutils literal notranslate"><span class="pre">Series</span></code>をグループ化し，グループ内の計算を簡単に行うことができる便利なメソッドである。「修得年度」でグループ化し，平均を計算する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gpa_grouped = gpa.groupby(&#39;修得年度&#39;)
-gpa_mean = gpa_grouped.mean()
-gpa_mean
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa_grouped</span> <span class="o">=</span> <span class="n">gpa</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;修得年度&#39;</span><span class="p">)</span>
+<span class="n">gpa_mean</span> <span class="o">=</span> <span class="n">gpa_grouped</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">gpa_mean</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6419/1506109460.py:2: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_7097/1506109460.py:2: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   gpa_mean = gpa_grouped.mean()
 </pre></div>
 </div>
@@ -2290,7 +2290,7 @@ gpa_mean
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>see(gpa_grouped)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">see</span><span class="p">(</span><span class="n">gpa_grouped</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2329,7 +2329,7 @@ gpa_mean
 <p><code class="docutils literal notranslate"><span class="pre">gpa_mean.index</span></code>を確認する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gpa_mean.index
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa_mean</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
 </div>
 </div>
@@ -2342,8 +2342,8 @@ gpa_mean
 <p>これを使い横軸に使う文字列を作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>yr = [str(i) for i in gpa_mean.index]
-yr
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yr</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gpa_mean</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+<span class="n">yr</span>
 </pre></div>
 </div>
 </div>
@@ -2355,8 +2355,8 @@ yr
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>plt.plot(yr,gpa_mean[&#39;科目GP&#39;], &#39;o-&#39;)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yr</span><span class="p">,</span><span class="n">gpa_mean</span><span class="p">[</span><span class="s1">&#39;科目GP&#39;</span><span class="p">],</span> <span class="s1">&#39;o-&#39;</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2368,8 +2368,8 @@ pass
 <p>横軸を調整するために，<code class="docutils literal notranslate"><span class="pre">gpa_mean</span></code>のインデックスを確認。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>yr = gpa_mean.index
-yr
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yr</span> <span class="o">=</span> <span class="n">gpa_mean</span><span class="o">.</span><span class="n">index</span>
+<span class="n">yr</span>
 </pre></div>
 </div>
 </div>
@@ -2382,9 +2382,9 @@ yr
 <p><code class="docutils literal notranslate"><span class="pre">xticks()</span></code>を使って横軸の表示を指定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>plt.plot(&#39;科目GP&#39;, &#39;o-&#39;, data=gpa_mean)
-plt.xticks(yr)
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;科目GP&#39;</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">gpa_mean</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">yr</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -2405,8 +2405,8 @@ pass
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gpa[&#39;修得学期&#39;] = gpa[&#39;修得学期&#39;].replace({&#39;前期&#39;:&#39;1&#39;,&#39;後期&#39;:&#39;2&#39;})
-gpa.head()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa</span><span class="p">[</span><span class="s1">&#39;修得学期&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gpa</span><span class="p">[</span><span class="s1">&#39;修得学期&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;前期&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;後期&#39;</span><span class="p">:</span><span class="s1">&#39;2&#39;</span><span class="p">})</span>
+<span class="n">gpa</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2529,14 +2529,14 @@ gpa.head()
 <p>「修得年度」と「修得学期」でグループ化する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gpa_grouped = gpa.groupby([&#39;修得年度&#39;,&#39;修得学期&#39;])
-gpa_mean = gpa_grouped.mean()
-gpa_mean
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa_grouped</span> <span class="o">=</span> <span class="n">gpa</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;修得年度&#39;</span><span class="p">,</span><span class="s1">&#39;修得学期&#39;</span><span class="p">])</span>
+<span class="n">gpa_mean</span> <span class="o">=</span> <span class="n">gpa_grouped</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">gpa_mean</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_6419/3566988805.py:2: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/ipykernel_7097/3566988805.py:2: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   gpa_mean = gpa_grouped.mean()
 </pre></div>
 </div>
@@ -2626,8 +2626,8 @@ gpa_mean
 <p>図示する際エラーをがでないようにインデックスのラベルを削除する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gpa_mean.index.names = (None,None)
-gpa_mean
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa_mean</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">gpa_mean</span>
 </pre></div>
 </div>
 </div>
@@ -2713,7 +2713,7 @@ gpa_mean
 <p>横軸に文字列を使う。まず<code class="docutils literal notranslate"><span class="pre">gpa_mean</span></code>のインデックスを確認する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>gpa_mean.index
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa_mean</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
 </div>
 </div>
@@ -2732,8 +2732,8 @@ gpa_mean
 <p>これを使い横軸に使う文字列を作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>yr_half = [str(i[0])+&#39;-&#39;+str(i[1]) for i in gpa_mean.index]
-yr_half
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yr_half</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gpa_mean</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+<span class="n">yr_half</span>
 </pre></div>
 </div>
 </div>
@@ -2745,8 +2745,8 @@ yr_half
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>plt.plot(yr_half, gpa_mean[&#39;科目GP&#39;])
-pass
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yr_half</span><span class="p">,</span> <span class="n">gpa_mean</span><span class="p">[</span><span class="s1">&#39;科目GP&#39;</span><span class="p">])</span>
+<span class="k">pass</span>
 </pre></div>
 </div>
 </div>
