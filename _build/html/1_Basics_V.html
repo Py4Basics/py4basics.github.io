@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>モジュールと疑似コード &#8212; 経済学のためのPython入門</title>
+    <title>モジュールとアルゴリズム &#8212; 経済学のためのPython入門</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -64,15 +64,13 @@ const thebe_selector_output = ".output, .cell_output"
 
     <!-- Google Analytics -->
     
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
 <script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-165998213-3', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-R9KXY9G892');
+                </script>
 
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
@@ -87,7 +85,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"><p><a href='http://www.econ.kobe-u.ac.jp/topics/pdf/221212-2.pdf'>✴️<<font color='white'>特別講演「UCバークレー校における経済学とデータサイエンス教育」(2023年1月6日) ← クリック！✴️</font></a></p></div>
+<div class="announcement header-item noprint"></div>
 <div class="header header-item noprint"></div>
 
     
@@ -142,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   モジュールと疑似コード
+   モジュールとアルゴリズム
   </a>
  </li>
  <li class="toctree-l1">
@@ -205,6 +203,16 @@ const thebe_selector_output = ".output, .cell_output"
     </span>
    </code>
    ：解の求め方と最適化問題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8_NumPy_random.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Numpy
+    </span>
+   </code>
+   : ランダム変数
   </a>
  </li>
  <li class="toctree-l1">
@@ -498,9 +506,124 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#id4">
    アルゴリズム
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     例１：合計
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#for">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         for
+        </span>
+       </code>
+       ループ
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#while">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         while
+        </span>
+       </code>
+       ループ
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       実行スピード比較
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     例２：値の探索
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         for
+        </span>
+       </code>
+       ループ
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         while
+        </span>
+       </code>
+       ループ
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       番兵法
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       組み込み関数
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     例３：最小値の探索
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       直接的な探索
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       間接的な探索
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       実行スピード比較
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     例４：ソート
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       単純選択ソート
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id18">
+       バブル・ソート
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id19">
+       実行スピード比較
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id20">
    疑似コード
   </a>
   <ul class="nav section-nav flex-column">
@@ -515,7 +638,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for">
+    <a class="reference internal nav-link" href="#id21">
      リストの合計（
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -526,7 +649,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#while">
+    <a class="reference internal nav-link" href="#id22">
      リストの合計（
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -537,7 +660,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id23">
      コイントス（
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -548,7 +671,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#id24">
      コイントス（
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -559,12 +682,12 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
+    <a class="reference internal nav-link" href="#id25">
      リストの最大値
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
+    <a class="reference internal nav-link" href="#id26">
      最後に
     </a>
    </li>
@@ -579,7 +702,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>モジュールと疑似コード</h1>
+                <h1>モジュールとアルゴリズム</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -635,9 +758,124 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#id4">
    アルゴリズム
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     例１：合計
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#for">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         for
+        </span>
+       </code>
+       ループ
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#while">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         while
+        </span>
+       </code>
+       ループ
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       実行スピード比較
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     例２：値の探索
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         for
+        </span>
+       </code>
+       ループ
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         while
+        </span>
+       </code>
+       ループ
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       番兵法
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       組み込み関数
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     例３：最小値の探索
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       直接的な探索
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       間接的な探索
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       実行スピード比較
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     例４：ソート
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       単純選択ソート
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id18">
+       バブル・ソート
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id19">
+       実行スピード比較
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id20">
    疑似コード
   </a>
   <ul class="nav section-nav flex-column">
@@ -652,7 +890,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for">
+    <a class="reference internal nav-link" href="#id21">
      リストの合計（
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -663,7 +901,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#while">
+    <a class="reference internal nav-link" href="#id22">
      リストの合計（
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -674,7 +912,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id23">
      コイントス（
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -685,7 +923,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#id24">
      コイントス（
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -696,12 +934,12 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
+    <a class="reference internal nav-link" href="#id25">
      リストの最大値
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
+    <a class="reference internal nav-link" href="#id26">
      最後に
     </a>
    </li>
@@ -718,7 +956,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>モジュールと疑似コード<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>モジュールとアルゴリズム<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><section id="id2">
@@ -853,7 +1091,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 1, 6, 3, 4, 1, 3, 2, 4, 5]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 2, 3, 2, 2, 2, 3, 1, 4, 3]
 </pre></div>
 </div>
 </div>
@@ -885,7 +1123,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.301385857186684
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.823143495650967
 </pre></div>
 </div>
 </div>
@@ -898,16 +1136,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.2998836845549993,
- 1.0197746538986994,
- 0.5224863945476396,
- 0.14541699129475283,
- 0.029445098433902788,
- -0.14711771468654342,
- -0.31990421549093495,
- -2.1299873631952284,
- 0.9948534074485129,
- 1.6321468091038032]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.8139460073434693,
+ 1.5998326294248997,
+ -0.462508558009599,
+ 0.3943896224407581,
+ -0.08409659034025319,
+ -0.5873620274658341,
+ -0.5293572364613888,
+ -0.34654911621699125,
+ 0.1435317543209845,
+ 0.6072099770795223]
 </pre></div>
 </div>
 </div>
@@ -1086,11 +1324,879 @@ title="Print to PDF"
 </div></blockquote>
 <p>平たく言えば，コンピューターが実行すると正しい結果が保証された計算手続である。更に，その計算手続きはどのプログラミング言語でも使える問題解決の明確な考え方である。</p>
 <p>例えば，カレーを作るとしよう。アルゴリズムはその場合のレシピである。ある程度料理ができる人であれば，書かれている手順に沿って作れば美味しいカレーが出来上がるレシピがアルゴリズムである。様々な問題には異なるアルゴリズムがある。また１つの問題には複数のアルゴリズムが存在する。カレーでも色々なレシピがあるのと同じである。</p>
-<p>ではどのプログラミング言語にも使えるアルゴリズムをどのように表現するのだろう。１つの方法が<a class="reference external" href="https://www.google.co.jp/search?q=%E3%83%95%E3%83%AD%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC%E3%83%88%E3%80%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0">フローチャート</a>である。そしてもう１つが疑似コードである。以下では疑似コードに基づいてコードの書き方を検討する。</p>
-</section>
+<p>以下では，比較的に簡単であり，且つ代表的な４つのアルゴリズムについて解説する。また，アルゴリズムによって計算速度が異なり，その理由についても考えることにする。</p>
 <section id="id5">
-<h2>疑似コード<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
-<p>疑似コードとは，自然言語（日本語や英語）で書かれたコードである。<code class="docutils literal notranslate"><span class="pre">Python</span></code>は実行できない箇条書きのような文章となっている。レポートを書く際に，まずアウトラインを考えて書き出す人もいると思うが，それをイメージすれば良いだろう。次の点が重要となる。</p>
+<h3>例１：合計<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>次のコードは標準正規分布から抽出した100万個のランダム変数から構成されるリストを作成する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst1</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>このリストの値を合計するためのアルゴリズムを考える。</p>
+<section id="for">
+<h4><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ<a class="headerlink" href="#for" title="Permalink to this headline">#</a></h4>
+<p>まず<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うアルゴリズムを考えてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_for_loop</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>  <span class="c1">#1</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>               <span class="c1">#2</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>       <span class="c1">#3</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">i</span>          <span class="c1">#4</span>
+    
+    <span class="k">return</span> <span class="n">x</span>            <span class="c1">#5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞<br></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>: 引数はイタラブルであるリストを想定している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>: <code class="docutils literal notranslate"><span class="pre">for</span></code>ループでは<code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素を１つずつ<code class="docutils literal notranslate"><span class="pre">x</span></code>に加算することになるが，その初期値を<code class="docutils literal notranslate"><span class="pre">0</span></code>とする。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>: <code class="docutils literal notranslate"><span class="pre">for</span></code>ループの開始</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>: 累積加算演算子<code class="docutils literal notranslate"><span class="pre">+=</span></code>を使い要素を<code class="docutils literal notranslate"><span class="pre">x</span></code>に加算する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>: <code class="docutils literal notranslate"><span class="pre">for</span></code>ループ終了後に<code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素の合計である<code class="docutils literal notranslate"><span class="pre">x</span></code>を返す。</p></li>
+</ul>
+<p>実際に計算してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sum_for_loop</span><span class="p">(</span><span class="n">lst1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-10.598910990642159
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="while">
+<h4><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ<a class="headerlink" href="#while" title="Permalink to this headline">#</a></h4>
+<p>次に<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使う場合のコードを考えてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_while_loop</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>     <span class="c1">#1</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>                    <span class="c1">#2</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>                  <span class="c1">#2a</span>
+    
+    <span class="k">while</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>    <span class="c1">#3</span>
+        
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">lst</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>        <span class="c1">#4</span>
+        <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>             <span class="c1">#4a</span>
+    
+    <span class="k">return</span> <span class="n">x</span>                 <span class="c1">#5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞<br></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>: 引数はイタラブルであるリストを想定している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>: <code class="docutils literal notranslate"><span class="pre">for</span></code>ループの<code class="docutils literal notranslate"><span class="pre">x</span></code>と同じ役目をする。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2a</span></code>: <code class="docutils literal notranslate"><span class="pre">while</span></code>ループでは，<code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素を抽出する際にインデックス番号を使うことになるが，<code class="docutils literal notranslate"><span class="pre">idx</span></code>（indexの略）はインデックス番号を捉えている。<code class="docutils literal notranslate"><span class="pre">lst</span></code>の最初の項から抽出するために初期値を<code class="docutils literal notranslate"><span class="pre">0</span></code>としている。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>: <code class="docutils literal notranslate"><span class="pre">while</span></code>ループが開始され，<code class="docutils literal notranslate"><span class="pre">idx&lt;len(lst)</span></code>が<code class="docutils literal notranslate"><span class="pre">False</span></code>となる時点でループは終了する。例として，<code class="docutils literal notranslate"><span class="pre">lst=[0,10,20]</span></code>としてみよう。<code class="docutils literal notranslate"><span class="pre">len(lst)</span></code>は<code class="docutils literal notranslate"><span class="pre">3</span></code>を返すことになり，<code class="docutils literal notranslate"><span class="pre">idx</span></code>が<code class="docutils literal notranslate"><span class="pre">3</span></code>になると<code class="docutils literal notranslate"><span class="pre">idx&lt;len(lst)</span></code>が<code class="docutils literal notranslate"><span class="pre">False</span></code>となるため，その時点で（<code class="docutils literal notranslate"><span class="pre">#5</span></code>以下は実行されずに）<code class="docutils literal notranslate"><span class="pre">while</span></code>ループは終了する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>: <code class="docutils literal notranslate"><span class="pre">lst[idx]</span></code>では<code class="docutils literal notranslate"><span class="pre">lst</span></code>の<code class="docutils literal notranslate"><span class="pre">idx</span></code>番目の要素を抽出し，それを<code class="docutils literal notranslate"><span class="pre">+=</span></code>を使い<code class="docutils literal notranslate"><span class="pre">x</span></code>に加算する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4a</span></code>: 次のループで<code class="docutils literal notranslate"><span class="pre">lst</span></code>の次の要素を抽出できるように<code class="docutils literal notranslate"><span class="pre">idx</span></code>を<code class="docutils literal notranslate"><span class="pre">1</span></code>増やし<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを継続する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>: <code class="docutils literal notranslate"><span class="pre">for</span></code>ループ終了後に<code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素の合計である<code class="docutils literal notranslate"><span class="pre">x</span></code>を返す。</p></li>
+</ul>
+<p>実際に計算してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sum_while_loop</span><span class="p">(</span><span class="n">lst1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-10.598910990642159
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループと同じ値となっていることが確認できる。</p>
+</section>
+<section id="id6">
+<h4>実行スピード比較<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
+<p>次に２つのコードの終了までの時間を比較してみよう。ここでは<a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">マジック・コマンド</a>と呼ばれる<code class="docutils literal notranslate"><span class="pre">%timeit</span></code>を使うが，使い方は簡単で行頭に<code class="docutils literal notranslate"><span class="pre">%timeit</span></code>と半角スペースを置いて実行コードを書くだけである。まず<code class="docutils literal notranslate"><span class="pre">sum_for_loop()</span></code>関数を実行してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> sum_for_loop(lst1)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26.3 ms ± 135 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>表示される結果は，使うPCのスペックなどによって若干異なることになる。
+結果の解釈方法を説明するため，次のような結果になったとしよう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MMM ms ± NNN µs per loop (mean ± std. dev. of YYY runs, XXX loops each)
+</pre></div>
+</div>
+<p>次のように解釈する。</p>
+<ul class="simple">
+<li><p>コードを<code class="docutils literal notranslate"><span class="pre">XXX</span></code>回実行する試行を<code class="docutils literal notranslate"><span class="pre">YYY</span></code>回おこない（合計で<code class="docutils literal notranslate"><span class="pre">XXX</span></code><span class="math notranslate nohighlight">\(\times\)</span><code class="docutils literal notranslate"><span class="pre">YYY</span></code>回），その結果の平均である<code class="docutils literal notranslate"><span class="pre">mean</span></code>は<code class="docutils literal notranslate"><span class="pre">MMM</span> <span class="pre">ms</span></code>であり，標準偏差である<code class="docutils literal notranslate"><span class="pre">std.</span> <span class="pre">dev.</span></code>は<code class="docutils literal notranslate"><span class="pre">NNN</span> <span class="pre">µs</span></code>である。ここで</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ms</span></code>：ミリ秒（1/1000秒）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">µs</span></code>：マイクロ秒（1/1,000,000秒）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ns</span></code>：ナノ秒（1/1,000,000,000秒; 10億分の１秒）</p></li>
+</ul>
+</li>
+<li><p>試行する度に結果が異り，その変動を標準偏差で捉えている。結果は正規分布に従うと仮定すると，約68％の結果が平均<span class="math notranslate nohighlight">\(\pm\)</span>標準偏差の範囲内に収まることになる。</p></li>
+</ul>
+<p>次に<code class="docutils literal notranslate"><span class="pre">sum_while_loop()</span></code>の速度を計測してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> sum_while_loop(lst1)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>111 ms ± 474 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code>ループに比べて<code class="docutils literal notranslate"><span class="pre">for</span></code>ループが約4倍速いことが確認できる。リストから要素を一つずつ抽出し合計するというアルゴリズムでも，コードにどのように表現するかによって速度に大きな違いが発生している。</p>
+<p>では，なぜそのような大きな違いがあるのだろうか。それは次の２つの違いに起因する。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sum_for_loop()</span></code>と<code class="docutils literal notranslate"><span class="pre">sum_while_loop()</span></code>の<code class="docutils literal notranslate"><span class="pre">#3</span></code>を考えてみよう。前者の場合，ループ毎に<code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素を<code class="docutils literal notranslate"><span class="pre">i</span></code>に割り当てることを行なっている。一方，後者では，ループ毎に<code class="docutils literal notranslate"><span class="pre">idx&lt;len(lst)</span></code>の条件が満たされているかどうかを確認する必要がある。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sum_while_loop()</span></code>では<code class="docutils literal notranslate"><span class="pre">#2a</span></code>と<code class="docutils literal notranslate"><span class="pre">#4a</span></code>が追加されており，「割り当て」と言う意味では<code class="docutils literal notranslate"><span class="pre">sum_for_loop()</span></code>の<code class="docutils literal notranslate"><span class="pre">#3</span></code>と同じである。</p></li>
+</ul>
+<p>従って，<code class="docutils literal notranslate"><span class="pre">while</span></code>ループには<code class="docutils literal notranslate"><span class="pre">idx&lt;len(lst)</span></code>が<code class="docutils literal notranslate"><span class="pre">True</span></code>なのか<code class="docutils literal notranslate"><span class="pre">False</span></code>なのかの確認が追加作業となり，それが時間が掛かる要因となっている。</p>
+<p>最後に，組み込み関数である<code class="docutils literal notranslate"><span class="pre">sum()</span></code>の速度を計測してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> sum(lst1)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.57 ms ± 10.9 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">sum_while_loop()</span></code>関数よりも6倍以上も速いことが分かる。組み込み関数は様々なトリックを使い最適化されていることが伺える。</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>複数行にまたがるコードの実行スピードを計測する場合は，下の例のように<code class="docutils literal notranslate"><span class="pre">%%timeit</span></code>を１行目に置き，2行目以降にコードを書くと良いだろう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">timeit</span>
+<span class="n">sum_while_loop</span><span class="p">(</span><span class="n">lst1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pythonは楽しいね(^o^)/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="id7">
+<h3>例２：値の探索<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p>次のコードは<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">999,999</span></code>までの整数が並ぶリストを作成する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst2</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>ここで考えるのは，<code class="docutils literal notranslate"><span class="pre">999,000</span></code>が<code class="docutils literal notranslate"><span class="pre">lst2</span></code>にあるかどうかを確かめることである。具体的には，<code class="docutils literal notranslate"><span class="pre">lst2</span></code>の最初の要素から一つずつ確認し</p>
+<ul class="simple">
+<li><p>見つかれば<code class="docutils literal notranslate"><span class="pre">1</span></code>を返す（探索は途中で終了）</p></li>
+<li><p>見つからなければ<code class="docutils literal notranslate"><span class="pre">-1</span></code>を返す（最後の要素まで確認する）</p></li>
+</ul>
+<p>関数を考える。</p>
+<section id="id8">
+<h4><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うコードを考えよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_for_loop</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span> <span class="c1">#1</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>                 <span class="c1">#2</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>           <span class="c1">#3</span>
+            <span class="k">return</span> <span class="mi">1</span>              <span class="c1">#4</span>
+            <span class="k">break</span>                 <span class="c1">#5</span>
+    
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>                     <span class="c1">#6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞<br></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>: 引数の<code class="docutils literal notranslate"><span class="pre">target</span></code>は探索する数字であり，<code class="docutils literal notranslate"><span class="pre">lst</span></code>はイタラブルであるリストを想定している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>: <code class="docutils literal notranslate"><span class="pre">for</span></code>ループの開始</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>〜<code class="docutils literal notranslate"><span class="pre">#5</span></code>: <code class="docutils literal notranslate"><span class="pre">i</span></code>が<code class="docutils literal notranslate"><span class="pre">target</span></code>と等しければ<code class="docutils literal notranslate"><span class="pre">1</span></code>を返し，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループは終了する。これで関数の実行は終わり。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#6</span></code>: <code class="docutils literal notranslate"><span class="pre">#2</span></code>の<code class="docutils literal notranslate"><span class="pre">for</span></code>ループが<code class="docutils literal notranslate"><span class="pre">break</span></code>されずに終了した場合にのみ実行され<code class="docutils literal notranslate"><span class="pre">-1</span></code>が返される。即ち，<code class="docutils literal notranslate"><span class="pre">lst</span></code>の最後まで探索し，<code class="docutils literal notranslate"><span class="pre">target</span></code>がない場合に実行される行である。</p></li>
+</ul>
+<p>実際に計算してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">search_for_loop</span><span class="p">(</span><span class="mi">999_000</span><span class="p">,</span> <span class="n">lst2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h4><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
+<p>次に<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使う場合を考えてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_while_loop</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span> <span class="c1">#1</span>
+    
+    <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>                         <span class="c1">#2</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                     <span class="c1">#3</span>
+        
+        <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>         <span class="c1">#4</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>               <span class="c1">#5</span>
+        
+        <span class="k">if</span> <span class="n">lst</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>      <span class="c1">#6</span>
+            <span class="k">return</span> <span class="mi">1</span>                <span class="c1">#7</span>
+        
+        <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>                    <span class="c1">#8</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞<br></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>: 引数の<code class="docutils literal notranslate"><span class="pre">target</span></code>は探索する数字であり，<code class="docutils literal notranslate"><span class="pre">lst</span></code>はイタラブルであるリストを想定している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>: <code class="docutils literal notranslate"><span class="pre">while</span></code>ループでは，<code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素を抽出する際にインデックス番号を使うことになるが，<code class="docutils literal notranslate"><span class="pre">idx</span></code>（indexの略）はインデックス番号を捉えている。<code class="docutils literal notranslate"><span class="pre">#4</span></code>と<code class="docutils literal notranslate"><span class="pre">#6</span></code>で使う。<code class="docutils literal notranslate"><span class="pre">lst</span></code>の最初の項から抽出するために初期値を<code class="docutils literal notranslate"><span class="pre">0</span></code>としている。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>: <code class="docutils literal notranslate"><span class="pre">while</span></code>ループの開始。<code class="docutils literal notranslate"><span class="pre">#5</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">#7</span></code>が実行されるまで<code class="docutils literal notranslate"><span class="pre">while</span></code>ループは継続する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>〜<code class="docutils literal notranslate"><span class="pre">#5</span></code>: <code class="docutils literal notranslate"><span class="pre">#4</span></code>の条件は<code class="docutils literal notranslate"><span class="pre">lst</span></code>の最後の要素まで確認した場合にのみ満たされる。その場合，<code class="docutils literal notranslate"><span class="pre">-1</span></code>が返される。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#6</span></code>〜<code class="docutils literal notranslate"><span class="pre">#7</span></code>: <code class="docutils literal notranslate"><span class="pre">lst</span></code>の<code class="docutils literal notranslate"><span class="pre">idx</span></code>番目の要素と<code class="docutils literal notranslate"><span class="pre">target</span></code>が等しい場合に<code class="docutils literal notranslate"><span class="pre">1</span></code>が返される。その時点で関数の実行（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループも含めて）は終了する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#8</span></code>: <code class="docutils literal notranslate"><span class="pre">#4</span></code>と<code class="docutils literal notranslate"><span class="pre">#5</span></code>の条件が<code class="docutils literal notranslate"><span class="pre">False</span></code>であれば，<code class="docutils literal notranslate"><span class="pre">idx</span></code>を<code class="docutils literal notranslate"><span class="pre">1</span></code>増加させて<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを継続する。</p></li>
+</ul>
+<p>実際に計算してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">search_while_loop</span><span class="p">(</span><span class="mi">999_000</span><span class="p">,</span> <span class="n">lst2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">search_for_loop()</span></code>関数と<code class="docutils literal notranslate"><span class="pre">search_while_loop()</span></code>関数の実行スピードを比較してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> search_for_loop(999_000, lst2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.8 ms ± 217 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> search_while_loop(999_000, lst2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>111 ms ± 628 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループより<code class="docutils literal notranslate"><span class="pre">while</span></code>ループは4倍以上遅いことがわかる。もう理由は明らかであろう。<code class="docutils literal notranslate"><span class="pre">search_linear_for()</span></code>関数ではループ一回毎に１つの<code class="docutils literal notranslate"><span class="pre">if</span></code>文の条件<code class="docutils literal notranslate"><span class="pre">#3</span></code>を確認する必要があるが，<code class="docutils literal notranslate"><span class="pre">search_linear_while()</span></code>では条件が<code class="docutils literal notranslate"><span class="pre">#4</span></code>と<code class="docutils literal notranslate"><span class="pre">#6</span></code>の２つがある。この確認作業の回数の差が数字として現れている。このことから分かることは，<code class="docutils literal notranslate"><span class="pre">while</span></code>ループであっても条件を１つにすれば速度が倍になると言うことである。それを実現するのが次に考える<strong>番兵法</strong>と呼ばれるアルゴリズムである。</p>
+</section>
+<section id="id10">
+<h4>番兵法<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
+<p>番兵法は<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使うが，次の手続きが必要となる。</p>
+<ul class="simple">
+<li><p>リストの最後に探索する値を追加する</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">search_while_loop()</span></code>関数との違いはこの点だけである。これにより，実質的には<code class="docutils literal notranslate"><span class="pre">search_linear_while()</span></code>の条件<code class="docutils literal notranslate"><span class="pre">#4</span></code>が不要になり実行スピードの高速化される。コードを確認してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_sentinel</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span> <span class="c1">#1</span>
+    
+    <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>               <span class="c1">#2</span>
+
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>            <span class="c1">#3</span>
+    
+    <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>                       <span class="c1">#4</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                   <span class="c1">#5</span>
+        
+        <span class="k">if</span> <span class="n">lst</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>    <span class="c1">#6</span>
+            <span class="k">break</span>                 <span class="c1">#7</span>
+            
+        <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>                  <span class="c1">#8</span>
+
+    <span class="k">if</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">:</span>                <span class="c1">#9</span>
+        <span class="k">return</span> <span class="mi">1</span>                  <span class="c1">#10</span>
+    
+    <span class="k">else</span><span class="p">:</span>                         <span class="c1">#11</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>                 <span class="c1">#12</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞<br></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>: 引数の<code class="docutils literal notranslate"><span class="pre">target</span></code>は探索する数字であり，<code class="docutils literal notranslate"><span class="pre">lst</span></code>はイタラブルであるリストを想定している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>: <code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素数を<code class="docutils literal notranslate"><span class="pre">size</span></code>に割り当てる。<code class="docutils literal notranslate"><span class="pre">size</span></code>は<code class="docutils literal notranslate"><span class="pre">#9</span></code>で使うことになる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>: <code class="docutils literal notranslate"><span class="pre">lst</span></code>の最後に<code class="docutils literal notranslate"><span class="pre">target</span></code>を追加する。これが「番兵」である。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>: <code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素を抽出する際にインデックス番号を使うことになるが，<code class="docutils literal notranslate"><span class="pre">idx</span></code>（indexの略）はインデックス番号を捉えている。<code class="docutils literal notranslate"><span class="pre">#6</span></code>，<code class="docutils literal notranslate"><span class="pre">#8</span></code>，<code class="docutils literal notranslate"><span class="pre">#9</span></code>で使う。<code class="docutils literal notranslate"><span class="pre">lst</span></code>の最初の項から抽出するために初期値を<code class="docutils literal notranslate"><span class="pre">0</span></code>としている。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>: <code class="docutils literal notranslate"><span class="pre">while</span></code>ループの開始。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#6</span></code>〜<code class="docutils literal notranslate"><span class="pre">#7</span></code>: <code class="docutils literal notranslate"><span class="pre">lst</span></code>の<code class="docutils literal notranslate"><span class="pre">idx</span></code>番目の要素と<code class="docutils literal notranslate"><span class="pre">target</span></code>が等しい場合は<code class="docutils literal notranslate"><span class="pre">break</span></code>を発動させ<code class="docutils literal notranslate"><span class="pre">while</span></code>を中断する。等しくない場合は<code class="docutils literal notranslate"><span class="pre">#7</span></code>を実行せずに<code class="docutils literal notranslate"><span class="pre">#8</span></code>で<code class="docutils literal notranslate"><span class="pre">idx</span></code>を<code class="docutils literal notranslate"><span class="pre">1</span></code>増加さる。<code class="docutils literal notranslate"><span class="pre">#3</span></code>で<code class="docutils literal notranslate"><span class="pre">target</span></code>（番兵）が<code class="docutils literal notranslate"><span class="pre">lst</span></code>に追加されたので，<code class="docutils literal notranslate"><span class="pre">lst</span></code>に<code class="docutils literal notranslate"><span class="pre">target</span></code>がなくても<code class="docutils literal notranslate"><span class="pre">#6</span></code>は必ず満たされて<code class="docutils literal notranslate"><span class="pre">break</span></code>が発動される。これが番兵の役割であり，高速化のための仕込みとなる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#9</span></code>〜<code class="docutils literal notranslate"><span class="pre">#12</span></code>: <code class="docutils literal notranslate"><span class="pre">while</span></code>ループが中断された後に実行される。<code class="docutils literal notranslate"><span class="pre">#9</span></code>の条件が<code class="docutils literal notranslate"><span class="pre">True</span></code>の場合は<code class="docutils literal notranslate"><span class="pre">lst</span></code>に<code class="docutils literal notranslate"><span class="pre">target</span></code>が含まれたと言う意味になるため<code class="docutils literal notranslate"><span class="pre">1</span></code>を返す。一方，<code class="docutils literal notranslate"><span class="pre">#9</span></code>の条件が<code class="docutils literal notranslate"><span class="pre">False</span></code>の場合（即ち，<code class="docutils literal notranslate"><span class="pre">idx</span></code>と<code class="docutils literal notranslate"><span class="pre">size</span></code>は等しい場合），<code class="docutils literal notranslate"><span class="pre">idx</span></code>は番兵のインデックスとなるため<code class="docutils literal notranslate"><span class="pre">-1</span></code>を返す。</p></li>
+</ul>
+<p>実際に計算してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">search_sentinel</span><span class="p">(</span><span class="mi">999_000</span><span class="p">,</span> <span class="n">lst2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>実行スピードを計測してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> search_sentinel(999_000, lst2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>57.4 ms ± 386 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">search_while_loop()</span></code>関数と比べると約2倍高速化できた。</p>
+</section>
+<section id="id11">
+<h4>組み込み関数<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
+<p>組み込み関数に<code class="docutils literal notranslate"><span class="pre">1</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">-1</span></code>を返す関数は見当たらないため，類似するメソッドを考えてみよう。リストには<code class="docutils literal notranslate"><span class="pre">.index()</span></code>というメソッドが用意されており，引数に要素を指定すると，その要素のインデックス番号を返す。試してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst2</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">999_000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>999000
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">999_000</span></code>は<code class="docutils literal notranslate"><span class="pre">lst2</span></code>の<code class="docutils literal notranslate"><span class="pre">999000</span></code>番目の要素だという意味。実行速度を計測してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> lst2.index(999_000)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.3 ms ± 88.1 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">search_for_loop()</span></code>関数よりも約2倍速い。最適化されていることが伺える。</p>
+</section>
+</section>
+<section id="id12">
+<h3>例３：最小値の探索<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<p>次のコードは標準正規分布から抽出した100万個のランダム変数から構成されるリストを作成する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst3</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>この中から最小値を探索するアルゴリズムを考えてみよう。<code class="docutils literal notranslate"><span class="pre">lst3</span></code>の全ての要素を確認する必要があるので<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使おう。</p>
+<section id="id13">
+<h4>直接的な探索<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
+<p>まず，リストの最小値を直接探索するコードを考えてみる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_min</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>  <span class="c1">#1</span>
+    
+    <span class="n">min_</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>     <span class="c1">#2</span>
+    
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>     <span class="c1">#3</span>
+        
+        <span class="k">if</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">min_</span><span class="p">:</span>  <span class="c1">#4            </span>
+            <span class="n">min_</span> <span class="o">=</span> <span class="n">v</span>  <span class="c1">#5</span>
+    
+    <span class="k">return</span> <span class="n">min_</span>       <span class="c1">#6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞<br></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>: 引数<code class="docutils literal notranslate"><span class="pre">lst</span></code>はイタラブルであるリストを想定している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>: <code class="docutils literal notranslate"><span class="pre">lst</span></code>の<code class="docutils literal notranslate"><span class="pre">0</span></code>番目の値を<code class="docutils literal notranslate"><span class="pre">min_</span></code>に割り当てる。<code class="docutils literal notranslate"><span class="pre">#3</span></code>の<code class="docutils literal notranslate"><span class="pre">for</span></code>ループで更に小さな値が発見されれば，<code class="docutils literal notranslate"><span class="pre">min_</span></code>の値と入れ替えることにする。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>: <code class="docutils literal notranslate"><span class="pre">lst</span></code>に対する<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの開始。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>〜<code class="docutils literal notranslate"><span class="pre">#5</span></code>: <code class="docutils literal notranslate"><span class="pre">v</span></code>が<code class="docutils literal notranslate"><span class="pre">min_</span></code>より小さければ<code class="docutils literal notranslate"><span class="pre">min_</span></code>に割り当てる。そうでなければ，<code class="docutils literal notranslate"><span class="pre">min_</span></code>の値は変えない。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#6</span></code>: <code class="docutils literal notranslate"><span class="pre">for</span></code>ループが終わった後（即ち，<code class="docutils literal notranslate"><span class="pre">lst</span></code>の値を全て確認した後），<code class="docutils literal notranslate"><span class="pre">min_</span></code>の値を返す。</p></li>
+</ul>
+<p>実際に計算してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">search_min</span><span class="p">(</span><span class="n">lst3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.77123516726933
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id14">
+<h4>間接的な探索<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
+<p>リストの要素はインデックス番号を使ってアクセスすることができる。それを利用して，上のコードをインデックス番号を使って間接的に要素にアクセスする場合を考える。即ち，最小値のインデックスを探し，最終的に最小値を返す関数となる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_min_idx</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>            <span class="c1">#1</span>
+    
+    <span class="n">n_lst</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>                <span class="c1">#2</span>
+    
+    <span class="n">idx_min</span> <span class="o">=</span> <span class="mi">0</span>                     <span class="c1">#3</span>
+    
+    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_lst</span><span class="p">):</span>        <span class="c1">#4</span>
+        
+        <span class="k">if</span> <span class="n">lst</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lst</span><span class="p">[</span><span class="n">idx_min</span><span class="p">]:</span> <span class="c1">#5</span>
+            <span class="n">idx_min</span> <span class="o">=</span> <span class="n">idx</span>           <span class="c1">#6</span>
+    
+    <span class="k">return</span> <span class="n">lst</span><span class="p">[</span><span class="n">idx_min</span><span class="p">]</span>             <span class="c1">#7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞<br></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>: 引数<code class="docutils literal notranslate"><span class="pre">lst</span></code>はイタラブルであるリストを想定している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>: <code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素数を<code class="docutils literal notranslate"><span class="pre">n_lst</span></code>に割り当てる。<code class="docutils literal notranslate"><span class="pre">n_lst</span></code>は<code class="docutils literal notranslate"><span class="pre">#4</span></code>で使うことになる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>: <code class="docutils literal notranslate"><span class="pre">idx_min</span></code>は最小値の要素のインデックス番号を割り当てる変数として使う。<code class="docutils literal notranslate"><span class="pre">0</span></code>番目の要素から考えるので，初期値として<code class="docutils literal notranslate"><span class="pre">0</span></code>を設定している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>: <code class="docutils literal notranslate"><span class="pre">range(n_lst)</span></code>に対する<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの開始。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>〜<code class="docutils literal notranslate"><span class="pre">#6</span></code>: <code class="docutils literal notranslate"><span class="pre">lst[idx_min]</span></code>は，その時点で最小値となる値である。その値より<code class="docutils literal notranslate"><span class="pre">lst[idx]</span></code>が小さい場合，<code class="docutils literal notranslate"><span class="pre">idx</span></code>を<code class="docutils literal notranslate"><span class="pre">idx_min</span></code>に割り当てることにより<code class="docutils literal notranslate"><span class="pre">idx_min</span></code>のインデックス番号を更新する。そうでない場合は<code class="docutils literal notranslate"><span class="pre">idx_min</span></code>の値は変更しない。
+が<code class="docutils literal notranslate"><span class="pre">min_</span></code>より小さければ<code class="docutils literal notranslate"><span class="pre">min_</span></code>に割り当てる。そうでなければ，<code class="docutils literal notranslate"><span class="pre">min_</span></code>の値は変えない。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#7</span></code>: <code class="docutils literal notranslate"><span class="pre">for</span></code>ループが終わった後（即ち，<code class="docutils literal notranslate"><span class="pre">lst</span></code>の値を全て確認した後），<code class="docutils literal notranslate"><span class="pre">idx_min</span></code>に対応する要素を返す。</p></li>
+</ul>
+<p>実際に計算してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">search_min_idx</span><span class="p">(</span><span class="n">lst3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.77123516726933
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id15">
+<h4>実行スピード比較<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h4>
+<p>それぞれのコードの実行速度を比べてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> search_min(lst3)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22 ms ± 100 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> search_min_idx(lst3)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>59.8 ms ± 203 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>間接的にインデックス番号を使うと実行速度を減速させることになる。</p>
+<p>次に組み込み関数である<code class="docutils literal notranslate"><span class="pre">min()</span></code>と比べてみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span><span class="p">(</span><span class="n">lst3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.77123516726933
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> min(lst3)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.1 ms ± 32.3 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>直接的な方法より2倍以上高速実行されている。</p>
+</section>
+</section>
+<section id="id16">
+<h3>例４：ソート<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<p>次のコードは<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">999</span></code>までの整数をランダムに並べたリストを作成する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst4</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1_000</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>このリストを昇順に並び替えるコードを考える。</p>
+<section id="id17">
+<h4>単純選択ソート<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h4>
+<p>最初に考えるアルゴリズムである単純選択ソートは次のような考え方に基づいている。</p>
+<p>リストには<code class="docutils literal notranslate"><span class="pre">0</span></code>番目から<code class="docutils literal notranslate"><span class="pre">n-1</span></code>番目の要素があるとしよう。</p>
+<ul class="simple">
+<li><p>要素の数は<code class="docutils literal notranslate"><span class="pre">n</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n&gt;1</span></code>とする。</p></li>
+</ul>
+<p>アルゴリズム（説明をより明確になるようにループを<code class="docutils literal notranslate"><span class="pre">0</span></code>回目から数える。）</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>回目のループ（外側ループ）</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>番目から最後までの要素の最小値を見つける（内側ループ）</p></li>
+<li><p>最小値を<code class="docutils literal notranslate"><span class="pre">0</span></code>番目の要素と入れ替える（値の入れ替え）</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>回目のループ（外側ループ）</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>番目から最後までの要素の最小値を見つける（内側ループ）</p></li>
+<li><p>最小値を<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の要素と入れ替える（値の入れ替え）</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code>回目のループ（外側ループ）</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code>番目から最後までの要素の最小値を見つける（内側ループ）</p></li>
+<li><p>最小値を<code class="docutils literal notranslate"><span class="pre">2</span></code>番目の要素と入れ替える（値の入れ替え）</p></li>
+</ul>
+</li>
+<li><p>……</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n-2</span></code>回目のループ（外側ループ）</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">n-2</span></code>番目から最後までの要素の最小値を見つける（内側ループ）</p></li>
+<li><p>最小値を<code class="docutils literal notranslate"><span class="pre">n-2</span></code>番目の要素と入れ替える（値の入れ替え）</p></li>
+</ul>
+</li>
+</ul>
+<p>（注意）<code class="docutils literal notranslate"><span class="pre">n-1</span></code>回目のループは必要ない。</p>
+<p>この手順に基づくコードを確認しよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>       <span class="c1">#1</span>
+    
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>               <span class="c1">#2</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>       <span class="c1">#3</span>
+        
+        <span class="n">i_min</span> <span class="o">=</span> <span class="n">i</span>              <span class="c1">#4</span>
+        
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span> <span class="c1">#5</span>
+            
+            <span class="k">if</span> <span class="n">lst</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lst</span><span class="p">[</span><span class="n">i_min</span><span class="p">]:</span>  <span class="c1">#6  </span>
+                <span class="n">i_min</span> <span class="o">=</span> <span class="n">j</span>            <span class="c1">#7</span>
+        
+        <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">i_min</span><span class="p">]</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="n">i_min</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1">#8</span>
+    
+    <span class="k">return</span> <span class="n">lst</span>                 <span class="c1">#9</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞<br></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>: 引数<code class="docutils literal notranslate"><span class="pre">lst</span></code>はイタラブルであるリストを想定している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>: <code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素数を<code class="docutils literal notranslate"><span class="pre">n</span></code>に割り当てる。<code class="docutils literal notranslate"><span class="pre">n</span></code>は<code class="docutils literal notranslate"><span class="pre">#3</span></code>と<code class="docutils literal notranslate"><span class="pre">#5</span></code>で使うことになる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>: 上の説明にある「外側ループ」に対応している。合計で<code class="docutils literal notranslate"><span class="pre">n-2</span></code>回のループ計算をおこなう（最後のインデックス番号である<code class="docutils literal notranslate"><span class="pre">n-1</span></code>を使ったループを考える必要はないため）。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>: <code class="docutils literal notranslate"><span class="pre">i_min</span></code>は<code class="docutils literal notranslate"><span class="pre">#5</span></code>の<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ（上の説明にある「内側ループ」）で見つかる最小値を割り当てる変数のインデックス番号として使う。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>: 上の説明にある「内側ループ」に対応している。<code class="docutils literal notranslate"><span class="pre">i</span></code>を所与として，<code class="docutils literal notranslate"><span class="pre">i+1</span></code>から<code class="docutils literal notranslate"><span class="pre">n-1</span></code>番目までのループとなる（最小値を探索するためには最後まで確認する必要があるため）。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#6</span></code>〜<code class="docutils literal notranslate"><span class="pre">#7</span></code>: <code class="docutils literal notranslate"><span class="pre">lst[j]</span></code>が<code class="docutils literal notranslate"><span class="pre">lst[i_min]</span></code>より小さければ<code class="docutils literal notranslate"><span class="pre">j</span></code>を<code class="docutils literal notranslate"><span class="pre">i_min</span></code>に割り当てる。そうでなければ，<code class="docutils literal notranslate"><span class="pre">i_min</span></code>の値は変えない。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#8</span></code>: 上の説明にある「値を入れ替え」に対応している。<code class="docutils literal notranslate"><span class="pre">#5</span></code>の内側ループが終わった後（即ち，<code class="docutils literal notranslate"><span class="pre">i+1</span></code>から<code class="docutils literal notranslate"><span class="pre">lst</span></code>の全ての値を確認した後），<code class="docutils literal notranslate"><span class="pre">lst[i]</span></code>と<code class="docutils literal notranslate"><span class="pre">lst[i_min]</span></code>入れ替えている。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#9</span></code>: 外側ループが終わった後，<code class="docutils literal notranslate"><span class="pre">lst</span></code>を返す。</p></li>
+</ul>
+<p>コードを実行し，最初の<code class="docutils literal notranslate"><span class="pre">10</span></code>の要素を表示してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">insertion_sort</span><span class="p">(</span><span class="n">lst4</span><span class="p">)</span>
+<span class="n">res</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 1, 1, 2, 4, 4, 5, 7, 7]
+</pre></div>
+</div>
+</div>
+</div>
+<p>最後の<code class="docutils literal notranslate"><span class="pre">10</span></code>の要素を表示してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="mi">990</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[995, 995, 995, 996, 997, 997, 999, 999, 999, 1000]
+</pre></div>
+</div>
+</div>
+</div>
+<p>昇順に並んでいることが確認できる。</p>
+</section>
+<section id="id18">
+<h4>バブル・ソート<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h4>
+<p>次にバブル・ソートと呼ばれるアルゴリズムを考えてみよう。手順は次の内容となる。</p>
+<p>リストには<code class="docutils literal notranslate"><span class="pre">0</span></code>番目から<code class="docutils literal notranslate"><span class="pre">n-1</span></code>番目の要素があるとしよう。</p>
+<ul class="simple">
+<li><p>要素の数は<code class="docutils literal notranslate"><span class="pre">n</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n&gt;1</span></code>とする。</p></li>
+</ul>
+<p>アルゴリズム（ここではループを<code class="docutils literal notranslate"><span class="pre">1</span></code>回目から数える。）</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>回目のループ（外側ループ）</p>
+<ul>
+<li><p>（以下の手順が内側ループ）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n-2</span></code>番目と<code class="docutils literal notranslate"><span class="pre">n-1</span></code>番目（最後）の要素を比べる</p>
+<ul>
+<li><p>小さい方を左に，大きい方を右に入れ替える</p></li>
+<li><p>同じであれば何もしない</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n-3</span></code>番目と<code class="docutils literal notranslate"><span class="pre">n-2</span></code>番目の要素を比べる</p>
+<ul>
+<li><p>小さい方を左に，大きい方を右に入れ替える</p></li>
+<li><p>同じであれば何もしない</p></li>
+</ul>
+</li>
+<li><p>……</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>番目と<code class="docutils literal notranslate"><span class="pre">2</span></code>番目の要素を比べる</p>
+<ul>
+<li><p>小さい方を左に，大きい方を右に入れ替える</p></li>
+<li><p>同じであれば何もしない</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>番目と<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の要素を比べる</p></li>
+<li><p>小さい方を左に，大きい方を右に入れ替える</p></li>
+<li><p>同じであれば何もしない</p></li>
+<li><p>これで<code class="docutils literal notranslate"><span class="pre">0</span></code>番目の要素は<code class="docutils literal notranslate"><span class="pre">0</span></code>番目から<code class="docutils literal notranslate"><span class="pre">n-1</span></code>番目の要素の最小値となる。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code>回目のループ（外側ループ）</p>
+<ul>
+<li><p>以下の手順が内側ループ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n-2</span></code>番目と<code class="docutils literal notranslate"><span class="pre">n-1</span></code>番目の要素を比べる</p>
+<ul>
+<li><p>小さい方を左に，大きい方を右に入れ替える</p></li>
+<li><p>同じであれば何もしない</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n-3</span></code>番目と<code class="docutils literal notranslate"><span class="pre">n-2</span></code>番目の要素を比べる</p>
+<ul>
+<li><p>小さい方を左に，大きい方を右に入れ替える</p></li>
+<li><p>同じであれば何もしない</p></li>
+</ul>
+</li>
+<li><p>……</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code>番目と<code class="docutils literal notranslate"><span class="pre">3</span></code>番目の要素を比べる</p>
+<ul>
+<li><p>小さい方を左に，大きい方を右に入れ替える</p></li>
+<li><p>同じであれば何もしない</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>番目と<code class="docutils literal notranslate"><span class="pre">2</span></code>番目の要素を比べる</p>
+<ul>
+<li><p>小さい方を左に，大きい方を右に入れ替える</p></li>
+<li><p>同じであれば何もしない</p></li>
+</ul>
+</li>
+<li><p>これで<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の要素は<code class="docutils literal notranslate"><span class="pre">1</span></code>番目から<code class="docutils literal notranslate"><span class="pre">n-1</span></code>番目の要素の最小値となる。</p></li>
+</ul>
+</li>
+<li><p>……</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n-2</span></code>回目のループ（外側ループ）</p>
+<ul>
+<li><p>以下の手順が内側ループ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n-2</span></code>番目と<code class="docutils literal notranslate"><span class="pre">n-1</span></code>番目の要素を比べる</p>
+<ul>
+<li><p>小さい方を左に，大きい方を右に入れ替える</p></li>
+<li><p>同じであれば何もしない</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n-3</span></code>番目と<code class="docutils literal notranslate"><span class="pre">n-2</span></code>番目の要素を比べる</p>
+<ul>
+<li><p>小さい方を左に，大きい方を右に入れ替える</p></li>
+<li><p>同じであれば何もしない</p></li>
+</ul>
+</li>
+<li><p>これで<code class="docutils literal notranslate"><span class="pre">n-3</span></code>番目の要素は<code class="docutils literal notranslate"><span class="pre">n-3</span></code>番目から<code class="docutils literal notranslate"><span class="pre">n-1</span></code>番目の要素の最小値となる。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n-1</span></code>回目のループ（外側ループ）</p>
+<ul>
+<li><p>以下の手順が内側ループ</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n-2</span></code>番目と<code class="docutils literal notranslate"><span class="pre">n-1</span></code>番目の要素を比べる</p>
+<ul>
+<li><p>小さい方を左に，大きい方を右に入れ替える</p></li>
+<li><p>同じであれば何もしない</p></li>
+</ul>
+</li>
+<li><p>これで<code class="docutils literal notranslate"><span class="pre">n-2</span></code>番目の要素は<code class="docutils literal notranslate"><span class="pre">n-2</span></code>番目から<code class="docutils literal notranslate"><span class="pre">n-1</span></code>番目の要素の最小値となる。</p></li>
+</ul>
+</li>
+<li><p>完成！</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>    <span class="c1">#1</span>
+    
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>         <span class="c1">#2</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#3</span>
+        
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#4</span>
+            
+            <span class="k">if</span> <span class="n">lst</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">lst</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>   <span class="c1">#5                </span>
+                <span class="n">lst</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#6</span>
+    
+    <span class="k">return</span> <span class="n">lst</span>           <span class="c1">#7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>＜コードの説明＞<br></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>: 引数<code class="docutils literal notranslate"><span class="pre">lst</span></code>はイタラブルであるリストを想定している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>: <code class="docutils literal notranslate"><span class="pre">lst</span></code>の要素数を<code class="docutils literal notranslate"><span class="pre">n</span></code>に割り当てる。<code class="docutils literal notranslate"><span class="pre">n</span></code>は<code class="docutils literal notranslate"><span class="pre">#3</span></code>と<code class="docutils literal notranslate"><span class="pre">#4</span></code>で使うことになる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>: 上の説明にある「外側ループ」に対応している。合計で<code class="docutils literal notranslate"><span class="pre">n-1</span></code>回のループ計算をおこない，<code class="docutils literal notranslate"><span class="pre">lst</span></code>の全ての要素インデックスに対応している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>: 上の説明にある「内側ループ」に対応している。<code class="docutils literal notranslate"><span class="pre">range(n-1,</span> <span class="pre">i,</span> <span class="pre">-1)</span></code>は<code class="docutils literal notranslate"><span class="pre">i+1</span></code>から<code class="docutils literal notranslate"><span class="pre">n-1</span></code>までの番号を逆順に並べている。例えば，<code class="docutils literal notranslate"><span class="pre">list(range(10,</span> <span class="pre">5,</span> <span class="pre">-1))</span></code>は<code class="docutils literal notranslate"><span class="pre">[10,9,8,7,6]</span></code>を返す。これは<code class="docutils literal notranslate"><span class="pre">#5</span></code>と<code class="docutils literal notranslate"><span class="pre">#6</span></code>に置いて最後の要素から始まってから<code class="docutils literal notranslate"><span class="pre">i+1</span></code>番目の要素までを順に考える必要があるため。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>〜<code class="docutils literal notranslate"><span class="pre">#6</span></code>: <code class="docutils literal notranslate"><span class="pre">lst[j-1]&gt;lst[j]</span></code>とは左の要素が右の要素より大きい場合に<code class="docutils literal notranslate"><span class="pre">True</span></code>を返し，その場合，<code class="docutils literal notranslate"><span class="pre">#6</span></code>では左右の要素を入れ替えている。<code class="docutils literal notranslate"><span class="pre">#6</span></code>は上の説明の２つの要素の入れ替えに対応している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#7</span></code>: 外側ループが終わった後，<code class="docutils literal notranslate"><span class="pre">lst</span></code>を返す。</p></li>
+</ul>
+<p>コードを実行し，最初の<code class="docutils literal notranslate"><span class="pre">10</span></code>の要素を表示してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">bubble_sort</span><span class="p">(</span><span class="n">lst4</span><span class="p">)</span>
+<span class="n">res</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 1, 1, 2, 4, 4, 5, 7, 7]
+</pre></div>
+</div>
+</div>
+</div>
+<p>最後の<code class="docutils literal notranslate"><span class="pre">10</span></code>の要素を表示してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="mi">990</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[995, 995, 995, 996, 997, 997, 999, 999, 999, 1000]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id19">
+<h4>実行スピード比較<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h4>
+<p>それぞれの実行スピードを比較してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> insertion_sort(lst4)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.2 ms ± 144 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> bubble_sort(lst4)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41.3 ms ± 76.3 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>スピードの違いの一つの要因は「値の入れ替え」の回数の差である。
+<code class="docutils literal notranslate"><span class="pre">insertion_sort()</span></code>の場合，<code class="docutils literal notranslate"><span class="pre">#8</span></code>で値の入れ替えがおこなわれており，最大で<span class="math notranslate nohighlight">\(n-1\)</span>回となる。
+一方，<code class="docutils literal notranslate"><span class="pre">bubble_sort()</span></code>の値の入れ替えは<code class="docutils literal notranslate"><span class="pre">#6</span></code>でおこなわれており，最大で<span class="math notranslate nohighlight">\(n^2/2\)</span>回となる。
+<span class="math notranslate nohighlight">\(n&gt;2\)</span>の場合，<span class="math notranslate nohighlight">\(n^2/2&gt;n-1\)</span>となるため，実行時間の差に現れていると考えられる。</p>
+<p>最後に組み込み関数<code class="docutils literal notranslate"><span class="pre">sorted()</span></code>と比較してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> sorted(lst4)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.35 µs ± 9.95 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>平均の単位は<code class="docutils literal notranslate"><span class="pre">ms</span></code>ではなく<code class="docutils literal notranslate"><span class="pre">µs</span></code>となっている。やはり組み込み関数は速い！</p>
+</section>
+</section>
+</section>
+<section id="id20">
+<h2>疑似コード<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h2>
+<p>前節では簡単なアルゴリズムを<code class="docutils literal notranslate"><span class="pre">Python</span></code>コードとして表し実行したが，その裏にある考え方は他のコンピューター言語でも使うことができる。更に言うと，アルゴリズムを図や言葉で表すことも可能である。<a class="reference external" href="https://www.google.co.jp/search?q=%E3%83%95%E3%83%AD%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC%E3%83%88%E3%80%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0">フローチャート</a>と呼ばれるのがその一つであり，図を使いアルゴリズムの考えを表現している。そしてもう１つが疑似コードと言われるものであり，自然言語（日本語や英語）で書かれたコードのことである。この２つの手法の利点は，コンピューター言語で発生するエラーを気にせずに，アルゴリズムの考えを理解・整理し，より良い（速い）ものを作り出すことができる土壌となり得ることだろう。以下では疑似コードに基づいてコードの書き方を検討する。</p>
+<p>上でも説明したが，疑似コードとは，自然言語（日本語や英語）で書かれたコードであるため，<code class="docutils literal notranslate"><span class="pre">Python</span></code>は実行できない箇条書きのような文章となっている。レポートを書く際に，まずアウトラインを考えて書き出す人もいると思うが，それをイメージすれば良いだろう。次の点が重要となる。</p>
 <ul class="simple">
 <li><p>明確さ</p></li>
 <li><p>簡潔さ</p></li>
@@ -1285,8 +2391,8 @@ Buzz
 </div></blockquote>
 <p>この特性を活かして，コードの書き方を検討しようというのがここでの目的である。言い換えると，漠然とした曖昧な疑似コードを<strong>修正する過程</strong>を通して，アルゴリズムを<code class="docutils literal notranslate"><span class="pre">Python</span></code>コードに落とし込むことを考える。５つの例を使うが，疑似コードの修正プロセスがコードを書く上でのヒントになるのではないかと期待している。</p>
 </section>
-<section id="for">
-<h3>リストの合計（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）<a class="headerlink" href="#for" title="Permalink to this headline">#</a></h3>
+<section id="id21">
+<h3>リストの合計（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
 <p>ここでの目的：</p>
 <blockquote>
 <div><p>リスト（タプル）の要素の合計を返す関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うこと。</p>
@@ -1415,8 +2521,8 @@ Buzz
 </div>
 </div>
 </section>
-<section id="while">
-<h3>リストの合計（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループ）<a class="headerlink" href="#while" title="Permalink to this headline">#</a></h3>
+<section id="id22">
+<h3>リストの合計（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループ）<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
 <p>ここでの目的：</p>
 <blockquote>
 <div><p>リスト（タプル）の要素の合計を返す関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使うこと。</p>
@@ -1523,8 +2629,8 @@ Buzz
 </div>
 </div>
 </section>
-<section id="id6">
-<h3>コイントス（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<section id="id23">
+<h3>コイントス（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h3>
 <p>ここでの目的：</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">n</span></code>回コイントスし，表と裏の回数を表示する関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">random.randint()</span></code>と<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うこと。</p>
@@ -1697,14 +2803,14 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(46, 54)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(48, 52)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="id7">
-<h3>コイントス（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループ）<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<section id="id24">
+<h3>コイントス（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループ）<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
 <p>ここでの目的：</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">n</span></code>回コイントスし，表と裏の回数を表示する関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">random.randint()</span></code>と<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使うこと。</p>
@@ -1857,14 +2963,14 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(46, 54)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(48, 52)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="id8">
-<h3>リストの最大値<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<section id="id25">
+<h3>リストの最大値<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h3>
 <p>ここでの目的：</p>
 <blockquote>
 <div><p>リスト（又はタプル）を引数とし，含まれる要素の中から最大値を返す関数を作成する。</p>
@@ -2093,7 +3199,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.7431975438341807
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.16414093785748
 </pre></div>
 </div>
 </div>
@@ -2129,8 +3235,8 @@ Buzz
 </div>
 </div>
 </section>
-<section id="id9">
-<h3>最後に<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<section id="id26">
+<h3>最後に<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h3>
 <p>コードを書くことに慣れてくると，簡単なコードに疑似コードの修正プロセスは必要なくなるだろう。しかし，その段階になればより複雑なコードを書くことになるはずだ。その時には疑似コードが役に立つのではないかと思われる。少し頭をひねるような問題であれば，疑似コードを試してみるのも一案である。</p>
 </section>
 </section>

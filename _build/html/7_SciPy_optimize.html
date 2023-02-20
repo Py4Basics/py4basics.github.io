@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://py4basics.github.io/7_SciPy_optimize.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="ツールのインストールと説明" href="0_Preparations.html" />
+    <link rel="next" title="Numpy: ランダム変数" href="8_NumPy_random.html" />
     <link rel="prev" title="Pandas：図示" href="5_pandas_plot.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -64,15 +64,13 @@ const thebe_selector_output = ".output, .cell_output"
 
     <!-- Google Analytics -->
     
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
 <script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-165998213-3', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-R9KXY9G892');
+                </script>
 
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
@@ -87,7 +85,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"><p><a href='http://www.econ.kobe-u.ac.jp/topics/pdf/221212-2.pdf'>✴️<<font color='white'>特別講演「UCバークレー校における経済学とデータサイエンス教育」(2023年1月6日) ← クリック！✴️</font></a></p></div>
+<div class="announcement header-item noprint"></div>
 <div class="header header-item noprint"></div>
 
     
@@ -205,6 +203,16 @@ const thebe_selector_output = ".output, .cell_output"
     </span>
    </code>
    ：解の求め方と最適化問題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8_NumPy_random.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Numpy
+    </span>
+   </code>
+   : ランダム変数
   </a>
  </li>
  <li class="toctree-l1">
@@ -868,6 +876,11 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">op</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;frozen importlib._bootstrap&gt;:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
 </pre></div>
 </div>
 </div>
@@ -1809,6 +1822,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: -2.0
+ message: &#39;\nOptimization terminated successfully;\nThe returned value satisfies the termination criteria\n(using xtol = 1.48e-08 )&#39;
     nfev: 40
      nit: 36
  success: True
@@ -1902,6 +1916,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: -0.24999999999999994
+ message: &#39;\nOptimization terminated successfully;\nThe returned value satisfies the termination criteria\n(using xtol = 1.48e-08 )&#39;
     nfev: 15
      nit: 11
  success: True
@@ -1920,6 +1935,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: -0.24999999999999994
+ message: &#39;\nOptimization terminated successfully;\nThe returned value satisfies the termination criteria\n(using xtol = 1.48e-08 )&#39;
     nfev: 16
      nit: 12
  success: True
@@ -1938,6 +1954,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: -0.25
+ message: &#39;\nOptimization terminated successfully;\nThe returned value satisfies the termination criteria\n(using xtol = 1.48e-08 )&#39;
     nfev: 14
      nit: 10
  success: True
@@ -1955,6 +1972,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: -0.25
+ message: &#39;\nOptimization terminated successfully;\nThe returned value satisfies the termination criteria\n(using xtol = 1.48e-08 )&#39;
     nfev: 16
      nit: 12
  success: True
@@ -1976,6 +1994,7 @@ I = \dfrac{j}{r^{b}}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: -0.24999999999998732
  message: &#39;Solution found.&#39;
     nfev: 10
+     nit: 10
   status: 0
  success: True
        x: -0.707106701474177
@@ -2054,6 +2073,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: -30.071147877019232
+ message: &#39;\nOptimization terminated successfully;\nThe returned value satisfies the termination criteria\n(using xtol = 1.48e-08 )&#39;
     nfev: 17
      nit: 13
  success: True
@@ -2073,6 +2093,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: -30.071147877017722
  message: &#39;Solution found.&#39;
     nfev: 9
+     nit: 9
   status: 0
  success: True
        x: 0.2999998786598638
@@ -2142,6 +2163,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: -0.7085393887825051
  message: &#39;Solution found.&#39;
     nfev: 9
+     nit: 9
   status: 0
  success: True
        x: 0.5999985035112788
@@ -2799,10 +2821,10 @@ wl-pc=0
             <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="0_Preparations.html" title="next page">
+    <a class='right-next' id="next-link" href="8_NumPy_random.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ツールのインストールと説明</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: ランダム変数</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

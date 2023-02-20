@@ -16,6 +16,7 @@ parts:
   - file: 4_matplotlib
   - file: 5_pandas_plot
   - file: 7_SciPy_optimize
+  - file: 8_NumPy_random
   - url: https://py4etrics.github.io/5_SciPy_stats.html
     title: "SciPy.stats：確率分布"
 - caption: "参考"
