@@ -1,36 +1,46 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Gapminder &#8212; 経済学のためのPython入門</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/my_style.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -38,685 +48,369 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-R9KXY9G892');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Gapminder';</script>
     <link rel="canonical" href="https://py4basics.github.io/Gapminder.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="移動平均" href="Moving_Average.html" />
     <link rel="prev" title="学業成績の分析" href="Grade.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
-<script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){ dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'G-R9KXY9G892');
-                </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">経済学のためのPython入門</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Python入門I
- </span>
-</p>
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">経済学のためのPython入門</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_I.html">
-   基本データ型と変数
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_II.html">
-   データの操作
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_III.html">
-   関数とメソッド
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_IV.html">
-   制御フロー
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_V.html">
-   モジュールと疑似コード
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_VI.html">
-   図示とシミュレーション
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_I.html">基本データ型と変数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_II.html">データの操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_III.html">関数とメソッド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_IV.html">制御フロー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_V.html">モジュールとアルゴリズム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_VI.html">図示とシミュレーション</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Python入門II
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門II</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="2_NumPy.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     NumPy
-    </span>
-   </code>
-   ：高速化
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3_Pandas.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Pandas
-    </span>
-   </code>
-   ：データ分析
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4_matplotlib.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Matplotlib
-    </span>
-   </code>
-   ：図示
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5_pandas_plot.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Pandas
-    </span>
-   </code>
-   ：図示
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7_SciPy_optimize.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     SciPy.optimize
-    </span>
-   </code>
-   ：解の求め方と最適化問題
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="8_NumPy_random.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Numpy
-    </span>
-   </code>
-   : ランダム変数
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
-   SciPy.stats：確率分布
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="2_NumPy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>：高速化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Pandas.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_matplotlib.html"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_pandas_plot.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_SciPy_optimize.html"><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_NumPy_random.html"><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: ランダム変数</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">SciPy.stats：確率分布</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  参考
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="0_Preparations.html">
-   ツールのインストールと説明
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="things_to_note.html">
-   Tipsと注意点
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Grade.html">
-   学業成績の分析
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Gapminder
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Moving_Average.html">
-   移動平均
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="0_Preparations.html">ツールのインストールと説明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="things_to_note.html">Tipsと注意点</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Grade.html">学業成績の分析</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Gapminder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Moving_Average.html">移動平均</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  経済学
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">経済学</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4macro.github.io">
-   Pythonで学ぶマクロ経済学（中級＋レベル）
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4etrics.github.io">
-   Pythonで学ぶ入門計量経済学
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://py4macro.github.io">Pythonで学ぶマクロ経済学（中級＋レベル）</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://py4etrics.github.io">Pythonで学ぶ入門計量経済学</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  JupyterLite
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JupyterLite</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4class.netlify.app">
-   JupyterLiteを始める
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://py4class.netlify.app">JupyterLiteを始める</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/Gapminder.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/Gapminder.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/Gapminder.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/Gapminder.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="このページをダウンロード">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Gapminder.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="ソースファイルをダウンロード"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="PDFに印刷"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/Gapminder.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   データ
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#groupby">
-   groupby()
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#continent-again">
-     continentの内訳（again）
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     統計量
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       データ数
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       平均
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
-       標準偏差
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id6">
-       最大値
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
-       最小値
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#groupby-agg">
-     groupby.agg()
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     図
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id9">
-       クロス・セクション
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     複数階層の
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       groupby()
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multi-index">
-   Multi-index
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
-     統計量
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id12">
-       データ数
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id13">
-       平均の計算
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
-       標準偏差
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id15">
-       最大値・最小値
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
-     図
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Gapminder</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   データ
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#groupby">
-   groupby()
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#continent-again">
-     continentの内訳（again）
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     統計量
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       データ数
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       平均
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
-       標準偏差
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id6">
-       最大値
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
-       最小値
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#groupby-agg">
-     groupby.agg()
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     図
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id9">
-       クロス・セクション
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     複数階層の
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       groupby()
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multi-index">
-   Multi-index
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
-     統計量
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id12">
-       データ数
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id13">
-       平均の計算
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
-       標準偏差
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id15">
-       最大値・最小値
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
-     図
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Gapminder</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">データ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">groupby()</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continent-again">continentの内訳（again）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">統計量</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">観測値の数</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">平均</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">標準偏差</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">最大値</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">最小値</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3変数の記述統計</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby-agg">groupby.agg()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">図</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3つの変数</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">複数階層の<code class="docutils literal notranslate"><span class="pre">groupby()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="gapminder">
 <h1>Gapminder<a class="headerlink" href="#gapminder" title="Permalink to this headline">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
@@ -726,6 +420,7 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">japanize_matplotlib</span>
 <span class="kn">from</span> <span class="nn">gapminder</span> <span class="kn">import</span> <span class="n">gapminder</span>
 <span class="kn">from</span> <span class="nn">see</span> <span class="kn">import</span> <span class="n">see</span>
 </pre></div>
@@ -740,9 +435,19 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<p>ここでは<code class="docutils literal notranslate"><span class="pre">gapminder</span></code>に含まれるデータを使い<code class="docutils literal notranslate"><span class="pre">pandas</span></code>の<code class="docutils literal notranslate"><span class="pre">groupby</span></code>という<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のメソッドと<code class="docutils literal notranslate"><span class="pre">Multi-index</span></code>（階層型インデックス）の使い方の例を紹介する。両方ともデータをグループ化して扱う場合に非常に重宝するので、覚えておいて損はしないだろう。</p>
+<p>ここでは<code class="docutils literal notranslate"><span class="pre">gapminder</span></code>に含まれるデータを使い<code class="docutils literal notranslate"><span class="pre">pandas</span></code>の<code class="docutils literal notranslate"><span class="pre">groupby</span></code>という<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のメソッドの使い方の例を紹介する。両方ともデータをグループ化して扱う場合に非常に重宝するので、覚えておいて損はしないだろう。</p>
 <section id="id1">
 <h2>データ<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>＜列ラベル＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">country</span></code>：国名</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">continent</span></code>：大陸</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">year</span></code>：年</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lifeExp</span></code>：平均寿命</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop</span></code>：人口</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gdpPercap</span></code>：一人当たりGDP（国内総生産）</p></li>
+</ul>
+<p>データの読み込みと最初の5行の表示</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">gapminder</span>
@@ -827,6 +532,7 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
+<p>最後の5行の表示</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
@@ -910,6 +616,7 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
+<p>データセットの内容確認</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -934,6 +641,7 @@ memory usage: 80.0+ KB
 </div>
 </div>
 </div>
+<p>記述統計の表示</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -1026,7 +734,7 @@ memory usage: 80.0+ KB
 </table>
 </div></div></div>
 </div>
-<p><strong>含まれる国名</strong></p>
+<p>含まれる国名の表示</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -1068,7 +776,7 @@ memory usage: 80.0+ KB
 </div>
 </div>
 </div>
-<p><strong>国数</strong></p>
+<p>国の数の確認</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
@@ -1081,67 +789,42 @@ memory usage: 80.0+ KB
 </div>
 </div>
 </div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">continent</span></code>の内訳</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">2007</span></code>年における<code class="docutils literal notranslate"><span class="pre">continent</span></code>の内訳（国の数）</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># continentのリスト</span>
-
-<span class="n">continent_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-<span class="n">continent_list</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cond</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">,:]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Africa&#39;, &#39;Americas&#39;, &#39;Asia&#39;, &#39;Europe&#39;, &#39;Oceania&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
+Africa      52
+Asia        33
+Europe      30
+Americas    25
+Oceania      2
+dtype: int64
 </pre></div>
 </div>
 </div>
 </div>
+<p>割合で表すと</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 国数を入れる空のリスト</span>
-<span class="n">num_countries</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">continent_list</span><span class="p">:</span>
-    <span class="c1"># 条件</span>
-    <span class="n">con</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span>
-    <span class="c1">#　条件が満たされる行を抽出</span>
-    <span class="n">series_countries</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">con</span><span class="p">,</span><span class="s1">&#39;country&#39;</span><span class="p">]</span>
-    <span class="c1"># 重複をなくす</span>
-    <span class="n">series_countries_unique</span> <span class="o">=</span> <span class="n">series_countries</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-    <span class="c1"># 国数を数える</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">series_countries_unique</span><span class="p">)</span>
-    <span class="c1"># 上のリストに追加</span>
-    <span class="n">num_countries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">continent_list</span><span class="p">,</span><span class="n">num_countries</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cond</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">,:]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Africa: 52
-Americas: 25
-Asia: 33
-Europe: 30
-Oceania: 2
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">num_countries</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>142
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
+Africa      0.366197
+Asia        0.232394
+Europe      0.211268
+Americas    0.176056
+Oceania     0.014085
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1193,42 +876,19 @@ Oceania: 2
 <h3>continentの内訳（again）<a class="headerlink" href="#continent-again" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Seriesを返し，要素はarray</span>
-
-<span class="n">country_names</span> <span class="o">=</span> <span class="n">df_group</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">country_names</span> <span class="o">=</span> <span class="n">df_group</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
 <span class="n">country_names</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
-Africa      [Algeria, Angola, Benin, Botswana, Burkina Fas...
-Americas    [Argentina, Bolivia, Brazil, Canada, Chile, Co...
-Asia        [Afghanistan, Bahrain, Bangladesh, Cambodia, C...
-Europe      [Albania, Austria, Belgium, Bosnia and Herzego...
-Oceania                              [Australia, New Zealand]
-Name: country, dtype: object
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">country_names</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-    <span class="n">t0</span> <span class="o">=</span> <span class="n">country_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">t1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">country_names</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="n">t1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Africa : 52
-Americas : 25
-Asia : 33
-Europe : 30
-Oceania : 2
+Africa      52
+Americas    25
+Asia        33
+Europe      30
+Oceania      2
+Name: country, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1244,7 +904,40 @@ Oceania : 2
 </div>
 </div>
 <section id="id3">
-<h4>データ数<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<h4>観測値の数<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<p>大陸別の観測値の数</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
+Africa      624
+Americas    300
+Asia        396
+Europe      360
+Oceania      24
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>棒グラフ</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df_group</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;大陸別の観測値の数&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a87c585e883a3538d84cb5000782a432fa35c3591371c799a984a55a0ac4fac4.png" src="_images/a87c585e883a3538d84cb5000782a432fa35c3591371c799a984a55a0ac4fac4.png" />
+</div>
+</div>
+<p>変数別での観測値の数</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
@@ -1330,20 +1023,10 @@ Oceania : 2
 </table>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
-<span class="k">pass</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/Gapminder_29_0.png" src="_images/Gapminder_29_0.png" />
-</div>
-</div>
 </section>
 <section id="id4">
 <h4>平均<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<p>それぞれの変数の平均</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="p">[</span><span class="n">three_vars</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -1415,20 +1098,23 @@ Oceania : 2
 </table>
 </div></div></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">gdpPercap</span></code>と<code class="docutils literal notranslate"><span class="pre">lifeExp</span></code>の大陸別平均の散布図</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df_group</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;gdpPercapと`ifeExpの</span><span class="se">\n</span><span class="s1">大陸別平均の散布図&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Gapminder_32_0.png" src="_images/Gapminder_32_0.png" />
+<img alt="_images/43e04ad353e03d4e51afedae6bdecee825f33e7913f2d67ec0885e2406075d27.png" src="_images/43e04ad353e03d4e51afedae6bdecee825f33e7913f2d67ec0885e2406075d27.png" />
 </div>
 </div>
 </section>
 <section id="id5">
 <h4>標準偏差<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
+<p>それぞれの変数の標準偏差</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="p">[</span><span class="n">three_vars</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
@@ -1676,10 +1362,12 @@ Oceania : 2
 </table>
 </div></div></div>
 </div>
-<p><strong>基本的統計</strong></p>
+</section>
+<section id="id8">
+<h4>3変数の記述統計<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="p">[</span><span class="n">three_vars</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="p">[</span><span class="n">three_vars</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:.1f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 </div>
 </div>
@@ -1694,195 +1382,220 @@ Oceania : 2
         vertical-align: top;
     }
 
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
+    .dataframe thead th {
         text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
   <thead>
-    <tr>
+    <tr style="text-align: right;">
       <th></th>
-      <th colspan="8" halign="left">lifeExp</th>
-      <th colspan="5" halign="left">pop</th>
-      <th colspan="8" halign="left">gdpPercap</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>count</th>
-      <th>mean</th>
-      <th>std</th>
-      <th>min</th>
-      <th>25%</th>
-      <th>50%</th>
-      <th>75%</th>
-      <th>max</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>...</th>
-      <th>75%</th>
-      <th>max</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>std</th>
-      <th>min</th>
-      <th>25%</th>
-      <th>50%</th>
-      <th>75%</th>
-      <th>max</th>
-    </tr>
-    <tr>
       <th>continent</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Africa</th>
+      <th>Americas</th>
+      <th>Asia</th>
+      <th>Europe</th>
+      <th>Oceania</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Africa</th>
+      <th rowspan="8" valign="top">lifeExp</th>
+      <th>count</th>
       <td>624.0</td>
-      <td>48.865330</td>
-      <td>9.150210</td>
-      <td>23.599</td>
-      <td>42.37250</td>
-      <td>47.7920</td>
-      <td>54.41150</td>
-      <td>76.442</td>
+      <td>300.0</td>
+      <td>396.0</td>
+      <td>360.0</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>48.9</td>
+      <td>64.7</td>
+      <td>60.1</td>
+      <td>71.9</td>
+      <td>74.3</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>9.2</td>
+      <td>9.3</td>
+      <td>11.9</td>
+      <td>5.4</td>
+      <td>3.8</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>23.6</td>
+      <td>37.6</td>
+      <td>28.8</td>
+      <td>43.6</td>
+      <td>69.1</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>42.4</td>
+      <td>58.4</td>
+      <td>51.4</td>
+      <td>69.6</td>
+      <td>71.2</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>47.8</td>
+      <td>67.0</td>
+      <td>61.8</td>
+      <td>72.2</td>
+      <td>73.7</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>54.4</td>
+      <td>71.7</td>
+      <td>69.5</td>
+      <td>75.5</td>
+      <td>77.6</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>76.4</td>
+      <td>80.7</td>
+      <td>82.6</td>
+      <td>81.8</td>
+      <td>81.2</td>
+    </tr>
+    <tr>
+      <th rowspan="8" valign="top">pop</th>
+      <th>count</th>
       <td>624.0</td>
-      <td>9.916003e+06</td>
-      <td>...</td>
-      <td>10801489.75</td>
-      <td>1.350312e+08</td>
+      <td>300.0</td>
+      <td>396.0</td>
+      <td>360.0</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>9916003.1</td>
+      <td>24504795.0</td>
+      <td>77038722.0</td>
+      <td>17169764.7</td>
+      <td>8874672.3</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>15490923.3</td>
+      <td>50979430.2</td>
+      <td>206885204.6</td>
+      <td>20519437.6</td>
+      <td>6506342.5</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>60011.0</td>
+      <td>662850.0</td>
+      <td>120447.0</td>
+      <td>147962.0</td>
+      <td>1994794.0</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1342075.0</td>
+      <td>2962358.8</td>
+      <td>3844393.0</td>
+      <td>4331500.0</td>
+      <td>3199212.5</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>4579311.0</td>
+      <td>6227510.0</td>
+      <td>14530830.5</td>
+      <td>8551125.0</td>
+      <td>6403491.5</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>10801489.8</td>
+      <td>18340309.0</td>
+      <td>46300348.0</td>
+      <td>21802867.0</td>
+      <td>14351625.0</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>135031164.0</td>
+      <td>301139947.0</td>
+      <td>1318683096.0</td>
+      <td>82400996.0</td>
+      <td>20434176.0</td>
+    </tr>
+    <tr>
+      <th rowspan="8" valign="top">gdpPercap</th>
+      <th>count</th>
       <td>624.0</td>
-      <td>2193.754578</td>
-      <td>2827.929863</td>
-      <td>241.165876</td>
-      <td>761.247010</td>
-      <td>1192.138217</td>
-      <td>2377.417422</td>
-      <td>21951.21176</td>
-    </tr>
-    <tr>
-      <th>Americas</th>
       <td>300.0</td>
-      <td>64.658737</td>
-      <td>9.345088</td>
-      <td>37.579</td>
-      <td>58.41000</td>
-      <td>67.0480</td>
-      <td>71.69950</td>
-      <td>80.653</td>
-      <td>300.0</td>
-      <td>2.450479e+07</td>
-      <td>...</td>
-      <td>18340309.00</td>
-      <td>3.011399e+08</td>
-      <td>300.0</td>
-      <td>7136.110356</td>
-      <td>6396.764112</td>
-      <td>1201.637154</td>
-      <td>3427.779072</td>
-      <td>5465.509853</td>
-      <td>7830.210416</td>
-      <td>42951.65309</td>
+      <td>396.0</td>
+      <td>360.0</td>
+      <td>24.0</td>
     </tr>
     <tr>
-      <th>Asia</th>
-      <td>396.0</td>
-      <td>60.064903</td>
-      <td>11.864532</td>
-      <td>28.801</td>
-      <td>51.42625</td>
-      <td>61.7915</td>
-      <td>69.50525</td>
-      <td>82.603</td>
-      <td>396.0</td>
-      <td>7.703872e+07</td>
-      <td>...</td>
-      <td>46300348.00</td>
-      <td>1.318683e+09</td>
-      <td>396.0</td>
-      <td>7902.150428</td>
-      <td>14045.373112</td>
-      <td>331.000000</td>
-      <td>1056.993223</td>
-      <td>2646.786844</td>
-      <td>8549.255654</td>
-      <td>113523.13290</td>
+      <th>mean</th>
+      <td>2193.8</td>
+      <td>7136.1</td>
+      <td>7902.2</td>
+      <td>14469.5</td>
+      <td>18621.6</td>
     </tr>
     <tr>
-      <th>Europe</th>
-      <td>360.0</td>
-      <td>71.903686</td>
-      <td>5.433178</td>
-      <td>43.585</td>
-      <td>69.57000</td>
-      <td>72.2410</td>
-      <td>75.45050</td>
-      <td>81.757</td>
-      <td>360.0</td>
-      <td>1.716976e+07</td>
-      <td>...</td>
-      <td>21802867.00</td>
-      <td>8.240100e+07</td>
-      <td>360.0</td>
-      <td>14469.475533</td>
-      <td>9355.213498</td>
-      <td>973.533195</td>
-      <td>7213.085037</td>
-      <td>12081.749115</td>
-      <td>20461.386162</td>
-      <td>49357.19017</td>
+      <th>std</th>
+      <td>2827.9</td>
+      <td>6396.8</td>
+      <td>14045.4</td>
+      <td>9355.2</td>
+      <td>6359.0</td>
     </tr>
     <tr>
-      <th>Oceania</th>
-      <td>24.0</td>
-      <td>74.326208</td>
-      <td>3.795611</td>
-      <td>69.120</td>
-      <td>71.20500</td>
-      <td>73.6650</td>
-      <td>77.55250</td>
-      <td>81.235</td>
-      <td>24.0</td>
-      <td>8.874672e+06</td>
-      <td>...</td>
-      <td>14351625.00</td>
-      <td>2.043418e+07</td>
-      <td>24.0</td>
-      <td>18621.609223</td>
-      <td>6358.983321</td>
-      <td>10039.595640</td>
-      <td>14141.858697</td>
-      <td>17983.303955</td>
-      <td>22214.117110</td>
-      <td>34435.36744</td>
+      <th>min</th>
+      <td>241.2</td>
+      <td>1201.6</td>
+      <td>331.0</td>
+      <td>973.5</td>
+      <td>10039.6</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>761.2</td>
+      <td>3427.8</td>
+      <td>1057.0</td>
+      <td>7213.1</td>
+      <td>14141.9</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1192.1</td>
+      <td>5465.5</td>
+      <td>2646.8</td>
+      <td>12081.7</td>
+      <td>17983.3</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2377.4</td>
+      <td>7830.2</td>
+      <td>8549.3</td>
+      <td>20461.4</td>
+      <td>22214.1</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>21951.2</td>
+      <td>42951.7</td>
+      <td>113523.1</td>
+      <td>49357.2</td>
+      <td>34435.4</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 24 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -2096,17 +1809,13 @@ Oceania : 2
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 自作の関数もOK</span>
 
-<span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">df_group</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span><span class="s1">&#39;pop&#39;</span><span class="p">,</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="n">df_group</span><span class="p">[[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span><span class="s1">&#39;pop&#39;</span><span class="p">,</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/40/v0v2h0rj7p75rngjf0bh9r040000gn/T/ipykernel_40735/3388776761.py:5: FutureWarning: Indexing with multiple keys (implicitly converted to a tuple of keys) will be deprecated, use a list instead.
-  df_group[&#39;lifeExp&#39;,&#39;pop&#39;,&#39;gdpPercap&#39;].agg(func)
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2171,10 +1880,11 @@ Oceania : 2
 </table>
 </div></div></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">continent</span></code>の内訳の割合を計算</p>
 </section>
-<section id="id8">
-<h3>図<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
-<p><strong><code class="docutils literal notranslate"><span class="pre">continent</span></code>平均</strong></p>
+<section id="id9">
+<h3>図<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">continent</span></code>平均寿命</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_continent</span> <span class="o">=</span> <span class="n">df_group</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -2184,22 +1894,23 @@ Oceania : 2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_continent</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df_lifeExp_continent</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;大陸別平均寿命&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Gapminder_49_0.png" src="_images/Gapminder_49_0.png" />
+<img alt="_images/e53cf652a4f4f069fc41026334816476aab987bdf2043dd4d96eec887b0e71f3.png" src="_images/e53cf652a4f4f069fc41026334816476aab987bdf2043dd4d96eec887b0e71f3.png" />
 </div>
 </div>
-<section id="id9">
-<h4>クロス・セクション<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
+<section id="id10">
+<h4>3つの変数<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_mean</span> <span class="o">=</span> <span class="n">df_group</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;ln_pop&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">])</span>
-<span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;ln_gdpPercap&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">])</span>
+<span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;ln_pop&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;ln_gdpPercap&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">)</span>
 <span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;lifeExp_10&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_mean</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">10</span>
 </pre></div>
 </div>
@@ -2207,19 +1918,19 @@ Oceania : 2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_mean</span><span class="p">[[</span><span class="s1">&#39;lifeExp_10&#39;</span><span class="p">,</span> <span class="s1">&#39;ln_gdpPercap&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_mean</span><span class="p">[[</span><span class="s1">&#39;ln_pop&#39;</span><span class="p">,</span><span class="s1">&#39;lifeExp_10&#39;</span><span class="p">,</span> <span class="s1">&#39;ln_gdpPercap&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Gapminder_52_0.png" src="_images/Gapminder_52_0.png" />
+<img alt="_images/df5f3f9ab49237b352f13456cd80715cee58bdab95b6e7f84e51d605acc8205b.png" src="_images/df5f3f9ab49237b352f13456cd80715cee58bdab95b6e7f84e51d605acc8205b.png" />
 </div>
 </div>
 </section>
 </section>
-<section id="id10">
-<h3>複数階層の<code class="docutils literal notranslate"><span class="pre">groupby()</span></code><a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<section id="id11">
+<h3>複数階層の<code class="docutils literal notranslate"><span class="pre">groupby()</span></code><a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">continent</span></code>別の平均時系列を考えるときに有用。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2304,7 +2015,7 @@ Oceania : 2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lifeExpの列だけを選択した後，行はyear列はcontinentになるDataFrameに変換</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lifeExpの列だけを選択した後，unstackを使ってyearが行ラベルになるDataFrameに変換</span>
 
 <span class="n">df_lifeExp_group</span> <span class="o">=</span> <span class="n">df_group2</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
@@ -2313,14 +2024,14 @@ Oceania : 2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_group</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Average Life Expectancy&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df_lifeExp_group</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;大陸別平均寿命の推移&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Gapminder_58_0.png" src="_images/Gapminder_58_0.png" />
+<img alt="_images/3ee4f46af6ba405bd580ce5721e034af367941022973181a3860877ca4032ee9.png" src="_images/3ee4f46af6ba405bd580ce5721e034af367941022973181a3860877ca4032ee9.png" />
 </div>
 </div>
 <p><strong>世界平均との比較</strong></p>
@@ -2333,7 +2044,7 @@ Oceania : 2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world_lifeExp</span> <span class="o">=</span> <span class="n">df_group_year</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world_lifeExp</span> <span class="o">=</span> <span class="n">df_group_year</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 </div>
 </div>
@@ -2341,568 +2052,15 @@ Oceania : 2
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_diff</span> <span class="o">=</span> <span class="n">df_lifeExp_group</span> <span class="o">-</span> <span class="n">world_lifeExp</span>
-<span class="n">df_lifeExp_diff</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">df_lifeExp_diff</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;大陸別平均寿命の世界平均との差の推移&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Gapminder_62_0.png" src="_images/Gapminder_62_0.png" />
-</div>
-</div>
-</section>
-</section>
-<section id="multi-index">
-<h2>Multi-index<a class="headerlink" href="#multi-index" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sort_index()がないとWarningがでる場合がある(順番で並ぶとPythonが変数を探しやすくなる)</span>
-
-<span class="n">dfm</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span><span class="s1">&#39;country&#39;</span><span class="p">,</span><span class="s1">&#39;year&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfm</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>lifeExp</th>
-      <th>pop</th>
-      <th>gdpPercap</th>
-    </tr>
-    <tr>
-      <th>continent</th>
-      <th>country</th>
-      <th>year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="5" valign="top">Africa</th>
-      <th rowspan="5" valign="top">Algeria</th>
-      <th>1952</th>
-      <td>43.077</td>
-      <td>9279525</td>
-      <td>2449.008185</td>
-    </tr>
-    <tr>
-      <th>1957</th>
-      <td>45.685</td>
-      <td>10270856</td>
-      <td>3013.976023</td>
-    </tr>
-    <tr>
-      <th>1962</th>
-      <td>48.303</td>
-      <td>11000948</td>
-      <td>2550.816880</td>
-    </tr>
-    <tr>
-      <th>1967</th>
-      <td>51.407</td>
-      <td>12760499</td>
-      <td>3246.991771</td>
-    </tr>
-    <tr>
-      <th>1972</th>
-      <td>54.518</td>
-      <td>14760787</td>
-      <td>4182.663766</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">continent</span></code>, <code class="docutils literal notranslate"><span class="pre">country</span></code>, <code class="docutils literal notranslate"><span class="pre">year</span></code>の３つがインデックス！</p>
-<section id="id11">
-<h3>統計量<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
-<section id="id12">
-<h4>データ数<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfm</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/40/v0v2h0rj7p75rngjf0bh9r040000gn/T/ipykernel_40735/18837437.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.count(level=1) should use df.groupby(level=1).count().
-  dfm.count(level=0)
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>lifeExp</th>
-      <th>pop</th>
-      <th>gdpPercap</th>
-    </tr>
-    <tr>
-      <th>continent</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Africa</th>
-      <td>624</td>
-      <td>624</td>
-      <td>624</td>
-    </tr>
-    <tr>
-      <th>Americas</th>
-      <td>300</td>
-      <td>300</td>
-      <td>300</td>
-    </tr>
-    <tr>
-      <th>Asia</th>
-      <td>396</td>
-      <td>396</td>
-      <td>396</td>
-    </tr>
-    <tr>
-      <th>Europe</th>
-      <td>360</td>
-      <td>360</td>
-      <td>360</td>
-    </tr>
-    <tr>
-      <th>Oceania</th>
-      <td>24</td>
-      <td>24</td>
-      <td>24</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</section>
-<section id="id13">
-<h4>平均の計算<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfm</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
-
-<span class="c1"># dfm.mean(level=0) も同じ</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/40/v0v2h0rj7p75rngjf0bh9r040000gn/T/ipykernel_40735/2159504587.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.median(level=1) should use df.groupby(level=1).median().
-  dfm.mean(level=&#39;continent&#39;)
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>lifeExp</th>
-      <th>pop</th>
-      <th>gdpPercap</th>
-    </tr>
-    <tr>
-      <th>continent</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Africa</th>
-      <td>48.865330</td>
-      <td>9.916003e+06</td>
-      <td>2193.754578</td>
-    </tr>
-    <tr>
-      <th>Americas</th>
-      <td>64.658737</td>
-      <td>2.450479e+07</td>
-      <td>7136.110356</td>
-    </tr>
-    <tr>
-      <th>Asia</th>
-      <td>60.064903</td>
-      <td>7.703872e+07</td>
-      <td>7902.150428</td>
-    </tr>
-    <tr>
-      <th>Europe</th>
-      <td>71.903686</td>
-      <td>1.716976e+07</td>
-      <td>14469.475533</td>
-    </tr>
-    <tr>
-      <th>Oceania</th>
-      <td>74.326208</td>
-      <td>8.874672e+06</td>
-      <td>18621.609223</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</section>
-<section id="id14">
-<h4>標準偏差<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfm</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/40/v0v2h0rj7p75rngjf0bh9r040000gn/T/ipykernel_40735/109049444.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.var(level=1) should use df.groupby(level=1).var().
-  dfm.std(level=&#39;continent&#39;)
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>lifeExp</th>
-      <th>pop</th>
-      <th>gdpPercap</th>
-    </tr>
-    <tr>
-      <th>continent</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Africa</th>
-      <td>9.150210</td>
-      <td>1.549092e+07</td>
-      <td>2827.929863</td>
-    </tr>
-    <tr>
-      <th>Americas</th>
-      <td>9.345088</td>
-      <td>5.097943e+07</td>
-      <td>6396.764112</td>
-    </tr>
-    <tr>
-      <th>Asia</th>
-      <td>11.864532</td>
-      <td>2.068852e+08</td>
-      <td>14045.373112</td>
-    </tr>
-    <tr>
-      <th>Europe</th>
-      <td>5.433178</td>
-      <td>2.051944e+07</td>
-      <td>9355.213498</td>
-    </tr>
-    <tr>
-      <th>Oceania</th>
-      <td>3.795611</td>
-      <td>6.506342e+06</td>
-      <td>6358.983321</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</section>
-<section id="id15">
-<h4>最大値・最小値<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfm</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/40/v0v2h0rj7p75rngjf0bh9r040000gn/T/ipykernel_40735/1026016611.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.median(level=1) should use df.groupby(level=1).median().
-  dfm.max(level=&#39;continent&#39;)
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>lifeExp</th>
-      <th>pop</th>
-      <th>gdpPercap</th>
-    </tr>
-    <tr>
-      <th>continent</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Africa</th>
-      <td>76.442</td>
-      <td>135031164</td>
-      <td>21951.21176</td>
-    </tr>
-    <tr>
-      <th>Americas</th>
-      <td>80.653</td>
-      <td>301139947</td>
-      <td>42951.65309</td>
-    </tr>
-    <tr>
-      <th>Asia</th>
-      <td>82.603</td>
-      <td>1318683096</td>
-      <td>113523.13290</td>
-    </tr>
-    <tr>
-      <th>Europe</th>
-      <td>81.757</td>
-      <td>82400996</td>
-      <td>49357.19017</td>
-    </tr>
-    <tr>
-      <th>Oceania</th>
-      <td>81.235</td>
-      <td>20434176</td>
-      <td>34435.36744</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfm</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/40/v0v2h0rj7p75rngjf0bh9r040000gn/T/ipykernel_40735/2681793636.py:1: FutureWarning: Using the level keyword in DataFrame and Series aggregations is deprecated and will be removed in a future version. Use groupby instead. df.median(level=1) should use df.groupby(level=1).median().
-  dfm.min(level=&#39;continent&#39;)
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>lifeExp</th>
-      <th>pop</th>
-      <th>gdpPercap</th>
-    </tr>
-    <tr>
-      <th>continent</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Africa</th>
-      <td>23.599</td>
-      <td>60011</td>
-      <td>241.165876</td>
-    </tr>
-    <tr>
-      <th>Americas</th>
-      <td>37.579</td>
-      <td>662850</td>
-      <td>1201.637154</td>
-    </tr>
-    <tr>
-      <th>Asia</th>
-      <td>28.801</td>
-      <td>120447</td>
-      <td>331.000000</td>
-    </tr>
-    <tr>
-      <th>Europe</th>
-      <td>43.585</td>
-      <td>147962</td>
-      <td>973.533195</td>
-    </tr>
-    <tr>
-      <th>Oceania</th>
-      <td>69.120</td>
-      <td>1994794</td>
-      <td>10039.595640</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</section>
-</section>
-<section id="id16">
-<h3>図<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
-<p><strong>図（５カ国の時系列）</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfm_2</span> <span class="o">=</span> <span class="n">dfm</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Japan&#39;</span><span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="s1">&#39;China&#39;</span><span class="p">,</span> <span class="s1">&#39;Thailand&#39;</span><span class="p">]</span>
-
-<span class="n">dfm_2</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">countries</span><span class="p">),</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="k">pass</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/Gapminder_80_0.png" src="_images/Gapminder_80_0.png" />
-</div>
-</div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">lifeExp</span></code>の世界平均との差</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_mi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">continent_list</span><span class="p">:</span>
-    <span class="n">temp</span> <span class="o">=</span> <span class="n">dfm</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">i</span><span class="p">,),</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">df_lifeExp_mi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_mi</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Average Life Expectancy&#39;</span><span class="p">)</span>
-<span class="k">pass</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/Gapminder_83_0.png" src="_images/Gapminder_83_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">world_lifeExp_mi</span> <span class="o">=</span> <span class="n">dfm_2</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_diff_mi</span> <span class="o">=</span> <span class="n">df_lifeExp_mi</span> <span class="o">-</span> <span class="n">world_lifeExp_mi</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_lifeExp_diff_mi</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="k">pass</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/Gapminder_86_0.png" src="_images/Gapminder_86_0.png" />
+<img alt="_images/cfebbbdf532022fe706f2cf3d75ce414e9a2939885c44db2c88cf8aed884fea6.png" src="_images/cfebbbdf532022fe706f2cf3d75ce414e9a2939885c44db2c88cf8aed884fea6.png" />
 </div>
 </div>
 </section>
@@ -2921,7 +2079,7 @@ Oceania : 2
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -2929,50 +2087,121 @@ Oceania : 2
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Grade.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">学業成績の分析</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Grade.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">学業成績の分析</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Moving_Average.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Moving_Average.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">移動平均</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">データ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">groupby()</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continent-again">continentの内訳（again）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">統計量</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">観測値の数</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">平均</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">標準偏差</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">最大値</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">最小値</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3変数の記述統計</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby-agg">groupby.agg()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">図</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3つの変数</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">複数階層の<code class="docutils literal notranslate"><span class="pre">groupby()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-    By 春山 鉄源  Tetsugen HARUYAMA<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+著者 春山 鉄源  Tetsugen HARUYAMA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code -->
 </div>
+  </div>
+  
+</div></div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

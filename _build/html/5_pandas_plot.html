@@ -1,36 +1,46 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Pandas：図示 &#8212; 経済学のためのPython入門</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/my_style.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -38,689 +48,378 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-R9KXY9G892');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '5_pandas_plot';</script>
     <link rel="canonical" href="https://py4basics.github.io/5_pandas_plot.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="SciPy.optimize：解の求め方と最適化問題" href="7_SciPy_optimize.html" />
     <link rel="prev" title="Matplotlib：図示" href="4_matplotlib.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
-<script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){ dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'G-R9KXY9G892');
-                </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">経済学のためのPython入門</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Python入門I
- </span>
-</p>
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">経済学のためのPython入門</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_I.html">
-   基本データ型と変数
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_II.html">
-   データの操作
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_III.html">
-   関数とメソッド
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_IV.html">
-   制御フロー
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_V.html">
-   モジュールと疑似コード
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_VI.html">
-   図示とシミュレーション
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_I.html">基本データ型と変数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_II.html">データの操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_III.html">関数とメソッド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_IV.html">制御フロー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_V.html">モジュールとアルゴリズム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_VI.html">図示とシミュレーション</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Python入門II
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門II</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="2_NumPy.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     NumPy
-    </span>
-   </code>
-   ：高速化
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3_Pandas.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Pandas
-    </span>
-   </code>
-   ：データ分析
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4_matplotlib.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Matplotlib
-    </span>
-   </code>
-   ：図示
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Pandas
-    </span>
-   </code>
-   ：図示
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7_SciPy_optimize.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     SciPy.optimize
-    </span>
-   </code>
-   ：解の求め方と最適化問題
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="8_NumPy_random.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Numpy
-    </span>
-   </code>
-   : ランダム変数
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
-   SciPy.stats：確率分布
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="2_NumPy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>：高速化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Pandas.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_matplotlib.html"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_SciPy_optimize.html"><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_NumPy_random.html"><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: ランダム変数</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">SciPy.stats：確率分布</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  参考
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="0_Preparations.html">
-   ツールのインストールと説明
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="things_to_note.html">
-   Tipsと注意点
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Grade.html">
-   学業成績の分析
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Gapminder.html">
-   Gapminder
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Moving_Average.html">
-   移動平均
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="0_Preparations.html">ツールのインストールと説明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="things_to_note.html">Tipsと注意点</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Grade.html">学業成績の分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Gapminder.html">Gapminder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Moving_Average.html">移動平均</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  経済学
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">経済学</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4macro.github.io">
-   Pythonで学ぶマクロ経済学（中級＋レベル）
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4etrics.github.io">
-   Pythonで学ぶ入門計量経済学
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://py4macro.github.io">Pythonで学ぶマクロ経済学（中級＋レベル）</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://py4etrics.github.io">Pythonで学ぶ入門計量経済学</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  JupyterLite
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JupyterLite</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4class.netlify.app">
-   JupyterLiteを始める
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://py4class.netlify.app">JupyterLiteを始める</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/5_pandas_plot.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/5_pandas_plot.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/5_pandas_plot.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/5_pandas_plot.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="このページをダウンロード">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/5_pandas_plot.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="ソースファイルをダウンロード"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="PDFに印刷"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/5_pandas_plot.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   説明
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   プロット方法
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sec-5-options">
-   引数とメソッド
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     基本的な引数
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sec-5-titlelabels">
-     タイトルとラベルのサイズの調整
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     「軸」を指定してプロットする場合
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     図を並べる
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     ２軸グラフ
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id9">
-   日本語
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#japanize-matplotlib">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       japanize_matplotlib
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     フォントを指定する
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
-   マクロ経済学の例
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
-     投資関数
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
-     将来価値
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id14">
-   その他のプロット
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id15">
-     種類
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
-     散布図
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
-     ヒストグラム
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sec-5-kernel">
-     カーネル密度推定プロット
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id19">
-     縦線・横線
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sec-5-bar">
-     棒グラフ
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Pandas：図示</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   説明
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   プロット方法
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sec-5-options">
-   引数とメソッド
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     基本的な引数
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sec-5-titlelabels">
-     タイトルとラベルのサイズの調整
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     「軸」を指定してプロットする場合
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     図を並べる
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     ２軸グラフ
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id9">
-   日本語
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#japanize-matplotlib">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       japanize_matplotlib
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     フォントを指定する
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
-   マクロ経済学の例
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
-     投資関数
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
-     将来価値
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id14">
-   その他のプロット
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id15">
-     種類
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
-     散布図
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
-     ヒストグラム
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sec-5-kernel">
-     カーネル密度推定プロット
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id19">
-     縦線・横線
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sec-5-bar">
-     棒グラフ
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pandas：図示</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">説明</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">プロット方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-options">引数とメソッド</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">基本的な引数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-titlelabels">タイトルとラベルのサイズの調整</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">「軸」を指定してプロットする場合</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">図を並べる</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">２軸グラフ</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">日本語</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#japanize-matplotlib"><code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">フォントを指定する</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">マクロ経済学の例</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">投資関数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">将来価値</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">その他のプロット</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">種類</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">散布図</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">ヒストグラム</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-kernel">カーネル密度推定プロット</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">縦線・横線</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-bar">棒グラフ</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="pandas">
 <span id="chap-pandas-plot"></span><h1><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示<a class="headerlink" href="#pandas" title="Permalink to this headline">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
@@ -809,7 +508,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/5_pandas_plot_9_1.png" src="_images/5_pandas_plot_9_1.png" />
+<img alt="_images/8c637a4daa39f1b968546578dfcac22acf97bd6254e19d3f08c3a183a30b440d.png" src="_images/8c637a4daa39f1b968546578dfcac22acf97bd6254e19d3f08c3a183a30b440d.png" />
 </div>
 </div>
 <ul class="simple">
@@ -903,7 +602,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_15_0.png" src="_images/5_pandas_plot_15_0.png" />
+<img alt="_images/a3b9700f152b7878c630d8d32431aefdbf8592397d0a22fe92461df18b3008ef.png" src="_images/a3b9700f152b7878c630d8d32431aefdbf8592397d0a22fe92461df18b3008ef.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>を<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>としてプロットすると凡例も表示される。</p>
@@ -915,7 +614,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_17_0.png" src="_images/5_pandas_plot_17_0.png" />
+<img alt="_images/e1d090036b93fa59c3392753dd799d6e15791382684b418972c0ef802bb6916c.png" src="_images/e1d090036b93fa59c3392753dd799d6e15791382684b418972c0ef802bb6916c.png" />
 </div>
 </div>
 <p>この場合の凡例は列ラベルがそのまま使われている。</p>
@@ -978,7 +677,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_21_0.png" src="_images/5_pandas_plot_21_0.png" />
+<img alt="_images/c7b7040e207a0ab68ee8e1b6bacbbbee850c754c0c4dee36992e4c9599939e3d.png" src="_images/c7b7040e207a0ab68ee8e1b6bacbbbee850c754c0c4dee36992e4c9599939e3d.png" />
 </div>
 </div>
 <p>もしくは<code class="docutils literal notranslate"><span class="pre">Series</span></code>を2行に分けても同じ図となるが，凡例は表示されない。</p>
@@ -991,7 +690,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_23_0.png" src="_images/5_pandas_plot_23_0.png" />
+<img alt="_images/62eeb34e55849a930d5f27c486a5593ceb8b660d56ebd049f6c430678afdbbf0.png" src="_images/62eeb34e55849a930d5f27c486a5593ceb8b660d56ebd049f6c430678afdbbf0.png" />
 </div>
 </div>
 <p>デフォルトでは横軸に行インデックスが使われるが，横軸を指定したい場合は，次の引数を使う。</p>
@@ -1007,7 +706,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_25_0.png" src="_images/5_pandas_plot_25_0.png" />
+<img alt="_images/402fa72b60aaa22ed21bcd97b073ade31f6ec6e2b61f3307ccbe49f81fbda705.png" src="_images/402fa72b60aaa22ed21bcd97b073ade31f6ec6e2b61f3307ccbe49f81fbda705.png" />
 </div>
 </div>
 </section>
@@ -1073,7 +772,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_30_0.png" src="_images/5_pandas_plot_30_0.png" />
+<img alt="_images/21cf807b719b71021185b0866dcd4e01200ab38ded50986620f808fc69ed8151.png" src="_images/21cf807b719b71021185b0866dcd4e01200ab38ded50986620f808fc69ed8151.png" />
 </div>
 </div>
 </section>
@@ -1086,7 +785,7 @@ Name: X, dtype: int64
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">「キャンバス」と「軸」の関係</span><a class="headerlink" href="#fig-5-figure-axes" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>「キャンバス」とは実際に表示される<strong>領域</strong>であり，実際には表示されない「透明のキャンバス」である。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">figure</span></code>や<code class="docutils literal notranslate"><span class="pre">fig</span></code>などの変数名や引数名があれば、「キャンバス」を指していると理解すれば良いだろう。</p></li>
@@ -1138,7 +837,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_35_0.png" src="_images/5_pandas_plot_35_0.png" />
+<img alt="_images/21d1d5773af3e0dbf01e65339f92c8f65bfdc5ef7088d96b3a103bdfd58a4dd0.png" src="_images/21d1d5773af3e0dbf01e65339f92c8f65bfdc5ef7088d96b3a103bdfd58a4dd0.png" />
 </div>
 </div>
 </section>
@@ -1154,11 +853,11 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_38_0.png" src="_images/5_pandas_plot_38_0.png" />
+<img alt="_images/8c637a4daa39f1b968546578dfcac22acf97bd6254e19d3f08c3a183a30b440d.png" src="_images/8c637a4daa39f1b968546578dfcac22acf97bd6254e19d3f08c3a183a30b440d.png" />
 </div>
 </div>
 <p>１行目の右辺では「キャンバス」と「軸」が自動生成され，その内「軸」のみが返され変数<code class="docutils literal notranslate"><span class="pre">ax_</span></code>に割り当てられている。２行目の<code class="docutils literal notranslate"><span class="pre">plot()</span></code>の引数<code class="docutils literal notranslate"><span class="pre">ax</span></code>は「軸」を指定する引数であり，それに<code class="docutils literal notranslate"><span class="pre">ax_</span></code>を設定している。即ち，<code class="docutils literal notranslate"><span class="pre">Z</span></code>を「軸」<code class="docutils literal notranslate"><span class="pre">ax_</span></code>にプロットすることを指定している。このコードには２つの利点がある。</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>と異なる「飾り付け」を<code class="docutils literal notranslate"><span class="pre">Z</span></code>に簡単に施すことができる。</p></li>
 <li><p>２行目に<code class="docutils literal notranslate"><span class="pre">df0</span></code>ではなく別の<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使うことも可能となる。</p></li>
 </ol>
@@ -1177,7 +876,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_40_0.png" src="_images/5_pandas_plot_40_0.png" />
+<img alt="_images/48a0eda34625e71509c7bbf7c2205ea0b73f8bc7595f9ca3d0a397dfbca93f5f.png" src="_images/48a0eda34625e71509c7bbf7c2205ea0b73f8bc7595f9ca3d0a397dfbca93f5f.png" />
 </div>
 </div>
 <p>また上のコードの最後に２行を付け加えているので便利なので参考にして欲しい。</p>
@@ -1205,7 +904,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_44_0.png" src="_images/5_pandas_plot_44_0.png" />
+<img alt="_images/365773f22dde052a09ebdeab47995c0daee7d47f95bf59560fe1561226efdfa4.png" src="_images/365773f22dde052a09ebdeab47995c0daee7d47f95bf59560fe1561226efdfa4.png" />
 </div>
 </div>
 <p>図を横に並べるには<code class="docutils literal notranslate"><span class="pre">layout=(1,3)</span></code>を付け加える。<code class="docutils literal notranslate"><span class="pre">layout</span></code>は図の配置を行列のように考えて指定し、<code class="docutils literal notranslate"><span class="pre">1</span></code>は行の数であり、<code class="docutils literal notranslate"><span class="pre">3</span></code>は列の数。</p>
@@ -1220,7 +919,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_46_0.png" src="_images/5_pandas_plot_46_0.png" />
+<img alt="_images/574a7b41cf0132d7ad34dc5b312c93519e82748ebbecb01b3663c515ad69557e.png" src="_images/574a7b41cf0132d7ad34dc5b312c93519e82748ebbecb01b3663c515ad69557e.png" />
 </div>
 </div>
 </section>
@@ -1235,7 +934,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_49_0.png" src="_images/5_pandas_plot_49_0.png" />
+<img alt="_images/2059f677c23a7d694827c7a7e9656c820d525a4a7e901451fdc611d4072b362f.png" src="_images/2059f677c23a7d694827c7a7e9656c820d525a4a7e901451fdc611d4072b362f.png" />
 </div>
 </div>
 <p>別々の飾り付けをする場合は次のようにすると良いだろう。</p>
@@ -1249,7 +948,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_51_0.png" src="_images/5_pandas_plot_51_0.png" />
+<img alt="_images/1250087e915cd46f5dcc564ae219ae340b894adb20adf1cecab399a56b53a2d3.png" src="_images/1250087e915cd46f5dcc564ae219ae340b894adb20adf1cecab399a56b53a2d3.png" />
 </div>
 </div>
 <p>上の図との主な違いが３行目にある</p>
@@ -1287,14 +986,14 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_58_0.png" src="_images/5_pandas_plot_58_0.png" />
+<img alt="_images/8fef8223c850c47dce008587f67530119faec5fa3425a0ae9e1fe0942f7c1194.png" src="_images/8fef8223c850c47dce008587f67530119faec5fa3425a0ae9e1fe0942f7c1194.png" />
 </div>
 </div>
 </section>
 <section id="id10">
 <h3>フォントを指定する<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>2つの方法：</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>フォントはインストールせず、PC内にあるフォントを指定する。</p></li>
 <li><p>フォントをインストールする方法</p></li>
 </ol>
@@ -1338,7 +1037,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_62_0.png" src="_images/5_pandas_plot_62_0.png" />
+<img alt="_images/9048150f8fbcbf73e8aa9908d1e0f71f77b79f805d61d86d62b980ab00299917.png" src="_images/9048150f8fbcbf73e8aa9908d1e0f71f77b79f805d61d86d62b980ab00299917.png" />
 </div>
 </div>
 <blockquote>
@@ -1479,7 +1178,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_78_0.png" src="_images/5_pandas_plot_78_0.png" />
+<img alt="_images/d7277fba81c409083e1661b5ff942d2ff9159fc1f17a62089321a74b47e3c0db.png" src="_images/d7277fba81c409083e1661b5ff942d2ff9159fc1f17a62089321a74b47e3c0db.png" />
 </div>
 </div>
 </section>
@@ -1671,7 +1370,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_89_0.png" src="_images/5_pandas_plot_89_0.png" />
+<img alt="_images/0695b03c34f80d73a5aa9f3eba3715e7637ab10d48149176acd6deccb26029bb.png" src="_images/0695b03c34f80d73a5aa9f3eba3715e7637ab10d48149176acd6deccb26029bb.png" />
 </div>
 </div>
 </section>
@@ -1777,7 +1476,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_98_0.png" src="_images/5_pandas_plot_98_0.png" />
+<img alt="_images/03fbc130764305d4ffcfdcb9a9e058271c8025c07865d5aea67572bce873f2f4.png" src="_images/03fbc130764305d4ffcfdcb9a9e058271c8025c07865d5aea67572bce873f2f4.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1829,7 +1528,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_100_0.png" src="_images/5_pandas_plot_100_0.png" />
+<img alt="_images/24a2fcbef2323837b5417216ba4ef33fc43b38381fbf6899c8c6c6c3c05a55bf.png" src="_images/24a2fcbef2323837b5417216ba4ef33fc43b38381fbf6899c8c6c6c3c05a55bf.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なので，そちらを参照しよう。</p>
@@ -1846,7 +1545,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_103_0.png" src="_images/5_pandas_plot_103_0.png" />
+<img alt="_images/d07cb4cdc88e757de789d9723cee3761fa2f08f2a9708cee4dcceeb0b4031cbd.png" src="_images/d07cb4cdc88e757de789d9723cee3761fa2f08f2a9708cee4dcceeb0b4031cbd.png" />
 </div>
 </div>
 </section>
@@ -1867,7 +1566,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_106_0.png" src="_images/5_pandas_plot_106_0.png" />
+<img alt="_images/a0249ff52e21b463f6053630ee2b9adf007eed8eaaa66e4eeb933b3aca00eba8.png" src="_images/a0249ff52e21b463f6053630ee2b9adf007eed8eaaa66e4eeb933b3aca00eba8.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1929,7 +1628,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_109_0.png" src="_images/5_pandas_plot_109_0.png" />
+<img alt="_images/26af49d5a7066afd37066239d4cdac2ef86a409f798968ee57cbc6b536249297.png" src="_images/26af49d5a7066afd37066239d4cdac2ef86a409f798968ee57cbc6b536249297.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
@@ -1946,7 +1645,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_112_0.png" src="_images/5_pandas_plot_112_0.png" />
+<img alt="_images/4a97dbf5b82af3ac13b1e4a9f57844644a3fdb3bcbae41c4b9cbd7ca0d6b7de1.png" src="_images/4a97dbf5b82af3ac13b1e4a9f57844644a3fdb3bcbae41c4b9cbd7ca0d6b7de1.png" />
 </div>
 </div>
 <p>濃い部分が重なっている部分となる。また柱を積み上げて表示するには<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）を使う。</p>
@@ -1962,7 +1661,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_114_0.png" src="_images/5_pandas_plot_114_0.png" />
+<img alt="_images/49607dadbd133bbd3327a2bdb10e4d0bfe685620c76deb87dd7aaf4b63a30624.png" src="_images/49607dadbd133bbd3327a2bdb10e4d0bfe685620c76deb87dd7aaf4b63a30624.png" />
 </div>
 </div>
 <p>赤の上に黒が積み上げられている。</p>
@@ -1986,7 +1685,7 @@ Name: X, dtype: int64
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;frozen importlib._bootstrap&gt;:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
 </pre></div>
 </div>
-<img alt="_images/5_pandas_plot_119_1.png" src="_images/5_pandas_plot_119_1.png" />
+<img alt="_images/62c9417d7abeaf947998c56bc94bd4d744fd2941d8e21d5ad1958248b8ec9b5d.png" src="_images/62c9417d7abeaf947998c56bc94bd4d744fd2941d8e21d5ad1958248b8ec9b5d.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2041,7 +1740,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_122_0.png" src="_images/5_pandas_plot_122_0.png" />
+<img alt="_images/f81baeacd5c762577647a3e9caa007e13f5f1213b493fc8952b0b0fb5f75eabd.png" src="_images/f81baeacd5c762577647a3e9caa007e13f5f1213b493fc8952b0b0fb5f75eabd.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
@@ -2061,7 +1760,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_125_0.png" src="_images/5_pandas_plot_125_0.png" />
+<img alt="_images/8308bd302690340ac16aae55e709fdcdf7edae14c292e0bc79c110c7d9e75a20.png" src="_images/8308bd302690340ac16aae55e709fdcdf7edae14c292e0bc79c110c7d9e75a20.png" />
 </div>
 </div>
 </section>
@@ -2094,7 +1793,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_128_0.png" src="_images/5_pandas_plot_128_0.png" />
+<img alt="_images/f457ad2ee8c87b498ff1765e3efa292b7e1db843b56237db0fdaa8672b76ac49.png" src="_images/f457ad2ee8c87b498ff1765e3efa292b7e1db843b56237db0fdaa8672b76ac49.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2138,7 +1837,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_131_0.png" src="_images/5_pandas_plot_131_0.png" />
+<img alt="_images/a90b48f0af889067f2eadeda1f9e8cb166746eba7726225a43cc9954029d046c.png" src="_images/a90b48f0af889067f2eadeda1f9e8cb166746eba7726225a43cc9954029d046c.png" />
 </div>
 </div>
 <p>最後に上のヒストグラムとカーネル密度推定プロットに縦線を加えてみよう。</p>
@@ -2158,7 +1857,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_133_0.png" src="_images/5_pandas_plot_133_0.png" />
+<img alt="_images/f082dca5e7e08d0c63cb2b23cef79f16f99b4b497986081fa834f8bd31a03d6d.png" src="_images/f082dca5e7e08d0c63cb2b23cef79f16f99b4b497986081fa834f8bd31a03d6d.png" />
 </div>
 </div>
 </section>
@@ -2199,7 +1898,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_139_0.png" src="_images/5_pandas_plot_139_0.png" />
+<img alt="_images/e2b52c722bdb7908d7bdac21638bf649238b11ec9e89b7799dec85de7af29100.png" src="_images/e2b52c722bdb7908d7bdac21638bf649238b11ec9e89b7799dec85de7af29100.png" />
 </div>
 </div>
 <p>複数の棒（データ）を並べたい場合もあるだろう。その場合は<code class="docutils literal notranslate"><span class="pre">＜縦軸の列ラベル＞</span></code>にリストとして指定すれば表示できる。</p>
@@ -2211,7 +1910,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_141_0.png" src="_images/5_pandas_plot_141_0.png" />
+<img alt="_images/7b09133a6d71b33c90632b0ddc266163df481e5ff7ed8d309d8739b86affcf83.png" src="_images/7b09133a6d71b33c90632b0ddc266163df481e5ff7ed8d309d8739b86affcf83.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2264,7 +1963,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_143_0.png" src="_images/5_pandas_plot_143_0.png" />
+<img alt="_images/6f2823f9cce7ccb69afc27b3ef707ec9372622448b58925daf1beaca6d23441d.png" src="_images/6f2823f9cce7ccb69afc27b3ef707ec9372622448b58925daf1beaca6d23441d.png" />
 </div>
 </div>
 <p>次に，ライン・プロットを追加する例を考えてみよう。<code class="docutils literal notranslate"><span class="pre">df2</span></code>には列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>があり，それを表すライン・プロットを重ねることにしよう。</p>
@@ -2291,7 +1990,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5_pandas_plot_145_0.png" src="_images/5_pandas_plot_145_0.png" />
+<img alt="_images/2e8db05d87de4b39f1faff2c54f278d12fd709deaac895e4745b336a250270bb.png" src="_images/2e8db05d87de4b39f1faff2c54f278d12fd709deaac895e4745b336a250270bb.png" />
 </div>
 </div>
 <p>棒の高さとGDPのマーカーの高さは同じであることがわかる。このコードでは次の点に注意する必要がある。<code class="docutils literal notranslate"><span class="pre">gdp</span></code>を<code class="docutils literal notranslate"><span class="pre">Series</span></code>として抽出し，メソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使っていることである。これにより，凡例の表記を自由に変更できることになる。</p>
@@ -2311,7 +2010,7 @@ Name: X, dtype: int64
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -2319,50 +2018,130 @@ Name: X, dtype: int64
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="4_matplotlib.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="4_matplotlib.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="7_SciPy_optimize.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="7_SciPy_optimize.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">説明</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">プロット方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-options">引数とメソッド</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">基本的な引数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-titlelabels">タイトルとラベルのサイズの調整</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">「軸」を指定してプロットする場合</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">図を並べる</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">２軸グラフ</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">日本語</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#japanize-matplotlib"><code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">フォントを指定する</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">マクロ経済学の例</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">投資関数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">将来価値</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">その他のプロット</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">種類</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">散布図</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">ヒストグラム</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-kernel">カーネル密度推定プロット</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">縦線・横線</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-bar">棒グラフ</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-    By 春山 鉄源  Tetsugen HARUYAMA<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+著者 春山 鉄源  Tetsugen HARUYAMA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code -->
 </div>
+  </div>
+  
+</div></div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
