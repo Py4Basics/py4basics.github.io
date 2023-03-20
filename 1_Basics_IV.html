@@ -1,50 +1,68 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>制御フロー &#8212; 経済学のためのPython入門</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/my_style.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-R9KXY9G892');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -53,871 +71,370 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '1_Basics_IV';</script>
     <link rel="canonical" href="https://py4basics.github.io/1_Basics_IV.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="モジュールとアルゴリズム" href="1_Basics_V.html" />
     <link rel="prev" title="関数とメソッド" href="1_Basics_III.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
-<script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){ dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'G-R9KXY9G892');
-                </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">経済学のためのPython入門</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Python入門I
- </span>
-</p>
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">経済学のためのPython入門</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_I.html">
-   基本データ型と変数
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_II.html">
-   データの操作
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_III.html">
-   関数とメソッド
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   制御フロー
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_V.html">
-   モジュールとアルゴリズム
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_VI.html">
-   図示とシミュレーション
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_I.html">基本データ型と変数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_II.html">データの操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_III.html">関数とメソッド</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">制御フロー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_V.html">モジュールとアルゴリズム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_VI.html">図示とシミュレーション</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Python入門II
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門II</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="2_NumPy.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     NumPy
-    </span>
-   </code>
-   ：高速化
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3_Pandas.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Pandas
-    </span>
-   </code>
-   ：データ分析
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4_matplotlib.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Matplotlib
-    </span>
-   </code>
-   ：図示
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5_pandas_plot.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Pandas
-    </span>
-   </code>
-   ：図示
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7_SciPy_optimize.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     SciPy.optimize
-    </span>
-   </code>
-   ：解の求め方と最適化問題
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="8_NumPy_random.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Numpy
-    </span>
-   </code>
-   : ランダム変数
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
-   SciPy.stats：確率分布
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="2_NumPy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>：高速化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Pandas.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_matplotlib.html"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_pandas_plot.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_SciPy_optimize.html"><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_NumPy_random.html"><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: ランダム変数</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">SciPy.stats：確率分布</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  参考
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="0_Preparations.html">
-   ツールのインストールと説明
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="things_to_note.html">
-   Tipsと注意点
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Grade.html">
-   学業成績の分析
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Gapminder.html">
-   Gapminder
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Moving_Average.html">
-   移動平均
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="0_Preparations.html">ツールのインストールと説明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="things_to_note.html">Tipsと注意点</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Grade.html">学業成績の分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Gapminder.html">Gapminder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Moving_Average.html">移動平均</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  経済学
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">経済学</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4macro.github.io">
-   Pythonで学ぶマクロ経済学（中級＋レベル）
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4etrics.github.io">
-   Pythonで学ぶ入門計量経済学
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://py4macro.github.io">Pythonで学ぶマクロ経済学（中級＋レベル）</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://py4etrics.github.io">Pythonで学ぶ入門計量経済学</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  JupyterLite
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JupyterLite</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4class.netlify.app">
-   JupyterLiteを始める
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://py4class.netlify.app">JupyterLiteを始める</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/1_Basics_IV.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/1_Basics_IV.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/1_Basics_IV.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/1_Basics_IV.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/1_Basics_IV.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/1_Basics_IV.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#if">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     if
-    </span>
-   </code>
-   文
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     説明と簡単な例
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     複数条件
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     関数化
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     直接真偽値を使う
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     数値を返す例
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#for">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     for
-    </span>
-   </code>
-   ループ
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     説明
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#print">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       print()
-      </span>
-     </code>
-     を使う例
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#append">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .append()
-      </span>
-     </code>
-     を使う例
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sec-4-consumption">
-     消費関数
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for2">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     ループの２つの書き方（動学分析の基礎）
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sec-4-future-values">
-     将来価値の時系列
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for1-enumerate">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     ループのお友達１：
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       enumerate()
-      </span>
-     </code>
-     関数
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for2-zip">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     ループのお友達２：
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       zip()
-      </span>
-     </code>
-     関数
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id10">
-   内包表記
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#while">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     While
-    </span>
-   </code>
-   ループ
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
-     説明と簡単な例
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
-     近似を考える
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id13">
-       壁からの距離
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
-       平方根の近似
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ifcontinue">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       if
-      </span>
-     </code>
-     文と
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       continue
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ifbreak">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       if
-      </span>
-     </code>
-     文と
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       break
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#continuebreak">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       continue
-      </span>
-     </code>
-     と
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       break
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>制御フロー</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#if">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     if
-    </span>
-   </code>
-   文
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     説明と簡単な例
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     複数条件
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     関数化
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     直接真偽値を使う
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     数値を返す例
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#for">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     for
-    </span>
-   </code>
-   ループ
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     説明
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#print">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       print()
-      </span>
-     </code>
-     を使う例
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#append">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .append()
-      </span>
-     </code>
-     を使う例
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sec-4-consumption">
-     消費関数
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for2">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     ループの２つの書き方（動学分析の基礎）
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sec-4-future-values">
-     将来価値の時系列
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for1-enumerate">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     ループのお友達１：
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       enumerate()
-      </span>
-     </code>
-     関数
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for2-zip">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     ループのお友達２：
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       zip()
-      </span>
-     </code>
-     関数
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id10">
-   内包表記
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#while">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     While
-    </span>
-   </code>
-   ループ
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
-     説明と簡単な例
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
-     近似を考える
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id13">
-       壁からの距離
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
-       平方根の近似
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ifcontinue">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       if
-      </span>
-     </code>
-     文と
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       continue
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ifbreak">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       if
-      </span>
-     </code>
-     文と
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       break
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#continuebreak">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       continue
-      </span>
-     </code>
-     と
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       break
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>制御フロー</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if"><code class="docutils literal notranslate"><span class="pre">if</span></code>文</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">説明と簡単な例</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">複数条件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">関数化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">直接真偽値を使う</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">数値を返す例</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">説明</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print"><code class="docutils literal notranslate"><span class="pre">print()</span></code>を使う例</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#append"><code class="docutils literal notranslate"><span class="pre">.append()</span></code>を使う例</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-4-consumption">消費関数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for2"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループの２つの書き方（動学分析の基礎）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-4-future-values">将来価値の時系列</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for1-enumerate"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループのお友達１：<code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>関数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for2-zip"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループのお友達２：<code class="docutils literal notranslate"><span class="pre">zip()</span></code>関数</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">内包表記</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while"><code class="docutils literal notranslate"><span class="pre">While</span></code>ループ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">説明と簡単な例</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">近似を考える</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">壁からの距離</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">平方根の近似</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ifcontinue"><code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ifbreak"><code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuebreak"><code class="docutils literal notranslate"><span class="pre">continue</span></code>と<code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>制御フロー<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<h1>制御フロー<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><p>制御フロー（control flow）とは，コンピューターがコードを実行する順序を意味する。通常，コードセルの中では「上から下に」実行することになるが，その中でフローが条件分岐したり，ある作業を何百回・何万回も繰り返したりすることになる。ここでは条件分岐と繰り返しに注目し<code class="docutils literal notranslate"><span class="pre">Python</span></code>の使い方を説明する。</p>
 <section id="if">
-<h2><code class="docutils literal notranslate"><span class="pre">if</span></code>文<a class="headerlink" href="#if" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">if</span></code>文<a class="headerlink" href="#if" title="Permalink to this heading">#</a></h2>
 <section id="id2">
-<h3>説明と簡単な例<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3>説明と簡単な例<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code>文を使うと，指定した条件によって処理を複数パターンに分けることができる。条件をブール型（真偽）（<code class="docutils literal notranslate"><span class="pre">True</span></code>又は<code class="docutils literal notranslate"><span class="pre">False</span></code>）で判断しコードを実行することになる。次の構文となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if ＜条件１＞:
     ＜条件１が`True`の場合に実行するコード＞
@@ -958,7 +475,7 @@ else:
 </div>
 </div>
 <p>＜<code class="docutils literal notranslate"><span class="pre">if</span></code>文の説明＞</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>が<code class="docutils literal notranslate"><span class="pre">10</span></code>と等しいかを評価する。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">x==10</span></code>が<code class="docutils literal notranslate"><span class="pre">True</span></code>の場合に，<code class="docutils literal notranslate"><span class="pre">条件はTrueです。</span></code>が表示される。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">x==10</span></code>が<code class="docutils literal notranslate"><span class="pre">False</span></code>のケースがはじまる。</p></li>
@@ -987,9 +504,9 @@ else:
 <p>このコードで<code class="docutils literal notranslate"><span class="pre">else</span></code>以下を省略してもエラーにはならない（結果も変わらない）。即ち，<code class="docutils literal notranslate"><span class="pre">else</span></code>以下がない場合は，<code class="docutils literal notranslate"><span class="pre">#3</span></code>と<code class="docutils literal notranslate"><span class="pre">#4</span></code>が省略されていると考えることができる。</p>
 </section>
 <section id="id3">
-<h3>複数条件<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>複数条件<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>次に，複数の条件がある例を考える。<code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code>をGDPの変化だとしよう。次の表示がされる<code class="docutils literal notranslate"><span class="pre">if</span></code>文を作成する。</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code>の値が正の場合，<code class="docutils literal notranslate"><span class="pre">GDPは増加しています。</span></code>を表示する。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code>の値が負の場合，<code class="docutils literal notranslate"><span class="pre">GDPは減少しています。</span></code>を表示する。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code>の値が<code class="docutils literal notranslate"><span class="pre">0</span></code>の場合，<code class="docutils literal notranslate"><span class="pre">GDPは変化していません。</span></code>を表示する。</p></li>
@@ -1066,7 +583,7 @@ else:
 <p>このコードを見ると，複数条件の場合に使う<code class="docutils literal notranslate"><span class="pre">elif</span></code>は<code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code>の略だと気づくとはずだ。またコードを読んで感じることは，入れ子にすると可読性が落ちることである。複数条件の場合は，可能な限り<code class="docutils literal notranslate"><span class="pre">elif</span></code>を使うようにしよう。</p>
 </section>
 <section id="id4">
-<h3>関数化<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>関数化<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code>文は関数の中で使うことも可能である。GDPに関する例を使って考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1129,7 +646,7 @@ else:
 </div>
 </section>
 <section id="id5">
-<h3>直接真偽値を使う<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>直接真偽値を使う<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code>文を実行する上で，条件が真偽値<code class="docutils literal notranslate"><span class="pre">True</span></code>又は<code class="docutils literal notranslate"><span class="pre">False</span></code>を返すかで制御フローが分岐することが分かったと思う。ここで真偽値が重要な役割を果たしているが，<code class="docutils literal notranslate"><span class="pre">bool()</span></code>関数を使って真偽値をできることを思い出そう。空の文字列<code class="docutils literal notranslate"><span class="pre">''</span></code>や<code class="docutils literal notranslate"><span class="pre">0</span></code>などは「空」・「無」なので<code class="docutils literal notranslate"><span class="pre">False</span></code>となるが，それら以外は<code class="docutils literal notranslate"><span class="pre">True</span></code>となる。次の例はこの特性を使った例となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1219,7 +736,7 @@ else:
 </ul>
 </section>
 <section id="id6">
-<h3>数値を返す例<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h3>数値を返す例<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>今までの例では<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使ったが，もちろん数値を返す<code class="docutils literal notranslate"><span class="pre">if</span></code>文を書くことも可能であり，むしろそれが一般的だろう。次の関数を<code class="docutils literal notranslate"><span class="pre">if</span></code>文で表してみよう。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1368,9 +885,9 @@ Y =
 </section>
 </section>
 <section id="for">
-<h2><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ<a class="headerlink" href="#for" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ<a class="headerlink" href="#for" title="Permalink to this heading">#</a></h2>
 <section id="id7">
-<h3>説明<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>説明<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>ループとは同じコードを複数回続けて実行できるように書かれたコードを指す。ループには２つのタイプがあるが，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループは指定した回数だけ処理を繰り返す計算手続きである。次のような書き方となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for ＜イタラブルの要素を割り当てる変数＞ in ＜イタラブル＞:
     ＜毎回実行したい内容１＞
@@ -1397,7 +914,7 @@ Y =
 <p>以下では例を使って説明しよう。</p>
 </section>
 <section id="print">
-<h3><code class="docutils literal notranslate"><span class="pre">print()</span></code>を使う例<a class="headerlink" href="#print" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">print()</span></code>を使う例<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h3>
 <p>次のリストにはGDPの構成要素が並んでいる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1453,7 +970,7 @@ Y =
 <p>この例では<code class="docutils literal notranslate"><span class="pre">gdp_components</span></code>の要素の数だけループが行われる。</p>
 </section>
 <section id="append">
-<h3><code class="docutils literal notranslate"><span class="pre">.append()</span></code>を使う例<a class="headerlink" href="#append" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">.append()</span></code>を使う例<a class="headerlink" href="#append" title="Permalink to this heading">#</a></h3>
 <p>リストにはメソッド<code class="docutils literal notranslate"><span class="pre">.append()</span></code>が実装されており，これを使うとリストに値を追加することができる。<code class="docutils literal notranslate"><span class="pre">.append()</span></code>と<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使い，空のリストに値を追加し新たなリストを作成する方法を紹介する。まず元になるリストを作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1482,7 +999,7 @@ Y =
 </div>
 </div>
 <p>＜コードの説明＞</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>空のリストの作成（<code class="docutils literal notranslate"><span class="pre">my_list</span></code>に10倍にした数字を格納する）</p></li>
 <li><p>ここから<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの始まり。<code class="docutils literal notranslate"><span class="pre">i</span></code>はリスト<code class="docutils literal notranslate"><span class="pre">[1,2,3,4,5]</span></code>の要素を割り当てる変数。</p>
 <ul class="simple">
@@ -1499,7 +1016,7 @@ Y =
 </ol>
 </section>
 <section id="sec-4-consumption">
-<span id="id8"></span><h3>消費関数<a class="headerlink" href="#sec-4-consumption" title="Permalink to this headline">#</a></h3>
+<span id="id8"></span><h3>消費関数<a class="headerlink" href="#sec-4-consumption" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使い，所得によって消費がどのように変化するかを考えてみよう。まず<code class="docutils literal notranslate"><span class="pre">y</span></code>を所得として消費関数を次のように仮定する。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">消費</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">+</span> <span class="mf">0.7</span> <span class="o">*</span> <span class="n">y</span>
 </pre></div>
@@ -1562,7 +1079,7 @@ Y =
 </ul>
 </section>
 <section id="for2">
-<h3><code class="docutils literal notranslate"><span class="pre">for</span></code>ループの２つの書き方（動学分析の基礎）<a class="headerlink" href="#for2" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code>ループの２つの書き方（動学分析の基礎）<a class="headerlink" href="#for2" title="Permalink to this heading">#</a></h3>
 <p>上で説明した３つの<code class="docutils literal notranslate"><span class="pre">for</span></code>ループは次の特徴を持っている。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code>を使った例</p>
@@ -1590,11 +1107,17 @@ Y =
 </ul>
 <p>初期の資本ストック（浴槽の水）<code class="docutils literal notranslate"><span class="pre">0</span></code>であり，毎期ごと<code class="docutils literal notranslate"><span class="pre">10</span></code>単位の投資（<code class="docutils literal notranslate"><span class="pre">10</span></code>リットルのバケツで水を追加）するとしよう。問題を簡単にするために<code class="docutils literal notranslate"><span class="pre">5</span></code>期間（水を追加するのは<code class="docutils literal notranslate"><span class="pre">5</span></code>回）とする。資本ストック（浴槽の水量）の推移は次のリストで表すことができる。<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使って，このリストを作成することが目的である。</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">10</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 10, 20, 30, 40, 50]
 </pre></div>
@@ -1778,7 +1301,7 @@ Y =
 <p>後者の引数<code class="docutils literal notranslate"><span class="pre">k</span></code>が，初期値の設定とアップデート用変数の作成の２つの役割を同時に果たしている。<code class="docutils literal notranslate"><span class="pre">capital_accumulation(0,5)</span></code>を実行すると<code class="docutils literal notranslate"><span class="pre">k=0</span></code>が実行され，<code class="docutils literal notranslate"><span class="pre">0</span></code>が初期値に設定される。それと同時に，変数<code class="docutils literal notranslate"><span class="pre">k</span></code>がメモリー上に生成され，それがアップデート用の変数として使われることになる。</p>
 </section>
 <section id="sec-4-future-values">
-<span id="id9"></span><h3>将来価値の時系列<a class="headerlink" href="#sec-4-future-values" title="Permalink to this headline">#</a></h3>
+<span id="id9"></span><h3>将来価値の時系列<a class="headerlink" href="#sec-4-future-values" title="Permalink to this heading">#</a></h3>
 <p>元本<code class="docutils literal notranslate"><span class="pre">x0</span></code>万円を投資すると実質年率<code class="docutils literal notranslate"><span class="pre">r</span></code>％の利息を得る金融商品を考えよう。<code class="docutils literal notranslate"><span class="pre">t</span></code>年後の将来価値（期首の値）をリストで示す関数を作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1833,7 +1356,7 @@ Y =
 <p>このリストには初期値の<code class="docutils literal notranslate"><span class="pre">100</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>年後から<code class="docutils literal notranslate"><span class="pre">5</span></code>年後までの値が含まれている。</p>
 </section>
 <section id="for1-enumerate">
-<h3><code class="docutils literal notranslate"><span class="pre">for</span></code>ループのお友達１：<code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>関数<a class="headerlink" href="#for1-enumerate" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code>ループのお友達１：<code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>関数<a class="headerlink" href="#for1-enumerate" title="Permalink to this heading">#</a></h3>
 <p><a class="reference internal" href="#sec-4-future-values"><span class="std std-ref">将来価値の時系列</span></a>の例を考えよう。結果はリストにまとめられているため，他に利用する場合は便利である。一方で，結果を見易く表示したい場合がある。その場合に便利なのが<code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>関数である。</p>
 <p><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>ついて説明するために次のリストを考えよう。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]</span>
@@ -1930,7 +1453,7 @@ A
 </ul>
 </section>
 <section id="for2-zip">
-<h3><code class="docutils literal notranslate"><span class="pre">for</span></code>ループのお友達２：<code class="docutils literal notranslate"><span class="pre">zip()</span></code>関数<a class="headerlink" href="#for2-zip" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code>ループのお友達２：<code class="docutils literal notranslate"><span class="pre">zip()</span></code>関数<a class="headerlink" href="#for2-zip" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">zip()</span></code>は<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを拡張する上で重宝する関数であり，知っていると得する「裏技」である。<a class="reference internal" href="#sec-4-consumption"><span class="std std-ref">消費関数</span></a>の例を考えよう。そのコードでは，所得<code class="docutils literal notranslate"><span class="pre">y</span></code>のみが変化しているが，限界消費性向<code class="docutils literal notranslate"><span class="pre">0.7</span></code>も変化するとしてみよう。このような場合に有用なのが<code class="docutils literal notranslate"><span class="pre">zip()</span></code>関数である。</p>
 <p>より具体的な例を考えるために，所得は<code class="docutils literal notranslate"><span class="pre">income_list</span></code>に従って変化し，限界消費性向は次のリストによって与えられるとしよう。</p>
 <div class="cell docutils container">
@@ -2038,7 +1561,7 @@ A
 </section>
 </section>
 <section id="id10">
-<h2>内包表記<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<h2>内包表記<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <p>内包表記とは<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの考えを使い、リストや辞書などを簡単に１行で生成する方法である。リストの場合、次のような書き方となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[＜実行したい内容＞ for ＜要素を割り当てる変数＞ in ＜イタラブル＞]
 </pre></div>
@@ -2117,16 +1640,16 @@ A
 </div>
 </section>
 <section id="while">
-<h2><code class="docutils literal notranslate"><span class="pre">While</span></code>ループ<a class="headerlink" href="#while" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">While</span></code>ループ<a class="headerlink" href="#while" title="Permalink to this heading">#</a></h2>
 <section id="id11">
-<h3>説明と簡単な例<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h3>説明と簡単な例<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>ループの2つの目タイプは<code class="docutils literal notranslate"><span class="pre">while</span></code>ループと呼ばれ，名前からその機能を何となく想像できるかも知れない。与えられた条件が<code class="docutils literal notranslate"><span class="pre">True</span></code>の<strong>間</strong>はループ計算を繰り返し続け，<code class="docutils literal notranslate"><span class="pre">False</span></code>になると実行が止まるループとなる。主に，ループの回数が決まっていない場合に使われる。次の書き方となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>while ＜条件＞:                  # 1
     ＜条件がTrueの間，実行する内容＞  # 2
 </pre></div>
 </div>
 <p>実行される順番は次の様になる。</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>で条件の真偽値を確認する。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">False</span></code>であればループ終了。</p></li>
@@ -2241,10 +1764,10 @@ A
 </ul>
 </section>
 <section id="id12">
-<h3>近似を考える<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<h3>近似を考える<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">while</span></code>ループと<code class="docutils literal notranslate"><span class="pre">for</span></code>ループをどう使い分けすれば良いだろうか。扱うデータ構造と目的が判断基準となるだろう。リストやタプルのようなイタラブルが用意できるのであれば，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの実行速度が断然速い。この場合はループの回数が事前に分かっているケースとなるが，分からない場合もあり得る。そういう場合は<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使うべきである。このセクションでは，その例を2つ取り上げる。</p>
 <section id="id13">
-<h4>壁からの距離<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
+<h4>壁からの距離<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
 <p>壁から１メートル離れて立ち，毎回壁までの半分の距離を進むとしよう。壁までの距離を変数<code class="docutils literal notranslate"><span class="pre">distance</span></code>で表すと，初期値は<code class="docutils literal notranslate"><span class="pre">1</span></code>となる。またループをストップする距離を<code class="docutils literal notranslate"><span class="pre">0.001</span></code>（1mm）とする。<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを書いて距離の推移を表示してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2346,7 +1869,7 @@ A
 </div>
 </section>
 <section id="id14">
-<h4>平方根の近似<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
+<h4>平方根の近似<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
 <p>近似値の例として，紀元前数千年前のメソポタミア地域で発達したバビロン数学の例を考えよう。数字<code class="docutils literal notranslate"><span class="pre">s</span></code>の平方根（<span class="math notranslate nohighlight">\(\sqrt{s}\)</span>）は次式で近似されることが知られている。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2416,7 +1939,7 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </section>
 </section>
 <section id="ifcontinue">
-<h3><code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#ifcontinue" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#ifcontinue" title="Permalink to this heading">#</a></h3>
 <p>次の<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2486,14 +2009,14 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 <p>このように<code class="docutils literal notranslate"><span class="pre">while</span></code>ループでコードをスキップする場合に<code class="docutils literal notranslate"><span class="pre">continue</span></code>を使う。</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>を<code class="docutils literal notranslate"><span class="pre">#4</span></code>の下に置くと，<code class="docutils literal notranslate"><span class="pre">count</span></code>の値は<code class="docutils literal notranslate"><span class="pre">3</span></code>でストップして無限ループになってしまうので注意しよう。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>を<code class="docutils literal notranslate"><span class="pre">#3</span></code>の上に置くと，<code class="docutils literal notranslate"><span class="pre">3</span></code>も表示されるので注意しよう。</p></li>
 </ol>
 </div>
 </section>
 <section id="ifbreak">
-<h3><code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#ifbreak" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#ifbreak" title="Permalink to this heading">#</a></h3>
 <p>上の例から分かることは</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>while true:
     ＜実行コード＞
@@ -2538,7 +2061,7 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </ul>
 </section>
 <section id="continuebreak">
-<h3><code class="docutils literal notranslate"><span class="pre">continue</span></code>と<code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#continuebreak" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">continue</span></code>と<code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#continuebreak" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">continue</span></code>と<code class="docutils literal notranslate"><span class="pre">break</span></code>を一緒に使うことも可能である。次の例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2616,50 +2139,133 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="1_Basics_III.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">関数とメソッド</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1_Basics_III.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">関数とメソッド</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="1_Basics_V.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="1_Basics_V.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">モジュールとアルゴリズム</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if"><code class="docutils literal notranslate"><span class="pre">if</span></code>文</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">説明と簡単な例</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">複数条件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">関数化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">直接真偽値を使う</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">数値を返す例</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">説明</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print"><code class="docutils literal notranslate"><span class="pre">print()</span></code>を使う例</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#append"><code class="docutils literal notranslate"><span class="pre">.append()</span></code>を使う例</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-4-consumption">消費関数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for2"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループの２つの書き方（動学分析の基礎）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-4-future-values">将来価値の時系列</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for1-enumerate"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループのお友達１：<code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>関数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for2-zip"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループのお友達２：<code class="docutils literal notranslate"><span class="pre">zip()</span></code>関数</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">内包表記</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while"><code class="docutils literal notranslate"><span class="pre">While</span></code>ループ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">説明と簡単な例</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">近似を考える</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">壁からの距離</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">平方根の近似</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ifcontinue"><code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ifbreak"><code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuebreak"><code class="docutils literal notranslate"><span class="pre">continue</span></code>と<code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-    By 春山 鉄源  Tetsugen HARUYAMA<br/>
-  
-      &copy; Copyright 2023.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By 春山 鉄源  Tetsugen HARUYAMA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code -->
 </div>
+  </div>
+  
+</div></div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

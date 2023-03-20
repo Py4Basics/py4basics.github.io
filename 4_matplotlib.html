@@ -1,50 +1,68 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Matplotlib：図示 &#8212; 経済学のためのPython入門</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/my_style.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-R9KXY9G892');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -53,804 +71,372 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '4_matplotlib';</script>
     <link rel="canonical" href="https://py4basics.github.io/4_matplotlib.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Pandas：図示" href="5_pandas_plot.html" />
     <link rel="prev" title="Pandas：データ分析" href="3_Pandas.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
-<script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){ dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'G-R9KXY9G892');
-                </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">経済学のためのPython入門</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Python入門I
- </span>
-</p>
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">経済学のためのPython入門</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_I.html">
-   基本データ型と変数
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_II.html">
-   データの操作
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_III.html">
-   関数とメソッド
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_IV.html">
-   制御フロー
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_V.html">
-   モジュールとアルゴリズム
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_Basics_VI.html">
-   図示とシミュレーション
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_I.html">基本データ型と変数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_II.html">データの操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_III.html">関数とメソッド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_IV.html">制御フロー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_V.html">モジュールとアルゴリズム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_VI.html">図示とシミュレーション</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Python入門II
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門II</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="2_NumPy.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     NumPy
-    </span>
-   </code>
-   ：高速化
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3_Pandas.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Pandas
-    </span>
-   </code>
-   ：データ分析
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Matplotlib
-    </span>
-   </code>
-   ：図示
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5_pandas_plot.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Pandas
-    </span>
-   </code>
-   ：図示
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7_SciPy_optimize.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     SciPy.optimize
-    </span>
-   </code>
-   ：解の求め方と最適化問題
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="8_NumPy_random.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Numpy
-    </span>
-   </code>
-   : ランダム変数
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">
-   SciPy.stats：確率分布
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="2_NumPy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>：高速化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Pandas.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_pandas_plot.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_SciPy_optimize.html"><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_NumPy_random.html"><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: ランダム変数</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">SciPy.stats：確率分布</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  参考
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="0_Preparations.html">
-   ツールのインストールと説明
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="things_to_note.html">
-   Tipsと注意点
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Grade.html">
-   学業成績の分析
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Gapminder.html">
-   Gapminder
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Moving_Average.html">
-   移動平均
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="0_Preparations.html">ツールのインストールと説明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="things_to_note.html">Tipsと注意点</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Grade.html">学業成績の分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Gapminder.html">Gapminder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Moving_Average.html">移動平均</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  経済学
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">経済学</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4macro.github.io">
-   Pythonで学ぶマクロ経済学（中級＋レベル）
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4etrics.github.io">
-   Pythonで学ぶ入門計量経済学
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://py4macro.github.io">Pythonで学ぶマクロ経済学（中級＋レベル）</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://py4etrics.github.io">Pythonで学ぶ入門計量経済学</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  JupyterLite
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JupyterLite</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://py4class.netlify.app">
-   JupyterLiteを始める
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://py4class.netlify.app">JupyterLiteを始める</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            <a  href="https://github.com/Py4Basics/py4basics.github.io">&#128200;&#127891;&#128202; <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code --></a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/4_matplotlib.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/4_matplotlib.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/4_matplotlib.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/4_matplotlib.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/4_matplotlib.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/4_matplotlib.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   説明
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   データの引数の書き方１
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#array">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       array
-      </span>
-     </code>
-     を使って
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dataframe">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       DataFrame
-      </span>
-     </code>
-     を使って
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   データの引数の書き方２
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     同じ
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       DataFrame
-      </span>
-     </code>
-     を使う
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     異なる
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       DataFrame
-      </span>
-     </code>
-     の変数を図示する
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sec-4-other-methods">
-   その他の引数とメソッド
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#subplots">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       subplots()
-      </span>
-     </code>
-     の引数
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       plot()
-      </span>
-     </code>
-     の基本的な引数
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ax">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       ax
-      </span>
-     </code>
-     の基本的なメソッド
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     図を並べる
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     ２軸グラフ
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id9">
-   日本語
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#japanize-matplotlib">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       japanize_matplotlib
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     フォントを指定する
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
-   マクロ経済学の例
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
-     投資関数
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
-     将来価値
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id14">
-   その他のプロット
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id15">
-     種類
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
-     散布図
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
-     ヒストグラム
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
-     縦線・横線
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id19">
-     棒グラフ
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Matplotlib：図示</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   説明
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   データの引数の書き方１
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#array">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       array
-      </span>
-     </code>
-     を使って
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dataframe">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       DataFrame
-      </span>
-     </code>
-     を使って
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   データの引数の書き方２
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     同じ
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       DataFrame
-      </span>
-     </code>
-     を使う
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     異なる
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       DataFrame
-      </span>
-     </code>
-     の変数を図示する
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sec-4-other-methods">
-   その他の引数とメソッド
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#subplots">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       subplots()
-      </span>
-     </code>
-     の引数
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       plot()
-      </span>
-     </code>
-     の基本的な引数
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ax">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       ax
-      </span>
-     </code>
-     の基本的なメソッド
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     図を並べる
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     ２軸グラフ
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id9">
-   日本語
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#japanize-matplotlib">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       japanize_matplotlib
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     フォントを指定する
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
-   マクロ経済学の例
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
-     投資関数
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
-     将来価値
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id14">
-   その他のプロット
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id15">
-     種類
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
-     散布図
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
-     ヒストグラム
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
-     縦線・横線
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id19">
-     棒グラフ
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Matplotlib：図示</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">説明</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">データの引数の書き方１</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array"><code class="docutils literal notranslate"><span class="pre">array</span></code>を使って</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe"><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使って</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">データの引数の書き方２</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">同じ<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使う</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">異なる<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の変数を図示する</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-4-other-methods">その他の引数とメソッド</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subplots"><code class="docutils literal notranslate"><span class="pre">subplots()</span></code>の引数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot"><code class="docutils literal notranslate"><span class="pre">plot()</span></code>の基本的な引数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ax"><code class="docutils literal notranslate"><span class="pre">ax</span></code>の基本的なメソッド</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">図を並べる</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">２軸グラフ</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">日本語</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#japanize-matplotlib"><code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">フォントを指定する</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">マクロ経済学の例</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">投資関数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">将来価値</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">その他のプロット</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">種類</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">散布図</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">ヒストグラム</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">縦線・横線</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">棒グラフ</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="matplotlib">
-<span id="chap-matplotlib"></span><h1><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h1>
+<span id="chap-matplotlib"></span><h1><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示<a class="headerlink" href="#matplotlib" title="Permalink to this heading">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><section id="id1">
-<h2>説明<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2>説明<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -901,7 +487,7 @@ title="Print to PDF"
 </li>
 </ul>
 <p>これを踏まえて，書き方１は次のような手順で描画していと解釈できる。</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>キャンバスを用意する。</p>
 <ul class="simple">
 <li><p>それを行なっているのが１行目である。右辺の<code class="docutils literal notranslate"><span class="pre">plt.figure()</span></code>でキャンバスを作成し、それを変数<code class="docutils literal notranslate"><span class="pre">fig</span></code>に割り当てている。</p></li>
@@ -937,9 +523,9 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 <p>以下ではそれぞれの引数の書き方について解説する。</p>
 </section>
 <section id="id2">
-<h2>データの引数の書き方１<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>データの引数の書き方１<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="array">
-<h3><code class="docutils literal notranslate"><span class="pre">array</span></code>を使って<a class="headerlink" href="#array" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">array</span></code>を使って<a class="headerlink" href="#array" title="Permalink to this heading">#</a></h3>
 <p>プロットするデータを生成しよう。変数<code class="docutils literal notranslate"><span class="pre">x</span></code>に横軸に使うデータを次のように割り当てる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -977,10 +563,10 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11e18dc60&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1166bf070&gt;]
 </pre></div>
 </div>
-<img alt="_images/4_matplotlib_16_1.png" src="_images/4_matplotlib_16_1.png" />
+<img alt="_images/ce6b7f884554610e9ea8a9a8e70c9b6030bff02066873e99c2d1826799ab8544.png" src="_images/ce6b7f884554610e9ea8a9a8e70c9b6030bff02066873e99c2d1826799ab8544.png" />
 </div>
 </div>
 <p>２行目に<code class="docutils literal notranslate"><span class="pre">marker='o'</span></code>が追加されているが，「●」を表示するために使っている。このような引数の使い方は後で詳しく説明するので，ここでは気にしないで読み進めて欲しい。</p>
@@ -1002,10 +588,10 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11e2a9b40&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1167ef310&gt;]
 </pre></div>
 </div>
-<img alt="_images/4_matplotlib_20_1.png" src="_images/4_matplotlib_20_1.png" />
+<img alt="_images/3dc83899a43a17f2bfbf087dc8daee776805c62aa1829adc60fdd08a52d385a2.png" src="_images/3dc83899a43a17f2bfbf087dc8daee776805c62aa1829adc60fdd08a52d385a2.png" />
 </div>
 </div>
 <p>より<span class="math notranslate nohighlight">\(y=x^2\)</span>の図に近づいたことがわかる。</p>
@@ -1035,7 +621,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_24_0.png" src="_images/4_matplotlib_24_0.png" />
+<img alt="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" src="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" />
 </div>
 </div>
 <p>それぞれの<code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code>を「軸<code class="docutils literal notranslate"><span class="pre">ax</span></code>にデータの組み合わせをプロットする」と読めば理解しやすいと思う。また同じようなコードが続いているので，次のように<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うことより短いコードで同じ図を表示することができる。</p>
@@ -1051,12 +637,12 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_26_0.png" src="_images/4_matplotlib_26_0.png" />
+<img alt="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" src="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" />
 </div>
 </div>
 </section>
 <section id="dataframe">
-<h3><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使って<a class="headerlink" href="#dataframe" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使って<a class="headerlink" href="#dataframe" title="Permalink to this heading">#</a></h3>
 <p>まず<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1143,7 +729,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_31_0.png" src="_images/4_matplotlib_31_0.png" />
+<img alt="_images/6823a861cea0e42faebacc8f4c864c1f91b8b50cd639d6b0542c10ebb7e8995b.png" src="_images/6823a861cea0e42faebacc8f4c864c1f91b8b50cd639d6b0542c10ebb7e8995b.png" />
 </div>
 </div>
 <p>横軸に<code class="docutils literal notranslate"><span class="pre">X</span></code>，縦軸に<code class="docutils literal notranslate"><span class="pre">Y0</span></code>，<code class="docutils literal notranslate"><span class="pre">Y1</span></code>，<code class="docutils literal notranslate"><span class="pre">Y2</span></code>をプロットしてみる。</p>
@@ -1158,7 +744,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_33_0.png" src="_images/4_matplotlib_33_0.png" />
+<img alt="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" src="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" />
 </div>
 </div>
 <p>引数の書き方１の簡略形として，横軸の変数を省略できることを紹介した。その場合はどうなるかを考えてみよう。</p>
@@ -1171,17 +757,17 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_35_0.png" src="_images/4_matplotlib_35_0.png" />
+<img alt="_images/9857254fe4fbe1ca254b857dc8e6c9517ef47ccf87351c680551aa6dcd7b8dd8.png" src="_images/9857254fe4fbe1ca254b857dc8e6c9517ef47ccf87351c680551aa6dcd7b8dd8.png" />
 </div>
 </div>
 <p>上の図との違いは横軸の値である。この場合，横軸に<code class="docutils literal notranslate"><span class="pre">df0</span></code>の行インデックスが自動的に使われている。</p>
 </section>
 </section>
 <section id="id3">
-<h2>データの引数の書き方２<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<h2>データの引数の書き方２<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>次に引数<code class="docutils literal notranslate"><span class="pre">data</span></code>を使う書き方を考えてみる。</p>
 <section id="id4">
-<h3>同じ<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使う<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3>同じ<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使う<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>横軸に<code class="docutils literal notranslate"><span class="pre">X</span></code>，縦軸に<code class="docutils literal notranslate"><span class="pre">Y0</span></code>を指定してプロットしてみる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1192,7 +778,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_41_0.png" src="_images/4_matplotlib_41_0.png" />
+<img alt="_images/6823a861cea0e42faebacc8f4c864c1f91b8b50cd639d6b0542c10ebb7e8995b.png" src="_images/6823a861cea0e42faebacc8f4c864c1f91b8b50cd639d6b0542c10ebb7e8995b.png" />
 </div>
 </div>
 <p>変数<code class="docutils literal notranslate"><span class="pre">Y1</span></code>と<code class="docutils literal notranslate"><span class="pre">Y2</span></code>も同じ軸<code class="docutils literal notranslate"><span class="pre">ax</span></code>にプロットしてみよう。</p>
@@ -1207,7 +793,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_43_0.png" src="_images/4_matplotlib_43_0.png" />
+<img alt="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" src="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -1229,13 +815,13 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_46_0.png" src="_images/4_matplotlib_46_0.png" />
+<img alt="_images/9857254fe4fbe1ca254b857dc8e6c9517ef47ccf87351c680551aa6dcd7b8dd8.png" src="_images/9857254fe4fbe1ca254b857dc8e6c9517ef47ccf87351c680551aa6dcd7b8dd8.png" />
 </div>
 </div>
 <p>行インデックスが横軸の値として使われている。</p>
 </section>
 <section id="id5">
-<h3>異なる<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の変数を図示する<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>異なる<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の変数を図示する<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>別の<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1315,13 +901,13 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_52_0.png" src="_images/4_matplotlib_52_0.png" />
+<img alt="_images/644cfab61f1ee79efd8ddc0ca75fb08d8dd5ebd4df8f77f48737577458b6c42b.png" src="_images/644cfab61f1ee79efd8ddc0ca75fb08d8dd5ebd4df8f77f48737577458b6c42b.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="sec-4-other-methods">
-<span id="id6"></span><h2>その他の引数とメソッド<a class="headerlink" href="#sec-4-other-methods" title="Permalink to this headline">#</a></h2>
+<span id="id6"></span><h2>その他の引数とメソッド<a class="headerlink" href="#sec-4-other-methods" title="Permalink to this heading">#</a></h2>
 <p>上で説明したコードでは単純なプロットしかできない。一方で様々な引数やメソッドが用意されており，それらを駆使することにより様々な「飾り付け」をすることが可能となる。ここでは主なものを紹介するが，他にも数多く用意されているので<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>の<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">サイト</a>を参考にしてほしい。また，これらの引数・メソッドは，上述の「データの引数の書き方１」と「データの引数の書き方２」の両方に有効であることも覚えておこう。</p>
 <p>引数・メソッドがもたらす違いを際立たせるために新たな<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使おう。</p>
 <div class="cell docutils container">
@@ -1383,7 +969,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 <p>以下のプロットでは，横軸の変数を省略する簡略形を使うので，行インデックが横軸に使われるので注意しよう。</p>
 <section id="subplots">
-<h3><code class="docutils literal notranslate"><span class="pre">subplots()</span></code>の引数<a class="headerlink" href="#subplots" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">subplots()</span></code>の引数<a class="headerlink" href="#subplots" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">subplots()</span></code>はキャンバスと軸を設定する<code class="docutils literal notranslate"><span class="pre">plt</span></code>のメソッドとなるが、主に３つの引数を紹介する。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">figsize</span></code>：図の大きさ</p>
@@ -1406,12 +992,12 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_60_0.png" src="_images/4_matplotlib_60_0.png" />
+<img alt="_images/6296919b1640d0f0c61ae18eecbf123be60be3c2148895da3a0b1a52d9a62548.png" src="_images/6296919b1640d0f0c61ae18eecbf123be60be3c2148895da3a0b1a52d9a62548.png" />
 </div>
 </div>
 </section>
 <section id="plot">
-<h3><code class="docutils literal notranslate"><span class="pre">plot()</span></code>の基本的な引数<a class="headerlink" href="#plot" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">plot()</span></code>の基本的な引数<a class="headerlink" href="#plot" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">plot()</span></code>は軸<code class="docutils literal notranslate"><span class="pre">ax</span></code>にデータを描くメソッドだが、引数を使うことによりデータの表示方法を指定できる。詳しくは<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">このリンク</a>を参照することにして，ここでは基本的な引数だけを紹介する。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">linestyle</span></code>：線のスタイル（リストにして列の順番で指定する;<code class="docutils literal notranslate"><span class="pre">-</span></code>，<code class="docutils literal notranslate"><span class="pre">--</span></code>，<code class="docutils literal notranslate"><span class="pre">-.</span></code>，<code class="docutils literal notranslate"><span class="pre">:</span></code>などがある）</p></li>
@@ -1451,7 +1037,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_63_0.png" src="_images/4_matplotlib_63_0.png" />
+<img alt="_images/90d4e1bbcf42349730279cfe51a2e2949e25b4da3f14b2a44076866e12195b62.png" src="_images/90d4e1bbcf42349730279cfe51a2e2949e25b4da3f14b2a44076866e12195b62.png" />
 </div>
 </div>
 <p>引数をいちいち書くのが面倒な場合、次の３つを簡略して一緒に指定できる。</p>
@@ -1476,7 +1062,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_65_0.png" src="_images/4_matplotlib_65_0.png" />
+<img alt="_images/9c5f2c39d912ca821e0ef93538b07d4cba8956023e417a471e52edc66030f612.png" src="_images/9c5f2c39d912ca821e0ef93538b07d4cba8956023e417a471e52edc66030f612.png" />
 </div>
 </div>
 <p>（注意点）</p>
@@ -1489,7 +1075,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 <p>詳細は<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html">参考サイト（英語）</a>を参照。</p>
 </section>
 <section id="ax">
-<h3><code class="docutils literal notranslate"><span class="pre">ax</span></code>の基本的なメソッド<a class="headerlink" href="#ax" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">ax</span></code>の基本的なメソッド<a class="headerlink" href="#ax" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">ax</span></code>は透明なキャンバス上にある軸を指しているが、そのメソッドを使うことにより、軸周辺を「飾り付け」することができる。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">.set_title()</span></code>：タイトルを設定する。</p>
@@ -1529,12 +1115,12 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_69_0.png" src="_images/4_matplotlib_69_0.png" />
+<img alt="_images/8f69cb206bfbca3b2ad04136c77ab0ecea27a529c487e267567235160b1c851f.png" src="_images/8f69cb206bfbca3b2ad04136c77ab0ecea27a529c487e267567235160b1c851f.png" />
 </div>
 </div>
 </section>
 <section id="id7">
-<h3>図を並べる<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>図を並べる<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>複数の図を並べたいとしよう。考え方としては、透明のキャンバスに複数の軸を設定し、それぞれの軸を使って作図していけば良いのである。キャンバスは四角なので偶数個の軸が設定できる。例として、次のように軸を配置したいとしよう。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+---+---+---+</span>
 <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">3</span> <span class="o">|</span>
@@ -1562,7 +1148,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_72_0.png" src="_images/4_matplotlib_72_0.png" />
+<img alt="_images/6efa0105215261253ffb5976f6c53e679d71b8f6fa853baf3c3688824da11604.png" src="_images/6efa0105215261253ffb5976f6c53e679d71b8f6fa853baf3c3688824da11604.png" />
 </div>
 </div>
 <p>６つの軸が表示されているが、それらは<code class="docutils literal notranslate"><span class="pre">ax</span></code>に割り当てられている。<code class="docutils literal notranslate"><span class="pre">ax</span></code>を表示してみよう。</p>
@@ -1616,7 +1202,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_78_0.png" src="_images/4_matplotlib_78_0.png" />
+<img alt="_images/a6734746b9decbe11e2247d77b53ca2423fc649dba8f13d6634ca972a6489c6d.png" src="_images/a6734746b9decbe11e2247d77b53ca2423fc649dba8f13d6634ca972a6489c6d.png" />
 </div>
 </div>
 <p>横軸と縦軸を共有するには次のようにする。</p>
@@ -1634,7 +1220,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_80_0.png" src="_images/4_matplotlib_80_0.png" />
+<img alt="_images/f305f13305a54899af2bc86c6c9224d2902977ccb360bf86fb0bad933fd9d513.png" src="_images/f305f13305a54899af2bc86c6c9224d2902977ccb360bf86fb0bad933fd9d513.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ax</span></code>のメソッド（例えば、軸のタイトル）はそれぞれ設定することができる。</p>
@@ -1668,12 +1254,12 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_83_0.png" src="_images/4_matplotlib_83_0.png" />
+<img alt="_images/a88c863e479ab639601f6bc3d99110e3762d62a0c3d754a9a11c268d0ab0c31d.png" src="_images/a88c863e479ab639601f6bc3d99110e3762d62a0c3d754a9a11c268d0ab0c31d.png" />
 </div>
 </div>
 </section>
 <section id="id8">
-<h3>２軸グラフ<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<h3>２軸グラフ<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>複数のデータを表示する際、右の縦軸を使いデータを表示したい場合がある。例を使って説明することにする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1688,12 +1274,12 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_86_0.png" src="_images/4_matplotlib_86_0.png" />
+<img alt="_images/d49829accf5c5f5ec8f89446515b4e6109a0cc0afa32ecc860ab1e3458af54d3.png" src="_images/d49829accf5c5f5ec8f89446515b4e6109a0cc0afa32ecc860ab1e3458af54d3.png" />
 </div>
 </div>
 <p>コードの説明</p>
 <blockquote>
-<div><ol class="simple">
+<div><ol class="arabic simple">
 <li><p>キャンバスと軸を作成し、軸を<code class="docutils literal notranslate"><span class="pre">ax1</span></code>に割り当てる。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ax1</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">twinx()</span></code>を使い、右の縦軸を準備し<code class="docutils literal notranslate"><span class="pre">ax2</span></code>に割り当てる。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ax1</span></code>に<code class="docutils literal notranslate"><span class="pre">X</span></code>をプロットする。</p></li>
@@ -1721,12 +1307,12 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_89_0.png" src="_images/4_matplotlib_89_0.png" />
+<img alt="_images/d8fcccc5f9cbc9e53a055eb59cc98047ac16908e0c2635c6b45404d966996e87.png" src="_images/d8fcccc5f9cbc9e53a055eb59cc98047ac16908e0c2635c6b45404d966996e87.png" />
 </div>
 </div>
 <p>コードの説明</p>
 <blockquote>
-<div><ol class="simple">
+<div><ol class="arabic simple">
 <li><p>軸<code class="docutils literal notranslate"><span class="pre">ax1</span></code>にタイトルを設定しているが、<code class="docutils literal notranslate"><span class="pre">ax2</span></code>でも同じ図となる。</p></li>
 <li><p>軸<code class="docutils literal notranslate"><span class="pre">ax1</span></code>の縦軸（左）のラベルを設定する。</p></li>
 <li><p>軸<code class="docutils literal notranslate"><span class="pre">ax2</span></code>の縦軸（右）のラベルを設定する。</p></li>
@@ -1745,10 +1331,10 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </section>
 </section>
 <section id="id9">
-<h2>日本語<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<h2>日本語<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <p>２つ方法を紹介するが、<code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code>を使う方法がより簡単であろう。</p>
 <section id="japanize-matplotlib">
-<h3><code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code><a class="headerlink" href="#japanize-matplotlib" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code><a class="headerlink" href="#japanize-matplotlib" title="Permalink to this heading">#</a></h3>
 <p>使い方は到って簡単で、<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>と同様にインポートするだけである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1770,14 +1356,14 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_96_0.png" src="_images/4_matplotlib_96_0.png" />
+<img alt="_images/60c39485018406694be05cbf5492c18f398df14130399b2b2d28dfa32aa8373f.png" src="_images/60c39485018406694be05cbf5492c18f398df14130399b2b2d28dfa32aa8373f.png" />
 </div>
 </div>
 </section>
 <section id="id10">
-<h3>フォントを指定する<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<h3>フォントを指定する<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p>2つの方法：</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>フォントはインストールせず、PC内にあるフォントを指定する。</p></li>
 <li><p>フォントをインストールする方法</p></li>
 </ol>
@@ -1818,7 +1404,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_100_0.png" src="_images/4_matplotlib_100_0.png" />
+<img alt="_images/580ec73609e2c6fb1559adc11331923abee20ed0325ef4be6ef9623d3446460d.png" src="_images/580ec73609e2c6fb1559adc11331923abee20ed0325ef4be6ef9623d3446460d.png" />
 </div>
 </div>
 <blockquote>
@@ -1837,9 +1423,9 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </section>
 </section>
 <section id="id11">
-<h2>マクロ経済学の例<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
+<h2>マクロ経済学の例<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
 <section id="id12">
-<h3>投資関数<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<h3>投資関数<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>実質利子率<code class="docutils literal notranslate"><span class="pre">r</span></code>によって投資がどのように変化するかを考えてみよう。まず投資関数を次のように仮定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1950,7 +1536,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_113_0.png" src="_images/4_matplotlib_113_0.png" />
+<img alt="_images/b50f0f69f826f5228fef91fe42b01f7d369044c8779643d4d9be48df40ba8b79.png" src="_images/b50f0f69f826f5228fef91fe42b01f7d369044c8779643d4d9be48df40ba8b79.png" />
 </div>
 </div>
 <p>この図に次の「飾り付け」をしてみよう。</p>
@@ -1961,7 +1547,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </ul>
 </section>
 <section id="id13">
-<h3>将来価値<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<h3>将来価値<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">x</span></code>万円を実質年率<code class="docutils literal notranslate"><span class="pre">r</span></code>%の利息を得る金融商品に投資し，<code class="docutils literal notranslate"><span class="pre">t</span></code>年間の将来価値（期首の値）をリストで示す関数は以下で与えられた。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2152,7 +1738,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_125_0.png" src="_images/4_matplotlib_125_0.png" />
+<img alt="_images/673beac620b1fbe7d2ecb50164962df14ff4005ff3adb7e8e0303e8f9b7c70a1.png" src="_images/673beac620b1fbe7d2ecb50164962df14ff4005ff3adb7e8e0303e8f9b7c70a1.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code>が続いているので、<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使う事を推奨する。</p>
@@ -2169,16 +1755,16 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_127_0.png" src="_images/4_matplotlib_127_0.png" />
+<img alt="_images/673beac620b1fbe7d2ecb50164962df14ff4005ff3adb7e8e0303e8f9b7c70a1.png" src="_images/673beac620b1fbe7d2ecb50164962df14ff4005ff3adb7e8e0303e8f9b7c70a1.png" />
 </div>
 </div>
 <p>（１）の<code class="docutils literal notranslate"><span class="pre">df_future.columns</span></code>について説明すると、<code class="docutils literal notranslate"><span class="pre">.columns</span></code>はデータ・フレーム<code class="docutils literal notranslate"><span class="pre">df_future</span></code>の属性であり列ラベルを返す。</p>
 </section>
 </section>
 <section id="id14">
-<h2>その他のプロット<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
+<h2>その他のプロット<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
 <section id="id15">
-<h3>種類<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<h3>種類<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <p>上で説明した図はライン・プロットと呼ばれる。<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>にはその他にも様々なは種類の図を描くことができるが，以下ではライン・プロット以外に<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html">散布図</a>と<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html">ヒストグラム</a>について説明する。引数に関しては，上で説明した<a class="reference internal" href="#sec-4-other-methods"><span class="std std-ref">ライン・プロットの引数</span></a>と共通のものが多いので別に覚える必要はないが，それぞれ独自の引数もあるので基本的なものだけを取り上げることにする。</p>
 <p>説明には次のコードで生成する<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使う。列<code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>には標準正規分布（平均<code class="docutils literal notranslate"><span class="pre">0</span></code>，標準偏差<code class="docutils literal notranslate"><span class="pre">1</span></code>）から生成した100個のランダム変数が含まれている。<code class="docutils literal notranslate"><span class="pre">Z</span></code>には正規分布（平均<code class="docutils literal notranslate"><span class="pre">2</span></code>，標準偏差<code class="docutils literal notranslate"><span class="pre">1</span></code>）から抽出した100個のランダム変数が格納されている。</p>
 <div class="cell docutils container">
@@ -2192,7 +1778,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </section>
 <section id="id16">
-<h3>散布図<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<h3>散布図<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>基本的には次の構文となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
@@ -2217,7 +1803,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_136_0.png" src="_images/4_matplotlib_136_0.png" />
+<img alt="_images/7d132d1a89bd820a024a9649358c61b740310105acadf8e67abd76b40a8d530e.png" src="_images/7d132d1a89bd820a024a9649358c61b740310105acadf8e67abd76b40a8d530e.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2254,7 +1840,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_138_0.png" src="_images/4_matplotlib_138_0.png" />
+<img alt="_images/ffabff17157f891e4aca59f3715d8466302e1561bf91f23b7755eae7fc823ac0.png" src="_images/ffabff17157f891e4aca59f3715d8466302e1561bf91f23b7755eae7fc823ac0.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Z</span></code>の散布図を加えてタイトルなども付け加えてみよう。</p>
@@ -2280,12 +1866,12 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_140_0.png" src="_images/4_matplotlib_140_0.png" />
+<img alt="_images/ea4863b920ea0cdd6ed014777522cf015c7d506e380115a928aef29ad4086c23.png" src="_images/ea4863b920ea0cdd6ed014777522cf015c7d506e380115a928aef29ad4086c23.png" />
 </div>
 </div>
 </section>
 <section id="id17">
-<h3>ヒストグラム<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
+<h3>ヒストグラム<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>基本的には次の構文となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
@@ -2310,7 +1896,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_143_0.png" src="_images/4_matplotlib_143_0.png" />
+<img alt="_images/ebe2c88e38a50b69aaa4691817b0fae76a04ca306628fec277512d19dacf6ebf.png" src="_images/ebe2c88e38a50b69aaa4691817b0fae76a04ca306628fec277512d19dacf6ebf.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2353,7 +1939,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_145_0.png" src="_images/4_matplotlib_145_0.png" />
+<img alt="_images/418f236e263dc3eb6264d2aeeb812f02fb208b0103e781f426fd22ab366d8fca.png" src="_images/418f236e263dc3eb6264d2aeeb812f02fb208b0103e781f426fd22ab366d8fca.png" />
 </div>
 </div>
 <p>次に複数のデータを並べてプロットする場合を考えよう。方法は簡単で，異なるデータをリストとして指定すれば良い。</p>
@@ -2372,7 +1958,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_147_0.png" src="_images/4_matplotlib_147_0.png" />
+<img alt="_images/58470647b63abe2931a570068cea1663e318b8d9999508f10d8ff4a82f18748f.png" src="_images/58470647b63abe2931a570068cea1663e318b8d9999508f10d8ff4a82f18748f.png" />
 </div>
 </div>
 <p>上のコードに引数<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>を加えると，柱を重ねて表示される。試してみよう。また<code class="docutils literal notranslate"><span class="pre">ax.hist()</span></code>を２回使うと，２つのヒストグラムを重ねて表示することができる。この場合，引数<code class="docutils literal notranslate"><span class="pre">alpha</span></code>の値を調整すると良いだろう。</p>
@@ -2398,14 +1984,14 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_149_0.png" src="_images/4_matplotlib_149_0.png" />
+<img alt="_images/a9d29197078e2350c87a87d330fbbe211ad6a82d31f94fe4d4673111c32036f4.png" src="_images/a9d29197078e2350c87a87d330fbbe211ad6a82d31f94fe4d4673111c32036f4.png" />
 </div>
 </div>
 <p>濃い赤の部分が重なっている部分となる。</p>
 <p>ヒストグラムは縦軸に度数，横軸に階級を取ったグラフだが，関連する手法にカーネル密度推定と呼ばれるものがある。考え方は簡単で，上のようなヒストグラムのデータに基づき面積が１になるようにスムーズな分布を推定する手法である。残念ながら<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>にはカーネル密度推定プロットのメソッドは実装されていない。しかし<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使えば簡単に描くことが可能である。興味がある読者は<a class="reference internal" href="5_pandas_plot.html#sec-5-kernel"><span class="std std-ref">このセクション</span></a>を参考にしてはどうだろう。</p>
 </section>
 <section id="id18">
-<h3>縦線・横線<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
+<h3>縦線・横線<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
 <p>図に縦線や横線を追加したい場合がある。その場合は，他の図と同じように「軸」に追加していく事になる。次のような書き方となる。</p>
 <ul>
 <li><p>縦線の場合</p>
@@ -2434,7 +2020,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_154_0.png" src="_images/4_matplotlib_154_0.png" />
+<img alt="_images/45f6bc6868f52168bcce83ad5d5d706814e65f329b5b29e29343b0b588d39b30.png" src="_images/45f6bc6868f52168bcce83ad5d5d706814e65f329b5b29e29343b0b588d39b30.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2478,12 +2064,12 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_156_0.png" src="_images/4_matplotlib_156_0.png" />
+<img alt="_images/fa8874e0830989755df2ec234748ba973c1b02ae7a83ff989e01c2ec6861fab9.png" src="_images/fa8874e0830989755df2ec234748ba973c1b02ae7a83ff989e01c2ec6861fab9.png" />
 </div>
 </div>
 </section>
 <section id="id19">
-<h3>棒グラフ<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
+<h3>棒グラフ<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
 <p>まず次のコードでデータを準備しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2577,7 +2163,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_161_0.png" src="_images/4_matplotlib_161_0.png" />
+<img alt="_images/88375c5dd58a6fc68d881a624fc1885407a469e8fd300400dfe716ea578d2091.png" src="_images/88375c5dd58a6fc68d881a624fc1885407a469e8fd300400dfe716ea578d2091.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2619,7 +2205,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_163_0.png" src="_images/4_matplotlib_163_0.png" />
+<img alt="_images/8da5cfcd90dcb8231a26d0e7e635cc0a0b75f3c63d08d922d00a475caa6fb378.png" src="_images/8da5cfcd90dcb8231a26d0e7e635cc0a0b75f3c63d08d922d00a475caa6fb378.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ax.tick_params()</span></code>は縦軸と横軸の文字の大きさを調節している。</p>
@@ -2635,7 +2221,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_165_0.png" src="_images/4_matplotlib_165_0.png" />
+<img alt="_images/7b75784856efc3bd8c9e95767eb1a5bf86b95e9a6ec93fbefdd80b63b4c7740a.png" src="_images/7b75784856efc3bd8c9e95767eb1a5bf86b95e9a6ec93fbefdd80b63b4c7740a.png" />
 </div>
 </div>
 <p>縦軸を確認するとわかるが，まず消費（<code class="docutils literal notranslate"><span class="pre">con</span></code>）の棒がプロットされ，それに投資（<code class="docutils literal notranslate"><span class="pre">ivn</span></code>）の棒が重ねてプロットされている。これは引数<code class="docutils literal notranslate"><span class="pre">base</span></code>（縦軸における棒の基点）がデフォルトの<code class="docutils literal notranslate"><span class="pre">0</span></code>に設定されており，消費も投資も<code class="docutils literal notranslate"><span class="pre">0</span></code>から始まっているためである。この点を踏まえ，棒を積み上げる場合を考えよう。その場合，投資の<code class="docutils literal notranslate"><span class="pre">base</span></code>は消費の高さになる必要がある。また政府支出を積み上げる場合は，積み上がった消費の高さが政府支出の基点になる必要がある。純輸出を積み上げる場合も同様に考える必要がある。この点に注意して棒を積み上げるには次のようなコードとなる。</p>
@@ -2664,7 +2250,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_167_0.png" src="_images/4_matplotlib_167_0.png" />
+<img alt="_images/a5df715536fd364e0b8d55389ac699f1a65edf1c1713ec61cd4fd1a677c91d46.png" src="_images/a5df715536fd364e0b8d55389ac699f1a65edf1c1713ec61cd4fd1a677c91d46.png" />
 </div>
 </div>
 <p>(1)〜(2)で棒の基点となる値を<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>として計算し，それを(5)で使っている。(3)〜(4)行目は<code class="docutils literal notranslate"><span class="pre">for</span></code>ループに使うイタラブルを作成している。また(6)では列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>のライン・プロットを追加している。コードを見るとわかるように，少々複雑である。よりシンプルなコードで同じ図を描きたい場合は，<a class="reference internal" href="5_pandas_plot.html#sec-5-bar"><span class="std std-ref">ここで</span></a>説明している<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を参考にすると良いだろう。その方法では(1)〜(2)を自動計算するため引数<code class="docutils literal notranslate"><span class="pre">base</span></code>の値を考える必要がない。</p>
@@ -2698,7 +2284,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4_matplotlib_170_0.png" src="_images/4_matplotlib_170_0.png" />
+<img alt="_images/e6b0561963cb979ae982dfc48839b1bcecad64aa317c44c1ee7dfece0b17f3c2.png" src="_images/e6b0561963cb979ae982dfc48839b1bcecad64aa317c44c1ee7dfece0b17f3c2.png" />
 </div>
 </div>
 <p>簡単にコードを説明する。</p>
@@ -2737,50 +2323,138 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="3_Pandas.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="3_Pandas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="5_pandas_plot.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="5_pandas_plot.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">説明</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">データの引数の書き方１</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array"><code class="docutils literal notranslate"><span class="pre">array</span></code>を使って</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe"><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使って</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">データの引数の書き方２</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">同じ<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使う</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">異なる<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の変数を図示する</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-4-other-methods">その他の引数とメソッド</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subplots"><code class="docutils literal notranslate"><span class="pre">subplots()</span></code>の引数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot"><code class="docutils literal notranslate"><span class="pre">plot()</span></code>の基本的な引数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ax"><code class="docutils literal notranslate"><span class="pre">ax</span></code>の基本的なメソッド</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">図を並べる</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">２軸グラフ</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">日本語</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#japanize-matplotlib"><code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">フォントを指定する</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">マクロ経済学の例</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">投資関数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">将来価値</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">その他のプロット</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">種類</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">散布図</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">ヒストグラム</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">縦線・横線</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">棒グラフ</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-    By 春山 鉄源  Tetsugen HARUYAMA<br/>
-  
-      &copy; Copyright 2023.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By 春山 鉄源  Tetsugen HARUYAMA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code -->
 </div>
+  </div>
+  
+</div></div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
