@@ -23,6 +23,7 @@ parts:
   chapters:
   - file: 0_Preparations
   - file: things_to_note
+  - file: pseudo_code
   - file: Grade
   - file: Gapminder
   - file: Moving_Average

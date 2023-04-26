@@ -175,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0_Preparations.html">ツールのインストールと説明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="things_to_note.html">Tipsと注意点</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pseudo_code.html">疑似コード</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Grade.html">学業成績の分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Gapminder.html">Gapminder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Moving_Average.html">移動平均</a></li>
@@ -417,16 +418,6 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">疑似コード</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fizzbuzz"><code class="docutils literal notranslate"><span class="pre">FizzBuzz</span></code>問題</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">リストの合計（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">リストの合計（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループ）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">コイントス（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">コイントス（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループ）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">リストの最大値</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">最後に</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -438,8 +429,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>モジュールとアルゴリズム<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="chap-5-module">
+<span id="id1"></span><h1>モジュールとアルゴリズム<a class="headerlink" href="#chap-5-module" title="Permalink to this headline">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><section id="id2">
@@ -561,7 +552,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -574,7 +565,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 1, 5, 6, 3, 5, 4, 1, 4, 1]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 1, 2, 4, 6, 6, 2, 6, 5, 2]
 </pre></div>
 </div>
 </div>
@@ -606,7 +597,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.661236667666527
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.774904891184143
 </pre></div>
 </div>
 </div>
@@ -619,16 +610,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.4700291949288822,
- 0.14105375193612574,
- 1.4639747312328475,
- -0.37525094518038293,
- -0.8123974008197429,
- 0.5697882048225473,
- 1.2244582488511957,
- -0.22211723766869484,
- -1.0880510909602592,
- -0.5931617432186587]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.2512123417967866,
+ 0.09713171815653494,
+ -1.1157059157096199,
+ 1.385152365244548,
+ 0.27521822289905357,
+ -0.9028698718156273,
+ -0.9792185636431943,
+ 1.073504329363988,
+ -0.03963984042595473,
+ -0.8572298297285397]
 </pre></div>
 </div>
 </div>
@@ -852,7 +843,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-152.92683759316765
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1009.007886194783
 </pre></div>
 </div>
 </div>
@@ -896,7 +887,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-152.92683759316765
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1009.007886194783
 </pre></div>
 </div>
 </div>
@@ -913,7 +904,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.6 ms ± 150 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.1 ms ± 33.7 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -942,7 +933,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>108 ms ± 461 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>109 ms ± 346 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -962,7 +953,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.6 ms ± 31.8 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.59 ms ± 31.3 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1086,7 +1077,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.2 ms ± 506 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.9 ms ± 99.5 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1098,7 +1089,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>109 ms ± 1.13 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>110 ms ± 530 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1169,7 +1160,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>57.4 ms ± 245 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>57.4 ms ± 189 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1199,7 +1190,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.3 ms ± 23.8 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.6 ms ± 35 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1253,7 +1244,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5.140933090654914
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5.136439876251081
 </pre></div>
 </div>
 </div>
@@ -1298,7 +1289,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5.140933090654914
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5.136439876251081
 </pre></div>
 </div>
 </div>
@@ -1314,7 +1305,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.3 ms ± 65.8 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.2 ms ± 262 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1326,7 +1317,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62.2 ms ± 121 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60.1 ms ± 218 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1340,7 +1331,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5.140933090654914
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5.136439876251081
 </pre></div>
 </div>
 </div>
@@ -1352,7 +1343,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.3 ms ± 39.3 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12 ms ± 15.2 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1451,7 +1442,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 0, 3, 3, 3, 5, 5, 6, 6]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 2, 3, 3, 3, 4, 5, 6, 10]
 </pre></div>
 </div>
 </div>
@@ -1464,7 +1455,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[987, 988, 993, 995, 996, 996, 999, 1000, 1000, 1000]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[995, 995, 996, 996, 997, 998, 998, 999, 1000, 1000]
 </pre></div>
 </div>
 </div>
@@ -1609,7 +1600,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 0, 3, 3, 3, 5, 5, 6, 6]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 2, 3, 3, 3, 4, 5, 6, 10]
 </pre></div>
 </div>
 </div>
@@ -1622,7 +1613,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[987, 988, 993, 995, 996, 996, 999, 1000, 1000, 1000]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[995, 995, 996, 996, 997, 998, 998, 999, 1000, 1000]
 </pre></div>
 </div>
 </div>
@@ -1638,7 +1629,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31.1 ms ± 67.3 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.6 ms ± 331 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1650,7 +1641,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42.8 ms ± 36.3 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41.2 ms ± 167 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1667,1060 +1658,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.47 µs ± 13 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.4 µs ± 23.2 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 <p>平均の単位は<code class="docutils literal notranslate"><span class="pre">ms</span></code>ではなく<code class="docutils literal notranslate"><span class="pre">µs</span></code>となっている。やはり組み込み関数は速い！</p>
 </section>
-</section>
-</section>
-<section id="id20">
-<h2>疑似コード<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h2>
-<p>前節では簡単なアルゴリズムを<code class="docutils literal notranslate"><span class="pre">Python</span></code>コードとして表し実行したが，その裏にある考え方は他のコンピューター言語でも使うことができる。更に言うと，アルゴリズムを図や言葉で表すことも可能である。<a class="reference external" href="https://www.google.co.jp/search?q=%E3%83%95%E3%83%AD%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC%E3%83%88%E3%80%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0">フローチャート</a>と呼ばれるのがその一つであり，図を使いアルゴリズムの考えを表現している。そしてもう１つが疑似コードと言われるものであり，自然言語（日本語や英語）で書かれたコードのことである。この２つの手法の利点は，コンピューター言語で発生するエラーを気にせずに，アルゴリズムの考えを理解・整理し，より良い（速い）ものを作り出すことができる土壌となり得ることだろう。以下では疑似コードに基づいてコードの書き方を検討する。</p>
-<p>上でも説明したが，疑似コードとは，自然言語（日本語や英語）で書かれたコードであるため，<code class="docutils literal notranslate"><span class="pre">Python</span></code>は実行できない箇条書きのような文章となっている。レポートを書く際に，まずアウトラインを考えて書き出す人もいると思うが，それをイメージすれば良いだろう。次の点が重要となる。</p>
-<ul class="simple">
-<li><p>明確さ</p></li>
-<li><p>簡潔さ</p></li>
-<li><p>細かい詳細は省く</p>
-<ul>
-<li><p>アルゴリズムの核となる部分を捉える</p></li>
-</ul>
-</li>
-<li><p>高い可読性</p>
-<ul>
-<li><p>コードを理解できる人ならで誰が読んでも手順が分かるもの</p></li>
-</ul>
-</li>
-</ul>
-<p>一方で，疑似コードの決まった書き方はない。通常は人それぞれ自分のスタイルや好みに合わせて書いているのが実状である（出版のための共通のスタイルがある場合もある）。ここでは次のスタイルとする。</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Python</span></code>コードと同じインデントを使う。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Python</span></code>コード（例えば，<code class="docutils literal notranslate"><span class="pre">for</span></code>や<code class="docutils literal notranslate"><span class="pre">while</span></code>）を使えればそのまま使う。</p>
-<ul>
-<li><p>疑似コードを英語で書く場合，英語での記述と区別するために大文字を多用するが，日本語とは区別し易いので小文字を使う。</p></li>
-</ul>
-</li>
-</ul>
-<p>これら以外は，箇条書きスタイルとしよう。</p>
-<section id="fizzbuzz">
-<h3><code class="docutils literal notranslate"><span class="pre">FizzBuzz</span></code>問題<a class="headerlink" href="#fizzbuzz" title="Permalink to this headline">#</a></h3>
-<p>まず例として有名な<code class="docutils literal notranslate"><span class="pre">FizzBuzz</span></code>問題を考えよう。</p>
-<blockquote>
-<div><p>1から100までの数字を表示する。ただし，</p>
-<ul class="simple">
-<li><p>3の倍数は数字の代わりに<code class="docutils literal notranslate"><span class="pre">Fizz</span></code>と表示し，</p></li>
-<li><p>5の倍数は数字の代わりに<code class="docutils literal notranslate"><span class="pre">Buzz</span></code>と表示し，</p></li>
-<li><p>3と5の倍数は数字の代わりに<code class="docutils literal notranslate"><span class="pre">FizzBuzz</span></code>と表示する。</p></li>
-</ul>
-</div></blockquote>
-<p>次のコードでは<code class="docutils literal notranslate"><span class="pre">fizzbuzz</span></code>関数として書いている。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fizzbuzz</span><span class="p">():</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        
-        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FizzBuzz&#39;</span><span class="p">)</span>
-            
-        <span class="k">elif</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fizz&#39;</span><span class="p">)</span>
-            
-        <span class="k">elif</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Buzz&#39;</span><span class="p">)</span>
-            
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>ここで<code class="docutils literal notranslate"><span class="pre">%</span></code>は除算の余りを返す演算子である。実行してみよう。</p>
-<div class="cell tag_output_scroll docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fizzbuzz</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-2
-Fizz
-4
-Buzz
-Fizz
-7
-8
-Fizz
-Buzz
-11
-Fizz
-13
-14
-FizzBuzz
-16
-17
-Fizz
-19
-Buzz
-Fizz
-22
-23
-Fizz
-Buzz
-26
-Fizz
-28
-29
-FizzBuzz
-31
-32
-Fizz
-34
-Buzz
-Fizz
-37
-38
-Fizz
-Buzz
-41
-Fizz
-43
-44
-FizzBuzz
-46
-47
-Fizz
-49
-Buzz
-Fizz
-52
-53
-Fizz
-Buzz
-56
-Fizz
-58
-59
-FizzBuzz
-61
-62
-Fizz
-64
-Buzz
-Fizz
-67
-68
-Fizz
-Buzz
-71
-Fizz
-73
-74
-FizzBuzz
-76
-77
-Fizz
-79
-Buzz
-Fizz
-82
-83
-Fizz
-Buzz
-86
-Fizz
-88
-89
-FizzBuzz
-91
-92
-Fizz
-94
-Buzz
-Fizz
-97
-98
-Fizz
-Buzz
-</pre></div>
-</div>
-</div>
-</div>
-<p>これを疑似コードで表してみよう。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def フィズバズ（）
-
-    forループ i &lt;-- 1から100まで
-    
-        if i を3で割ると余り0 and i を5で割ると余り0
-            &quot;FizzBuzz&quot;を表示
-            
-        elif i を3で割ると余り0
-            &quot;Fizz&quot;を表示
-            
-        elif i を5で割ると余り0
-            &quot;Buzz&quot;を表示           
-            
-        else
-            i を表示
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">Python</span></code>コードと疑似コードを比べて，疑似コードがどのようなものかイメージできたのではないだろうか。上にも書いたが，疑似コードの目的はアルゴリズムを表現することであり，<code class="docutils literal notranslate"><span class="pre">FizzBuzz</span></code>の例はその目的を達成している。もちろん，これこそが「正しい」という疑似コードはないので，自分なりに書き替えてみてはどうだろうか。ただ，ここでの目的は質の高い疑似コードを書くことでは<strong>ない</strong>。</p>
-<p>疑似コードには次の利点がある。</p>
-<blockquote>
-<div><p>プログラミング言語の構文について特に注意を払わずに（エラーを心配せずに），コードの内容を計画・検討することを可能にする。</p>
-</div></blockquote>
-<p>この特性を活かして，コードの書き方を検討しようというのがここでの目的である。言い換えると，漠然とした曖昧な疑似コードを<strong>修正する過程</strong>を通して，アルゴリズムを<code class="docutils literal notranslate"><span class="pre">Python</span></code>コードに落とし込むことを考える。５つの例を使うが，疑似コードの修正プロセスがコードを書く上でのヒントになるのではないかと期待している。</p>
-</section>
-<section id="id21">
-<h3>リストの合計（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
-<p>ここでの目的：</p>
-<blockquote>
-<div><p>リスト（タプル）の要素の合計を返す関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うこと。</p>
-</div></blockquote>
-<hr class="docutils" />
-<p>＜Ver. 1＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">合計</span><span class="p">(</span><span class="n">リスト</span><span class="p">)</span>
-
-    <span class="n">最初の要素から最後の要素を全て足し合わせる</span> <span class="c1">#1</span>
-    
-    <span class="n">その合計を返す</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>全体像はイメージできるが，<code class="docutils literal notranslate"><span class="pre">#1</span></code>で要素をどう足し合わせるか不明。要素ごとに何をするかを書き表そう。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 2＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 合計(リスト)
-
-    # リストの要素数：N+1
-
-    0番目の要素に1番目の要素を加える
-    それに2番目の要素を加える。      #1
-    それに3番目の要素を加える。      #1
-    ・・・・・
-    それにN番目の要素を加える。      #1
-    
-    return その合計
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>具体性が芽生えてきたが，まだコードに落とせない。特に，<code class="docutils literal notranslate"><span class="pre">#1</span></code>にある「それに」をどう扱うかを考えよう。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 3＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 合計(リスト)
-
-    # リストの要素数：N+1
-
-    0番目の要素に1番目の要素を加えて，合計をxとする。 #1
-    xに2番目の要素を加えて，それをxとする。      　 #1
-    xに3番目の要素を加えて，それをxとする。       　#1
-    ・・・・・
-    xにN番目の要素を加えて，それをxとする。      　　#1
-    
-    return x
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>より具体的になってきたが，<code class="docutils literal notranslate"><span class="pre">#1</span></code>の<code class="docutils literal notranslate"><span class="pre">x</span></code>をどう扱うかを考える必要がある。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 4＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 合計(リスト)
-
-    # リストの要素数：N+1
-
-    x = 0
-    
-    xに0番目の要素の値を足す #1
-    xに1番目の要素の値を足す #1
-    xに2番目の要素の値を足す #1
-    ・・・・・
-    xにN番目の要素の値を足す #1
-    
-    return x
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>骨格ができてきた。<code class="docutils literal notranslate"><span class="pre">#1</span></code>で似た作業がリピートされているのでループを使おう。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 5＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">合計</span><span class="p">(</span><span class="n">リスト</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="n">forループ</span>　<span class="n">i</span> <span class="o">&lt;--</span> <span class="mi">0</span><span class="n">からNまで</span>  <span class="c1">#1</span>
-        <span class="n">i番目の要素の値をxに足す</span>  <span class="c1">#1</span>
-        
-    <span class="k">return</span> <span class="n">x</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>の<code class="docutils literal notranslate"><span class="pre">i</span></code>はリストのインデックス番号になっているが，要素自体で良いのでは？</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 6＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">合計</span><span class="p">(</span><span class="n">リスト</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">for</span> <span class="n">v</span> <span class="o">&lt;--</span> <span class="n">リスト</span>
-        <span class="n">要素vをxに足す</span>
-        
-    <span class="k">return</span> <span class="n">x</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>ここまで来るとゴールは目の前‼️</p></li>
-</ul>
-<hr class="docutils" />
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_for_loop</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
-        <span class="n">x</span> <span class="o">+=</span> <span class="n">i</span>
-    
-    <span class="k">return</span> <span class="n">x</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>実行してみよう。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sum_for_loop</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]),</span> <span class="n">sum_for_loop</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6, 4950)
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id22">
-<h3>リストの合計（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループ）<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
-<p>ここでの目的：</p>
-<blockquote>
-<div><p>リスト（タプル）の要素の合計を返す関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使うこと。</p>
-</div></blockquote>
-<p>リストの合計（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）の＜Ver. 4＞まで同じ。</p>
-<hr class="docutils" />
-<p>＜Ver. 4＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 合計(リスト)
-
-    # リストの要素数：N+1
-
-    x = 0
-    
-    xに0番目の要素の値を足す #1
-    xに1番目の要素の値を足す #1
-    xに2番目の要素の値を足す #1
-    ・・・・・
-    xにN番目の要素の値を足す #1
-    
-    return x
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>骨格ができてきた。<code class="docutils literal notranslate"><span class="pre">#1</span></code>で似た作業がリピートされているのでループを使おう。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 5＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">合計</span><span class="p">(</span><span class="n">リスト</span><span class="p">)</span>
-
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>                    <span class="c1">#1</span>
-    
-    <span class="k">while</span> <span class="n">条件</span>                <span class="c1">#2</span>
-        <span class="n">i番目の要素の値をxに足す</span>   <span class="c1">#3</span>
-
-    <span class="k">return</span> <span class="n">x</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>の条件は何にするのか。</p></li>
-<li><p>無限ループに入らないように<code class="docutils literal notranslate"><span class="pre">#1</span></code>と<code class="docutils literal notranslate"><span class="pre">#3</span></code>に付け加えることはないか。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 6＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">合計</span><span class="p">(</span><span class="n">リスト</span><span class="p">)</span>
-
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>                  <span class="c1">#1</span>
-    
-    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">リストの要素数</span>  <span class="c1">#2</span>
-        <span class="n">i番目の要素の値をxに足す</span>    <span class="c1">#3</span>
-        <span class="n">countを1増やす</span>           <span class="c1">#4</span>
-
-    <span class="k">return</span> <span class="n">x</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>の<code class="docutils literal notranslate"><span class="pre">i</span></code>と<code class="docutils literal notranslate"><span class="pre">#1</span></code>，<code class="docutils literal notranslate"><span class="pre">#2</span></code>，<code class="docutils literal notranslate"><span class="pre">#4</span></code>の<code class="docutils literal notranslate"><span class="pre">count</span></code>はどう関係しているのか？同じ？</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 7＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">合計</span><span class="p">(</span><span class="n">リスト</span><span class="p">)</span>
-
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">リストの要素数</span>
-        <span class="n">count番目の要素の値をxに足す</span>
-        <span class="n">countを1増やす</span>
-
-    <span class="k">return</span> <span class="n">x</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>ここまで来るとゴールは目の前‼️</p></li>
-</ul>
-<hr class="docutils" />
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_while_loop</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
-    
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">+=</span> <span class="n">lst</span><span class="p">[</span><span class="n">count</span><span class="p">]</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-    
-    <span class="k">return</span> <span class="n">x</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>関数を実行しよう。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sum_while_loop</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]),</span> <span class="n">sum_while_loop</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6, 4950)
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id23">
-<h3>コイントス（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h3>
-<p>ここでの目的：</p>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">n</span></code>回コイントスし，表と裏の回数を表示する関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">random.randint()</span></code>と<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うこと。</p>
-</div></blockquote>
-<hr class="docutils" />
-<p>＜Ver. 1＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def コイントス(n)
-   
-    0回目のコイントス　→　表・裏  #1
-    1回目のコイントス　→　表・裏  #1
-    2回目のコイントス　→　表・裏  #1
-    ・・・
-    n-1回目のコイントス　→　表・裏   #1
-   
-    表の合計を計算  #2
-    裏の合計を計算  #2
-    
-    表の合計と裏の合計を返す
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>で表と裏をどう表す？</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>の合計の計算はどうする？</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 2＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def コイントス(n)
-    
-    # 表：1
-    # 裏：0
-   
-    0回目のコイントス　→　random.randint(0,1)   #1
-    1回目のコイントス　→　random.randint(0,1)   #1
-    2回目のコイントス　→　random.randint(0,1)   #1
-    ・・・
-    n-1回目のコイントス　→　random.randint(0,1) #1
-   
-    表の合計を計算  #2
-    裏の合計を計算  #2
-    
-    表の合計と裏の合計を返す
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>は似たコードになるのでループを使おう。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>の合計の計算はどうする？</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 3＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">コイントス</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    
-    <span class="c1"># 表：1</span>
-    <span class="c1"># 裏：0</span>
-   
-    <span class="k">for</span> <span class="n">ループ</span>
-        <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#1</span>
-   
-    <span class="n">表の合計を計算</span>  <span class="c1">#2</span>
-    <span class="n">裏の合計を計算</span>  <span class="c1">#2</span>
-    
-    <span class="n">表の合計と裏の合計を返す</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>が実行されるたびに<code class="docutils literal notranslate"><span class="pre">0</span></code>又は<code class="docutils literal notranslate"><span class="pre">1</span></code>が出るが，記録されていない。記録する変数を導入する必要がある。</p></li>
-<li><p>その記録を使って<code class="docutils literal notranslate"><span class="pre">#2</span></code>の合計の計算できる。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 4＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def コイントス(n)
-    
-    # 表：1
-    # 裏：0
-   
-    heads = 0
-    tails = 0
-    
-    for ループ                 #1
-        random.randint(0,1)
-        結果が１であれば，headsを１増やす
-        結果が０であれば，tailsを１増やす
-       
-    return heads, tails
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>で使うイタラブルは何か？</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>で使うイタラブル用の変数は何か？</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 5＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def コイントス(n)
-    
-    # 表：1
-    # 裏：0
-   
-    heads = 0
-    tails = 0
-    
-    for _ &lt;-- 0からn-1まで            #1
-        random.randint(0,1)
-        結果が１であれば，headsを１増やす  #2
-        結果が０であれば，tailsを１増やす  #2
-       
-    return heads, tails
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>で<code class="docutils literal notranslate"><span class="pre">_</span></code>を使っている理由：</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>や<code class="docutils literal notranslate"><span class="pre">j</span></code>などでも良いが，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの「本体」で使われていない変数には<code class="docutils literal notranslate"><span class="pre">_</span></code>が使われることがよくある。</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>を<code class="docutils literal notranslate"><span class="pre">if</span></code>文に書き換える必要がある。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 6＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">コイントス</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    
-    <span class="c1"># 表：1</span>
-    <span class="c1"># 裏：0</span>
-   
-    <span class="n">heads</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">tails</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">for</span> <span class="n">_</span> <span class="o">&lt;--</span> <span class="mi">0</span><span class="n">からn</span><span class="o">-</span><span class="mi">1</span><span class="n">まで</span>
-    
-        <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="n">の結果をresultに割り当てる</span>
-        
-        <span class="k">if</span> <span class="n">resultが１</span>
-            <span class="n">headsを１増やす</span>
-        
-        <span class="k">else</span>
-            <span class="n">tailsを１増やす</span>
-       
-    <span class="k">return</span> <span class="n">heads</span><span class="p">,</span> <span class="n">tails</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>ここまで来ればゴールは目の前‼️</p></li>
-</ul>
-<hr class="docutils" />
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coin_toss_for_loop</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    
-    <span class="n">heads</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">tails</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        
-        <span class="n">result</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-        
-        <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">heads</span> <span class="o">+=</span> <span class="mi">1</span>
-            
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">tails</span> <span class="o">+=</span> <span class="mi">1</span>
-    
-    <span class="k">return</span> <span class="n">heads</span><span class="p">,</span> <span class="n">tails</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>実行しよう</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coin_toss_for_loop</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(52, 48)
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id24">
-<h3>コイントス（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループ）<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
-<p>ここでの目的：</p>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">n</span></code>回コイントスし，表と裏の回数を表示する関数を作成する。ただし<code class="docutils literal notranslate"><span class="pre">random.randint()</span></code>と<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使うこと。</p>
-</div></blockquote>
-<p>コイントス（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）の＜Ver. 2＞まで同じ。</p>
-<hr class="docutils" />
-<p>＜Ver. 2＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def コイントス(n)
-    
-    # 表：1
-    # 裏：0
-   
-    0回目のコイントス　→　random.randint(0,1)   #1
-    1回目のコイントス　→　random.randint(0,1)   #1
-    2回目のコイントス　→　random.randint(0,1)   #1
-    ・・・
-    n-1回目のコイントス　→　random.randint(0,1) #1
-   
-    表の合計を計算  #2
-    裏の合計を計算  #2
-    
-    表の合計と裏の合計を返す
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>は似たコードになるのでループを使おう。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>の合計の計算はどうする？</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 3＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">コイントス</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    
-    <span class="c1"># 表：1</span>
-    <span class="c1"># 裏：0</span>
-   
-    <span class="k">while</span> <span class="n">ループ</span>
-        <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#1</span>
-   
-    <span class="n">表の合計を計算</span>  <span class="c1">#2</span>
-    <span class="n">裏の合計を計算</span>  <span class="c1">#2</span>
-    
-    <span class="n">表の合計と裏の合計を返す</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>で結果を記録する必要がある。</p></li>
-<li><p>その記録を使って<code class="docutils literal notranslate"><span class="pre">#2</span></code>の合計の計算できる。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 4＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def コイントス(n)
-    
-    # 表：1
-    # 裏：0
-    
-    heads = 0
-    tails = 0        #1
-   
-    while 条件　　     #2
-    
-        random.randint(0,1)
-        結果が１であれば，headsを１増やす
-        結果が０であれば，tailsを１増やす  #3
-       
-    return heads, tails
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>の条件は何にするのか。</p></li>
-<li><p>無限ループに入らないように<code class="docutils literal notranslate"><span class="pre">#1</span></code>と<code class="docutils literal notranslate"><span class="pre">#3</span></code>に何を付け加える必要があるか。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 5＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def コイントス(n)
-    
-    heads = 0
-    tails = 0
-    count = 0
-
-    while count &lt; n
-    
-        random.randint(0,1)
-        結果が１であれば，headsを１増やす  #1
-        結果が０であれば，tailsを１増やす  #1
-        countを1増やす
-       
-    return heads, tails
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>を<code class="docutils literal notranslate"><span class="pre">if</span></code>文として書く。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 6＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">コイントス</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    
-    <span class="n">heads</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">tails</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">n</span>
-    
-        <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="n">の結果をresultに割り当てる</span>
-        
-        <span class="k">if</span> <span class="n">resultが１</span>
-            <span class="n">headsを１増やす</span>
-        
-        <span class="k">else</span>
-            <span class="n">tailsを１増やす</span>
-            
-        <span class="n">countを1増やす</span>
-       
-    <span class="k">return</span> <span class="n">heads</span><span class="p">,</span> <span class="n">tails</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>ここまで来ればゴールは目の前‼️</p></li>
-</ul>
-<hr class="docutils" />
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coin_toss_while_loop</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    
-    <span class="n">heads</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">tails</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-        
-        <span class="n">result</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-        
-        <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">heads</span> <span class="o">+=</span> <span class="mi">1</span>
-            
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">tails</span> <span class="o">+=</span> <span class="mi">1</span>
-        
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-    
-    <span class="k">return</span> <span class="n">heads</span><span class="p">,</span> <span class="n">tails</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>コードを実行しよう。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coin_toss_while_loop</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(52, 48)
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id25">
-<h3>リストの最大値<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h3>
-<p>ここでの目的：</p>
-<blockquote>
-<div><p>リスト（又はタプル）を引数とし，含まれる要素の中から最大値を返す関数を作成する。</p>
-</div></blockquote>
-<hr class="docutils" />
-<p>＜Ver. 1＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト）:
-
-    0番目からN番目の要素を比較して最大値を探す  #1
-    
-    最大値を返す
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>ぼやっとした全体像となっているのは否めない。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>の「比較」をどうするかが重要となる。。:</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 2＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
-    
-    # N = リストの要素数
-    
-    &lt;0&gt; l[0]をl[1]〜l[N]と比較し，
-        l[0]が全てに対して大きければ，l[0]が最大値。
-        そうでなければ&lt;1&gt;に進む。
-    &lt;1&gt; l[1]をl[2]〜l[N]と比較し，
-        l[2]が全てに対して大きければ，l[2]が最大値。
-        そうでなければ&lt;2&gt;に進む。
-    &lt;2&gt; l[2]をl[3]〜l[N]と比較し，
-        l[3]が全てに対して大きければ，l[3]が最大値。
-        そうでなければ&lt;3&gt;に進む。
-    ・・・・・
-    &lt;N-1&gt; l[N-1]をl[N]と比較し，
-          l[N-1]大きければ，l[N-1]が最大値。
-          そうでなければl[N]が最大値。
-  
-    最大値を返す
-</pre></div>
-</div>
-<p>良さそうにも見えるが，問題がある。</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;0&gt;</span></code>では<code class="docutils literal notranslate"><span class="pre">N</span></code>回の比較をおこなう。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;1&gt;</span></code>では<code class="docutils literal notranslate"><span class="pre">N-1</span></code>回の比較をおこなう。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;2&gt;</span></code>では<code class="docutils literal notranslate"><span class="pre">N-2</span></code>回の比較をおこなう。</p></li>
-<li><p>・・・・</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;N&gt;</span></code>では<code class="docutils literal notranslate"><span class="pre">1</span></code>回の比較をおこなう。</p></li>
-<li><p>比較する回数の合計は<code class="docutils literal notranslate"><span class="pre">1+2+3+・・・+N=N(N+1)/2</span></code>。比較回数が非常に多い。もっと良い方法があるのでは？</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 3＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
-
-    # N = リストの要素数
-    
-    l[0]とl[1]を比較し，大きい方を残す    #1
-    l[1]とl[2]を比較し，大きい方を残す    #1
-    l[2]とl[3]を比較し，大きい方を残す    #1
-    ・・・
-    l[N-1]とl[N]を比較し，大きい方を残す  #1
-    
-    最大値を返す
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>比較する回数は<code class="docutils literal notranslate"><span class="pre">N</span></code>回で＜Ver. 2＞より少ない。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>の「大きい方を残す」はどうする？</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 4＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
-
-    # N = リストの要素数
-
-    max_ = -1_000_000        #1
-    
-    l[0]とl[1]を比較し，大きい方をmax_に割り当てる。   #2
-    l[1]とl[2]を比較し，大きい方をmax_に割り当てる。   #2
-    l[2]とl[3]を比較し，大きい方をmax_に割り当てる。   #2
-    ・・・
-    l[N-1]とl[N]を比較し，大きい方をxに割り当てる。 #2
-    
-    return max_
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>だけを見ると最大値は求められそう。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>では最大値が<code class="docutils literal notranslate"><span class="pre">-1_000_000</span></code>未満の場合をカバーできない。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 5＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
-
-    # N = リストの要素数
-    
-    max_ = l[0]
-    
-    max_とl[1]を比較し，大きい方をmax_に割り当てる。  #1
-    max_とl[2]を比較し，大きい方をmax_に割り当てる。  #1
-    max_とl[3]を比較し，大きい方をmax_に割り当てる。  #1
-    ・・・
-    max_とl[N]を比較し，大きい方をmax_に割り当てる。  #1
-    
-    return max_
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>は似たようなコードになるのでループを使おう。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 5＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
-
-    # N = リストの要素数
-    
-    max_ = l[0]
-    
-    for ループ
-        max_とl[i]を比較し，大きい方をmax_に割り当てる。 #1
-    
-    return max_
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>は条件分岐させる必要がある。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 6＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
-
-    # N = リストの要素数
-    
-    max_ = l[0]
-    
-    for ループ     #1
-        max_ &lt; l[i]の場合は，l[i]をxに割り当てる。
-        max_ &gt;= l[i]の場合は，pass
-    
-    return max_
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>のイタラブルは何にする？</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>のイタラブル用の変数は何にする？</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 7＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
-
-    # N = リストの要素数
-    
-    max_ = l[0]
-    
-    for i &lt;-- 0から(lの要素数-1)まで                #1
-        max_ &lt; l[i]の場合は，l[i]をmax_に割り当てる。 #1
-        max_ &gt;= l[i]の場合は，pass                #1
-    
-    return max_
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>の<code class="docutils literal notranslate"><span class="pre">i</span></code>はリストのインデックス番号だが，直接要素自体を使う方が<code class="docutils literal notranslate"><span class="pre">Python</span></code>的である。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 8＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
-
-    # N = リストの要素数
-    
-    max_ = l[0]
-    
-    for v &lt;-- リスト
-        max_ &lt; vの場合は，vをxに割り当てる。 #1
-        max_ &gt;= vの場合は，pass          #1
-    
-    return max_
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>は<code class="docutils literal notranslate"><span class="pre">if</span></code>文に書き換える。</p></li>
-</ul>
-<hr class="docutils" />
-<p>＜Ver. 9＞</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def 最大値を求める（リスト=l）:
-
-    max_ = l[0]
-    
-    for v &lt;-- リスト
-    
-        if max_ &lt; v
-            max_にvを割り当てる。
-        else
-            pass
-    
-    return max_
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>後は<code class="docutils literal notranslate"><span class="pre">Python</span></code>コードを書くだけ‼️</p></li>
-</ul>
-<hr class="docutils" />
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_max</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
-    
-    <span class="n">max_</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    
-    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="n">max_</span><span class="p">:</span>
-            <span class="n">max_</span> <span class="o">=</span> <span class="n">v</span>
-        <span class="k">else</span><span class="p">:</span>         <span class="c1"># 省略可</span>
-            <span class="k">pass</span>      <span class="c1"># 省略可</span>
-    
-    <span class="k">return</span> <span class="n">max_</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>実行してみよう。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
-
-<span class="n">search_max</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.439849556976884
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>＜Ver. 2＞をコードで書くと次の様になる。上のコードと比べると実行時間が1000倍近く長くなる。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_max</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
-    
-    <span class="n">max_</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    
-    <span class="c1"># 最後の要素はカバーしていない</span>
-    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
-        
-        <span class="n">temp</span> <span class="o">=</span> <span class="n">max_</span>
-        
-
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">l</span><span class="p">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">:]:</span>
-            <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">:</span>
-                <span class="k">continue</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">temp</span> <span class="o">=</span> <span class="n">val</span>
-        
-        <span class="k">if</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="n">max_</span><span class="p">:</span>
-            <span class="n">max_</span> <span class="o">=</span> <span class="n">temp</span>
-    
-    <span class="c1"># 最後の要素について</span>
-    <span class="k">if</span> <span class="n">max_</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-        <span class="n">max_</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-    <span class="k">return</span> <span class="n">max_</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="id26">
-<h3>最後に<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h3>
-<p>コードを書くことに慣れてくると，簡単なコードに疑似コードの修正プロセスは必要なくなるだろう。しかし，その段階になればより複雑なコードを書くことになるはずだ。その時には疑似コードが役に立つのではないかと思われる。少し頭をひねるような問題であれば，疑似コードを試してみるのも一案である。</p>
 </section>
 </section>
 </section>
@@ -2819,16 +1763,6 @@ Buzz
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">実行スピード比較</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">疑似コード</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fizzbuzz"><code class="docutils literal notranslate"><span class="pre">FizzBuzz</span></code>問題</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">リストの合計（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">リストの合計（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループ）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">コイントス（<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">コイントス（<code class="docutils literal notranslate"><span class="pre">while</span></code>ループ）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">リストの最大値</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">最後に</a></li>
 </ul>
 </li>
 </ul>
