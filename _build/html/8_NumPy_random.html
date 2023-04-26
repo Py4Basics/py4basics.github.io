@@ -175,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0_Preparations.html">ツールのインストールと説明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="things_to_note.html">Tipsと注意点</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pseudo_code.html">疑似コード</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Grade.html">学業成績の分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Gapminder.html">Gapminder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Moving_Average.html">移動平均</a></li>
@@ -452,8 +453,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6.54866827, 9.20567664, 7.73896439, 4.15701265, 4.83692574,
-       4.72075418, 5.81699474, 5.43059287, 5.67507802, 2.43613821])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 8.13267023,  4.35798781,  6.70393688, -0.06266305,  6.1348387 ,
+        2.19530768,  5.59238269,  6.03835076,  7.61526456,  5.98275945])
 </pre></div>
 </div>
 </div>
@@ -467,7 +468,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.70391539, -0.13307688,  0.14530599,  0.40817161, -0.09408311])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.47014463,  0.94452308, -0.17942037,  1.13679722, -0.89566793])
 </pre></div>
 </div>
 </div>
@@ -494,7 +495,7 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;frozen importlib._bootstrap&gt;:228: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
 </pre></div>
 </div>
-<img alt="_images/f8c65da3982cf6c5830a504fb984dbed5c38f83f6105e81da21239a4c1338a0a.png" src="_images/f8c65da3982cf6c5830a504fb984dbed5c38f83f6105e81da21239a4c1338a0a.png" />
+<img alt="_images/aab1ec00b605bcf109add32bc3517a5bb86138c6f2644d86cf0fa4878407c1d6.png" src="_images/aab1ec00b605bcf109add32bc3517a5bb86138c6f2644d86cf0fa4878407c1d6.png" />
 </div>
 </div>
 </section>
@@ -516,8 +517,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([28.82585199, 14.4036026 , 20.27116627,  5.34171322,  8.11205506,
-       22.58804792, 25.86138678,  6.66405306, 16.16546901, 29.59007463])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([28.86012735, 27.01713574, 17.40890217,  6.66211442, 17.25054069,
+       11.01879689, 22.77764687, 11.60033189,  8.83587071, 10.60609816])
 </pre></div>
 </div>
 </div>
@@ -530,7 +531,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.66274697, 0.10989815, 0.08563656, 0.0993625 , 0.73005015])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.49192124, 0.04279043, 0.34675208, 0.64369791, 0.80867029])
 </pre></div>
 </div>
 </div>
@@ -554,7 +555,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bce3eaa84c7291fcf6eac9860b32479e1ca579d7bfe8fca980eb269fc201e05f.png" src="_images/bce3eaa84c7291fcf6eac9860b32479e1ca579d7bfe8fca980eb269fc201e05f.png" />
+<img alt="_images/90582c0c929e226f7d8786ee92804adf8f2e88267b9b32edf328d48b908b8f16.png" src="_images/90582c0c929e226f7d8786ee92804adf8f2e88267b9b32edf328d48b908b8f16.png" />
 </div>
 </div>
 </section>
@@ -622,11 +623,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-2.50833868,  2.96485754],
-       [ 3.57225963,  4.98494995],
-       [-2.49369365,  2.28915262],
-       [-1.78100843,  5.31663514],
-       [ 1.13566728,  0.17743596]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 3.47151784,  2.08141094],
+       [ 4.04670065,  3.52157118],
+       [-0.92187726,  5.64353608],
+       [ 0.2651658 ,  7.02041921],
+       [ 2.29429966,  6.87670084]])
 </pre></div>
 </div>
 </div>
@@ -645,11 +646,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.0729892 , -0.23200714],
-       [ 0.92704938,  1.43113342],
-       [ 0.06630689, -0.47716305],
-       [-0.45021825,  0.28566343],
-       [-2.34512743, -2.02145222]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.89771747, -1.05932362],
+       [ 0.13602304,  0.6642015 ],
+       [ 1.91812307,  3.03042885],
+       [ 0.68791592, -0.39858929],
+       [ 0.45656765,  0.47607328]])
 </pre></div>
 </div>
 </div>
@@ -670,7 +671,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8b16886fabe13b4fa1de79365d286abe29bb81d7fd35fef886ed07bee48777be.png" src="_images/8b16886fabe13b4fa1de79365d286abe29bb81d7fd35fef886ed07bee48777be.png" />
+<img alt="_images/596094dc6f1f8220da452dd26d5c513bf406e16d545b7f071fbe8ca5ef504c64.png" src="_images/596094dc6f1f8220da452dd26d5c513bf406e16d545b7f071fbe8ca5ef504c64.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>の共分散は<code class="docutils literal notranslate"><span class="pre">m=0.8</span></code>となっているため，正の相関が観測される。
@@ -682,7 +683,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8109761287358304
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8187796030395802
 </pre></div>
 </div>
 </div>
@@ -712,7 +713,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.16088200064823913
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.1431463687138013
 </pre></div>
 </div>
 </div>
@@ -730,7 +731,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.6744681470168514
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3554740530544465
 </pre></div>
 </div>
 </div>
