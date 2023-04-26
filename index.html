@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +39,8 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -175,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0_Preparations.html">ツールのインストールと説明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="things_to_note.html">Tipsと注意点</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pseudo_code.html">疑似コード</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Grade.html">学業成績の分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Gapminder.html">Gapminder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Moving_Average.html">移動平均</a></li>
@@ -431,7 +432,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Version: 2023年03月20日
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Version: 2023年04月26日
 </pre></div>
 </div>
 </div>
@@ -494,6 +495,8 @@ dt = datetime.datetime.today()
 Pythonやと関連ツール（GitやGitHubなど）のインストールと使い方について説明する。</p></li>
 <li><p><strong>Tipsと注意点</strong><br>
 コードを書く上で役に立つ点をまとめる。是非読んでみよう！</p></li>
+<li><p><strong>疑似コード</strong><br>
+コードを自然言語（日本語や英語）で表したコードであり，コードの裏にある考え方を整理する。</p></li>
 <li><p><strong>学業成績の分析</strong><br>
 神戸大学のウリボーネット上にある成績を使い学業成績分析を行う。成績をコピーして使うので他大学でも使えるかもしれない？</p></li>
 <li><p><strong>Gapminder</strong><br>
@@ -566,11 +569,11 @@ Gapminderは世界経済のGDPなどデータを駆使し興味深い分析を�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python        3.10.10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python        3.10.11
 gapminder     0.1
 matplotlib    3.7.1
-numpy         1.24.2
-pandas        1.5.3
+numpy         1.24.3
+pandas        2.0.1
 scipy         1.10.1
 see           1.4.1
 </pre></div>
@@ -620,7 +623,10 @@ see           1.4.1
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="right-next"
        href="1_Basics_I.html"
@@ -631,7 +637,10 @@ see           1.4.1
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -657,7 +666,7 @@ see           1.4.1
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -690,7 +699,7 @@ By 春山 鉄源  Tetsugen HARUYAMA
 </div>
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -699,8 +708,8 @@ By 春山 鉄源  Tetsugen HARUYAMA
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
