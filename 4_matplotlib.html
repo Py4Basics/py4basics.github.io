@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -87,6 +88,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -346,10 +356,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -357,7 +367,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -564,10 +574,10 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11c7bcf70&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1180232b0&gt;]
 </pre></div>
 </div>
-<img alt="_images/ce6b7f884554610e9ea8a9a8e70c9b6030bff02066873e99c2d1826799ab8544.png" src="_images/ce6b7f884554610e9ea8a9a8e70c9b6030bff02066873e99c2d1826799ab8544.png" />
+<img alt="_images/f096ec4daaaedf5a134ab471aa56ce853a5ffe0f485ffccf580008a5349c00e1.png" src="_images/f096ec4daaaedf5a134ab471aa56ce853a5ffe0f485ffccf580008a5349c00e1.png" />
 </div>
 </div>
 <p>２行目に<code class="docutils literal notranslate"><span class="pre">marker='o'</span></code>が追加されているが，「●」を表示するために使っている。このような引数の使い方は後で詳しく説明するので，ここでは気にしないで読み進めて欲しい。</p>
@@ -589,10 +599,10 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11c89f490&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11812d990&gt;]
 </pre></div>
 </div>
-<img alt="_images/3dc83899a43a17f2bfbf087dc8daee776805c62aa1829adc60fdd08a52d385a2.png" src="_images/3dc83899a43a17f2bfbf087dc8daee776805c62aa1829adc60fdd08a52d385a2.png" />
+<img alt="_images/710f88507b83250b564656346ad77261b8800cc410b32bd471684cd6d67d8213.png" src="_images/710f88507b83250b564656346ad77261b8800cc410b32bd471684cd6d67d8213.png" />
 </div>
 </div>
 <p>より<span class="math notranslate nohighlight">\(y=x^2\)</span>の図に近づいたことがわかる。</p>
@@ -622,7 +632,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" src="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" />
+<img alt="_images/af831854538bf4ed038551bd0c393fe4c83c47c8e80e4cb8c6f57029ed22129b.png" src="_images/af831854538bf4ed038551bd0c393fe4c83c47c8e80e4cb8c6f57029ed22129b.png" />
 </div>
 </div>
 <p>それぞれの<code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code>を「軸<code class="docutils literal notranslate"><span class="pre">ax</span></code>にデータの組み合わせをプロットする」と読めば理解しやすいと思う。また同じようなコードが続いているので，次のように<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うことより短いコードで同じ図を表示することができる。</p>
@@ -638,7 +648,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" src="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" />
+<img alt="_images/af831854538bf4ed038551bd0c393fe4c83c47c8e80e4cb8c6f57029ed22129b.png" src="_images/af831854538bf4ed038551bd0c393fe4c83c47c8e80e4cb8c6f57029ed22129b.png" />
 </div>
 </div>
 </section>
@@ -730,7 +740,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6823a861cea0e42faebacc8f4c864c1f91b8b50cd639d6b0542c10ebb7e8995b.png" src="_images/6823a861cea0e42faebacc8f4c864c1f91b8b50cd639d6b0542c10ebb7e8995b.png" />
+<img alt="_images/73fca7d5c698f23e6cc1bfc744c69515977def1a419cfcabfb45efa3d9842573.png" src="_images/73fca7d5c698f23e6cc1bfc744c69515977def1a419cfcabfb45efa3d9842573.png" />
 </div>
 </div>
 <p>横軸に<code class="docutils literal notranslate"><span class="pre">X</span></code>，縦軸に<code class="docutils literal notranslate"><span class="pre">Y0</span></code>，<code class="docutils literal notranslate"><span class="pre">Y1</span></code>，<code class="docutils literal notranslate"><span class="pre">Y2</span></code>をプロットしてみる。</p>
@@ -745,7 +755,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" src="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" />
+<img alt="_images/af831854538bf4ed038551bd0c393fe4c83c47c8e80e4cb8c6f57029ed22129b.png" src="_images/af831854538bf4ed038551bd0c393fe4c83c47c8e80e4cb8c6f57029ed22129b.png" />
 </div>
 </div>
 <p>引数の書き方１の簡略形として，横軸の変数を省略できることを紹介した。その場合はどうなるかを考えてみよう。</p>
@@ -758,7 +768,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9857254fe4fbe1ca254b857dc8e6c9517ef47ccf87351c680551aa6dcd7b8dd8.png" src="_images/9857254fe4fbe1ca254b857dc8e6c9517ef47ccf87351c680551aa6dcd7b8dd8.png" />
+<img alt="_images/92370bfb22deb9e376e56463e8e749b47014061cfe73f5f7d3e5917d9da10432.png" src="_images/92370bfb22deb9e376e56463e8e749b47014061cfe73f5f7d3e5917d9da10432.png" />
 </div>
 </div>
 <p>上の図との違いは横軸の値である。この場合，横軸に<code class="docutils literal notranslate"><span class="pre">df0</span></code>の行インデックスが自動的に使われている。</p>
@@ -779,7 +789,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6823a861cea0e42faebacc8f4c864c1f91b8b50cd639d6b0542c10ebb7e8995b.png" src="_images/6823a861cea0e42faebacc8f4c864c1f91b8b50cd639d6b0542c10ebb7e8995b.png" />
+<img alt="_images/73fca7d5c698f23e6cc1bfc744c69515977def1a419cfcabfb45efa3d9842573.png" src="_images/73fca7d5c698f23e6cc1bfc744c69515977def1a419cfcabfb45efa3d9842573.png" />
 </div>
 </div>
 <p>変数<code class="docutils literal notranslate"><span class="pre">Y1</span></code>と<code class="docutils literal notranslate"><span class="pre">Y2</span></code>も同じ軸<code class="docutils literal notranslate"><span class="pre">ax</span></code>にプロットしてみよう。</p>
@@ -794,7 +804,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" src="_images/4c80a62f62cb8ef1891c830b45775e5e178a146a14d65ef0f6baed12389ddf44.png" />
+<img alt="_images/af831854538bf4ed038551bd0c393fe4c83c47c8e80e4cb8c6f57029ed22129b.png" src="_images/af831854538bf4ed038551bd0c393fe4c83c47c8e80e4cb8c6f57029ed22129b.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -816,7 +826,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9857254fe4fbe1ca254b857dc8e6c9517ef47ccf87351c680551aa6dcd7b8dd8.png" src="_images/9857254fe4fbe1ca254b857dc8e6c9517ef47ccf87351c680551aa6dcd7b8dd8.png" />
+<img alt="_images/92370bfb22deb9e376e56463e8e749b47014061cfe73f5f7d3e5917d9da10432.png" src="_images/92370bfb22deb9e376e56463e8e749b47014061cfe73f5f7d3e5917d9da10432.png" />
 </div>
 </div>
 <p>行インデックスが横軸の値として使われている。</p>
@@ -902,7 +912,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/644cfab61f1ee79efd8ddc0ca75fb08d8dd5ebd4df8f77f48737577458b6c42b.png" src="_images/644cfab61f1ee79efd8ddc0ca75fb08d8dd5ebd4df8f77f48737577458b6c42b.png" />
+<img alt="_images/e0aef576ab42a00ec5c97e8f4a1d76acb3d9b4e2c4442a35f1c5790c0c077d56.png" src="_images/e0aef576ab42a00ec5c97e8f4a1d76acb3d9b4e2c4442a35f1c5790c0c077d56.png" />
 </div>
 </div>
 </section>
@@ -993,7 +1003,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6296919b1640d0f0c61ae18eecbf123be60be3c2148895da3a0b1a52d9a62548.png" src="_images/6296919b1640d0f0c61ae18eecbf123be60be3c2148895da3a0b1a52d9a62548.png" />
+<img alt="_images/337399777a42dda82744d6715c327f6bb0b2fe4b75508da742e4af37dbf43922.png" src="_images/337399777a42dda82744d6715c327f6bb0b2fe4b75508da742e4af37dbf43922.png" />
 </div>
 </div>
 </section>
@@ -1038,7 +1048,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/90d4e1bbcf42349730279cfe51a2e2949e25b4da3f14b2a44076866e12195b62.png" src="_images/90d4e1bbcf42349730279cfe51a2e2949e25b4da3f14b2a44076866e12195b62.png" />
+<img alt="_images/a92e88f6d80340e4b1397646c5267b689c393236db088b136f2030da66cf6348.png" src="_images/a92e88f6d80340e4b1397646c5267b689c393236db088b136f2030da66cf6348.png" />
 </div>
 </div>
 <p>引数をいちいち書くのが面倒な場合、次の３つを簡略して一緒に指定できる。</p>
@@ -1063,7 +1073,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9c5f2c39d912ca821e0ef93538b07d4cba8956023e417a471e52edc66030f612.png" src="_images/9c5f2c39d912ca821e0ef93538b07d4cba8956023e417a471e52edc66030f612.png" />
+<img alt="_images/d3a48461999d8f7f63f362933948fb6e411b5f59a27cac549223047bcba29acf.png" src="_images/d3a48461999d8f7f63f362933948fb6e411b5f59a27cac549223047bcba29acf.png" />
 </div>
 </div>
 <p>（注意点）</p>
@@ -1116,7 +1126,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8f69cb206bfbca3b2ad04136c77ab0ecea27a529c487e267567235160b1c851f.png" src="_images/8f69cb206bfbca3b2ad04136c77ab0ecea27a529c487e267567235160b1c851f.png" />
+<img alt="_images/51600ea9d68c9d4c86bd98e55b9b7801c57b7ba89fe8d2bb79291550db40cc58.png" src="_images/51600ea9d68c9d4c86bd98e55b9b7801c57b7ba89fe8d2bb79291550db40cc58.png" />
 </div>
 </div>
 </section>
@@ -1149,7 +1159,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6efa0105215261253ffb5976f6c53e679d71b8f6fa853baf3c3688824da11604.png" src="_images/6efa0105215261253ffb5976f6c53e679d71b8f6fa853baf3c3688824da11604.png" />
+<img alt="_images/451a3547ea1d3e0494131bbdf324b720841553baf768d3c189b4ee90e2a56c98.png" src="_images/451a3547ea1d3e0494131bbdf324b720841553baf768d3c189b4ee90e2a56c98.png" />
 </div>
 </div>
 <p>６つの軸が表示されているが、それらは<code class="docutils literal notranslate"><span class="pre">ax</span></code>に割り当てられている。<code class="docutils literal notranslate"><span class="pre">ax</span></code>を表示してみよう。</p>
@@ -1203,7 +1213,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a6734746b9decbe11e2247d77b53ca2423fc649dba8f13d6634ca972a6489c6d.png" src="_images/a6734746b9decbe11e2247d77b53ca2423fc649dba8f13d6634ca972a6489c6d.png" />
+<img alt="_images/84f511cfe7822a37562f237540b13cbd9ee8525596b345a0a07b768d7283ee18.png" src="_images/84f511cfe7822a37562f237540b13cbd9ee8525596b345a0a07b768d7283ee18.png" />
 </div>
 </div>
 <p>横軸と縦軸を共有するには次のようにする。</p>
@@ -1221,7 +1231,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f305f13305a54899af2bc86c6c9224d2902977ccb360bf86fb0bad933fd9d513.png" src="_images/f305f13305a54899af2bc86c6c9224d2902977ccb360bf86fb0bad933fd9d513.png" />
+<img alt="_images/5b97099f277c0e807727bb1cfbc400ea39b19cbe2fc301205058d35bd34650a8.png" src="_images/5b97099f277c0e807727bb1cfbc400ea39b19cbe2fc301205058d35bd34650a8.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ax</span></code>のメソッド（例えば、軸のタイトル）はそれぞれ設定することができる。</p>
@@ -1255,7 +1265,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a88c863e479ab639601f6bc3d99110e3762d62a0c3d754a9a11c268d0ab0c31d.png" src="_images/a88c863e479ab639601f6bc3d99110e3762d62a0c3d754a9a11c268d0ab0c31d.png" />
+<img alt="_images/6c65bb77c9b174bb8673cc4336453dfb0142038b042ae270b1cf1a2865dc25ca.png" src="_images/6c65bb77c9b174bb8673cc4336453dfb0142038b042ae270b1cf1a2865dc25ca.png" />
 </div>
 </div>
 </section>
@@ -1275,7 +1285,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d49829accf5c5f5ec8f89446515b4e6109a0cc0afa32ecc860ab1e3458af54d3.png" src="_images/d49829accf5c5f5ec8f89446515b4e6109a0cc0afa32ecc860ab1e3458af54d3.png" />
+<img alt="_images/b428105296201692353e80aa97078d36a9e30b0c6c92c1e9b635c567c9fa0037.png" src="_images/b428105296201692353e80aa97078d36a9e30b0c6c92c1e9b635c567c9fa0037.png" />
 </div>
 </div>
 <p>コードの説明</p>
@@ -1308,7 +1318,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d8fcccc5f9cbc9e53a055eb59cc98047ac16908e0c2635c6b45404d966996e87.png" src="_images/d8fcccc5f9cbc9e53a055eb59cc98047ac16908e0c2635c6b45404d966996e87.png" />
+<img alt="_images/3ce58c09850ffef6306f83f7ddca970173974a98d335ba59ced745f80716f7e3.png" src="_images/3ce58c09850ffef6306f83f7ddca970173974a98d335ba59ced745f80716f7e3.png" />
 </div>
 </div>
 <p>コードの説明</p>
@@ -1357,7 +1367,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/60c39485018406694be05cbf5492c18f398df14130399b2b2d28dfa32aa8373f.png" src="_images/60c39485018406694be05cbf5492c18f398df14130399b2b2d28dfa32aa8373f.png" />
+<img alt="_images/db1f97535023a5a85441ca42d0340412c79e260a0fe03d076133b476fe806511.png" src="_images/db1f97535023a5a85441ca42d0340412c79e260a0fe03d076133b476fe806511.png" />
 </div>
 </div>
 </section>
@@ -1405,7 +1415,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/580ec73609e2c6fb1559adc11331923abee20ed0325ef4be6ef9623d3446460d.png" src="_images/580ec73609e2c6fb1559adc11331923abee20ed0325ef4be6ef9623d3446460d.png" />
+<img alt="_images/cd3ee2166d32d20e661bfb8dc3ea172744dbe954f8b1dacd3689acb9e0c02689.png" src="_images/cd3ee2166d32d20e661bfb8dc3ea172744dbe954f8b1dacd3689acb9e0c02689.png" />
 </div>
 </div>
 <blockquote>
@@ -1537,7 +1547,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b50f0f69f826f5228fef91fe42b01f7d369044c8779643d4d9be48df40ba8b79.png" src="_images/b50f0f69f826f5228fef91fe42b01f7d369044c8779643d4d9be48df40ba8b79.png" />
+<img alt="_images/51da8ad827de5e835ad3e465aa623af78a07b71fc91e49757d108049e5fc9756.png" src="_images/51da8ad827de5e835ad3e465aa623af78a07b71fc91e49757d108049e5fc9756.png" />
 </div>
 </div>
 <p>この図に次の「飾り付け」をしてみよう。</p>
@@ -1739,7 +1749,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/673beac620b1fbe7d2ecb50164962df14ff4005ff3adb7e8e0303e8f9b7c70a1.png" src="_images/673beac620b1fbe7d2ecb50164962df14ff4005ff3adb7e8e0303e8f9b7c70a1.png" />
+<img alt="_images/4509fd7474361a084625dd4bd56c43e4241dc67a11d9184d71631927f0fbc9dd.png" src="_images/4509fd7474361a084625dd4bd56c43e4241dc67a11d9184d71631927f0fbc9dd.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code>が続いているので、<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使う事を推奨する。</p>
@@ -1756,7 +1766,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/673beac620b1fbe7d2ecb50164962df14ff4005ff3adb7e8e0303e8f9b7c70a1.png" src="_images/673beac620b1fbe7d2ecb50164962df14ff4005ff3adb7e8e0303e8f9b7c70a1.png" />
+<img alt="_images/4509fd7474361a084625dd4bd56c43e4241dc67a11d9184d71631927f0fbc9dd.png" src="_images/4509fd7474361a084625dd4bd56c43e4241dc67a11d9184d71631927f0fbc9dd.png" />
 </div>
 </div>
 <p>（１）の<code class="docutils literal notranslate"><span class="pre">df_future.columns</span></code>について説明すると、<code class="docutils literal notranslate"><span class="pre">.columns</span></code>はデータ・フレーム<code class="docutils literal notranslate"><span class="pre">df_future</span></code>の属性であり列ラベルを返す。</p>
@@ -1804,7 +1814,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/95254e36cbf2fe8f5bb42f9338ad1f02330be42d93d3aa2172859c783795a7dc.png" src="_images/95254e36cbf2fe8f5bb42f9338ad1f02330be42d93d3aa2172859c783795a7dc.png" />
+<img alt="_images/eb764b03d3da50696e597a0f5c020b80b9ac865eee6989c61cd580b993a3a904.png" src="_images/eb764b03d3da50696e597a0f5c020b80b9ac865eee6989c61cd580b993a3a904.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1841,7 +1851,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/54259a2c1689d280fa852c8fffab5698cb92cea91b0b647547f6ff63bb70fe6b.png" src="_images/54259a2c1689d280fa852c8fffab5698cb92cea91b0b647547f6ff63bb70fe6b.png" />
+<img alt="_images/2e851498d42abdea02f7e9fdfc7fb7965425e0e969f4cdafd2cdc702187535f1.png" src="_images/2e851498d42abdea02f7e9fdfc7fb7965425e0e969f4cdafd2cdc702187535f1.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Z</span></code>の散布図を加えてタイトルなども付け加えてみよう。</p>
@@ -1867,7 +1877,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/350a0c2432bbabbc9f0ff166633a22c778ff9d5d7fe2c6b93285333ea9d7dd6c.png" src="_images/350a0c2432bbabbc9f0ff166633a22c778ff9d5d7fe2c6b93285333ea9d7dd6c.png" />
+<img alt="_images/68df18d8734383f1050a031257a9939a76dfe94c098888a28ea90a2261044113.png" src="_images/68df18d8734383f1050a031257a9939a76dfe94c098888a28ea90a2261044113.png" />
 </div>
 </div>
 </section>
@@ -1897,7 +1907,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9231989568c665b2c2732d05efe9f44e3f3da1e02b1089cbf1ad6991929f416c.png" src="_images/9231989568c665b2c2732d05efe9f44e3f3da1e02b1089cbf1ad6991929f416c.png" />
+<img alt="_images/a1852c6513f3a540e6b48eca7acfd0f3ad1e8142e4981999595b52bbfb2b8506.png" src="_images/a1852c6513f3a540e6b48eca7acfd0f3ad1e8142e4981999595b52bbfb2b8506.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1940,7 +1950,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6944c16067b741007fef60bdb8f4298147a59bd82141f989a759255aca51a98e.png" src="_images/6944c16067b741007fef60bdb8f4298147a59bd82141f989a759255aca51a98e.png" />
+<img alt="_images/46069dafb043e68b501fc1f959523b738761cbc01b549a48ea389f594abe7f18.png" src="_images/46069dafb043e68b501fc1f959523b738761cbc01b549a48ea389f594abe7f18.png" />
 </div>
 </div>
 <p>次に複数のデータを並べてプロットする場合を考えよう。方法は簡単で，異なるデータをリストとして指定すれば良い。</p>
@@ -1959,7 +1969,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2e9d7419044e06cdf326cbf726772df3e66fccf5497f3f2dd360d5b53431458a.png" src="_images/2e9d7419044e06cdf326cbf726772df3e66fccf5497f3f2dd360d5b53431458a.png" />
+<img alt="_images/a4dcf00bb52de51b6de7fed25f014f183221a86253a4caf294c8475db2a58073.png" src="_images/a4dcf00bb52de51b6de7fed25f014f183221a86253a4caf294c8475db2a58073.png" />
 </div>
 </div>
 <p>上のコードに引数<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>を加えると，柱を重ねて表示される。試してみよう。また<code class="docutils literal notranslate"><span class="pre">ax.hist()</span></code>を２回使うと，２つのヒストグラムを重ねて表示することができる。この場合，引数<code class="docutils literal notranslate"><span class="pre">alpha</span></code>の値を調整すると良いだろう。</p>
@@ -1985,7 +1995,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/da9ba51fa4d8faec2422c83bfd2c00c772fb106861eef4bab7fa4e83eae78e35.png" src="_images/da9ba51fa4d8faec2422c83bfd2c00c772fb106861eef4bab7fa4e83eae78e35.png" />
+<img alt="_images/6db928f2e5d8905e23d927b8e9dcc335129f2d826eb5a9838c7a54e7c728c940.png" src="_images/6db928f2e5d8905e23d927b8e9dcc335129f2d826eb5a9838c7a54e7c728c940.png" />
 </div>
 </div>
 <p>濃い赤の部分が重なっている部分となる。</p>
@@ -2021,7 +2031,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e7406f2c9d5cd8f2450bec25eccb5141e18a7d2144f7bba0e585200a046782aa.png" src="_images/e7406f2c9d5cd8f2450bec25eccb5141e18a7d2144f7bba0e585200a046782aa.png" />
+<img alt="_images/db912800f70fb4623144adec1263bbf2e36a3d973afc16135f24118c03481b70.png" src="_images/db912800f70fb4623144adec1263bbf2e36a3d973afc16135f24118c03481b70.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2065,7 +2075,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/742e1a14d45e20752e954e39e0bd68abca5a2db314a872fb492d8835405926e4.png" src="_images/742e1a14d45e20752e954e39e0bd68abca5a2db314a872fb492d8835405926e4.png" />
+<img alt="_images/92728f08530e4e09efb9a4bf6382ce2aa1bcaca0e198b2a5e68dbe8054408e5d.png" src="_images/92728f08530e4e09efb9a4bf6382ce2aa1bcaca0e198b2a5e68dbe8054408e5d.png" />
 </div>
 </div>
 </section>
@@ -2164,7 +2174,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/88375c5dd58a6fc68d881a624fc1885407a469e8fd300400dfe716ea578d2091.png" src="_images/88375c5dd58a6fc68d881a624fc1885407a469e8fd300400dfe716ea578d2091.png" />
+<img alt="_images/f0575a5c75e231ac8d954b895da1e0f6c79b2e1e0e06ae04b613842d4d7d45d9.png" src="_images/f0575a5c75e231ac8d954b895da1e0f6c79b2e1e0e06ae04b613842d4d7d45d9.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2206,7 +2216,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8da5cfcd90dcb8231a26d0e7e635cc0a0b75f3c63d08d922d00a475caa6fb378.png" src="_images/8da5cfcd90dcb8231a26d0e7e635cc0a0b75f3c63d08d922d00a475caa6fb378.png" />
+<img alt="_images/177ea12617a8effcf6fe2303f8ef794edca2ce510c008f3320f50e30db937c16.png" src="_images/177ea12617a8effcf6fe2303f8ef794edca2ce510c008f3320f50e30db937c16.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ax.tick_params()</span></code>は縦軸と横軸の文字の大きさを調節している。</p>
@@ -2222,7 +2232,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7b75784856efc3bd8c9e95767eb1a5bf86b95e9a6ec93fbefdd80b63b4c7740a.png" src="_images/7b75784856efc3bd8c9e95767eb1a5bf86b95e9a6ec93fbefdd80b63b4c7740a.png" />
+<img alt="_images/811d48add84fca79afab5e6e66e37c837b66550f213daf17bbccbb2df48ecfc0.png" src="_images/811d48add84fca79afab5e6e66e37c837b66550f213daf17bbccbb2df48ecfc0.png" />
 </div>
 </div>
 <p>縦軸を確認するとわかるが，まず消費（<code class="docutils literal notranslate"><span class="pre">con</span></code>）の棒がプロットされ，それに投資（<code class="docutils literal notranslate"><span class="pre">ivn</span></code>）の棒が重ねてプロットされている。これは引数<code class="docutils literal notranslate"><span class="pre">base</span></code>（縦軸における棒の基点）がデフォルトの<code class="docutils literal notranslate"><span class="pre">0</span></code>に設定されており，消費も投資も<code class="docutils literal notranslate"><span class="pre">0</span></code>から始まっているためである。この点を踏まえ，棒を積み上げる場合を考えよう。その場合，投資の<code class="docutils literal notranslate"><span class="pre">base</span></code>は消費の高さになる必要がある。また政府支出を積み上げる場合は，積み上がった消費の高さが政府支出の基点になる必要がある。純輸出を積み上げる場合も同様に考える必要がある。この点に注意して棒を積み上げるには次のようなコードとなる。</p>
@@ -2251,7 +2261,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a5df715536fd364e0b8d55389ac699f1a65edf1c1713ec61cd4fd1a677c91d46.png" src="_images/a5df715536fd364e0b8d55389ac699f1a65edf1c1713ec61cd4fd1a677c91d46.png" />
+<img alt="_images/b7904c6b35e63b251d27d029ddbe51da37ab64a1bca42dd5ef6f25dc5b23e4e1.png" src="_images/b7904c6b35e63b251d27d029ddbe51da37ab64a1bca42dd5ef6f25dc5b23e4e1.png" />
 </div>
 </div>
 <p>(1)〜(2)で棒の基点となる値を<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>として計算し，それを(5)で使っている。(3)〜(4)行目は<code class="docutils literal notranslate"><span class="pre">for</span></code>ループに使うイタラブルを作成している。また(6)では列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>のライン・プロットを追加している。コードを見るとわかるように，少々複雑である。よりシンプルなコードで同じ図を描きたい場合は，<a class="reference internal" href="5_pandas_plot.html#sec-5-bar"><span class="std std-ref">ここで</span></a>説明している<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を参考にすると良いだろう。その方法では(1)〜(2)を自動計算するため引数<code class="docutils literal notranslate"><span class="pre">base</span></code>の値を考える必要がない。</p>
@@ -2285,7 +2295,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e6b0561963cb979ae982dfc48839b1bcecad64aa317c44c1ee7dfece0b17f3c2.png" src="_images/e6b0561963cb979ae982dfc48839b1bcecad64aa317c44c1ee7dfece0b17f3c2.png" />
+<img alt="_images/361fa20f031d3e874da0387c514e1692e474e2fd3bcaf7d48523cea59af54471.png" src="_images/361fa20f031d3e874da0387c514e1692e474e2fd3bcaf7d48523cea59af54471.png" />
 </div>
 </div>
 <p>簡単にコードを説明する。</p>
@@ -2329,11 +2339,10 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="3_Pandas.html"
@@ -2353,10 +2362,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -2458,8 +2464,8 @@ By 春山 鉄源  Tetsugen HARUYAMA
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
