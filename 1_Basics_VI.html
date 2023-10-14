@@ -458,6 +458,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">py4macro</span> <span class="kn">import</span> <span class="n">xvalues</span>
 </pre></div>
 </div>
 </div>
@@ -489,7 +490,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10ff4e1a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11fd50460&gt;]
 </pre></div>
 </div>
 <img alt="_images/64ff2060f56d31747023318a3c502048b9fdb046cebd6b5f2a80b90cd48508dc.png" src="_images/64ff2060f56d31747023318a3c502048b9fdb046cebd6b5f2a80b90cd48508dc.png" />
@@ -509,91 +510,7 @@ document.write(`
 <p>曲線を描画するためには座標の数を増やす必要がある。ここでは，そのためのコードを考える。</p>
 <section id="x">
 <h4><code class="docutils literal notranslate"><span class="pre">x</span></code>軸の値<a class="headerlink" href="#x" title="Permalink to this heading">#</a></h4>
-<p>まず<code class="docutils literal notranslate"><span class="pre">x</span></code>軸の複数の値が要素となるリストを作成するが，次の変数を定義しよう。</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">l</span></code>：最小値（lowest value）</p>
-<ul>
-<li><p>リストの要素の最小値</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">h</span></code>：最大値（highest value）</p>
-<ul>
-<li><p>リストの要素の最大値</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>：生成する値の数（整数型，number of values）</p>
-<ul>
-<li><p>リストに含まれる要素の総数</p></li>
-</ul>
-</li>
-</ul>
-<p>例えば，次の値を設定しよう。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">h</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>この値のもとで次の内包表記を使い<code class="docutils literal notranslate"><span class="pre">1.0</span></code>から始まる数字から構成されるリストが作成しよう。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="n">l</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
-<span class="n">lst</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.0, 1.25, 1.5, 1.75, 2.0]
-</pre></div>
-</div>
-</div>
-</div>
-<p>この例では，<code class="docutils literal notranslate"><span class="pre">1</span></code>から<code class="docutils literal notranslate"><span class="pre">2</span></code>の間の値を<code class="docutils literal notranslate"><span class="pre">5</span></code>個をリストの要素として生成している。</p>
-<p>この手法を使い<code class="docutils literal notranslate"><span class="pre">x</span></code>軸の値を生成するが，関数にまとめた方が使い易いので次の<code class="docutils literal notranslate"><span class="pre">xvalues</span></code>関数を作成する。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">xvalues</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;引数</span>
-<span class="sd">        l：最小値（lowest value）</span>
-<span class="sd">        h：最大値（highest value）</span>
-<span class="sd">        n：作成する数値の数を指定する（正の整数型，number of values）</span>
-<span class="sd">    戻り値</span>
-<span class="sd">        n個の要素から構成されるリスト&quot;&quot;&quot;</span>
-    
-    <span class="c1">#1</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">n</span><span class="o">&lt;=</span><span class="mi">1</span> <span class="p">)</span> <span class="ow">or</span> <span class="p">(</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;引数 n には2以上の整数型を使う必要があります。n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">となっています。&quot;</span><span class="p">)</span>
-    <span class="c1">#2</span>
-    <span class="k">elif</span> <span class="n">l</span><span class="o">&gt;=</span><span class="n">h</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;引数 l と h の値では l&gt;h もしくは l=h となります。l&lt;h となるように値を設定し直してください。&quot;</span><span class="p">)</span>
-    <span class="c1">#3    </span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">l</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="n">l</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">コードの説明</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>の<code class="docutils literal notranslate"><span class="pre">if</span></code>ブロックは，次の２つの条件が満たされた場合に，その下の行のエラーメッセージを表示する。</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">n&lt;=1</span></code>は<code class="docutils literal notranslate"><span class="pre">n</span></code>が<code class="docutils literal notranslate"><span class="pre">1</span></code>以下の場合に<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>関数は，第１引数である<code class="docutils literal notranslate"><span class="pre">n</span></code>が，第２引数である<code class="docutils literal notranslate"><span class="pre">int</span></code>（即ち，整数型）である場合に<code class="docutils literal notranslate"><span class="pre">True</span></code>を返し，他のデータ型であれば<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す。しかし，<code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>関数の前に<code class="docutils literal notranslate"><span class="pre">not</span></code>があり，返り値は反転されるため，<code class="docutils literal notranslate"><span class="pre">n</span></code>が整数型以外であれば<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す。</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>の<code class="docutils literal notranslate"><span class="pre">elif</span></code>ブロックは，次の条件が満たされた場合に，その下の行のエラーメッセージを表示する。</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">l&gt;h</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">l=h</span></code>の場合に<code class="docutils literal notranslate"><span class="pre">True</span></code>を返す。</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>の<code class="docutils literal notranslate"><span class="pre">else</span></code>ブロックは，<code class="docutils literal notranslate"><span class="pre">#1</span></code>の条件が満たされない場合にのみ，上で使った内包表記の結果が返される。</p></li>
-</ul>
-</div>
-<p>以前も説明したが，引数などを確認したい場合は次のコードで調べることができるので覚えておこう。</p>
+<p>まず<code class="docutils literal notranslate"><span class="pre">x</span></code>軸の複数の値が要素となるリストを作成するが，ここでは<code class="docutils literal notranslate"><span class="pre">py4macro</span></code>モジュールに含まれる<code class="docutils literal notranslate"><span class="pre">xvalues()</span></code>関数を使う。以前も説明したが，関数の引数などを確認したい場合は<code class="docutils literal notranslate"><span class="pre">help()</span></code>関数を使うことで調べることができることを思いだそう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">xvalues</span><span class="p">)</span>
@@ -601,7 +518,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function xvalues in module __main__:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function xvalues in module py4macro.py4macro:
 
 xvalues(l, h, n)
     引数
@@ -614,7 +531,26 @@ xvalues(l, h, n)
 </div>
 </div>
 </div>
-<p>この<code class="docutils literal notranslate"><span class="pre">xvalues</span></code>関数を使い，<code class="docutils literal notranslate"><span class="pre">x</span></code>の値を生成しよう。</p>
+<p>例えば，次の値を使って，リストを作成してみよう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xvalues</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.0, 1.5, 2.0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>この例では，<code class="docutils literal notranslate"><span class="pre">1</span></code>から<code class="docutils literal notranslate"><span class="pre">2</span></code>の間の値<code class="docutils literal notranslate"><span class="pre">3</span></code>個をリストの要素として生成している。</p>
+<p>次の例では，<code class="docutils literal notranslate"><span class="pre">-1</span></code>から<code class="docutils literal notranslate"><span class="pre">1</span></code>の間で<code class="docutils literal notranslate"><span class="pre">5</span></code>の値をからなるリストを作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">xvalues</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -669,7 +605,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x110058940&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11fe22800&gt;]
 </pre></div>
 </div>
 <img alt="_images/45e5af1f9e56586e383f08fba6f959d527c960c2572820f20788cdb4aa1f88f5.png" src="_images/45e5af1f9e56586e383f08fba6f959d527c960c2572820f20788cdb4aa1f88f5.png" />
@@ -686,7 +622,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1100cb940&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11fec5fc0&gt;]
 </pre></div>
 </div>
 <img alt="_images/7a11c00a501c17cb2ae03056ee73df4bd8d240bac0ab69574a356421636eb3ad.png" src="_images/7a11c00a501c17cb2ae03056ee73df4bd8d240bac0ab69574a356421636eb3ad.png" />
@@ -872,12 +808,14 @@ xvalues(l, h, n)
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>このままで日本語を表示できない。一番簡単な方法は外部パッケージの<code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code>を使うことだろう。まずコンピューターにインストールする必要がある。Google Colaboratoryであれば，<strong>毎回</strong>次のコードを最初に実行してインストールする必要がある。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install japanize-matplotlib
+<p>このままで日本語を表示できない。一番簡単な方法は外部パッケージの<code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code>を使うことだろう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">japaneze_matplotlib</span>
 </pre></div>
 </div>
-<p>その後，次を実行すれば他の設定なしに日本語が使える。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">japaneze_matplotlib</span>
+<p>一方，現時点で<code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code>はJupyterLiteに対応していないため，JupyterLiteを使う場合は，次のように<code class="docutils literal notranslate"><span class="pre">japanize_matplotlib_jlite</span></code>を使うようにしよう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">piplite</span>
+<span class="n">awaite</span> <span class="n">piplite</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s1">&#39;japanize_matplotlib_jlite&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">japaneze_matplotlib_jlite</span>
 </pre></div>
 </div>
 </div>
@@ -906,7 +844,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d83349946caecfeae1a95a91f426bf5c952a6ffe15184a17fb6a71a90b98509e.png" src="_images/d83349946caecfeae1a95a91f426bf5c952a6ffe15184a17fb6a71a90b98509e.png" />
+<img alt="_images/d5a562a08199771ae9149418fa29f1cc9c5aac70b900fd7908f69f282f616dee.png" src="_images/d5a562a08199771ae9149418fa29f1cc9c5aac70b900fd7908f69f282f616dee.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -956,7 +894,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/392c0d4b25f77b208d61705b52e6de9cf2dd276ec98bc91ac86eb5410192ab57.png" src="_images/392c0d4b25f77b208d61705b52e6de9cf2dd276ec98bc91ac86eb5410192ab57.png" />
+<img alt="_images/bee21545583f1c3cf8ce22b8f13c2c1e0eaf8bd142660e876f95f82220dce312.png" src="_images/bee21545583f1c3cf8ce22b8f13c2c1e0eaf8bd142660e876f95f82220dce312.png" />
 </div>
 </div>
 <p>次に複数のデータを重ねてプロットする場合を考えよう。方法は簡単で，ライン・プロットと同じように<code class="docutils literal notranslate"><span class="pre">plt.hist()</span></code>を続けてコードを書くだけである。まず平均<code class="docutils literal notranslate"><span class="pre">4</span></code>標準偏差<code class="docutils literal notranslate"><span class="pre">2</span></code>の正規分布からのランダム変数を用意しよう。</p>
@@ -985,7 +923,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/60409343db2ea8b58cec8e95e9d66ce798df96091aa96becea1dc439d7e31441.png" src="_images/60409343db2ea8b58cec8e95e9d66ce798df96091aa96becea1dc439d7e31441.png" />
+<img alt="_images/16b0d6f8191227e8383070896da5e75c37e306f91803efc5bc95afbf878f3ca9.png" src="_images/16b0d6f8191227e8383070896da5e75c37e306f91803efc5bc95afbf878f3ca9.png" />
 </div>
 </div>
 <p>濃い赤の部分が重なっている部分となる。</p>
@@ -1015,7 +953,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9509b3badd4205c9c8c808ca6d2d5f192639312b9c94bd372f52bdfa65ad9c89.png" src="_images/9509b3badd4205c9c8c808ca6d2d5f192639312b9c94bd372f52bdfa65ad9c89.png" />
+<img alt="_images/fe8e450024b7b296508554a8b2fc382d8e7e00956d538f2e1e0b8718731039f7.png" src="_images/fe8e450024b7b296508554a8b2fc382d8e7e00956d538f2e1e0b8718731039f7.png" />
 </div>
 </div>
 </section>
@@ -1080,7 +1018,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1]
 </pre></div>
 </div>
 </div>
@@ -1093,7 +1031,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
 </pre></div>
 </div>
 </div>
@@ -1107,7 +1045,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
 </pre></div>
 </div>
 </div>
@@ -1120,7 +1058,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.55
 </pre></div>
 </div>
 </div>
@@ -1165,7 +1103,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cfbbfc5fea10564e3c250f87caf43130a92ab3a264bd2b4c9dfe6dd990400a42.png" src="_images/cfbbfc5fea10564e3c250f87caf43130a92ab3a264bd2b4c9dfe6dd990400a42.png" />
+<img alt="_images/2ea5a4ef21a74e7f30951570ce3e5fafe41dcdd5d4e1040f8ab19dc102a33276.png" src="_images/2ea5a4ef21a74e7f30951570ce3e5fafe41dcdd5d4e1040f8ab19dc102a33276.png" />
 </div>
 </div>
 <p>＜コードの説明＞</p>
@@ -1307,7 +1245,7 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.55
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6
 </pre></div>
 </div>
 </div>
@@ -1320,7 +1258,7 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.44721359549995837
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8944271909999157
 </pre></div>
 </div>
 </div>
@@ -1354,7 +1292,7 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.44721359549995837
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8944271909999157
 </pre></div>
 </div>
 </div>
@@ -1386,7 +1324,7 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.44721359549995837
 </pre></div>
 </div>
 </div>
@@ -1400,36 +1338,36 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0,
- 1.7888543819998315,
- 0.0,
- 0.44721359549995837,
- -0.44721359549995787,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.44721359549995787,
  1.341640786499874,
  -0.8944271909999157,
- 0.44721359549995837,
- 0.44721359549995837,
- -0.44721359549995787,
  1.341640786499874,
- 1.7888543819998315,
- -2.23606797749979,
- 0.0,
- 0.0,
- 0.44721359549995837,
- 0.0,
- -1.788854381999832,
- -1.341640786499874,
- 0.44721359549995837,
- 0.0,
- 1.341640786499874,
- -0.8944271909999157,
- -2.23606797749979,
  -1.341640786499874,
  0.8944271909999157,
- 1.341640786499874,
- 1.341640786499874,
+ 0.44721359549995837,
  0.0,
- 0.0]
+ 0.8944271909999157,
+ -1.788854381999832,
+ -0.44721359549995787,
+ 0.0,
+ 0.0,
+ 0.44721359549995837,
+ 0.0,
+ 0.0,
+ 0.44721359549995837,
+ 0.44721359549995837,
+ -1.341640786499874,
+ 0.0,
+ 1.341640786499874,
+ -0.44721359549995787,
+ -0.44721359549995787,
+ 0.0,
+ -0.8944271909999157,
+ 0.44721359549995837,
+ -0.8944271909999157,
+ -1.341640786499874,
+ 2.683281572999748,
+ 0.44721359549995837]
 </pre></div>
 </div>
 </div>
@@ -1552,11 +1490,11 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/d838bf005a8ac7bf28ca7b47afe6ce8c3afd206607a55d00cdf8a687e78a85fa.png" src="_images/d838bf005a8ac7bf28ca7b47afe6ce8c3afd206607a55d00cdf8a687e78a85fa.png" />
+<img alt="_images/ac39b10655d441dc9e15abf759213045c167f817534d213dc52a67d88c917fe3.png" src="_images/ac39b10655d441dc9e15abf759213045c167f817534d213dc52a67d88c917fe3.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/2074d3e986e94810c0150e3fc196c436f09853c32c901e26cbe3d7e7817dd640.png" src="_images/2074d3e986e94810c0150e3fc196c436f09853c32c901e26cbe3d7e7817dd640.png" />
+<img alt="_images/4a0162fa9f0b93332464659fd24c24f67c40fbf70bd949a9b7df3f77d0173415.png" src="_images/4a0162fa9f0b93332464659fd24c24f67c40fbf70bd949a9b7df3f77d0173415.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が小さい（<code class="docutils literal notranslate"><span class="pre">10</span></code>）とランダムな影響が強く現れるが，大きくなると（<code class="docutils literal notranslate"><span class="pre">10000</span></code>）大数の法則によって<code class="docutils literal notranslate"><span class="pre">-1</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>の割合は<code class="docutils literal notranslate"><span class="pre">0.5</span></code>に近づいている。一方で，<code class="docutils literal notranslate"><span class="pre">N</span></code>が大きくなっても，分布は標準正規分布とは大きく異なっている。</p>
@@ -1571,11 +1509,11 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：3
 </pre></div>
 </div>
-<img alt="_images/3b8888b626a07cd75c0a834edb3437d2bccdb91661c0c44d5e08b6c28b442be5.png" src="_images/3b8888b626a07cd75c0a834edb3437d2bccdb91661c0c44d5e08b6c28b442be5.png" />
+<img alt="_images/eb1c3c51b636f5c237758d908111c403817a17620d4694564485cd1b7053fbae.png" src="_images/eb1c3c51b636f5c237758d908111c403817a17620d4694564485cd1b7053fbae.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：3
 </pre></div>
 </div>
-<img alt="_images/72908ba10b8bc8188b742b8767173c44e45d2517030328d65c9549fb27e6130a.png" src="_images/72908ba10b8bc8188b742b8767173c44e45d2517030328d65c9549fb27e6130a.png" />
+<img alt="_images/9c4866d8311503b0e00bcb59950e80db443b7cee0967feb774ff670a29efdf06.png" src="_images/9c4866d8311503b0e00bcb59950e80db443b7cee0967feb774ff670a29efdf06.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が大きくなると，大数の法則によって左右対称の分布となっている。しかし，依然として標準正規分布とは異なっている。</p>
@@ -1587,14 +1525,14 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：7
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：8
 </pre></div>
 </div>
-<img alt="_images/66110658ad13782a50d7b2a6624976e0ba928da6f2985f0ae50aefa3b68f6887.png" src="_images/66110658ad13782a50d7b2a6624976e0ba928da6f2985f0ae50aefa3b68f6887.png" />
+<img alt="_images/2412bbf20ad474f1c46b58af1d7acadd6cc4f9dc4664947b5c383f86daa46e7c.png" src="_images/2412bbf20ad474f1c46b58af1d7acadd6cc4f9dc4664947b5c383f86daa46e7c.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：13
 </pre></div>
 </div>
-<img alt="_images/b5ff0267d9c1d7d2b235da8d41722328d70c594da7e727fea842604a3bd284b0.png" src="_images/b5ff0267d9c1d7d2b235da8d41722328d70c594da7e727fea842604a3bd284b0.png" />
+<img alt="_images/dc06d5b17638807be98eaf79ff2febd3238a552c8a0c91155f522a1b847b5928.png" src="_images/dc06d5b17638807be98eaf79ff2febd3238a552c8a0c91155f522a1b847b5928.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が小さいとランダムな要素が際立ち明確ではないが，<code class="docutils literal notranslate"><span class="pre">n</span></code>増加すると標準正規分布に近づいていることが分かる。</p>
@@ -1606,14 +1544,14 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：19
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：20
 </pre></div>
 </div>
-<img alt="_images/9607cedf6b68fb3c74f3bdb7b7497946cfb49d010f52e7cd6af6237cb227d3e2.png" src="_images/9607cedf6b68fb3c74f3bdb7b7497946cfb49d010f52e7cd6af6237cb227d3e2.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：32
+<img alt="_images/1b0a36a3e74c56a76ee19b94d169abbda551aab0c89a2827375615458db6af7a.png" src="_images/1b0a36a3e74c56a76ee19b94d169abbda551aab0c89a2827375615458db6af7a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：29
 </pre></div>
 </div>
-<img alt="_images/b67ca1ba70e7ac9061bb1b1027c9db7b73dec468c318d005e545b64c86e3a572.png" src="_images/b67ca1ba70e7ac9061bb1b1027c9db7b73dec468c318d005e545b64c86e3a572.png" />
+<img alt="_images/0e1edcf9f6fc1230877a1376819cf8966210787d52578daa553bd70f1e9b5d6b.png" src="_images/0e1edcf9f6fc1230877a1376819cf8966210787d52578daa553bd70f1e9b5d6b.png" />
 </div>
 </div>
 <p>標準正規分布に大きく近づいたことが確認できる。</p>
@@ -1651,10 +1589,10 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：109
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：112
 </pre></div>
 </div>
-<img alt="_images/4f5cbb12cdc71de21b305d9562c4f1d10e6175812c2cfe0b87093de3a4bb479d.png" src="_images/4f5cbb12cdc71de21b305d9562c4f1d10e6175812c2cfe0b87093de3a4bb479d.png" />
+<img alt="_images/39a004ea54be4bc0875da5f53bf6089c9ed17fc1be6dd6fceb5b7ee888aa93b2.png" src="_images/39a004ea54be4bc0875da5f53bf6089c9ed17fc1be6dd6fceb5b7ee888aa93b2.png" />
 </div>
 </div>
 </section>
