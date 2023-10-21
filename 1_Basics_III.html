@@ -436,11 +436,15 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object">オブジェクトと属性</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object">オブジェクトと属性</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">属性について</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">関数とメソッドの違い</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-3-scope">スコープ</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">説明</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">教訓１</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">教訓２</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">説明</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">教訓１</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">教訓２</a></li>
 </ul>
 </li>
 </ul>
@@ -1371,6 +1375,8 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 </section>
 <section id="object">
 <span id="id16"></span><h2>オブジェクトと属性<a class="headerlink" href="#object" title="Permalink to this heading">#</a></h2>
+<section id="id17">
+<h3>属性について<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>を習うと「オブジェクト」という単語が必ず出てくる。今の内にイメージをつかむために自転車をオブジェクトの例として考えてみよう。通常の自転車には車輪が２つあり、サドルが１つあり、左右にペダルが２つある。これらの数字が自転車に関する<strong>データ</strong>である。またペダルを踏むことにより前に動き、ハンドルを右にきると右方向に進むことになる。即ち、あることを実行すると、ある結果が返されるのである。これは数学の<strong>関数</strong>と同じように理解できる。<span class="math notranslate nohighlight">\(y=x^2\)</span>の場合、<span class="math notranslate nohighlight">\(x\)</span>が<code class="docutils literal notranslate"><span class="pre">2</span></code>であれば<span class="math notranslate nohighlight">\(y\)</span>の値として<code class="docutils literal notranslate"><span class="pre">4</span></code>が返される。このように自転車はデータと関数が備わっているオブジェクトとして考えることができる。また、車輪の数やペダルを踏むことは自転車特有のデータと関数であり、他のオブジェクト（例えば、冷蔵庫）にはない。即ち、世の中の「オブジェクト」にはそれぞれ異なるデータと関数が存在していると考えることができる。</p>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>の世界でもすべてをこれと同じように考える。コードセルに書いた<code class="docutils literal notranslate"><span class="pre">10</span></code>を実行すると，その<code class="docutils literal notranslate"><span class="pre">10</span></code>がオブジェクトであり，データと関数が備わることになる。それらを<strong>属性</strong>（attributes）と呼ぶ。<code class="docutils literal notranslate"><span class="pre">10</span></code>は単なる数字に見えるが、実は様々な属性から構成されるオブジェクトなのである。上の例の自転車のように、属性は次の２つに分類される。<code class="docutils literal notranslate"><span class="pre">10</span></code>を例にとると、</p>
 <ol class="arabic simple">
@@ -1561,20 +1567,25 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <li><p>（データ）属性と異なりメソッドは<code class="docutils literal notranslate"><span class="pre">()</span></code>が必要となる。これは関数の<code class="docutils literal notranslate"><span class="pre">()</span></code>に対応している。<code class="docutils literal notranslate"><span class="pre">()</span></code>を「する」もしくは「実行する」と読めば分かりやすいだろう。</p></li>
 </ul>
 </div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>関数とメソッドの違いは？役割は基本的には同じだが，次の点で異なる。例えば，<code class="docutils literal notranslate"><span class="pre">x=[1,2,3]</span></code>を考えよう。</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sum(x)</span></code>の関数<code class="docutils literal notranslate"><span class="pre">sum()</span></code>は<code class="docutils literal notranslate"><span class="pre">x</span></code>から独立して存在する組込み関数であり，<code class="docutils literal notranslate"><span class="pre">x</span></code>に働きかけて合計を返す。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">append()</span></code>は<code class="docutils literal notranslate"><span class="pre">x</span></code>に元々備わっている関数であり，<code class="docutils literal notranslate"><span class="pre">x</span></code>に働きかけて引数に指定された要素を追加する。</p></li>
-</ul>
-<p>即ち，オブジェクトに備わっている関数がメソッドとなる。もう一点付け加えると，<code class="docutils literal notranslate"><span class="pre">x.append()</span></code>の場合，裏では<code class="docutils literal notranslate"><span class="pre">()</span></code>の中に<code class="docutils literal notranslate"><span class="pre">x</span></code>が引数として設定されことになる。</p>
-</div>
+</section>
+<section id="id18">
+<h3>関数とメソッドの違い<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<p>本章の最初で関数について説明し，ここではメソッドについて解説した。その説明を読んでも，関数とメソッドの違いが不明瞭だと感じる読者もいるだろう。ここでは，その違いを再度考えてみる。関数とメソッドの役割は基本的には同じだが，で異なる点を図<a class="reference internal" href="#fig-3-method"><span class="std std-numref">Fig. 1</span></a>にまとめた。</p>
+<p>まず，コードを実行するとメモリー上にデータが保存され，それをオブジェクトと呼ぶことはもう分かっているだろう。例えば，<code class="docutils literal notranslate"><span class="pre">x=[1,2,3]</span></code>を実行すると，メモリー上に<code class="docutils literal notranslate"><span class="pre">[1,2,3]</span></code>が保存され，その参照記号が<code class="docutils literal notranslate"><span class="pre">x</span></code>となる。この場合，<code class="docutils literal notranslate"><span class="pre">[1,2,3]</span></code>がオブジェクトである。同様に，<code class="docutils literal notranslate"><span class="pre">y=10</span></code>を実行すると，<code class="docutils literal notranslate"><span class="pre">10</span></code>というオブジェクトが保存される（<code class="docutils literal notranslate"><span class="pre">y</span></code>は参照記号）。</p>
+<p>関数の特徴は，様々なオブジェクトに適用できることだ。<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数は，異なるオブジェクトである<code class="docutils literal notranslate"><span class="pre">x</span></code>にも<code class="docutils literal notranslate"><span class="pre">y</span></code>にも使うことができる。そういう意味では，関数を適用できる用途は広い。図<a class="reference internal" href="#fig-3-method"><span class="std std-numref">Fig. 1</span></a>にあるように，イメージ的には，様々な用途に使える懐中電灯のようなものだろうか。</p>
+<p>一方，メソッドはオブジェクトに元々備わっている関数である。例えば，<code class="docutils literal notranslate"><span class="pre">.append()</span></code>はリストである<code class="docutils literal notranslate"><span class="pre">[1,2,3]</span></code>に備わっている関数であり，整数型である<code class="docutils literal notranslate"><span class="pre">10</span></code>には備わっていない。<code class="docutils literal notranslate"><span class="pre">.append()</span></code>は，それが実装されている<code class="docutils literal notranslate"><span class="pre">[1,2,3]</span></code>に働きかける関数であり，実行後にその結果を返すことになる。そういう意味では，メソッドの用途は限られている。図<a class="reference internal" href="#fig-3-method"><span class="std std-numref">Fig. 1</span></a>にあるように，車のヘッドライトをイメージしてはどうだろうか。ヘッドライトは，夜走行する際に，安全のために装備された車の前方を照らすことが主な目的であり，他の用途に使うことは不可能ではないだろうが，難しいのではないだろうか。もう一点付け加えると，<code class="docutils literal notranslate"><span class="pre">x.append(100)</span></code>の場合，<code class="docutils literal notranslate"><span class="pre">100</span></code>を<code class="docutils literal notranslate"><span class="pre">x</span></code>に追加するが，その裏では<code class="docutils literal notranslate"><span class="pre">()</span></code>の中に<code class="docutils literal notranslate"><span class="pre">x</span></code>が引数として設定されことになる。</p>
+<figure class="align-default" id="fig-3-method">
+<a class="reference internal image-reference" href="_images/method.png"><img alt="_images/method.png" src="_images/method.png" style="width: 1800.0px; height: 1350.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">関数とメソッドの違い</span><a class="headerlink" href="#fig-3-method" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 <section id="sec-3-scope">
-<span id="id17"></span><h2>スコープ<a class="headerlink" href="#sec-3-scope" title="Permalink to this heading">#</a></h2>
-<section id="id18">
-<h3>説明<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<span id="id19"></span><h2>スコープ<a class="headerlink" href="#sec-3-scope" title="Permalink to this heading">#</a></h2>
+<section id="id20">
+<h3>説明<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
 <p>スコープとは、変数が所属し直接アクセスできるコードの中の「領域」を示す。類似する概念に名前空間（Namespace）もあるが、スコープの情報を記す「表」のことであり、スコープ（Scope）と同義と理解すれば良い。</p>
 <p>ここでは基本的に以下のように理解すれば良いであろう。</p>
 <ul class="simple">
@@ -1659,9 +1670,16 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 </div>
 </div>
 </div>
+<p>以上の説明を図<a class="reference internal" href="#fig-3-scope"><span class="std std-numref">Fig. 2</span></a>にまとめる次のようになる。</p>
+<figure class="align-default" id="fig-3-scope">
+<a class="reference internal image-reference" href="_images/scope.png"><img alt="_images/scope.png" src="_images/scope.png" style="width: 1200.0px; height: 900.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">グローバル・スコープとローカル・スコープの関係</span><a class="headerlink" href="#fig-3-scope" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
-<section id="id19">
-<h3>教訓１<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
+<section id="id21">
+<h3>教訓１<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>関数内で使う変数は、可能な限り関数内で定義する方が意図しない結果につながるリスクを軽減できる。</p></li>
@@ -1745,8 +1763,8 @@ x	 x_list	 y
 </div>
 <p>このリストにある<code class="docutils literal notranslate"><span class="pre">s</span></code>はグローバル・スコープの<code class="docutils literal notranslate"><span class="pre">s</span></code>である。またローカル・スコープにある<code class="docutils literal notranslate"><span class="pre">s_local</span></code>はこのリストには含まれていない。</p>
 </section>
-<section id="id20">
-<h3>教訓２<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
+<section id="id22">
+<h3>教訓２<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループの１行目に使う変数は再割り当てされても構わない変数を使おう。</p>
 </div></blockquote>
@@ -1877,11 +1895,15 @@ x	 x_list	 y
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object">オブジェクトと属性</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object">オブジェクトと属性</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">属性について</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">関数とメソッドの違い</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-3-scope">スコープ</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">説明</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">教訓１</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">教訓２</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">説明</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">教訓１</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">教訓２</a></li>
 </ul>
 </li>
 </ul>

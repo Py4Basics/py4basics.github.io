@@ -489,12 +489,12 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>本サイトでは書き方２に沿って<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>の使い方を説明する。一方で，その裏にある考え方を理解するには、書き方１から始めた方が良いと思うので，書き方１の簡単な説明をすることにする。<a class="reference internal" href="#fig-4-figure-axes"><span class="std std-numref">Fig. 1</span></a>は，<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>が描画する図の階層的な構造を示している。ここで重要なのは「キャンバス」と「軸」の違いである。</p>
+<p>本サイトでは書き方２に沿って<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>の使い方を説明する。一方で，その裏にある考え方を理解するには、書き方１から始めた方が良いと思うので，書き方１の簡単な説明をすることにする。<a class="reference internal" href="#fig-4-figure-axes"><span class="std std-numref">Fig. 3</span></a>は，<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>が描画する図の階層的な構造を示している。ここで重要なのは「キャンバス」と「軸」の違いである。</p>
 <p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>によるプロットは次の図のような構成となっている。</p>
 <figure class="align-default" id="fig-4-figure-axes">
 <a class="reference internal image-reference" href="_images/figure_axes_mpl.png"><img alt="_images/figure_axes_mpl.png" src="_images/figure_axes_mpl.png" style="width: 575.2px; height: 425.6px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">キャンバスと軸の関係</span><a class="headerlink" href="#fig-4-figure-axes" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">キャンバスと軸の関係</span><a class="headerlink" href="#fig-4-figure-axes" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -589,7 +589,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11d712aa0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x112c527d0&gt;]
 </pre></div>
 </div>
 <img alt="_images/f096ec4daaaedf5a134ab471aa56ce853a5ffe0f485ffccf580008a5349c00e1.png" src="_images/f096ec4daaaedf5a134ab471aa56ce853a5ffe0f485ffccf580008a5349c00e1.png" />
@@ -614,7 +614,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11d811270&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x112d54e20&gt;]
 </pre></div>
 </div>
 <img alt="_images/710f88507b83250b564656346ad77261b8800cc410b32bd471684cd6d67d8213.png" src="_images/710f88507b83250b564656346ad77261b8800cc410b32bd471684cd6d67d8213.png" />
@@ -1829,7 +1829,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/70d68523a9d74e6362492f12a8f9bb8908e4ee1bbf36c0cab65cd4dbe504a0cd.png" src="_images/70d68523a9d74e6362492f12a8f9bb8908e4ee1bbf36c0cab65cd4dbe504a0cd.png" />
+<img alt="_images/7d672980d4172e2e5afa34cf091e3c82b7f3253d3e7a8f01498904c3e81997b7.png" src="_images/7d672980d4172e2e5afa34cf091e3c82b7f3253d3e7a8f01498904c3e81997b7.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1866,7 +1866,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4f06ee1c35226dda0e6667c4e3fb6aedebb017ceea1fb8db2ceaaf1a851f2a9c.png" src="_images/4f06ee1c35226dda0e6667c4e3fb6aedebb017ceea1fb8db2ceaaf1a851f2a9c.png" />
+<img alt="_images/a60f0c8b063fd787650f827aaf4b2bfa3fc81cce12777081e270478e1e030eee.png" src="_images/a60f0c8b063fd787650f827aaf4b2bfa3fc81cce12777081e270478e1e030eee.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Z</span></code>の散布図を加えてタイトルなども付け加えてみよう。</p>
@@ -1892,7 +1892,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cf4b0af37a62b3d4240d7571053dcaaa222e66d5da05d4038e408eab7ab7773b.png" src="_images/cf4b0af37a62b3d4240d7571053dcaaa222e66d5da05d4038e408eab7ab7773b.png" />
+<img alt="_images/3c918b428382c0acfeb3bfc5eca9c3d45d73e126b6d82f1ceb1ecb0748f7254e.png" src="_images/3c918b428382c0acfeb3bfc5eca9c3d45d73e126b6d82f1ceb1ecb0748f7254e.png" />
 </div>
 </div>
 </section>
@@ -1922,7 +1922,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e7dcf36321e6d8eede471bd8f362be3271878f0c23674052d93ad32eb3ca18fe.png" src="_images/e7dcf36321e6d8eede471bd8f362be3271878f0c23674052d93ad32eb3ca18fe.png" />
+<img alt="_images/eae5f2659f6bb04ce1f524ebe3046b667b00b5409afd0f948b39fc9b6fe2c16e.png" src="_images/eae5f2659f6bb04ce1f524ebe3046b667b00b5409afd0f948b39fc9b6fe2c16e.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1965,7 +1965,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7fe63b2a1f88c6381e86e36c8784834d4d7a0651615a9b2b7cc17735cda83f05.png" src="_images/7fe63b2a1f88c6381e86e36c8784834d4d7a0651615a9b2b7cc17735cda83f05.png" />
+<img alt="_images/a0bc448d5f329413df9784f1f51d496ca0aae0cfedb1f846c0be671b5b36b627.png" src="_images/a0bc448d5f329413df9784f1f51d496ca0aae0cfedb1f846c0be671b5b36b627.png" />
 </div>
 </div>
 <p>次に複数のデータを並べてプロットする場合を考えよう。方法は簡単で，異なるデータをリストとして指定すれば良い。</p>
@@ -1984,7 +1984,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f63a082f3f4eca44a72f037d11a6156257f7da3700730485a178304bd9d1d076.png" src="_images/f63a082f3f4eca44a72f037d11a6156257f7da3700730485a178304bd9d1d076.png" />
+<img alt="_images/d4182a16a634bcfc486a68e41786e3f3ea4792f34cc6b8d6c2135f4e0a1258b9.png" src="_images/d4182a16a634bcfc486a68e41786e3f3ea4792f34cc6b8d6c2135f4e0a1258b9.png" />
 </div>
 </div>
 <p>上のコードに引数<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>を加えると，柱を重ねて表示される。試してみよう。また<code class="docutils literal notranslate"><span class="pre">ax.hist()</span></code>を２回使うと，２つのヒストグラムを重ねて表示することができる。この場合，引数<code class="docutils literal notranslate"><span class="pre">alpha</span></code>の値を調整すると良いだろう。</p>
@@ -2010,7 +2010,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e2aaf44d9ec7cda3f1f12b9c33ade27212f43e646857e78827f5cdccee791860.png" src="_images/e2aaf44d9ec7cda3f1f12b9c33ade27212f43e646857e78827f5cdccee791860.png" />
+<img alt="_images/636def1086f9f59d6fdbaa437b9f41d05467c7218e085b97066315e8d486ed80.png" src="_images/636def1086f9f59d6fdbaa437b9f41d05467c7218e085b97066315e8d486ed80.png" />
 </div>
 </div>
 <p>濃い赤の部分が重なっている部分となる。</p>
@@ -2046,7 +2046,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca3487dfce4e6ff952d3bfc13ba939859f65c1a21e30d3dea094dfe720243d66.png" src="_images/ca3487dfce4e6ff952d3bfc13ba939859f65c1a21e30d3dea094dfe720243d66.png" />
+<img alt="_images/17344ea09b071c04e752267e1a88cbc9e5c0a764092a1966c1a050bc4499a773.png" src="_images/17344ea09b071c04e752267e1a88cbc9e5c0a764092a1966c1a050bc4499a773.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2090,7 +2090,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/96abf86d97bf54747a09abac18df0aed87a1ed8ee23d949b7e70b4929a4f4981.png" src="_images/96abf86d97bf54747a09abac18df0aed87a1ed8ee23d949b7e70b4929a4f4981.png" />
+<img alt="_images/60d9eaca961d8002f18b5da713054aee9c7c9b1cea12e95cdbcfd791d5919b6a.png" src="_images/60d9eaca961d8002f18b5da713054aee9c7c9b1cea12e95cdbcfd791d5919b6a.png" />
 </div>
 </div>
 </section>
