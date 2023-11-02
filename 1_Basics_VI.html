@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -153,6 +153,7 @@ const thebe_selector_output = ".output, .cell_output"
   
 
 <a class="navbar-brand logo" href="index.html">
+  
   
   
   
@@ -435,7 +436,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">関数化</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">ヒストグラム</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">ヒストグラムの関数化</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">シミュレーション</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">シミュレーション</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-1"><code class="docutils literal notranslate"><span class="pre">n=1</span></code>の場合</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-2"><code class="docutils literal notranslate"><span class="pre">n=2</span></code>の場合</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-12"><code class="docutils literal notranslate"><span class="pre">n=12</span></code>の場合</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-64"><code class="docutils literal notranslate"><span class="pre">n=64</span></code>の場合</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -490,10 +497,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11fe60190&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1220be740&gt;]
 </pre></div>
 </div>
-<img alt="_images/64ff2060f56d31747023318a3c502048b9fdb046cebd6b5f2a80b90cd48508dc.png" src="_images/64ff2060f56d31747023318a3c502048b9fdb046cebd6b5f2a80b90cd48508dc.png" />
+<img alt="_images/6f9b9c5708acaa2ba4629b97aaec685ddd116c579a52f43e3154c313a4a79a6f.png" src="_images/6f9b9c5708acaa2ba4629b97aaec685ddd116c579a52f43e3154c313a4a79a6f.png" />
 </div>
 </div>
 <p>コードに<code class="docutils literal notranslate"><span class="pre">marker='o'</span></code>が追加されているが，「●」を表示するために使っている。このような引数の使い方は後で詳しく説明するので，ここでは気にしないで読み進めて欲しい。</p>
@@ -605,10 +612,10 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11ff36b60&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1221ca020&gt;]
 </pre></div>
 </div>
-<img alt="_images/45e5af1f9e56586e383f08fba6f959d527c960c2572820f20788cdb4aa1f88f5.png" src="_images/45e5af1f9e56586e383f08fba6f959d527c960c2572820f20788cdb4aa1f88f5.png" />
+<img alt="_images/3fd4c2b741251e0202392c526c5189163546dde45b91ea5dff70207a139d6ade.png" src="_images/3fd4c2b741251e0202392c526c5189163546dde45b91ea5dff70207a139d6ade.png" />
 </div>
 </div>
 <p>座標の数が少ないのでスムーズな曲線には見えない。もっと座標を増やしてみよう。</p>
@@ -622,10 +629,10 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11ffd58d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x122269030&gt;]
 </pre></div>
 </div>
-<img alt="_images/7a11c00a501c17cb2ae03056ee73df4bd8d240bac0ab69574a356421636eb3ad.png" src="_images/7a11c00a501c17cb2ae03056ee73df4bd8d240bac0ab69574a356421636eb3ad.png" />
+<img alt="_images/6aca849a0b6eed9bf56132d05cd29a4f93601bc9c1a65ad2f762d704834e6d87.png" src="_images/6aca849a0b6eed9bf56132d05cd29a4f93601bc9c1a65ad2f762d704834e6d87.png" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\(y=x^2\)</span>の図らしく見える。</p>
@@ -660,7 +667,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a8b605fe30a84e995686dd90e48d6242a5738c03e6e555cf0b6849b138592e09.png" src="_images/a8b605fe30a84e995686dd90e48d6242a5738c03e6e555cf0b6849b138592e09.png" />
+<img alt="_images/f444f27ac0f63c2345f0bf205dcf491c8e752b03865bd7bf2f3eb491f86df13f.png" src="_images/f444f27ac0f63c2345f0bf205dcf491c8e752b03865bd7bf2f3eb491f86df13f.png" />
 </div>
 </div>
 </section>
@@ -700,7 +707,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/225009412493d41c6e644f2646a605a61c34ed3d5c9634db65bbaee6d7e4fbc7.png" src="_images/225009412493d41c6e644f2646a605a61c34ed3d5c9634db65bbaee6d7e4fbc7.png" />
+<img alt="_images/e4518ed301a829c183f9c614285062a8183ff416a16a15ffdec2d74cc88401a3.png" src="_images/e4518ed301a829c183f9c614285062a8183ff416a16a15ffdec2d74cc88401a3.png" />
 </div>
 </div>
 <p>引数をいちいち書くのが面倒な場合、次の３つを簡略して一緒に指定できる。</p>
@@ -724,7 +731,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f722fe5710976533b3a8e4c26244400a950fbcfaf1b83d4275a53cde81522a80.png" src="_images/f722fe5710976533b3a8e4c26244400a950fbcfaf1b83d4275a53cde81522a80.png" />
+<img alt="_images/71fc83fcb4eff5a1553e7ef7a520e520d821c3bdba62c31c6ce606e6054283d6.png" src="_images/71fc83fcb4eff5a1553e7ef7a520e520d821c3bdba62c31c6ce606e6054283d6.png" />
 </div>
 </div>
 <p>（注意点）</p>
@@ -776,7 +783,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c58beb64505272a19645f3ffcf22b77eaa23a02e76c9934d225309e9ec87d7a0.png" src="_images/c58beb64505272a19645f3ffcf22b77eaa23a02e76c9934d225309e9ec87d7a0.png" />
+<img alt="_images/d978b905664f72a46589090653e9395f50cd39c29faa8d4706d7b071ce663a88.png" src="_images/d978b905664f72a46589090653e9395f50cd39c29faa8d4706d7b071ce663a88.png" />
 </div>
 </div>
 <p>最後に，図の大きさの指定方法を例を使って説明しよう。変更方法は簡単で，次の行を<code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>の<strong>上</strong>に付け加えるだけである。</p>
@@ -803,7 +810,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5d7fb816f548b0428f56f572bbdfcf2da72f623496bc583c15990e1503b161aa.png" src="_images/5d7fb816f548b0428f56f572bbdfcf2da72f623496bc583c15990e1503b161aa.png" />
+<img alt="_images/11d521e542ce2914ade7aabc58255b63459da96f4d5a7d16eafcddda192bae03.png" src="_images/11d521e542ce2914ade7aabc58255b63459da96f4d5a7d16eafcddda192bae03.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -844,7 +851,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b5916d2cfa2b34d01156e14a47a181ae1c2b3ea21e2b9ac97f872719ac7f8e7e.png" src="_images/b5916d2cfa2b34d01156e14a47a181ae1c2b3ea21e2b9ac97f872719ac7f8e7e.png" />
+<img alt="_images/9f99491a6f680d908bc5f533ce05a543990c40fe7a18d05e40270113b473206c.png" src="_images/9f99491a6f680d908bc5f533ce05a543990c40fe7a18d05e40270113b473206c.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -894,7 +901,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/14f8affc06bcb976431b6610f4c2cd828e535c7451ba8057f8f72d2770451e2f.png" src="_images/14f8affc06bcb976431b6610f4c2cd828e535c7451ba8057f8f72d2770451e2f.png" />
+<img alt="_images/7f0ebf38b78a7c4077bf544fcf844217ffe24efce954bd8b6dc5652f118c639a.png" src="_images/7f0ebf38b78a7c4077bf544fcf844217ffe24efce954bd8b6dc5652f118c639a.png" />
 </div>
 </div>
 <p>次に複数のデータを重ねてプロットする場合を考えよう。方法は簡単で，ライン・プロットと同じように<code class="docutils literal notranslate"><span class="pre">plt.hist()</span></code>を続けてコードを書くだけである。まず平均<code class="docutils literal notranslate"><span class="pre">4</span></code>標準偏差<code class="docutils literal notranslate"><span class="pre">2</span></code>の正規分布からのランダム変数を用意しよう。</p>
@@ -923,7 +930,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/76193b0d9859b4d178c61bf05e4295e44c70e3a3dba63f8b522b042a86c3846e.png" src="_images/76193b0d9859b4d178c61bf05e4295e44c70e3a3dba63f8b522b042a86c3846e.png" />
+<img alt="_images/3c9725dd9621ca29054ded2c70c0870e2d3e214247b833ff006b0a8a25195baf.png" src="_images/3c9725dd9621ca29054ded2c70c0870e2d3e214247b833ff006b0a8a25195baf.png" />
 </div>
 </div>
 <p>濃い赤の部分が重なっている部分となる。</p>
@@ -953,7 +960,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/504327bc51a6bbd44f4e4177c0198217c2a747efed13a0801d218d7beb010a2a.png" src="_images/504327bc51a6bbd44f4e4177c0198217c2a747efed13a0801d218d7beb010a2a.png" />
+<img alt="_images/24cd9ba44771857cecfd3c8873182591a8014242c184d61316ac029394b77965.png" src="_images/24cd9ba44771857cecfd3c8873182591a8014242c184d61316ac029394b77965.png" />
 </div>
 </div>
 </section>
@@ -1012,13 +1019,13 @@ xvalues(l, h, n)
 <p>標本の大きさが<code class="docutils literal notranslate"><span class="pre">n</span></code>の場合の結果は，次の内包表記を使うと簡単に生成することができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tosses</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
-<span class="n">tosses</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">toss</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">toss</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0]
 </pre></div>
 </div>
 </div>
@@ -1026,12 +1033,12 @@ xvalues(l, h, n)
 <p><code class="docutils literal notranslate"><span class="pre">1</span></code>（表）が何回発生したかを数えてみよう。この場合，<code class="docutils literal notranslate"><span class="pre">sum()</span></code>関数を使うことができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">tosses</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">toss</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -1039,13 +1046,13 @@ xvalues(l, h, n)
 <p>もしくは，メソッドである<code class="docutils literal notranslate"><span class="pre">count()</span></code>を使うこともできる。引数の値に<code class="docutils literal notranslate"><span class="pre">1</span></code>を指定すると<code class="docutils literal notranslate"><span class="pre">1</span></code>の数を返すことになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heads</span> <span class="o">=</span> <span class="n">tosses</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">heads</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">head</span> <span class="o">=</span> <span class="n">toss</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">head</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -1053,12 +1060,12 @@ xvalues(l, h, n)
 <p>この結果を利用すると平均は次のように計算できる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heads</span> <span class="o">/</span> <span class="n">n</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">head</span> <span class="o">/</span> <span class="n">n</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.25
 </pre></div>
 </div>
 </div>
@@ -1074,9 +1081,9 @@ xvalues(l, h, n)
 
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">200</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>   <span class="c1">#2</span>
     
-    <span class="n">tosses</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="c1">#3</span>
+    <span class="n">toss</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="c1">#3</span>
     
-    <span class="n">mean</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">tosses</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>      <span class="c1">#4</span>
+    <span class="n">mean</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">toss</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>      <span class="c1">#4</span>
     
     <span class="n">mean_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mean</span><span class="p">)</span> <span class="c1">#5</span>
 </pre></div>
@@ -1087,7 +1094,7 @@ xvalues(l, h, n)
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：<code class="docutils literal notranslate"><span class="pre">for</span></code>ループで計算する平均を格納するリスト。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">range(1,200+1)</span></code>となっている。<code class="docutils literal notranslate"><span class="pre">1</span></code>枚のコインから<code class="docutils literal notranslate"><span class="pre">200</span></code>枚のコインまでのループ計算となっている。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：<code class="docutils literal notranslate"><span class="pre">n</span></code>枚のコインを投げた場合の結果を変数<code class="docutils literal notranslate"><span class="pre">tosses</span></code>に割り当てる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：<code class="docutils literal notranslate"><span class="pre">n</span></code>枚のコインを投げた場合の結果を変数<code class="docutils literal notranslate"><span class="pre">toss</span></code>に割り当てる。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：平均を計算し変数<code class="docutils literal notranslate"><span class="pre">mean</span></code>に割り当てる。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>：<code class="docutils literal notranslate"><span class="pre">mean</span></code>を<code class="docutils literal notranslate"><span class="pre">mean_list</span></code>に追加する。</p></li>
 </ul>
@@ -1103,7 +1110,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a18f1c69127563693bd9aa59f9661624d9f0548a421ae5f241366009a0ae64ae.png" src="_images/a18f1c69127563693bd9aa59f9661624d9f0548a421ae5f241366009a0ae64ae.png" />
+<img alt="_images/c02a914d07e2395c29f221527d425a825c0bf08730e8db12baab224ab1987274.png" src="_images/c02a914d07e2395c29f221527d425a825c0bf08730e8db12baab224ab1987274.png" />
 </div>
 </div>
 <p>＜コードの説明＞</p>
@@ -1214,7 +1221,7 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/06e6ae306ce4ce05289e7e0a460cc7ef2dd041e37a02f1c034e34dadf9589ee6.png" src="_images/06e6ae306ce4ce05289e7e0a460cc7ef2dd041e37a02f1c034e34dadf9589ee6.png" />
+<img alt="_images/5fcfbc438363aec49fc4d845aa28ff141836b5cbf9eeaf5e957aa370bb8c4263.png" src="_images/5fcfbc438363aec49fc4d845aa28ff141836b5cbf9eeaf5e957aa370bb8c4263.png" />
 </div>
 </div>
 <p>この驚くべき結果は統計学の金字塔である。ではどこが金字塔なのだろうか。データ分析のためには標本を集める必要がある。例えば，大学生の１日の授業以外の勉強時間（単位は分）を考えてみよう。マイナス時間や24時間以上はあり得ないため，母集団の分布は正規分布ではないことは明らかである。標本の中には驚くほど勉強している人もいれば，アルバイトなどに追われ<code class="docutils literal notranslate"><span class="pre">0</span></code>分の学生も含まれるかも知れない。もしかすると，分布には複数のピークがあるかもしれない（例えば，<code class="docutils literal notranslate"><span class="pre">0</span></code>と<code class="docutils literal notranslate"><span class="pre">60</span></code>分）。いずれにしろ，母集団の分布は未知であるため，仮説検定は不可能のように感じられる。しかし中心極限定理は，超えることはできないように見える壁をいとも簡単に飛び越えさせてくれる。ランダム標本を集め，標本の大きさが十分に大きければ，標本平均は正規分布に従う（近似される）ため仮説検定が可能になるのだ。</p>
@@ -1238,14 +1245,14 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">tosses</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
-<span class="n">heads</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">tosses</span><span class="p">)</span>
-<span class="n">heads</span> <span class="o">/</span> <span class="n">n</span>
+<span class="n">toss</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="n">head</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">toss</span><span class="p">)</span>
+<span class="n">head</span> <span class="o">/</span> <span class="n">n</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.25
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7
 </pre></div>
 </div>
 </div>
@@ -1253,12 +1260,12 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <p>ここまでのコードを利用して，上の式<a class="reference internal" href="#equation-eq-1-6-zn">(3)</a>に従って，この平均を標準化した値を計算してみよう</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">heads</span><span class="o">/</span><span class="n">n</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">head</span><span class="o">/</span><span class="n">n</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.23606797749979
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.7888543819998315
 </pre></div>
 </div>
 </div>
@@ -1275,7 +1282,7 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    引数：</span>
 <span class="sd">        n：同時にトスしするコインの数</span>
-<span class="sd">        h：コインの表（heads）の数</span>
+<span class="sd">        h：コインの表（head）の数</span>
 <span class="sd">    戻り値：</span>
 <span class="sd">        コインの表の平均を標準化した値&quot;&quot;&quot;</span>
     
@@ -1287,12 +1294,12 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <p>この関数は<code class="docutils literal notranslate"><span class="pre">n</span></code>と<code class="docutils literal notranslate"><span class="pre">h</span></code>が与えられれば，標準化された平均を返す。上の数値を使って，この関数を実行してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standardize</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">heads</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standardize</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">head</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.23606797749979
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.7888543819998315
 </pre></div>
 </div>
 </div>
@@ -1308,10 +1315,10 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <span class="sd">    戻り値：</span>
 <span class="sd">        コインの表の平均を標準化した値&quot;&quot;&quot;</span>
     
-    <span class="n">tosses</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
-    <span class="n">heads</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">tosses</span><span class="p">)</span>
+    <span class="n">toss</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">head</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">toss</span><span class="p">)</span>
     
-    <span class="k">return</span> <span class="n">standardize</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">heads</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">standardize</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">head</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1338,36 +1345,36 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.788854381999832,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.44721359549995837,
  -1.341640786499874,
- 0.8944271909999157,
  0.44721359549995837,
- -0.44721359549995787,
- -0.44721359549995787,
  0.44721359549995837,
- -0.8944271909999157,
- -0.44721359549995787,
- -0.44721359549995787,
  0.0,
  0.44721359549995837,
- 0.44721359549995837,
- 0.44721359549995837,
- -0.44721359549995787,
- 0.44721359549995837,
- -1.341640786499874,
- -0.8944271909999157,
- -0.44721359549995787,
  1.341640786499874,
+ -0.8944271909999157,
+ -2.23606797749979,
+ 0.0,
+ -1.341640786499874,
  -0.44721359549995787,
  0.0,
- 0.44721359549995837,
- -0.44721359549995787,
- 1.7888543819998315,
- 0.0,
- 3.1304951684997055,
  -0.8944271909999157,
  0.44721359549995837,
- -2.23606797749979]
+ -0.44721359549995787,
+ 0.0,
+ -1.788854381999832,
+ -0.44721359549995787,
+ -0.8944271909999157,
+ 0.0,
+ 0.44721359549995837,
+ 0.0,
+ 0.44721359549995837,
+ -0.44721359549995787,
+ -1.341640786499874,
+ -1.341640786499874,
+ 0.44721359549995837,
+ -0.44721359549995787,
+ 1.7888543819998315]
 </pre></div>
 </div>
 </div>
@@ -1388,14 +1395,14 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
 
 <span class="c1"># コイントスのシミュレーション</span>
-<span class="n">tosses</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span> <span class="c1">#1</span>
+<span class="n">toss</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span> <span class="c1">#1</span>
 
 <span class="c1"># 標準化平均の重複しない値の数</span>
-<span class="n">unique</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">tosses</span><span class="p">))</span>                         <span class="c1">#2</span>
+<span class="n">unique</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">toss</span><span class="p">))</span>                         <span class="c1">#2</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;標準化平均の重複しない値の数（x軸）：</span><span class="si">{</span><span class="n">unique</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>       <span class="c1">#3</span>
 
 <span class="c1"># ヒストグラム</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">tosses</span><span class="p">,</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">toss</span><span class="p">,</span>
          <span class="n">bins</span><span class="o">=</span><span class="n">unique</span><span class="p">,</span>
          <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
          <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1410,13 +1417,13 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/cd3b8ecc550dc7f4af15c816e56f84bcaa99d2b36d91614fa13473db24bc3885.png" src="_images/cd3b8ecc550dc7f4af15c816e56f84bcaa99d2b36d91614fa13473db24bc3885.png" />
+<img alt="_images/0dc4dd8640f98725ab56aed5acccbe5585e67f42637622e0529b2081b46ecb24.png" src="_images/0dc4dd8640f98725ab56aed5acccbe5585e67f42637622e0529b2081b46ecb24.png" />
 </div>
 </div>
 <p>＜コードの説明＞</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：<code class="docutils literal notranslate"><span class="pre">n</span></code>枚の同時コイントスを<code class="docutils literal notranslate"><span class="pre">N</span></code>回繰り返し，標準化平均を計算したリストを変数<code class="docutils literal notranslate"><span class="pre">tosses</span></code>に割り当てる。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">set()</span></code>関数は引数の唯一の値を返すが，<code class="docutils literal notranslate"><span class="pre">set(tosses)</span></code>は標準化平均の唯一の値を返す。更に，<code class="docutils literal notranslate"><span class="pre">len(set(tosses))</span></code>はその数を返しており，その値を変数<code class="docutils literal notranslate"><span class="pre">unique</span></code>に割り当てている。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：<code class="docutils literal notranslate"><span class="pre">n</span></code>枚の同時コイントスを<code class="docutils literal notranslate"><span class="pre">N</span></code>回繰り返し，標準化平均を計算したリストを変数<code class="docutils literal notranslate"><span class="pre">toss</span></code>に割り当てる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">set()</span></code>関数は引数の唯一の値を返すが，<code class="docutils literal notranslate"><span class="pre">set(toss)</span></code>は標準化平均の唯一の値を返す。更に，<code class="docutils literal notranslate"><span class="pre">len(set(toss))</span></code>はその数を返しており，その値を変数<code class="docutils literal notranslate"><span class="pre">unique</span></code>に割り当てている。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>：<code class="docutils literal notranslate"><span class="pre">unique</span></code>の値を表示する。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>：タイトルを設定する。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>：横軸のラベルを設定する。</p></li>
@@ -1430,9 +1437,9 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <p>棒グラフとして表示したい場合は<code class="docutils literal notranslate"><span class="pre">plt.bar()</span></code>を使うことができる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">tosses</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-<span class="n">unique</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">tosses</span><span class="p">)))</span>
-<span class="n">count_on_y_axis</span> <span class="o">=</span> <span class="p">[</span><span class="n">tosses</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">unique</span><span class="p">]</span>
+<span class="n">toss</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+<span class="n">unique</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">toss</span><span class="p">)))</span>
+<span class="n">count_on_y_axis</span> <span class="o">=</span> <span class="p">[</span><span class="n">toss</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">unique</span><span class="p">]</span>
 <span class="n">xlabel</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">unique</span><span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">xlabel</span><span class="p">,</span> <span class="n">count_on_y_axis</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Coins: n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">, Repetition: N=</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">23</span><span class="p">)</span>
@@ -1450,14 +1457,14 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_hist</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">10_000</span><span class="p">):</span>   <span class="c1">#1</span>
     
     <span class="c1"># コイントスのシミュレーション</span>
-    <span class="n">tosses</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+    <span class="n">toss</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
 
     <span class="c1"># 標準化平均の重複しない値の数</span>
-    <span class="n">unique</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">tosses</span><span class="p">))</span>
+    <span class="n">unique</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">toss</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;標準化平均の重複しない値の数（x軸）：</span><span class="si">{</span><span class="n">unique</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
     <span class="c1"># ヒストグラム</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">tosses</span><span class="p">,</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">toss</span><span class="p">,</span>
              <span class="n">bins</span><span class="o">=</span><span class="n">unique</span><span class="p">,</span>
              <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
              <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1479,6 +1486,8 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <section id="id19">
 <h3>シミュレーション<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
 <p>これでシミュレーションの準備は整った。<code class="docutils literal notranslate"><span class="pre">n</span></code>（と<code class="docutils literal notranslate"><span class="pre">N</span></code>）の数値を変えてプロットしてみよう。</p>
+<section id="n-1">
+<h4><code class="docutils literal notranslate"><span class="pre">n=1</span></code>の場合<a class="headerlink" href="#n-1" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw_hist</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -1487,17 +1496,20 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：1
+</pre></div>
+</div>
+<img alt="_images/2f6482a434e419085cdcc80fd579e1a15ad36ad31b47d77d9c3bf0529f491237.png" src="_images/2f6482a434e419085cdcc80fd579e1a15ad36ad31b47d77d9c3bf0529f491237.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/acd58b4cd57bb8be9dffe3d560db04cee95c4e9feeaa29fef51b000b6334837a.png" src="_images/acd58b4cd57bb8be9dffe3d560db04cee95c4e9feeaa29fef51b000b6334837a.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：2
-</pre></div>
-</div>
-<img alt="_images/2206cee74f9b9a8db9d73c5a89663d5d1663f2e27e366f70f2674b961d871345.png" src="_images/2206cee74f9b9a8db9d73c5a89663d5d1663f2e27e366f70f2674b961d871345.png" />
+<img alt="_images/d6cfd18cc837ea1626cb2e19682ebc7c6eecb4f127c4c8e283109ab902dd744c.png" src="_images/d6cfd18cc837ea1626cb2e19682ebc7c6eecb4f127c4c8e283109ab902dd744c.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が小さい（<code class="docutils literal notranslate"><span class="pre">10</span></code>）とランダムな影響が強く現れるが，大きくなると（<code class="docutils literal notranslate"><span class="pre">10000</span></code>）大数の法則によって<code class="docutils literal notranslate"><span class="pre">-1</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>の割合は<code class="docutils literal notranslate"><span class="pre">0.5</span></code>に近づいている。一方で，<code class="docutils literal notranslate"><span class="pre">N</span></code>が大きくなっても，分布は標準正規分布とは大きく異なっている。</p>
+</section>
+<section id="n-2">
+<h4><code class="docutils literal notranslate"><span class="pre">n=2</span></code>の場合<a class="headerlink" href="#n-2" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw_hist</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
@@ -1509,14 +1521,17 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：3
 </pre></div>
 </div>
-<img alt="_images/bde3f780bd5e984a844c4e6f08672db3be55a20e0dc62126dd801463309c4940.png" src="_images/bde3f780bd5e984a844c4e6f08672db3be55a20e0dc62126dd801463309c4940.png" />
+<img alt="_images/facc4226df725d2a86026395487c78db3a5ffb726962609d47501bf54290bb88.png" src="_images/facc4226df725d2a86026395487c78db3a5ffb726962609d47501bf54290bb88.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：3
 </pre></div>
 </div>
-<img alt="_images/fd9010c9bcf1df8cd37edb9cbcc3b6dc0a4720da75118b1320a9759586ca8d07.png" src="_images/fd9010c9bcf1df8cd37edb9cbcc3b6dc0a4720da75118b1320a9759586ca8d07.png" />
+<img alt="_images/15b228eb1629e79ce4ff2ba4855cee49161838bc0181294f6b4d67ddb04b9c53.png" src="_images/15b228eb1629e79ce4ff2ba4855cee49161838bc0181294f6b4d67ddb04b9c53.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が大きくなると，大数の法則によって左右対称の分布となっている。しかし，依然として標準正規分布とは異なっている。</p>
+</section>
+<section id="n-12">
+<h4><code class="docutils literal notranslate"><span class="pre">n=12</span></code>の場合<a class="headerlink" href="#n-12" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw_hist</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">24</span><span class="p">)</span>
@@ -1525,17 +1540,20 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：7
 </pre></div>
 </div>
-<img alt="_images/7883fa0a022167ffd9b946bbe418daed488077dc14368de358e0b1e22cfb50a8.png" src="_images/7883fa0a022167ffd9b946bbe418daed488077dc14368de358e0b1e22cfb50a8.png" />
+<img alt="_images/195009c5a528fddde55ac681bc98f2e18f35da33305880083dc78c014a06bebd.png" src="_images/195009c5a528fddde55ac681bc98f2e18f35da33305880083dc78c014a06bebd.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：13
 </pre></div>
 </div>
-<img alt="_images/90750d129ae8abd9cbe0a6c017c605a36c1893790b51b14cf48ee14de23b533c.png" src="_images/90750d129ae8abd9cbe0a6c017c605a36c1893790b51b14cf48ee14de23b533c.png" />
+<img alt="_images/b0df8eec5ff1c38f775e5773f2cad10cb4473252c5230b3483398f909c7cafbc.png" src="_images/b0df8eec5ff1c38f775e5773f2cad10cb4473252c5230b3483398f909c7cafbc.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が小さいとランダムな要素が際立ち明確ではないが，<code class="docutils literal notranslate"><span class="pre">n</span></code>増加すると標準正規分布に近づいていることが分かる。</p>
+</section>
+<section id="n-64">
+<h4><code class="docutils literal notranslate"><span class="pre">n=64</span></code>の場合<a class="headerlink" href="#n-64" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw_hist</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
@@ -1544,14 +1562,14 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：18
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：20
 </pre></div>
 </div>
-<img alt="_images/8f83da8b6a49f533671ff42bbb389f585372272bc5bf0442aaa869245da6537e.png" src="_images/8f83da8b6a49f533671ff42bbb389f585372272bc5bf0442aaa869245da6537e.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：31
+<img alt="_images/3ad0700c1f2138681278e50fde00409c67ec7cbb64dd9b03d8443cafbd597ae3.png" src="_images/3ad0700c1f2138681278e50fde00409c67ec7cbb64dd9b03d8443cafbd597ae3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：30
 </pre></div>
 </div>
-<img alt="_images/b71b6d272810894202cb8332239835273ecd45b872c61b9fcd2da97227b9a87f.png" src="_images/b71b6d272810894202cb8332239835273ecd45b872c61b9fcd2da97227b9a87f.png" />
+<img alt="_images/06788ad636f889644c8a453035ba346939cc7fb99a6ed36be96eac54ae12a674.png" src="_images/06788ad636f889644c8a453035ba346939cc7fb99a6ed36be96eac54ae12a674.png" />
 </div>
 </div>
 <p>標準正規分布に大きく近づいたことが確認できる。</p>
@@ -1571,10 +1589,10 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 
     <span class="c1"># コイントスのシミュレーション -------------------------</span>
-    <span class="n">tosses</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-    <span class="n">unique</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">tosses</span><span class="p">))</span>
+    <span class="n">toss</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_standardized</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+    <span class="n">unique</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">toss</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;標準化平均の唯一の値の数（x軸）：</span><span class="si">{</span><span class="n">unique</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">tosses</span><span class="p">,</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">toss</span><span class="p">,</span>
              <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="n">standardize</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)],</span>
              <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Coins: n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">,</span><span class="se">\n</span><span class="s1"> Repetition: N=</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">23</span><span class="p">)</span>
@@ -1589,12 +1607,13 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：109
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の唯一の値の数（x軸）：107
 </pre></div>
 </div>
-<img alt="_images/87a26fff2111aa9f4a1d75fd0c7c421b8c9a76a90a29ca36687e66cdc991977d.png" src="_images/87a26fff2111aa9f4a1d75fd0c7c421b8c9a76a90a29ca36687e66cdc991977d.png" />
+<img alt="_images/97ca2c36b2e17c82c4150b21d0d0fbd8f9155eb2b8c0452bc0c5501af6789412.png" src="_images/97ca2c36b2e17c82c4150b21d0d0fbd8f9155eb2b8c0452bc0c5501af6789412.png" />
 </div>
 </div>
+</section>
 </section>
 </section>
 </section>
@@ -1688,7 +1707,13 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">関数化</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">ヒストグラム</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">ヒストグラムの関数化</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">シミュレーション</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">シミュレーション</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-1"><code class="docutils literal notranslate"><span class="pre">n=1</span></code>の場合</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-2"><code class="docutils literal notranslate"><span class="pre">n=2</span></code>の場合</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-12"><code class="docutils literal notranslate"><span class="pre">n=12</span></code>の場合</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-64"><code class="docutils literal notranslate"><span class="pre">n=64</span></code>の場合</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1741,8 +1766,8 @@ By 春山 鉄源  Tetsugen HARUYAMA
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>
