@@ -425,7 +425,7 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">例２：値の探索</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-for-loop"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-while-loop"><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">番兵法</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">組み込み関数</a></li>
 </ul>
@@ -591,7 +591,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5, 6, 3, 5, 2, 5, 2, 1, 3, 1]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 3, 3, 6, 4, 5, 5, 3, 3, 5]
 </pre></div>
 </div>
 </div>
@@ -623,7 +623,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.904750801609683
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.584137749386361
 </pre></div>
 </div>
 </div>
@@ -636,16 +636,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.9304033669058211,
- -1.474757223782818,
- 0.3636457801764194,
- -0.45596157479546245,
- 0.30374684797353885,
- -0.06117346146316987,
- 1.5692986258062072,
- 0.6884208508574021,
- -0.9527707607400464,
- 1.6430252441104327]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.09954807406871645,
+ -1.3342180004134518,
+ 1.8564733385857988,
+ 0.0666940744242916,
+ 0.9647780810642106,
+ 1.3121651877868625,
+ -0.06762301437989758,
+ 0.43168512263165026,
+ -0.3902772641502916,
+ -0.4130239118294296]
 </pre></div>
 </div>
 </div>
@@ -722,7 +722,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>430.4755472154683
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1624.005211374947
 </pre></div>
 </div>
 </div>
@@ -766,7 +766,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>430.4755472154683
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1624.005211374947
 </pre></div>
 </div>
 </div>
@@ -783,7 +783,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>82.4 ms ± 11.7 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36.9 ms ± 1.89 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -812,7 +812,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>316 ms ± 19.8 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>179 ms ± 10.7 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -832,7 +832,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.79 ms ± 402 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.64 ms ± 626 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -906,10 +906,9 @@ document.write(`
 </div>
 </div>
 </div>
-<p>(sec:5-while-loop)</p>
 </section>
-<section id="id9">
-<h4><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<section id="sec-5-while-loop">
+<span id="id9"></span><h4><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ<a class="headerlink" href="#sec-5-while-loop" title="Permalink to this heading">#</a></h4>
 <p>次に<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使う場合を考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -968,7 +967,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>67.1 ms ± 6.83 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41 ms ± 6.61 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -980,7 +979,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>316 ms ± 35.7 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>208 ms ± 29.5 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1056,7 +1055,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>187 ms ± 49.3 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>111 ms ± 26.3 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1086,7 +1085,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.8 ms ± 1.02 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.9 ms ± 2.2 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1144,7 +1143,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.998735482314052
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5.517128506732042
 </pre></div>
 </div>
 </div>
@@ -1193,7 +1192,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.998735482314052
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5.517128506732042
 </pre></div>
 </div>
 </div>
@@ -1209,7 +1208,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>58 ms ± 2.65 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44.8 ms ± 6.32 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1221,7 +1220,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>165 ms ± 12.8 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>119 ms ± 14.4 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1235,7 +1234,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.998735482314052
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5.517128506732042
 </pre></div>
 </div>
 </div>
@@ -1247,7 +1246,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.7 ms ± 2.48 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.8 ms ± 1.18 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1346,7 +1345,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 1, 2, 3, 4, 4, 4, 5, 5]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 5, 5, 5, 7, 7, 8, 9, 10, 10]
 </pre></div>
 </div>
 </div>
@@ -1359,7 +1358,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[981, 983, 987, 987, 989, 990, 993, 998, 998, 1000]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[990, 993, 993, 994, 995, 996, 996, 997, 997, 1000]
 </pre></div>
 </div>
 </div>
@@ -1504,7 +1503,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 1, 2, 3, 4, 4, 4, 5, 5]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 5, 5, 5, 7, 7, 8, 9, 10, 10]
 </pre></div>
 </div>
 </div>
@@ -1517,7 +1516,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[981, 983, 987, 987, 989, 990, 993, 998, 998, 1000]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[990, 993, 993, 994, 995, 996, 996, 997, 997, 1000]
 </pre></div>
 </div>
 </div>
@@ -1533,7 +1532,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>85.7 ms ± 14.3 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62.7 ms ± 12.4 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1545,7 +1544,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>114 ms ± 15 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>84.1 ms ± 5.94 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1562,7 +1561,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.6 µs ± 678 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.41 µs ± 310 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1651,7 +1650,7 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">例２：値の探索</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-for-loop"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-while-loop"><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">番兵法</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">組み込み関数</a></li>
 </ul>
