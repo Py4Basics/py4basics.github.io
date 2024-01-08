@@ -480,6 +480,10 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># 警告メッセージを非表示</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -601,7 +605,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1194b3460&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10f923460&gt;]
 </pre></div>
 </div>
 <img alt="_images/11e1fb4914f70f625f824f503a847ee8520059f6ee29d603b36c6303e462ea90.png" src="_images/11e1fb4914f70f625f824f503a847ee8520059f6ee29d603b36c6303e462ea90.png" />
@@ -626,7 +630,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1195ba110&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10fa2a1a0&gt;]
 </pre></div>
 </div>
 <img alt="_images/57fd0c045bdd86564cdc25a839fa3a13456947a40affe89a36ef5f4c7ebc1edf.png" src="_images/57fd0c045bdd86564cdc25a839fa3a13456947a40affe89a36ef5f4c7ebc1edf.png" />
@@ -1841,7 +1845,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/170463d2d574c1a371aecf08376e8cb15fc123d75a50ac9b0d79fc724ba04603.png" src="_images/170463d2d574c1a371aecf08376e8cb15fc123d75a50ac9b0d79fc724ba04603.png" />
+<img alt="_images/57c175d008055c9457956cfd4da62a4302b19df1b9389dcf08db3b6ae7f34ece.png" src="_images/57c175d008055c9457956cfd4da62a4302b19df1b9389dcf08db3b6ae7f34ece.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1878,7 +1882,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2c5e9b18138fae345e5035ceccbf34dfd0db4639c2e6c2687f4b9ca8abfa19ca.png" src="_images/2c5e9b18138fae345e5035ceccbf34dfd0db4639c2e6c2687f4b9ca8abfa19ca.png" />
+<img alt="_images/5b79b254d5fdf358f3d000f668561950bb67607477fbe0df44c490401e78187a.png" src="_images/5b79b254d5fdf358f3d000f668561950bb67607477fbe0df44c490401e78187a.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Z</span></code>の散布図を加えてタイトルなども付け加えてみよう。</p>
@@ -1904,7 +1908,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/10ce5b719ac4beef35f71f754691ccabfd15dfab51ac1afdb62f3440c1feb58a.png" src="_images/10ce5b719ac4beef35f71f754691ccabfd15dfab51ac1afdb62f3440c1feb58a.png" />
+<img alt="_images/24bc2374cde23668c9c047f97350d6f3abc47b2d9997c43137d334dc4d780448.png" src="_images/24bc2374cde23668c9c047f97350d6f3abc47b2d9997c43137d334dc4d780448.png" />
 </div>
 </div>
 </section>
@@ -1934,7 +1938,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c8bb9ef6b1b352ffae95b723dca7443276ca1e52e0bbe7032d336e3e351ab5b7.png" src="_images/c8bb9ef6b1b352ffae95b723dca7443276ca1e52e0bbe7032d336e3e351ab5b7.png" />
+<img alt="_images/907c12a7462648b9acd7f4f0c12410c7c78c9aa0528647e19761e46e601888a7.png" src="_images/907c12a7462648b9acd7f4f0c12410c7c78c9aa0528647e19761e46e601888a7.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1977,7 +1981,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6b6a4dd8b5091109137adf03abfc8ae42a8d878a2cebb8b0b368626318ec91e3.png" src="_images/6b6a4dd8b5091109137adf03abfc8ae42a8d878a2cebb8b0b368626318ec91e3.png" />
+<img alt="_images/d606ce96cdf596990768507a98218d0101f9865b15e80628fa74c296e7c3833a.png" src="_images/d606ce96cdf596990768507a98218d0101f9865b15e80628fa74c296e7c3833a.png" />
 </div>
 </div>
 <p>次に複数のデータを並べてプロットする場合を考えよう。方法は簡単で，異なるデータをリストとして指定すれば良い。</p>
@@ -1996,7 +2000,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b562e1524b30ff33227423bca6fd4b31e74e0b5fb697526097dd402dac19e548.png" src="_images/b562e1524b30ff33227423bca6fd4b31e74e0b5fb697526097dd402dac19e548.png" />
+<img alt="_images/0dc0b2e30c30329506f22a0ddd920e14344165ffcfcb413f60bba1000f8330fd.png" src="_images/0dc0b2e30c30329506f22a0ddd920e14344165ffcfcb413f60bba1000f8330fd.png" />
 </div>
 </div>
 <p>上のコードに引数<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>を加えると，柱を重ねて表示される。試してみよう。また<code class="docutils literal notranslate"><span class="pre">ax.hist()</span></code>を２回使うと，２つのヒストグラムを重ねて表示することができる。この場合，引数<code class="docutils literal notranslate"><span class="pre">alpha</span></code>の値を調整すると良いだろう。</p>
@@ -2022,7 +2026,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a749f710f691d27d3c72ab0c753e10dabe77e6d0f36250c49025b2ce62b63874.png" src="_images/a749f710f691d27d3c72ab0c753e10dabe77e6d0f36250c49025b2ce62b63874.png" />
+<img alt="_images/1ebe008fbb13d4c87519383ea1c02ce0381c991f5e1b6300817e7eb9cb0ea11e.png" src="_images/1ebe008fbb13d4c87519383ea1c02ce0381c991f5e1b6300817e7eb9cb0ea11e.png" />
 </div>
 </div>
 <p>濃い赤の部分が重なっている部分となる。</p>
@@ -2058,7 +2062,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6955c92e032a430f9855e71336aca0ffb0a9c618cf3f4b026d8b1a5bf7d01f55.png" src="_images/6955c92e032a430f9855e71336aca0ffb0a9c618cf3f4b026d8b1a5bf7d01f55.png" />
+<img alt="_images/f1ef2f515a1c306ffbc2d4741f89e89ab9faba506e1d8534a9c4c7da5b8acf6e.png" src="_images/f1ef2f515a1c306ffbc2d4741f89e89ab9faba506e1d8534a9c4c7da5b8acf6e.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2102,7 +2106,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/45305c4db699b0c406c33afab2ac35d06e664d214bb9ba6b9bc87b8ed49db41d.png" src="_images/45305c4db699b0c406c33afab2ac35d06e664d214bb9ba6b9bc87b8ed49db41d.png" />
+<img alt="_images/1f6f57595b5aaebab81ea7522eec24cd048526917ea0059a80c8377eafc27c41.png" src="_images/1f6f57595b5aaebab81ea7522eec24cd048526917ea0059a80c8377eafc27c41.png" />
 </div>
 </div>
 </section>

@@ -445,6 +445,10 @@ document.write(`
 </div><br><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># 警告メッセージを非表示</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1060,7 +1064,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(55, 45)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(47, 53)
 </pre></div>
 </div>
 </div>
@@ -1220,7 +1224,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(47, 53)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(49, 51)
 </pre></div>
 </div>
 </div>
@@ -1456,7 +1460,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.363070512595328
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.2829988832773798
 </pre></div>
 </div>
 </div>

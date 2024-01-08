@@ -449,6 +449,10 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">japanize_matplotlib</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># 警告メッセージを非表示</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -491,8 +495,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3.48282853, 7.76232397, 0.41575823, 6.31871251, 3.98571649,
-       4.03079869, 5.93015878, 4.07083094, 4.25067128, 4.53922831])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2.58050476, 2.47522737, 3.61377249, 2.14592831, 5.30245954,
+       5.7054622 , 3.33862525, 6.68607546, 7.09732545, 3.61094932])
 </pre></div>
 </div>
 </div>
@@ -506,7 +510,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.37661739, -0.60439191,  0.22377268,  1.3115479 ,  3.09402671])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.39175631,  0.93471158, -0.10554464,  0.31695085,  1.58420334])
 </pre></div>
 </div>
 </div>
@@ -530,7 +534,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9effdf2e5fbc881a65680844f11e8d0a6913a15af7c715138694d7038e158bff.png" src="_images/9effdf2e5fbc881a65680844f11e8d0a6913a15af7c715138694d7038e158bff.png" />
+<img alt="_images/0bf4e3840775d76717a531278ab43c25d882a9815d8ed5b92029e3b2807a3fa9.png" src="_images/0bf4e3840775d76717a531278ab43c25d882a9815d8ed5b92029e3b2807a3fa9.png" />
 </div>
 </div>
 </section>
@@ -552,8 +556,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([29.23140172, 19.37200074, 22.80619011,  6.70656576,  7.49698194,
-       26.62514088, 24.79805278,  9.6247666 , 26.15222016, 18.53134765])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([18.89072888, 11.37356886, 15.88511151, 28.86693595, 28.44067398,
+       16.86841757, 12.11084563, 27.51633942, 17.93579509, 12.5968959 ])
 </pre></div>
 </div>
 </div>
@@ -566,7 +570,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.14846499, 0.54794627, 0.64247967, 0.39092904, 0.86856141])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.84767373, 0.3160583 , 0.18496091, 0.34590328, 0.79419706])
 </pre></div>
 </div>
 </div>
@@ -590,7 +594,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ba6752cea848dda13dea8c91f0e5e00ca79f60d9f13aae7f2b6cb64dfd1c558a.png" src="_images/ba6752cea848dda13dea8c91f0e5e00ca79f60d9f13aae7f2b6cb64dfd1c558a.png" />
+<img alt="_images/b79253ca3db4ae13006b709d84e1d61fa09f2b5e999dda4e1708fa6e8a78bb81.png" src="_images/b79253ca3db4ae13006b709d84e1d61fa09f2b5e999dda4e1708fa6e8a78bb81.png" />
 </div>
 </div>
 </section>
@@ -658,11 +662,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.70296515,  5.37856528],
-       [ 2.85117987,  4.6291062 ],
-       [ 0.74099459,  7.83524837],
-       [-1.64914945,  5.55459161],
-       [-3.69281116, -0.26264299]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.16930652,  7.50254188],
+       [-3.62009219,  3.27261584],
+       [-0.99775529,  5.7476258 ],
+       [-0.47140935,  2.47653234],
+       [-3.18809405,  3.66331395]])
 </pre></div>
 </div>
 </div>
@@ -681,11 +685,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.05182324,  0.84884017],
-       [-0.61922393, -0.88795657],
-       [ 2.34571828,  1.68936484],
-       [ 0.88622716,  1.48081013],
-       [ 0.16720771,  0.09356628]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.26268366,  0.30917473],
+       [ 0.18160097,  0.21135082],
+       [-1.96732907, -1.8315629 ],
+       [ 0.76765076,  0.93689902],
+       [-0.58424772, -1.27984061]])
 </pre></div>
 </div>
 </div>
@@ -706,7 +710,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d68e8f5510df74ef6f2c80bcb7564064cd60860b9a3b929590a837e3980efc63.png" src="_images/d68e8f5510df74ef6f2c80bcb7564064cd60860b9a3b929590a837e3980efc63.png" />
+<img alt="_images/6372db3a71e2e2c841f0ee48161b894ae31e09828780c71d56e66c2f077796bf.png" src="_images/6372db3a71e2e2c841f0ee48161b894ae31e09828780c71d56e66c2f077796bf.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>の共分散は<code class="docutils literal notranslate"><span class="pre">m=0.8</span></code>となっているため，正の相関が観測される。
@@ -718,7 +722,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7964718061291176
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.79210241671308
 </pre></div>
 </div>
 </div>
@@ -748,7 +752,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.841002984662354
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.30504297525165697
 </pre></div>
 </div>
 </div>
@@ -766,7 +770,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.433396363214108
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5161428650804738
 </pre></div>
 </div>
 </div>
