@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -87,7 +87,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
 
@@ -130,12 +130,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <header>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
   
+  </header>
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -150,6 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -370,6 +379,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -379,6 +389,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -427,7 +438,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
 <h1><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: ランダム変数<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h1>
@@ -480,8 +491,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.43797014, 2.1714508 , 3.58594152, 4.63508637, 4.50820938,
-       5.57699639, 7.24487702, 4.21458115, 3.12156418, 5.46517342])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 9.10743228,  7.52352062,  6.44368586,  4.91991127,  6.03293025,
+        4.34464446,  4.49428466,  3.40681106, -0.24078058,  1.09799338])
 </pre></div>
 </div>
 </div>
@@ -495,7 +506,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.28876054,  0.66824248,  0.26836644, -0.37771514, -1.45700366])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.36502382,  0.50519723,  0.00932175, -0.98883659, -0.40770499])
 </pre></div>
 </div>
 </div>
@@ -519,7 +530,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1f94936b5d4d79884dc8b3e4124f891264befd40037835d03e6bfc11380a7247.png" src="_images/1f94936b5d4d79884dc8b3e4124f891264befd40037835d03e6bfc11380a7247.png" />
+<img alt="_images/124b4411ccca3cb3040bcc0a9f1e5c011b04a34410f0e3d0f685f47c49a10a3c.png" src="_images/124b4411ccca3cb3040bcc0a9f1e5c011b04a34410f0e3d0f685f47c49a10a3c.png" />
 </div>
 </div>
 </section>
@@ -541,8 +552,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([26.21482781, 27.1842304 , 11.12801748,  6.12142444, 18.98171604,
-       21.59005551, 28.22362267,  5.79648265,  6.34344354, 25.03918934])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([15.30487822, 28.28897221, 21.85278248, 25.34074979, 12.25070225,
+        6.51755601, 15.45187016, 18.0300853 ,  8.08434869, 25.02921968])
 </pre></div>
 </div>
 </div>
@@ -555,7 +566,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.21115909, 0.79790664, 0.67116093, 0.81542901, 0.25863726])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.13975468, 0.55450717, 0.01418832, 0.7026854 , 0.81922306])
 </pre></div>
 </div>
 </div>
@@ -579,7 +590,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6fbca42cde2edf208111b0536ef694a1a3195905c132a24ee3167cf716cafe1d.png" src="_images/6fbca42cde2edf208111b0536ef694a1a3195905c132a24ee3167cf716cafe1d.png" />
+<img alt="_images/66229c280824e07e54d79add0bb53a5795ba61c33d1f696f4e71d0804dd27705.png" src="_images/66229c280824e07e54d79add0bb53a5795ba61c33d1f696f4e71d0804dd27705.png" />
 </div>
 </div>
 </section>
@@ -647,11 +658,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.61859331,  6.56898885],
-       [-1.23640795, 13.02272748],
-       [-1.56688604,  3.68259615],
-       [ 0.45236792,  9.81644141],
-       [-3.62404183,  2.33798577]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-2.56628201,  0.59063218],
+       [-3.35126954,  4.18250788],
+       [-0.71003391,  1.2485116 ],
+       [ 3.14995964,  3.54910185],
+       [-2.56435462,  0.493988  ]])
 </pre></div>
 </div>
 </div>
@@ -670,11 +681,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1.15121683, -1.56147854],
-       [ 0.20617103, -0.34781437],
-       [-0.22938738, -0.05822988],
-       [ 0.78075286, -0.11503059],
-       [-0.46041883, -0.74076802]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.93123167, -0.72765947],
+       [ 1.25677933,  1.44815567],
+       [-0.07251633, -0.21958795],
+       [ 0.11150691,  0.48428144],
+       [ 0.44934174, -0.99713827]])
 </pre></div>
 </div>
 </div>
@@ -695,7 +706,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/99da173f9e4dc5aae5ce8440a2d48f5490d72e9891a556b4984760587372b8ce.png" src="_images/99da173f9e4dc5aae5ce8440a2d48f5490d72e9891a556b4984760587372b8ce.png" />
+<img alt="_images/279250c7d8983136421759b1682987ae0b334348983ce695d8ce200d42adb634.png" src="_images/279250c7d8983136421759b1682987ae0b334348983ce695d8ce200d42adb634.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>の共分散は<code class="docutils literal notranslate"><span class="pre">m=0.8</span></code>となっているため，正の相関が観測される。
@@ -707,7 +718,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7823710460364638
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8089506082271257
 </pre></div>
 </div>
 </div>
@@ -737,7 +748,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.6506484289401595
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.8968118266775459
 </pre></div>
 </div>
 </div>
@@ -755,7 +766,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.6942428512969703
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.6330673335042476
 </pre></div>
 </div>
 </div>
@@ -818,7 +829,7 @@ document.write(`
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="7_SciPy_optimize.html"
@@ -846,6 +857,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -882,6 +894,7 @@ By 春山 鉄源  Tetsugen HARUYAMA
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -911,8 +924,8 @@ By 春山 鉄源  Tetsugen HARUYAMA
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
   <footer class="bd-footer">
   </footer>

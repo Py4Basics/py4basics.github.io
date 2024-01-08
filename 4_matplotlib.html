@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -87,7 +87,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
 
@@ -130,12 +130,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <header>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
   
+  </header>
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -150,6 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -370,6 +379,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -379,6 +389,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -456,7 +467,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matplotlib">
 <span id="chap-matplotlib"></span><h1><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示<a class="headerlink" href="#matplotlib" title="Permalink to this heading">#</a></h1>
@@ -590,7 +601,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11592e5f0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1217fb400&gt;]
 </pre></div>
 </div>
 <img alt="_images/11e1fb4914f70f625f824f503a847ee8520059f6ee29d603b36c6303e462ea90.png" src="_images/11e1fb4914f70f625f824f503a847ee8520059f6ee29d603b36c6303e462ea90.png" />
@@ -615,7 +626,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x115a30d60&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1218fa260&gt;]
 </pre></div>
 </div>
 <img alt="_images/57fd0c045bdd86564cdc25a839fa3a13456947a40affe89a36ef5f4c7ebc1edf.png" src="_images/57fd0c045bdd86564cdc25a839fa3a13456947a40affe89a36ef5f4c7ebc1edf.png" />
@@ -1830,7 +1841,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8fbe0063556ea36f6be21b21209ece90dc3d99aabb19880e33fb919c31f9246f.png" src="_images/8fbe0063556ea36f6be21b21209ece90dc3d99aabb19880e33fb919c31f9246f.png" />
+<img alt="_images/9ec1820209596dde64113c6729d2c58acdefacf5c94b0d9d063040cfa64620fa.png" src="_images/9ec1820209596dde64113c6729d2c58acdefacf5c94b0d9d063040cfa64620fa.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1867,7 +1878,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/53e9f6d3cac26ec79970b349ea6fbc08b8329cefe1006024a8bb95c670a827e9.png" src="_images/53e9f6d3cac26ec79970b349ea6fbc08b8329cefe1006024a8bb95c670a827e9.png" />
+<img alt="_images/6bae0ad791b8d72e945e73975a426cb22a4b1b6932d6bb93eb96b61cb900db64.png" src="_images/6bae0ad791b8d72e945e73975a426cb22a4b1b6932d6bb93eb96b61cb900db64.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Z</span></code>の散布図を加えてタイトルなども付け加えてみよう。</p>
@@ -1893,7 +1904,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/34432454a9b4b417df368166c635e8b303e75f2364e0756610ffdf0f35909583.png" src="_images/34432454a9b4b417df368166c635e8b303e75f2364e0756610ffdf0f35909583.png" />
+<img alt="_images/2f8dc4e7961cf2d1a27cae7276e81e65d056f52ecbee8161ff1654cc3dbe24aa.png" src="_images/2f8dc4e7961cf2d1a27cae7276e81e65d056f52ecbee8161ff1654cc3dbe24aa.png" />
 </div>
 </div>
 </section>
@@ -1923,7 +1934,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/238bd6ad912a772010157c9a3006a664363b4af01acc6b820db8570f8b48c471.png" src="_images/238bd6ad912a772010157c9a3006a664363b4af01acc6b820db8570f8b48c471.png" />
+<img alt="_images/6954534b5075c1dc7aabcb4f20bb874c65824f815eeb200f8da5dbd34ca3c693.png" src="_images/6954534b5075c1dc7aabcb4f20bb874c65824f815eeb200f8da5dbd34ca3c693.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1966,7 +1977,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e99468dc3498b5171d936aa4963dc79870a78ffd77c78fd034a5634bda2b344b.png" src="_images/e99468dc3498b5171d936aa4963dc79870a78ffd77c78fd034a5634bda2b344b.png" />
+<img alt="_images/730fca5a294cf3097e129fbdb2e29de3830b3dba274a0ec7fb09e0ff7b7c8551.png" src="_images/730fca5a294cf3097e129fbdb2e29de3830b3dba274a0ec7fb09e0ff7b7c8551.png" />
 </div>
 </div>
 <p>次に複数のデータを並べてプロットする場合を考えよう。方法は簡単で，異なるデータをリストとして指定すれば良い。</p>
@@ -1985,7 +1996,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/11293a46d0d4e3cf1522696d8679df68d2e8abdeeea4920715e922a959c7b74d.png" src="_images/11293a46d0d4e3cf1522696d8679df68d2e8abdeeea4920715e922a959c7b74d.png" />
+<img alt="_images/5db41dfa0b1d616b8c265d181729917caf509fc9aebbb149248764e398c2e5b1.png" src="_images/5db41dfa0b1d616b8c265d181729917caf509fc9aebbb149248764e398c2e5b1.png" />
 </div>
 </div>
 <p>上のコードに引数<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>を加えると，柱を重ねて表示される。試してみよう。また<code class="docutils literal notranslate"><span class="pre">ax.hist()</span></code>を２回使うと，２つのヒストグラムを重ねて表示することができる。この場合，引数<code class="docutils literal notranslate"><span class="pre">alpha</span></code>の値を調整すると良いだろう。</p>
@@ -2011,7 +2022,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d301418b43fd20e3628f7ebe8a3aaf0e815e023adbb206aba16b1f71a8d062b3.png" src="_images/d301418b43fd20e3628f7ebe8a3aaf0e815e023adbb206aba16b1f71a8d062b3.png" />
+<img alt="_images/abce3d5778cb3adc33db8866a38f991076d75720e9501092063bc783f9f5c455.png" src="_images/abce3d5778cb3adc33db8866a38f991076d75720e9501092063bc783f9f5c455.png" />
 </div>
 </div>
 <p>濃い赤の部分が重なっている部分となる。</p>
@@ -2047,7 +2058,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/218ab757f718b508fd6a166f320426d09e77c87d36c20362887bea6af3270cd9.png" src="_images/218ab757f718b508fd6a166f320426d09e77c87d36c20362887bea6af3270cd9.png" />
+<img alt="_images/8a5e21f746b1fc5fdb9089c87c313468dd0c97297c2a0c92987012abe350fd9d.png" src="_images/8a5e21f746b1fc5fdb9089c87c313468dd0c97297c2a0c92987012abe350fd9d.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2091,7 +2102,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b0e8ee98fabc16c06b6861129999599e683f4d5a2df864cda391d94a0d2b20d6.png" src="_images/b0e8ee98fabc16c06b6861129999599e683f4d5a2df864cda391d94a0d2b20d6.png" />
+<img alt="_images/0c8e3803bef93e8736089215785dffd14a48a7889279e684a7ebf6b98ae15dbd.png" src="_images/0c8e3803bef93e8736089215785dffd14a48a7889279e684a7ebf6b98ae15dbd.png" />
 </div>
 </div>
 </section>
@@ -2358,7 +2369,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="3_Pandas.html"
@@ -2386,6 +2397,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2451,6 +2463,7 @@ By 春山 鉄源  Tetsugen HARUYAMA
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -2480,8 +2493,8 @@ By 春山 鉄源  Tetsugen HARUYAMA
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
   <footer class="bd-footer">
   </footer>

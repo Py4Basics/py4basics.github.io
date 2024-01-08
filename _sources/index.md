@@ -128,11 +128,11 @@ dt = datetime.datetime.today()
 ## 本サイトで使うPythonとパッケージのバージョン
 
 ```{code-cell} ipython3
-import gapminder, matplotlib, numpy, pandas, scipy, see
+import gapminder, matplotlib, numpy, pandas, scipy
 from platform import python_version
 
-packages = ['Python', 'gapminder', 'matplotlib', 'numpy','pandas', 'scipy','see']
-versions = [python_version(), gapminder.__version__, matplotlib.__version__, numpy.__version__, pandas.__version__, scipy.__version__, see.__version__]
+packages = ['Python', 'gapminder', 'matplotlib', 'numpy','pandas', 'scipy']
+versions = [python_version(), gapminder.__version__, matplotlib.__version__, numpy.__version__, pandas.__version__, scipy.__version__]
 
 for pack, ver in zip(packages, versions):
     print(f'{pack:14}{ver}')
