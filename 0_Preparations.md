@@ -339,7 +339,8 @@ GitHubとは，コードとコードの履歴をクラウド上で管理し，�
 * `linearmodels`
 * `wooldridge`
 * `lmdiag`
-* `see`
+* `py4macro`
+* `py4etrics`
 
 これらをインストールするには，Anacondaに含まれている`pip`コマンドを使う。`pip`は以Terminal（Mac用）もしくはGit Bash（Windows用）を使い実行する。例えば，`see`をインストールするには
 ```
@@ -347,7 +348,7 @@ $ pip install see
 ```
 を実行する。4つのパッケージを一括でインストールするコマンドは次のようにする。
 ```
-$ pip install linearmodels wooldridge lmdiag see
+$ pip install linearmodels wooldridge lmdiag py4macro, py4etrics
 ```
 
 ## Jupyter Notebookの使い方
