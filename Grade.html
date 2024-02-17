@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>学業成績の分析 &#8212; 経済学のためのPython入門</title>
   
@@ -29,34 +28,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -64,12 +61,16 @@
                 gtag('js', new Date());
                 gtag('config', 'G-R9KXY9G892');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-R9KXY9G892');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Grade';</script>
     <link rel="canonical" href="https://py4basics.github.io/Grade.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -163,7 +164,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">経済学のためのPython入門</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
 <ul class="nav bd-sidenav">
@@ -468,7 +480,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>学業成績の分析<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>学業成績の分析<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
@@ -485,9 +497,9 @@ document.write(`
 </div>
 <p>授業の成績（優秀良可不可）とGP（Grade Point）を使った成績の分析を行う。成績表のコピーは神戸大学の「うりぼーネット」を用いる例を考えるが、Web上で成績表が表示されるのであればコードを少し修正するだけで分析が行えるであろう。</p>
 <section id="id2">
-<h2>データの読み込み<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>データの読み込み<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3>学生<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>学生<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>「うりぼー」→ 成績修得情報　→　成績表を選択しコピー</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -519,7 +531,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h3>例<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>例<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>例のファイルを使う場合。</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
@@ -1019,7 +1031,7 @@ document.write(`
 </section>
 </section>
 <section id="id5">
-<h2>列の内容の確認<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2>列の内容の確認<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>ステップ１：列のラベルの表示</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1100,7 +1112,7 @@ document.write(`
 </div>
 </section>
 <section id="dataframe">
-<h2><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の作成<a class="headerlink" href="#dataframe" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の作成<a class="headerlink" href="#dataframe" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cond1</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;区分&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;全学共通授業科目&#39;</span> <span class="p">)</span>
@@ -1169,9 +1181,9 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h2>全科目<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2>全科目<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <section id="f-string">
-<h3><code class="docutils literal notranslate"><span class="pre">f-string</span></code><a class="headerlink" href="#f-string" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">f-string</span></code><a class="headerlink" href="#f-string" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">f-string</span></code>を使うと文字列の<code class="docutils literal notranslate"><span class="pre">{}</span></code>の中の変数を評価して表示することが可能となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1201,9 +1213,9 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h3>優・秀・良・可・不可などの数<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>優・秀・良・可・不可などの数<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <section id="id8">
-<h4>簡単な方法<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<h4>簡単な方法<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>を使うと簡単になる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1228,7 +1240,7 @@ Name: count, dtype: int64
 </div>
 </section>
 <section id="id9">
-<h4>表示を整理したい場合<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<h4>表示を整理したい場合<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
 <p>評語の種類</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1336,9 +1348,9 @@ Name: count, dtype: int64
 </section>
 </section>
 <section id="id10">
-<h3>優・秀・良・可・不可などの％<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>優・秀・良・可・不可などの％<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <section id="id11">
-<h4>簡単な方法<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<h4>簡単な方法<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
@@ -1364,7 +1376,7 @@ Name: proportion, dtype: float64
 </div>
 </section>
 <section id="id12">
-<h4>表示を整理したい場合<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
+<h4>表示を整理したい場合<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
 <p>％だけを表示する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1498,9 +1510,9 @@ Name: proportion, dtype: float64
 </section>
 </section>
 <section id="id13">
-<h2>全学共通授業科目<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<h2>全学共通授業科目<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
 <section id="id14">
-<h3>数<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<h3>数<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_other</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;評語&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -1552,7 +1564,7 @@ Name: count, dtype: int64
 </div>
 </section>
 <section id="id15">
-<h3>割合<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<h3>割合<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
@@ -1607,7 +1619,7 @@ Name: proportion, dtype: float64
 </section>
 </section>
 <section id="id16">
-<h2>専門科目<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h2>
+<h2>専門科目<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_econ</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;評語&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -1716,9 +1728,9 @@ Name: proportion, dtype: float64
 </div>
 </section>
 <section id="gpa">
-<h2>GPAの推移<a class="headerlink" href="#gpa" title="Permalink to this heading">#</a></h2>
+<h2>GPAの推移<a class="headerlink" href="#gpa" title="Link to this heading">#</a></h2>
 <section id="gp">
-<h3>「科目GP」で記号がある行の削除<a class="headerlink" href="#gp" title="Permalink to this heading">#</a></h3>
+<h3>「科目GP」で記号がある行の削除<a class="headerlink" href="#gp" title="Link to this heading">#</a></h3>
 <p>科目GPの要素の種類</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1883,7 +1895,7 @@ Name: proportion, dtype: float64
 <p><code class="docutils literal notranslate"><span class="pre">O</span></code>は<code class="docutils literal notranslate"><span class="pre">object</span></code>。</p>
 </section>
 <section id="id17">
-<h3>「科目GP」を浮動小数点に変更<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>「科目GP」を浮動小数点に変更<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <p>科目GPは<code class="docutils literal notranslate"><span class="pre">object</span></code>（文字列）となっているので，メソッド<code class="docutils literal notranslate"><span class="pre">astype()</span></code>を使って<code class="docutils literal notranslate"><span class="pre">float</span></code>に変換する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1918,9 +1930,9 @@ dtype: object
 </div>
 </section>
 <section id="id18">
-<h3>図示：毎年<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<h3>図示：毎年<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
 <section id="groupby">
-<h4><code class="docutils literal notranslate"><span class="pre">groupby</span></code><a class="headerlink" href="#groupby" title="Permalink to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">groupby</span></code><a class="headerlink" href="#groupby" title="Link to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">groupby</span></code>は<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>や<code class="docutils literal notranslate"><span class="pre">Series</span></code>をグループ化し，グループ内の計算を簡単に行うことができる便利なメソッドである。「修得年度」でグループ化し，平均を計算する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1991,7 +2003,7 @@ dtype: object
 </ul>
 </section>
 <section id="id19">
-<h4>図示<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h4>
+<h4>図示<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
 <p>方法１：横軸に文字列を使う</p>
 <p><code class="docutils literal notranslate"><span class="pre">gpa_mean.index</span></code>を確認する。</p>
 <div class="cell docutils container">
@@ -2028,7 +2040,7 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e77029f4077e52c2c6fda55544078899141422a063feef7b44f01281b8556fcb.png" src="_images/e77029f4077e52c2c6fda55544078899141422a063feef7b44f01281b8556fcb.png" />
+<img alt="_images/39e50c68e684a6dcd2866301ff7949b77a0db7482c4e0403da3dbcac1b1d3363.png" src="_images/39e50c68e684a6dcd2866301ff7949b77a0db7482c4e0403da3dbcac1b1d3363.png" />
 </div>
 </div>
 <p>方法２：<code class="docutils literal notranslate"><span class="pre">plt.xticks()</span></code>を使って</p>
@@ -2056,15 +2068,15 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e77029f4077e52c2c6fda55544078899141422a063feef7b44f01281b8556fcb.png" src="_images/e77029f4077e52c2c6fda55544078899141422a063feef7b44f01281b8556fcb.png" />
+<img alt="_images/39e50c68e684a6dcd2866301ff7949b77a0db7482c4e0403da3dbcac1b1d3363.png" src="_images/39e50c68e684a6dcd2866301ff7949b77a0db7482c4e0403da3dbcac1b1d3363.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="id20">
-<h3>図示：前期後期毎<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
+<h3>図示：前期後期毎<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
 <section id="id21">
-<h4>「修得学期」の英語化<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h4>
+<h4>「修得学期」の英語化<a class="headerlink" href="#id21" title="Link to this heading">#</a></h4>
 <p>「修得学期」の要素が日本語だと警告が出るため，メソッド<code class="docutils literal notranslate"><span class="pre">.replace()</span></code>を使って英語に変換する。<code class="docutils literal notranslate"><span class="pre">replace()</span></code>の引数は辞書で指定する。</p>
 <ul class="simple">
 <li><p>キー：変更する対象の数値や文字列</p></li>
@@ -2192,7 +2204,7 @@ dtype: object
 </div>
 </section>
 <section id="id22">
-<h4><code class="docutils literal notranslate"><span class="pre">groupby</span></code><a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">groupby</span></code><a class="headerlink" href="#id22" title="Link to this heading">#</a></h4>
 <p>「修得年度」と「修得学期」でグループ化する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2272,7 +2284,7 @@ dtype: object
 </div>
 </section>
 <section id="id23">
-<h4>図示<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h4>
+<h4>図示<a class="headerlink" href="#id23" title="Link to this heading">#</a></h4>
 <p>横軸に文字列を使う。まず<code class="docutils literal notranslate"><span class="pre">gpa_mean</span></code>のインデックスを確認する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2314,7 +2326,7 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fa35decd052c55182a592c7b25f964e5b6d9d30ee0a4397ea798639d06ce8955.png" src="_images/fa35decd052c55182a592c7b25f964e5b6d9d30ee0a4397ea798639d06ce8955.png" />
+<img alt="_images/764070a5c41378f19d8a30077c5d4c3428c6b4a5d6f9853cfd12c767c31d8935.png" src="_images/764070a5c41378f19d8a30077c5d4c3428c6b4a5d6f9853cfd12c767c31d8935.png" />
 </div>
 </div>
 </section>

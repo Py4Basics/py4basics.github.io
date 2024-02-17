@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Numpy: ランダム変数 &#8212; 経済学のためのPython入門</title>
   
@@ -29,34 +28,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -64,12 +61,16 @@
                 gtag('js', new Date());
                 gtag('config', 'G-R9KXY9G892');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-R9KXY9G892');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '8_NumPy_random';</script>
@@ -165,7 +166,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">経済学のためのPython入門</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
 <ul class="nav bd-sidenav">
@@ -435,7 +447,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
-<h1><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: ランダム変数<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h1>
+<h1><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: ランダム変数<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
@@ -452,12 +464,12 @@ document.write(`
 </div>
 </div>
 <section id="id1">
-<h2>はじめに<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>はじめに<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>1日の生活はランダムな事象の連続と考えることができる。今朝，目覚ましがなったかもしれないが，事後的に考えると，壊れて音が鳴らずに授業に遅刻する確率は全くの<code class="docutils literal notranslate"><span class="pre">0</span></code>では無かったはずだ。家を出て駅に向かって歩いていると急に雨が降って来るかもしれない。これも大気の状態によって確率的に起こっていると考えることができる。生活する上で，このようなランダムな事象について特に意識しないかもしれないが，毎日がその連続と考えることができる。同様に，個々の企業もランダムな事象に直面している（例えば，ライバル企業の新たな商品・サービスの発表）。また，株式市場を見れば分かるように，需要者と供給者からなる市場の均衡もそうである。更には，日本経済全体では大小様々なランダムな事象が発生していると考えることができる。大きなランダムな事象の例としては，極端な緩和政策を取り続ける日本銀行が急に金融引き締めに動くことが挙げられる。もしくは，急に（可能性は囁かれていた）ロシアがウクライナを侵略することによりインフレが発生し，景気後退の引き金になったのも確率的な事象と捉えることができる。即ち，経済を考える上で，ランダムな事象は無視できない要素だということであ。</p>
 <p>このような問題意識に基づき，本章の目的は<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>を使ったランダム変数の生成方法について簡単に解説することである。</p>
 </section>
 <section id="id2">
-<h2>ランダム変数生成コード<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>ランダム変数生成コード<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の<code class="docutils literal notranslate"><span class="pre">random</span></code>モジュールを使いランダム変数を生成するが，<code class="docutils literal notranslate"><span class="pre">random</span></code>モジュールの中でまず最初に使う必要があるのが<code class="docutils literal notranslate"><span class="pre">default_rng()</span></code>関数である。以下では続くコードを分かりやすくするために<code class="docutils literal notranslate"><span class="pre">default_rng()</span></code>を変数<code class="docutils literal notranslate"><span class="pre">rng</span></code>に割り当てる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -472,7 +484,7 @@ document.write(`
 <p>ランダム変数の生成にはパッケージ<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>の<code class="docutils literal notranslate"><span class="pre">stats</span></code>モジュールを使うこともできる。興味がある人は<a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">このリンク</a>を参照しよう。</p>
 </div>
 <section id="id3">
-<h3>正規分布<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>正規分布<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>正規分布に従うランダム変数の生成方法につて説明する。</p>
 <p><strong>コード</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">rng.normal(loc=0,</span> <span class="pre">scale=1,</span> <span class="pre">size=1)</span></code></p>
@@ -489,8 +501,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([7.3141569 , 3.18647069, 1.28708874, 8.10651621, 8.02083608,
-       5.46308995, 4.19332503, 6.013057  , 6.21897084, 6.57472198])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.84376806,  4.23137241,  6.38646248,  6.03030745,  5.68195241,
+        2.09729273,  1.38635952,  2.69525945,  1.31788101,  4.31908248])
 </pre></div>
 </div>
 </div>
@@ -504,7 +516,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.46319285,  0.70035511, -0.45653554, -1.66189208,  1.23886224])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.87170439,  0.87604384, -0.61603672, -0.11265477,  0.92610902])
 </pre></div>
 </div>
 </div>
@@ -528,12 +540,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b2a014042463fa65b053bd10d69557f231c89eb2554b8f6ae7d485e91beab1a1.png" src="_images/b2a014042463fa65b053bd10d69557f231c89eb2554b8f6ae7d485e91beab1a1.png" />
+<img alt="_images/2f7fd6c08a64c23badd489fac779e2a2989e1313a9de1e7c75dc73703fc890a2.png" src="_images/2f7fd6c08a64c23badd489fac779e2a2989e1313a9de1e7c75dc73703fc890a2.png" />
 </div>
 </div>
 </section>
 <section id="id4">
-<h3>一様分布<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>一様分布<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>一様分布に従うランダム変数の生成方法につて考える。</p>
 <p><strong>コード</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">rng.uniform(low=0,</span> <span class="pre">high=1,</span> <span class="pre">size=1)</span></code></p>
@@ -550,8 +562,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 9.80384767, 15.68039263, 22.34093914,  7.52402251, 15.70972048,
-       14.25246268, 21.46975558, 29.81893621, 28.11460161, 20.89818639])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([18.54945348, 17.7913382 , 24.85486758, 17.26223126, 21.4578958 ,
+       28.83759478, 16.22479149, 23.85744312, 12.35545668, 28.03069049])
 </pre></div>
 </div>
 </div>
@@ -564,7 +576,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.92045864, 0.20286376, 0.68810991, 0.70656615, 0.93486941])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.84852893, 0.159775  , 0.20555601, 0.61709259, 0.46377194])
 </pre></div>
 </div>
 </div>
@@ -588,12 +600,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/83af4e7970aceda8652685785a5133571d561eeda669c0bc330be0fc34308b79.png" src="_images/83af4e7970aceda8652685785a5133571d561eeda669c0bc330be0fc34308b79.png" />
+<img alt="_images/9c28a20cf1e94658d45cd1fa7ea8fe6d0780de7bcab00d4878e938bdf980a38f.png" src="_images/9c28a20cf1e94658d45cd1fa7ea8fe6d0780de7bcab00d4878e938bdf980a38f.png" />
 </div>
 </div>
 </section>
 <section id="id5">
-<h3>多変量正規分布<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>多変量正規分布<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>多変量正規分布に従うランダム変数の生成方法につて説明するが，例として２つの変数の場合を考える。
 変数の数が<span class="math notranslate nohighlight">\(N&gt;2\)</span>の場合は，引数の<code class="docutils literal notranslate"><span class="pre">mean</span></code>と<code class="docutils literal notranslate"><span class="pre">cov</span></code>を適宜変更すれば良い。</p>
 <p><strong>コード</strong></p>
@@ -656,11 +668,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.34750683,  2.50552785],
-       [-1.84445588,  7.26818091],
-       [ 1.5785559 ,  2.60174932],
-       [-1.53721167,  9.13538132],
-       [ 3.93170684,  3.84133991]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.02285859, 11.17074955],
+       [ 1.26699207,  7.79008578],
+       [ 1.68391589,  4.01245183],
+       [ 1.89859332,  6.3548334 ],
+       [-1.91912355,  5.02965546]])
 </pre></div>
 </div>
 </div>
@@ -679,11 +691,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.17830067,  0.75837709],
-       [ 1.17073232,  0.83860759],
-       [-0.78184229, -1.15838863],
-       [-0.66658774, -0.73560462],
-       [-0.25114486,  0.79648733]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.09447085, -0.26055598],
+       [ 2.53600041,  1.98428451],
+       [-1.70023806, -2.219611  ],
+       [ 1.33108024,  0.54118625],
+       [ 0.9836549 ,  0.79856766]])
 </pre></div>
 </div>
 </div>
@@ -704,7 +716,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1de6bcda07b56dfe17d86d4b11729d9266f201a0d5fbc9699c195789be648c91.png" src="_images/1de6bcda07b56dfe17d86d4b11729d9266f201a0d5fbc9699c195789be648c91.png" />
+<img alt="_images/0cceca2de07ce96fff3f333f40f84bdc8f90b9ca4622360b95a4c48095c0d8a9.png" src="_images/0cceca2de07ce96fff3f333f40f84bdc8f90b9ca4622360b95a4c48095c0d8a9.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>の共分散は<code class="docutils literal notranslate"><span class="pre">m=0.8</span></code>となっているため，正の相関が観測される。
@@ -716,7 +728,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8052014564096653
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7909658492720403
 </pre></div>
 </div>
 </div>
@@ -724,7 +736,7 @@ document.write(`
 </section>
 </section>
 <section id="id6">
-<h2>古い書き方<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2>古い書き方<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>上で説明した<code class="docutils literal notranslate"><span class="pre">np.random.default_rng()</span></code>を使うコードが現在推奨されている書き方となるが，この書き方が導入される前の書き方を紹介する。現時点でも古い書き方を使うことができるが，ランダム変数の統計学的特徴という観点からは推奨されるコードの書き方の方が良いとされる。</p>
 <p>コードの違いを説明するために，標準正規分布のランダム変数を１つ生成するコードを考えてみよう。
 <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>をインポートするコードも含めると，上では次のように書いた。</p>
@@ -746,7 +758,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.0712747850538475
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9075190788449993
 </pre></div>
 </div>
 </div>
@@ -764,7 +776,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.2000765086173257
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.4900122082030045
 </pre></div>
 </div>
 </div>

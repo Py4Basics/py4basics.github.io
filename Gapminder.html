@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Gapminder &#8212; 経済学のためのPython入門</title>
   
@@ -29,34 +28,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -64,12 +61,16 @@
                 gtag('js', new Date());
                 gtag('config', 'G-R9KXY9G892');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-R9KXY9G892');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Gapminder';</script>
     <link rel="canonical" href="https://py4basics.github.io/Gapminder.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -163,7 +164,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">経済学のためのPython入門</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
 <ul class="nav bd-sidenav">
@@ -445,7 +457,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="gapminder">
-<h1>Gapminder<a class="headerlink" href="#gapminder" title="Permalink to this heading">#</a></h1>
+<h1>Gapminder<a class="headerlink" href="#gapminder" title="Link to this heading">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
@@ -474,7 +486,7 @@ document.write(`
 </div>
 <p>ここでは<code class="docutils literal notranslate"><span class="pre">gapminder</span></code>に含まれるデータを使い<code class="docutils literal notranslate"><span class="pre">pandas</span></code>の<code class="docutils literal notranslate"><span class="pre">groupby</span></code>という<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のメソッドの使い方の例を紹介する。両方ともデータをグループ化して扱う場合に非常に重宝するので、覚えておいて損はしないだろう。</p>
 <section id="id1">
-<h2>データ<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>データ<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>＜列ラベル＞</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">country</span></code>：国名</p></li>
@@ -868,7 +880,7 @@ Name: proportion, dtype: float64
 </div>
 </section>
 <section id="groupby">
-<h2>groupby()<a class="headerlink" href="#groupby" title="Permalink to this heading">#</a></h2>
+<h2>groupby()<a class="headerlink" href="#groupby" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
@@ -907,7 +919,7 @@ Name: proportion, dtype: float64
 </div>
 </div>
 <section id="continent-again">
-<h3>continentの内訳（again）<a class="headerlink" href="#continent-again" title="Permalink to this heading">#</a></h3>
+<h3>continentの内訳（again）<a class="headerlink" href="#continent-again" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">country_names</span> <span class="o">=</span> <span class="n">df_group</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
@@ -929,7 +941,7 @@ Name: country, dtype: int64
 </div>
 </section>
 <section id="id2">
-<h3>統計量<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>統計量<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">three_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span><span class="s1">&#39;pop&#39;</span><span class="p">,</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">]</span>
@@ -938,7 +950,7 @@ Name: country, dtype: int64
 </div>
 </div>
 <section id="id3">
-<h4>観測値の数<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<h4>観測値の数<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <p>大陸別の観測値の数</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -968,7 +980,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/64c2464812a9732fed76eb19f965c34ff7dc36ac3e5c2d30bc0865b6b847d197.png" src="_images/64c2464812a9732fed76eb19f965c34ff7dc36ac3e5c2d30bc0865b6b847d197.png" />
+<img alt="_images/101aa377d42f89c7f2d60bfaefc295474ff09a33ccc891d369dc5988d20be05b.png" src="_images/101aa377d42f89c7f2d60bfaefc295474ff09a33ccc891d369dc5988d20be05b.png" />
 </div>
 </div>
 <p>変数別での観測値の数</p>
@@ -1059,7 +1071,7 @@ dtype: int64
 </div>
 </section>
 <section id="id4">
-<h4>平均<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<h4>平均<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
 <p>それぞれの変数の平均（文字列の<code class="docutils literal notranslate"><span class="pre">country</span></code>を含めるとエラーが発生するため<code class="docutils literal notranslate"><span class="pre">three_vars</span></code>を指定する。）</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1142,12 +1154,12 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1f4b2047161eda936440b361044768e4323bd1d3e375d1639fc33e04a6863cc1.png" src="_images/1f4b2047161eda936440b361044768e4323bd1d3e375d1639fc33e04a6863cc1.png" />
+<img alt="_images/5c41b28ca60b430a1818eb9638c1e998328573247d618c2b203b71d961d38cd8.png" src="_images/5c41b28ca60b430a1818eb9638c1e998328573247d618c2b203b71d961d38cd8.png" />
 </div>
 </div>
 </section>
 <section id="id5">
-<h4>標準偏差<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<h4>標準偏差<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <p>それぞれの変数の標準偏差</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1222,7 +1234,7 @@ dtype: int64
 </div>
 </section>
 <section id="id6">
-<h4>最大値<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<h4>最大値<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
@@ -1310,7 +1322,7 @@ dtype: int64
 </div>
 </section>
 <section id="id7">
-<h4>最小値<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<h4>最小値<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
@@ -1398,7 +1410,7 @@ dtype: int64
 </div>
 </section>
 <section id="id8">
-<h4>3変数の記述統計<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<h4>3変数の記述統計<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_group</span><span class="p">[</span><span class="n">three_vars</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:.1f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
@@ -1635,7 +1647,7 @@ dtype: int64
 </section>
 </section>
 <section id="groupby-agg">
-<h3>groupby.agg()<a class="headerlink" href="#groupby-agg" title="Permalink to this heading">#</a></h3>
+<h3>groupby.agg()<a class="headerlink" href="#groupby-agg" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">agg()</span></code>を使うと複数のメソッドを同時に使うことができる。この場合は，メソッド名を文字列として引数として使う。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1908,7 +1920,7 @@ dtype: int64
 <p><code class="docutils literal notranslate"><span class="pre">continent</span></code>の内訳の割合を計算</p>
 </section>
 <section id="id9">
-<h3>図<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>図<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p><strong><code class="docutils literal notranslate"><span class="pre">continent</span></code>平均寿命</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1926,11 +1938,11 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b99dce7dffd2ee672f04cee959dc26c50c87229916065319e5707484a933c894.png" src="_images/b99dce7dffd2ee672f04cee959dc26c50c87229916065319e5707484a933c894.png" />
+<img alt="_images/90e6cc3f45f027f11eca5fe2dbd7418793fad46a4244a1fea2ae2416538a173d.png" src="_images/90e6cc3f45f027f11eca5fe2dbd7418793fad46a4244a1fea2ae2416538a173d.png" />
 </div>
 </div>
 <section id="id10">
-<h4>3つの変数<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<h4>3つの変数<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_mean</span> <span class="o">=</span> <span class="n">df_group</span><span class="p">[</span><span class="n">three_vars</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -1949,13 +1961,13 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d185d644d7b4a723b618dea251512b73fd51bf9b01598584ca10dde277cfc55e.png" src="_images/d185d644d7b4a723b618dea251512b73fd51bf9b01598584ca10dde277cfc55e.png" />
+<img alt="_images/32d6460a5a87d93941fb3d92f1b965ad2ec5dd5c4e2851c989f4671d88493a30.png" src="_images/32d6460a5a87d93941fb3d92f1b965ad2ec5dd5c4e2851c989f4671d88493a30.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="id11">
-<h3>複数階層の<code class="docutils literal notranslate"><span class="pre">groupby()</span></code><a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>複数階層の<code class="docutils literal notranslate"><span class="pre">groupby()</span></code><a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">continent</span></code>別の平均時系列を考えるときに有用。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2055,7 +2067,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7cfde412f3a34dc414567e85a5b6bdc9ca6a25df5db00edd26d4108767e0211d.png" src="_images/7cfde412f3a34dc414567e85a5b6bdc9ca6a25df5db00edd26d4108767e0211d.png" />
+<img alt="_images/5af9f9c74ca6a243cc786938732d6426bf9dad9303cd3dbd027cf75c65f83fdb.png" src="_images/5af9f9c74ca6a243cc786938732d6426bf9dad9303cd3dbd027cf75c65f83fdb.png" />
 </div>
 </div>
 <p><strong>世界平均との比較</strong></p>
@@ -2084,7 +2096,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b9379dd55cfcc72d0b95c5c04abbd8e21577feb58e2f279411a177531ce5bc1f.png" src="_images/b9379dd55cfcc72d0b95c5c04abbd8e21577feb58e2f279411a177531ce5bc1f.png" />
+<img alt="_images/4cdad7aa7c1f87b9d7b0c9ca3d8eb0b6532d7f7736fffb06f8423e487a7a99e0.png" src="_images/4cdad7aa7c1f87b9d7b0c9ca3d8eb0b6532d7f7736fffb06f8423e487a7a99e0.png" />
 </div>
 </div>
 </section>

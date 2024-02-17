@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Matplotlib：図示 &#8212; 経済学のためのPython入門</title>
   
@@ -29,34 +28,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -64,12 +61,16 @@
                 gtag('js', new Date());
                 gtag('config', 'G-R9KXY9G892');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-R9KXY9G892');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '4_matplotlib';</script>
@@ -165,7 +166,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">経済学のためのPython入門</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
 <ul class="nav bd-sidenav">
@@ -464,11 +476,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matplotlib">
-<span id="chap-matplotlib"></span><h1><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示<a class="headerlink" href="#matplotlib" title="Permalink to this heading">#</a></h1>
+<span id="chap-matplotlib"></span><h1><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示<a class="headerlink" href="#matplotlib" title="Link to this heading">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><section id="id1">
-<h2>説明<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>説明<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -504,7 +516,7 @@ document.write(`
 <figure class="align-default" id="fig-4-figure-axes">
 <a class="reference internal image-reference" href="_images/figure_axes_mpl.png"><img alt="_images/figure_axes_mpl.png" src="_images/figure_axes_mpl.png" style="width: 575.2px; height: 425.6px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">キャンバスと軸の関係</span><a class="headerlink" href="#fig-4-figure-axes" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">キャンバスと軸の関係</span><a class="headerlink" href="#fig-4-figure-axes" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -559,9 +571,9 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 <p>以下ではそれぞれの引数の書き方について解説する。</p>
 </section>
 <section id="id2">
-<h2>データの引数の書き方１<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>データの引数の書き方１<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="array">
-<h3><code class="docutils literal notranslate"><span class="pre">array</span></code>を使って<a class="headerlink" href="#array" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">array</span></code>を使って<a class="headerlink" href="#array" title="Link to this heading">#</a></h3>
 <p>プロットするデータを生成しよう。変数<code class="docutils literal notranslate"><span class="pre">x</span></code>に横軸に使うデータを次のように割り当てる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -599,10 +611,10 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1211e2110&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11865f940&gt;]
 </pre></div>
 </div>
-<img alt="_images/11e1fb4914f70f625f824f503a847ee8520059f6ee29d603b36c6303e462ea90.png" src="_images/11e1fb4914f70f625f824f503a847ee8520059f6ee29d603b36c6303e462ea90.png" />
+<img alt="_images/477230bfda2f6fd748c32f3a461d872a06ec42bbee9232b4626d9388e4bde31f.png" src="_images/477230bfda2f6fd748c32f3a461d872a06ec42bbee9232b4626d9388e4bde31f.png" />
 </div>
 </div>
 <p>２行目に<code class="docutils literal notranslate"><span class="pre">marker='o'</span></code>が追加されているが，「●」を表示するために使っている。このような引数の使い方は後で詳しく説明するので，ここでは気にしないで読み進めて欲しい。</p>
@@ -624,10 +636,10 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x121304d00&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11877e530&gt;]
 </pre></div>
 </div>
-<img alt="_images/57fd0c045bdd86564cdc25a839fa3a13456947a40affe89a36ef5f4c7ebc1edf.png" src="_images/57fd0c045bdd86564cdc25a839fa3a13456947a40affe89a36ef5f4c7ebc1edf.png" />
+<img alt="_images/a5033104fea6e07d80f7e343b9799a2d5d6adcc998ee588019f386a0f2938785.png" src="_images/a5033104fea6e07d80f7e343b9799a2d5d6adcc998ee588019f386a0f2938785.png" />
 </div>
 </div>
 <p>より<span class="math notranslate nohighlight">\(y=x^2\)</span>の図に近づいたことがわかる。</p>
@@ -657,7 +669,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f7cb25a8246bd6ded4fadc44dc326adca9bb502bb99d3d982e515ac6d2adaf42.png" src="_images/f7cb25a8246bd6ded4fadc44dc326adca9bb502bb99d3d982e515ac6d2adaf42.png" />
+<img alt="_images/fd7e472523721eca5224b5f1677b907b66b19e45b4e5c5cbda6ca7eba09ddd5d.png" src="_images/fd7e472523721eca5224b5f1677b907b66b19e45b4e5c5cbda6ca7eba09ddd5d.png" />
 </div>
 </div>
 <p>それぞれの<code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code>を「軸<code class="docutils literal notranslate"><span class="pre">ax</span></code>にデータの組み合わせをプロットする」と読めば理解しやすいと思う。また同じようなコードが続いているので，次のように<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うことより短いコードで同じ図を表示することができる。</p>
@@ -673,12 +685,12 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f7cb25a8246bd6ded4fadc44dc326adca9bb502bb99d3d982e515ac6d2adaf42.png" src="_images/f7cb25a8246bd6ded4fadc44dc326adca9bb502bb99d3d982e515ac6d2adaf42.png" />
+<img alt="_images/fd7e472523721eca5224b5f1677b907b66b19e45b4e5c5cbda6ca7eba09ddd5d.png" src="_images/fd7e472523721eca5224b5f1677b907b66b19e45b4e5c5cbda6ca7eba09ddd5d.png" />
 </div>
 </div>
 </section>
 <section id="dataframe">
-<h3><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使って<a class="headerlink" href="#dataframe" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使って<a class="headerlink" href="#dataframe" title="Link to this heading">#</a></h3>
 <p>まず<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -765,7 +777,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/60218f6719299baf4a7665dbce53c38a4d3bfa13fa89bd195ac6df841603cec8.png" src="_images/60218f6719299baf4a7665dbce53c38a4d3bfa13fa89bd195ac6df841603cec8.png" />
+<img alt="_images/06c56ef65c9e7b6ef295987fb1626d76fe0d36ee7869bbf4bfa81037e265d29d.png" src="_images/06c56ef65c9e7b6ef295987fb1626d76fe0d36ee7869bbf4bfa81037e265d29d.png" />
 </div>
 </div>
 <p>横軸に<code class="docutils literal notranslate"><span class="pre">X</span></code>，縦軸に<code class="docutils literal notranslate"><span class="pre">Y0</span></code>，<code class="docutils literal notranslate"><span class="pre">Y1</span></code>，<code class="docutils literal notranslate"><span class="pre">Y2</span></code>をプロットしてみる。</p>
@@ -780,7 +792,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f7cb25a8246bd6ded4fadc44dc326adca9bb502bb99d3d982e515ac6d2adaf42.png" src="_images/f7cb25a8246bd6ded4fadc44dc326adca9bb502bb99d3d982e515ac6d2adaf42.png" />
+<img alt="_images/fd7e472523721eca5224b5f1677b907b66b19e45b4e5c5cbda6ca7eba09ddd5d.png" src="_images/fd7e472523721eca5224b5f1677b907b66b19e45b4e5c5cbda6ca7eba09ddd5d.png" />
 </div>
 </div>
 <p>引数の書き方１の簡略形として，横軸の変数を省略できることを紹介した。その場合はどうなるかを考えてみよう。</p>
@@ -793,17 +805,17 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5970802413ab1920bd1cbcb822bd99d81fd738a608a7a4b9cf7d77064975b444.png" src="_images/5970802413ab1920bd1cbcb822bd99d81fd738a608a7a4b9cf7d77064975b444.png" />
+<img alt="_images/069cee0e46139513d56baf8d87f4dfaf7cb14d7bebcaf17e37183e44da47b36f.png" src="_images/069cee0e46139513d56baf8d87f4dfaf7cb14d7bebcaf17e37183e44da47b36f.png" />
 </div>
 </div>
 <p>上の図との違いは横軸の値である。この場合，横軸に<code class="docutils literal notranslate"><span class="pre">df0</span></code>の行インデックスが自動的に使われている。</p>
 </section>
 </section>
 <section id="id3">
-<h2>データの引数の書き方２<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>データの引数の書き方２<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>次に引数<code class="docutils literal notranslate"><span class="pre">data</span></code>を使う書き方を考えてみる。</p>
 <section id="id4">
-<h3>同じ<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使う<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>同じ<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使う<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>横軸に<code class="docutils literal notranslate"><span class="pre">X</span></code>，縦軸に<code class="docutils literal notranslate"><span class="pre">Y0</span></code>を指定してプロットしてみる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -814,7 +826,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/60218f6719299baf4a7665dbce53c38a4d3bfa13fa89bd195ac6df841603cec8.png" src="_images/60218f6719299baf4a7665dbce53c38a4d3bfa13fa89bd195ac6df841603cec8.png" />
+<img alt="_images/06c56ef65c9e7b6ef295987fb1626d76fe0d36ee7869bbf4bfa81037e265d29d.png" src="_images/06c56ef65c9e7b6ef295987fb1626d76fe0d36ee7869bbf4bfa81037e265d29d.png" />
 </div>
 </div>
 <p>変数<code class="docutils literal notranslate"><span class="pre">Y1</span></code>と<code class="docutils literal notranslate"><span class="pre">Y2</span></code>も同じ軸<code class="docutils literal notranslate"><span class="pre">ax</span></code>にプロットしてみよう。</p>
@@ -829,7 +841,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f7cb25a8246bd6ded4fadc44dc326adca9bb502bb99d3d982e515ac6d2adaf42.png" src="_images/f7cb25a8246bd6ded4fadc44dc326adca9bb502bb99d3d982e515ac6d2adaf42.png" />
+<img alt="_images/fd7e472523721eca5224b5f1677b907b66b19e45b4e5c5cbda6ca7eba09ddd5d.png" src="_images/fd7e472523721eca5224b5f1677b907b66b19e45b4e5c5cbda6ca7eba09ddd5d.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -851,13 +863,13 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5970802413ab1920bd1cbcb822bd99d81fd738a608a7a4b9cf7d77064975b444.png" src="_images/5970802413ab1920bd1cbcb822bd99d81fd738a608a7a4b9cf7d77064975b444.png" />
+<img alt="_images/069cee0e46139513d56baf8d87f4dfaf7cb14d7bebcaf17e37183e44da47b36f.png" src="_images/069cee0e46139513d56baf8d87f4dfaf7cb14d7bebcaf17e37183e44da47b36f.png" />
 </div>
 </div>
 <p>行インデックスが横軸の値として使われている。</p>
 </section>
 <section id="id5">
-<h3>異なる<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の変数を図示する<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>異なる<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の変数を図示する<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>別の<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -937,13 +949,13 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a682920efe49102115e2f7d1a3cc73d3302a1ce1f57a38cd8e3d443b07e0f20e.png" src="_images/a682920efe49102115e2f7d1a3cc73d3302a1ce1f57a38cd8e3d443b07e0f20e.png" />
+<img alt="_images/87a04887443019a5195a7af01c96721fc98e519d00cc85d0d20c9f6ec7c884b7.png" src="_images/87a04887443019a5195a7af01c96721fc98e519d00cc85d0d20c9f6ec7c884b7.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="sec-4-other-methods">
-<span id="id6"></span><h2>その他の引数とメソッド<a class="headerlink" href="#sec-4-other-methods" title="Permalink to this heading">#</a></h2>
+<span id="id6"></span><h2>その他の引数とメソッド<a class="headerlink" href="#sec-4-other-methods" title="Link to this heading">#</a></h2>
 <p>上で説明したコードでは単純なプロットしかできない。一方で様々な引数やメソッドが用意されており，それらを駆使することにより様々な「飾り付け」をすることが可能となる。ここでは主なものを紹介するが，他にも数多く用意されているので<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>の<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">サイト</a>を参考にしてほしい。また，これらの引数・メソッドは，上述の「データの引数の書き方１」と「データの引数の書き方２」の両方に有効であることも覚えておこう。</p>
 <p>引数・メソッドがもたらす違いを際立たせるために新たな<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使おう。</p>
 <div class="cell docutils container">
@@ -1005,7 +1017,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 <p>以下のプロットでは，横軸の変数を省略する簡略形を使うので，行インデックが横軸に使われるので注意しよう。</p>
 <section id="subplots">
-<h3><code class="docutils literal notranslate"><span class="pre">subplots()</span></code>の引数<a class="headerlink" href="#subplots" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">subplots()</span></code>の引数<a class="headerlink" href="#subplots" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">subplots()</span></code>はキャンバスと軸を設定する<code class="docutils literal notranslate"><span class="pre">plt</span></code>のメソッドとなるが、主に３つの引数を紹介する。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">figsize</span></code>：図の大きさ</p>
@@ -1028,12 +1040,12 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/974d77bf5930107b60c271d511c1b02bc5b836fb5209bd6f6c806e7d1dfb774a.png" src="_images/974d77bf5930107b60c271d511c1b02bc5b836fb5209bd6f6c806e7d1dfb774a.png" />
+<img alt="_images/321666a639f8f96e9d81e0ac77655de6775f78a5783f04189658adfe19fdcb61.png" src="_images/321666a639f8f96e9d81e0ac77655de6775f78a5783f04189658adfe19fdcb61.png" />
 </div>
 </div>
 </section>
 <section id="plot">
-<h3><code class="docutils literal notranslate"><span class="pre">plot()</span></code>の基本的な引数<a class="headerlink" href="#plot" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">plot()</span></code>の基本的な引数<a class="headerlink" href="#plot" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">plot()</span></code>は軸<code class="docutils literal notranslate"><span class="pre">ax</span></code>にデータを描くメソッドだが、引数を使うことによりデータの表示方法を指定できる。詳しくは<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">このリンク</a>を参照することにして，ここでは基本的な引数だけを紹介する。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">linestyle</span></code>：線のスタイル（リストにして列の順番で指定する;<code class="docutils literal notranslate"><span class="pre">-</span></code>，<code class="docutils literal notranslate"><span class="pre">--</span></code>，<code class="docutils literal notranslate"><span class="pre">-.</span></code>，<code class="docutils literal notranslate"><span class="pre">:</span></code>などがある）</p></li>
@@ -1073,7 +1085,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/66bfd40572b3314e7e0d9f567c644f17c1f4854bf059e054edf842996a37f068.png" src="_images/66bfd40572b3314e7e0d9f567c644f17c1f4854bf059e054edf842996a37f068.png" />
+<img alt="_images/298c3974a1017d865b44741ff8435051b0c33b3272acfbe864e74409d6bd0a93.png" src="_images/298c3974a1017d865b44741ff8435051b0c33b3272acfbe864e74409d6bd0a93.png" />
 </div>
 </div>
 <p>引数をいちいち書くのが面倒な場合、次の３つを簡略して一緒に指定できる。</p>
@@ -1098,7 +1110,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/42009d5a7650d012346b1e27d012787609f6db715d7d1ef297942c988d262981.png" src="_images/42009d5a7650d012346b1e27d012787609f6db715d7d1ef297942c988d262981.png" />
+<img alt="_images/885c67f2a011a18f7e72a6f7a715831f2c6647a123ae82cf62de4a200e29170b.png" src="_images/885c67f2a011a18f7e72a6f7a715831f2c6647a123ae82cf62de4a200e29170b.png" />
 </div>
 </div>
 <p>（注意点）</p>
@@ -1111,7 +1123,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 <p>詳細は<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html">参考サイト（英語）</a>を参照。</p>
 </section>
 <section id="ax">
-<h3><code class="docutils literal notranslate"><span class="pre">ax</span></code>の基本的なメソッド<a class="headerlink" href="#ax" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">ax</span></code>の基本的なメソッド<a class="headerlink" href="#ax" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">ax</span></code>は透明なキャンバス上にある軸を指しているが、そのメソッドを使うことにより、軸周辺を「飾り付け」することができる。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">.set_title()</span></code>：タイトルを設定する。</p>
@@ -1151,12 +1163,12 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b298fc6012821e029c6f1387381b662094afe6c89a1f88248abb262371fb7c6f.png" src="_images/b298fc6012821e029c6f1387381b662094afe6c89a1f88248abb262371fb7c6f.png" />
+<img alt="_images/d889124f61ddb7348409eb320fda15d83050d9d557c454197b7f0e1f06312e4d.png" src="_images/d889124f61ddb7348409eb320fda15d83050d9d557c454197b7f0e1f06312e4d.png" />
 </div>
 </div>
 </section>
 <section id="id7">
-<h3>図を並べる<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>図を並べる<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>複数の図を並べたいとしよう。考え方としては、透明のキャンバスに複数の軸を設定し、それぞれの軸を使って作図していけば良いのである。キャンバスは四角なので偶数個の軸が設定できる。例として、次のように軸を配置したいとしよう。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+---+---+---+</span>
 <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">3</span> <span class="o">|</span>
@@ -1184,7 +1196,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/96134c417dba267bdbfb7764ed761bec231f11d8d3eb765f8735d8fb62efd081.png" src="_images/96134c417dba267bdbfb7764ed761bec231f11d8d3eb765f8735d8fb62efd081.png" />
+<img alt="_images/1f1fdbe535769b3839a281ecd6454d555e0425666fe23b8fb48d9b1826d598d1.png" src="_images/1f1fdbe535769b3839a281ecd6454d555e0425666fe23b8fb48d9b1826d598d1.png" />
 </div>
 </div>
 <p>６つの軸が表示されているが、それらは<code class="docutils literal notranslate"><span class="pre">ax</span></code>に割り当てられている。<code class="docutils literal notranslate"><span class="pre">ax</span></code>を表示してみよう。</p>
@@ -1238,7 +1250,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/32c4baa829618fc8ca47dd6b8fff69cb71a737d35e0ecf6ae43990191520ffc1.png" src="_images/32c4baa829618fc8ca47dd6b8fff69cb71a737d35e0ecf6ae43990191520ffc1.png" />
+<img alt="_images/65f566f469fd7d24c9ee4852a76a9f68e4c81aa8f7ce028771675397a0b08b50.png" src="_images/65f566f469fd7d24c9ee4852a76a9f68e4c81aa8f7ce028771675397a0b08b50.png" />
 </div>
 </div>
 <p>横軸と縦軸を共有するには次のようにする。</p>
@@ -1256,7 +1268,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0bf6464d2fd1ca760fbd4816f3b2982c20953154941fea599986256b311614a5.png" src="_images/0bf6464d2fd1ca760fbd4816f3b2982c20953154941fea599986256b311614a5.png" />
+<img alt="_images/2f6a2338addb6774294f220180390ed8d294e161640f24b2e8bc7ae2df291590.png" src="_images/2f6a2338addb6774294f220180390ed8d294e161640f24b2e8bc7ae2df291590.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ax</span></code>のメソッド（例えば、軸のタイトル）はそれぞれ設定することができる。</p>
@@ -1290,12 +1302,12 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/49f91afc740666875b00b9e7061e60ad436602d2977f35613a9974b01ce0cefd.png" src="_images/49f91afc740666875b00b9e7061e60ad436602d2977f35613a9974b01ce0cefd.png" />
+<img alt="_images/3e02d5b4df75387e7cd048278f56eccaf1994beb041464569624c529927c8b5a.png" src="_images/3e02d5b4df75387e7cd048278f56eccaf1994beb041464569624c529927c8b5a.png" />
 </div>
 </div>
 </section>
 <section id="id8">
-<h3>２軸グラフ<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>２軸グラフ<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>複数のデータを表示する際、右の縦軸を使いデータを表示したい場合がある。例を使って説明することにする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1310,7 +1322,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f804b6e32f49b57415174425e487ca1241a999cf4b626cc7f8513c9085b67330.png" src="_images/f804b6e32f49b57415174425e487ca1241a999cf4b626cc7f8513c9085b67330.png" />
+<img alt="_images/6afa138a983534157eb505ce9bc29a84529ef09a10a85afe0f2a44fdeadc73ef.png" src="_images/6afa138a983534157eb505ce9bc29a84529ef09a10a85afe0f2a44fdeadc73ef.png" />
 </div>
 </div>
 <p>コードの説明</p>
@@ -1343,7 +1355,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5608b07bb189b2adc9d456b930037169f2834991a67fca5839f1460c7efa5ad2.png" src="_images/5608b07bb189b2adc9d456b930037169f2834991a67fca5839f1460c7efa5ad2.png" />
+<img alt="_images/c113924d8230a1f87f8f3093b69fb9c4c877b211c28406a0908e545d9f2ca732.png" src="_images/c113924d8230a1f87f8f3093b69fb9c4c877b211c28406a0908e545d9f2ca732.png" />
 </div>
 </div>
 <p>コードの説明</p>
@@ -1367,10 +1379,10 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </section>
 </section>
 <section id="id9">
-<h2>日本語<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<h2>日本語<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <p>２つ方法を紹介するが、<code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code>を使う方法がより簡単であろう。</p>
 <section id="japanize-matplotlib">
-<h3><code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code><a class="headerlink" href="#japanize-matplotlib" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">japanize_matplotlib</span></code><a class="headerlink" href="#japanize-matplotlib" title="Link to this heading">#</a></h3>
 <p>使い方は到って簡単で、<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>と同様にインポートするだけである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1392,12 +1404,12 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/217d83af413d315a4febe3cbd4a00b9f1b700f099d6c86307bccf5bb9b7503be.png" src="_images/217d83af413d315a4febe3cbd4a00b9f1b700f099d6c86307bccf5bb9b7503be.png" />
+<img alt="_images/442c8553e48357936277b3218eab50203021c5c22fda49828178466253d8ccd3.png" src="_images/442c8553e48357936277b3218eab50203021c5c22fda49828178466253d8ccd3.png" />
 </div>
 </div>
 </section>
 <section id="id10">
-<h3>フォントを指定する<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>フォントを指定する<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>2つの方法：</p>
 <ol class="arabic simple">
 <li><p>フォントはインストールせず、PC内にあるフォントを指定する。</p></li>
@@ -1440,7 +1452,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7cda66eb59903cc3b71743de7d14b9cd2fc06be3fb5b965daa2af49005013f48.png" src="_images/7cda66eb59903cc3b71743de7d14b9cd2fc06be3fb5b965daa2af49005013f48.png" />
+<img alt="_images/94a38b28737a9919c6a30b68c4aeab4759dfcc01efbe085951451c42d4ad259b.png" src="_images/94a38b28737a9919c6a30b68c4aeab4759dfcc01efbe085951451c42d4ad259b.png" />
 </div>
 </div>
 <blockquote>
@@ -1459,9 +1471,9 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </section>
 </section>
 <section id="id11">
-<h2>マクロ経済学の例<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<h2>マクロ経済学の例<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
 <section id="id12">
-<h3>投資関数<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>投資関数<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>実質利子率<code class="docutils literal notranslate"><span class="pre">r</span></code>によって投資がどのように変化するかを考えてみよう。まず投資関数を次のように仮定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1572,7 +1584,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/33618fa923bd9b00ca8beb60a757e697c592eff3fee358466999867f3667fbf4.png" src="_images/33618fa923bd9b00ca8beb60a757e697c592eff3fee358466999867f3667fbf4.png" />
+<img alt="_images/a91a28c847ec41fbfc05a7b0912c313f09e5357c3028459c734ddf4d970c8cb9.png" src="_images/a91a28c847ec41fbfc05a7b0912c313f09e5357c3028459c734ddf4d970c8cb9.png" />
 </div>
 </div>
 <p>この図に次の「飾り付け」をしてみよう。</p>
@@ -1583,7 +1595,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </ul>
 </section>
 <section id="id13">
-<h3>将来価値<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>将来価値<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">x</span></code>万円を実質年率<code class="docutils literal notranslate"><span class="pre">r</span></code>%の利息を得る金融商品に投資し，<code class="docutils literal notranslate"><span class="pre">t</span></code>年間の将来価値（期首の値）をリストで示す関数は以下で与えられた。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1774,7 +1786,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/09e24657cc4de726006556d2ad6faa7d209c4d962291d2d6186bcd8d1ae6bc36.png" src="_images/09e24657cc4de726006556d2ad6faa7d209c4d962291d2d6186bcd8d1ae6bc36.png" />
+<img alt="_images/9036674e7c9aeebf275efb83c4b3f8fd65a90a2cf14718b63f128733e1f6f5b0.png" src="_images/9036674e7c9aeebf275efb83c4b3f8fd65a90a2cf14718b63f128733e1f6f5b0.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code>が続いているので、<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使う事を推奨する。</p>
@@ -1791,16 +1803,16 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/09e24657cc4de726006556d2ad6faa7d209c4d962291d2d6186bcd8d1ae6bc36.png" src="_images/09e24657cc4de726006556d2ad6faa7d209c4d962291d2d6186bcd8d1ae6bc36.png" />
+<img alt="_images/9036674e7c9aeebf275efb83c4b3f8fd65a90a2cf14718b63f128733e1f6f5b0.png" src="_images/9036674e7c9aeebf275efb83c4b3f8fd65a90a2cf14718b63f128733e1f6f5b0.png" />
 </div>
 </div>
 <p>（１）の<code class="docutils literal notranslate"><span class="pre">df_future.columns</span></code>について説明すると、<code class="docutils literal notranslate"><span class="pre">.columns</span></code>はデータ・フレーム<code class="docutils literal notranslate"><span class="pre">df_future</span></code>の属性であり列ラベルを返す。</p>
 </section>
 </section>
 <section id="id14">
-<h2>その他のプロット<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<h2>その他のプロット<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
 <section id="id15">
-<h3>種類<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<h3>種類<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <p>上で説明した図はライン・プロットと呼ばれる。<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>にはその他にも様々なは種類の図を描くことができるが，以下ではライン・プロット以外に<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html">散布図</a>と<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html">ヒストグラム</a>について説明する。引数に関しては，上で説明した<a class="reference internal" href="#sec-4-other-methods"><span class="std std-ref">ライン・プロットの引数</span></a>と共通のものが多いので別に覚える必要はないが，それぞれ独自の引数もあるので基本的なものだけを取り上げることにする。</p>
 <p>説明には次のコードで生成する<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使う。列<code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>には標準正規分布（平均<code class="docutils literal notranslate"><span class="pre">0</span></code>，標準偏差<code class="docutils literal notranslate"><span class="pre">1</span></code>）から生成した100個のランダム変数が含まれている。<code class="docutils literal notranslate"><span class="pre">Z</span></code>には正規分布（平均<code class="docutils literal notranslate"><span class="pre">2</span></code>，標準偏差<code class="docutils literal notranslate"><span class="pre">1</span></code>）から抽出した100個のランダム変数が格納されている。</p>
 <div class="cell docutils container">
@@ -1814,7 +1826,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </section>
 <section id="id16">
-<h3>散布図<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<h3>散布図<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>基本的には次の構文となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
@@ -1839,7 +1851,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/248ff17b57821b9be2b1b905c118e321107085f4363edc84d1f401321a1bf257.png" src="_images/248ff17b57821b9be2b1b905c118e321107085f4363edc84d1f401321a1bf257.png" />
+<img alt="_images/adc850bf21981204e6dd7d82c375b360984f1297d3a5d8f3e7344f7f00141289.png" src="_images/adc850bf21981204e6dd7d82c375b360984f1297d3a5d8f3e7344f7f00141289.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1876,7 +1888,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f35934a3f8df432dc0359a40f25897489a5aff82565e42f9c51d749f7afe44b8.png" src="_images/f35934a3f8df432dc0359a40f25897489a5aff82565e42f9c51d749f7afe44b8.png" />
+<img alt="_images/22ee3c0a425855f61d30a2e0093dd4979fa8070fb58827908f5a89f506190cad.png" src="_images/22ee3c0a425855f61d30a2e0093dd4979fa8070fb58827908f5a89f506190cad.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Z</span></code>の散布図を加えてタイトルなども付け加えてみよう。</p>
@@ -1902,12 +1914,12 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e99904d3687a6455c202787da40cc2115417feb659bc76ba8e9d45ae6538d539.png" src="_images/e99904d3687a6455c202787da40cc2115417feb659bc76ba8e9d45ae6538d539.png" />
+<img alt="_images/8110fc2840b8eae6fccdbff1f4ff1e1d08a4ff6dbf7c9658fb09dcd59abbfd6b.png" src="_images/8110fc2840b8eae6fccdbff1f4ff1e1d08a4ff6dbf7c9658fb09dcd59abbfd6b.png" />
 </div>
 </div>
 </section>
 <section id="id17">
-<h3>ヒストグラム<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>ヒストグラム<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>基本的には次の構文となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots()
@@ -1932,7 +1944,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/296d69eb00a761d661bee0afa2b4003a20c19c46d460a84f50238c685b388cd9.png" src="_images/296d69eb00a761d661bee0afa2b4003a20c19c46d460a84f50238c685b388cd9.png" />
+<img alt="_images/f15df8707909d82e23f9c665406316b073e13d1a2b127954ba004446dfdd24fe.png" src="_images/f15df8707909d82e23f9c665406316b073e13d1a2b127954ba004446dfdd24fe.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1975,7 +1987,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eb81759024962b87f0afe6dc82db98f0bbe49bb9d5ee380ecfb9721f60961e49.png" src="_images/eb81759024962b87f0afe6dc82db98f0bbe49bb9d5ee380ecfb9721f60961e49.png" />
+<img alt="_images/afea448ff97203691a480da95aefd755a1c90225497a91f55bcd602124041f4a.png" src="_images/afea448ff97203691a480da95aefd755a1c90225497a91f55bcd602124041f4a.png" />
 </div>
 </div>
 <p>次に複数のデータを並べてプロットする場合を考えよう。方法は簡単で，異なるデータをリストとして指定すれば良い。</p>
@@ -1994,7 +2006,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fe944cc0ad7787c8eb2d1c9d5cab9a137200bac9cab2cd6e3b87847954559cac.png" src="_images/fe944cc0ad7787c8eb2d1c9d5cab9a137200bac9cab2cd6e3b87847954559cac.png" />
+<img alt="_images/c7f102685acbc277798a65e014629b8c94d9ec7292b19030414d30b71a124045.png" src="_images/c7f102685acbc277798a65e014629b8c94d9ec7292b19030414d30b71a124045.png" />
 </div>
 </div>
 <p>上のコードに引数<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>を加えると，柱を重ねて表示される。試してみよう。また<code class="docutils literal notranslate"><span class="pre">ax.hist()</span></code>を２回使うと，２つのヒストグラムを重ねて表示することができる。この場合，引数<code class="docutils literal notranslate"><span class="pre">alpha</span></code>の値を調整すると良いだろう。</p>
@@ -2020,14 +2032,14 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ae99b53173d81ab3bf9a734a677a6a63e034226ce84d1d9e9b6cd45cfe61a937.png" src="_images/ae99b53173d81ab3bf9a734a677a6a63e034226ce84d1d9e9b6cd45cfe61a937.png" />
+<img alt="_images/05fff847a07645830f33dc27e5beffff6b01c40ca09420544dcf094e04f3fb70.png" src="_images/05fff847a07645830f33dc27e5beffff6b01c40ca09420544dcf094e04f3fb70.png" />
 </div>
 </div>
 <p>濃い赤の部分が重なっている部分となる。</p>
 <p>ヒストグラムは縦軸に度数，横軸に階級を取ったグラフだが，関連する手法にカーネル密度推定と呼ばれるものがある。考え方は簡単で，上のようなヒストグラムのデータに基づき面積が１になるようにスムーズな分布を推定する手法である。残念ながら<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>にはカーネル密度推定プロットのメソッドは実装されていない。しかし<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使えば簡単に描くことが可能である。興味がある読者は<a class="reference internal" href="5_pandas_plot.html#sec-5-kernel"><span class="std std-ref">このセクション</span></a>を参考にしてはどうだろう。</p>
 </section>
 <section id="id18">
-<h3>縦線・横線<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<h3>縦線・横線<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
 <p>図に縦線や横線を追加したい場合がある。その場合は，他の図と同じように「軸」に追加していく事になる。次のような書き方となる。</p>
 <ul>
 <li><p>縦線の場合</p>
@@ -2056,7 +2068,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cfb833229f295b462bd35b8aa3444cd1d580d6bb20d1350af07ac281fe246c37.png" src="_images/cfb833229f295b462bd35b8aa3444cd1d580d6bb20d1350af07ac281fe246c37.png" />
+<img alt="_images/1c6419104d15bf2c0122fc238869cb4e0a8166693cee4c4e57d5bd9f3f2445ed.png" src="_images/1c6419104d15bf2c0122fc238869cb4e0a8166693cee4c4e57d5bd9f3f2445ed.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2100,12 +2112,12 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/94e84daff827548f9e139949ef801edd6c24361400badcbccbe35dd948d2ed7f.png" src="_images/94e84daff827548f9e139949ef801edd6c24361400badcbccbe35dd948d2ed7f.png" />
+<img alt="_images/7f9e745b756e266e93f97d9f78f9c1c0aa492257d28ebe2e03d171c9e65c2703.png" src="_images/7f9e745b756e266e93f97d9f78f9c1c0aa492257d28ebe2e03d171c9e65c2703.png" />
 </div>
 </div>
 </section>
 <section id="id19">
-<h3>棒グラフ<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
+<h3>棒グラフ<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
 <p>まず次のコードでデータを準備しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2199,7 +2211,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cea58c9b2cbcb71bf4c5bbba9847c22a8d7b877510362d78d7080aa676532b45.png" src="_images/cea58c9b2cbcb71bf4c5bbba9847c22a8d7b877510362d78d7080aa676532b45.png" />
+<img alt="_images/a233972d140dcc0de1448b99ba63e54465ccb3f0c2d6c6286a47df6140da7dd3.png" src="_images/a233972d140dcc0de1448b99ba63e54465ccb3f0c2d6c6286a47df6140da7dd3.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2241,7 +2253,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/93d86df8af63055bb4bd98b7bd422562802d5efba5968240a08250caf2d44f6c.png" src="_images/93d86df8af63055bb4bd98b7bd422562802d5efba5968240a08250caf2d44f6c.png" />
+<img alt="_images/e497ba11f9a47ef5060f6e678252f828dc2e77bd2c1d6136d56012b9368e8d07.png" src="_images/e497ba11f9a47ef5060f6e678252f828dc2e77bd2c1d6136d56012b9368e8d07.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ax.tick_params()</span></code>は縦軸と横軸の文字の大きさを調節している。</p>
@@ -2257,7 +2269,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1edafc2af126488242b41d70f60c00fe16bf2ccfe91dd55640215eb336fbb1ca.png" src="_images/1edafc2af126488242b41d70f60c00fe16bf2ccfe91dd55640215eb336fbb1ca.png" />
+<img alt="_images/a61035df33c98fac61f4d6774ad460c230f7a3304ccd968a6fa49c0cd98debf6.png" src="_images/a61035df33c98fac61f4d6774ad460c230f7a3304ccd968a6fa49c0cd98debf6.png" />
 </div>
 </div>
 <p>縦軸を確認するとわかるが，まず消費（<code class="docutils literal notranslate"><span class="pre">con</span></code>）の棒がプロットされ，それに投資（<code class="docutils literal notranslate"><span class="pre">ivn</span></code>）の棒が重ねてプロットされている。これは引数<code class="docutils literal notranslate"><span class="pre">base</span></code>（縦軸における棒の基点）がデフォルトの<code class="docutils literal notranslate"><span class="pre">0</span></code>に設定されており，消費も投資も<code class="docutils literal notranslate"><span class="pre">0</span></code>から始まっているためである。この点を踏まえ，棒を積み上げる場合を考えよう。その場合，投資の<code class="docutils literal notranslate"><span class="pre">base</span></code>は消費の高さになる必要がある。また政府支出を積み上げる場合は，積み上がった消費の高さが政府支出の基点になる必要がある。純輸出を積み上げる場合も同様に考える必要がある。この点に注意して棒を積み上げるには次のようなコードとなる。</p>
@@ -2286,7 +2298,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1bb229e91267d24661d3a313cea1dff221a28a3d7b561e53b7f80ccad3a594a1.png" src="_images/1bb229e91267d24661d3a313cea1dff221a28a3d7b561e53b7f80ccad3a594a1.png" />
+<img alt="_images/b876134312cf1d29f3b5c063d4c47633ce59675cd55a986d8fa9e6cad896a58e.png" src="_images/b876134312cf1d29f3b5c063d4c47633ce59675cd55a986d8fa9e6cad896a58e.png" />
 </div>
 </div>
 <p>(1)〜(2)で棒の基点となる値を<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>として計算し，それを(5)で使っている。(3)〜(4)行目は<code class="docutils literal notranslate"><span class="pre">for</span></code>ループに使うイタラブルを作成している。また(6)では列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>のライン・プロットを追加している。コードを見るとわかるように，少々複雑である。よりシンプルなコードで同じ図を描きたい場合は，<a class="reference internal" href="5_pandas_plot.html#sec-5-bar"><span class="std std-ref">ここで</span></a>説明している<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を参考にすると良いだろう。その方法では(1)〜(2)を自動計算するため引数<code class="docutils literal notranslate"><span class="pre">base</span></code>の値を考える必要がない。</p>
@@ -2320,7 +2332,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/55df6c1d1b1c4d0478b05ec914d055446507ef20c041f148494f4bb2f38ac214.png" src="_images/55df6c1d1b1c4d0478b05ec914d055446507ef20c041f148494f4bb2f38ac214.png" />
+<img alt="_images/719fe33aefeaf1de3e056cdce290647a71c87af967fe77c2caf2ea62a605f490.png" src="_images/719fe33aefeaf1de3e056cdce290647a71c87af967fe77c2caf2ea62a605f490.png" />
 </div>
 </div>
 <p>簡単にコードを説明する。</p>

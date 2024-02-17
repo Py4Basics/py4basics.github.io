@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>関数とメソッド &#8212; 経済学のためのPython入門</title>
   
@@ -29,34 +28,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -64,12 +61,16 @@
                 gtag('js', new Date());
                 gtag('config', 'G-R9KXY9G892');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-R9KXY9G892');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '1_Basics_III';</script>
@@ -165,7 +166,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">経済学のためのPython入門</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
 <ul class="current nav bd-sidenav">
@@ -465,7 +477,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>関数とメソッド<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>関数とメソッド<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
@@ -478,7 +490,7 @@ document.write(`
 </div>
 </div>
 <section id="id2">
-<h2>関数と引数<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>関数と引数<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>コードを書くうえで関数は非常に重要な役割を果たすのが関数である。主に２つのタイプに分けることができる。</p>
 <ul class="simple">
 <li><p>組み込み関数（最初から準備されている関数）</p></li>
@@ -496,7 +508,7 @@ document.write(`
 <p>まとめると，引数とは関数を実行する前に定義することになり，引数値を指定することにより関数を実行することができる。</p>
 </section>
 <section id="id3">
-<h2>組み込み関数<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>組み込み関数<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>組み込み関数（built-in functions）とは，ユーザーが使えるように事前に準備された関数である。以下が既出の組込み関数である。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">type()</span></code>：データ型を調べる</p></li>
@@ -509,7 +521,7 @@ document.write(`
 </ul>
 <p>以下では別の基本的な関数を６つ紹介する。</p>
 <section id="sum">
-<h3><code class="docutils literal notranslate"><span class="pre">sum()</span></code><a class="headerlink" href="#sum" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">sum()</span></code><a class="headerlink" href="#sum" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">sum()</span></code>は合計を計算する関数である。引数にリストやタプルを使う。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -527,7 +539,7 @@ document.write(`
 </div>
 </section>
 <section id="abs">
-<h3><code class="docutils literal notranslate"><span class="pre">abs()</span></code><a class="headerlink" href="#abs" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">abs()</span></code><a class="headerlink" href="#abs" title="Link to this heading">#</a></h3>
 <p>絶対値を返す。<code class="docutils literal notranslate"><span class="pre">abs</span></code>はabsolute value（絶対値）の略。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -555,7 +567,7 @@ document.write(`
 </div>
 </section>
 <section id="print">
-<h3><code class="docutils literal notranslate"><span class="pre">print()</span></code><a class="headerlink" href="#print" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">print()</span></code><a class="headerlink" href="#print" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">print()</span></code>は表示するための関数であり，引数に表示したい値を置く。Jupyter Notebookでは<code class="docutils literal notranslate"><span class="pre">print()</span></code>を使わなくとも出力が表示される。例えば，</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -709,7 +721,7 @@ A BA___
 </div>
 </section>
 <section id="range">
-<h3><code class="docutils literal notranslate"><span class="pre">range()</span></code><a class="headerlink" href="#range" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">range()</span></code><a class="headerlink" href="#range" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">range()</span></code>は等差数列のオブジェクトを用意する関数である。次の書き方となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">stop</span><span class="p">,</span><span class="n">step</span><span class="p">)</span>
 </pre></div>
@@ -798,7 +810,7 @@ A BA___
 </div>
 </section>
 <section id="len">
-<h3><code class="docutils literal notranslate"><span class="pre">len()</span></code><a class="headerlink" href="#len" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">len()</span></code><a class="headerlink" href="#len" title="Link to this heading">#</a></h3>
 <p>要素の個数などを返す関数であり，引数としてリストやタプル，今後紹介する他のデータ型にも使える。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -823,7 +835,7 @@ A BA___
 </div>
 </section>
 <section id="dir">
-<h3><code class="docutils literal notranslate"><span class="pre">dir()</span></code><a class="headerlink" href="#dir" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">dir()</span></code><a class="headerlink" href="#dir" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>では全てがオブジェクトと言われており，そのオブジェクトの「中身」を見るための関数が<code class="docutils literal notranslate"><span class="pre">dir()</span></code>（directoryの略）である。使い方は，以下でより詳しく説明する。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -853,7 +865,7 @@ A BA___
 </section>
 </section>
 <section id="id4">
-<h2>ヘルプ<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2>ヘルプ<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>組み込み関数<code class="docutils literal notranslate"><span class="pre">help()</span></code>を使うと関数やモジュールなど説明を表示させることができる。例えば，<code class="docutils literal notranslate"><span class="pre">print()</span></code>を例として挙げる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -888,9 +900,9 @@ print(...)
 </div>
 </section>
 <section id="id5">
-<h2>ユーザー定義の関数<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2>ユーザー定義の関数<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <section id="id6">
-<h3>基本<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>基本<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">def</span></code>を使って関数を定義し，引数が設定される（省略される場合もある）。ここでは基本となる引数のみを考えるが，引数の<strong>位置</strong>と<code class="docutils literal notranslate"><span class="pre">=</span></code>が重要な役割を果たすことになる。例を使いながら説明しよう。最初の例は数字の2乗を計算する関数である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -967,7 +979,7 @@ print(...)
 </div>
 </section>
 <section id="id7">
-<h3>引数の位置が重要<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>引数の位置が重要<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>引数が複数ある場合にその位置が重要になってくる。次の例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1003,7 +1015,7 @@ print(...)
 </div>
 </section>
 <section id="id8">
-<h3>実行する際に<code class="docutils literal notranslate"><span class="pre">=</span></code>を使う<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>実行する際に<code class="docutils literal notranslate"><span class="pre">=</span></code>を使う<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>関数を実行する際、引数に<code class="docutils literal notranslate"><span class="pre">=</span></code>を使って値を指定することも可能である。この場合，引数の順番を変えることが可能となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1024,7 +1036,7 @@ print(...)
 </ul>
 </section>
 <section id="id9">
-<h3>関数を定義する際に<code class="docutils literal notranslate"><span class="pre">=</span></code>を使う<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>関数を定義する際に<code class="docutils literal notranslate"><span class="pre">=</span></code>を使う<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>関数を定義する際に<code class="docutils literal notranslate"><span class="pre">=</span></code>を使って引数のデフォルトの値を設定することができる。即ち，引数を入力すると入力された数値を使うが，引数を入力しない場合は引数に予め設定した値（デフォルトの値）が使われて評価される。次の例では<code class="docutils literal notranslate"><span class="pre">c</span></code>のデフォルトの値が<code class="docutils literal notranslate"><span class="pre">10</span></code>に設定されている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1057,7 +1069,7 @@ print(...)
 </div>
 </section>
 <section id="sec-3-unpacking">
-<span id="id10"></span><h3>戻り値が複数の場合<a class="headerlink" href="#sec-3-unpacking" title="Permalink to this heading">#</a></h3>
+<span id="id10"></span><h3>戻り値が複数の場合<a class="headerlink" href="#sec-3-unpacking" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -1173,7 +1185,7 @@ print(...)
 </div>
 </section>
 <section id="id11">
-<h3>ドキュメンテーション文字列<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>ドキュメンテーション文字列<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p>文字列はシングルクォーテーション<code class="docutils literal notranslate"><span class="pre">'</span></code>もしくはダブルクォーテーション<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>を使い作成するが，それと別にドキュメンテーション文字列（<code class="docutils literal notranslate"><span class="pre">docstring</span></code>）というものがある。こちらも<code class="docutils literal notranslate"><span class="pre">'</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>を使い，複数行にまたがって文字列を作成することができる。次の例は，<strong>the Zen of Python</strong>（<code class="docutils literal notranslate"><span class="pre">Python</span></code>コードを書く上での19の原則）と呼ばれる文章の一部である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1243,7 +1255,7 @@ func_0(x)
 </div>
 </section>
 <section id="lambda">
-<h3><code class="docutils literal notranslate"><span class="pre">lambda</span></code>関数<a class="headerlink" href="#lambda" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">lambda</span></code>関数<a class="headerlink" href="#lambda" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">def</span></code>を使い複雑な関数を定義することができるが，単純な関数の場合，より簡単な方法がある。それが<code class="docutils literal notranslate"><span class="pre">lambda</span></code>関数である。例として，<span class="math notranslate nohighlight">\(x^2\)</span>を計算する関数を考えよう。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
@@ -1275,9 +1287,9 @@ func_0(x)
 </div>
 </section>
 <section id="id12">
-<h3>経済学を考える<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>経済学を考える<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <section id="id13">
-<h4>将来価値<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
+<h4>将来価値<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">t</span></code>：時間（年; 0,1,2,…）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>：名目利子率（例えば，0.02）</p></li>
@@ -1313,7 +1325,7 @@ func_0(x)
 </div>
 </section>
 <section id="id14">
-<h4>現在価値<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
+<h4>現在価値<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">t</span></code>年後に<code class="docutils literal notranslate"><span class="pre">x</span></code>万円をもらえるとしよう。<code class="docutils literal notranslate"><span class="pre">x</span></code>万円の現在価値を計算する関数を考える。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1338,7 +1350,7 @@ func_0(x)
 </div>
 </section>
 <section id="id15">
-<h4>複利計算<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
+<h4>複利計算<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">y0</span></code>：元金</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">t</span></code>：投資期間</p></li>
@@ -1391,9 +1403,9 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 </section>
 </section>
 <section id="object">
-<span id="id16"></span><h2>オブジェクトと属性<a class="headerlink" href="#object" title="Permalink to this heading">#</a></h2>
+<span id="id16"></span><h2>オブジェクトと属性<a class="headerlink" href="#object" title="Link to this heading">#</a></h2>
 <section id="id17">
-<h3>属性について<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>属性について<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>を習うと「オブジェクト」という単語が必ず出てくる。今の内にイメージをつかむために自転車をオブジェクトの例として考えてみよう。通常の自転車には車輪が２つあり、サドルが１つあり、左右にペダルが２つある。これらの数字が自転車に関する<strong>データ</strong>である。またペダルを踏むことにより前に動き、ハンドルを右にきると右方向に進むことになる。即ち、あることを実行すると、ある結果が返されるのである。これは数学の<strong>関数</strong>と同じように理解できる。<span class="math notranslate nohighlight">\(y=x^2\)</span>の場合、<span class="math notranslate nohighlight">\(x\)</span>が<code class="docutils literal notranslate"><span class="pre">2</span></code>であれば<span class="math notranslate nohighlight">\(y\)</span>の値として<code class="docutils literal notranslate"><span class="pre">4</span></code>が返される。このように自転車はデータと関数が備わっているオブジェクトとして考えることができる。また、車輪の数やペダルを踏むことは自転車特有のデータと関数であり、他のオブジェクト（例えば、冷蔵庫）にはない。即ち、世の中の「オブジェクト」にはそれぞれ異なるデータと関数が存在していると考えることができる。</p>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code>の世界でもすべてをこれと同じように考える。コードセルに書いた<code class="docutils literal notranslate"><span class="pre">10</span></code>を実行すると，その<code class="docutils literal notranslate"><span class="pre">10</span></code>がオブジェクトであり，データと関数が備わることになる。それらを<strong>属性</strong>（attributes）と呼ぶ。<code class="docutils literal notranslate"><span class="pre">10</span></code>は単なる数字に見えるが、実は様々な属性から構成されるオブジェクトなのである。上の例の自転車のように、属性は次の２つに分類される。<code class="docutils literal notranslate"><span class="pre">10</span></code>を例にとると、</p>
 <ol class="arabic simple">
@@ -1586,7 +1598,7 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 </div>
 </section>
 <section id="id18">
-<h3>関数とメソッドの違い<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<h3>関数とメソッドの違い<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
 <p>本章の最初で関数について説明し，ここではメソッドについて解説した。その説明を読んでも，関数とメソッドの違いが不明瞭だと感じる読者もいるだろう。ここでは，その違いを再度考えてみる。関数とメソッドの役割は基本的には同じだが，で異なる点を図<a class="reference internal" href="#fig-3-method"><span class="std std-numref">Fig. 1</span></a>にまとめた。</p>
 <p>まず，コードを実行するとメモリー上にデータが保存され，それをオブジェクトと呼ぶことはもう分かっているだろう。例えば，<code class="docutils literal notranslate"><span class="pre">x=[1,2,3]</span></code>を実行すると，メモリー上に<code class="docutils literal notranslate"><span class="pre">[1,2,3]</span></code>が保存され，その参照記号が<code class="docutils literal notranslate"><span class="pre">x</span></code>となる。この場合，<code class="docutils literal notranslate"><span class="pre">[1,2,3]</span></code>がオブジェクトである。同様に，<code class="docutils literal notranslate"><span class="pre">y=10</span></code>を実行すると，<code class="docutils literal notranslate"><span class="pre">10</span></code>というオブジェクトが保存される（<code class="docutils literal notranslate"><span class="pre">y</span></code>は参照記号）。</p>
 <p>関数の特徴は，様々なオブジェクトに適用できることだ。<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数は，異なるオブジェクトである<code class="docutils literal notranslate"><span class="pre">x</span></code>にも<code class="docutils literal notranslate"><span class="pre">y</span></code>にも使うことができる。そういう意味では，関数を適用できる用途は広い。図<a class="reference internal" href="#fig-3-method"><span class="std std-numref">Fig. 1</span></a>にあるように，イメージ的には，様々な用途に使える懐中電灯のようなものだろうか。</p>
@@ -1594,15 +1606,15 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <figure class="align-default" id="fig-3-method">
 <a class="reference internal image-reference" href="_images/method.png"><img alt="_images/method.png" src="_images/method.png" style="width: 511.7px; height: 397.25px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">関数とメソッドの違い</span><a class="headerlink" href="#fig-3-method" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">関数とメソッドの違い</span><a class="headerlink" href="#fig-3-method" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="sec-3-scope">
-<span id="id19"></span><h2>スコープ<a class="headerlink" href="#sec-3-scope" title="Permalink to this heading">#</a></h2>
+<span id="id19"></span><h2>スコープ<a class="headerlink" href="#sec-3-scope" title="Link to this heading">#</a></h2>
 <section id="id20">
-<h3>説明<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
+<h3>説明<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
 <p>スコープとは、変数が所属し直接アクセスできるコードの中の「領域」を示す。類似する概念に名前空間（Namespace）もあるが、スコープの情報を記す「表」のことであり、スコープ（Scope）と同義と理解すれば良い。</p>
 <p>ここでは基本的に以下のように理解すれば良いであろう。</p>
 <ul class="simple">
@@ -1691,12 +1703,12 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <figure class="align-default" id="fig-3-scope">
 <a class="reference internal image-reference" href="_images/scope.png"><img alt="_images/scope.png" src="_images/scope.png" style="width: 576.0999999999999px; height: 430.5px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">グローバル・スコープとローカル・スコープの関係</span><a class="headerlink" href="#fig-3-scope" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">グローバル・スコープとローカル・スコープの関係</span><a class="headerlink" href="#fig-3-scope" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="id21">
-<h3>教訓１<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
+<h3>教訓１<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>関数内で使う変数は、可能な限り関数内で定義する方が意図しない結果につながるリスクを軽減できる。</p></li>
@@ -1781,7 +1793,7 @@ warnings	 x	 x_list	 y
 <p>このリストにある<code class="docutils literal notranslate"><span class="pre">s</span></code>はグローバル・スコープの<code class="docutils literal notranslate"><span class="pre">s</span></code>である。またローカル・スコープにある<code class="docutils literal notranslate"><span class="pre">s_local</span></code>はこのリストには含まれていない。</p>
 </section>
 <section id="id22">
-<h3>教訓２<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h3>
+<h3>教訓２<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループの１行目に使う変数は再割り当てされても構わない変数を使おう。</p>
 </div></blockquote>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>SciPy.optimize：解の求め方と最適化問題 &#8212; 経済学のためのPython入門</title>
   
@@ -29,34 +28,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -64,12 +61,16 @@
                 gtag('js', new Date());
                 gtag('config', 'G-R9KXY9G892');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-R9KXY9G892');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '7_SciPy_optimize';</script>
@@ -165,7 +166,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">経済学のためのPython入門</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
 <ul class="nav bd-sidenav">
@@ -472,7 +484,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="scipy-optimize">
-<h1><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題<a class="headerlink" href="#scipy-optimize" title="Permalink to this heading">#</a></h1>
+<h1><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題<a class="headerlink" href="#scipy-optimize" title="Link to this heading">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
@@ -489,16 +501,16 @@ document.write(`
 </div>
 </div>
 <section id="id1">
-<h2>はじめに<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>はじめに<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>線形の方程式の解を求めることは比較的簡単である。１変数の場合，式を変形すれば解を簡単に求めることができる。変数が複数ある場合でも，<a class="reference internal" href="2_NumPy.html#sec-2-simultaneouseq"><span class="std std-ref">「連立一次方程式の解」の節</span></a>で説明したように，<code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code>を使えば簡単に解を求めることができる。例えば，<a class="reference external" href="https://py4macro.github.io/7_DifferenceEq.html">差分方程式と経済分析</a>で扱う45度線モデルと蜘蛛の巣モデルは線形であるため、長期的な均衡の値を簡単に計算することができる。またソロー・モデルも線形ではないが、定常状態の資本ストック（<span class="math notranslate nohighlight">\(k_*\)</span>）について解くことができるので、長期的な値を計算することが可能である。しかし非線形モデルによっては、長期的均衡の値を簡単に求めることができない場合もあり、その場合に使う手法をここで説明する。</p>
 <p>コードを書いて非線形の方程式の解を求めるには色々な方法があるり，ここではその代表的な方法の考え方についてまず説明する。その後<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>（「サイパイ」と読み，Scientific Pythonの略）というパッケージにある<code class="docutils literal notranslate"><span class="pre">optimize</span></code>というモジュールを紹介する。<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>は<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の大幅な拡張版と理解して良いだろう。<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>を読み込むと<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の関数などを利用できるようになる。しかし<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>は大きなパッケージであり，全てを読み込む必要もない。従って，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>を読み込んで<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>のサブパッケージや関数を読み込むということで十分であろう。そして<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>のモジュール<code class="docutils literal notranslate"><span class="pre">optimize</span></code>に非線形の方程式の解を簡単に求めることができる関数が含まれている。もちろんこれらの関数は線形の方程式の解を求める為にも使える。また<code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>には最適化問題のための関数も用意されており，<code class="docutils literal notranslate"><span class="pre">Python</span></code>で経済学を学ぶ為には必須となるツールと言えるだろう。消費者の効用最大化問題やソロー・モデルの資本の黄金律水準などに応用して使い方を説明する。</p>
 </section>
 <section id="id2">
-<h2>解の求め方と考え方<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>解の求め方と考え方<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="bisection">
-<h3>Bisection法<a class="headerlink" href="#bisection" title="Permalink to this heading">#</a></h3>
+<h3>Bisection法<a class="headerlink" href="#bisection" title="Link to this heading">#</a></h3>
 <section id="id3">
-<h4>説明<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<h4>説明<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <p>Bisection法の考え方について説明するために，次の関数を考えよう。</p>
 <div class="math notranslate nohighlight">
 \[f(x)=x^3+4x^2-3\]</div>
@@ -553,7 +565,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fc0b49591e6f3aedff740bcf8417810b0513ef18ee5259348552baf31123bfc2.png" src="_images/fc0b49591e6f3aedff740bcf8417810b0513ef18ee5259348552baf31123bfc2.png" />
+<img alt="_images/300f96cb47cf1ddeb0b376245451f9b33d51d1508ae0f8ff448ecdc67fccf503.png" src="_images/300f96cb47cf1ddeb0b376245451f9b33d51d1508ae0f8ff448ecdc67fccf503.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -608,7 +620,7 @@ document.write(`
 </ul>
 </section>
 <section id="id4">
-<h4>手計算<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<h4>手計算<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
 <p>実際にコードを書き，Bisection法の考え理解しよう。次の関数を定義する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -748,10 +760,10 @@ document.write(`
 </div>
 </section>
 <section id="scipy">
-<h4><code class="docutils literal notranslate"><span class="pre">Scipy</span></code>の関数<a class="headerlink" href="#scipy" title="Permalink to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">Scipy</span></code>の関数<a class="headerlink" href="#scipy" title="Link to this heading">#</a></h4>
 <p>上で考えた<code class="docutils literal notranslate"><span class="pre">my_bisect()</span></code>関数は，解法の考えを理解するために使ったが，実際にBisection法を使う場合は，<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>パッケージの<code class="docutils literal notranslate"><span class="pre">optimize</span></code>モジュールに用意されている<code class="docutils literal notranslate"><span class="pre">bisect()</span></code>関数を使おう。基本的な考えは同じであり，<code class="docutils literal notranslate"><span class="pre">my_bisect()</span></code>より格段に洗練された関数と考えれば良いだろう。またBisection法だけではなく他にも様々な方法があり，その一つであるBrent法に基づく関数もここで紹介することにする。</p>
 <section id="bisect">
-<h5><code class="docutils literal notranslate"><span class="pre">bisect</span></code>関数<a class="headerlink" href="#bisect" title="Permalink to this heading">#</a></h5>
+<h5><code class="docutils literal notranslate"><span class="pre">bisect</span></code>関数<a class="headerlink" href="#bisect" title="Link to this heading">#</a></h5>
 <p>使い方は、上で定義した<code class="docutils literal notranslate"><span class="pre">my_bisect</span></code>関数と基本的に同じであり、近似値が十分に近い数値になるように<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ回数の引数<code class="docutils literal notranslate"><span class="pre">N</span></code>は自動で決定される。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
@@ -787,7 +799,7 @@ document.write(`
 </div>
 </section>
 <section id="brentq">
-<h5><code class="docutils literal notranslate"><span class="pre">brentq</span></code>関数<a class="headerlink" href="#brentq" title="Permalink to this heading">#</a></h5>
+<h5><code class="docutils literal notranslate"><span class="pre">brentq</span></code>関数<a class="headerlink" href="#brentq" title="Link to this heading">#</a></h5>
 <p><code class="docutils literal notranslate"><span class="pre">brentq</span></code>関数はBrent法に基づいており、<code class="docutils literal notranslate"><span class="pre">bisect</span></code>関数を拡張した手法（ここでは説明を割愛）である。より安定的により速く解への収束が可能となっている。基本的に使い方は<code class="docutils literal notranslate"><span class="pre">bisect</span></code>と同じである。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brentq</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
@@ -826,9 +838,9 @@ document.write(`
 </section>
 </section>
 <section id="newton">
-<h3>Newton法<a class="headerlink" href="#newton" title="Permalink to this heading">#</a></h3>
+<h3>Newton法<a class="headerlink" href="#newton" title="Link to this heading">#</a></h3>
 <section id="id5">
-<h4>説明<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<h4>説明<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <p>ここではもう一つの解法であるNewton法について説明する。図にある関数<code class="docutils literal notranslate"><span class="pre">f(x)</span></code>を考えよう。<span class="math notranslate nohighlight">\(x_1\)</span>での傾きは<span class="math notranslate nohighlight">\(f^{\prime}(x_1)\)</span>であり、次の式が成り立つことが確認できる。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -839,12 +851,12 @@ x_1 = x_0 - \dfrac{f(x_0)}{f^{\prime}(x_0)}
 <figure class="align-default" id="fig-scipy-newton">
 <a class="reference internal image-reference" href="_images/newton.jpeg"><img alt="_images/newton.jpeg" src="_images/newton.jpeg" style="width: 406.2px; height: 300.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Newton法</span><a class="headerlink" href="#fig-scipy-newton" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Newton法</span><a class="headerlink" href="#fig-scipy-newton" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>即ち、<span class="math notranslate nohighlight">\(x_0\)</span>が与えられ<span class="math notranslate nohighlight">\(f^{\prime}(x_0)\)</span>が分かれば、<span class="math notranslate nohighlight">\(x_1\)</span>を求めることができる。更に、<span class="math notranslate nohighlight">\(x_1\)</span>が与えられ、<span class="math notranslate nohighlight">\(f^{\prime}(x_1)\)</span>が分かれば、<span class="math notranslate nohighlight">\(x_2\)</span>を求めることができる。一般的には次の差分方程式が成り立つことになる。</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-newton">
-<span class="eqno">(4)<a class="headerlink" href="#equation-eq-scipy-newton" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-scipy-newton" title="Link to this equation">#</a></span>\[
 x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 \]</div>
 <p>この式に従って<span class="math notranslate nohighlight">\(x_{t+1}\)</span>の計算を続けると、<span class="math notranslate nohighlight">\(x_{t+1}\)</span>は<span class="math notranslate nohighlight">\(f(x)=0\)</span>を満たす<span class="math notranslate nohighlight">\(x\)</span>に漸近的に近づいていき、根に十分に近い値を計算することが可能となる。</p>
@@ -856,7 +868,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 </ul>
 </section>
 <section id="id6">
-<h4>手計算<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<h4>手計算<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
 <p>Newton法の基本的な考えを説明するために式<a class="reference internal" href="#fig-scipy-newton"><span class="std std-ref">Newton法</span></a>を捉える関数を定義しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -964,7 +976,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 </div>
 </section>
 <section id="id7">
-<h4><code class="docutils literal notranslate"><span class="pre">Scipy</span></code>の関数<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">Scipy</span></code>の関数<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Scipy</span></code>パッケージの<code class="docutils literal notranslate"><span class="pre">optimize</span></code>モジュールには<code class="docutils literal notranslate"><span class="pre">newton</span></code>法の関数が用意されており、説明で使った手計算の<code class="docutils literal notranslate"><span class="pre">my_newton()</span></code>関数と比べると格段に洗練れている。使い方は簡単で、引数に関数と<code class="docutils literal notranslate"><span class="pre">x</span></code>の初期値を指定するだけであり、近似の誤差とループの回数は自動的に設定される。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">)</span>
 </pre></div>
@@ -1026,9 +1038,9 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 </section>
 </section>
 <section id="id8">
-<h3>マクロ経済学への応用<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>マクロ経済学への応用<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <section id="id9">
-<h4>45度線モデル<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<h4>45度線モデル<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
 <p>ケインズの45度線モデルでは，所得<span class="math notranslate nohighlight">\(Y\)</span>以外の変数は外生変数として所得が決定されるマクロ経済学の基本的なモデルである。次の記号・仮定を使う。</p>
 <ul class="simple">
 <li><p>所得：<span class="math notranslate nohighlight">\(Y\)</span></p></li>
@@ -1086,7 +1098,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/93d5f903f5f64dee7da03a691915ea76987032f0b250289a683413621361cc73.png" src="_images/93d5f903f5f64dee7da03a691915ea76987032f0b250289a683413621361cc73.png" />
+<img alt="_images/dcffc8c5c2e6893101a352f4b4050fd4800a3da36e7c25a1b56c3a59883a79ed.png" src="_images/dcffc8c5c2e6893101a352f4b4050fd4800a3da36e7c25a1b56c3a59883a79ed.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">h0(y)</span></code>関数は右上りとなっている。傾きを直感的に説明すると次のようになる。<code class="docutils literal notranslate"><span class="pre">Y</span></code>が増加すると，当たり前だが所得<code class="docutils literal notranslate"><span class="pre">Y</span></code>は線形的に増加する。一方で，計画支出の一部である消費も増加するが，<code class="docutils literal notranslate"><span class="pre">a</span></code>は0.5に設定されているため，増加分は逓減している。したがって，所得と計画支出の差は上昇することになる。</p>
@@ -1132,7 +1144,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 </div>
 </section>
 <section id="is">
-<h4>IS曲線の導出<a class="headerlink" href="#is" title="Permalink to this heading">#</a></h4>
+<h4>IS曲線の導出<a class="headerlink" href="#is" title="Link to this heading">#</a></h4>
 <p>ここでも45度線モデルを使い財市場の均衡で決定される所得<span class="math notranslate nohighlight">\(Y\)</span>を考えるが，投資は利子率<span class="math notranslate nohighlight">\(r\)</span>の非線形の減少関数と仮定する。この仮定により，利子率<span class="math notranslate nohighlight">\(r\)</span>を所与とした所得の均衡を考えることが可能となり，非線形の<span class="math notranslate nohighlight">\(IS\)</span>曲線をプロットすることができる。</p>
 <p>45度線モデルの投資<span class="math notranslate nohighlight">\(I\)</span>を次のように変更する。</p>
 <div class="math notranslate nohighlight">
@@ -1203,12 +1215,12 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9b394e239f316a500efa661a83e8cf271d580f6e63acd9d71ec94ba7abdb0196.png" src="_images/9b394e239f316a500efa661a83e8cf271d580f6e63acd9d71ec94ba7abdb0196.png" />
+<img alt="_images/8730cc4b4ae33bdf44c73ff568418f8a36a8f8d3df5496e4f1e5985c7bc87bd1.png" src="_images/8730cc4b4ae33bdf44c73ff568418f8a36a8f8d3df5496e4f1e5985c7bc87bd1.png" />
 </div>
 </div>
 </section>
 <section id="id10">
-<h4>ソロー・モデル<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<h4>ソロー・モデル<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
 <p>モデルの簡単な説明は<a class="reference external" href="https://py4macro.github.io/8_Solow.html">「ソロー・モデル」の章</a>を参照してほしい。</p>
 <ul>
 <li><p>産出量：<span class="math notranslate nohighlight">\(y_t\)</span></p></li>
@@ -1244,7 +1256,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 <p><span class="math notranslate nohighlight">\(k\)</span>の定常状態<span class="math notranslate nohighlight">\(k_*\)</span>は次式で定義される。</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-kss">
-<span class="eqno">(5)<a class="headerlink" href="#equation-eq-scipy-kss" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-scipy-kss" title="Link to this equation">#</a></span>\[
 0 = sAk_*^a + (1-d)k_* - k_{*}
 \]</div>
 <p>この方程式の解を求めるが，関数<code class="docutils literal notranslate"><span class="pre">kss()</span></code>を定義しよう。</p>
@@ -1286,7 +1298,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f7e0e86b54b60ce072799dd33f25deab0e24b82dedd1314e4b8929eff76bafc3.png" src="_images/f7e0e86b54b60ce072799dd33f25deab0e24b82dedd1314e4b8929eff76bafc3.png" />
+<img alt="_images/506588ce49746c646465d67996a47a9e69fbddc903d92348087082e8db4a36dc.png" src="_images/506588ce49746c646465d67996a47a9e69fbddc903d92348087082e8db4a36dc.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>を使い定常状態<span class="math notranslate nohighlight">\(k_*\)</span>を計算してみよう。</p>
@@ -1331,7 +1343,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 </section>
 <section id="id11">
-<h4>投資<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<h4>投資<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
 <p>企業の投資問題を考える。初期投資<code class="docutils literal notranslate"><span class="pre">fc</span></code>を投入すると<span class="math notranslate nohighlight">\(T\)</span>期間<span class="math notranslate nohighlight">\(\pi\)</span>の利潤を得るとする。実質利子率は<span class="math notranslate nohighlight">\(r\)</span>とすると<span class="math notranslate nohighlight">\(T\)</span>期間の利潤の現在価値の合計は次のようになる。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1382,9 +1394,9 @@ I = \dfrac{j}{r^{b}}
 </section>
 </section>
 <section id="id12">
-<h2>最適化問題：１変数の場合<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<h2>最適化問題：１変数の場合<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
 <section id="id13">
-<h3>説明<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>説明<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>最適化問題は経済学の根幹をなすが、ここでは<code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>の<code class="docutils literal notranslate"><span class="pre">minimize_scalar</span></code>関数の使い方を簡単に説明する。様々な引数が用意されているが、基本的には次のようなコードの書き方となる。</p>
 <ol class="arabic">
 <li><p>デフォルトではBrent法が使われる。</p>
@@ -1414,7 +1426,7 @@ I = \dfrac{j}{r^{b}}
 </ol>
 </section>
 <section id="id14">
-<h3>例１<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<h3>例１<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">f_ex1</span></code>関数を例として考えよう。最小化される<code class="docutils literal notranslate"><span class="pre">x</span></code>を計算する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1487,7 +1499,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 </section>
 <section id="id15">
-<h3>例２<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<h3>例２<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <p>次に最小値が複数ある場合を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1509,7 +1521,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/41d522cd44cc1d4413116e4c8d0bcce913c9812c0e025f442a992ea44cb14960.png" src="_images/41d522cd44cc1d4413116e4c8d0bcce913c9812c0e025f442a992ea44cb14960.png" />
+<img alt="_images/12e11f6b91a37e4bc52e6186fa2496f778a1610511eb28d84a94d3c5ef812a11.png" src="_images/12e11f6b91a37e4bc52e6186fa2496f778a1610511eb28d84a94d3c5ef812a11.png" />
 </div>
 </div>
 <p>まず<code class="docutils literal notranslate"><span class="pre">method</span></code>のデフォルトである<code class="docutils literal notranslate"><span class="pre">brent</span></code>法を使ってみよう。解が２つあるため、次のコードでは<code class="docutils literal notranslate"><span class="pre">Python</span></code>が選んだ解しか求めることができない。</p>
@@ -1622,7 +1634,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 </section>
 <section id="id16">
-<h3>ソロー・モデル：黄金律<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<h3>ソロー・モデル：黄金律<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
 <p>資本の黄金律水準とは、長期均衡において一人当たり消費を最大化する資本ストックであり、貯蓄率<span class="math notranslate nohighlight">\(s\)</span>に依存している。それを示すために、まず定常状態の資本ストック<span class="math notranslate nohighlight">\(k_*\)</span>をパラメータで示すが，次式は式<a class="reference internal" href="#equation-eq-scipy-kss">(5)</a>から導出できる。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1669,7 +1681,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/23c923c0c142f2f08e17056bddd6101a058375bc4d6931bf1237121201ca2ea5.png" src="_images/23c923c0c142f2f08e17056bddd6101a058375bc4d6931bf1237121201ca2ea5.png" />
+<img alt="_images/a6a3f0c76d974aeda1913c2827bd36d3470595f06f231eabe35ed5fba66eb117.png" src="_images/a6a3f0c76d974aeda1913c2827bd36d3470595f06f231eabe35ed5fba66eb117.png" />
 </div>
 </div>
 <p>次に一人当たり消費を最大化する貯蓄率を求めるために関数を定義する。</p>
@@ -1724,7 +1736,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </div>
 </section>
 <section id="id17">
-<h3>労働供給問題<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>労働供給問題<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <p>ミクロ経済学で学ぶ消費者の労働供給問題を考えよう。消費者は消費財と余暇の２財を消費し，効用を最大化する消費財と余暇を選択すると考える。</p>
 <p>変数の定義：</p>
 <ul>
@@ -1741,7 +1753,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </li>
 <li><p>制約式：</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-pcwl">
-<span class="eqno">(6)<a class="headerlink" href="#equation-eq-scipy-pcwl" title="Permalink to this equation">#</a></span>\[pc=wl\]</div>
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-scipy-pcwl" title="Link to this equation">#</a></span>\[pc=wl\]</div>
 </li>
 </ul>
 <p>制約式のもとで消費者は<span class="math notranslate nohighlight">\(c\)</span>と<span class="math notranslate nohighlight">\(l\)</span>を選択し効用を最大化する。</p>
@@ -1806,7 +1818,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </div>
 <p>予算制約式から消費量は</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-c">
-<span class="eqno">(7)<a class="headerlink" href="#equation-eq-scipy-c" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq-scipy-c" title="Link to this equation">#</a></span>\[
 c=\frac{wl}{p}
 \]</div>
 <p>となるので，</p>
@@ -1836,7 +1848,7 @@ c=\frac{wl}{p}
 </div>
 <p>結果を図示するために、効用関数を<span class="math notranslate nohighlight">\(c\)</span>で解くと次式となる。</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-cc">
-<span class="eqno">(8)<a class="headerlink" href="#equation-eq-scipy-cc" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq-scipy-cc" title="Link to this equation">#</a></span>\[
 c=
 \left(
     \frac{e^u}{(1-l)^{1-a}}
@@ -1904,7 +1916,7 @@ c=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c898d87e57b2be7febe241174f8cfd1d1007b4a9b2c459919157bea9ad8b0c75.png" src="_images/c898d87e57b2be7febe241174f8cfd1d1007b4a9b2c459919157bea9ad8b0c75.png" />
+<img alt="_images/b9ac6ab6d904bdda61b77be3764355708aec11688e527005d089f6ae1fb153db.png" src="_images/b9ac6ab6d904bdda61b77be3764355708aec11688e527005d089f6ae1fb153db.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -1918,9 +1930,9 @@ c=
 </section>
 </section>
 <section id="id18">
-<h2>最適化問題：２変数の場合<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
+<h2>最適化問題：２変数の場合<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
 <section id="id19">
-<h3>説明<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
+<h3>説明<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
 <p>２変数の場合は<code class="docutils literal notranslate"><span class="pre">minimize</span></code>関数を使う。様々な引数が用意されているが、基本的には次のようなコードの書き方となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">minimize</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span> <span class="n">constraints</span><span class="p">)</span>
 </pre></div>
@@ -1956,7 +1968,7 @@ c=
 </ol>
 </section>
 <section id="id20">
-<h3>例１<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
+<h3>例１<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
 <p>次の最小化問題を考えよう。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2090,7 +2102,7 @@ c=
 </div>
 </section>
 <section id="id21">
-<h3>例２<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
+<h3>例２<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
 <p>次の最大化問題を考えよう。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2151,7 +2163,7 @@ c=
 </div>
 </section>
 <section id="id22">
-<h3>例３<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h3>
+<h3>例３<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
 <p>ここでは制約付き最大化問題を考える。次の制約のもとで例２の<code class="docutils literal notranslate"><span class="pre">f_ex4</span></code>を最大化するとしよう。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2250,7 +2262,7 @@ y+z-1=0
 </div>
 </section>
 <section id="id23">
-<h3>例４<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h3>
+<h3>例４<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
 <p>制約が不等式の場合を簡単に説明する。例３の制約式を</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2311,7 +2323,7 @@ y+z\leq 1
 <p>当たり前だが例３の解と同じになっている。</p>
 </section>
 <section id="id24">
-<h3>労働供給問題<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h3>
+<h3>労働供給問題<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
 <p>労働供給問題を再考する。まず効用関数を設定し直そう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2402,7 +2414,7 @@ wl-pc=0
 <p><code class="docutils literal notranslate"><span class="pre">minimize_scalar()</span></code>で解いた値と同じであることが確認できる。</p>
 </section>
 <section id="id25">
-<h3>練習問題<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h3>
+<h3>練習問題<a class="headerlink" href="#id25" title="Link to this heading">#</a></h3>
 <p>予算制約式が不等号の場合の労働供給問題を解きなさい。</p>
 </section>
 </section>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Pandas：データ分析 &#8212; 経済学のためのPython入門</title>
   
@@ -29,34 +28,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -64,12 +61,16 @@
                 gtag('js', new Date());
                 gtag('config', 'G-R9KXY9G892');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-R9KXY9G892');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '3_Pandas';</script>
@@ -165,7 +166,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">経済学のためのPython入門</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
 <ul class="nav bd-sidenav">
@@ -500,7 +512,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas">
-<span id="chap-pandas"></span><h1><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
+<span id="chap-pandas"></span><h1><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
@@ -517,7 +529,7 @@ document.write(`
 </div>
 </div>
 <section id="id1">
-<h2>説明<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>説明<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>はデータを扱う上で欠かせないパッケージであり，エクセルをイメージすれば良いだろう。<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>にはスプレッド・シートに対応する<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>（データ・フレーム）と<code class="docutils literal notranslate"><span class="pre">Series</span></code>（シリーズ）呼ばれるオブジェクトがあり，それらを駆使してデータ分析をおこなう。</p>
 <p>データ・フレームは下の図のようになっている。<code class="docutils literal notranslate"><span class="pre">X</span></code>，<code class="docutils literal notranslate"><span class="pre">Y</span></code>，<code class="docutils literal notranslate"><span class="pre">Z</span></code>は「列ラベル」（アルファベットや記号など）であり、一番左の<code class="docutils literal notranslate"><span class="pre">1</span></code>，<code class="docutils literal notranslate"><span class="pre">2</span></code>，<code class="docutils literal notranslate"><span class="pre">3</span></code>は「行インデックス」（数字）である（「行ラベル」（アルファベットや記号など）を設定することも可能）。その他の数字がデータとなっている。</p>
 <table class="table">
@@ -555,7 +567,7 @@ document.write(`
 </div>
 </section>
 <section id="sec-3-data">
-<span id="id2"></span><h2>データの読み込みとデータのチェック<a class="headerlink" href="#sec-3-data" title="Permalink to this heading">#</a></h2>
+<span id="id2"></span><h2>データの読み込みとデータのチェック<a class="headerlink" href="#sec-3-data" title="Link to this heading">#</a></h2>
 <p>様々なデータを読み込むことが可能だが，ここでは<code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>関数を使ってインターネット上の<code class="docutils literal notranslate"><span class="pre">.csv</span></code>ファイルを読み込む。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1319,7 +1331,7 @@ memory usage: 528.0+ bytes
 </div>
 </section>
 <section id="dataframe">
-<h2><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の構成要素<a class="headerlink" href="#dataframe" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の構成要素<a class="headerlink" href="#dataframe" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>には様々な属性があるが，ここでは以下の３点について説明する。</p>
 <ul class="simple">
 <li><p>データ：<code class="docutils literal notranslate"><span class="pre">df.to_numpy()</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">df.values</span></code>で抽出できる。</p></li>
@@ -1449,7 +1461,7 @@ memory usage: 528.0+ bytes
 </div>
 </section>
 <section id="id3">
-<h2>要素の抽出<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>要素の抽出<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の<code class="docutils literal notranslate"><span class="pre">array</span></code>の場合，<code class="docutils literal notranslate"><span class="pre">[,]</span></code>を使い要素を抽出した。<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>の場合，様々な抽出方法があるが，覚えやすく少しでも間違いの可能性を減らすために，そして可読性向上のために<code class="docutils literal notranslate"><span class="pre">array</span></code>に対応する以下の２つの方法を使うことにする。</p>
 <ul class="simple">
 <li><p>ラベルを使う方法：<code class="docutils literal notranslate"><span class="pre">.loc[,]</span></code></p></li>
@@ -1482,7 +1494,7 @@ memory usage: 528.0+ bytes
 </ul>
 </div>
 <section id="loc">
-<h3><code class="docutils literal notranslate"><span class="pre">.loc[,]</span></code>（ラベル使用）<a class="headerlink" href="#loc" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">.loc[,]</span></code>（ラベル使用）<a class="headerlink" href="#loc" title="Link to this heading">#</a></h3>
 <p><strong>１つの行を<code class="docutils literal notranslate"><span class="pre">Series</span></code>として抽出</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1925,7 +1937,7 @@ Name: gdp, dtype: int64
 </div>
 </section>
 <section id="iloc">
-<span id="sec-3-iloc"></span><h3><code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>（インデックス使用）<a class="headerlink" href="#iloc" title="Permalink to this heading">#</a></h3>
+<span id="sec-3-iloc"></span><h3><code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>（インデックス使用）<a class="headerlink" href="#iloc" title="Link to this heading">#</a></h3>
 <p><strong>１つの行を<code class="docutils literal notranslate"><span class="pre">Series</span></code>として抽出</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2375,7 +2387,7 @@ Name: inv, dtype: float64
 </div>
 </section>
 <section id="id4">
-<h3><code class="docutils literal notranslate"><span class="pre">[]</span></code>で列の選択（ラベル使用）<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">[]</span></code>で列の選択（ラベル使用）<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p><strong>１つの列を<code class="docutils literal notranslate"><span class="pre">Series</span></code>として抽出</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2581,11 +2593,11 @@ Name: gdp, dtype: int64
 </section>
 </section>
 <section id="id5">
-<h2>ある条件の下で行の抽出<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2>ある条件の下で行の抽出<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <section id="id6">
-<h3>１つの条件の場合<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>１つの条件の場合<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <section id="gdp100">
-<h4>例１：GDPが100未満の行の抽出<a class="headerlink" href="#gdp100" title="Permalink to this heading">#</a></h4>
+<h4>例１：GDPが100未満の行の抽出<a class="headerlink" href="#gdp100" title="Link to this heading">#</a></h4>
 <p>まず条件を作る。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2696,7 +2708,7 @@ Name: gdp, dtype: bool
 </div>
 </section>
 <section id="ida">
-<h4>例２：<code class="docutils literal notranslate"><span class="pre">id</span></code>が<code class="docutils literal notranslate"><span class="pre">a</span></code>の行を抽出<a class="headerlink" href="#ida" title="Permalink to this heading">#</a></h4>
+<h4>例２：<code class="docutils literal notranslate"><span class="pre">id</span></code>が<code class="docutils literal notranslate"><span class="pre">a</span></code>の行を抽出<a class="headerlink" href="#ida" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cond</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
@@ -2794,9 +2806,9 @@ Name: gdp, dtype: bool
 </section>
 </section>
 <section id="id7">
-<h3>複数条件の場合<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>複数条件の場合<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <section id="id8">
-<h4>例３<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<h4>例３<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
 <p>以下の条件の<strong>両方</strong>が満たされる場合：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">gdp</span></code>が100以上</p></li>
@@ -2888,7 +2900,7 @@ Name: gdp, dtype: bool
 </div>
 </section>
 <section id="id9">
-<h4>例４<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<h4>例４<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
 <p>以下の条件の<strong>どちらか</strong>が満たされる場合：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">gdp</span></code>は200以上</p></li>
@@ -2987,7 +2999,7 @@ Name: gdp, dtype: bool
 </ul>
 </section>
 <section id="id10">
-<h4>例５<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<h4>例５<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
 <p>以下の条件の<strong>どちらか</strong>が満たされ</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">gdp</span></code>は200以上</p></li>
@@ -3066,10 +3078,10 @@ Name: gdp, dtype: bool
 </section>
 </section>
 <section id="query">
-<h3><code class="docutils literal notranslate"><span class="pre">query()</span></code><a class="headerlink" href="#query" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">query()</span></code><a class="headerlink" href="#query" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">query()</span></code>というメソッドでは文字列を使い行の抽出コードを書くことができる。これにより直感的なコード書くことが可能である。</p>
 <section id="id11">
-<h4>例１の場合：<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<h4>例１の場合：<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;gdp &lt; 100&#39;</span><span class="p">)</span>
@@ -3133,7 +3145,7 @@ Name: gdp, dtype: bool
 </div>
 </section>
 <section id="id12">
-<h4>例２の場合<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
+<h4>例２の場合<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;id == &quot;a&quot;&#39;</span><span class="p">)</span>
@@ -3229,7 +3241,7 @@ Name: gdp, dtype: bool
 </div>
 </section>
 <section id="id13">
-<h4>例３の場合<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
+<h4>例３の場合<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;(gdp &gt;= 100) &amp; (inv &lt;= 30)&#39;</span><span class="p">)</span>
@@ -3293,7 +3305,7 @@ Name: gdp, dtype: bool
 </div>
 </section>
 <section id="id14">
-<h4>例４の場合<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
+<h4>例４の場合<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;(gdp &gt;= 200) | (con &lt;= 60)&#39;</span><span class="p">)</span>
@@ -3373,7 +3385,7 @@ Name: gdp, dtype: bool
 </div>
 </section>
 <section id="id15">
-<h4>例５の場合<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
+<h4>例５の場合<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;(gdp &gt;= 200 | con &lt;= 60) &amp; (id == &quot;a&quot;)&#39;</span><span class="p">)</span>
@@ -3507,9 +3519,9 @@ Name: gdp, dtype: bool
 </section>
 </section>
 <section id="id16">
-<h2>列と行の追加と削除<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h2>
+<h2>列と行の追加と削除<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
 <section id="id17">
-<h3>列の追加 <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code><a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>列の追加 <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code><a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">[]</span></code>に列ラベルを使って列を抽出することができるが，<code class="docutils literal notranslate"><span class="pre">[]</span></code>は列の追加にも使えるので，ここではその使い方を説明する。まず，全ての行が<code class="docutils literal notranslate"><span class="pre">1.0</span></code>となる列を作成するとしよう。その場合，以下のようにする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3682,7 +3694,7 @@ dtype: float64
 </div>
 </section>
 <section id="id18">
-<h3>列の追加 <code class="docutils literal notranslate"><span class="pre">.loc[,]</span></code><a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<h3>列の追加 <code class="docutils literal notranslate"><span class="pre">.loc[,]</span></code><a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>は行と列の抽出に使ったが，追加にも使える。<code class="docutils literal notranslate"><span class="pre">[]</span></code>と同じと考えれば良い。次の例では<code class="docutils literal notranslate"><span class="pre">pop</span></code>を2倍した列を追加している。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3693,7 +3705,7 @@ dtype: float64
 </div>
 </section>
 <section id="id19">
-<h3>列の削除 <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code><a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
+<h3>列の削除 <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code><a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;2pop&#39;</span><span class="p">]</span>
@@ -3703,7 +3715,7 @@ dtype: float64
 </div>
 </section>
 <section id="drop">
-<h3>列の削除 <code class="docutils literal notranslate"><span class="pre">drop()</span></code><a class="headerlink" href="#drop" title="Permalink to this heading">#</a></h3>
+<h3>列の削除 <code class="docutils literal notranslate"><span class="pre">drop()</span></code><a class="headerlink" href="#drop" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>には<code class="docutils literal notranslate"><span class="pre">.drop()</span></code>というメソッドが用意されているので，それを使うことも可能である。</p>
 <p>下のコードの説明：</p>
 <ul class="simple">
@@ -3726,7 +3738,7 @@ dtype: float64
 </div>
 </section>
 <section id="id20">
-<h3>行の追加 <code class="docutils literal notranslate"><span class="pre">.loc[,]</span></code><a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
+<h3>行の追加 <code class="docutils literal notranslate"><span class="pre">.loc[,]</span></code><a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
 <p>行と列の抽出，そして列の追加に使ったが，行の追加にも使える。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3807,7 +3819,7 @@ dtype: float64
 <p>上の例では，最初の4つの要素は整数として入力されたが，<code class="docutils literal notranslate"><span class="pre">df</span></code>の中では浮動小数点に変換されている。</p>
 </section>
 <section id="id21">
-<h3>行の削除 <code class="docutils literal notranslate"><span class="pre">drop()</span></code><a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
+<h3>行の削除 <code class="docutils literal notranslate"><span class="pre">drop()</span></code><a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
 <p>これは列を削除する際に紹介したメソッド<code class="docutils literal notranslate"><span class="pre">.drop()</span></code>である。</p>
 <ul class="simple">
 <li><p>オプション<code class="docutils literal notranslate"><span class="pre">axis=</span></code>の値を<code class="docutils literal notranslate"><span class="pre">rows</span></code>の代わりに<code class="docutils literal notranslate"><span class="pre">0</span></code>でも可</p></li>
@@ -3830,10 +3842,10 @@ dtype: float64
 </section>
 </section>
 <section id="id22">
-<h2>欠損値の扱い<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h2>
+<h2>欠損値の扱い<a class="headerlink" href="#id22" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>では欠損値は<code class="docutils literal notranslate"><span class="pre">NaN</span></code>と表示されるが，<code class="docutils literal notranslate"><span class="pre">na</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">null</span></code>と呼んだりもする。</p>
 <section id="id23">
-<h3>欠損値の確認<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h3>
+<h3>欠損値の確認<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
 <p>欠損値があるかどうかの確認は，<code class="docutils literal notranslate"><span class="pre">df.info()</span></code>でもできるが，以下のメソッドを組み合わせることでも可能である。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">isna()</span></code>：それぞれの要素について<code class="docutils literal notranslate"><span class="pre">NaN</span></code>の場合<code class="docutils literal notranslate"><span class="pre">True</span></code>を，そうでない場合は<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す。（<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の全ての要素が<code class="docutils literal notranslate"><span class="pre">True/False</span></code>となる。）</p></li>
@@ -3973,7 +3985,7 @@ dtype: int64
 <p>これで<code class="docutils literal notranslate"><span class="pre">NaN</span></code>がある行を抽出することができる。</p>
 </section>
 <section id="id24">
-<h3>欠損値がある行の削除<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h3>
+<h3>欠損値がある行の削除<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
 <p>欠損値がある全ての行を削除する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4230,7 +4242,7 @@ dtype: int64
 </section>
 </section>
 <section id="id25">
-<h2>並び替え<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h2>
+<h2>並び替え<a class="headerlink" href="#id25" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">df</span></code>を<code class="docutils literal notranslate"><span class="pre">gdp</span></code>の昇順に並び替える。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4492,9 +4504,9 @@ dtype: int64
 <p>ここでは<code class="docutils literal notranslate"><span class="pre">id</span></code>に従って先に並び替えられ，その後に<code class="docutils literal notranslate"><span class="pre">gdp</span></code>に従って並び替えられている。<code class="docutils literal notranslate"><span class="pre">ascending</span></code>は昇順（<code class="docutils literal notranslate"><span class="pre">True</span></code>）か降順（<code class="docutils literal notranslate"><span class="pre">False</span></code>）かを指定する引数であり，<code class="docutils literal notranslate"><span class="pre">['id','gdp']</span></code>と<code class="docutils literal notranslate"><span class="pre">ascending=['True','False']</span></code>の順番が対応している。</p>
 </section>
 <section id="id26">
-<h2>行インデックスと列ラベル<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h2>
+<h2>行インデックスと列ラベル<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
 <section id="id27">
-<h3>インデックスを振り直す<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h3>
+<h3>インデックスを振り直す<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
 <p><a class="reference internal" href="#sec-3-data"><span class="std std-ref">データの読み込みとデータのチェック</span></a>でデータを読み込んだ後，直ぐに<code class="docutils literal notranslate"><span class="pre">.set_index('year')</span></code>を使い，列<code class="docutils literal notranslate"><span class="pre">year</span></code>を行ラベルに設定した。もちろん，必ずしもそうする必要はなく，行インデックス（<code class="docutils literal notranslate"><span class="pre">0</span></code>，<code class="docutils literal notranslate"><span class="pre">1</span></code>，<code class="docutils literal notranslate"><span class="pre">2</span></code>，…）のままで作業をおこなっても全く問題ない。また行ラベルを設定した後に，行インデックスに戻したい場合もあるだろう。その場合には，メソッド<code class="docutils literal notranslate"><span class="pre">.reset_index()</span></code>を使うと，行のインデックスを0,1,2,..と振り直すことができる。<code class="docutils literal notranslate"><span class="pre">df</span></code>を使うと次のようになる。</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
@@ -4713,7 +4725,7 @@ dtype: int64
 </div>
 </section>
 <section id="id28">
-<h3>列のラベルの変更<a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h3>
+<h3>列のラベルの変更<a class="headerlink" href="#id28" title="Link to this heading">#</a></h3>
 <p>メソッド<code class="docutils literal notranslate"><span class="pre">.rename()</span></code>を使い列のラベルを変更する。引数は次の形で設定する。</p>
 <div class="math notranslate nohighlight">
 \[\text{.rename}\left(\text{columns=}辞書\right)\]</div>
@@ -4887,10 +4899,10 @@ dtype: int64
 </section>
 </section>
 <section id="id29">
-<h2>よく使うメソッド<a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h2>
+<h2>よく使うメソッド<a class="headerlink" href="#id29" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>には様々なメソッドが用意されており，ここでは頻繁に用いるメソッド幾つか紹介しよう。</p>
 <section id="id30">
-<h3>統計関連のメソッド<a class="headerlink" href="#id30" title="Permalink to this heading">#</a></h3>
+<h3>統計関連のメソッド<a class="headerlink" href="#id30" title="Link to this heading">#</a></h3>
 <p>上でも出てきたが<code class="docutils literal notranslate"><span class="pre">.sum()</span></code>は各列の合計を返す（<code class="docutils literal notranslate"><span class="pre">axis='rows'</span></code>がデフォルト）。その際，欠損値は無視される。注意する点は合計を計算して意味のある列のみを選択することである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5189,7 +5201,7 @@ dtype: float64
 </div>
 </section>
 <section id="id31">
-<h3>その他<a class="headerlink" href="#id31" title="Permalink to this heading">#</a></h3>
+<h3>その他<a class="headerlink" href="#id31" title="Link to this heading">#</a></h3>
 <p>列<code class="docutils literal notranslate"><span class="pre">id</span></code>には文字列があり，行のデータをカテゴリー別に分けていると考えることができる。メソッド<code class="docutils literal notranslate"><span class="pre">.unique()</span></code>を使うと，選択した列に重複したデータがある場合，ユニークなものだけを抽出できる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5252,7 +5264,7 @@ Name: proportion, dtype: float64
 </section>
 </section>
 <section id="series">
-<h2><code class="docutils literal notranslate"><span class="pre">Series</span></code>について<a class="headerlink" href="#series" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">Series</span></code>について<a class="headerlink" href="#series" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Series</span></code>について簡単に説明する。<code class="docutils literal notranslate"><span class="pre">Series</span></code>はスプレッド・シートから１つの行または列を取り出したようなデータとイメージすれば良いだろう。まず<code class="docutils literal notranslate"><span class="pre">df</span></code>の列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>から<code class="docutils literal notranslate"><span class="pre">Series</span></code>を作ってみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5294,7 +5306,7 @@ Name: gdp, dtype: float64
 </div>
 </div>
 <section id="id32">
-<h3>構成要素<a class="headerlink" href="#id32" title="Permalink to this heading">#</a></h3>
+<h3>構成要素<a class="headerlink" href="#id32" title="Link to this heading">#</a></h3>
 <p>この例を使い<code class="docutils literal notranslate"><span class="pre">Series</span></code>の構成要素について説明する。</p>
 <ul class="simple">
 <li><p>データ：<code class="docutils literal notranslate"><span class="pre">s.to_numpy()</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">s.values</span></code>で抽出可能</p></li>
@@ -5382,7 +5394,7 @@ Name: gdp, dtype: float64
 <p>また<code class="docutils literal notranslate"><span class="pre">dtype='int64'</span></code>とあるが、インデックスは整数であることがわかる。</p>
 </section>
 <section id="id33">
-<h3>要素の抽出<a class="headerlink" href="#id33" title="Permalink to this heading">#</a></h3>
+<h3>要素の抽出<a class="headerlink" href="#id33" title="Link to this heading">#</a></h3>
 <p>要素の抽出方法は<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の<code class="docutils literal notranslate"><span class="pre">array</span></code>と辞書に似ている。この点を説明するために、次のコードを使い<code class="docutils literal notranslate"><span class="pre">s</span></code>からインデックスを文字列に変換した<code class="docutils literal notranslate"><span class="pre">s_new</span></code>を作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5527,7 +5539,7 @@ Name: gdp, dtype: float64
 </div>
 </section>
 <section id="id34">
-<h3>統計学関連メソッド<a class="headerlink" href="#id34" title="Permalink to this heading">#</a></h3>
+<h3>統計学関連メソッド<a class="headerlink" href="#id34" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Series</span></code>にも<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>と同じような統計学関連メソッドが実装されているので，<code class="docutils literal notranslate"><span class="pre">py4macro.see()</span></code>で調べてみよう。</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
@@ -5597,7 +5609,7 @@ Name: gdp, dtype: float64
 </section>
 </section>
 <section id="id35">
-<h2>グループ計算<a class="headerlink" href="#id35" title="Permalink to this heading">#</a></h2>
+<h2>グループ計算<a class="headerlink" href="#id35" title="Link to this heading">#</a></h2>
 <p>上で使った<code class="docutils literal notranslate"><span class="pre">df</span></code>を表示してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5703,7 +5715,7 @@ dtype: float64
 <p>一方で，列<code class="docutils literal notranslate"><span class="pre">id</span></code>には<code class="docutils literal notranslate"><span class="pre">a</span></code>と<code class="docutils literal notranslate"><span class="pre">b</span></code>があり，<code class="docutils literal notranslate"><span class="pre">df</span></code>を２つのグループに分けることができる。ここで問題になるのは，グループ別に列の平均を計算したい場合である。まず考えられる方法は<code class="docutils literal notranslate"><span class="pre">a</span></code>グループだけを抽出して平均を計算し，同じように<code class="docutils literal notranslate"><span class="pre">b</span></code>も計算するということだろう。もしグループ数が多い場合は<code class="docutils literal notranslate"><span class="pre">for</span></code>ループが必要になり，より長いコードを書く必要が発生し面倒に感じることになる。</p>
 <p>こういう場合のために，<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>には簡単にグループ計算を可能にする方法が用意されている。それが<code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>というメソッドである。以下では<code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>の使い方を<code class="docutils literal notranslate"><span class="pre">df</span></code>を使って３つのステップに分けて説明する。</p>
 <section id="id36">
-<h3>ステップ１：グループ化する列を指定<a class="headerlink" href="#id36" title="Permalink to this heading">#</a></h3>
+<h3>ステップ１：グループ化する列を指定<a class="headerlink" href="#id36" title="Link to this heading">#</a></h3>
 <p>最初のステップでは，<strong>グループ化したい列名</strong>を引数として<code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>を実行する。<code class="docutils literal notranslate"><span class="pre">df</span></code>を<code class="docutils literal notranslate"><span class="pre">id</span></code>でグループ化したいので次のコードとなる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
 </pre></div>
@@ -5726,7 +5738,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x12756a2c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x128c67af0&gt;
 </pre></div>
 </div>
 </div>
@@ -5734,7 +5746,7 @@ dtype: float64
 <p>何も返されない。表示されているのは，PCメモリーのある箇所に<code class="docutils literal notranslate"><span class="pre">DataFrameGroupBy</span></code>というオブジェクトが存在すると伝えているだけである。</p>
 </section>
 <section id="id37">
-<h3>ステップ２：グループ計算したい列を指定<a class="headerlink" href="#id37" title="Permalink to this heading">#</a></h3>
+<h3>ステップ２：グループ計算したい列を指定<a class="headerlink" href="#id37" title="Link to this heading">#</a></h3>
 <p>次にグループ計算したい列を指定するが，次の様な書き方となる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>df_groupby[＜グループ計算したい列ラベル＞]
 </pre></div>
@@ -5747,7 +5759,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x127569e70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x128c67850&gt;
 </pre></div>
 </div>
 </div>
@@ -5755,7 +5767,7 @@ dtype: float64
 <p>ここでも新たなオブジェクト<code class="docutils literal notranslate"><span class="pre">SeriesGroupBy</span></code>のメモリーアドレスが表示されるだけである。どの様に計算するかを指定することにより，計算結果が返されることになる。それが次のステップである。</p>
 </section>
 <section id="id38">
-<h3>ステップ３：計算方法の指定<a class="headerlink" href="#id38" title="Permalink to this heading">#</a></h3>
+<h3>ステップ３：計算方法の指定<a class="headerlink" href="#id38" title="Link to this heading">#</a></h3>
 <p>ステップ１と２がグループ計算の準備段階であり，あとは実際にどのように計算したいかを指定する。例として，平均を考えてみよう。上でも出てきたが，平均はメソッド<code class="docutils literal notranslate"><span class="pre">.mean()</span></code>を使う。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5848,9 +5860,9 @@ Name: gdp, dtype: float64
 </div>
 </section>
 <section id="id39">
-<h3>次のステップ<a class="headerlink" href="#id39" title="Permalink to this heading">#</a></h3>
+<h3>次のステップ<a class="headerlink" href="#id39" title="Link to this heading">#</a></h3>
 <section id="id40">
-<h4>１行で書く<a class="headerlink" href="#id40" title="Permalink to this heading">#</a></h4>
+<h4>１行で書く<a class="headerlink" href="#id40" title="Link to this heading">#</a></h4>
 <p>上の説明では３つのステップに分けたが，もちろん次のように３つのステップを次のように１行で書いても構わないし，むしろその場合が多いだろう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5873,7 +5885,7 @@ Name: gdp, dtype: float64
 </div></blockquote>
 </section>
 <section id="id41">
-<h4>複数選択<a class="headerlink" href="#id41" title="Permalink to this heading">#</a></h4>
+<h4>複数選択<a class="headerlink" href="#id41" title="Link to this heading">#</a></h4>
 <p>各ステップでは列や関数を一つだけ選択・設定しているが，それぞれ複数選択することも可能である。</p>
 <ul class="simple">
 <li><p>ステップ１ではグループ化する上で基準となる列を複数選択</p></li>

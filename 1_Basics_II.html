@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>データの操作 &#8212; 経済学のためのPython入門</title>
   
@@ -29,34 +28,32 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -64,12 +61,16 @@
                 gtag('js', new Date());
                 gtag('config', 'G-R9KXY9G892');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-R9KXY9G892');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '1_Basics_II';</script>
     <link rel="canonical" href="https://py4basics.github.io/1_Basics_II.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -163,7 +164,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">経済学のためのPython入門</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
 <ul class="current nav bd-sidenav">
@@ -467,7 +479,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>データの操作<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>データの操作<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
@@ -480,7 +492,7 @@ document.write(`
 </div>
 </div>
 <section id="id2">
-<h2>基本データ型の変換<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>基本データ型の変換<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>次の４つの基本データ型を考えよう。</p>
 <ul class="simple">
 <li><p>整数型</p></li>
@@ -496,7 +508,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">bool()</span></code>：ブール型への変換（真偽値の確認）</p></li>
 </ul>
 <section id="id3">
-<h3>整数型・浮動小数点型　→　浮動小数点型・整数型<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>整数型・浮動小数点型　→　浮動小数点型・整数型<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f0</span> <span class="o">=</span> <span class="mf">10.0</span>
@@ -532,7 +544,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h3>文字列型　→　整数型・浮動小数点型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>文字列型　→　整数型・浮動小数点型<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>次に文字列を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -661,7 +673,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h3>整数型・浮動小数点型　→　文字列型<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>整数型・浮動小数点型　→　文字列型<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>文字列型への変換は簡単で，元の値をそのままクォテーション<code class="docutils literal notranslate"><span class="pre">''</span></code>に入れて返すことになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -677,7 +689,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h3>整数型・浮動小数点型・文字列型　→　ブール型<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>整数型・浮動小数点型・文字列型　→　ブール型<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>この変換は既出の<code class="docutils literal notranslate"><span class="pre">bool()</span></code>を使い，対象となるデータのブール値（真偽値）の確認となる。即ち，対象となるオブジェクトが「空・無」かどうかを確かめるの使われる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -718,7 +730,7 @@ document.write(`
 </section>
 </section>
 <section id="id7">
-<h2>コンテナデータ型の操作<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2>コンテナデータ型の操作<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <p>ここではコンテナデータ型の次の操作について説明する。</p>
 <ul class="simple">
 <li><p>要素の抽出（アクセス）</p></li>
@@ -728,9 +740,9 @@ document.write(`
 <li><p>基本的なメソッド</p></li>
 </ul>
 <section id="id8">
-<h3>リスト<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>リスト<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <section id="id9">
-<h4>１つの要素の抽出<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<h4>１つの要素の抽出<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
 <p>要素のインデックス（位置）を考える場合，次の図のように左から<code class="docutils literal notranslate"><span class="pre">0</span></code>，<code class="docutils literal notranslate"><span class="pre">1</span></code>，<code class="docutils literal notranslate"><span class="pre">2</span></code>…，右からは<code class="docutils literal notranslate"><span class="pre">-1</span></code>，<code class="docutils literal notranslate"><span class="pre">-2</span></code>，<code class="docutils literal notranslate"><span class="pre">-3</span></code>と数える。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   0   1   2   3   4   5  （左から数える） 
  +---+---+---+---+---+---+
@@ -788,7 +800,7 @@ document.write(`
 </div>
 </section>
 <section id="id10">
-<h4>複数要素の抽出（その１）<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<h4>複数要素の抽出（その１）<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
 <p>次に複数の連続する要素を抽出したいとしよう。この場合はスライシングと呼ばれ，<code class="docutils literal notranslate"><span class="pre">:</span></code>（コロン）を使う。<code class="docutils literal notranslate"><span class="pre">:</span></code>の左右にインデックス番号を置き要素を選択するが，次のルールに従う。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[＜start＞:＜end＞]
 </pre></div>
@@ -879,7 +891,7 @@ document.write(`
 </div>
 </section>
 <section id="id11">
-<h4>複数要素の抽出（その２）<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<h4>複数要素の抽出（その２）<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
 <p>上の説明でのスライシングのインデックス番号は，<code class="docutils literal notranslate"><span class="pre">1,2,3,4</span></code>の様に<strong>増分</strong>は<code class="docutils literal notranslate"><span class="pre">1</span></code>となっている。実は，この増分も次のように設定することができる。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[＜start＞:＜end＞|＜step＞]
 </pre></div>
@@ -951,7 +963,7 @@ document.write(`
 </div>
 </section>
 <section id="id12">
-<h4>２次元リストの要素抽出<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
+<h4>２次元リストの要素抽出<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
 <p>次の例は入れ子のケースである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1015,7 +1027,7 @@ document.write(`
 </div>
 </section>
 <section id="id13">
-<h4>要素の入れ替え<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
+<h4>要素の入れ替え<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
 <p>要素の入れ替え方法を説明するために，次のリスト<code class="docutils literal notranslate"><span class="pre">lst0</span></code>を作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1088,7 +1100,7 @@ document.write(`
 </div>
 </section>
 <section id="id14">
-<h4>要素の削除<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
+<h4>要素の削除<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
 <p>要素を削除するには色々な方法が用意されているが，最も簡単なのは<code class="docutils literal notranslate"><span class="pre">del</span></code>（deleteの略）を使うことだろう。<code class="docutils literal notranslate"><span class="pre">del</span></code>の後に削除したい要素を書き実行するだけである。例えば，</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1119,7 +1131,7 @@ document.write(`
 </div>
 </section>
 <section id="id15">
-<h4>他のコンテナデータ型からリストへの変換<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
+<h4>他のコンテナデータ型からリストへの変換<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>関数<code class="docutils literal notranslate"><span class="pre">list()</span></code>を使う。</p></li>
 </ul>
@@ -1191,7 +1203,7 @@ document.write(`
 </div>
 </section>
 <section id="id16">
-<h4>メソッド<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h4>
+<h4>メソッド<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
 <p>全てのリストにはリスト自体に働きかける関数が備わっており，それをメソッドと呼ぶ。より詳細な説明は後に回すとして，ここではリストの最後に要素を追加する<code class="docutils literal notranslate"><span class="pre">append()</span></code>というメソッドを紹介する。空のリストを考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1244,9 +1256,9 @@ document.write(`
 </section>
 </section>
 <section id="id17">
-<h3>タプル<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>タプル<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <section id="id18">
-<h4>説明<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h4>
+<h4>説明<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
 <p>まず次の様に<code class="docutils literal notranslate"><span class="pre">tpl1</span></code>と<code class="docutils literal notranslate"><span class="pre">tpl2</span></code>を定義しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1294,7 +1306,7 @@ document.write(`
 </ul>
 </section>
 <section id="id19">
-<h4>他のコンテナデータ型からリストへの変換<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h4>
+<h4>他のコンテナデータ型からリストへの変換<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>関数<code class="docutils literal notranslate"><span class="pre">tuple()</span></code>を使う。</p></li>
 </ul>
@@ -1353,9 +1365,9 @@ document.write(`
 </section>
 </section>
 <section id="id20">
-<h3>辞書<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
+<h3>辞書<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
 <section id="id21">
-<h4>要素の抽出<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h4>
+<h4>要素の抽出<a class="headerlink" href="#id21" title="Link to this heading">#</a></h4>
 <p>次の例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1393,7 +1405,7 @@ document.write(`
 <p>辞書にスライシングはない。</p>
 </section>
 <section id="id22">
-<h4>入れ子の場合の抽出<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h4>
+<h4>入れ子の場合の抽出<a class="headerlink" href="#id22" title="Link to this heading">#</a></h4>
 <p>次の例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1458,7 +1470,7 @@ document.write(`
 <p>どれだけ入れ子になっていても<code class="docutils literal notranslate"><span class="pre">[]</span></code>を連続させることによって目的の要素にアクセスできることが分かると思う。</p>
 </section>
 <section id="id23">
-<h4>値の入れ替え<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h4>
+<h4>値の入れ替え<a class="headerlink" href="#id23" title="Link to this heading">#</a></h4>
 <p>辞書はキーと値のペアとなっているが，変更できるのは値だけである。方法はリストと同じで，<code class="docutils literal notranslate"><span class="pre">=</span></code>の左辺に変更したいキーを選び，右辺に変更後の値を配置し実行するだけである。例えば，<code class="docutils literal notranslate"><span class="pre">macro</span></code>にある<code class="docutils literal notranslate"><span class="pre">unemployment</span></code>の値を<code class="docutils literal notranslate"><span class="pre">10.5</span></code>に入れ替えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1475,7 +1487,7 @@ document.write(`
 </div>
 </section>
 <section id="id24">
-<h4>要素の削除<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h4>
+<h4>要素の削除<a class="headerlink" href="#id24" title="Link to this heading">#</a></h4>
 <p>どうしてもキーを変更したい場合は，キー・値のペアを削除し，新たに追加することになる。例えば，<code class="docutils literal notranslate"><span class="pre">'unemployment':10.5</span></code>を<code class="docutils literal notranslate"><span class="pre">'失業率':10.5</span></code>に「変更」するには次のコードとなる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1500,7 +1512,7 @@ document.write(`
 </ul>
 </section>
 <section id="id25">
-<h4>メソッド<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h4>
+<h4>メソッド<a class="headerlink" href="#id25" title="Link to this heading">#</a></h4>
 <p>リスト同様，全ての辞書には様々なメソッドが備わっている。ここでは２つを紹介する。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">keys()</span></code>：キーを抽出するメソッド</p></li>
@@ -1579,9 +1591,9 @@ document.write(`
 </section>
 </section>
 <section id="id26">
-<h2>文字列の操作<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h2>
+<h2>文字列の操作<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
 <section id="id27">
-<h3>文字の抽出<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h3>
+<h3>文字の抽出<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
 <p>ここでは文字列型の次の操作について説明する。</p>
 <ul class="simple">
 <li><p>要素の抽出（アクセス）</p></li>
@@ -1624,7 +1636,7 @@ document.write(`
 </div>
 </section>
 <section id="id28">
-<h3>文字列は変更不可<a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h3>
+<h3>文字列は変更不可<a class="headerlink" href="#id28" title="Link to this heading">#</a></h3>
 <p>タプル同様，文字列は変更不可となるため次の操作はできない。</p>
 <ul class="simple">
 <li><p>要素の入れ替え</p></li>
@@ -1640,7 +1652,7 @@ document.write(`
 </div>
 </section>
 <section id="list-tuple">
-<h3><code class="docutils literal notranslate"><span class="pre">list()</span></code>と<code class="docutils literal notranslate"><span class="pre">tuple()</span></code>を使う<a class="headerlink" href="#list-tuple" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">list()</span></code>と<code class="docutils literal notranslate"><span class="pre">tuple()</span></code>を使う<a class="headerlink" href="#list-tuple" title="Link to this heading">#</a></h3>
 <p>文字列に<code class="docutils literal notranslate"><span class="pre">list()</span></code>や<code class="docutils literal notranslate"><span class="pre">tuple()</span></code>を使うと，１つの文字が要素となるリストもしくはタプルを返すことになる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1668,7 +1680,7 @@ document.write(`
 </div>
 </section>
 <section id="id29">
-<h3>メソッド<a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h3>
+<h3>メソッド<a class="headerlink" href="#id29" title="Link to this heading">#</a></h3>
 <p>全ての文字列には色々なメソッドが準備されている。ここでは３つ紹介する。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">split()</span></code>：デフォルトでは半角スペースで分割しリストを返す。</p></li>
@@ -1803,7 +1815,7 @@ document.write(`
 </section>
 </section>
 <section id="id30">
-<h2>まとめ<a class="headerlink" href="#id30" title="Permalink to this heading">#</a></h2>
+<h2>まとめ<a class="headerlink" href="#id30" title="Link to this heading">#</a></h2>
 <p><strong>＜基本データ型の変換＞</strong></p>
 <table class="table">
 <thead>
