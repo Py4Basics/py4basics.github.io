@@ -513,11 +513,36 @@ document.write(`
 <div><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>の行：<code class="docutils literal notranslate"><span class="pre">#2</span></code>が終わった後に，<code class="docutils literal notranslate"><span class="pre">x+y</span></code>の計算結果を<code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を使い表示する。</p>
 </div></blockquote>
 <p>この流れをフローチャートに表してみよう。</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<img alt="_images/007f9a719d1ab3bf1e4724febde1d975efd1b632c0eabadd27b68969b777d3c6.svg" src="_images/007f9a719d1ab3bf1e4724febde1d975efd1b632c0eabadd27b68969b777d3c6.svg" /></div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">flow</span>
+<span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">japanize_matplotlib</span>
+
+<span class="n">schemdraw</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;IPAexGothic&#39;</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;START&#39;</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;x = 10&#39;</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;y = 5&#39;</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mf">2.7</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1.3</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;x+yの</span><span class="se">\n</span><span class="s1">計算結果の表示&#39;</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;END&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
-<p>一番最初と最後の横長丸枠は，プログラムの始まり（<code class="docutils literal notranslate"><span class="pre">START</span></code>）と終わり（<code class="docutils literal notranslate"><span class="pre">END</span></code>）を表す。長方形枠はコードの処理，そして，矢印はプログラムの実行の順番（フロー）を意味する。単純な例となるので，上から下に一直線の実行フローとなっている。より複雑なコードの場合，矢印が横向きや上向きになったりもし，枠も様々な形を使い実行フローを表現することになる。以下では，枠は次の３種類だけを使い制御フローをシンプルな形で表すことにする。</p>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/fb76acb0cfb492bc0adda76684b059de8eb35e8c05c3c2811d6f2b0fe7ad7a01.svg" src="_images/fb76acb0cfb492bc0adda76684b059de8eb35e8c05c3c2811d6f2b0fe7ad7a01.svg" /></div>
+</div>
+<p>一番最初と最後の横長丸枠は，プログラムの始まり（<code class="docutils literal notranslate"><span class="pre">START</span></code>）と終わり（<code class="docutils literal notranslate"><span class="pre">END</span></code>）を表す。長方形枠はコードの処理，そして，矢印はプログラムの実行の順番（フロー）を意味する。単純な例なので，上から下に一直線の実行フローとなっている。より複雑なコードの場合，矢印が横向きや上向きになったりもし，枠も様々な形を使い実行フローを表現することになる。以下では，枠は次の３種類だけを使い制御フローをシンプルな形で表すことにする。</p>
 <ul class="simple">
 <li><p>横長丸枠（端子）：プログラムの始まりと終わり</p></li>
 <li><p>長方形枠（処理）：コードの処理</p></li>
@@ -543,22 +568,30 @@ else:
     ＜全ての条件が`False`の場合に実行するコード＞
 </pre></div>
 </div>
-<ul class="simple">
+<ul>
 <li><p>１行目は<code class="docutils literal notranslate"><span class="pre">if</span></code>で始まり<code class="docutils literal notranslate"><span class="pre">:</span></code>で終わる。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">＜条件...がTrueの場合に実行するコード＞</span></code>の行はインデント（４つの半角スペース）されている。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">elif</span></code>（else ifの略）の行も<code class="docutils literal notranslate"><span class="pre">:</span></code>で終わる。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">else</span></code>の行も<code class="docutils literal notranslate"><span class="pre">:</span></code>で終わる。</p></li>
+<li><p>条件が１つの場合は，<code class="docutils literal notranslate"><span class="pre">elif</span></code>がある行を書く必要はない。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else</span></code>の行は省略可能。その場合は，次のコードと等しい。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">else</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>即ち，「全ての条件が<code class="docutils literal notranslate"><span class="pre">False</span></code>の場合は何も実行しない」という意味になる。</p>
+</li>
 </ul>
-<p>例を考えよう。</p>
+<p>条件が１つの例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>                        <span class="c1">#1</span>
 
-<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>                   <span class="c1"># 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;条件はTrueです。&#39;</span><span class="p">)</span>    <span class="c1"># 2</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>                   <span class="c1">#2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;条件はTrueです。&#39;</span><span class="p">)</span>    <span class="c1">#3</span>
 
-<span class="k">else</span><span class="p">:</span>                         <span class="c1"># 3</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;条件はFalseです。&#39;</span><span class="p">)</span>   <span class="c1"># 4</span>
+<span class="k">else</span><span class="p">:</span>                         <span class="c1">#4</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;条件はFalseです。&#39;</span><span class="p">)</span>   <span class="c1">#5</span>
 </pre></div>
 </div>
 </div>
@@ -568,34 +601,97 @@ else:
 </div>
 </div>
 </div>
-<p>＜<code class="docutils literal notranslate"><span class="pre">if</span></code>文の説明＞</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>が<code class="docutils literal notranslate"><span class="pre">10</span></code>と等しいかを評価する。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x==10</span></code>が<code class="docutils literal notranslate"><span class="pre">True</span></code>の場合に，<code class="docutils literal notranslate"><span class="pre">条件はTrueです。</span></code>が表示される。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x==10</span></code>が<code class="docutils literal notranslate"><span class="pre">False</span></code>のケースがはじまる。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x==10</span></code>が満たされない場合は，<code class="docutils literal notranslate"><span class="pre">条件はFalseです。</span></code>が表示される。</p></li>
-</ol>
-<p>このコードセルの最初で<code class="docutils literal notranslate"><span class="pre">10</span></code>を<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てる。従って，<code class="docutils literal notranslate"><span class="pre">x==10</span></code>は<code class="docutils literal notranslate"><span class="pre">True</span></code>を返し，<code class="docutils literal notranslate"><span class="pre">条件はTrueです。</span></code>が表示されることになる。</p>
+<p>＜コードのの説明＞</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：<code class="docutils literal notranslate"><span class="pre">10</span></code>を<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">x</span></code>が<code class="docutils literal notranslate"><span class="pre">10</span></code>と等しいかを判断する。</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">x==10</span></code>が<code class="docutils literal notranslate"><span class="pre">True</span></code>の場合は，<code class="docutils literal notranslate"><span class="pre">#3</span></code>が実行され，<code class="docutils literal notranslate"><span class="pre">条件はTrueです。</span></code>が表示さる。コード・セルの実行はこれで終了する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x==10</span></code>が<code class="docutils literal notranslate"><span class="pre">False</span></code>の場合は，<code class="docutils literal notranslate"><span class="pre">#3</span></code>は実行されず，<code class="docutils literal notranslate"><span class="pre">#4</span></code>に進む。</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>から<code class="docutils literal notranslate"><span class="pre">x==10</span></code>が<code class="docutils literal notranslate"><span class="pre">False</span></code>のケースがはじまる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>が実行され，<code class="docutils literal notranslate"><span class="pre">条件はFalseです。</span></code>が表示さる。コード・セルの実行はこれで終了する。</p></li>
+</ul>
+<p>もちろん，上のコード・セルを実行すると，<code class="docutils literal notranslate"><span class="pre">#3</span></code>で処理は終了することになる。この<code class="docutils literal notranslate"><span class="pre">if</span></code>文をフローチャートで表してみよう。</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;START&#39;</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;x = 10&#39;</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">Decision</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">S</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="s1">&#39;False&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;x = 10 ?&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mf">3.7</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1.3</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;「条件はTrueです。」</span><span class="se">\n</span><span class="s1">の表示&#39;</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;END&#39;</span><span class="p">)</span>
+    
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">E</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mf">3.7</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1.3</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;「条件はFalseです。」</span><span class="se">\n</span><span class="s1">の表示&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;END&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/11c9875f790e6a41066ae61f913a31a31c28608d38cde8b3b965048c0c76f0b3.svg" src="_images/11c9875f790e6a41066ae61f913a31a31c28608d38cde8b3b965048c0c76f0b3.svg" /></div>
+</div>
+<p>菱形枠中の<code class="docutils literal notranslate"><span class="pre">？</span></code>は「判断」を意味するが，上のコードの<code class="docutils literal notranslate"><span class="pre">#2</span></code>に対応している。<code class="docutils literal notranslate"><span class="pre">x=10</span></code>は<code class="docutils literal notranslate"><span class="pre">True</span></code>なので，菱形枠から下に移動して<code class="docutils literal notranslate"><span class="pre">条件はTrueです。</span></code>が表示されることになる。</p>
 <p>次の例は上の例と似ているが少しだけ異なる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>                        <span class="c1">#1</span>
 
-<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>                   <span class="c1"># 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;条件はTrueです。&#39;</span><span class="p">)</span>    <span class="c1"># 2</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>                   <span class="c1">#2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;条件はTrueです。&#39;</span><span class="p">)</span>    <span class="c1">#3</span>
 
-<span class="k">else</span><span class="p">:</span>                         <span class="c1"># 3</span>
-    <span class="k">pass</span>                      <span class="c1"># 4</span>
+<span class="k">else</span><span class="p">:</span>                         <span class="c1">#4</span>
+    <span class="k">pass</span>                      <span class="c1">#5</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>＜<code class="docutils literal notranslate"><span class="pre">if</span></code>文の説明＞</p>
+<p>＜コードの文の説明＞</p>
 <ul class="simple">
-<li><p>上の<code class="docutils literal notranslate"><span class="pre">if</span></code>文と異なるのは<code class="docutils literal notranslate"><span class="pre">#4</span></code>だけである。<code class="docutils literal notranslate"><span class="pre">pass</span></code>は「何もしない」という意味</p></li>
+<li><p>上の<code class="docutils literal notranslate"><span class="pre">if</span></code>文と異なるのは<code class="docutils literal notranslate"><span class="pre">#5</span></code>だけである。<code class="docutils literal notranslate"><span class="pre">pass</span></code>は「何もしない」という意味。</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">20</span></code>が<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てられているので，<code class="docutils literal notranslate"><span class="pre">x==10</span></code>は<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す。従って，<code class="docutils literal notranslate"><span class="pre">#2</span></code>は飛ばして<code class="docutils literal notranslate"><span class="pre">else</span></code>のブロックに移ることになる。その場合の実行コードは<code class="docutils literal notranslate"><span class="pre">pass</span></code>なので何も表示されないことになる。</p>
+<p><code class="docutils literal notranslate"><span class="pre">20</span></code>が<code class="docutils literal notranslate"><span class="pre">x</span></code>に割り当てられているので，<code class="docutils literal notranslate"><span class="pre">x==10</span></code>は<code class="docutils literal notranslate"><span class="pre">False</span></code>を返す。従って，<code class="docutils literal notranslate"><span class="pre">#3</span></code>は飛ばして<code class="docutils literal notranslate"><span class="pre">else</span></code>のブロックに移ることになる。その場合の実行コードは<code class="docutils literal notranslate"><span class="pre">pass</span></code>なので何も表示されないことになる。</p>
 <p>このコードで<code class="docutils literal notranslate"><span class="pre">else</span></code>以下を省略してもエラーにはならない（結果も変わらない）。即ち，<code class="docutils literal notranslate"><span class="pre">else</span></code>以下がない場合は，<code class="docutils literal notranslate"><span class="pre">#3</span></code>と<code class="docutils literal notranslate"><span class="pre">#4</span></code>が省略されていると考えることができる。</p>
+<p>フローチャートで表すと次のようになる。</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;START&#39;</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;x = 10&#39;</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">Decision</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">S</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="s1">&#39;False&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;x = 10 ?&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mf">3.7</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1.3</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;「条件はTrueです。」</span><span class="se">\n</span><span class="s1">の表示&#39;</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;END&#39;</span><span class="p">)</span>
+    
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">E</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">anchor</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;END&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/b5484e3d75eed7b2d3df5e4764d2155ca9a873d67e729c0dd5f7815edeaa10b2.svg" src="_images/b5484e3d75eed7b2d3df5e4764d2155ca9a873d67e729c0dd5f7815edeaa10b2.svg" /></div>
+</div>
 </section>
 <section id="id4">
 <h3>複数条件<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
