@@ -14,19 +14,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
@@ -34,16 +34,16 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
@@ -53,7 +53,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -88,27 +88,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -130,8 +126,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -230,7 +231,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -239,7 +240,7 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -565,7 +566,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/300f96cb47cf1ddeb0b376245451f9b33d51d1508ae0f8ff448ecdc67fccf503.png" src="_images/300f96cb47cf1ddeb0b376245451f9b33d51d1508ae0f8ff448ecdc67fccf503.png" />
+<img alt="_images/9dc3d2acdf8968f067808a26532e84ddd8ef6f2fb2835eb2e365013b64f092fa.png" src="_images/9dc3d2acdf8968f067808a26532e84ddd8ef6f2fb2835eb2e365013b64f092fa.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -1098,7 +1099,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dcffc8c5c2e6893101a352f4b4050fd4800a3da36e7c25a1b56c3a59883a79ed.png" src="_images/dcffc8c5c2e6893101a352f4b4050fd4800a3da36e7c25a1b56c3a59883a79ed.png" />
+<img alt="_images/a150ef64452be0722f4105cbc38787a187a9e5480147e553d922684bd9e5f893.png" src="_images/a150ef64452be0722f4105cbc38787a187a9e5480147e553d922684bd9e5f893.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">h0(y)</span></code>関数は右上りとなっている。傾きを直感的に説明すると次のようになる。<code class="docutils literal notranslate"><span class="pre">Y</span></code>が増加すると，当たり前だが所得<code class="docutils literal notranslate"><span class="pre">Y</span></code>は線形的に増加する。一方で，計画支出の一部である消費も増加するが，<code class="docutils literal notranslate"><span class="pre">a</span></code>は0.5に設定されているため，増加分は逓減している。したがって，所得と計画支出の差は上昇することになる。</p>
@@ -1215,7 +1216,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8730cc4b4ae33bdf44c73ff568418f8a36a8f8d3df5496e4f1e5985c7bc87bd1.png" src="_images/8730cc4b4ae33bdf44c73ff568418f8a36a8f8d3df5496e4f1e5985c7bc87bd1.png" />
+<img alt="_images/90b76d67ce6ce980356ee39cbfc637ec3773f7b84ed70bd6cc4ab4ff3102c56d.png" src="_images/90b76d67ce6ce980356ee39cbfc637ec3773f7b84ed70bd6cc4ab4ff3102c56d.png" />
 </div>
 </div>
 </section>
@@ -1298,7 +1299,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/506588ce49746c646465d67996a47a9e69fbddc903d92348087082e8db4a36dc.png" src="_images/506588ce49746c646465d67996a47a9e69fbddc903d92348087082e8db4a36dc.png" />
+<img alt="_images/8443ce6fd97ba47dae6fda660831a82bfae1f8780f5d19ed023adb6ab1598e56.png" src="_images/8443ce6fd97ba47dae6fda660831a82bfae1f8780f5d19ed023adb6ab1598e56.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>を使い定常状態<span class="math notranslate nohighlight">\(k_*\)</span>を計算してみよう。</p>
@@ -1521,7 +1522,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12e11f6b91a37e4bc52e6186fa2496f778a1610511eb28d84a94d3c5ef812a11.png" src="_images/12e11f6b91a37e4bc52e6186fa2496f778a1610511eb28d84a94d3c5ef812a11.png" />
+<img alt="_images/16e03468c9f445252bd4d89d71c1f9eec28e3bc1cd25b8f3796e6747d3bb0154.png" src="_images/16e03468c9f445252bd4d89d71c1f9eec28e3bc1cd25b8f3796e6747d3bb0154.png" />
 </div>
 </div>
 <p>まず<code class="docutils literal notranslate"><span class="pre">method</span></code>のデフォルトである<code class="docutils literal notranslate"><span class="pre">brent</span></code>法を使ってみよう。解が２つあるため、次のコードでは<code class="docutils literal notranslate"><span class="pre">Python</span></code>が選んだ解しか求めることができない。</p>
@@ -1681,7 +1682,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a6a3f0c76d974aeda1913c2827bd36d3470595f06f231eabe35ed5fba66eb117.png" src="_images/a6a3f0c76d974aeda1913c2827bd36d3470595f06f231eabe35ed5fba66eb117.png" />
+<img alt="_images/c12bee9aadbe0dc4924a9bb81b7f5128ef6a0e416740a1f5ae3f4902112cb78c.png" src="_images/c12bee9aadbe0dc4924a9bb81b7f5128ef6a0e416740a1f5ae3f4902112cb78c.png" />
 </div>
 </div>
 <p>次に一人当たり消費を最大化する貯蓄率を求めるために関数を定義する。</p>
@@ -1916,7 +1917,7 @@ c=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b9ac6ab6d904bdda61b77be3764355708aec11688e527005d089f6ae1fb153db.png" src="_images/b9ac6ab6d904bdda61b77be3764355708aec11688e527005d089f6ae1fb153db.png" />
+<img alt="_images/d1c7eca92a617a28d2f1857e43018b93bc5147d0d8cbe343b59e02c4d8d729a9.png" src="_images/d1c7eca92a617a28d2f1857e43018b93bc5147d0d8cbe343b59e02c4d8d729a9.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -2225,7 +2226,7 @@ y+z-1=0
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> message: Optimization terminated successfully
  success: True
   status: 0
-     fun: -0.7499999999999016
+     fun: -0.7499999999999017
        x: [ 5.000e-01  5.000e-01]
      nit: 4
      jac: [-5.000e-01 -5.000e-01]
@@ -2310,7 +2311,7 @@ y+z\leq 1
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> message: Optimization terminated successfully
  success: True
   status: 0
-     fun: -0.7499999999999043
+     fun: -0.7499999999999041
        x: [ 5.000e-01  5.000e-01]
      nit: 4
      jac: [-5.000e-01 -5.000e-01]
@@ -2401,7 +2402,7 @@ wl-pc=0
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> message: Optimization terminated successfully
  success: True
   status: 0
-     fun: -0.7085392478935648
+     fun: -0.7085392478810801
        x: [ 6.003e+00  6.003e-01]
      nit: 6
      jac: [-9.996e-02  1.001e+00]
@@ -2447,7 +2448,7 @@ wl-pc=0
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -2580,8 +2581,8 @@ By 春山 鉄源  Tetsugen HARUYAMA
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>

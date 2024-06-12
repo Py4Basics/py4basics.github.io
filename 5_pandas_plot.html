@@ -14,19 +14,19 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
@@ -34,16 +34,16 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
@@ -53,7 +53,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -86,27 +86,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -128,8 +124,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -228,7 +229,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -237,7 +238,7 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -557,7 +558,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/57bd2f88fae2ab3b2eea98ea2523c618d542eb99d31deb0f9ba4e7ee192779c5.png" src="_images/57bd2f88fae2ab3b2eea98ea2523c618d542eb99d31deb0f9ba4e7ee192779c5.png" />
+<img alt="_images/d540b15314e6955f75c1dd842c08862ea01d0146ed149532aa727215382b0441.png" src="_images/d540b15314e6955f75c1dd842c08862ea01d0146ed149532aa727215382b0441.png" />
 </div>
 </div>
 <ul class="simple">
@@ -651,7 +652,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9cc3dbf63ee0edc28a2a5deb7ebea7f3d332fc824e9b958545e2b835c446ac4a.png" src="_images/9cc3dbf63ee0edc28a2a5deb7ebea7f3d332fc824e9b958545e2b835c446ac4a.png" />
+<img alt="_images/bfe8eb586c35353867337e54d047fd628a966b1bcd47851c5e08bab8342f8f6d.png" src="_images/bfe8eb586c35353867337e54d047fd628a966b1bcd47851c5e08bab8342f8f6d.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>を<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>としてプロットすると凡例も表示される。</p>
@@ -663,7 +664,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a89b16dcd11e7fd7582d7147011ecd4f09b245073ca5c1093cd754ce07326f2f.png" src="_images/a89b16dcd11e7fd7582d7147011ecd4f09b245073ca5c1093cd754ce07326f2f.png" />
+<img alt="_images/40b97b06407ac9cb9d67a24fab57d99c3d30c83f620740c865180647307e60a9.png" src="_images/40b97b06407ac9cb9d67a24fab57d99c3d30c83f620740c865180647307e60a9.png" />
 </div>
 </div>
 <p>この場合の凡例は列ラベルがそのまま使われている。</p>
@@ -726,7 +727,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/78eeb7a4eabf8b03285e4ef2ae6bdd98b1846664ff9027513750a389f03dcc75.png" src="_images/78eeb7a4eabf8b03285e4ef2ae6bdd98b1846664ff9027513750a389f03dcc75.png" />
+<img alt="_images/f2607e7cdd2c3a8cb769d2cf305972190b3bfb83ee55cc7e4dbef6cfd22b307d.png" src="_images/f2607e7cdd2c3a8cb769d2cf305972190b3bfb83ee55cc7e4dbef6cfd22b307d.png" />
 </div>
 </div>
 <p>もしくは<code class="docutils literal notranslate"><span class="pre">Series</span></code>を2行に分けても同じ図となるが，凡例は表示されない。</p>
@@ -739,7 +740,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0ca68b1cd5a5218d28e331fb5b997a883ff6afb5eb205cc1783f8cb9bd84a637.png" src="_images/0ca68b1cd5a5218d28e331fb5b997a883ff6afb5eb205cc1783f8cb9bd84a637.png" />
+<img alt="_images/f080d95b59b862ff26fff02f562f23b0820a848cc71179ac1f29eee78c9b340d.png" src="_images/f080d95b59b862ff26fff02f562f23b0820a848cc71179ac1f29eee78c9b340d.png" />
 </div>
 </div>
 <p>デフォルトでは横軸に行インデックスが使われるが，横軸を指定したい場合は，次の引数を使う。</p>
@@ -755,7 +756,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bf997cb0ed0df0bd3ebeb664c691e87121da4420c0b36ab7a9b7d340ea604ac7.png" src="_images/bf997cb0ed0df0bd3ebeb664c691e87121da4420c0b36ab7a9b7d340ea604ac7.png" />
+<img alt="_images/e276f834fa4caef7dedfbf23a6625dd57aae073342e42280a0bdc0376bed9d4a.png" src="_images/e276f834fa4caef7dedfbf23a6625dd57aae073342e42280a0bdc0376bed9d4a.png" />
 </div>
 </div>
 </section>
@@ -821,7 +822,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9ee82492a7b671741349155a9b2b33e7314e310c0d275cd055e65a84c5f0ebcf.png" src="_images/9ee82492a7b671741349155a9b2b33e7314e310c0d275cd055e65a84c5f0ebcf.png" />
+<img alt="_images/fe262b887630ac4a6681033bc18a82d7d8eb174401a90d25ecb083f5ff27e5ff.png" src="_images/fe262b887630ac4a6681033bc18a82d7d8eb174401a90d25ecb083f5ff27e5ff.png" />
 </div>
 </div>
 </section>
@@ -886,7 +887,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0a0e248f729f0e222d68c11f0a13680b60dcb7a1bf659cdda0ef38cef5d04cfb.png" src="_images/0a0e248f729f0e222d68c11f0a13680b60dcb7a1bf659cdda0ef38cef5d04cfb.png" />
+<img alt="_images/4f09f975a224dee8d75831cb48fa03571f67de4a4623d32953121003bdecf441.png" src="_images/4f09f975a224dee8d75831cb48fa03571f67de4a4623d32953121003bdecf441.png" />
 </div>
 </div>
 </section>
@@ -902,7 +903,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/57bd2f88fae2ab3b2eea98ea2523c618d542eb99d31deb0f9ba4e7ee192779c5.png" src="_images/57bd2f88fae2ab3b2eea98ea2523c618d542eb99d31deb0f9ba4e7ee192779c5.png" />
+<img alt="_images/d540b15314e6955f75c1dd842c08862ea01d0146ed149532aa727215382b0441.png" src="_images/d540b15314e6955f75c1dd842c08862ea01d0146ed149532aa727215382b0441.png" />
 </div>
 </div>
 <p>１行目の右辺では「キャンバス」と「軸」が自動生成され，その内「軸」のみが返され変数<code class="docutils literal notranslate"><span class="pre">ax_</span></code>に割り当てられている。２行目の<code class="docutils literal notranslate"><span class="pre">plot()</span></code>の引数<code class="docutils literal notranslate"><span class="pre">ax</span></code>は「軸」を指定する引数であり，それに<code class="docutils literal notranslate"><span class="pre">ax_</span></code>を設定している。即ち，<code class="docutils literal notranslate"><span class="pre">Z</span></code>を「軸」<code class="docutils literal notranslate"><span class="pre">ax_</span></code>にプロットすることを指定している。このコードには２つの利点がある。</p>
@@ -925,7 +926,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/60cdb50440f140cb97f52a184196faa60182a85a2918771246b769423a62712a.png" src="_images/60cdb50440f140cb97f52a184196faa60182a85a2918771246b769423a62712a.png" />
+<img alt="_images/4cf0bc87a1dd12c21da0e15c9b50e0be167ed29b1622b31e6d805acc24e1dffb.png" src="_images/4cf0bc87a1dd12c21da0e15c9b50e0be167ed29b1622b31e6d805acc24e1dffb.png" />
 </div>
 </div>
 <p>また上のコードの最後に２行を付け加えているので便利なので参考にして欲しい。</p>
@@ -953,7 +954,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f5606ae56a990e8e8f17eeb17dcf0d3461eeb1812b4813e2fd39110ff995702d.png" src="_images/f5606ae56a990e8e8f17eeb17dcf0d3461eeb1812b4813e2fd39110ff995702d.png" />
+<img alt="_images/9b06faf0c509718591e8b7e7051a83eb0207f14d5e47ec3e56246a4a1dc35eda.png" src="_images/9b06faf0c509718591e8b7e7051a83eb0207f14d5e47ec3e56246a4a1dc35eda.png" />
 </div>
 </div>
 <p>図を横に並べるには<code class="docutils literal notranslate"><span class="pre">layout=(1,3)</span></code>を付け加える。<code class="docutils literal notranslate"><span class="pre">layout</span></code>は図の配置を行列のように考えて指定し、<code class="docutils literal notranslate"><span class="pre">1</span></code>は行の数であり、<code class="docutils literal notranslate"><span class="pre">3</span></code>は列の数。</p>
@@ -968,7 +969,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f11f1ef89b7f86d12f8c2d17994a03ac9a60f04206da904dc29d3c0e07106ee3.png" src="_images/f11f1ef89b7f86d12f8c2d17994a03ac9a60f04206da904dc29d3c0e07106ee3.png" />
+<img alt="_images/6ad5923077079b11bfdf81d952cc394b623a5e1610224d33888f198f58d4b288.png" src="_images/6ad5923077079b11bfdf81d952cc394b623a5e1610224d33888f198f58d4b288.png" />
 </div>
 </div>
 </section>
@@ -983,7 +984,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2179ef02240a856ba6413a0b44e6af434cd6ef2df5d415cfec2d8b717c5d4dbe.png" src="_images/2179ef02240a856ba6413a0b44e6af434cd6ef2df5d415cfec2d8b717c5d4dbe.png" />
+<img alt="_images/6e5eec5c56283af3ab7fed30341edbfb6d2d353f4260c1bf3d1aa4c0c1ead0cd.png" src="_images/6e5eec5c56283af3ab7fed30341edbfb6d2d353f4260c1bf3d1aa4c0c1ead0cd.png" />
 </div>
 </div>
 <p>別々の飾り付けをする場合は次のようにすると良いだろう。</p>
@@ -997,7 +998,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f9ce3f629e544ebbb47e461b5d8cad9e48932a5a0edf355219d8cf109f57d33f.png" src="_images/f9ce3f629e544ebbb47e461b5d8cad9e48932a5a0edf355219d8cf109f57d33f.png" />
+<img alt="_images/5bb09dba09a5e98aa95f205a7cad2138cf47de89b1e8017b688c5de449e6bde7.png" src="_images/5bb09dba09a5e98aa95f205a7cad2138cf47de89b1e8017b688c5de449e6bde7.png" />
 </div>
 </div>
 <p>上の図との主な違いが３行目にある</p>
@@ -1035,7 +1036,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a9ad7ac17dbf5fe309c7c07e65c63e04646af1ebe454ccd0ec5dd46f7b428c97.png" src="_images/a9ad7ac17dbf5fe309c7c07e65c63e04646af1ebe454ccd0ec5dd46f7b428c97.png" />
+<img alt="_images/d757c4264348702025356b67ced16905de46f629cb6bfd548268f634ba7c9476.png" src="_images/d757c4264348702025356b67ced16905de46f629cb6bfd548268f634ba7c9476.png" />
 </div>
 </div>
 </section>
@@ -1086,7 +1087,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/941e18d3148489c491370ef3f1b7f3e934e6057adecb03f5452dda4a37cc061c.png" src="_images/941e18d3148489c491370ef3f1b7f3e934e6057adecb03f5452dda4a37cc061c.png" />
+<img alt="_images/9ad9629edee4c8da430a7dd5342ab120e4471edd40a2cc36754b95858fdd6b79.png" src="_images/9ad9629edee4c8da430a7dd5342ab120e4471edd40a2cc36754b95858fdd6b79.png" />
 </div>
 </div>
 <blockquote>
@@ -1227,7 +1228,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/530719cfef5f6f45cdce3da7ef7800c9dd87777405ba4394ac23fb4dc50d2817.png" src="_images/530719cfef5f6f45cdce3da7ef7800c9dd87777405ba4394ac23fb4dc50d2817.png" />
+<img alt="_images/056478a4514357d3986bb63cc9b8efdea11015a83ba0f77335d88b6aa5efaae3.png" src="_images/056478a4514357d3986bb63cc9b8efdea11015a83ba0f77335d88b6aa5efaae3.png" />
 </div>
 </div>
 </section>
@@ -1419,7 +1420,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9036674e7c9aeebf275efb83c4b3f8fd65a90a2cf14718b63f128733e1f6f5b0.png" src="_images/9036674e7c9aeebf275efb83c4b3f8fd65a90a2cf14718b63f128733e1f6f5b0.png" />
+<img alt="_images/e21cc3891c5aa7b521f57cb337f4318a7300bfdfcae034b97b5060e84bc10a0d.png" src="_images/e21cc3891c5aa7b521f57cb337f4318a7300bfdfcae034b97b5060e84bc10a0d.png" />
 </div>
 </div>
 </section>
@@ -1525,7 +1526,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/25b014dfa853294e8c597db86b610830c6747beb3625873ccd61ba085e9a9151.png" src="_images/25b014dfa853294e8c597db86b610830c6747beb3625873ccd61ba085e9a9151.png" />
+<img alt="_images/971d485e27a6faccabd2131f26ebacf927c25f6887daf4a4f4fa3dc69df1b4e7.png" src="_images/971d485e27a6faccabd2131f26ebacf927c25f6887daf4a4f4fa3dc69df1b4e7.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1577,7 +1578,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0afe762b3915f115713095e53dda2adea927dd35032b7e5307534a955193a551.png" src="_images/0afe762b3915f115713095e53dda2adea927dd35032b7e5307534a955193a551.png" />
+<img alt="_images/03ef7080dcdc230688216b79e00cd31636c7047d441e6662b3c39c54248ce0b4.png" src="_images/03ef7080dcdc230688216b79e00cd31636c7047d441e6662b3c39c54248ce0b4.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なので，そちらを参照しよう。</p>
@@ -1594,7 +1595,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ce4b0dcdc9d322d6b3c50bfe1e1ca418af871b918013447da090c91d0d0b926a.png" src="_images/ce4b0dcdc9d322d6b3c50bfe1e1ca418af871b918013447da090c91d0d0b926a.png" />
+<img alt="_images/0a51f5e1e3353b9dd80c8e38e98f3440abcbb8210b270a623c345b0b8a04c434.png" src="_images/0a51f5e1e3353b9dd80c8e38e98f3440abcbb8210b270a623c345b0b8a04c434.png" />
 </div>
 </div>
 </section>
@@ -1615,7 +1616,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/669f742264f2860344c149025b711d338c3573c736b679623b6d47aa92e160d4.png" src="_images/669f742264f2860344c149025b711d338c3573c736b679623b6d47aa92e160d4.png" />
+<img alt="_images/17dd7a72918f1906547ea92d51b143b745eaf2c9f160d9d792321bb3bc4c7e10.png" src="_images/17dd7a72918f1906547ea92d51b143b745eaf2c9f160d9d792321bb3bc4c7e10.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1677,7 +1678,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c6df0cc530c2799d7f5241d30f163700dcf813a7074db4036ef91d79c5d1d41c.png" src="_images/c6df0cc530c2799d7f5241d30f163700dcf813a7074db4036ef91d79c5d1d41c.png" />
+<img alt="_images/7b1078fef92f2f541bee00cccc8b25db6ba6ec223482d6bf0e6be36c00b717c5.png" src="_images/7b1078fef92f2f541bee00cccc8b25db6ba6ec223482d6bf0e6be36c00b717c5.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
@@ -1694,7 +1695,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e2bac4cfe5be2dffd5366a94fe87660f794e921df7d49a6f66318c017ab75b4a.png" src="_images/e2bac4cfe5be2dffd5366a94fe87660f794e921df7d49a6f66318c017ab75b4a.png" />
+<img alt="_images/a1c256599cc151089847af46809804605e94a871912a7055586a6dcbb4e610d2.png" src="_images/a1c256599cc151089847af46809804605e94a871912a7055586a6dcbb4e610d2.png" />
 </div>
 </div>
 <p>濃い部分が重なっている部分となる。また柱を積み上げて表示するには<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）を使う。</p>
@@ -1710,7 +1711,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9c5af3948058bc06bc9ccb95d75ddf20abc3bc82a89cae581a51f283ea610f60.png" src="_images/9c5af3948058bc06bc9ccb95d75ddf20abc3bc82a89cae581a51f283ea610f60.png" />
+<img alt="_images/e2729a365edb36bb591a6fda8b4ef7cdc4f1b9893fc440137b773ab539824fca.png" src="_images/e2729a365edb36bb591a6fda8b4ef7cdc4f1b9893fc440137b773ab539824fca.png" />
 </div>
 </div>
 <p>赤の上に黒が積み上げられている。</p>
@@ -1731,7 +1732,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9fe05153c61b1701472afd79a09f767776284ed159291457379a847d8e245da5.png" src="_images/9fe05153c61b1701472afd79a09f767776284ed159291457379a847d8e245da5.png" />
+<img alt="_images/66da6a03ba88dc04be5b4f566e753fb68ca12a12dfe8aa8106a9520c0144e2e2.png" src="_images/66da6a03ba88dc04be5b4f566e753fb68ca12a12dfe8aa8106a9520c0144e2e2.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1786,7 +1787,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7843890a3a711c7eb0b6f6f60053f190f43bea54c433ec781ebe7b670ccb393d.png" src="_images/7843890a3a711c7eb0b6f6f60053f190f43bea54c433ec781ebe7b670ccb393d.png" />
+<img alt="_images/17a32199db8f58d030d22d2a1f6dc2ecacf216d8d9e03025c596854da345d13a.png" src="_images/17a32199db8f58d030d22d2a1f6dc2ecacf216d8d9e03025c596854da345d13a.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
@@ -1806,7 +1807,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f30e634f00dc63f11016bd7f92ed9ca748528ff3ae46e380b5902465b343c214.png" src="_images/f30e634f00dc63f11016bd7f92ed9ca748528ff3ae46e380b5902465b343c214.png" />
+<img alt="_images/3f362900f74deaf58d49cb19442f11e94a9686bd6b101d6226535beb1269e0fc.png" src="_images/3f362900f74deaf58d49cb19442f11e94a9686bd6b101d6226535beb1269e0fc.png" />
 </div>
 </div>
 </section>
@@ -1839,7 +1840,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/59534effc5b115e6c8adedab75eacc37cf77fdc831c71004e24fb0de1ad21e1d.png" src="_images/59534effc5b115e6c8adedab75eacc37cf77fdc831c71004e24fb0de1ad21e1d.png" />
+<img alt="_images/a35d2381375b84d2b9ca63e10f14d6162db78ad234d03a1bf33ac01e2c6dd6fc.png" src="_images/a35d2381375b84d2b9ca63e10f14d6162db78ad234d03a1bf33ac01e2c6dd6fc.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1883,7 +1884,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1cc1dff70dded83c75a9add9a9d79aeb4be55f72a9b7741985a37b5a5cf3c600.png" src="_images/1cc1dff70dded83c75a9add9a9d79aeb4be55f72a9b7741985a37b5a5cf3c600.png" />
+<img alt="_images/69e2962d5b9f06e41c36ef1782601acfc4c19fc046301f8709cf4dd1368f56c5.png" src="_images/69e2962d5b9f06e41c36ef1782601acfc4c19fc046301f8709cf4dd1368f56c5.png" />
 </div>
 </div>
 <p>最後に上のヒストグラムとカーネル密度推定プロットに縦線を加えてみよう。</p>
@@ -1903,7 +1904,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5439918b003321dd3d2aee13d2f7f59641afdf9b7cfd9a722542acb52568a692.png" src="_images/5439918b003321dd3d2aee13d2f7f59641afdf9b7cfd9a722542acb52568a692.png" />
+<img alt="_images/90f65cf7478b2df932b371300e9de47cb98696af72d7af94957e8e87a347b004.png" src="_images/90f65cf7478b2df932b371300e9de47cb98696af72d7af94957e8e87a347b004.png" />
 </div>
 </div>
 </section>
@@ -1944,7 +1945,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4ce7aefb9934af25e42d1ba9c2d446c0edc783b1bae501a2e864cb87bb1f90f8.png" src="_images/4ce7aefb9934af25e42d1ba9c2d446c0edc783b1bae501a2e864cb87bb1f90f8.png" />
+<img alt="_images/0aa605a804b52c978b2b5bd215fcf10a9f0751d01e6ec49cd58dd1f8f631f275.png" src="_images/0aa605a804b52c978b2b5bd215fcf10a9f0751d01e6ec49cd58dd1f8f631f275.png" />
 </div>
 </div>
 <p>複数の棒（データ）を並べたい場合もあるだろう。その場合は<code class="docutils literal notranslate"><span class="pre">＜縦軸の列ラベル＞</span></code>にリストとして指定すれば表示できる。</p>
@@ -1956,7 +1957,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2ac94de0b00b03e8944a8f3e57debe1409a980a668166bb8c37360357863d8fd.png" src="_images/2ac94de0b00b03e8944a8f3e57debe1409a980a668166bb8c37360357863d8fd.png" />
+<img alt="_images/63b0cbe3231fa6621b3e991b24febdd478ebb7014bd3599c2a42e5a4a170a9e4.png" src="_images/63b0cbe3231fa6621b3e991b24febdd478ebb7014bd3599c2a42e5a4a170a9e4.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2009,7 +2010,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0aa92f8696e4aca48907ba3599b307df05045251d0edf5055fc664cee32c8368.png" src="_images/0aa92f8696e4aca48907ba3599b307df05045251d0edf5055fc664cee32c8368.png" />
+<img alt="_images/149d09a62b3a4bfeab25d96ac40b364a93ce29169cd91f9038c7327e7bed28d7.png" src="_images/149d09a62b3a4bfeab25d96ac40b364a93ce29169cd91f9038c7327e7bed28d7.png" />
 </div>
 </div>
 <p>次に，ライン・プロットを追加する例を考えてみよう。<code class="docutils literal notranslate"><span class="pre">df2</span></code>には列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>があり，それを表すライン・プロットを重ねることにしよう。</p>
@@ -2036,7 +2037,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5c6e28f692e67177585c8bee8f1dd18f6cfced3d74477cced92ab79c80cfdcce.png" src="_images/5c6e28f692e67177585c8bee8f1dd18f6cfced3d74477cced92ab79c80cfdcce.png" />
+<img alt="_images/15cd83115ac775fe412b3773eed35031ca46a9f924a017692c56f8c34358ca80.png" src="_images/15cd83115ac775fe412b3773eed35031ca46a9f924a017692c56f8c34358ca80.png" />
 </div>
 </div>
 <p>棒の高さとGDPのマーカーの高さは同じであることがわかる。このコードでは次の点に注意する必要がある。<code class="docutils literal notranslate"><span class="pre">gdp</span></code>を<code class="docutils literal notranslate"><span class="pre">Series</span></code>として抽出し，メソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使っていることである。これにより，凡例の表記を自由に変更できることになる。</p>
@@ -2071,7 +2072,7 @@ Name: X, dtype: int64
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -2188,8 +2189,8 @@ By 春山 鉄源  Tetsugen HARUYAMA
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>
