@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -47,7 +47,7 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -245,9 +245,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -272,14 +272,14 @@
       
       <li><a href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/4_matplotlib.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -290,14 +290,14 @@
       
       <li><a href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/4_matplotlib.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -405,9 +405,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -612,7 +612,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x118bcb4c0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1119d3490&gt;]
 </pre></div>
 </div>
 <img alt="_images/54b373392f3b7cbe5619cd4ef62f05d2b4a9766fcfb1e22ca3185886a3dcef0f.png" src="_images/54b373392f3b7cbe5619cd4ef62f05d2b4a9766fcfb1e22ca3185886a3dcef0f.png" />
@@ -637,7 +637,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x118cea6e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x111af2650&gt;]
 </pre></div>
 </div>
 <img alt="_images/49172079cfb55c145214ab6c1b45ada6c782c3b664ca9a11a0c894e631ed9ea1.png" src="_images/49172079cfb55c145214ab6c1b45ada6c782c3b664ca9a11a0c894e631ed9ea1.png" />
@@ -1852,7 +1852,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a6cfb933f76f5abb9da775c57d8fbc371a80d35a3b1fe3dcd81b2a609f16ee6c.png" src="_images/a6cfb933f76f5abb9da775c57d8fbc371a80d35a3b1fe3dcd81b2a609f16ee6c.png" />
+<img alt="_images/8e834f37496bb88a4e40ca2455d35dea87fffb9cc6fa2c734a4f0e9ad6f3d311.png" src="_images/8e834f37496bb88a4e40ca2455d35dea87fffb9cc6fa2c734a4f0e9ad6f3d311.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1889,7 +1889,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dab7b12610b84f39052977eb01e9a9ae30ae753150d76ddaf206d48e6efa085a.png" src="_images/dab7b12610b84f39052977eb01e9a9ae30ae753150d76ddaf206d48e6efa085a.png" />
+<img alt="_images/ab3922cad7d8139cc790da4ffa9618089a35e8efc42120bc54dc5dd7825b76d4.png" src="_images/ab3922cad7d8139cc790da4ffa9618089a35e8efc42120bc54dc5dd7825b76d4.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Z</span></code>の散布図を加えてタイトルなども付け加えてみよう。</p>
@@ -1915,7 +1915,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/545fa550b15d85410db401f686592517822b373281cccd8eb87197b39707a790.png" src="_images/545fa550b15d85410db401f686592517822b373281cccd8eb87197b39707a790.png" />
+<img alt="_images/87ab0b8e20d7b506a25cdbe7e6d9ac21f27a1b029dbc0b7b3fbb6e469b49b1a3.png" src="_images/87ab0b8e20d7b506a25cdbe7e6d9ac21f27a1b029dbc0b7b3fbb6e469b49b1a3.png" />
 </div>
 </div>
 </section>
@@ -1945,7 +1945,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/184025efcc5f64a87ac09e24fa6854129412a97bc78451209f6c12e2de0ce6b0.png" src="_images/184025efcc5f64a87ac09e24fa6854129412a97bc78451209f6c12e2de0ce6b0.png" />
+<img alt="_images/a62991f77798e9a9ddffe1e1b3aa0cbc8d856a3b77cb6b17e7637a1bbae77caf.png" src="_images/a62991f77798e9a9ddffe1e1b3aa0cbc8d856a3b77cb6b17e7637a1bbae77caf.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1988,7 +1988,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bf356c7ea4e92b5be29f72b5ecc3582ab99a3da2de280beaa1d8d393830a4095.png" src="_images/bf356c7ea4e92b5be29f72b5ecc3582ab99a3da2de280beaa1d8d393830a4095.png" />
+<img alt="_images/f6199a1f1edff8622243dba923bfaa316679864c27babb494c10874af25ac025.png" src="_images/f6199a1f1edff8622243dba923bfaa316679864c27babb494c10874af25ac025.png" />
 </div>
 </div>
 <p>次に複数のデータを並べてプロットする場合を考えよう。方法は簡単で，異なるデータをリストとして指定すれば良い。</p>
@@ -2007,7 +2007,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b3709c06225b95c16f8044fe25bed23dfbe1f1bf15e1ee4d98e69d0cedc1fdf4.png" src="_images/b3709c06225b95c16f8044fe25bed23dfbe1f1bf15e1ee4d98e69d0cedc1fdf4.png" />
+<img alt="_images/0cbb32ee2efb720eebaa157f40a2d0b76ce0f85e63096980a10145ff650b6aa3.png" src="_images/0cbb32ee2efb720eebaa157f40a2d0b76ce0f85e63096980a10145ff650b6aa3.png" />
 </div>
 </div>
 <p>上のコードに引数<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>を加えると，柱を重ねて表示される。試してみよう。また<code class="docutils literal notranslate"><span class="pre">ax.hist()</span></code>を２回使うと，２つのヒストグラムを重ねて表示することができる。この場合，引数<code class="docutils literal notranslate"><span class="pre">alpha</span></code>の値を調整すると良いだろう。</p>
@@ -2033,7 +2033,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/32806c3e2ec79eaf48af3786a2a35e27e381f1dc9d97f50a09f768944e9b6986.png" src="_images/32806c3e2ec79eaf48af3786a2a35e27e381f1dc9d97f50a09f768944e9b6986.png" />
+<img alt="_images/4b8dde72381403512da480e6e19adee3417d26e1db39882761f44adcb3c8fbf0.png" src="_images/4b8dde72381403512da480e6e19adee3417d26e1db39882761f44adcb3c8fbf0.png" />
 </div>
 </div>
 <p>濃い赤の部分が重なっている部分となる。</p>
@@ -2069,7 +2069,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6bb314b0b3db8135a7e2e2f7264038f8f73ec72529431ef84f3fbb8ed7dee170.png" src="_images/6bb314b0b3db8135a7e2e2f7264038f8f73ec72529431ef84f3fbb8ed7dee170.png" />
+<img alt="_images/877ed8ba09cc99e0f83ad39ef9fbad9de32be523f8805f55de7554b9049119ff.png" src="_images/877ed8ba09cc99e0f83ad39ef9fbad9de32be523f8805f55de7554b9049119ff.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2113,7 +2113,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9ed7fca70e7e02312728b8713ae91fcd8bc5ad559f6e036c7ced20f511ef371e.png" src="_images/9ed7fca70e7e02312728b8713ae91fcd8bc5ad559f6e036c7ced20f511ef371e.png" />
+<img alt="_images/3393fd34dd6125014b6a05fdb47f5cea18355acd70e74daeaaf732f9af3b9d8e.png" src="_images/3393fd34dd6125014b6a05fdb47f5cea18355acd70e74daeaaf732f9af3b9d8e.png" />
 </div>
 </div>
 </section>
