@@ -877,15 +877,17 @@ A BA___
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function print in module builtins:
 
-print(...)
-    print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
-    
+print(*args, sep=&#39; &#39;, end=&#39;\n&#39;, file=None, flush=False)
     Prints the values to a stream, or to sys.stdout by default.
-    Optional keyword arguments:
-    file:  a file-like object (stream); defaults to the current sys.stdout.
-    sep:   string inserted between values, default a space.
-    end:   string appended after the last value, default a newline.
-    flush: whether to forcibly flush the stream.
+
+    sep
+      string inserted between values, default a space.
+    end
+      string appended after the last value, default a newline.
+    file
+      a file-like object (stream); defaults to the current sys.stdout.
+    flush
+      whether to forcibly flush the stream.
 </pre></div>
 </div>
 </div>
@@ -1456,6 +1458,7 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
  &#39;__getattribute__&#39;,
  &#39;__getformat__&#39;,
  &#39;__getnewargs__&#39;,
+ &#39;__getstate__&#39;,
  &#39;__gt__&#39;,
  &#39;__hash__&#39;,
  &#39;__init__&#39;,
@@ -1483,7 +1486,6 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
  &#39;__rsub__&#39;,
  &#39;__rtruediv__&#39;,
  &#39;__setattr__&#39;,
- &#39;__setformat__&#39;,
  &#39;__sizeof__&#39;,
  &#39;__str__&#39;,
  &#39;__sub__&#39;,
@@ -1538,6 +1540,7 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
  &#39;__ge__&#39;,
  &#39;__getattribute__&#39;,
  &#39;__getitem__&#39;,
+ &#39;__getstate__&#39;,
  &#39;__gt__&#39;,
  &#39;__hash__&#39;,
  &#39;__iadd__&#39;,
