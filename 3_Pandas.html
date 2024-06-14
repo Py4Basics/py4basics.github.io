@@ -729,10 +729,10 @@ document.write(`
 <p>数値はPenn World Tableと呼ばれるデータセットに基づき作成している。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">country</span></code>：国名</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gdp</span></code>：国内総生産（Gross Domestic Product）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">con</span></code>：消費（consumption）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">inv</span></code>：投資（investment）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pop</span></code>：人口（population）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gdp</span></code>：国内総生産（Gross Domestic Product, current PPPs; in billions 2011US$）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">con</span></code>：消費（consumption, current PPPs; in billions 2011US$）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inv</span></code>：投資（investment, current PPPs; in billions 2011US$）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop</span></code>：人口（population, in millions）</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">continent</span></code>：大陸（continent）</p></li>
 </ul>
 <p>行はインデックス（番号）になっており，そのまま使っても全く問題ない。ここでは列<code class="docutils literal notranslate"><span class="pre">country</span></code>を行ラベルに設定して<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>の使い方について説明することにする。</p>
@@ -6026,7 +6026,7 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
-<p>数値は日本の四半期データを年平均にしている。</p>
+<p>数値は日本の四半期データを年平均（単位：<code class="docutils literal notranslate"><span class="pre">10</span></code>億円）にしている。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">year</span></code>：年</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">gdp</span></code>：国内総生産（Gross Domestic Product）</p></li>
@@ -7018,7 +7018,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x11527c5f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x1180642f0&gt;
 </pre></div>
 </div>
 </div>
@@ -7039,7 +7039,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x11527cad0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x1180315e0&gt;
 </pre></div>
 </div>
 </div>
