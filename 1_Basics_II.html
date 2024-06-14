@@ -744,15 +744,17 @@ document.write(`
 <h3>リスト<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <section id="id9">
 <h4>１つの要素の抽出<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
-<p>要素のインデックス（位置）を考える場合，次の図のように左から<code class="docutils literal notranslate"><span class="pre">0</span></code>，<code class="docutils literal notranslate"><span class="pre">1</span></code>，<code class="docutils literal notranslate"><span class="pre">2</span></code>…，右からは<code class="docutils literal notranslate"><span class="pre">-1</span></code>，<code class="docutils literal notranslate"><span class="pre">-2</span></code>，<code class="docutils literal notranslate"><span class="pre">-3</span></code>と数える。</p>
+<p>インデックスとは、リスト、タプル及び文字列における要素の位置を示す番号を意味し、<code class="docutils literal notranslate"><span class="pre">0</span></code>から始まる。
+次の図は、リストの要素<code class="docutils literal notranslate"><span class="pre">A</span></code>，<code class="docutils literal notranslate"><span class="pre">B</span></code>，<code class="docutils literal notranslate"><span class="pre">C</span></code>…<code class="docutils literal notranslate"><span class="pre">F</span></code>を並べ、各要素に対応するインデックを示している。
+左から数えると<code class="docutils literal notranslate"><span class="pre">0</span></code>，<code class="docutils literal notranslate"><span class="pre">1</span></code>，<code class="docutils literal notranslate"><span class="pre">2</span></code>…となり，右からは<code class="docutils literal notranslate"><span class="pre">-1</span></code>，<code class="docutils literal notranslate"><span class="pre">-2</span></code>，<code class="docutils literal notranslate"><span class="pre">-3</span></code>と数える。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   0   1   2   3   4   5  （左から数える） 
  +---+---+---+---+---+---+
- | P | y | t | h | o | n |
+ | A | B | C | D | E | F |
  +---+---+---+---+---+---+
   -6  -5  -4  -3  -2  -1　（右から数える）
 </pre></div>
 </div>
-<p>例えば，次のリストを考えよう。</p>
+<p>上の図にあるリストを考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">]</span>
@@ -760,7 +762,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">'A'</span></code>は０番目，<code class="docutils literal notranslate"><span class="pre">'B'</span></code>１番目，<code class="docutils literal notranslate"><span class="pre">'C'</span></code>は２番目と数える。<code class="docutils literal notranslate"><span class="pre">A</span></code>を抽出したい場合は<code class="docutils literal notranslate"><span class="pre">[]</span></code>を使い<code class="docutils literal notranslate"><span class="pre">A</span></code>のインデックス番号<code class="docutils literal notranslate"><span class="pre">0</span></code>を指定する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">'A'</span></code>は<code class="docutils literal notranslate"><span class="pre">0</span></code>番目，<code class="docutils literal notranslate"><span class="pre">'B'</span></code>は<code class="docutils literal notranslate"><span class="pre">1</span></code>番目，<code class="docutils literal notranslate"><span class="pre">'C'</span></code>は<code class="docutils literal notranslate"><span class="pre">2</span></code>番目と数える。<code class="docutils literal notranslate"><span class="pre">A</span></code>を抽出したい場合は<code class="docutils literal notranslate"><span class="pre">[]</span></code>を使い<code class="docutils literal notranslate"><span class="pre">A</span></code>のインデックス<code class="docutils literal notranslate"><span class="pre">0</span></code>を指定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -802,7 +804,7 @@ document.write(`
 </section>
 <section id="id10">
 <h4>複数要素の抽出（その１）<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
-<p>次に複数の連続する要素を抽出したいとしよう。この場合はスライシングと呼ばれ，<code class="docutils literal notranslate"><span class="pre">:</span></code>（コロン）を使う。<code class="docutils literal notranslate"><span class="pre">:</span></code>の左右にインデックス番号を置き要素を選択するが，次のルールに従う。</p>
+<p>次に複数の連続する要素を抽出したいとしよう。この場合は<strong>スライシング</strong>（slicing）と呼ばれ，<code class="docutils literal notranslate"><span class="pre">:</span></code>（コロン）を使う。<code class="docutils literal notranslate"><span class="pre">:</span></code>の左右にインデックス番号を置き要素を選択するが，次のルールに従う。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[＜start＞:＜end＞]
 </pre></div>
 </div>

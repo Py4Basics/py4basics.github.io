@@ -475,8 +475,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">並び替え</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">行インデックスと列ラベル</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">インデックスを振り直す</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">行番号と列ラベル</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">行番号を振り直す</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">列のラベルの変更</a></li>
 </ul>
 </li>
@@ -533,7 +533,7 @@ document.write(`
 <section id="id1">
 <h2>説明<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>はデータを扱う上で欠かせないパッケージであり，エクセルをイメージすれば良いだろう。<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>にはエクセルのスプレッド・シートに対応する<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>（データ・フレーム）と<code class="docutils literal notranslate"><span class="pre">Series</span></code>（シリーズ）呼ばれるオブジェクトがあり，それらを駆使してデータ分析をおこなう。</p>
-<p>データ・フレームは下の表のようになっている。<code class="docutils literal notranslate"><span class="pre">X</span></code>，<code class="docutils literal notranslate"><span class="pre">Y</span></code>，<code class="docutils literal notranslate"><span class="pre">Z</span></code>は「列ラベル」（アルファベットや記号など）であり、<code class="docutils literal notranslate"><span class="pre">X</span></code>，<code class="docutils literal notranslate"><span class="pre">Y</span></code>，<code class="docutils literal notranslate"><span class="pre">Z</span></code>は<code class="docutils literal notranslate"><span class="pre">0</span></code>、<code class="docutils literal notranslate"><span class="pre">1</span></code>、<code class="docutils literal notranslate"><span class="pre">2</span></code>という「列インデックス」（番号）に対応している。また、一番左の<code class="docutils literal notranslate"><span class="pre">0</span></code>，<code class="docutils literal notranslate"><span class="pre">1</span></code>，<code class="docutils literal notranslate"><span class="pre">2</span></code>は「行インデックス」（番号）であり、「行ラベル」（アルファベットや記号など）を設定することも可能である。その他の数字がデータとなっている。</p>
+<p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>は次の表の様になっている。まず、用語の整理をしよう。</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -562,11 +562,24 @@ document.write(`
 </table>
 </div>
 <ul class="simple">
-<li><p>列インデックス、行インデックス：<code class="docutils literal notranslate"><span class="pre">0</span></code>、<code class="docutils literal notranslate"><span class="pre">1</span></code>、<code class="docutils literal notranslate"><span class="pre">3</span></code>のような整数</p></li>
-<li><p>列ラベル、行ラベル：<code class="docutils literal notranslate"><span class="pre">X</span></code>、<code class="docutils literal notranslate"><span class="pre">Y</span></code>、<code class="docutils literal notranslate"><span class="pre">Z</span></code>のような文字列</p></li>
+<li><p><strong>列</strong>とは縦に沿ったデータの集まりであり、<code class="docutils literal notranslate"><span class="pre">X</span></code>の列には<code class="docutils literal notranslate"><span class="pre">10</span></code>、<code class="docutils literal notranslate"><span class="pre">20</span></code>、<code class="docutils literal notranslate"><span class="pre">30</span></code>がある。<code class="docutils literal notranslate"><span class="pre">Y</span></code>と<code class="docutils literal notranslate"><span class="pre">Z</span></code>も同様にそれぞれの値から構成される列となる。</p></li>
+<li><p><strong>行</strong>とは横に沿ったデータの集まりであり、<code class="docutils literal notranslate"><span class="pre">0</span></code>の行には<code class="docutils literal notranslate"><span class="pre">10</span></code>、<code class="docutils literal notranslate"><span class="pre">5.0</span></code>、<code class="docutils literal notranslate"><span class="pre">3.0</span></code>がある。<code class="docutils literal notranslate"><span class="pre">1</span></code>と<code class="docutils literal notranslate"><span class="pre">2</span></code>も同様にそれぞれの値から構成される行となる。</p></li>
+<li><p><strong>インデックス</strong>とは<strong>行</strong>を特定するための数字やラベル（文字列）を表し、上の例では左側に縦に並ぶ<code class="docutils literal notranslate"><span class="pre">0</span></code>、<code class="docutils literal notranslate"><span class="pre">1</span></code>、<code class="docutils literal notranslate"><span class="pre">2</span></code>がインデックスである。インデックスには２種類がある。</p>
+<ul>
+<li><p><strong>位置番号</strong>：上の例では、<code class="docutils literal notranslate"><span class="pre">0</span></code>は<code class="docutils literal notranslate"><span class="pre">0</span></code>番目の行を、<code class="docutils literal notranslate"><span class="pre">1</span></code>は<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の行を、<code class="docutils literal notranslate"><span class="pre">2</span></code>は<code class="docutils literal notranslate"><span class="pre">2</span></code>番目の行を示す。このサイトでは、これを<strong>インデックス番号</strong>もしくは<strong>行番号</strong>と呼ぶ。</p></li>
+<li><p><strong>ラベル</strong>：各行を特定するための整数や文字列となる。以下で<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の詳細な説明をする際に<code class="docutils literal notranslate"><span class="pre">df</span></code>という変数に<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を割り当てるが、そこでは国名（文字列）がラベルに使われている。このサイトでは、これを<strong>行ラベル</strong>と呼ぶ。</p></li>
 </ul>
-<p>列<code class="docutils literal notranslate"><span class="pre">X</span></code>のデータはその列にある数字<code class="docutils literal notranslate"><span class="pre">10</span></code>，<code class="docutils literal notranslate"><span class="pre">20</span></code>，<code class="docutils literal notranslate"><span class="pre">30</span></code>であり，<code class="docutils literal notranslate"><span class="pre">Y</span></code>と<code class="docutils literal notranslate"><span class="pre">Z</span></code>も同様に同じ列にあるデータから構成される。<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>は上の表のように１つ以上の列から構成されており、<code class="docutils literal notranslate"><span class="pre">Series</span></code>には１つの列（もしくは行と考えることもできる）のみしかない点が大きな違いである。</p>
-<p>これらの特徴により複雑なデータの扱いが簡単になる。例えば，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>を使うと目的のデータにアクセスしたい場合、何番目の行で何番目の列なのかを把握する必要がある。一方、<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>では行・列にラベルを使うことにより（例えば，行「1980年」の列「GDP」のようにデータを特定することが可能となる），データの操作が非常に簡単になる。また，<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>は<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>に基づいているため，ベクトル演算の機能が使える。</p>
+</li>
+<li><p><strong>列</strong>のラベルと位置番号</p>
+<ul>
+<li><p><strong>ラベル</strong>：列を特定するための整数や文字列を指す。上の例では、<code class="docutils literal notranslate"><span class="pre">X</span></code>，<code class="docutils literal notranslate"><span class="pre">Y</span></code>，<code class="docutils literal notranslate"><span class="pre">Z</span></code>がラベルであり、このサイトでは<strong>列ラベル</strong>と呼ぶ。</p></li>
+<li><p><strong>位置番号</strong>：上の例では、<code class="docutils literal notranslate"><span class="pre">X</span></code>は<code class="docutils literal notranslate"><span class="pre">0</span></code>番目の列を、<code class="docutils literal notranslate"><span class="pre">Y</span></code>は<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の列を、<code class="docutils literal notranslate"><span class="pre">Z</span></code>は<code class="docutils literal notranslate"><span class="pre">2</span></code>番目の列を示す。このサイトでは、これを<strong>列番号</strong>と呼ぶ。</p></li>
+</ul>
+</li>
+<li><p>上の例では行番号と列ラベル以外の数字がデータとなっている。</p></li>
+</ul>
+<p>上の表のように、<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>は１つ以上の行と列から構成されている。一方、<code class="docutils literal notranslate"><span class="pre">Series</span></code>には１つの列（もしくは行と考えることもできる）のみしかない点が大きな違いである。</p>
+<p>これらの特徴により複雑なデータの扱いが簡単になる。例えば，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>を使うと目的のデータにアクセスしたい場合、行番号と列番号を把握する必要がある。一方、<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>では行と列にラベルを使うことにより（例えば，行<code class="docutils literal notranslate"><span class="pre">Japan</span></code>の列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>のようにデータを特定することが可能となる），データの操作が非常に簡単になる。また，<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>は<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>に基づいているため，ベクトル演算の機能が使える。</p>
 <p>ここで説明できない他の使い方については<a class="reference external" href="https://github.com/ysdyt/pandas_tutorial">このサイト</a>と<a class="reference external" href="https://note.nkmk.me/python-pandas-post-summary/">このサイト</a>が参考になるだろう。</p>
 <p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>は通常<code class="docutils literal notranslate"><span class="pre">pd</span></code>という名前で読み込む。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -575,7 +588,7 @@ document.write(`
 </section>
 <section id="sec-3-data">
 <span id="id2"></span><h2>データの読み込みとデータのチェック<a class="headerlink" href="#sec-3-data" title="Link to this heading">#</a></h2>
-<p>様々なデータを読み込むことが可能だが，ここでは<code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>関数を使って<code class="docutils literal notranslate"><span class="pre">.csv</span></code>ファイルを読み込むことにする。（.csvファイルについては<a class="reference external" href="https://www.google.com/search?q=csv%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%A8%E3%81%AF">この検索結果</a>を参照）ここで使うファイルはインターネット上にあるため、次のコードでは変数<code class="docutils literal notranslate"><span class="pre">url</span></code>に<code class="docutils literal notranslate"><span class="pre">.csv</span></code>ファイルがあるアドレスを文字列として設定している。<code class="docutils literal notranslate"><span class="pre">data1.csv</span></code>は<a class="reference external" href="https://raw.githubusercontent.com/Py4Basics/py4basics.github.io/source/data/data1.csv">ここをクリック</a>すると表示されるのでダウンロードすることもできる。</p>
+<p>様々なデータを読み込むことが可能だが，ここでは<code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>関数を使って<code class="docutils literal notranslate"><span class="pre">.csv</span></code>ファイルを読み込むことにする。（<code class="docutils literal notranslate"><span class="pre">csv</span></code>はcomma separated valuesの略称であり、.csvファイルについては<a class="reference external" href="https://www.google.com/search?q=csv%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%A8%E3%81%AF">この検索結果</a>を参照）ここで使う<code class="docutils literal notranslate"><span class="pre">data1.csv</span></code>は<a class="reference external" href="https://raw.githubusercontent.com/Py4Basics/py4basics.github.io/source/data/data1.csv">ここをクリック</a>をマウスの右クリックすることによりダウンロードすることもできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># データの読み込み</span>
@@ -859,12 +872,8 @@ document.write(`
 <li><p>出力にある<code class="docutils literal notranslate"><span class="pre">NaN</span></code>（Not a Number）は欠損値を示す。</p></li>
 <li><p>行ラベルに<code class="docutils literal notranslate"><span class="pre">country</span></code>という列ラベルが残るが，それを消すにはメソッド<code class="docutils literal notranslate"><span class="pre">.rename_axis('')</span></code>を使うと良いだろう。ここで<code class="docutils literal notranslate"><span class="pre">''</span></code>は空の文字列である。<code class="docutils literal notranslate"><span class="pre">.rename_axis(None)</span></code>でも同じ結果となる。もしくは次のコードでも良い。</p></li>
 </ul>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> 
 </pre></div>
-</div>
 </div>
 </div>
 <p>行数が多い場合（例えば，10000）、全てを表示してもあまり意味がない。そこでよく使う<code class="docutils literal notranslate"><span class="pre">df</span></code>のメソッドに、最初や最後の数行だけを表示するメソッド<code class="docutils literal notranslate"><span class="pre">.head()</span></code>と<code class="docutils literal notranslate"><span class="pre">.tail()</span></code>を紹介する。</p>
@@ -901,7 +910,7 @@ document.write(`
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -987,7 +996,7 @@ document.write(`
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -1049,7 +1058,7 @@ document.write(`
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -1437,7 +1446,7 @@ memory usage: 480.0+ bytes
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;China&#39;, &#39;France&#39;, &#39;Germany&#39;, &#39;India&#39;, &#39;Italy&#39;, &#39;Japan&#39;, &#39;Korea&#39;,
        &#39;Singapore&#39;, &#39;Taiwan&#39;, &#39;UK&#39;],
-      dtype=&#39;object&#39;, name=&#39;&#39;)
+      dtype=&#39;object&#39;, name=&#39;country&#39;)
 </pre></div>
 </div>
 </div>
@@ -1568,7 +1577,7 @@ Name: Japan, dtype: object
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -1627,7 +1636,7 @@ Name: Japan, dtype: object
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -1691,7 +1700,7 @@ Name: Japan, dtype: object
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -1754,7 +1763,7 @@ Name: Japan, dtype: object
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -1816,7 +1825,8 @@ Name: Japan, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>China        20118
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
+China        20118
 France        2950
 Germany       4274
 India         9142
@@ -1861,7 +1871,7 @@ Name: gdp, dtype: int64
       <th>gdp</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
     </tr>
   </thead>
@@ -1941,7 +1951,7 @@ Name: gdp, dtype: int64
       <th>pop</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
     </tr>
@@ -2033,7 +2043,7 @@ Name: gdp, dtype: int64
       <th>pop</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
     </tr>
@@ -2124,7 +2134,7 @@ Name: gdp, dtype: int64
       <th>pop</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -2249,7 +2259,7 @@ Name: Japan, dtype: object
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -2303,7 +2313,7 @@ Name: Japan, dtype: object
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -2365,7 +2375,7 @@ Name: Japan, dtype: object
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -2426,7 +2436,8 @@ Name: Japan, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>China        7796.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
+China        7796.0
 France       1598.0
 Germany      2294.0
 India        5936.0
@@ -2470,7 +2481,7 @@ Name: con, dtype: float64
       <th>con</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
     </tr>
   </thead>
@@ -2549,7 +2560,7 @@ Name: con, dtype: float64
       <th>pop</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
     </tr>
@@ -2641,7 +2652,7 @@ Name: con, dtype: float64
       <th>pop</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
     </tr>
@@ -2731,7 +2742,7 @@ Name: con, dtype: float64
       <th>inv</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
     </tr>
@@ -2802,7 +2813,8 @@ Name: con, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>China        20118
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
+China        20118
 France        2950
 Germany       4274
 India         9142
@@ -2846,7 +2858,7 @@ Name: gdp, dtype: int64
       <th>gdp</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
     </tr>
   </thead>
@@ -2935,7 +2947,7 @@ Name: gdp, dtype: int64
       <th>pop</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
     </tr>
@@ -3011,7 +3023,8 @@ Name: gdp, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>China        False
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
+China        False
 France       False
 Germany      False
 India        False
@@ -3067,7 +3080,7 @@ Name: gdp, dtype: bool
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -3146,7 +3159,7 @@ Name: gdp, dtype: bool
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -3251,7 +3264,7 @@ Name: gdp, dtype: bool
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -3398,7 +3411,7 @@ Name: gdp, dtype: bool
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -3463,7 +3476,7 @@ Name: gdp, dtype: bool
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -3599,7 +3612,7 @@ Name: gdp, dtype: bool
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -3699,7 +3712,7 @@ Name: gdp, dtype: bool
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -3763,7 +3776,7 @@ Name: gdp, dtype: bool
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -3859,7 +3872,7 @@ Name: gdp, dtype: bool
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -3915,7 +3928,7 @@ Name: gdp, dtype: bool
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -4027,7 +4040,7 @@ Name: gdp, dtype: bool
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -4123,7 +4136,7 @@ Name: gdp, dtype: bool
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -4204,7 +4217,7 @@ Name: gdp, dtype: bool
       <th>Intercept</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -4246,7 +4259,8 @@ Name: gdp, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>China      14.029289
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
+China      14.029289
 France     44.029851
 Germany    50.880952
 India       6.692533
@@ -4298,7 +4312,7 @@ dtype: float64
       <th>gdp_pc</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -4379,7 +4393,7 @@ dtype: float64
       <th>2pop</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -4473,7 +4487,7 @@ dtype: float64
       <th>gdp_pc</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -4569,7 +4583,7 @@ dtype: float64
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -4641,7 +4655,7 @@ dtype: float64
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -4738,7 +4752,7 @@ dtype: float64
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -4840,7 +4854,8 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>China        0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
+China        0
 France       0
 Germany      0
 India        0
@@ -4904,7 +4919,7 @@ dtype: int64
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -4970,7 +4985,7 @@ dtype: int64
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -5090,7 +5105,7 @@ dtype: int64
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -5214,7 +5229,7 @@ dtype: int64
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -5300,7 +5315,7 @@ dtype: int64
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -5386,7 +5401,7 @@ dtype: int64
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -5482,10 +5497,10 @@ dtype: int64
 <p>ここでは<code class="docutils literal notranslate"><span class="pre">continent</span></code>に従って先に並び替えられ，その後に<code class="docutils literal notranslate"><span class="pre">gdp</span></code>に従って並び替えられている。<code class="docutils literal notranslate"><span class="pre">ascending</span></code>は昇順（<code class="docutils literal notranslate"><span class="pre">True</span></code>）か降順（<code class="docutils literal notranslate"><span class="pre">False</span></code>）かを指定する引数であり，<code class="docutils literal notranslate"><span class="pre">['continent','gdp']</span></code>と<code class="docutils literal notranslate"><span class="pre">ascending=['True','False']</span></code>の順番が対応している。</p>
 </section>
 <section id="id26">
-<h2>行インデックスと列ラベル<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
+<h2>行番号と列ラベル<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
 <section id="id27">
-<h3>インデックスを振り直す<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
-<p><a class="reference internal" href="#sec-3-data"><span class="std std-ref">データの読み込みとデータのチェック</span></a>においてデータを読み込んだ後，直ぐに<code class="docutils literal notranslate"><span class="pre">.set_index('year')</span></code>を使い，列<code class="docutils literal notranslate"><span class="pre">year</span></code>を行ラベルに設定した。もちろん，必ずしもそうする必要はなく，行インデックス（<code class="docutils literal notranslate"><span class="pre">0</span></code>，<code class="docutils literal notranslate"><span class="pre">1</span></code>，<code class="docutils literal notranslate"><span class="pre">2</span></code>，…）のままで作業をおこなっても全く問題ない。また行ラベルを設定した後に，行インデックスに戻したい場合もあるだろう。その場合には，メソッド<code class="docutils literal notranslate"><span class="pre">.reset_index()</span></code>を使うと，行のインデックスを0,1,2,..と振り直すことができる。<code class="docutils literal notranslate"><span class="pre">df</span></code>を使うと次のようになる。</p>
+<h3>行番号を振り直す<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="#sec-3-data"><span class="std std-ref">データの読み込みとデータのチェック</span></a>においてデータを読み込んだ後，直ぐに<code class="docutils literal notranslate"><span class="pre">.set_index('year')</span></code>を使い，列<code class="docutils literal notranslate"><span class="pre">year</span></code>を行ラベルに設定した。もちろん，必ずしもそうする必要はなく，行番号（<code class="docutils literal notranslate"><span class="pre">0</span></code>，<code class="docutils literal notranslate"><span class="pre">1</span></code>，<code class="docutils literal notranslate"><span class="pre">2</span></code>，…）のままで作業をおこなっても全く問題ない。また行ラベルを設定した後に，行インデックスに戻したい場合もあるだろう。その場合には，メソッド<code class="docutils literal notranslate"><span class="pre">.reset_index()</span></code>を使うと，行のインデックスを0,1,2,..と振り直すことができる。<code class="docutils literal notranslate"><span class="pre">df</span></code>を使うと次のようになる。</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -5511,7 +5526,7 @@ dtype: int64
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th></th>
+      <th>country</th>
       <th>gdp</th>
       <th>con</th>
       <th>inv</th>
@@ -5741,7 +5756,7 @@ dtype: int64
       <th>continent_new</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -5840,7 +5855,7 @@ dtype: int64
       <th>continent_new</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -5881,7 +5896,7 @@ dtype: int64
 </section>
 <section id="id29">
 <h2>よく使うメソッド<a class="headerlink" href="#id29" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>には様々なメソッドが用意されており，ここでは頻繁に用いるメソッドを幾つか紹介するために日本の時系列データからなる<code class="docutils literal notranslate"><span class="pre">.csv</span></code>ファイルを読み込むことにする。<code class="docutils literal notranslate"><span class="pre">data2.csv</span></code>は<a class="reference external" href="https://raw.githubusercontent.com/Py4Basics/py4basics.github.io/source/data/data2.csv">ここをクリック</a>すると表示されるのでダウンロードすることもできる。</p>
+<p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>には様々なメソッドが用意されており，ここでは頻繁に用いるメソッドを幾つか紹介するために日本の時系列データからなる<code class="docutils literal notranslate"><span class="pre">.csv</span></code>ファイルを読み込むことにする。<code class="docutils literal notranslate"><span class="pre">data2.csv</span></code>は<a class="reference external" href="https://raw.githubusercontent.com/Py4Basics/py4basics.github.io/source/data/data2.csv">ここをクリック</a>をマウスの右クリックすることによりダウンロードすることもできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/data2.csv&#39;</span><span class="p">)</span>
@@ -6341,7 +6356,7 @@ dtype: float64
 <p>また変数の変化率（成長率）を計算するには<code class="docutils literal notranslate"><span class="pre">.pct_change()</span></code>が便利である（percent changeの略）。<span class="math notranslate nohighlight">\(x_t\)</span>を変数とすると、次式に従って毎期ごとの変化率を返すことになる。</p>
 <div class="math notranslate nohighlight">
 \[
-\text{変化率}_t=\frac{x_{t+1}-x_t}{x_t}
+\text{変化率}_t=\frac{x_{t}-x_{t-1}}{x_{t-1}}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6566,7 +6581,8 @@ Name: proportion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>China        20118.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
+China        20118.0
 France        2950.0
 Germany       4274.0
 India         9142.0
@@ -6673,7 +6689,7 @@ Name: gdp, dtype: float64
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;China&#39;, &#39;France&#39;, &#39;Germany&#39;, &#39;India&#39;, &#39;Italy&#39;, &#39;Japan&#39;, &#39;Korea&#39;,
        &#39;Singapore&#39;, &#39;Taiwan&#39;, &#39;UK&#39;],
-      dtype=&#39;object&#39;, name=&#39;&#39;)
+      dtype=&#39;object&#39;, name=&#39;country&#39;)
 </pre></div>
 </div>
 </div>
@@ -6703,7 +6719,8 @@ Name: gdp, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Japan    5032.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
+Japan    5032.0
 Korea    2157.0
 UK       2994.0
 Name: gdp, dtype: float64
@@ -6731,7 +6748,8 @@ Name: gdp, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Japan    5032.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
+Japan    5032.0
 Korea    2157.0
 UK       2994.0
 Name: gdp, dtype: float64
@@ -6760,7 +6778,8 @@ Name: gdp, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>France    2950.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
+France    2950.0
 India     9142.0
 Japan     5032.0
 Name: gdp, dtype: float64
@@ -6776,7 +6795,8 @@ Name: gdp, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Japan        5032.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
+Japan        5032.0
 Korea        2157.0
 Singapore     477.0
 Name: gdp, dtype: float64
@@ -6902,7 +6922,7 @@ Name: gdp, dtype: float64
       <th>continent</th>
     </tr>
     <tr>
-      <th></th>
+      <th>country</th>
       <th></th>
       <th></th>
       <th></th>
@@ -6998,7 +7018,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x1139813d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x11527c5f0&gt;
 </pre></div>
 </div>
 </div>
@@ -7019,7 +7039,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x113981250&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x11527cad0&gt;
 </pre></div>
 </div>
 </div>
@@ -7322,8 +7342,8 @@ Name: gdp, dtype: float64
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">並び替え</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">行インデックスと列ラベル</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">インデックスを振り直す</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">行番号と列ラベル</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">行番号を振り直す</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">列のラベルの変更</a></li>
 </ul>
 </li>
