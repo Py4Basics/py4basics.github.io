@@ -575,13 +575,10 @@ document.write(`
 </section>
 <section id="sec-3-data">
 <span id="id2"></span><h2>データの読み込みとデータのチェック<a class="headerlink" href="#sec-3-data" title="Link to this heading">#</a></h2>
-<p>様々なデータを読み込むことが可能だが，ここでは<code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>関数を使って<code class="docutils literal notranslate"><span class="pre">.csv</span></code>ファイルを読み込むことにする。（<a class="reference external" href="https://www.google.com/search?q=csv%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%A8%E3%81%AF">.csvファイルについてはこの検索結果を参照</a>）ここで使うファイルはインターネット上にあるため、次のコードでは変数<code class="docutils literal notranslate"><span class="pre">url</span></code>に<code class="docutils literal notranslate"><span class="pre">.csv</span></code>ファイルがあるアドレスを文字列として設定している。<a class="reference external" href="https://raw.githubusercontent.com/Py4Basics/py4basics.github.io/source/data/data1.csv"><code class="docutils literal notranslate"><span class="pre">data1.csv</span></code>はここをクリックすると表示されるのでダウンロードすることもできる。</a></p>
+<p>様々なデータを読み込むことが可能だが，ここでは<code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>関数を使って<code class="docutils literal notranslate"><span class="pre">.csv</span></code>ファイルを読み込むことにする。（.csvファイルについては<a class="reference external" href="https://www.google.com/search?q=csv%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%A8%E3%81%AF">この検索結果</a>を参照）ここで使うファイルはインターネット上にあるため、次のコードでは変数<code class="docutils literal notranslate"><span class="pre">url</span></code>に<code class="docutils literal notranslate"><span class="pre">.csv</span></code>ファイルがあるアドレスを文字列として設定している。<code class="docutils literal notranslate"><span class="pre">data1.csv</span></code>は<a class="reference external" href="https://raw.githubusercontent.com/Py4Basics/py4basics.github.io/source/data/data1.csv">ここをクリック</a>すると表示されるのでダウンロードすることもできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># url の設定</span>
-<span class="c1"># url = &#39;https://raw.githubusercontent.com/Py4Basics/py4basics.github.io/source/data/data1.csv&#39;</span>
-
-<span class="c1"># 読み込み</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># データの読み込み</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/data1.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -5884,7 +5881,7 @@ dtype: int64
 </section>
 <section id="id29">
 <h2>よく使うメソッド<a class="headerlink" href="#id29" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>には様々なメソッドが用意されており，ここでは頻繁に用いるメソッドを幾つか紹介するために日本の時系列データからなる<code class="docutils literal notranslate"><span class="pre">.csv</span></code>ファイルを読み込むことにする。</p>
+<p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>には様々なメソッドが用意されており，ここでは頻繁に用いるメソッドを幾つか紹介するために日本の時系列データからなる<code class="docutils literal notranslate"><span class="pre">.csv</span></code>ファイルを読み込むことにする。<code class="docutils literal notranslate"><span class="pre">data2.csv</span></code>は<a class="reference external" href="https://raw.githubusercontent.com/Py4Basics/py4basics.github.io/source/data/data2.csv">ここをクリック</a>すると表示されるのでダウンロードすることもできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/data2.csv&#39;</span><span class="p">)</span>
@@ -6500,55 +6497,12 @@ dtype: float64
 <p>列<code class="docutils literal notranslate"><span class="pre">id</span></code>には文字列があり，行のデータをカテゴリー別に分けていると考えることができる。メソッド<code class="docutils literal notranslate"><span class="pre">.unique()</span></code>を使うと，選択した列に重複したデータがある場合，ユニークなものだけを抽出できる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pandas/core/indexes/base.py:3805,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3804</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">3805</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3806</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-
-<span class="nn">File index.pyx:167,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
-
-<span class="nn">File index.pyx:196,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
-
-<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:7081,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
-
-<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:7089,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
-
-<span class="ne">KeyError</span>: &#39;id&#39;
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">97</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-
-<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pandas/core/frame.py:4102,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4100</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">4101</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_multilevel</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">4102</span> <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4103</span> <span class="k">if</span> <span class="n">is_integer</span><span class="p">(</span><span class="n">indexer</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">4104</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="p">[</span><span class="n">indexer</span><span class="p">]</span>
-
-<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pandas/core/indexes/base.py:3812,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3807</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">3808</span>         <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3809</span>         <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">casted_key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3810</span>     <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">3811</span>         <span class="k">raise</span> <span class="n">InvalidIndexError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">3812</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
-<span class="g g-Whitespace">   </span><span class="mi">3813</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3814</span>     <span class="c1"># If we have a listlike key, _check_indexing_error will raise</span>
-<span class="g g-Whitespace">   </span><span class="mi">3815</span>     <span class="c1">#  InvalidIndexError. Otherwise we fall through and re-raise</span>
-<span class="g g-Whitespace">   </span><span class="mi">3816</span>     <span class="c1">#  the TypeError.</span>
-<span class="g g-Whitespace">   </span><span class="mi">3817</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_check_indexing_error</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-
-<span class="ne">KeyError</span>: &#39;id&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Asia&#39;, &#39;Europe&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -6556,7 +6510,12 @@ dtype: float64
 <p>まな類似するメソッドに<code class="docutils literal notranslate"><span class="pre">.nunique()</span></code>があり，カテゴリー数を返す。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -6564,7 +6523,15 @@ dtype: float64
 <p>関連するメソッドに<code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code>がある。これを使うとカテゴリーの内訳を確認するすることができる。各カテゴリーに対応する行数（度数）を表示するには</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
+Asia      6
+Europe    4
+Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -6572,7 +6539,15 @@ dtype: float64
 <p>とする。引数<code class="docutils literal notranslate"><span class="pre">normalize=True</span></code>を追加すると，相対度数として表示できる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
+Asia      0.6
+Europe    0.4
+Name: proportion, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -6587,6 +6562,21 @@ dtype: float64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;gdp&#39;</span><span class="p">]</span>
 <span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>China        20118.0
+France        2950.0
+Germany       4274.0
+India         9142.0
+Italy         2463.0
+Japan         5032.0
+Korea         2157.0
+Singapore      477.0
+Taiwan        1100.0
+UK            2994.0
+Name: gdp, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -6641,10 +6631,21 @@ dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([20118.,  2950.,  4274.,  9142.,  2463.,  5032.,  2157.,   477.,
+        1100.,  2994.])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy.ndarray
 </pre></div>
 </div>
 </div>
@@ -6656,11 +6657,23 @@ dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;gdp&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>ラベルの抽出</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;China&#39;, &#39;France&#39;, &#39;Germany&#39;, &#39;India&#39;, &#39;Italy&#39;, &#39;Japan&#39;, &#39;Korea&#39;,
+       &#39;Singapore&#39;, &#39;Taiwan&#39;, &#39;UK&#39;],
+      dtype=&#39;object&#39;, name=&#39;&#39;)
 </pre></div>
 </div>
 </div>
@@ -6676,11 +6689,24 @@ dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5032.0
+</pre></div>
+</div>
+</div>
 </div>
 <p>複数の場合はラベルをリストとする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;Japan&#39;</span><span class="p">,</span><span class="s1">&#39;Korea&#39;</span><span class="p">,</span><span class="s1">&#39;UK&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Japan    5032.0
+Korea    2157.0
+UK       2994.0
+Name: gdp, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -6692,10 +6718,23 @@ dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5032.0
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[[</span><span class="s1">&#39;Japan&#39;</span><span class="p">,</span><span class="s1">&#39;Korea&#39;</span><span class="p">,</span><span class="s1">&#39;UK&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Japan    5032.0
+Korea    2157.0
+UK       2994.0
+Name: gdp, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -6707,6 +6746,11 @@ dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5032.0
+</pre></div>
+</div>
+</div>
 </div>
 <p>複数のインデックスを使うことも可能である。</p>
 <div class="cell docutils container">
@@ -6715,11 +6759,27 @@ dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>France    2950.0
+India     9142.0
+Japan     5032.0
+Name: gdp, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>またスライシングも同様にできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Japan        5032.0
+Korea        2157.0
+Singapore     477.0
+Name: gdp, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -6735,6 +6795,64 @@ dtype: float64
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">py4macro</span><span class="o">.</span><span class="n">see</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.China              .France             .Germany            .India
+.Italy              .Japan              .Korea              .Singapore
+.T                  .Taiwan             .UK                 .abs
+.add                .add_prefix         .add_suffix         .agg
+.aggregate          .align              .all                .any
+.apply              .argmax             .argmin             .argsort
+.array              .asfreq             .asof               .astype
+.at                 .at_time            .attrs              .autocorr
+.axes               .backfill           .between            .between_time
+.bfill              .bool               .case_when          .clip
+.combine            .combine_first      .compare            .convert_dtypes
+.copy               .corr               .count              .cov
+.cummax             .cummin             .cumprod            .cumsum
+.describe           .diff               .div                .divide
+.divmod             .dot                .drop               .drop_duplicates
+.droplevel          .dropna             .dtype              .dtypes
+.duplicated         .empty              .eq                 .equals
+.ewm                .expanding          .explode            .factorize
+.ffill              .fillna             .filter             .first
+.first_valid_index  .flags              .floordiv           .ge
+.get                .groupby            .gt                 .hasnans
+.head               .hist               .iat                .idxmax
+.idxmin             .iloc               .index              .infer_objects
+.info               .interpolate        .is_monotonic_decreasing  .is_monotonic_increasing
+.is_unique          .isin               .isna               .isnull
+.item               .items              .keys               .kurt
+.kurtosis           .last               .last_valid_index   .le
+.list               .loc                .lt                 .map
+.mask               .max                .mean               .median
+.memory_usage       .min                .mod                .mode
+.mul                .multiply           .name               .nbytes
+.ndim               .ne                 .nlargest           .notna
+.notnull            .nsmallest          .nunique            .pad
+.pct_change         .pipe               .plot               .pop
+.pow                .prod               .product            .quantile
+.radd               .rank               .ravel              .rdiv
+.rdivmod            .reindex            .reindex_like       .rename
+.rename_axis        .reorder_levels     .repeat             .replace
+.resample           .reset_index        .rfloordiv          .rmod
+.rmul               .rolling            .round              .rpow
+.rsub               .rtruediv           .sample             .searchsorted
+.sem                .set_axis           .set_flags          .shape
+.shift              .size               .skew               .sort_index
+.sort_values        .squeeze            .std                .struct
+.sub                .subtract           .sum                .swapaxes
+.swaplevel          .tail               .take               .to_clipboard
+.to_csv             .to_dict            .to_excel           .to_frame
+.to_hdf             .to_json            .to_latex           .to_list
+.to_markdown        .to_numpy           .to_period          .to_pickle
+.to_sql             .to_string          .to_timestamp       .to_xarray
+.transform          .transpose          .truediv            .truncate
+.tz_convert         .tz_localize        .unique             .unstack
+.update             .value_counts       .values             .var
+.view               .where              .xs
 </pre></div>
 </div>
 </div>
@@ -6758,11 +6876,98 @@ dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gdp</th>
+      <th>inv</th>
+      <th>con</th>
+      <th>pop</th>
+      <th>continent</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>China</th>
+      <td>20118.0</td>
+      <td>7796.0</td>
+      <td>9137.0</td>
+      <td>1434.0</td>
+      <td>Asia</td>
+    </tr>
+    <tr>
+      <th>France</th>
+      <td>2950.0</td>
+      <td>1598.0</td>
+      <td>806.0</td>
+      <td>67.0</td>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>4274.0</td>
+      <td>2294.0</td>
+      <td>971.0</td>
+      <td>84.0</td>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <th>India</th>
+      <td>9142.0</td>
+      <td>5936.0</td>
+      <td>2471.0</td>
+      <td>1366.0</td>
+      <td>Asia</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>2463.0</td>
+      <td>1423.0</td>
+      <td>614.0</td>
+      <td>61.0</td>
+      <td>Europe</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">df</span></code>のメソッド<code class="docutils literal notranslate"><span class="pre">.mean()</span></code>を使うと列の平均を簡単に計算できることは説明した。<code class="docutils literal notranslate"><span class="pre">id</span></code>以外の列を取り出して計算してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gdp    5070.700000
+inv    2605.222222
+con    2009.625000
+pop     328.800000
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -6792,6 +6997,11 @@ dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x1136d2710&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>何も返されない。表示されているのは，PCメモリーのある箇所に<code class="docutils literal notranslate"><span class="pre">DataFrameGroupBy</span></code>というオブジェクトが存在すると伝えているだけである。</p>
 </section>
@@ -6808,6 +7018,11 @@ dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x116cdf8b0&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>ここでも新たなオブジェクト<code class="docutils literal notranslate"><span class="pre">SeriesGroupBy</span></code>のメモリーアドレスが表示されるだけである。どの様に計算するかを指定することにより，計算結果が返されることになる。それが次のステップである。</p>
 </section>
@@ -6820,11 +7035,42 @@ dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
+Asia      6337.666667
+Europe    3170.250000
+Name: gdp, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>グループ計算結果は<code class="docutils literal notranslate"><span class="pre">Series</span></code>として返されている。<code class="docutils literal notranslate"><span class="pre">.mean()</span></code>以外にも使える関数は準備されいる。<code class="docutils literal notranslate"><span class="pre">py4macro.see()</span></code>を使って属性・メソッドを調べてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">py4macro</span><span class="o">.</span><span class="n">see</span><span class="p">(</span><span class="n">df_groupby</span><span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.China              .France             .Germany            .India
+.Italy              .Japan              .Korea              .Singapore
+.Taiwan             .UK                 .agg                .aggregate
+.all                .any                .apply              .bfill
+.corr               .count              .cov                .cumcount
+.cummax             .cummin             .cumprod            .cumsum
+.describe           .diff               .dtype              .ewm
+.expanding          .ffill              .fillna             .filter
+.first              .get_group          .groups             .head
+.hist               .idxmax             .idxmin             .indices
+.is_monotonic_decreasing  .is_monotonic_increasing  .last               .max
+.mean               .median             .min                .ndim
+.ngroup             .ngroups            .nlargest           .nsmallest
+.nth                .nunique            .ohlc               .pct_change
+.pipe               .plot               .prod               .quantile
+.rank               .resample           .rolling            .sample
+.sem                .shift              .size               .skew
+.std                .sum                .tail               .take
+.transform          .unique             .value_counts       .var
 </pre></div>
 </div>
 </div>
@@ -6861,6 +7107,14 @@ dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
+Asia      6337.666667
+Europe    3170.250000
+Name: gdp, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -6875,6 +7129,14 @@ dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)[</span><span class="s1">&#39;gdp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
+Asia      6337.666667
+Europe    3170.250000
+Name: gdp, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -6899,6 +7161,48 @@ dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gdp</th>
+      <th>inv</th>
+    </tr>
+    <tr>
+      <th>continent</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Asia</th>
+      <td>6337.666667</td>
+      <td>3022.000000</td>
+    </tr>
+    <tr>
+      <th>Europe</th>
+      <td>3170.250000</td>
+      <td>1771.666667</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>結果は<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>として返されている。ステップ１もしくは３で複数選択すると<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>が<code class="docutils literal notranslate"><span class="pre">MultiIndex</span></code>（階層的な行と列）として返されることになるが，その簡単な説明については<a class="reference external" href="https://py4basics.github.io/Gapminder.html">Gapminder</a>を参照して欲しい。より詳しい説明は他のサイトに譲ることにする。</p>
 <p><code class="docutils literal notranslate"><span class="pre">df</span></code>のような小さな<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>では<code class="docutils literal notranslate"><span class="pre">.groupby</span></code>の威力はあまりピンとこないかも知れない。しかし大きな<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使うとその恩恵を強く感じることだろう。<a class="reference external" href="https://py4basics.github.io/Gapminder.html">Gapminder</a>ではマクロ経済データを使い<code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>の使い方の例を示している。興味がある人は是非！</p>
