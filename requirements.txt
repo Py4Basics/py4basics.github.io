@@ -5,7 +5,7 @@ jupyter-book
 # lmdiag
 matplotlib
 # numba
-numpy < 2.0
+numpy
 pandas
 py4macro
 # py4etrics
