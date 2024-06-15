@@ -489,14 +489,16 @@ document.write(`
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 警告メッセージを非表示</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">py4macro</span>
+
+<span class="c1"># 警告メッセージを非表示</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>は，数値計算をする上で重要な役割を果たすパッケージであり，特に，行列計算に威力を発揮する。<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>は「ナンパイ」と読む。慣例として<code class="docutils literal notranslate"><span class="pre">np</span></code>としてインポートする。</p>
+<p>リストの用途は広く使いやすい。一方で、以下で説明する高速化のためのベクトル演算が使えない。それにより、コードが長くなり、比較的に実行速度が落ちることになる。それを補うのが<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>である。<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>は数値計算をする上で重要な役割を果たすパッケージであり，特に，行列計算に威力を発揮する。<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>は「ナンパイ」と読む。慣例として<code class="docutils literal notranslate"><span class="pre">np</span></code>としてインポートする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -556,7 +558,7 @@ document.write(`
 <p>次のコードが示すように、リストから<code class="docutils literal notranslate"><span class="pre">ndarray</span></code>を作成することができる</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 </pre></div>
@@ -568,15 +570,37 @@ document.write(`
 </div>
 </div>
 </div>
+<p>リストと見てくれはあまり変わらないが、乗用車をレースカーにチューンアップしたのと等しい。<code class="docutils literal notranslate"><span class="pre">2</span></code>次元<code class="docutils literal notranslate"><span class="pre">array</span></code>もリストから作ることができる。まず、入れ子になるリストを作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">l</span><span class="p">,</span><span class="n">l</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">]</span>
+<span class="n">lst</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2, 3, 4, 5],
-       [1, 2, 3, 4, 5]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 2, 3, 4, 5],
+ [1, 2, 3, 4, 5],
+ [1, 2, 3, 4, 5],
+ [1, 2, 3, 4, 5],
+ [1, 2, 3, 4, 5]]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">np.array()</span></code>関数の引数に<code class="docutils literal notranslate"><span class="pre">lst</span></code>を使うと<code class="docutils literal notranslate"><span class="pre">array</span></code>を作成できる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">lst</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[1, 2, 3, 4, 5],
+        [1, 2, 3, 4, 5],
+        [1, 2, 3, 4, 5],
+        [1, 2, 3, 4, 5],
+        [1, 2, 3, 4, 5]]])
 </pre></div>
 </div>
 </div>
@@ -588,7 +612,7 @@ document.write(`
 <h2>１次元配列<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="id2">
 <h3>要素の抽出<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<p>リストと同じように<code class="docutils literal notranslate"><span class="pre">arr</span></code>の要素を抽出するには要素のインデックスを使う。</p>
+<p>１次元配列の場合、リストと同じ方法で要素を抽出できる。即ち、<code class="docutils literal notranslate"><span class="pre">[]</span></code>と要素のインデックスを使う。<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の要素を抽出してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -601,20 +625,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>複数の要素を抽出するにはインデックスをリストとして使う。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([10, 20, 40])
-</pre></div>
-</div>
-</div>
-</div>
-<p>要素を連続で抽出するスライシング（slicing）も使うことができる。</p>
+<p>また、要素を連続で抽出するスライシング（slicing）も使うことができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
@@ -628,10 +639,24 @@ document.write(`
 </div>
 </div>
 <p>リストの場合と同じ様に，<code class="docutils literal notranslate"><span class="pre">:</span></code>の左側が選択する最初の要素であり，<code class="docutils literal notranslate"><span class="pre">:</span></code>の右側が選択する最後の次の番号である（即ち，<code class="docutils literal notranslate"><span class="pre">:</span></code>の右側の番号の要素は含まれない。</p>
+<p>一方で、リストとは異なり、インデックスをリストとして指定することにより、複数の要素を簡単に抽出するできる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([10, 20, 40])
+</pre></div>
+</div>
+</div>
+</div>
+<p>これはリストにはない機能である。</p>
 </section>
 <section id="id3">
 <h3>要素の代入と削除<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<p>要素の入れ替え方法を説明するために，上で作成したリスト<code class="docutils literal notranslate"><span class="pre">arr</span></code>を考えてみよう。</p>
+<p>上で作成したリスト<code class="docutils literal notranslate"><span class="pre">arr</span></code>をもう一度考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span>
@@ -658,7 +683,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>要素を削除するには関数<code class="docutils literal notranslate"><span class="pre">np.delete()</span></code>を使う。第一引数に<code class="docutils literal notranslate"><span class="pre">array</span></code>を，第二引数に削除したい要素のインデックスを指定する。例えば，<code class="docutils literal notranslate"><span class="pre">3000</span></code>を削除したいとしよう。</p>
+<p>これはリストと同じ方法である。しかし、要素の削除は異なり、<code class="docutils literal notranslate"><span class="pre">np.delete()</span></code>関数を使う。第一引数に<code class="docutils literal notranslate"><span class="pre">array</span></code>を，第二引数に削除したい要素のインデックスを指定する。例えば，<code class="docutils literal notranslate"><span class="pre">3000</span></code>を削除したいとしよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
@@ -703,11 +728,11 @@ document.write(`
 </section>
 <section id="id4">
 <h2>２次元配列：要素の抽出<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<p>第<span class="math notranslate nohighlight">\(i\)</span>行目の第<span class="math notranslate nohighlight">\(j\)</span>列目要素にアクセスするためには<code class="docutils literal notranslate"><span class="pre">mat[i,j]</span></code>と書く。<code class="docutils literal notranslate"><span class="pre">[,]</span></code>の<code class="docutils literal notranslate"><span class="pre">,</span></code>を挟んで左が行を表し，右が列を示す。</p>
+<p>第<span class="math notranslate nohighlight">\(i\)</span>行目の第<span class="math notranslate nohighlight">\(j\)</span>列目の要素にアクセスするためには<code class="docutils literal notranslate"><span class="pre">mat[i,j]</span></code>と書く。<code class="docutils literal notranslate"><span class="pre">[,]</span></code>の<code class="docutils literal notranslate"><span class="pre">,</span></code>を挟んで左が行を表し，右が列を示す。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">行のインデックス</span><span class="p">,</span><span class="n">列のインデックス</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>コードはキーストロークが少なく，簡単なものが良いと考えられている。一方で，<code class="docutils literal notranslate"><span class="pre">Python</span></code>は初心者に比較的簡単な言語だと言われるが，それでも関数・メソッドの数は膨大で，そのオプションとの組み合わせを考えるとまさしく「無数」にあると言っても過言ではない。そのため初心者にとって関数の使い方やオプションの書き方を間違う可能性は小さくない。さらに，自分が書いたコードを数週間・数ヶ月後に読み直すと，何をしようとしているのか分からないという状況が生じることもある。従って，以下の点が非常に重要になる。</p>
+<p>コードはキーストロークが少なく，簡単なものが良いと考えられている。一方で，<code class="docutils literal notranslate"><span class="pre">Python</span></code>は初心者に比較的簡単な言語だと言われるが，それでも関数・メソッドの数は膨大である。そのため初心者にとって関数の使い方やオプションの書き方を間違う可能性は小さくない。さらに，自分が書いたコードを数週間・数ヶ月後に読み直すと，何をしようとしているのか分からないという状況が生じることもある。従って，以下の点が非常に重要になる。</p>
 <ul class="simple">
 <li><p>間違いにくいコードの書き方を覚える。</p></li>
 <li><p>高い可読性を意識したコードの書き方を覚える。</p></li>
@@ -728,6 +753,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">,</span></code>の左または右が<code class="docutils literal notranslate"><span class="pre">:</span></code>のみの場合，「全て」という意味になる。</p></li>
 </ul>
 <p>これを読むだけでは分かりにくいと思うので，以下の例に目を通してもう一度この箇所の説明を読んむことを推奨する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">0</span></code>行目、<code class="docutils literal notranslate"><span class="pre">1</span></code>列目の要素を抽出するとしよう</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
@@ -804,7 +830,7 @@ document.write(`
 </section>
 <section id="id5">
 <h2><code class="docutils literal notranslate"><span class="pre">array</span></code>を使った計算<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<p>まず２つの行列（２次元配列<code class="docutils literal notranslate"><span class="pre">array</span></code>）を作成する。</p>
+<p>まず２つ２次元<code class="docutils literal notranslate"><span class="pre">array</span></code>を作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
@@ -1143,186 +1169,37 @@ x = 25.0
 </section>
 <section id="id13">
 <h2>NumPy使用時によく使う属性とメソッド<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">dir()</span></code>を使って<code class="docutils literal notranslate"><span class="pre">m3</span></code>の属性とメソッドを調べてみる。</p>
+<p><code class="docutils literal notranslate"><span class="pre">py4macro.see()</span></code>関数を使って<code class="docutils literal notranslate"><span class="pre">m3</span></code>の属性とメソッドを調べてみる。</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">m3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">py4macro</span><span class="o">.</span><span class="n">see</span><span class="p">(</span><span class="n">m3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;T&#39;,
- &#39;__abs__&#39;,
- &#39;__add__&#39;,
- &#39;__and__&#39;,
- &#39;__array__&#39;,
- &#39;__array_finalize__&#39;,
- &#39;__array_function__&#39;,
- &#39;__array_interface__&#39;,
- &#39;__array_prepare__&#39;,
- &#39;__array_priority__&#39;,
- &#39;__array_struct__&#39;,
- &#39;__array_ufunc__&#39;,
- &#39;__array_wrap__&#39;,
- &#39;__bool__&#39;,
- &#39;__buffer__&#39;,
- &#39;__class__&#39;,
- &#39;__class_getitem__&#39;,
- &#39;__complex__&#39;,
- &#39;__contains__&#39;,
- &#39;__copy__&#39;,
- &#39;__deepcopy__&#39;,
- &#39;__delattr__&#39;,
- &#39;__delitem__&#39;,
- &#39;__dir__&#39;,
- &#39;__divmod__&#39;,
- &#39;__dlpack__&#39;,
- &#39;__dlpack_device__&#39;,
- &#39;__doc__&#39;,
- &#39;__eq__&#39;,
- &#39;__float__&#39;,
- &#39;__floordiv__&#39;,
- &#39;__format__&#39;,
- &#39;__ge__&#39;,
- &#39;__getattribute__&#39;,
- &#39;__getitem__&#39;,
- &#39;__getstate__&#39;,
- &#39;__gt__&#39;,
- &#39;__hash__&#39;,
- &#39;__iadd__&#39;,
- &#39;__iand__&#39;,
- &#39;__ifloordiv__&#39;,
- &#39;__ilshift__&#39;,
- &#39;__imatmul__&#39;,
- &#39;__imod__&#39;,
- &#39;__imul__&#39;,
- &#39;__index__&#39;,
- &#39;__init__&#39;,
- &#39;__init_subclass__&#39;,
- &#39;__int__&#39;,
- &#39;__invert__&#39;,
- &#39;__ior__&#39;,
- &#39;__ipow__&#39;,
- &#39;__irshift__&#39;,
- &#39;__isub__&#39;,
- &#39;__iter__&#39;,
- &#39;__itruediv__&#39;,
- &#39;__ixor__&#39;,
- &#39;__le__&#39;,
- &#39;__len__&#39;,
- &#39;__lshift__&#39;,
- &#39;__lt__&#39;,
- &#39;__matmul__&#39;,
- &#39;__mod__&#39;,
- &#39;__mul__&#39;,
- &#39;__ne__&#39;,
- &#39;__neg__&#39;,
- &#39;__new__&#39;,
- &#39;__or__&#39;,
- &#39;__pos__&#39;,
- &#39;__pow__&#39;,
- &#39;__radd__&#39;,
- &#39;__rand__&#39;,
- &#39;__rdivmod__&#39;,
- &#39;__reduce__&#39;,
- &#39;__reduce_ex__&#39;,
- &#39;__repr__&#39;,
- &#39;__rfloordiv__&#39;,
- &#39;__rlshift__&#39;,
- &#39;__rmatmul__&#39;,
- &#39;__rmod__&#39;,
- &#39;__rmul__&#39;,
- &#39;__ror__&#39;,
- &#39;__rpow__&#39;,
- &#39;__rrshift__&#39;,
- &#39;__rshift__&#39;,
- &#39;__rsub__&#39;,
- &#39;__rtruediv__&#39;,
- &#39;__rxor__&#39;,
- &#39;__setattr__&#39;,
- &#39;__setitem__&#39;,
- &#39;__setstate__&#39;,
- &#39;__sizeof__&#39;,
- &#39;__str__&#39;,
- &#39;__sub__&#39;,
- &#39;__subclasshook__&#39;,
- &#39;__truediv__&#39;,
- &#39;__xor__&#39;,
- &#39;all&#39;,
- &#39;any&#39;,
- &#39;argmax&#39;,
- &#39;argmin&#39;,
- &#39;argpartition&#39;,
- &#39;argsort&#39;,
- &#39;astype&#39;,
- &#39;base&#39;,
- &#39;byteswap&#39;,
- &#39;choose&#39;,
- &#39;clip&#39;,
- &#39;compress&#39;,
- &#39;conj&#39;,
- &#39;conjugate&#39;,
- &#39;copy&#39;,
- &#39;ctypes&#39;,
- &#39;cumprod&#39;,
- &#39;cumsum&#39;,
- &#39;data&#39;,
- &#39;diagonal&#39;,
- &#39;dot&#39;,
- &#39;dtype&#39;,
- &#39;dump&#39;,
- &#39;dumps&#39;,
- &#39;fill&#39;,
- &#39;flags&#39;,
- &#39;flat&#39;,
- &#39;flatten&#39;,
- &#39;getfield&#39;,
- &#39;imag&#39;,
- &#39;item&#39;,
- &#39;itemset&#39;,
- &#39;itemsize&#39;,
- &#39;max&#39;,
- &#39;mean&#39;,
- &#39;min&#39;,
- &#39;nbytes&#39;,
- &#39;ndim&#39;,
- &#39;newbyteorder&#39;,
- &#39;nonzero&#39;,
- &#39;partition&#39;,
- &#39;prod&#39;,
- &#39;ptp&#39;,
- &#39;put&#39;,
- &#39;ravel&#39;,
- &#39;real&#39;,
- &#39;repeat&#39;,
- &#39;reshape&#39;,
- &#39;resize&#39;,
- &#39;round&#39;,
- &#39;searchsorted&#39;,
- &#39;setfield&#39;,
- &#39;setflags&#39;,
- &#39;shape&#39;,
- &#39;size&#39;,
- &#39;sort&#39;,
- &#39;squeeze&#39;,
- &#39;std&#39;,
- &#39;strides&#39;,
- &#39;sum&#39;,
- &#39;swapaxes&#39;,
- &#39;take&#39;,
- &#39;tobytes&#39;,
- &#39;tofile&#39;,
- &#39;tolist&#39;,
- &#39;tostring&#39;,
- &#39;trace&#39;,
- &#39;transpose&#39;,
- &#39;var&#39;,
- &#39;view&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.T                  .all                .any                .argmax
+.argmin             .argpartition       .argsort            .astype
+.base               .byteswap           .choose             .clip
+.compress           .conj               .conjugate          .copy
+.ctypes             .cumprod            .cumsum             .data
+.diagonal           .dot                .dtype              .dump
+.dumps              .fill               .flags              .flat
+.flatten            .getfield           .imag               .item
+.itemset            .itemsize           .max                .mean
+.min                .nbytes             .ndim               .newbyteorder
+.nonzero            .partition          .prod               .ptp
+.put                .ravel              .real               .repeat
+.reshape            .resize             .round              .searchsorted
+.setfield           .setflags           .shape              .size
+.sort               .squeeze            .std                .strides
+.sum                .swapaxes           .take               .tobytes
+.tofile             .tolist             .tostring           .trace
+.transpose          .var                .view
 </pre></div>
 </div>
 </div>
 </div>
-<p>この中に<code class="docutils literal notranslate"><span class="pre">transpose()</span></code>や<code class="docutils literal notranslate"><span class="pre">T</span></code>があるのが確認できる。この中でよく使うのが<code class="docutils literal notranslate"><span class="pre">shape</span></code>であり，行と列の数を確認する場合に有用なデータ属性である。</p>
+<p>この中に上で使った<code class="docutils literal notranslate"><span class="pre">transpose()</span></code>や<code class="docutils literal notranslate"><span class="pre">T</span></code>があるのが確認できる。この中でよく使うのが<code class="docutils literal notranslate"><span class="pre">shape</span></code>であり，行と列の数を確認する場合に有用なデータ属性である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m3</span><span class="o">.</span><span class="n">shape</span>
@@ -1678,7 +1555,7 @@ u(x)=
 </section>
 <section id="array-vs-list">
 <h2><code class="docutils literal notranslate"><span class="pre">array</span></code> vs <code class="docutils literal notranslate"><span class="pre">list</span></code><a class="headerlink" href="#array-vs-list" title="Link to this heading">#</a></h2>
-<p>ここでは<code class="docutils literal notranslate"><span class="pre">list</span></code>と<code class="docutils literal notranslate"><span class="pre">array</span></code>の重要な違いについて説明する。
+<p>ここでは<code class="docutils literal notranslate"><span class="pre">list</span></code>と<code class="docutils literal notranslate"><span class="pre">array</span></code>の違いについて説明する。
 次のリストのそれぞれの要素に<code class="docutils literal notranslate"><span class="pre">10</span></code>を足したいとしよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1728,7 +1605,7 @@ u(x)=
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">65</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">66</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">list0</span> <span class="o">+</span> <span class="mi">10</span>
 
 <span class="ne">TypeError</span>: can only concatenate list (not &quot;int&quot;) to list
@@ -1764,7 +1641,7 @@ u(x)=
 </div>
 </div>
 </div>
-<p>この機能はブロードキャスティング（Broadcasting）もしくはベクトル演算（Vectorization）と呼ばれ、ループを使わずに個々の要素に直接働きかけ計算している。この機能により、より高速な計算が可能となるばかりか、より短いコードでそれを実現できる。<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code> や他の関数にも同様に使うことができる。以下で例を挙げる。</p>
+<p>この機能はベクトル演算（Vectorization）と呼ばれ、ループを使わずに個々の要素に直接働きかけ計算している。この機能により、より高速な計算が可能となるばかりか、より短いコードでそれを実現できる。<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code> や他の関数にも同様に使うことができる。以下で例を挙げる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr0</span> <span class="o">-</span> <span class="mi">5</span>
@@ -1839,7 +1716,7 @@ u(x)=
 </div>
 </div>
 </div>
-<p>この機能は<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の行列でも有効である。</p>
+<p>この機能は<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の2次元配列でも有効である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>

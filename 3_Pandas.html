@@ -567,7 +567,7 @@ document.write(`
 <li><p><strong>インデックス</strong>とは<strong>行</strong>を特定するための数字やラベル（文字列）を表し、上の例では左側に縦に並ぶ<code class="docutils literal notranslate"><span class="pre">0</span></code>、<code class="docutils literal notranslate"><span class="pre">1</span></code>、<code class="docutils literal notranslate"><span class="pre">2</span></code>がインデックスである。インデックスには２種類がある。</p>
 <ul>
 <li><p><strong>位置番号</strong>：上の例では、<code class="docutils literal notranslate"><span class="pre">0</span></code>は<code class="docutils literal notranslate"><span class="pre">0</span></code>番目の行を、<code class="docutils literal notranslate"><span class="pre">1</span></code>は<code class="docutils literal notranslate"><span class="pre">1</span></code>番目の行を、<code class="docutils literal notranslate"><span class="pre">2</span></code>は<code class="docutils literal notranslate"><span class="pre">2</span></code>番目の行を示す。このサイトでは、これを<strong>インデックス番号</strong>もしくは<strong>行番号</strong>と呼ぶ。</p></li>
-<li><p><strong>ラベル</strong>：各行を特定するための整数や文字列となる。以下で<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の詳細な説明をする際に<code class="docutils literal notranslate"><span class="pre">df</span></code>という変数に<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を割り当てるが、そこでは国名（文字列）がラベルに使われている。このサイトでは、これを<strong>行ラベル</strong>と呼ぶ。</p></li>
+<li><p><strong>ラベル</strong>：各行を特定するための整数や文字列を指す。以下で<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の詳細な説明をする際に<code class="docutils literal notranslate"><span class="pre">df</span></code>という変数に<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を割り当てるが、そこでは国名（文字列）がラベルに使われている。このサイトでは、これを<strong>行ラベル</strong>と呼ぶ。</p></li>
 </ul>
 </li>
 <li><p><strong>列</strong>のラベルと位置番号</p>
@@ -6572,7 +6572,12 @@ Name: proportion, dtype: float64
 </section>
 <section id="series">
 <h2><code class="docutils literal notranslate"><span class="pre">Series</span></code>について<a class="headerlink" href="#series" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Series</span></code>について簡単に説明する。<code class="docutils literal notranslate"><span class="pre">Series</span></code>はスプレッド・シートから１つの行または列を取り出したようなデータとイメージすれば良いだろう。まず<code class="docutils literal notranslate"><span class="pre">df</span></code>の列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>から<code class="docutils literal notranslate"><span class="pre">Series</span></code>を作ってみよう。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Series</span></code>について簡単に説明する。<code class="docutils literal notranslate"><span class="pre">Series</span></code>はスプレッド・シートから１つの行または列を取り出したようなデータとイメージすれば良いだろう。<code class="docutils literal notranslate"><span class="pre">Series</span></code>には行と列を区別しないが、<code class="docutils literal notranslate"><span class="pre">Series</span></code>のインデックスは<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のインデックスと同じと考えて良いだろう。ただし、以下では次の表現を使う。</p>
+<ul class="simple">
+<li><p>インデックスが位置番号（<code class="docutils literal notranslate"><span class="pre">0</span></code>、<code class="docutils literal notranslate"><span class="pre">1</span></code>、<code class="docutils literal notranslate"><span class="pre">2</span></code>）を<strong>インデックス番号</strong>と呼ぶ。</p></li>
+<li><p>インデックスがラベルの場合は、単に<strong>ラベル</strong>と呼ぶ。</p></li>
+</ul>
+<p>まず<code class="docutils literal notranslate"><span class="pre">df</span></code>の列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>から<code class="docutils literal notranslate"><span class="pre">Series</span></code>を作ってみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;gdp&#39;</span><span class="p">]</span>
@@ -6628,10 +6633,10 @@ Name: gdp, dtype: float64
 <li><p><code class="docutils literal notranslate"><span class="pre">df</span></code>の列ラベルから引き継がれているが、空の場合もある。</p></li>
 </ul>
 </li>
-<li><p>インデックスもしくはラベル：<code class="docutils literal notranslate"><span class="pre">s.index</span></code>で抽出可能</p>
+<li><p>インデックス（番号もしくはラベル）：<code class="docutils literal notranslate"><span class="pre">s.index</span></code>で抽出可能</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">df</span></code>の行ラベルから引き継がれている</p></li>
-<li><p>インデックス（index）は<code class="docutils literal notranslate"><span class="pre">0</span></code>,<code class="docutils literal notranslate"><span class="pre">1</span></code>,<code class="docutils literal notranslate"><span class="pre">2</span></code>,…の順番で表される。</p></li>
+<li><p>上の例では<code class="docutils literal notranslate"><span class="pre">df</span></code>の行ラベルから引き継がれている</p></li>
+<li><p>インデックス番号であれば、<code class="docutils literal notranslate"><span class="pre">0</span></code>,<code class="docutils literal notranslate"><span class="pre">1</span></code>,<code class="docutils literal notranslate"><span class="pre">2</span></code>,…と表示される。</p></li>
 </ul>
 </li>
 <li><p>インデックス名：<code class="docutils literal notranslate"><span class="pre">s.index.name</span></code>で抽出可能</p>
@@ -6679,7 +6684,7 @@ Name: gdp, dtype: float64
 </div>
 </div>
 </div>
-<p>ラベルの抽出</p>
+<p>インデックスの抽出</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">index</span>
@@ -6698,7 +6703,7 @@ Name: gdp, dtype: float64
 </section>
 <section id="id33">
 <h3>要素の抽出<a class="headerlink" href="#id33" title="Link to this heading">#</a></h3>
-<p>要素の抽出はラベルを使う方法とインデックスを使う方法がある。ラベルを使う場合を考えてみよう。<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>と同様に<code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>を使う事ができる。違いは、<code class="docutils literal notranslate"><span class="pre">Series</span></code>の場合、行と列の区別がないのでラベルだけを指定すれば良い。</p>
+<p>要素の抽出はラベルを使う方法とインデックス番号を使う方法がある。ラベルを使う場合を考えてみよう。<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>と同様に<code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>を使う事ができる。違いは、<code class="docutils literal notranslate"><span class="pre">Series</span></code>の場合、行と列の区別がないのでラベルだけを指定すれば良い。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Japan&#39;</span><span class="p">]</span>
@@ -6757,7 +6762,7 @@ Name: gdp, dtype: float64
 </div>
 </div>
 </div>
-<p>次にインデックスを使う要素の抽出方法を紹介しよう。<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>と同様に<code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>を使う。</p>
+<p>次にインデックス番号を使う要素の抽出方法を紹介しよう。<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>と同様に<code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>を使う。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
@@ -6889,7 +6894,7 @@ Name: gdp, dtype: float64
 </section>
 <section id="id35">
 <h2>グループ計算<a class="headerlink" href="#id35" title="Link to this heading">#</a></h2>
-<p>上で使った<code class="docutils literal notranslate"><span class="pre">df</span></code>を表示してみよう。</p>
+<p>再度<code class="docutils literal notranslate"><span class="pre">df</span></code>を使って説明する。表示してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -7018,7 +7023,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x1180642f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x11a7109e0&gt;
 </pre></div>
 </div>
 </div>
@@ -7039,7 +7044,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x1180315e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x11a3d2780&gt;
 </pre></div>
 </div>
 </div>
