@@ -434,7 +434,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">要素の抽出</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">説明</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loc"><code class="docutils literal notranslate"><span class="pre">.loc[,]</span></code>（ラベル使用）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iloc"><code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>（インデックス使用）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iloc"><code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>（位置番号を使用）</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><code class="docutils literal notranslate"><span class="pre">[]</span></code>で列の選択（ラベル使用）</a></li>
 </ul>
 </li>
@@ -475,14 +475,12 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">並び替え</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">行番号と列ラベル</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">行番号を振り直す</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">列のラベルの変更</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">よく使うメソッド</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">統計関連のメソッド</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">その他</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">行番号を振り直す</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">列のラベルの変更</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">便利な使うメソッド</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">統計関連のメソッド</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">時系列データ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">メソッド</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series"><code class="docutils literal notranslate"><span class="pre">Series</span></code>について</a><ul class="nav section-nav flex-column">
@@ -520,7 +518,6 @@ document.write(`
 </div><br><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">py4macro</span>
 
 <span class="c1"># 警告メッセージを非表示</span>
@@ -2207,7 +2204,7 @@ Name: gdp, dtype: int64
 </div>
 </section>
 <section id="iloc">
-<span id="sec-3-iloc"></span><h3><code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>（インデックス使用）<a class="headerlink" href="#iloc" title="Link to this heading">#</a></h3>
+<span id="sec-3-iloc"></span><h3><code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>（位置番号を使用）<a class="headerlink" href="#iloc" title="Link to this heading">#</a></h3>
 <p><strong>１つの行を<code class="docutils literal notranslate"><span class="pre">Series</span></code>として抽出</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5497,9 +5494,7 @@ dtype: int64
 <p>ここでは<code class="docutils literal notranslate"><span class="pre">continent</span></code>に従って先に並び替えられ，その後に<code class="docutils literal notranslate"><span class="pre">gdp</span></code>に従って並び替えられている。<code class="docutils literal notranslate"><span class="pre">ascending</span></code>は昇順（<code class="docutils literal notranslate"><span class="pre">True</span></code>）か降順（<code class="docutils literal notranslate"><span class="pre">False</span></code>）かを指定する引数であり，<code class="docutils literal notranslate"><span class="pre">['continent','gdp']</span></code>と<code class="docutils literal notranslate"><span class="pre">ascending=['True','False']</span></code>の順番が対応している。</p>
 </section>
 <section id="id26">
-<h2>行番号と列ラベル<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
-<section id="id27">
-<h3>行番号を振り直す<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
+<h2>行番号を振り直す<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
 <p><a class="reference internal" href="#sec-3-data"><span class="std std-ref">データの読み込みとデータのチェック</span></a>においてデータを読み込んだ後，直ぐに<code class="docutils literal notranslate"><span class="pre">.set_index('year')</span></code>を使い，列<code class="docutils literal notranslate"><span class="pre">year</span></code>を行ラベルに設定した。もちろん，必ずしもそうする必要はなく，行番号（<code class="docutils literal notranslate"><span class="pre">0</span></code>，<code class="docutils literal notranslate"><span class="pre">1</span></code>，<code class="docutils literal notranslate"><span class="pre">2</span></code>，…）のままで作業をおこなっても全く問題ない。また行ラベルを設定した後に，行インデックスに戻したい場合もあるだろう。その場合には，メソッド<code class="docutils literal notranslate"><span class="pre">.reset_index()</span></code>を使うと，行のインデックスを0,1,2,..と振り直すことができる。<code class="docutils literal notranslate"><span class="pre">df</span></code>を使うと次のようになる。</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
@@ -5713,8 +5708,8 @@ dtype: int64
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">.reset_index()</span></code>は、変更した場合にどのように見えるかを表示しているだけなので、<code class="docutils literal notranslate"><span class="pre">df</span></code>自体を変更する場合は<code class="docutils literal notranslate"><span class="pre">df</span></code>に再割り当てする必要がある。</p>
 </section>
-<section id="id28">
-<h3>列のラベルの変更<a class="headerlink" href="#id28" title="Link to this heading">#</a></h3>
+<section id="id27">
+<h2>列のラベルの変更<a class="headerlink" href="#id27" title="Link to this heading">#</a></h2>
 <p>列ラベルを変更する場合は、メソッド<code class="docutils literal notranslate"><span class="pre">.rename()</span></code>を使うと良いだろう。引数は次の形で設定する。</p>
 <div class="math notranslate nohighlight">
 \[\text{.rename}\left(\text{columns=}辞書\right)\]</div>
@@ -5893,10 +5888,73 @@ dtype: int64
 </div>
 </div>
 </section>
+<section id="id28">
+<h2>便利な使うメソッド<a class="headerlink" href="#id28" title="Link to this heading">#</a></h2>
+<p>列<code class="docutils literal notranslate"><span class="pre">id</span></code>には文字列があり，行のデータをカテゴリー別に分けていると考えることができる。メソッド<code class="docutils literal notranslate"><span class="pre">.unique()</span></code>を使うと，選択した列に重複したデータがある場合，ユニークなものだけを抽出できる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Asia&#39;, &#39;Europe&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>まな類似するメソッドに<code class="docutils literal notranslate"><span class="pre">.nunique()</span></code>があり，カテゴリー数を返す。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>関連するメソッドに<code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code>がある。これを使うとカテゴリーの内訳を確認するすることができる。各カテゴリーに対応する行数（度数）を表示するには</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
+Asia      6
+Europe    4
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>とする。引数<code class="docutils literal notranslate"><span class="pre">normalize=True</span></code>を追加すると，相対度数として表示できる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
+Asia      0.6
+Europe    0.4
+Name: proportion, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">df</span></code>のように行数が少ない<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の場合，これらのメソッドの有用性を見出すことは難しいが，何千行あるデータを扱っていると想像してみよう。そのような大きなデータを扱う場合は非常に重宝するメソッドだろう。</p>
 </section>
 <section id="id29">
-<h2>よく使うメソッド<a class="headerlink" href="#id29" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>には様々なメソッドが用意されており，ここでは頻繁に用いるメソッドを幾つか紹介するために日本の時系列データからなる<code class="docutils literal notranslate"><span class="pre">.csv</span></code>ファイルを読み込むことにする。<code class="docutils literal notranslate"><span class="pre">data2.csv</span></code>は<a class="reference external" href="https://raw.githubusercontent.com/Py4Basics/py4basics.github.io/source/data/data2.csv">ここをクリック</a>をマウスの右クリックすることによりダウンロードすることもできる。</p>
+<h2>統計関連のメソッド<a class="headerlink" href="#id29" title="Link to this heading">#</a></h2>
+<section id="id30">
+<h3>時系列データ<a class="headerlink" href="#id30" title="Link to this heading">#</a></h3>
+<p>統計関連のメソッドを幾つか紹介するために日本の時系列データからなる<code class="docutils literal notranslate"><span class="pre">.csv</span></code>ファイルを読み込むことにする。<code class="docutils literal notranslate"><span class="pre">data2.csv</span></code>は<a class="reference external" href="https://raw.githubusercontent.com/Py4Basics/py4basics.github.io/source/data/data2.csv">ここをクリック</a>をマウスの右クリックすることによりダウンロードすることもできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/data2.csv&#39;</span><span class="p">)</span>
@@ -6098,8 +6156,9 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
-<section id="id30">
-<h3>統計関連のメソッド<a class="headerlink" href="#id30" title="Link to this heading">#</a></h3>
+</section>
+<section id="id31">
+<h3>メソッド<a class="headerlink" href="#id31" title="Link to this heading">#</a></h3>
 <p><strong>＜以下で説明する統計関連のメソッドに関する注意点＞</strong><br></p>
 <ul class="simple">
 <li><p>計算して意味のある列のみを選択すること。<code class="docutils literal notranslate"><span class="pre">pandas</span></code>のバージョンにもよるが、文字列型の列を計算に含めるとエラーが発生する。<code class="docutils literal notranslate"><span class="pre">jp</span></code>は全てが浮動小数点となるため、以下では全ての列について計算を行なう。</p></li>
@@ -6506,68 +6565,6 @@ dtype: float64
 </div>
 </div>
 </div>
-</section>
-<section id="id31">
-<h3>その他<a class="headerlink" href="#id31" title="Link to this heading">#</a></h3>
-<p>列<code class="docutils literal notranslate"><span class="pre">id</span></code>には文字列があり，行のデータをカテゴリー別に分けていると考えることができる。メソッド<code class="docutils literal notranslate"><span class="pre">.unique()</span></code>を使うと，選択した列に重複したデータがある場合，ユニークなものだけを抽出できる。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Asia&#39;, &#39;Europe&#39;], dtype=object)
-</pre></div>
-</div>
-</div>
-</div>
-<p>まな類似するメソッドに<code class="docutils literal notranslate"><span class="pre">.nunique()</span></code>があり，カテゴリー数を返す。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
-</pre></div>
-</div>
-</div>
-</div>
-<p>関連するメソッドに<code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code>がある。これを使うとカテゴリーの内訳を確認するすることができる。各カテゴリーに対応する行数（度数）を表示するには</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
-Asia      6
-Europe    4
-Name: count, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<p>とする。引数<code class="docutils literal notranslate"><span class="pre">normalize=True</span></code>を追加すると，相対度数として表示できる。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>continent
-Asia      0.6
-Europe    0.4
-Name: proportion, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">df</span></code>のように行数が少ない<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の場合，これらのメソッドの有用性を見出すことは難しいが，何千行あるデータを扱っていると想像してみよう。そのような大きなデータを扱う場合は非常に重宝するメソッドだろう。</p>
 </section>
 </section>
 <section id="series">
@@ -7023,7 +7020,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x11a7109e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x117d3d9a0&gt;
 </pre></div>
 </div>
 </div>
@@ -7044,7 +7041,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x11a3d2780&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x114909160&gt;
 </pre></div>
 </div>
 </div>
@@ -7306,7 +7303,7 @@ Name: gdp, dtype: float64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">要素の抽出</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">説明</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loc"><code class="docutils literal notranslate"><span class="pre">.loc[,]</span></code>（ラベル使用）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iloc"><code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>（インデックス使用）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iloc"><code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>（位置番号を使用）</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><code class="docutils literal notranslate"><span class="pre">[]</span></code>で列の選択（ラベル使用）</a></li>
 </ul>
 </li>
@@ -7347,14 +7344,12 @@ Name: gdp, dtype: float64
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">並び替え</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">行番号と列ラベル</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">行番号を振り直す</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">列のラベルの変更</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">よく使うメソッド</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">統計関連のメソッド</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">その他</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">行番号を振り直す</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">列のラベルの変更</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">便利な使うメソッド</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">統計関連のメソッド</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">時系列データ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">メソッド</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#series"><code class="docutils literal notranslate"><span class="pre">Series</span></code>について</a><ul class="nav section-nav flex-column">
