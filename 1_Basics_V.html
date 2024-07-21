@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>モジュールとアルゴリズム &#8212; 経済学のためのPython入門</title>
+    <title>モジュール、エラーとアルゴリズム &#8212; 経済学のためのPython入門</title>
   
   
   
@@ -188,7 +188,7 @@
 <li class="toctree-l1"><a class="reference internal" href="1_Basics_II.html">データの操作</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_Basics_III.html">関数とメソッド</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_Basics_IV.html">制御フロー</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">モジュールとアルゴリズム</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">モジュール、エラーとアルゴリズム</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_Basics_VI.html">図示とシミュレーション</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門II</span></p>
@@ -420,7 +420,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>モジュールとアルゴリズム</h1>
+    <h1>モジュール、エラーとアルゴリズム</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -436,30 +436,45 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random"><code class="docutils literal notranslate"><span class="pre">random</span></code>モジュール</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">アルゴリズム</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">例１：合計</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">エラー</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">構文エラー</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">例１</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">例２</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">例３</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">例外</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">例１</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">例２</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">例３</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">アルゴリズム</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">例１：合計</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#for"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#while"><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">実行スピード比較</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">例２：値の探索</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-for-loop"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-while-loop"><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">番兵法</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">組み込み関数</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">例３：最小値の探索</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">直接的な探索</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">間接的な探索</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">実行スピード比較</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">例４：ソート</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">単純選択ソート</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">バブル・ソート</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">実行スピード比較</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">例２：値の探索</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-for-loop"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-while-loop"><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">番兵法</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">組み込み関数</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">例３：最小値の探索</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">直接的な探索</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">間接的な探索</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">実行スピード比較</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">例４：ソート</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">単純選択ソート</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">バブル・ソート</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">実行スピード比較</a></li>
 </ul>
 </li>
 </ul>
@@ -476,7 +491,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chap-5-module">
-<span id="id1"></span><h1>モジュールとアルゴリズム<a class="headerlink" href="#chap-5-module" title="Link to this heading">#</a></h1>
+<span id="id1"></span><h1>モジュール、エラーとアルゴリズム<a class="headerlink" href="#chap-5-module" title="Link to this heading">#</a></h1>
 <div name="html-admonition" style="font-size: 0.8em">
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
@@ -595,7 +610,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
@@ -608,7 +623,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 1, 5, 5, 6, 3, 4, 1, 4, 4]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5, 3, 3, 4, 5, 4, 2, 6, 4, 4]
 </pre></div>
 </div>
 </div>
@@ -640,7 +655,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.555836481420425
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.701632437853386
 </pre></div>
 </div>
 </div>
@@ -653,16 +668,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.0517157529688799,
- 0.7585792399972758,
- -1.9324420698128992,
- -0.07363881760519825,
- 1.424867289968694,
- 0.5455963017553862,
- -0.742415851567591,
- 1.3239577987539242,
- 1.098708619905739,
- -0.2728200494808648]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.5689853107211356,
+ -0.5607186538058663,
+ -0.661498754651765,
+ -0.8554933814138375,
+ -1.7020822304278218,
+ 0.17190234730658194,
+ 1.059758411484973,
+ -1.1668805660263513,
+ -0.34636281711033645,
+ -0.45786560368853485]
 </pre></div>
 </div>
 </div>
@@ -670,7 +685,186 @@ document.write(`
 </section>
 </section>
 <section id="id4">
-<h2>アルゴリズム<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2>エラー<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>エラー（Errors）は次の２つに分けられる。</p>
+<ol class="arabic simple">
+<li><p>構文エラー（Syntax Errors）</p>
+<ul class="simple">
+<li><p>構文自体が間違っている場合に発生するエラー（例えば，スペル間違い）。</p></li>
+</ul>
+</li>
+<li><p>例外（Exceptoins）</p>
+<ul class="simple">
+<li><p>構文は間違っていなくてもコードの実行中に発生するエラー（例えば，数字を<code class="docutils literal notranslate"><span class="pre">0</span></code>で割る）</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<ul class="simple">
+<li><p>エラー・メッセージにエラーの理由のヒントがある。はじめは意味が分からないかも知れないが，パターンがあるので慣れると直ぐに理解できるケースも多くあるだろう。</p></li>
+<li><p>例外の場合，最初にエラーが発生するとそれに付随して他の場所でもエラーが誘発される場合がある。<code class="docutils literal notranslate"><span class="pre">Python</span></code>はエラーを追跡し，最後に確認したエラーをメッセージの一番最後に表示する。最初は、一番最後のエラー・メッセージを確認しよう！</p></li>
+</ul>
+</div>
+<section id="id5">
+<h3>構文エラー<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h4>例１<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>（正）<code class="docutils literal notranslate"><span class="pre">sum</span></code><br>
+（誤）<code class="docutils literal notranslate"><span class="pre">sun</span></code></p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sun</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sun</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;sun&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>矢印（—-&gt;）でエラー箇所が示されている。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NameError</span></code>として最終行にスペル間違いである<code class="docutils literal notranslate"><span class="pre">sun</span></code>が示されている。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">'sun'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code>とは「<code class="docutils literal notranslate"><span class="pre">sun</span></code>という名前（変数のこと）は上で定義されていない」という意味。</p></li>
+</ul>
+</section>
+<section id="id7">
+<h4>例２<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code>文の最初の行の終わりに<code class="docutils literal notranslate"><span class="pre">:</span></code>が抜けている。</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: expected &#39;:&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">3</span></code>はセル内の３行目（<code class="docutils literal notranslate"><span class="pre">if</span></code>の行）を示している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>として３行目の最後で<code class="docutils literal notranslate"><span class="pre">:</span></code>が足りない箇所を<code class="docutils literal notranslate"><span class="pre">^</span></code>で指し示している。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">expected</span> <span class="pre">':'</span></code>とは「<code class="docutils literal notranslate"><span class="pre">:</span></code>があるはず」という意味。</p></li>
+</ul>
+</section>
+<section id="id8">
+<h4>例３<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<p>括弧を閉じていない。</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mf">10.1</span> <span class="o">+</span> <span class="mf">3.2</span> <span class="o">+</span> <span class="mi">1</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mf">10.1</span> <span class="o">+</span> <span class="mf">3.2</span> <span class="o">+</span> <span class="mi">1</span>
+                        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: incomplete input
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code>はプログラマーがどこに<code class="docutils literal notranslate"><span class="pre">)</span></code>を入れようとしたかは分からない。従って，最後に<code class="docutils literal notranslate"><span class="pre">)</span></code>が入ると想定して<code class="docutils literal notranslate"><span class="pre">^</span></code>を文末に置いている。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">incomplete</span> <span class="pre">input</span></code>とは「不完全なインプット（コード）」という意味。</p></li>
+</ul>
+</section>
+</section>
+<section id="id9">
+<h3>例外<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<section id="id10">
+<h4>例１<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">0</span></code>が分母にある。</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">division</span> <span class="pre">by</span> <span class="pre">zero</span></code>とは「<code class="docutils literal notranslate"><span class="pre">0</span></code>で除している」という意味。</p></li>
+</ul>
+</section>
+<section id="id11">
+<h4>例２<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<p>定義されていない変数<code class="docutils literal notranslate"><span class="pre">yy</span></code>が使われている。</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.5</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mf">1.5</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="ne">NameError</span>: name &#39;yy&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">'yy'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code>とは「<code class="docutils literal notranslate"><span class="pre">yy</span></code>という名前（変数）は定義されていない」という意味。</p></li>
+</ul>
+</section>
+<section id="id12">
+<h4>例３<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<p>整数型と文字列を足している。</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">+</span> <span class="s1">&#39;3&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">10</span> <span class="o">+</span> <span class="s1">&#39;3&#39;</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">unsupported</span> <span class="pre">operand</span> <span class="pre">type(s)</span> <span class="pre">for</span> <span class="pre">+:</span> <span class="pre">'int'</span> <span class="pre">and</span> <span class="pre">'str'</span></code>とは「<code class="docutils literal notranslate"><span class="pre">+</span></code>に使用不可のデータ型が使われている：整数型と文字列型」という意味。</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="id13">
+<h2>アルゴリズム<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
 <p>コンピューターは<code class="docutils literal notranslate"><span class="pre">0</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>で書かれている機械語しか理解できないが，プログラマーにとって機械語は非常に難解である。つまりプログラマーとコンピューターは直接「会話」ができない。この問題を解決するために，プログラミング言語が開発され「通訳・翻訳」の役割を担っている。<code class="docutils literal notranslate"><span class="pre">Python</span></code>を使う場合は，<code class="docutils literal notranslate"><span class="pre">Python</span></code>コードを書き，それを<code class="docutils literal notranslate"><span class="pre">Python</span></code>が機械語に「通訳」し，コンピューターが命令を実行することになる。結果が表示されると，プログラマーは内容を確認し，コードを追加・修正などをおこない開発が進んでいく。Jupyter Notebookでコードを書く場合でも同じである。</p>
 <pre>
 +--------------+　　Pythonが「通訳」 　+-------+
@@ -695,8 +889,8 @@ document.write(`
 <p>平たく言えば，コンピューターが実行すると正しい結果が保証された計算手続である。更に，その計算手続きはどのプログラミング言語でも使える問題解決の明確な考え方である。</p>
 <p>例えば，カレーを作るとしよう。アルゴリズムはその場合のレシピである。ある程度料理ができる人であれば，書かれている手順に沿って作れば美味しいカレーが出来上がるレシピがアルゴリズムである。様々な問題には異なるアルゴリズムがある。また１つの問題には複数のアルゴリズムが存在する。カレーでも色々なレシピがあるのと同じである。</p>
 <p>以下では，比較的に簡単であり，且つ代表的な４つのアルゴリズムについて解説する。また，アルゴリズムによって計算速度が異なり，その理由についても考えることにする。</p>
-<section id="id5">
-<h3>例１：合計<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="id14">
+<h3>例１：合計<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <p>次のコードは標準正規分布から抽出した100万個のランダム変数から構成されるリストを作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -739,7 +933,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>73.59117189654182
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-650.1412527975883
 </pre></div>
 </div>
 </div>
@@ -783,15 +977,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>73.59117189654182
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-650.1412527975883
 </pre></div>
 </div>
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループと同じ値となっていることが確認できる。</p>
 </section>
-<section id="id6">
-<h4>実行スピード比較<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<section id="id15">
+<h4>実行スピード比較<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
 <p>次に２つのコードの終了までの時間を比較してみよう。ここでは<a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">マジック・コマンド</a>と呼ばれる<code class="docutils literal notranslate"><span class="pre">%timeit</span></code>を使うが，使い方は簡単で行頭に<code class="docutils literal notranslate"><span class="pre">%timeit</span></code>と半角スペースを置いて実行コードを書くだけである。まず<code class="docutils literal notranslate"><span class="pre">sum_for_loop()</span></code>関数を実行してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -800,7 +994,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.6 ms ± 219 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.4 ms ± 185 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -829,7 +1023,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>51.1 ms ± 792 μs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>53.2 ms ± 1.3 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -849,7 +1043,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.59 ms ± 14.5 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.68 ms ± 74.1 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -866,8 +1060,8 @@ document.write(`
 </div>
 </section>
 </section>
-<section id="id7">
-<h3>例２：値の探索<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<section id="id16">
+<h3>例２：値の探索<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
 <p>次のコードは<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">999,999</span></code>までの整数が並ぶリストを作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -883,7 +1077,7 @@ document.write(`
 </ul>
 <p>関数を考える。</p>
 <section id="sec-5-for-loop">
-<span id="id8"></span><h4><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ<a class="headerlink" href="#sec-5-for-loop" title="Link to this heading">#</a></h4>
+<span id="id17"></span><h4><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ<a class="headerlink" href="#sec-5-for-loop" title="Link to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使うコードを考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -925,7 +1119,7 @@ document.write(`
 </div>
 </section>
 <section id="sec-5-while-loop">
-<span id="id9"></span><h4><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ<a class="headerlink" href="#sec-5-while-loop" title="Link to this heading">#</a></h4>
+<span id="id18"></span><h4><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ<a class="headerlink" href="#sec-5-while-loop" title="Link to this heading">#</a></h4>
 <p>次に<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使う場合を考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -984,7 +1178,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.82 ms ± 32 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.23 ms ± 132 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -996,15 +1190,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>46.2 ms ± 1.01 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48.4 ms ± 1.94 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code>ループより<code class="docutils literal notranslate"><span class="pre">while</span></code>ループは4倍以上遅いことがわかる。もう理由は明らかであろう。<code class="docutils literal notranslate"><span class="pre">search_linear_for()</span></code>関数ではループ一回毎に１つの<code class="docutils literal notranslate"><span class="pre">if</span></code>文の条件<code class="docutils literal notranslate"><span class="pre">#3</span></code>を確認する必要があるが，<code class="docutils literal notranslate"><span class="pre">search_linear_while()</span></code>では条件が<code class="docutils literal notranslate"><span class="pre">#4</span></code>と<code class="docutils literal notranslate"><span class="pre">#6</span></code>の２つがある。この確認作業の回数の差が数字として現れている。このことから分かることは，<code class="docutils literal notranslate"><span class="pre">while</span></code>ループであっても条件を１つにすれば速度が倍になると言うことである。それを実現するのが次に考える<strong>番兵法</strong>と呼ばれるアルゴリズムである。</p>
 </section>
-<section id="id10">
-<h4>番兵法<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<section id="id19">
+<h4>番兵法<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
 <p>番兵法は<code class="docutils literal notranslate"><span class="pre">while</span></code>ループを使うが，次の手続きが必要となる。</p>
 <ul class="simple">
 <li><p>リストの最後に探索する値を追加する</p></li>
@@ -1072,15 +1266,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.5 ms ± 295 μs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26.9 ms ± 158 μs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">search_while_loop()</span></code>関数と比べると約2倍高速化できた。</p>
 </section>
-<section id="id11">
-<h4>組み込み関数<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<section id="id20">
+<h4>組み込み関数<a class="headerlink" href="#id20" title="Link to this heading">#</a></h4>
 <p>組み込み関数に<code class="docutils literal notranslate"><span class="pre">1</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">-1</span></code>を返す関数は見当たらないため，類似するメソッドを考えてみよう。リストには<code class="docutils literal notranslate"><span class="pre">.index()</span></code>というメソッドが用意されており，引数に要素を指定すると，その要素のインデックス番号を返す。試してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1102,7 +1296,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.75 ms ± 24.9 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.08 ms ± 81.7 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1110,8 +1304,8 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">search_for_loop()</span></code>関数よりも約2倍速い。最適化されていることが伺える。</p>
 </section>
 </section>
-<section id="id12">
-<h3>例３：最小値の探索<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<section id="id21">
+<h3>例３：最小値の探索<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
 <p>次のコードは標準正規分布から抽出した100万個のランダム変数から構成されるリストを作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1121,8 +1315,8 @@ document.write(`
 </div>
 </div>
 <p>この中から最小値を探索するアルゴリズムを考えてみよう。<code class="docutils literal notranslate"><span class="pre">lst3</span></code>の全ての要素を確認する必要があるので<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使おう。</p>
-<section id="id13">
-<h4>直接的な探索<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<section id="id22">
+<h4>直接的な探索<a class="headerlink" href="#id22" title="Link to this heading">#</a></h4>
 <p>まず，リストの最小値を直接探索するコードを考えてみる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1160,14 +1354,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.895720895838768
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.900300326185562
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="id14">
-<h4>間接的な探索<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
+<section id="id23">
+<h4>間接的な探索<a class="headerlink" href="#id23" title="Link to this heading">#</a></h4>
 <p>リストの要素はインデックス番号を使ってアクセスすることができる。それを利用して，上のコードをインデックス番号を使って間接的に要素にアクセスする場合を考える。即ち，最小値のインデックスを探し，最終的に最小値を返す関数となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1209,14 +1403,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.895720895838768
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.900300326185562
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="id15">
-<h4>実行スピード比較<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
+<section id="id24">
+<h4>実行スピード比較<a class="headerlink" href="#id24" title="Link to this heading">#</a></h4>
 <p>それぞれのコードの実行速度を比べてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1225,7 +1419,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11 ms ± 32.1 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.1 ms ± 111 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1237,7 +1431,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24.3 ms ± 205 μs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.9 ms ± 728 μs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1251,7 +1445,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.895720895838768
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.900300326185562
 </pre></div>
 </div>
 </div>
@@ -1263,7 +1457,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.23 ms ± 200 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.7 ms ± 320 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1271,8 +1465,8 @@ document.write(`
 <p>直接的な方法より2倍以上高速実行されている。</p>
 </section>
 </section>
-<section id="id16">
-<h3>例４：ソート<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<section id="id25">
+<h3>例４：ソート<a class="headerlink" href="#id25" title="Link to this heading">#</a></h3>
 <p>次のコードは<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">999</span></code>までの整数をランダムに並べたリストを作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1282,8 +1476,8 @@ document.write(`
 </div>
 </div>
 <p>このリストを昇順に並び替えるコードを考える。</p>
-<section id="id17">
-<h4>単純選択ソート<a class="headerlink" href="#id17" title="Link to this heading">#</a></h4>
+<section id="id26">
+<h4>単純選択ソート<a class="headerlink" href="#id26" title="Link to this heading">#</a></h4>
 <p>最初に考えるアルゴリズムである単純選択ソートは次のような考え方に基づいている。</p>
 <p>リストには<code class="docutils literal notranslate"><span class="pre">0</span></code>番目から<code class="docutils literal notranslate"><span class="pre">n-1</span></code>番目の要素があるとしよう。</p>
 <ul class="simple">
@@ -1362,7 +1556,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 4, 6, 7, 9, 10, 12, 12, 14]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 2, 3, 3, 4, 6, 6, 7, 7]
 </pre></div>
 </div>
 </div>
@@ -1375,15 +1569,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[990, 992, 993, 996, 996, 998, 998, 999, 1000, 1000]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[989, 990, 991, 993, 994, 997, 998, 998, 999, 999]
 </pre></div>
 </div>
 </div>
 </div>
 <p>昇順に並んでいることが確認できる。</p>
 </section>
-<section id="id18">
-<h4>バブル・ソート<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
+<section id="id27">
+<h4>バブル・ソート<a class="headerlink" href="#id27" title="Link to this heading">#</a></h4>
 <p>次にバブル・ソートと呼ばれるアルゴリズムを考えてみよう。手順は次の内容となる。</p>
 <p>リストには<code class="docutils literal notranslate"><span class="pre">0</span></code>番目から<code class="docutils literal notranslate"><span class="pre">n-1</span></code>番目の要素があるとしよう。</p>
 <ul class="simple">
@@ -1520,7 +1714,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 4, 6, 7, 9, 10, 12, 12, 14]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 2, 3, 3, 4, 6, 6, 7, 7]
 </pre></div>
 </div>
 </div>
@@ -1533,14 +1727,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[990, 992, 993, 996, 996, 998, 998, 999, 1000, 1000]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[989, 990, 991, 993, 994, 997, 998, 998, 999, 999]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="id19">
-<h4>実行スピード比較<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
+<section id="id28">
+<h4>実行スピード比較<a class="headerlink" href="#id28" title="Link to this heading">#</a></h4>
 <p>それぞれの実行スピードを比較してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1549,7 +1743,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.9 ms ± 94.3 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.9 ms ± 156 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1561,7 +1755,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.7 ms ± 203 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.7 ms ± 182 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1578,7 +1772,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.08 μs ± 15.8 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.11 μs ± 20.5 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1659,30 +1853,45 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random"><code class="docutils literal notranslate"><span class="pre">random</span></code>モジュール</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">アルゴリズム</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">例１：合計</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">エラー</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">構文エラー</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">例１</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">例２</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">例３</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">例外</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">例１</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">例２</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">例３</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">アルゴリズム</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">例１：合計</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#for"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#while"><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">実行スピード比較</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">例２：値の探索</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-for-loop"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-while-loop"><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">番兵法</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">組み込み関数</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">例３：最小値の探索</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">直接的な探索</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">間接的な探索</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">実行スピード比較</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">例４：ソート</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">単純選択ソート</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">バブル・ソート</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">実行スピード比較</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">例２：値の探索</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-for-loop"><code class="docutils literal notranslate"><span class="pre">for</span></code>ループ</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-while-loop"><code class="docutils literal notranslate"><span class="pre">while</span></code>ループ</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">番兵法</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">組み込み関数</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">例３：最小値の探索</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">直接的な探索</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">間接的な探索</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">実行スピード比較</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">例４：ソート</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">単純選択ソート</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">バブル・ソート</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">実行スピード比較</a></li>
 </ul>
 </li>
 </ul>

@@ -188,7 +188,7 @@
 <li class="toctree-l1"><a class="reference internal" href="1_Basics_II.html">データの操作</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_Basics_III.html">関数とメソッド</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_Basics_IV.html">制御フロー</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_V.html">モジュールとアルゴリズム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Basics_V.html">モジュール、エラーとアルゴリズム</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_Basics_VI.html">図示とシミュレーション</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門II</span></p>
@@ -894,7 +894,7 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">=</span></code>を使い１つの変数への割り当てを考えたが、同時に複数の変数への割り当ても可能である。次の例を考えよう。（<code class="docutils literal notranslate"><span class="pre">=</span></code>の右辺から読む！）</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mi">10_000</span><span class="p">,</span> <span class="s1">&#39;経済&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mi">10_000</span><span class="p">,</span> <span class="mi">999</span>
 </pre></div>
 </div>
 </div>
@@ -903,7 +903,7 @@ document.write(`
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">3.14</span></code>　→　<code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">10_000</span></code>　→　<code class="docutils literal notranslate"><span class="pre">b</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">'経済'</span></code>　→　<code class="docutils literal notranslate"><span class="pre">c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">999</span></code>　→　<code class="docutils literal notranslate"><span class="pre">c</span></code></p></li>
 </ul>
 <p>それぞれの変数を<code class="docutils literal notranslate"><span class="pre">,</span></code>で区切っていることにも留意しよう。同様に，<code class="docutils literal notranslate"><span class="pre">,</span></code>で区切って変数を並べて実行すると全てを丸括弧で挟んで返すことになる。ここでの<code class="docutils literal notranslate"><span class="pre">()</span></code>は，後に説明するタプルと呼ばれるデータ型を表している。</p>
 <div class="cell docutils container">
@@ -913,7 +913,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3.14, 10000, &#39;経済&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3.14, 10000, 999)
 </pre></div>
 </div>
 </div>
@@ -933,7 +933,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10000, 3.14, &#39;経済&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10000, 3.14, 999)
 </pre></div>
 </div>
 </div>
@@ -1472,7 +1472,14 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">and</span></code>：且つ</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">or</span></code>：又は</p></li>
 </ul>
-<p>英語の意味のままなので，分かり易いのではないだろうか。例を考えるために，まず次の変数を設定しよう。</p>
+<p>英語の意味のままなので，分かり易いのではないだろうか。注意する点は、ブール演算子が<strong>複数同時</strong>に使われる場合の計算の優先順位であり、次の順番となる。</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">not</span></code>が一番優先され、<code class="docutils literal notranslate"><span class="pre">or</span></code>の優先順位が一番低い。この順番を忘れると意図せぬ間違いにつながるので、<code class="docutils literal notranslate"><span class="pre">()</span></code>を使うことを推奨する。</p>
+<p>例を考えるために，まず次の変数を設定しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
