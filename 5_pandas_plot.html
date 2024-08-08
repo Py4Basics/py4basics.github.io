@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -429,7 +429,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">説明</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">プロット方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">プロット方法</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe"><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series"><code class="docutils literal notranslate"><span class="pre">Series</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-options">引数とメソッド</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">基本的な引数</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-titlelabels">タイトルとラベルのサイズの調整</a></li>
@@ -488,14 +492,14 @@ document.write(`
 </div>
 </div>
 <p>プロット用のパッケージ<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>を紹介したが，実は<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>の<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>と<code class="docutils literal notranslate"><span class="pre">Series</span></code>にはメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>が備えられており，それを使えば基本的なプロットをより簡単なコードで実現できる。裏で動いているのは<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>であり，より複雑な図を作成する場合は、<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>のコードを直接書くことが必要になるだろうが，手っ取り早くプロットしたい場合には重宝する手法である。詳細は<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">参考サイト（英語）</a>を参考にして欲しいが，ここでは基本的な使い方を紹介する。</p>
-<p>次の<code class="docutils literal notranslate"><span class="pre">df0</span></code>を使って説明する。</p>
+<p>次の<code class="docutils literal notranslate"><span class="pre">df</span></code>を使って説明する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;X&#39;</span><span class="p">:[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
        <span class="s1">&#39;Y&#39;</span><span class="p">:[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">],</span>
        <span class="s1">&#39;Z&#39;</span><span class="p">:[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]}</span>
-<span class="n">df0</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
-<span class="n">df0</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+<span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -549,218 +553,154 @@ document.write(`
 </section>
 <section id="id2">
 <h2>プロット方法<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>プロット方法は簡単で，メソッド<code class="docutils literal notranslate"><span class="pre">.plot()</span></code>を使うと全ての列がプロットされる。</p>
+<section id="dataframe">
+<h3><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#dataframe" title="Link to this heading">#</a></h3>
+<p>プロット方法は簡単で，次の基本構文となる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;列ラベル&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;列ラベル&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>：横軸に使う列ラベル（文字列）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>：縦軸に使う列ラベル（文字列、複数の場合はリスト）</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;X&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/2912e3eef66e0f4c23e2b8621a611750777b8fa91e112e130039e99a046bd248.png" src="_images/2912e3eef66e0f4c23e2b8621a611750777b8fa91e112e130039e99a046bd248.png" />
+<img alt="_images/0f14a30f95b70ae572699128b6474c11ca47f4e85196eebfd5486998cfd3f4fd.png" src="_images/0f14a30f95b70ae572699128b6474c11ca47f4e85196eebfd5486998cfd3f4fd.png" />
 </div>
 </div>
 <ul class="simple">
-<li><p>デフォルトでは横軸に行インデックスが使われ、<code class="docutils literal notranslate"><span class="pre">float</span></code>として扱われて表示されている。</p></li>
-<li><p>凡例は自動的に表示され、列ラベルが使われる。</p></li>
+<li><p>凡例は自動的に表示され，列ラベルが使われる。次の引数を追加すると凡例は非表示になる。</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span>
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>図の上に文字が表示されるが，表示したくない場合は最後に<code class="docutils literal notranslate"><span class="pre">;</span></code>を加えるか次の行に<code class="docutils literal notranslate"><span class="pre">pass</span></code>と書くと良いだろう。</p></li>
 </ul>
-<p>次にある列だけをプロットしたい場合を考えよう。その場合は，プロットしたい列を抽出しメソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使う。選択には<code class="docutils literal notranslate"><span class="pre">[]</span></code>を使い，その中に列ラベルをリストとして指定する。まず１つの列を選択する場合を考えよう。例えば，<code class="docutils literal notranslate"><span class="pre">X</span></code>を選択するとしよう。この場合、２つの方法がある。</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">X</span></code>を<code class="docutils literal notranslate"><span class="pre">Series</span></code>として抽出する場合</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span>
+<p>縦軸に複数の変数を表示したい場合は，次のようにリストとして指定する。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;列ラベル&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;列ラベル１&quot;</span><span class="p">,</span> <span class="s2">&quot;列ラベル２&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">X</span></code>を<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>として抽出する場合</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">]]</span>
-</pre></div>
-</div>
-<p>ここでは<code class="docutils literal notranslate"><span class="pre">X</span></code>をリスト<code class="docutils literal notranslate"><span class="pre">['X']</span></code>として使っている。</p>
-</li>
-</ul>
-<p>列ラベルは文字列<code class="docutils literal notranslate"><span class="pre">X</span></code>で指定していることに留意しよう。</p>
-<p>まず<code class="docutils literal notranslate"><span class="pre">X</span></code>の<code class="docutils literal notranslate"><span class="pre">Series</span></code>として抽出しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    10
-1    20
-2    30
-Name: X, dtype: int64
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;X&#39;&gt;
 </pre></div>
 </div>
+<img alt="_images/ada76d3e17ce16265e4ade4e9628cf7eca8400015c7e251f91595add0b6b2442.png" src="_images/ada76d3e17ce16265e4ade4e9628cf7eca8400015c7e251f91595add0b6b2442.png" />
 </div>
 </div>
-<p>次に<code class="docutils literal notranslate"><span class="pre">X</span></code>を<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>として抽出する。</p>
+<p>上の例では引数<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y</span></code>を指定したが，<code class="docutils literal notranslate"><span class="pre">x</span></code>を指定しない場合はどうなるか試してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">]]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>X</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>30</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>表示が少し異なることが確認できるが，メソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>でも少しだけ違いがある。まず<code class="docutils literal notranslate"><span class="pre">X</span></code>を<code class="docutils literal notranslate"><span class="pre">Series</span></code>としてプロットしてみる。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a2302d9421414c5d8e02a243df93b5616515dbcea2c4ac3626d6a284380d3d10.png" src="_images/a2302d9421414c5d8e02a243df93b5616515dbcea2c4ac3626d6a284380d3d10.png" />
+<img alt="_images/d5fd4a4aa8456d7448a9dc73fe0c583c4c585e660059de6788fa223328342d21.png" src="_images/d5fd4a4aa8456d7448a9dc73fe0c583c4c585e660059de6788fa223328342d21.png" />
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">X</span></code>を<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>としてプロットすると凡例も表示される。</p>
+<p>縦軸は<code class="docutils literal notranslate"><span class="pre">Y</span></code>だが，横軸には行インデックスが使われることになる。この場合，行インデックスが<code class="docutils literal notranslate"><span class="pre">float</span></code>として表示されている。</p>
+<p>では、引数なしで実行するとどうなるだろう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/646f2dd30636cb9a77761a893a0c145e3d7a067a4945e4323e82971b61a27808.png" src="_images/646f2dd30636cb9a77761a893a0c145e3d7a067a4945e4323e82971b61a27808.png" />
+<img alt="_images/434a3e25c38abc2a7eeebcfa715d5abfd8adf55c4793d99ccf09c743c8491c9f.png" src="_images/434a3e25c38abc2a7eeebcfa715d5abfd8adf55c4793d99ccf09c743c8491c9f.png" />
 </div>
 </div>
-<p>この場合の凡例は列ラベルがそのまま使われている。</p>
-<p>次に<code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Z</span></code>をプロットしたいとしよう。２つの列を抽出するためには，以下のように列ラベルをリストとして書く。</p>
+<p>縦軸には全ての列が使われ、横軸には行インデックスが使われている。</p>
+</section>
+<section id="series">
+<h3><code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#series" title="Link to this heading">#</a></h3>
+<p>次に，<code class="docutils literal notranslate"><span class="pre">Series</span></code>を考えてみよう。まず，２つの<code class="docutils literal notranslate"><span class="pre">Series</span></code>を作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span>
+<span class="n">sy</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>X</th>
-      <th>Z</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>10</td>
-      <td>3.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>20</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>30</td>
-      <td>5.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     5.0
+1    30.0
+2    15.0
+Name: Y, dtype: float64
+</pre></div>
 </div>
-<p>メソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使いプロットする。</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="k">pass</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sz</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span>
+<span class="n">sz</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5789fdbea0586d78e049d2ebd8047894e22ddd212bb3edb3f4797dd39c540c29.png" src="_images/5789fdbea0586d78e049d2ebd8047894e22ddd212bb3edb3f4797dd39c540c29.png" />
-</div>
-</div>
-<p>もしくは<code class="docutils literal notranslate"><span class="pre">Series</span></code>を2行に分けても同じ図となるが，凡例は表示されない。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">df0</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="k">pass</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    3.0
+1    2.0
+2    5.0
+Name: Z, dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/4bebacc7bf45fa7effaf04e5258497f08a01f796e731a9529439b63e286aeea1.png" src="_images/4bebacc7bf45fa7effaf04e5258497f08a01f796e731a9529439b63e286aeea1.png" />
 </div>
-</div>
-<p>デフォルトでは横軸に行インデックスが使われるが，横軸を指定したい場合は，次の引数を使う。</p>
+<p>両方とも<code class="docutils literal notranslate"><span class="pre">df</span></code>の行インデックスが引き継がれている。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Series</span></code>にもメソッド<code class="docutils literal notranslate"><span class="pre">.plot()</span></code>が実装されているが次の点を覚えておこう。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>：横軸に使う列ラベル</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>：縦軸に使う列ラベル（複数の場合はリスト）</p></li>
+<li><p>列が１つしかないため，引数<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y</span></code>を指定する必要はない。</p></li>
 </ul>
+<p><code class="docutils literal notranslate"><span class="pre">sy</span></code>をプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/38a0862f832f058e43eb81c6ff1f1cf476df41297a9f12a4470badc521217afd.png" src="_images/38a0862f832f058e43eb81c6ff1f1cf476df41297a9f12a4470badc521217afd.png" />
+<img alt="_images/17ac685779c78e8bdf74acea26502bbfef0f4bf5e96939eab56aa7e6982f8a59.png" src="_images/17ac685779c78e8bdf74acea26502bbfef0f4bf5e96939eab56aa7e6982f8a59.png" />
 </div>
 </div>
+<p>横軸には行インデックスが<code class="docutils literal notranslate"><span class="pre">float</span></code>として使われており，<code class="docutils literal notranslate"><span class="pre">Series</span></code>の場合，凡例は自動的には表示されない。
+次の引数を使うと凡例を表示することができる。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span>
+</pre></div>
+</div>
+<p>更に，次の点で<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使う場合と異なる。<code class="docutils literal notranslate"><span class="pre">sy</span></code>と<code class="docutils literal notranslate"><span class="pre">sz</span></code>を続けて書いて実行してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sz</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7b33b3470d1cfd3fb849d778344bd769ff2eaf18636ff2f613c12f3f8993434a.png" src="_images/7b33b3470d1cfd3fb849d778344bd769ff2eaf18636ff2f613c12f3f8993434a.png" />
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Series</span></code>の場合，連続してコードを書くと一つの図に表示することができる。この特徴は，次に説明する「飾り付け」を各データ毎別々に設定する際に便利な機能と感じる人もいるだろう。</p>
+</section>
 </section>
 <section id="sec-5-options">
 <span id="id3"></span><h2>引数とメソッド<a class="headerlink" href="#sec-5-options" title="Link to this heading">#</a></h2>
@@ -793,7 +733,7 @@ Name: X, dtype: int64
 <li><p>複数の図を表示する際は下で説明する「軸」のメソッドとして指定することもできる。</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>：凡例の表現を指定（<code class="docutils literal notranslate"><span class="pre">Series</span></code>のみ有効）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>：凡例の表現を指定</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">grid</span></code>：グリッド表示（ブール型;デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
 <ul>
 <li><p>複数の図を表示する際は，この引数は使わずに下で説明する「軸」のメソッドとして指定する。</p></li>
@@ -807,24 +747,23 @@ Name: X, dtype: int64
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df0はDataFrame</span>
-
-<span class="n">df0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">],</span>
-         <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-         <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">],</span>
-         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
-         <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-         <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
-         <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>   <span class="c1"># 8は横軸、4は縦軸のサイズ</span>
-         <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-         <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="c1"># 引数 x, y は省略</span>
+        <span class="n">style</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">],</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">],</span>
+        <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+        <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>   <span class="c1"># 8は横軸、4は縦軸のサイズ</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f8675e5872280e7d8942a413f352d44f143beb020ae1b829e83ce7c738da9f4d.png" src="_images/f8675e5872280e7d8942a413f352d44f143beb020ae1b829e83ce7c738da9f4d.png" />
+<img alt="_images/8e681f7246194eff418cc5a342bd6773c359f387d65356fd7b68501d7fa784f0.png" src="_images/8e681f7246194eff418cc5a342bd6773c359f387d65356fd7b68501d7fa784f0.png" />
 </div>
 </div>
 </section>
@@ -863,7 +802,7 @@ Name: X, dtype: int64
 </ul>
 <p>では実際に手順を説明する。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">df0.plot()</span></code>は自動で「キャンバス」と「軸」を作成すると同時に「軸」を返す。それを変数（例えば，<code class="docutils literal notranslate"><span class="pre">ax</span></code>）に割り当てる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.plot()</span></code>は自動で「キャンバス」と「軸」を作成すると同時に「軸」を返す。それを変数（例えば，<code class="docutils literal notranslate"><span class="pre">ax</span></code>）に割り当てる。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ax</span></code>のメソッドを使って以下を設定する。</p>
 <ul>
 <li><p>タイトル：<code class="docutils literal notranslate"><span class="pre">.set_title()</span></code></p></li>
@@ -875,11 +814,11 @@ Name: X, dtype: int64
 <p>実際にそれらの引数を使ってプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-              <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-              <span class="n">style</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">],</span>
-              <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
-              <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="c1"># 引数 x, y は省略</span>
+             <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+             <span class="n">style</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">],</span>
+             <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
              <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;A Large Title&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span> <span class="mi">30</span><span class="p">)</span>     <span class="c1"># タイトルの設定</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Horizontal Axis&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>   <span class="c1"># 横軸ラベルの設定</span>
@@ -889,7 +828,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/985c970ff9be33c8d91ede45c0e16fcd96e9c10be37c2ee1fba055e85e501c13.png" src="_images/985c970ff9be33c8d91ede45c0e16fcd96e9c10be37c2ee1fba055e85e501c13.png" />
+<img alt="_images/e68d37b9814116fad18413413b57a1f5a16bd80b768f594527b444bacfb13479.png" src="_images/e68d37b9814116fad18413413b57a1f5a16bd80b768f594527b444bacfb13479.png" />
 </div>
 </div>
 </section>
@@ -898,49 +837,49 @@ Name: X, dtype: int64
 <p>上で「軸」のメソッドとしてタイトルなどを追加できることを説明したが，<code class="docutils literal notranslate"><span class="pre">plot()</span></code>の引数として「軸」を指定して図を追加することができる。次のコードを考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>  <span class="c1"># 1行目</span>
-<span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;Z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">)</span>      <span class="c1"># 2行目</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>     <span class="c1">#1</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">)</span>   <span class="c1">#2</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2912e3eef66e0f4c23e2b8621a611750777b8fa91e112e130039e99a046bd248.png" src="_images/2912e3eef66e0f4c23e2b8621a611750777b8fa91e112e130039e99a046bd248.png" />
+<img alt="_images/ada76d3e17ce16265e4ade4e9628cf7eca8400015c7e251f91595add0b6b2442.png" src="_images/ada76d3e17ce16265e4ade4e9628cf7eca8400015c7e251f91595add0b6b2442.png" />
 </div>
 </div>
-<p>１行目の右辺では「キャンバス」と「軸」が自動生成され，その内「軸」のみが返され変数<code class="docutils literal notranslate"><span class="pre">ax_</span></code>に割り当てられている。２行目の<code class="docutils literal notranslate"><span class="pre">plot()</span></code>の引数<code class="docutils literal notranslate"><span class="pre">ax</span></code>は「軸」を指定する引数であり，それに<code class="docutils literal notranslate"><span class="pre">ax_</span></code>を設定している。即ち，<code class="docutils literal notranslate"><span class="pre">Z</span></code>を「軸」<code class="docutils literal notranslate"><span class="pre">ax_</span></code>にプロットすることを指定している。このコードには２つの利点がある。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>の右辺では「キャンバス」と「軸」が自動生成され，その内「軸」のみが返され変数<code class="docutils literal notranslate"><span class="pre">ax_</span></code>に割り当てられている。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>の<code class="docutils literal notranslate"><span class="pre">plot()</span></code>の引数<code class="docutils literal notranslate"><span class="pre">ax</span></code>は「軸」を指定する引数であり，それに<code class="docutils literal notranslate"><span class="pre">ax_</span></code>を設定している。即ち，<code class="docutils literal notranslate"><span class="pre">Z</span></code>を「軸」<code class="docutils literal notranslate"><span class="pre">ax_</span></code>にプロットすることを指定している。このコードには２つの利点がある。</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>と異なる「飾り付け」を<code class="docutils literal notranslate"><span class="pre">Z</span></code>に簡単に施すことができる。</p></li>
 <li><p>２行目に<code class="docutils literal notranslate"><span class="pre">df0</span></code>ではなく別の<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使うことも可能となる。</p></li>
 </ol>
+</li>
+</ul>
 <p>もちろん，タイトルや軸ラベルのメソッドをつけ加えることも可能である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;Z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span>
+              <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Yのデータ&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Zのデータ&#39;</span><span class="p">)</span>
 <span class="n">ax_</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;This is a title&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">ax_</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Horizontal axis&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">ax_</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Vertical axis&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">ax_</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">ax_</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Xの凡例&#39;</span><span class="p">,</span><span class="s1">&#39;Yの凡例&#39;</span><span class="p">,</span><span class="s1">&#39;Zの凡例&#39;</span><span class="p">])</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8845dabd34c6f3624f36ccbead9b10698e0e5b0c7d57e6c9fed694c8d1cde4f7.png" src="_images/8845dabd34c6f3624f36ccbead9b10698e0e5b0c7d57e6c9fed694c8d1cde4f7.png" />
+<img alt="_images/226a902e6ab4e64e08163f2a94f7c9702fa610326afdb4b0801a1de4695d12eb.png" src="_images/226a902e6ab4e64e08163f2a94f7c9702fa610326afdb4b0801a1de4695d12eb.png" />
 </div>
 </div>
-<p>また上のコードの最後に２行を付け加えているので便利なので参考にして欲しい。</p>
+<p>また上のコードの最後に次の行を付け加えている。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ax_.grid()</span></code>：グリッド線を表示するメソッド。</p>
 <ul>
-<li><p>１つの「軸」に<code class="docutils literal notranslate"><span class="pre">plot</span></code>を複数回適用する場合，個々の<code class="docutils literal notranslate"><span class="pre">plot</span></code>の引数<code class="docutils literal notranslate"><span class="pre">grid=True</span></code>を使わず<code class="docutils literal notranslate"><span class="pre">ax_.grid()</span></code>を指定する。</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ax_.legend(['Xの凡例','Yの凡例','Zの凡例'])</span></code></p>
-<ul>
-<li><p>凡例に列ラベルではなく他の表現を指定したい場合に使う。</p></li>
+<li><p>１つの「軸」に<code class="docutils literal notranslate"><span class="pre">plot</span></code>を複数回適用する場合，個々の<code class="docutils literal notranslate"><span class="pre">plot</span></code>の引数<code class="docutils literal notranslate"><span class="pre">grid=True</span></code>を使わずに<code class="docutils literal notranslate"><span class="pre">ax_.grid()</span></code>を指定すると分かりやすいですコードになる。</p></li>
 </ul>
 </li>
 </ul>
@@ -950,63 +889,70 @@ Name: X, dtype: int64
 <p>図を縦に並べるには<code class="docutils literal notranslate"><span class="pre">subplots=True</span></code>を指定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4da10eeb746c05156f5f95abe88b1df1bc48be876fee9d88282ef2cd8f122da3.png" src="_images/4da10eeb746c05156f5f95abe88b1df1bc48be876fee9d88282ef2cd8f122da3.png" />
+<img alt="_images/b41d2875b71afd76df524159fd18798441f0804f35c4f8d4fefb9fdd7c3cfa95.png" src="_images/b41d2875b71afd76df524159fd18798441f0804f35c4f8d4fefb9fdd7c3cfa95.png" />
 </div>
 </div>
-<p>図を横に並べるには<code class="docutils literal notranslate"><span class="pre">layout=(1,3)</span></code>を付け加える。<code class="docutils literal notranslate"><span class="pre">layout</span></code>は図の配置を行列のように考えて指定し、<code class="docutils literal notranslate"><span class="pre">1</span></code>は行の数であり、<code class="docutils literal notranslate"><span class="pre">3</span></code>は列の数。</p>
+<p>図を横に並べるには<code class="docutils literal notranslate"><span class="pre">layout=(1,2)</span></code>を付け加える。<code class="docutils literal notranslate"><span class="pre">layout</span></code>は図の配置を行列のように考えて指定し、<code class="docutils literal notranslate"><span class="pre">1</span></code>は行の数であり、<code class="docutils literal notranslate"><span class="pre">2</span></code>は列の数。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>layout(行の数、列の数)
 </pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/907503d6f83d5ffa29e6d3fbed90bbf592b75b3501922642aa11ec7626fe43c0.png" src="_images/907503d6f83d5ffa29e6d3fbed90bbf592b75b3501922642aa11ec7626fe43c0.png" />
+<img alt="_images/bf9081977e32f31e4947b0bfb9a89bb0b8af15d5fd3f0a1abf5552ff98972b0e.png" src="_images/bf9081977e32f31e4947b0bfb9a89bb0b8af15d5fd3f0a1abf5552ff98972b0e.png" />
 </div>
 </div>
+<p>図を並べる際も引数<code class="docutils literal notranslate"><span class="pre">x</span></code>を省略すると，横軸には行インデックスが使われることになる。</p>
 </section>
 <section id="id8">
 <h3>２軸グラフ<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
-<p>左軸を<code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>に，右軸を<code class="docutils literal notranslate"><span class="pre">Z</span></code>に使うとしよう。その場合，引数<code class="docutils literal notranslate"><span class="pre">secondary_y</span></code>に<code class="docutils literal notranslate"><span class="pre">Z</span></code>を設定する。</p>
+<p>左縦軸を<code class="docutils literal notranslate"><span class="pre">Y</span></code>に，右縦軸を<code class="docutils literal notranslate"><span class="pre">Z</span></code>に使うとしよう。その場合，引数<code class="docutils literal notranslate"><span class="pre">secondary_y</span></code>に<code class="docutils literal notranslate"><span class="pre">Z</span></code>を設定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">secondary_y</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">secondary_y</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6fa3360878f736c7a545b5e1f2ed178feeb7c0fe85a4cbd1dfebc620b869ca0a.png" src="_images/6fa3360878f736c7a545b5e1f2ed178feeb7c0fe85a4cbd1dfebc620b869ca0a.png" />
+<img alt="_images/3ab68572abf01980617f125a2a33d6b275136c81e54888267ada6783fad30445.png" src="_images/3ab68572abf01980617f125a2a33d6b275136c81e54888267ada6783fad30445.png" />
 </div>
 </div>
 <p>別々の飾り付けをする場合は次のようにすると良いだろう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;Z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>
-                <span class="n">secondary_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">,</span>            <span class="c1">#1</span>
+        <span class="n">secondary_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1">#2</span>
+        <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span>        <span class="c1">#3</span>
+        <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>     <span class="c1">#4</span>
+        <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span>     <span class="c1">#5</span>
+        <span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b7555419e185064200bd28d834cf39a4cbb889f3348a39bd97c753c24cd19d95.png" src="_images/b7555419e185064200bd28d834cf39a4cbb889f3348a39bd97c753c24cd19d95.png" />
+<img alt="_images/7dbb6e22a26d8105fef7c178714f72d3f3ca38d55f0bb1dbd5b95ca2630822f7.png" src="_images/7dbb6e22a26d8105fef7c178714f72d3f3ca38d55f0bb1dbd5b95ca2630822f7.png" />
 </div>
 </div>
-<p>上の図との主な違いが３行目にある</p>
+<p>上のコードとの主な違い：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">secondary_y=True</span></code>：<code class="docutils literal notranslate"><span class="pre">Z</span></code>を右軸に使うことを指定する。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ax=ax_</span></code>：「軸」<code class="docutils literal notranslate"><span class="pre">ax_</span></code>に<code class="docutils literal notranslate"><span class="pre">Z</span></code>をプロットする。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>：<code class="docutils literal notranslate"><span class="pre">ax=ax_</span></code>：「軸」<code class="docutils literal notranslate"><span class="pre">ax_</span></code>に<code class="docutils literal notranslate"><span class="pre">Z</span></code>をプロットする。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>：<code class="docutils literal notranslate"><span class="pre">secondary_y=True</span></code>：<code class="docutils literal notranslate"><span class="pre">Z</span></code>を右軸に使うことを指定する。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>〜<code class="docutils literal notranslate"><span class="pre">#5</span></code>：<code class="docutils literal notranslate"><span class="pre">Z</span></code>の飾り付け</p></li>
 </ul>
 </section>
 </section>
@@ -1025,11 +971,12 @@ Name: X, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="kc">True</span>
-             <span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">]</span>
-             <span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span>
-             <span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span>
-             <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="c1"># 引数 x, y は省略</span>
+            <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">],</span>
+            <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+            <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;縦横タイトル&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;横軸&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;縦軸&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
@@ -1038,7 +985,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fd8135e57a7823076559b910de67ac4c0092ae1804dff528b2ff177da91d0239.png" src="_images/fd8135e57a7823076559b910de67ac4c0092ae1804dff528b2ff177da91d0239.png" />
+<img alt="_images/a07052dc18f7c7ed42fdffaf3fc133dbe2cfcda121765c35397bf9d7fea9885f.png" src="_images/a07052dc18f7c7ed42fdffaf3fc133dbe2cfcda121765c35397bf9d7fea9885f.png" />
 </div>
 </div>
 </section>
@@ -1073,37 +1020,39 @@ Name: X, dtype: int64
 <p>上の例を使い、設定方法の例を示す。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jfont</span> <span class="o">=</span> <span class="s1">&#39;IPAexGothic&#39;</span>    <span class="c1"># (1)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jfont</span> <span class="o">=</span> <span class="s1">&#39;IPAexGothic&#39;</span>    <span class="c1">#1</span>
 
-<span class="n">ax</span> <span class="o">=</span> <span class="n">df0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="kc">True</span>
-             <span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">]</span>
-             <span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span>
-             <span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="c1"># 引数 x, y は省略</span>
+             <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+             <span class="n">style</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">],</span>
+             <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
              <span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;縦横タイトル&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="n">jfont</span><span class="p">)</span>   <span class="c1"># (2)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;横軸&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="n">jfont</span><span class="p">)</span>          <span class="c1"># (3)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;縦軸&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="n">jfont</span><span class="p">)</span>          <span class="c1"># (4)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;family&#39;</span><span class="p">:</span><span class="n">jfont</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">17</span><span class="p">})</span>            <span class="c1"># (5)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;縦横タイトル&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="n">jfont</span><span class="p">)</span>   <span class="c1">#2</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;横軸&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="n">jfont</span><span class="p">)</span>          <span class="c1">#3</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;縦軸&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="n">jfont</span><span class="p">)</span>          <span class="c1">#4</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;family&#39;</span><span class="p">:</span><span class="n">jfont</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">17</span><span class="p">})</span>            <span class="c1">#5</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fe103311cc6adfad03b6cc927db7c6d904b04252933e6ccbdae1f63ccaffefb1.png" src="_images/fe103311cc6adfad03b6cc927db7c6d904b04252933e6ccbdae1f63ccaffefb1.png" />
+<img alt="_images/20e8bf26651300b0409062130b9d9da3dfed05fd27dbc7cd8ad99ddb0ad89545.png" src="_images/20e8bf26651300b0409062130b9d9da3dfed05fd27dbc7cd8ad99ddb0ad89545.png" />
 </div>
 </div>
-<blockquote>
-<div><ul class="simple">
-<li><p>(1) 使用するフォントを<code class="docutils literal notranslate"><span class="pre">jfont</span></code>に割り当てる。</p></li>
-<li><p>(2) 引数<code class="docutils literal notranslate"><span class="pre">fontname</span></code>で<code class="docutils literal notranslate"><span class="pre">jfont</span></code>を指定する。タイトルのフォントが変更される。</p></li>
-<li><p>(3) 引数<code class="docutils literal notranslate"><span class="pre">fontname</span></code>で<code class="docutils literal notranslate"><span class="pre">jfont</span></code>を指定する。横軸名のフォントが変更される。</p></li>
-<li><p>(4) 引数<code class="docutils literal notranslate"><span class="pre">fontname</span></code>で<code class="docutils literal notranslate"><span class="pre">jfont</span></code>を指定する。縦軸名のフォントが変更される。</p></li>
-<li><p>(5) <code class="docutils literal notranslate"><span class="pre">legend</span></code>は他と設定方法が異なる。
-* <code class="docutils literal notranslate"><span class="pre">prop</span></code>はフォントのプロパティを設定する引数であり、辞書で指定する。
-* キー<code class="docutils literal notranslate"><span class="pre">family</span></code>に値<code class="docutils literal notranslate"><span class="pre">jfont</span></code>を指定する。凡例のフォントが変更される。
-* キー<code class="docutils literal notranslate"><span class="pre">size</span></code>に数値を設定してフォントの大きさが変更される。</p></li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#1</span></code>： 使用するフォントを<code class="docutils literal notranslate"><span class="pre">jfont</span></code>に割り当てる。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#2</span></code>： 引数<code class="docutils literal notranslate"><span class="pre">fontname</span></code>で<code class="docutils literal notranslate"><span class="pre">jfont</span></code>を指定する。タイトルのフォントが変更される。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#3</span></code>： 引数<code class="docutils literal notranslate"><span class="pre">fontname</span></code>で<code class="docutils literal notranslate"><span class="pre">jfont</span></code>を指定する。横軸名のフォントが変更される。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#4</span></code>： 引数<code class="docutils literal notranslate"><span class="pre">fontname</span></code>で<code class="docutils literal notranslate"><span class="pre">jfont</span></code>を指定する。縦軸名のフォントが変更される。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#5</span></code>： <code class="docutils literal notranslate"><span class="pre">legend</span></code>は他と設定方法が異なる。</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">prop</span></code>はフォントのプロパティを設定する引数であり、辞書で指定する。</p></li>
+<li><p>キー<code class="docutils literal notranslate"><span class="pre">family</span></code>に値<code class="docutils literal notranslate"><span class="pre">jfont</span></code>を指定する。凡例のフォントが変更される。</p></li>
+<li><p>キー<code class="docutils literal notranslate"><span class="pre">size</span></code>に数値を設定してフォントの大きさが変更される。</p></li>
 </ul>
-</div></blockquote>
+</li>
+</ul>
 <p>この例では個別にフォントを設定したが、一括で全てのフォントを変更する方法もあるが説明は割愛する。</p>
 </section>
 </section>
@@ -1224,13 +1173,13 @@ Name: X, dtype: int64
 <p>ではプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_inv</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;interest_rate&#39;</span><span class="p">,</span><span class="s1">&#39;investment&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_inv</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interest_rate&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;investment&#39;</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7fadeecd08ff30ad22695a06137cdbfbe36ad451079b4c2c4e91f1b95714f52b.png" src="_images/7fadeecd08ff30ad22695a06137cdbfbe36ad451079b4c2c4e91f1b95714f52b.png" />
+<img alt="_images/38408b8e57f606581a17e800cb181255f6e159f90afc050c49c457f7d906f9a6.png" src="_images/38408b8e57f606581a17e800cb181255f6e159f90afc050c49c457f7d906f9a6.png" />
 </div>
 </div>
 </section>
@@ -1422,7 +1371,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/42c87673f43a496820f4aa6d4cffd0635d1480d98780dd78fad28d78d276dc85.png" src="_images/42c87673f43a496820f4aa6d4cffd0635d1480d98780dd78fad28d78d276dc85.png" />
+<img alt="_images/1c6e4d9204b63299364ccb56e7303cebc71561e119316357d1e64dd2ec912410.png" src="_images/1c6e4d9204b63299364ccb56e7303cebc71561e119316357d1e64dd2ec912410.png" />
 </div>
 </div>
 </section>
@@ -1516,19 +1465,23 @@ Name: X, dtype: int64
 <section id="id16">
 <h3>散布図<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
 <p>散布図をプロットする場合は次の構文となる。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>df1.plot(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, kind=&#39;scatter&#39;)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;列ラベル&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;列ラベル&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>：横軸に使う列ラベル（文字列）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>：縦軸に使う列ラベル（文字列）</p></li>
+</ul>
 <p>列<code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>を使ってプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/01efd590ae40681008f953359009186234091f52088647479045e6dd93920159.png" src="_images/01efd590ae40681008f953359009186234091f52088647479045e6dd93920159.png" />
+<img alt="_images/835808acdb2d284249e475d690fa820462770cf3d14f0f047a99b0997a77ac80.png" src="_images/835808acdb2d284249e475d690fa820462770cf3d14f0f047a99b0997a77ac80.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1562,16 +1515,14 @@ Name: X, dtype: int64
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df1はDataFrame</span>
-
-<span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span>
          <span class="n">title</span><span class="o">=</span><span class="s1">&#39;タイトルです&#39;</span><span class="p">,</span>
          <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
          <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span>
          <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
          <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
          <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
-<span class="c1">#          legend=True,</span>
+         <span class="c1"># legend=False,</span>
          <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span>
          <span class="n">grid</span><span class="o">=</span><span class="kc">True</span>
         <span class="p">)</span>
@@ -1580,45 +1531,44 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/02eb145dc0734933c40b9701a791b64bed577fd57cd0d2fe26b5073d0f92a76e.png" src="_images/02eb145dc0734933c40b9701a791b64bed577fd57cd0d2fe26b5073d0f92a76e.png" />
+<img alt="_images/e91a7e19dcb7a8019705a6eade6d5225319721edcb31c3a9346f8937ca6a95cb.png" src="_images/e91a7e19dcb7a8019705a6eade6d5225319721edcb31c3a9346f8937ca6a95cb.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なので，そちらを参照しよう。</p>
 <p>またライン・プロットと同じように引数<code class="docutils literal notranslate"><span class="pre">ax</span></code>を使うことにより，複数の散布図を重ねてプロットできる。次のコードは<code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Y</span></code>，そして<code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Z</span></code>の散布図を同じ「軸」に表示している。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df1はDataFrame</span>
-
-<span class="n">ax_</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Yのデータ&#39;</span><span class="p">)</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Yのデータ&#39;</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span>
          <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Zのデータ&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/25168e72a4c4dabbf1dce429d5fbf9def112de7d12f4b382fa409656c5db3ead.png" src="_images/25168e72a4c4dabbf1dce429d5fbf9def112de7d12f4b382fa409656c5db3ead.png" />
+<img alt="_images/d8ffd5308274fedf94528a407929a3ea605db0aeecbf9fff3ab6f7f8f529f8ff.png" src="_images/d8ffd5308274fedf94528a407929a3ea605db0aeecbf9fff3ab6f7f8f529f8ff.png" />
 </div>
 </div>
 </section>
 <section id="id17">
 <h3>ヒストグラム<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <p>ヒストグラムは次の構文となる。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;列ラベル&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>この場合，<code class="docutils literal notranslate"><span class="pre">df1</span></code>にある全ての列（整数型もしくは浮動小数点型）がヒストグラムとして重ねて表示される。特定の列だけを使う場合は次のように列を選択して<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使おう。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>：縦軸に使う列ラベル（文字列、複数指定する場合はリスト）</p></li>
+<li><p>横軸は自動で設定されるため<code class="docutils literal notranslate"><span class="pre">x</span></code>は指定する必要はない</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df1[&#39;Y&#39;]はSeries</span>
-
-<span class="n">df1</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f5379ff8a194cb3b1c996cb4569d674bc385b58f5b74a1aaa7ea748a60af3372.png" src="_images/f5379ff8a194cb3b1c996cb4569d674bc385b58f5b74a1aaa7ea748a60af3372.png" />
+<img alt="_images/9ddb5e349d8f4fc2e5cbc5d3a1fc84b93bf0373550b73f60ac0c9bc74d400b72.png" src="_images/9ddb5e349d8f4fc2e5cbc5d3a1fc84b93bf0373550b73f60ac0c9bc74d400b72.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1660,9 +1610,8 @@ Name: X, dtype: int64
 <p>引数を指定して<code class="docutils literal notranslate"><span class="pre">X</span></code>のヒストグラムをプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># XはSeriesとして抽出されている</span>
-
-<span class="n">df1</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span>
+         <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span>
          <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
          <span class="n">title</span><span class="o">=</span><span class="s1">&#39;タイトルです&#39;</span><span class="p">,</span>
          <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
@@ -1680,40 +1629,42 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/db4a44d775d03b9a7bd23ec36f295ca7007f2d8329ca2534f37370bb91448f63.png" src="_images/db4a44d775d03b9a7bd23ec36f295ca7007f2d8329ca2534f37370bb91448f63.png" />
+<img alt="_images/3cdcb458b35bba03e7d457dd9ac8e44aacb337811b744c02d27c800e1d6b36d1.png" src="_images/3cdcb458b35bba03e7d457dd9ac8e44aacb337811b744c02d27c800e1d6b36d1.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
 <p>次に複数のデータを重ねてプロットする場合を考えよう。ここで役に立つ引数が<code class="docutils literal notranslate"><span class="pre">alpha</span></code>である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="p">[[</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span>
-                    <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
-                    <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">],</span>
-                    <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
-                    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">],</span>
+         <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span>
+         <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">],</span>
+         <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/080af9e561d5a650b3e2bf829cc808f7f8b3c3e56376578aa549e924ef7be3e3.png" src="_images/080af9e561d5a650b3e2bf829cc808f7f8b3c3e56376578aa549e924ef7be3e3.png" />
+<img alt="_images/3992c11a7e1d02107c703dbb689d5bb15d8086a92446421ab0bddc976289b85e.png" src="_images/3992c11a7e1d02107c703dbb689d5bb15d8086a92446421ab0bddc976289b85e.png" />
 </div>
 </div>
 <p>濃い部分が重なっている部分となる。また柱を積み上げて表示するには<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）を使う。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="p">[[</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> 
-                    <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
-                    <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">],</span>
-                    <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
-                    <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">],</span>
+         <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> 
+         <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">],</span>
+         <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+         <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/49c4f052d7a30169260c6294a0eb6d7cf71d7ff96828788e32b7015b836b7e04.png" src="_images/49c4f052d7a30169260c6294a0eb6d7cf71d7ff96828788e32b7015b836b7e04.png" />
+<img alt="_images/f753271afb6d44c07205555a916c5bc4ef618ccac9eb6e7bd46ff57c51c6cabe.png" src="_images/f753271afb6d44c07205555a916c5bc4ef618ccac9eb6e7bd46ff57c51c6cabe.png" />
 </div>
 </div>
 <p>赤の上に黒が積み上げられている。</p>
@@ -1722,19 +1673,23 @@ Name: X, dtype: int64
 <span id="id18"></span><h3>カーネル密度推定プロット<a class="headerlink" href="#sec-5-kernel" title="Link to this heading">#</a></h3>
 <p>ヒストグラムは縦軸に度数，横軸に階級を取ったグラフだが，関連する手法にカーネル密度推定と呼ばれるものがある。考え方は簡単で，上のようなヒストグラムのデータに基づき面積が１になるようにスムーズな分布を推定する手法である。ヒストグラムとカーネル密度関数を重ねてプロットすることもできる。</p>
 <p>次の構文となる。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;列ラベル&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>：縦軸に使う列ラベル（文字列、複数指定する場合はリスト）</p></li>
+<li><p>横軸は自動で設定されるため<code class="docutils literal notranslate"><span class="pre">x</span></code>は指定する必要はない</p></li>
+</ul>
 <p>この場合，<code class="docutils literal notranslate"><span class="pre">df1</span></code>にある全ての列がヒストグラムとして重ねて表示される。特定の列だけを使う場合は列を選択して<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使う。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f3761d8e3808bb459b360203d6b0c25555af87e64a65e813babb7749417e5e20.png" src="_images/f3761d8e3808bb459b360203d6b0c25555af87e64a65e813babb7749417e5e20.png" />
+<img alt="_images/8662c97ce002bc9f80f0f1feddf034e75d5dd4a8e727594e552d67253a6be840.png" src="_images/8662c97ce002bc9f80f0f1feddf034e75d5dd4a8e727594e552d67253a6be840.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1770,9 +1725,8 @@ Name: X, dtype: int64
 <p>引数を指定して<code class="docutils literal notranslate"><span class="pre">X</span></code>をプロットしてみる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># XはSeriesとして抽出されている</span>
-
-<span class="n">df1</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span>
+         <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span>
          <span class="n">title</span><span class="o">=</span><span class="s1">&#39;タイトルです&#39;</span><span class="p">,</span>
          <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
          <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span>
@@ -1789,27 +1743,30 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4a945d9f124b81301aec8a39b5f2847e0d7b31a74ff6f907b4bbd2d9196dbfb6.png" src="_images/4a945d9f124b81301aec8a39b5f2847e0d7b31a74ff6f907b4bbd2d9196dbfb6.png" />
+<img alt="_images/0c92d8098a346dc01eaa69a5ad68ae6d4809a44a64089c96647f770a0ce220ce.png" src="_images/0c92d8098a346dc01eaa69a5ad68ae6d4809a44a64089c96647f770a0ce220ce.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
 <p>次にヒストグラムとカーネル密度推定プロットを重ねて図示してみる。ここで重要な点がヒストグラムに引数<code class="docutils literal notranslate"><span class="pre">density=True</span></code>を設定することである。これがないと縦軸の単位が異なり上手く表示できない。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span>
-                    <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                    <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Xのヒストグラム&#39;</span><span class="p">,</span>
-                    <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df1</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span>
-              <span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">,</span>
-              <span class="n">label</span><span class="o">=</span><span class="s1">&#39;XのKDE&#39;</span><span class="p">,</span>
-              <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span>
+               <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span>
+               <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Xのヒストグラム&#39;</span><span class="p">,</span>
+               <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span>
+         <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;XのKDE&#39;</span><span class="p">,</span>
+         <span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">,</span>
+         <span class="p">)</span>
+<span class="n">ax_</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/20e7e01b67b17696df2e1c7ce8f132f5750c376231409df23057332ea2c5c97c.png" src="_images/20e7e01b67b17696df2e1c7ce8f132f5750c376231409df23057332ea2c5c97c.png" />
+<img alt="_images/51248e11c63c66468447bb2ec0338d82a79a9b1718eb44a480daaf54bac355ce.png" src="_images/51248e11c63c66468447bb2ec0338d82a79a9b1718eb44a480daaf54bac355ce.png" />
 </div>
 </div>
 </section>
@@ -1834,7 +1791,7 @@ Name: X, dtype: int64
 <p><code class="docutils literal notranslate"><span class="pre">Y</span></code>のヒストグラムを使ってプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="n">ax_</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">ax_</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="k">pass</span>
@@ -1842,7 +1799,7 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/59d59651191f20cf1586e8fb80fdc6fb15917c9b7eb323c732b2a8b57a9afd9e.png" src="_images/59d59651191f20cf1586e8fb80fdc6fb15917c9b7eb323c732b2a8b57a9afd9e.png" />
+<img alt="_images/493d30eb7d42d6efdb7b5ddce05cd25922cd6100c387d85917a8758c7b460cee.png" src="_images/493d30eb7d42d6efdb7b5ddce05cd25922cd6100c387d85917a8758c7b460cee.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1866,7 +1823,7 @@ Name: X, dtype: int64
 <p>引数を指定してプロットしてみる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="n">ax_</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span>
             <span class="n">ymin</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
             <span class="n">ymax</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
@@ -1886,27 +1843,30 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cf05f8e9692ce707249809b2d899125d5788822a5daaee1c191acd30656dfea1.png" src="_images/cf05f8e9692ce707249809b2d899125d5788822a5daaee1c191acd30656dfea1.png" />
+<img alt="_images/8f8b475179649cf9ce10b6046800cbb182323bf0fe717a634f13c75247521908.png" src="_images/8f8b475179649cf9ce10b6046800cbb182323bf0fe717a634f13c75247521908.png" />
 </div>
 </div>
 <p>最後に上のヒストグラムとカーネル密度推定プロットに縦線を加えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span>
-                    <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                    <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Xのヒストグラム&#39;</span><span class="p">,</span>
-                    <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df1</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span>
-              <span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">,</span>
-              <span class="n">label</span><span class="o">=</span><span class="s1">&#39;XのKDE&#39;</span><span class="p">,</span>
-              <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span>
+               <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span>
+               <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Xのヒストグラム&#39;</span><span class="p">,</span>
+               <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span>
+         <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;XのKDE&#39;</span><span class="p">,</span>
+         <span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">,</span>
+         <span class="p">)</span>
+<span class="n">ax_</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">ax_</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/35fb759a1e8866edad5e81f5876420697979fe5212ce2c12837c50ce37719dd2.png" src="_images/35fb759a1e8866edad5e81f5876420697979fe5212ce2c12837c50ce37719dd2.png" />
+<img alt="_images/0ac1cf2624ad808801d1ed6e772ab2e6a22de06b18f52888b8769dd93651207d.png" src="_images/0ac1cf2624ad808801d1ed6e772ab2e6a22de06b18f52888b8769dd93651207d.png" />
 </div>
 </div>
 </section>
@@ -1935,31 +1895,35 @@ Name: X, dtype: int64
 <li><p><code class="docutils literal notranslate"><span class="pre">netex</span></code>：純輸出</p></li>
 </ul>
 <p>この<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を使って棒グラフの作成方法を説明するが，次の構文となる。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>df1.plot(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, kind=&#39;bar&#39;)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;列ラベル&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;列ラベル&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>：横軸に使う列ラベル（文字列）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>：縦軸に使う列ラベル（文字列、複数の場合はリスト）</p></li>
+</ul>
 <p>まずA国の<code class="docutils literal notranslate"><span class="pre">gdp</span></code>の棒グラフを表示してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;gdp&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;gdp&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7f07d24d8a356517618b2d1782c5a3047631d8a0325fdbbedd59a4a3b75e46f6.png" src="_images/7f07d24d8a356517618b2d1782c5a3047631d8a0325fdbbedd59a4a3b75e46f6.png" />
+<img alt="_images/076ad2c85f25207c2611c2da45eb85f14dc2dedba4bdc371109a7c16e0504af8.png" src="_images/076ad2c85f25207c2611c2da45eb85f14dc2dedba4bdc371109a7c16e0504af8.png" />
 </div>
 </div>
-<p>複数の棒（データ）を並べたい場合もあるだろう。その場合は<code class="docutils literal notranslate"><span class="pre">＜縦軸の列ラベル＞</span></code>にリストとして指定すれば表示できる。</p>
+<p>複数の棒（データ）を並べたい場合もあるだろう。その場合は引数<code class="docutils literal notranslate"><span class="pre">y</span></code>にリストを指定すれば表示できる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">,</span><span class="s1">&#39;con&#39;</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">,</span><span class="s1">&#39;con&#39;</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/897de6968d519fe19281b9ffc47fedcffa14501c35f3088d63d9c238c45259b8.png" src="_images/897de6968d519fe19281b9ffc47fedcffa14501c35f3088d63d9c238c45259b8.png" />
+<img alt="_images/d80499c08b800f50d963c5ca46715499c85138792a5f44d2ee64974356ae6162.png" src="_images/d80499c08b800f50d963c5ca46715499c85138792a5f44d2ee64974356ae6162.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1997,12 +1961,12 @@ Name: X, dtype: int64
 <p>これらの引数を使いプロットしてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">,</span><span class="s1">&#39;inv&#39;</span><span class="p">,</span><span class="s1">&#39;gov&#39;</span><span class="p">,</span><span class="s1">&#39;netex&#39;</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">,</span><span class="s1">&#39;inv&#39;</span><span class="p">,</span><span class="s1">&#39;gov&#39;</span><span class="p">,</span><span class="s1">&#39;netex&#39;</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span>
          <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;orange&#39;</span><span class="p">],</span>
          <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
          <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
          <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
-<span class="c1">#          legend=False       </span>
+         <span class="c1"># legend=False,       </span>
          <span class="n">label</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;消費&#39;</span><span class="p">,</span><span class="s1">&#39;投資&#39;</span><span class="p">,</span><span class="s1">&#39;政府支出&#39;</span><span class="p">,</span><span class="s1">&#39;純輸出&#39;</span><span class="p">],</span>
          <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
          <span class="n">rot</span><span class="o">=</span><span class="mi">0</span>
@@ -2012,24 +1976,25 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1c3291fce5105cd157bd2eaeb17b686f19aa8cf9da484dafbe44025fcd0fc027.png" src="_images/1c3291fce5105cd157bd2eaeb17b686f19aa8cf9da484dafbe44025fcd0fc027.png" />
+<img alt="_images/7cec47549bc23ff52e017f8007e681547300012768b394f930606ac0f3d34b2d.png" src="_images/7cec47549bc23ff52e017f8007e681547300012768b394f930606ac0f3d34b2d.png" />
 </div>
 </div>
 <p>次に，ライン・プロットを追加する例を考えてみよう。<code class="docutils literal notranslate"><span class="pre">df2</span></code>には列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>があり，それを表すライン・プロットを重ねることにしよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">,</span><span class="s1">&#39;inv&#39;</span><span class="p">,</span><span class="s1">&#39;gov&#39;</span><span class="p">,</span><span class="s1">&#39;netex&#39;</span><span class="p">],</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax_</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;con&#39;</span><span class="p">,</span><span class="s1">&#39;inv&#39;</span><span class="p">,</span><span class="s1">&#39;gov&#39;</span><span class="p">,</span><span class="s1">&#39;netex&#39;</span><span class="p">],</span>
          <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span>
          <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
          <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
          <span class="n">label</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;消費&#39;</span><span class="p">,</span><span class="s1">&#39;投資&#39;</span><span class="p">,</span><span class="s1">&#39;政府支出&#39;</span><span class="p">,</span><span class="s1">&#39;純輸出&#39;</span><span class="p">],</span>
          <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;gdp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>      <span class="c1"># ライン・プロット (Series)</span>
-                      <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
-                      <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                      <span class="n">label</span><span class="o">=</span><span class="s1">&#39;国内総生産&#39;</span><span class="p">,</span>
-                      <span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">)</span>       <span class="c1"># Seriesに有効</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;gdp&#39;</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+         <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;国内総生産&#39;</span><span class="p">,</span>
+         <span class="n">ax</span><span class="o">=</span><span class="n">ax_</span><span class="p">)</span>
 
 <span class="n">ax_</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;３カ国のGDPと構成要素&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">ax_</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;国&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
@@ -2039,10 +2004,10 @@ Name: X, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b4b1b59df9135cde8969b925a1596830b8fc97d43d203cb24167299d4f9e2403.png" src="_images/b4b1b59df9135cde8969b925a1596830b8fc97d43d203cb24167299d4f9e2403.png" />
+<img alt="_images/ef2eff65a3647bba0ae2d683c2edbaedb61ee03aaef4c64530e72efd0c58714d.png" src="_images/ef2eff65a3647bba0ae2d683c2edbaedb61ee03aaef4c64530e72efd0c58714d.png" />
 </div>
 </div>
-<p>棒の高さとGDPのマーカーの高さは同じであることがわかる。このコードでは次の点に注意する必要がある。<code class="docutils literal notranslate"><span class="pre">gdp</span></code>を<code class="docutils literal notranslate"><span class="pre">Series</span></code>として抽出し，メソッド<code class="docutils literal notranslate"><span class="pre">plot()</span></code>を使っていることである。これにより，凡例の表記を自由に変更できることになる。</p>
+<p>棒の高さとGDPのマーカーの高さは同じであることがわかる。</p>
 </section>
 </section>
 </section>
@@ -2112,7 +2077,11 @@ Name: X, dtype: int64
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">説明</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">プロット方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">プロット方法</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe"><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series"><code class="docutils literal notranslate"><span class="pre">Series</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-options">引数とメソッド</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">基本的な引数</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-5-titlelabels">タイトルとラベルのサイズの調整</a></li>
