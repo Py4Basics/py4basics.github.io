@@ -1382,14 +1382,18 @@ Name: Z, dtype: float64
 <h3>種類<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">2</span></code>つの書き方が準備されている。</p>
 <ol class="arabic">
-<li><p>次のような書き方となるメソッドを使う。</p>
+<li><p>書き方１：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">xxxx</span><span class="p">()</span>
 </pre></div>
 </div>
- <br>
-ここで`xxxx`は、プロットの種類を表す。
+<p>ここで<code class="docutils literal notranslate"><span class="pre">xxxx</span></code>は、プロットの種類を表す。</p>
 </li>
-<li><p>メソッド<code class="docutils literal notranslate"><span class="pre">.plot()</span></code>の引数<code class="docutils literal notranslate"><span class="pre">kind</span></code>に文字列としてプロットの種類を指定する。</p></li>
+<li><p>書き方２：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;xxxx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>ここで<code class="docutils literal notranslate"><span class="pre">kind</span></code>はプロットの種類を指定する引数であり，<code class="docutils literal notranslate"><span class="pre">'xxxx'</span></code>は文字列。</p>
+</li>
 </ol>
 <p>この<code class="docutils literal notranslate"><span class="pre">2</span></code>つの方法は同じプロットを表示することなる。
 まず，各プロットについての箇条書きでまとめた後，実際にデータを使いプロットについて説明することにする。</p>
@@ -1397,8 +1401,8 @@ Name: Z, dtype: float64
 <li><p>ライン・プロット</p>
 <ul>
 <li><p>上で説明した直線・曲線のプロット。</p></li>
-<li><p>書き方１：<code class="docutils literal notranslate"><span class="pre">.plot.line()</span></code>は<code class="docutils literal notranslate"><span class="pre">.plot()</span></code>と同じ。</p></li>
-<li><p>書き方２：<code class="docutils literal notranslate"><span class="pre">.plot(kind='line')</span></code>の<code class="docutils literal notranslate"><span class="pre">'line'</span></code>はデフォルトの値。</p></li>
+<li><p>書き方１：<code class="docutils literal notranslate"><span class="pre">.plot.line()</span></code></p></li>
+<li><p>書き方２：<code class="docutils literal notranslate"><span class="pre">.plot()</span></code>であり，引数<code class="docutils literal notranslate"><span class="pre">kind='line'</span></code>ははデフォルトの値。</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.line.html">プロットの例</a></p></li>
 </ul>
 </li>
@@ -1508,7 +1512,7 @@ df1.plot(x=&#39;列ラベル&#39;, y=&#39;列ラベル&#39;, kind=&#39;scatter&#
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca398ccb6d4c7d252a15fd0b5d297d77d1d8a7feae237106743bcef297d3f04f.png" src="_images/ca398ccb6d4c7d252a15fd0b5d297d77d1d8a7feae237106743bcef297d3f04f.png" />
+<img alt="_images/5366e53b06d2924dee2bdd2d3d63edc5933030527d30ecd36654d53d1259554f.png" src="_images/5366e53b06d2924dee2bdd2d3d63edc5933030527d30ecd36654d53d1259554f.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1558,7 +1562,7 @@ df1.plot(x=&#39;列ラベル&#39;, y=&#39;列ラベル&#39;, kind=&#39;scatter&#
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6cf7797d5a5b4c249f9c796e98610e9ce9daa6c16cb09f841b509c9a85532cf2.png" src="_images/6cf7797d5a5b4c249f9c796e98610e9ce9daa6c16cb09f841b509c9a85532cf2.png" />
+<img alt="_images/b1a8dc31079282db5b900aeafa97af571ccdd82f26624269c9dcb7011fe258d4.png" src="_images/b1a8dc31079282db5b900aeafa97af571ccdd82f26624269c9dcb7011fe258d4.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なので，そちらを参照しよう。</p>
@@ -1573,7 +1577,7 @@ df1.plot(x=&#39;列ラベル&#39;, y=&#39;列ラベル&#39;, kind=&#39;scatter&#
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2ead2c9fd332db903b660f6bc1a83cab1d6dc9d4734df19537b6389a5708baed.png" src="_images/2ead2c9fd332db903b660f6bc1a83cab1d6dc9d4734df19537b6389a5708baed.png" />
+<img alt="_images/021ca830f5ba8715d9ad6c492a0f87170cf59ea0c16f4083085eba1c75932b46.png" src="_images/021ca830f5ba8715d9ad6c492a0f87170cf59ea0c16f4083085eba1c75932b46.png" />
 </div>
 </div>
 </section>
@@ -1599,7 +1603,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;hist&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca1e32e37af72e72a448dc2be03931c0d437bb46e2aedaf6f48f593272036917.png" src="_images/ca1e32e37af72e72a448dc2be03931c0d437bb46e2aedaf6f48f593272036917.png" />
+<img alt="_images/ea42185a9e477080a9760dae9b557e5561f60734d7404a4d45de89f695f1b03b.png" src="_images/ea42185a9e477080a9760dae9b557e5561f60734d7404a4d45de89f695f1b03b.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1659,7 +1663,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;hist&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b8c8046e0e721fa27c41b5998c2d5d78e28dbd8bb431d19c0de2b2171e30f046.png" src="_images/b8c8046e0e721fa27c41b5998c2d5d78e28dbd8bb431d19c0de2b2171e30f046.png" />
+<img alt="_images/f4cf7341108a42777ac292dbd08195153e4541a357e98ea5024e5a9ef1b5467c.png" src="_images/f4cf7341108a42777ac292dbd08195153e4541a357e98ea5024e5a9ef1b5467c.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
@@ -1676,7 +1680,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;hist&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dd1b21c3205695f5d86b1713f7aed3101ae0c9884a0ce66fb86a54c79db56e1d.png" src="_images/dd1b21c3205695f5d86b1713f7aed3101ae0c9884a0ce66fb86a54c79db56e1d.png" />
+<img alt="_images/c07ab7ce5199e31680bfeb977bd7e0e3e12969577c36c1d42a804296a2159044.png" src="_images/c07ab7ce5199e31680bfeb977bd7e0e3e12969577c36c1d42a804296a2159044.png" />
 </div>
 </div>
 <p>濃い部分が重なっている部分となる。また柱を積み上げて表示するには<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）を使う。</p>
@@ -1692,7 +1696,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;hist&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cce6ebb521a3afdd39288c1f4b4f48c8c7d59712bff73a8d43f8aa8456dca3c3.png" src="_images/cce6ebb521a3afdd39288c1f4b4f48c8c7d59712bff73a8d43f8aa8456dca3c3.png" />
+<img alt="_images/20b2b33440013aee6f24ab171a43d8480bce586f69efcab1b6f71272a3eac4ff.png" src="_images/20b2b33440013aee6f24ab171a43d8480bce586f69efcab1b6f71272a3eac4ff.png" />
 </div>
 </div>
 <p>赤の上に黒が積み上げられている。</p>
@@ -1721,7 +1725,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/22c7c53ae1975af7cabb92b0748082a0028c843883998e60e187003cce3be651.png" src="_images/22c7c53ae1975af7cabb92b0748082a0028c843883998e60e187003cce3be651.png" />
+<img alt="_images/fd1dbf657c6be4c8f1b65dfb48dd7f9633c6b6f5c335bde04160cbcf05c80467.png" src="_images/fd1dbf657c6be4c8f1b65dfb48dd7f9633c6b6f5c335bde04160cbcf05c80467.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1774,7 +1778,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/df35ad71575a7a5cde704b83f31694d7dc63d90d9d7a9ff3ea52e74a9bf9448b.png" src="_images/df35ad71575a7a5cde704b83f31694d7dc63d90d9d7a9ff3ea52e74a9bf9448b.png" />
+<img alt="_images/effd3ab4f9b0e79084508c289d43b9a4117c91af03da353b5d93d912fcd4d5b2.png" src="_images/effd3ab4f9b0e79084508c289d43b9a4117c91af03da353b5d93d912fcd4d5b2.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
@@ -1793,7 +1797,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e2d5d2754e7be52311d369a58a62adee05d1ca736999f4bb9d745dc288c8f66c.png" src="_images/e2d5d2754e7be52311d369a58a62adee05d1ca736999f4bb9d745dc288c8f66c.png" />
+<img alt="_images/bcb2594731617781ea830bb34a0bea8c25314e9401ef89698bd4fbae2960b83e.png" src="_images/bcb2594731617781ea830bb34a0bea8c25314e9401ef89698bd4fbae2960b83e.png" />
 </div>
 </div>
 </section>
@@ -1828,7 +1832,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/82bd80f4229681a3d4148f7856190d8ab657dd7e20f9a24c83e58ecc0ef65d3e.png" src="_images/82bd80f4229681a3d4148f7856190d8ab657dd7e20f9a24c83e58ecc0ef65d3e.png" />
+<img alt="_images/894a0df0062c47bef442184cf5ee947ad67b1b7fa686ce8ce95bc5fc136d6d0a.png" src="_images/894a0df0062c47bef442184cf5ee947ad67b1b7fa686ce8ce95bc5fc136d6d0a.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1872,7 +1876,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c0fcbc114792d4f759e9fed2c6602ef0e8dd41c78245256918205da4a55fc60d.png" src="_images/c0fcbc114792d4f759e9fed2c6602ef0e8dd41c78245256918205da4a55fc60d.png" />
+<img alt="_images/34a3a381d21c5a46c554752e08f1c246b06592e324eb9e97647418cffebae518.png" src="_images/34a3a381d21c5a46c554752e08f1c246b06592e324eb9e97647418cffebae518.png" />
 </div>
 </div>
 <p>最後に上のヒストグラムとカーネル密度推定プロットに縦線を加えてみよう。</p>
@@ -1891,7 +1895,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a7d388b540f28e8569514e6e198cf3783b5f0661e40f70ae301b29602ceee36a.png" src="_images/a7d388b540f28e8569514e6e198cf3783b5f0661e40f70ae301b29602ceee36a.png" />
+<img alt="_images/9a08af37391ab8b9e2705681672858b9cbca0da35b03cae0b83414806ae194dc.png" src="_images/9a08af37391ab8b9e2705681672858b9cbca0da35b03cae0b83414806ae194dc.png" />
 </div>
 </div>
 </section>
