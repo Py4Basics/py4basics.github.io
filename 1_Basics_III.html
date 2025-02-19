@@ -16,19 +16,21 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -37,10 +39,11 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -81,6 +84,7 @@
     <link rel="prev" title="データの操作" href="1_Basics_II.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -96,19 +100,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -116,7 +109,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -124,8 +116,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -141,7 +133,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -171,15 +164,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
@@ -226,9 +215,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -389,24 +383,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -487,7 +473,7 @@ document.write(`
 </div><br><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 警告メッセージを非表示</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -762,8 +748,7 @@ A BA___
 </div>
 </div>
 </div>
-<p>一瞬にして10億個の整数が準備される「驚愕の速さ！」と言いたいが、実は、「準備」されただけで、10億個の整数が生成された訳ではない。実際に使うときに、<code class="docutils literal notranslate"><span class="pre">0</span></code>、<code class="docutils literal notranslate"><span class="pre">1</span></code>、<code class="docutils literal notranslate"><span class="pre">2</span></code>、<code class="docutils literal notranslate"><span class="pre">3</span></code>、、、と<strong>順番に</strong>整数の生成が実行されことになる。このように、各整数を使うときに「実行」することを遅延評価（lazy evaluation）と呼ぶ。「何のために使うの？」と思うだろう。理由は高速化のためであり、実際に10億個の整数からなるリストの作成には数十秒もしくは数分掛かる。例えば、次のシナリオを考えてみよう。10億個の正の整数のルートを計算するとし、計算プロセスが始まった後に計算する整数の数は（確率的に）決まるとしよう。10億個全ての整数を使うかもしれないが、もしかすると、7万個、もしくはたった5個の整数のルート計算だけで終わるかもしれない。その場合、10億個の整数を事前に準備する時間は無駄になるかも知れないし、あまりにも非効率的な手順だということは直ぐに理解できるのではないだろうか。順番に<code class="docutils literal notranslate"><span class="pre">0</span></code>、<code class="docutils literal notranslate"><span class="pre">1</span></code>、<code class="docutils literal notranslate"><span class="pre">2</span></code>、<code class="docutils literal notranslate"><span class="pre">3</span></code>、、、と必要な場合に整数の作成を実行する方が断然効率的だ。このように遅延評価するオブジェクトをジェネレーター（generator）と呼ぶ。<code class="docutils literal notranslate"><span class="pre">range()</span></code>関数は、後述する<code class="docutils literal notranslate"><span class="pre">for</span></code>ループではよく使う関数なので覚えておこう！</p>
-<p>とする。用途が明確ではないと感じるかもしれないが，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループで多用することになる。またリストとして表示するには<code class="docutils literal notranslate"><span class="pre">list()</span></code>を使う。</p>
+<p>一瞬にして10億個の整数が準備される「驚愕の速さ！」と言いたいが、実は、「準備」されただけで、10億個の整数が生成された訳ではない。実際に使うときに、<code class="docutils literal notranslate"><span class="pre">0</span></code>、<code class="docutils literal notranslate"><span class="pre">1</span></code>、<code class="docutils literal notranslate"><span class="pre">2</span></code>、<code class="docutils literal notranslate"><span class="pre">3</span></code>、、、と<strong>順番に</strong>整数の生成が実行されことになる。このように、各整数を使うときに「実行」することを遅延評価（lazy evaluation）と呼ぶ。「何のために使うの？」と思うだろう。理由は高速化のためであり、実際に10億個の整数からなるリストの作成には数十秒もしくは数分掛かる。例えば、次のシナリオを考えてみよう。10億個の正の整数のルートを計算するとし、計算プロセスが始まった後に計算する整数の数は（確率的に）決まるとする。10億個全ての整数を使うかもしれないが、もしかすると、7万個、もしくはたった5個の整数のルート計算だけで終わるかもしれない。その場合、10億個の整数を事前に作成する時間は無駄になるかも知れないし、あまりにも非効率的な手順だということは直ぐに理解できるのではないだろうか。順番に<code class="docutils literal notranslate"><span class="pre">0</span></code>、<code class="docutils literal notranslate"><span class="pre">1</span></code>、<code class="docutils literal notranslate"><span class="pre">2</span></code>、<code class="docutils literal notranslate"><span class="pre">3</span></code>、、、と必要な場合に整数の作成を実行する方が断然効率的だ。このように遅延評価するオブジェクトをジェネレーター（generator）と呼ぶ。<code class="docutils literal notranslate"><span class="pre">range()</span></code>関数は、後述する<code class="docutils literal notranslate"><span class="pre">for</span></code>ループではよく使う関数なので覚えておこう！</p>
 </section>
 <section id="list">
 <h3><code class="docutils literal notranslate"><span class="pre">list()</span></code><a class="headerlink" href="#list" title="Link to this heading">#</a></h3>
@@ -939,7 +924,7 @@ print(*args, sep=&#39; &#39;, end=&#39;\n&#39;, file=None, flush=False)
 <p><code class="docutils literal notranslate"><span class="pre">def</span></code>を使って関数を定義し，引数が設定される（省略される場合もある）。ここでは基本となる引数のみを考えるが，引数の<strong>位置</strong>と<code class="docutils literal notranslate"><span class="pre">=</span></code>が重要な役割を果たすことになる。例を使いながら説明しよう。最初の例は数字の2乗を計算する関数である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_0</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func_0</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
@@ -977,7 +962,7 @@ print(*args, sep=&#39; &#39;, end=&#39;\n&#39;, file=None, flush=False)
 <p>引数が無い関数を定義することを可能である。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_100</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func_100</span><span class="p">():</span>
     <span class="k">return</span> <span class="mi">10</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="n">func_100</span><span class="p">()</span>
@@ -993,7 +978,7 @@ print(*args, sep=&#39; &#39;, end=&#39;\n&#39;, file=None, flush=False)
 <p><code class="docutils literal notranslate"><span class="pre">print()</span></code>関数を追加することもできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_kobe</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func_kobe</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;経済学はおもしろい(^o^)/&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 
@@ -1016,7 +1001,7 @@ print(*args, sep=&#39; &#39;, end=&#39;\n&#39;, file=None, flush=False)
 <p>引数が複数ある場合にその位置が重要になってくる。次の例を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_1</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func_1</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
 </pre></div>
 </div>
@@ -1073,7 +1058,7 @@ print(*args, sep=&#39; &#39;, end=&#39;\n&#39;, file=None, flush=False)
 <p>関数を定義する際に<code class="docutils literal notranslate"><span class="pre">=</span></code>を使って引数のデフォルトの値を設定することができる。即ち，引数を入力すると入力された数値を使うが，引数を入力しない場合は引数に予め設定した値（デフォルトの値）が使われて評価される。次の例では<code class="docutils literal notranslate"><span class="pre">c</span></code>のデフォルトの値が<code class="docutils literal notranslate"><span class="pre">10</span></code>に設定されている。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func_2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">])</span><span class="o">*</span><span class="n">c</span>
 </pre></div>
 </div>
@@ -1105,7 +1090,7 @@ print(*args, sep=&#39; &#39;, end=&#39;\n&#39;, file=None, flush=False)
 <span id="id9"></span><h3>戻り値が複数の場合<a class="headerlink" href="#sec-3-unpacking" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func_3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
 
 <span class="n">func_3</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -1255,7 +1240,7 @@ Readability counts.
 <p>これを使ってユーザー定義の関数の説明を付け加えることにより，他人や将来の自分が関数を読む場合に可読性を高めることができる。次のような書き方となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_0</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func_0</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;この関数はxの２乗の値を返す。</span>
 <span class="sd">    引数：</span>
 <span class="sd">        x：整数型もしくは不動小数点型</span>
@@ -1290,7 +1275,7 @@ func_0(x)
 <section id="lambda">
 <h3><code class="docutils literal notranslate"><span class="pre">lambda</span></code>関数<a class="headerlink" href="#lambda" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">def</span></code>を使い複雑な関数を定義することができるが，単純な関数の場合，より簡単な方法がある。それが<code class="docutils literal notranslate"><span class="pre">lambda</span></code>関数である。例として，<span class="math notranslate nohighlight">\(x^2\)</span>を計算する関数を考えよう。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
@@ -1337,7 +1322,7 @@ func_0(x)
 <p><code class="docutils literal notranslate"><span class="pre">x</span></code>万円を年率<code class="docutils literal notranslate"><span class="pre">i</span></code>%の利息を得る金融商品に投資し，<code class="docutils literal notranslate"><span class="pre">t</span></code>年後に現金化するとしよう。その間のインフレ率は<code class="docutils literal notranslate"><span class="pre">pi</span></code>%とした場合の<code class="docutils literal notranslate"><span class="pre">x</span></code>万円の実質将来価値を計算する関数を考える。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">future_value</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">future_value</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
     <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">pi</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="n">t</span>
 </pre></div>
@@ -1362,7 +1347,7 @@ func_0(x)
 <p><code class="docutils literal notranslate"><span class="pre">t</span></code>年後に<code class="docutils literal notranslate"><span class="pre">x</span></code>万円をもらえるとしよう。<code class="docutils literal notranslate"><span class="pre">x</span></code>万円の現在価値を計算する関数を考える。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">current_value</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">current_value</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
     <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">inf</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="n">t</span>
 </pre></div>
@@ -1402,7 +1387,7 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <p><code class="docutils literal notranslate"><span class="pre">t</span></code>年後の元利合計を計算する関数を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_yt</span><span class="p">(</span><span class="n">y0</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_yt</span><span class="p">(</span><span class="n">y0</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">y0</span><span class="o">*</span><span class="p">(</span> <span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="o">/</span><span class="n">m</span> <span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1682,7 +1667,7 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Kobe Univ&quot;</span>   <span class="c1"># globalスコープ</span>
 
-<span class="k">def</span> <span class="nf">scope_0</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">scope_0</span><span class="p">():</span>
     <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;神戸大学&quot;</span>  <span class="c1"># localスコープ</span>
     <span class="k">return</span> <span class="n">s</span>
 
@@ -1699,7 +1684,7 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <p>この関数を実行すると、Pythonはまず関数<code class="docutils literal notranslate"><span class="pre">scope_0</span></code>のローカル・スコープ内で変数<code class="docutils literal notranslate"><span class="pre">s</span></code>を探すことになる。ローカル・スコープに<code class="docutils literal notranslate"><span class="pre">s</span></code>があるので、それを返している。次の関数を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scope_1</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">scope_1</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">s</span>
 
 <span class="n">scope_1</span><span class="p">()</span>
@@ -1716,7 +1701,7 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <p>次の例では、グローバル・スコープからローカル・スコープの変数へのアクセスを考える。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scope_2</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">scope_2</span><span class="p">():</span>
     <span class="n">s_local</span> <span class="o">=</span> <span class="s1">&#39;Pythonは楽しい(^o^)/&#39;</span>
     <span class="k">return</span> <span class="n">s_local</span>
 
@@ -1775,7 +1760,7 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <p>ここで<code class="docutils literal notranslate"><span class="pre">a</span></code>に<code class="docutils literal notranslate"><span class="pre">4</span></code>を割り当てたが，この値を忘れて（知らずに）<code class="docutils literal notranslate"><span class="pre">10</span></code>だったと勘違いして次の関数を定義したとしよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scope_3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">scope_3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">a</span>
 </pre></div>
 </div>
@@ -1797,7 +1782,7 @@ yt=y0\left( 1+\dfrac{r}{m}  \right)^{mt}
 <p>このような場合は<code class="docutils literal notranslate"><span class="pre">a</span></code>を引数に使うことにより問題を回避できる。<code class="docutils literal notranslate"><span class="pre">a</span></code>は<code class="docutils literal notranslate"><span class="pre">10</span></code>として関数を実行すると意図した結果となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scope_4</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">scope_4</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">a</span>
 
 <span class="n">scope_4</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
@@ -1938,7 +1923,8 @@ warnings	 x	 y
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2037,8 +2023,8 @@ By 春山 鉄源  Tetsugen HARUYAMA
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

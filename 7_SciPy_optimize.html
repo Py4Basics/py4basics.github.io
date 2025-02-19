@@ -16,19 +16,21 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -37,10 +39,11 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -81,6 +84,7 @@
     <link rel="prev" title="Pandas：図示" href="5_pandas_plot.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -96,19 +100,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -116,7 +109,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -124,8 +116,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -141,7 +133,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -171,15 +164,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
@@ -226,9 +215,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -389,24 +383,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -492,12 +478,12 @@ document.write(`
 <input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
 </div><br><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">op</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">op</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="c1"># 警告メッセージを非表示</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -519,7 +505,7 @@ document.write(`
 \[f(x)=x^3+4x^2-3\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span><span class="mi">3</span>
 </pre></div>
 </div>
@@ -568,7 +554,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/27a8468f2e921d7dd1a86d7610a56f0543aebed8250d3a1fbb76e4ef4e45689c.png" src="_images/27a8468f2e921d7dd1a86d7610a56f0543aebed8250d3a1fbb76e4ef4e45689c.png" />
+<img alt="_images/414d449bc5cb703fc79c5732b939c8cb6d56530e57c932df13c8db7648a85d60.png" src="_images/414d449bc5cb703fc79c5732b939c8cb6d56530e57c932df13c8db7648a85d60.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -627,7 +613,7 @@ document.write(`
 <p>実際にコードを書き，Bisection法の考え理解しよう。次の関数を定義する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; [a,b]におけるf(x)=0の近似解（bisection法）   # 1</span>
 <span class="sd">    </span>
 <span class="sd">    引数</span>
@@ -696,7 +682,7 @@ document.write(`
 <p>次の例を使って実際に計算してみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_ex1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f_ex1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span>
 </pre></div>
 </div>
@@ -875,7 +861,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 <p>Newton法の基本的な考えを説明するために式<a class="reference internal" href="#fig-scipy-newton"><span class="std std-ref">Newton法</span></a>を捉える関数を定義しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">Df</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">Df</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Newton法でf(x)=0の根を近似する。</span>
 
 <span class="sd">    引数</span>
@@ -926,7 +912,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 <p>例として<code class="docutils literal notranslate"><span class="pre">f_ex(x)</span></code>を使うが、まず導関数を定義する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Df_ex1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Df_ex1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
 </pre></div>
 </div>
@@ -1074,7 +1060,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">h0</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">h0</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
     
     <span class="n">a</span> <span class="o">=</span> <span class="mf">0.8</span>
     <span class="n">c</span> <span class="o">=</span> <span class="mf">0.7</span>
@@ -1101,7 +1087,7 @@ x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c6af33be7bbdba2f405be55b9d9689d356b56a8bdcd7f0734be380e85745059f.png" src="_images/c6af33be7bbdba2f405be55b9d9689d356b56a8bdcd7f0734be380e85745059f.png" />
+<img alt="_images/7ee81207424919449c7c296fa2a6f2763cfc3c66a5775360f812602e1ab62ac9.png" src="_images/7ee81207424919449c7c296fa2a6f2763cfc3c66a5775360f812602e1ab62ac9.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">h0(y)</span></code>関数は右上りとなっている。傾きを直感的に説明すると次のようになる。<code class="docutils literal notranslate"><span class="pre">Y</span></code>が増加すると，当たり前だが所得<code class="docutils literal notranslate"><span class="pre">Y</span></code>は線形的に増加する。一方で，計画支出の一部である消費も増加するが，<code class="docutils literal notranslate"><span class="pre">a</span></code>は0.5に設定されているため，増加分は逓減している。したがって，所得と計画支出の差は上昇することになる。</p>
@@ -1167,7 +1153,7 @@ I = \dfrac{j}{r^{b}}
 <p>まず関数を再定義するが，<span class="math notranslate nohighlight">\(y\)</span>と<span class="math notranslate nohighlight">\(r\)</span>を引数とする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">h1</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">h1</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>
     
     <span class="n">a</span> <span class="o">=</span> <span class="mf">0.8</span>
     <span class="n">b</span> <span class="o">=</span> <span class="mf">0.5</span>
@@ -1218,7 +1204,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cb7f8381f644f78e88b78a7ed8203215f5feb84207c436c506d79faefe6e391d.png" src="_images/cb7f8381f644f78e88b78a7ed8203215f5feb84207c436c506d79faefe6e391d.png" />
+<img alt="_images/2364803b69d9239ffdb152769e175738a8a6bbee91ac4001319624bfcb754f80.png" src="_images/2364803b69d9239ffdb152769e175738a8a6bbee91ac4001319624bfcb754f80.png" />
 </div>
 </div>
 </section>
@@ -1265,7 +1251,7 @@ I = \dfrac{j}{r^{b}}
 <p>この方程式の解を求めるが，関数<code class="docutils literal notranslate"><span class="pre">kss()</span></code>を定義しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kss</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kss</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">s</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">k</span><span class="o">**</span><span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">k</span> <span class="o">-</span> <span class="n">k</span>
 </pre></div>
 </div>
@@ -1301,7 +1287,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8f606a08fc3f8d66e1183c2fe7df1dbe6624fc7277c3c7e2b8981072af80269f.png" src="_images/8f606a08fc3f8d66e1183c2fe7df1dbe6624fc7277c3c7e2b8981072af80269f.png" />
+<img alt="_images/0010727312e66237c2e62a539bcd9a86c05cd66c21bd78d4b657c0f5dee657f2.png" src="_images/0010727312e66237c2e62a539bcd9a86c05cd66c21bd78d4b657c0f5dee657f2.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>を使い定常状態<span class="math notranslate nohighlight">\(k_*\)</span>を計算してみよう。</p>
@@ -1374,7 +1360,7 @@ I = \dfrac{j}{r^{b}}
 <p>で与えられる。この式を捉える関数を作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">npv</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">npv</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">r</span><span class="p">))</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="n">r</span> <span class="o">-</span> <span class="n">fc</span>
 </pre></div>
 </div>
@@ -1506,7 +1492,7 @@ I = \dfrac{j}{r^{b}}
 <p>次に最小値が複数ある場合を考えよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_ex2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f_ex2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
@@ -1524,7 +1510,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/437a253052f3ed1c7749fe86fdb4e8662cd74e9be3844528575350c8ae05e766.png" src="_images/437a253052f3ed1c7749fe86fdb4e8662cd74e9be3844528575350c8ae05e766.png" />
+<img alt="_images/6e461f0211b32d044e16d4e96cfc0b00a347b51b3d1e2338cbb6a2ea39fb984b.png" src="_images/6e461f0211b32d044e16d4e96cfc0b00a347b51b3d1e2338cbb6a2ea39fb984b.png" />
 </div>
 </div>
 <p>まず<code class="docutils literal notranslate"><span class="pre">method</span></code>のデフォルトである<code class="docutils literal notranslate"><span class="pre">brent</span></code>法を使ってみよう。解が２つあるため、次のコードでは<code class="docutils literal notranslate"><span class="pre">Python</span></code>が選んだ解しか求めることができない。</p>
@@ -1664,7 +1650,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 <span class="n">s_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 
 <span class="c1"># 消費関数</span>
-<span class="k">def</span> <span class="nf">c</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">s</span><span class="o">/</span><span class="n">d</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">))</span>
 
 <span class="c1"># 消費の値を入れるリスト</span>
@@ -1684,13 +1670,13 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c5c067e373e3f5cf92b10eadbc6bdf4be6a4f096632ab041147c12acb971ce9e.png" src="_images/c5c067e373e3f5cf92b10eadbc6bdf4be6a4f096632ab041147c12acb971ce9e.png" />
+<img alt="_images/b10c3317d49df4bc59ca1f125cdbf713b527bc855a2816b1cedafcb09dfc6bff.png" src="_images/b10c3317d49df4bc59ca1f125cdbf713b527bc855a2816b1cedafcb09dfc6bff.png" />
 </div>
 </div>
 <p>次に一人当たり消費を最大化する貯蓄率を求めるために関数を定義する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">c_minus</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">c_minus</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">s</span><span class="o">/</span><span class="n">d</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1781,7 +1767,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 <p>目的関数（最大化する対象となる関数）を定義する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">u_minus</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">u_minus</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
     <span class="k">return</span> <span class="o">-</span><span class="p">(</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">l</span><span class="o">/</span><span class="n">p</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">l</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -1860,7 +1846,7 @@ c=
 <p>この関数を捉える関数を作成しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">c_utility</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">c_utility</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">res_u</span><span class="o">.</span><span class="n">fun</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">l</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1919,7 +1905,7 @@ c=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/abf86254fde813bfeea1328170913d103848049cd3c933cfc695ae15cc8e8860.png" src="_images/abf86254fde813bfeea1328170913d103848049cd3c933cfc695ae15cc8e8860.png" />
+<img alt="_images/c25af8d6d8a19dadc68ef5513d674dd2eed29b1e94ef703a5f8d0edfe5e24476.png" src="_images/c25af8d6d8a19dadc68ef5513d674dd2eed29b1e94ef703a5f8d0edfe5e24476.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -1989,7 +1975,7 @@ c=
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_ex3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>   <span class="c1"># 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f_ex3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>   <span class="c1"># 1</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>    <span class="c1"># 2</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>    <span class="c1"># 3</span>
     <span class="k">return</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">z</span> <span class="o">+</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">10</span>  <span class="c1"># 4</span>
@@ -2124,7 +2110,7 @@ c=
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_ex4</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f_ex4</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">return</span> <span class="o">-</span><span class="p">(</span> <span class="o">-</span><span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">z</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="n">z</span><span class="o">+</span><span class="n">y</span> <span class="p">)</span>
@@ -2183,7 +2169,7 @@ y+z-1=0
 この式の左辺が返り値となる関数を定義する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_const</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f_const</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span>
@@ -2283,7 +2269,7 @@ y+z\leq 1
 この不等式の左辺を制約式としてコードを書くが、上の<code class="docutils literal notranslate"><span class="pre">f_const</span></code>と異なることがわかる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_const_ineq</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f_const_ineq</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">return</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -2330,7 +2316,7 @@ y+z\leq 1
 <p>労働供給問題を再考する。まず効用関数を設定し直そう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">u</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">u</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">l</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">return</span> <span class="o">-</span><span class="p">(</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">l</span><span class="p">)</span> <span class="p">)</span>
@@ -2350,7 +2336,7 @@ wl-pc=0
 <p>これを使い制約式を定義する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">budget</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">budget</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">l</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">w</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">p</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -2478,7 +2464,8 @@ wl-pc=0
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2583,8 +2570,8 @@ By 春山 鉄源  Tetsugen HARUYAMA
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

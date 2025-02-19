@@ -16,19 +16,21 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -37,10 +39,11 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -79,6 +82,7 @@
     <link rel="prev" title="Matplotlib：図示" href="4_matplotlib.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -94,19 +98,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -114,7 +107,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -122,8 +114,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -139,7 +131,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -169,15 +162,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
@@ -224,9 +213,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -387,24 +381,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -480,12 +466,12 @@ document.write(`
 <h2>説明<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">japanize_matplotlib</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">japanize_matplotlib</span>
 
 <span class="c1"># 警告メッセージを非表示</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -573,7 +559,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;X&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/69aadce7b6529bb3d9d1af82237b9eddbe0574f7017074aa5c53d4a96a52965e.png" src="_images/69aadce7b6529bb3d9d1af82237b9eddbe0574f7017074aa5c53d4a96a52965e.png" />
+<img alt="_images/796798319f9ba15149c62999dc59bfa1e8757d2e922e4f03f1bc5cad6f0f9034.png" src="_images/796798319f9ba15149c62999dc59bfa1e8757d2e922e4f03f1bc5cad6f0f9034.png" />
 </div>
 </div>
 <ul class="simple">
@@ -599,7 +585,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;X&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/83b3d9a4889219dbeb6bacda4577d63a06978dc1c5e50ac34e798ebfe5858d00.png" src="_images/83b3d9a4889219dbeb6bacda4577d63a06978dc1c5e50ac34e798ebfe5858d00.png" />
+<img alt="_images/e1c32369c2a3e5e8d0cf5ff0d1985e67d76a8b1b3d26c1f7f46baf672f5aee78.png" src="_images/e1c32369c2a3e5e8d0cf5ff0d1985e67d76a8b1b3d26c1f7f46baf672f5aee78.png" />
 </div>
 </div>
 <p>上の例では引数<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y</span></code>を指定したが，<code class="docutils literal notranslate"><span class="pre">x</span></code>を指定しない場合はどうなるか試してみよう。</p>
@@ -611,7 +597,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fe7245d14d379049216ac50d99ca906b344c8ddaaa69612755736dfb443002a6.png" src="_images/fe7245d14d379049216ac50d99ca906b344c8ddaaa69612755736dfb443002a6.png" />
+<img alt="_images/957d7f138131a4fef0ae07b3b241fe81368a2f7ed20d47c2af440049cbbd37f8.png" src="_images/957d7f138131a4fef0ae07b3b241fe81368a2f7ed20d47c2af440049cbbd37f8.png" />
 </div>
 </div>
 <p>縦軸は<code class="docutils literal notranslate"><span class="pre">Y</span></code>だが，横軸には行インデックスが使われることになる。この場合，行インデックスが<code class="docutils literal notranslate"><span class="pre">float</span></code>として表示されている。</p>
@@ -624,7 +610,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b8dae91e8d71e6b8c6b76aa5dc1630cba7ed95263c6a53f0432b66b41b8eefae.png" src="_images/b8dae91e8d71e6b8c6b76aa5dc1630cba7ed95263c6a53f0432b66b41b8eefae.png" />
+<img alt="_images/a9b355eaef9563f8480b1bfd094b13237d611d1244be1bffc50541aa58477022.png" src="_images/a9b355eaef9563f8480b1bfd094b13237d611d1244be1bffc50541aa58477022.png" />
 </div>
 </div>
 <p>縦軸には全ての列が使われ、横軸には行インデックスが使われている。</p>
@@ -678,7 +664,7 @@ Name: Z, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/40f03fc982a17c803f4525dd9a01b87ad1987f35b46d7f221cb36339576f6136.png" src="_images/40f03fc982a17c803f4525dd9a01b87ad1987f35b46d7f221cb36339576f6136.png" />
+<img alt="_images/1bf4db1031d1f7e44aaa1aef2a5c92c687f8e5b01c813e91c432f2e495caa862.png" src="_images/1bf4db1031d1f7e44aaa1aef2a5c92c687f8e5b01c813e91c432f2e495caa862.png" />
 </div>
 </div>
 <p>横軸には行インデックスが<code class="docutils literal notranslate"><span class="pre">float</span></code>として使われており，<code class="docutils literal notranslate"><span class="pre">Series</span></code>の場合，凡例は自動的には表示されない。
@@ -696,7 +682,7 @@ Name: Z, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3ec678a3c73bd9b635920e297ec9bdfd1e86964e509de8600be8b241574a349c.png" src="_images/3ec678a3c73bd9b635920e297ec9bdfd1e86964e509de8600be8b241574a349c.png" />
+<img alt="_images/e45dd71bc8a134bbc60c66909ebdca91b56c4ad67b4c11ab80e928f95424d7b3.png" src="_images/e45dd71bc8a134bbc60c66909ebdca91b56c4ad67b4c11ab80e928f95424d7b3.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Series</span></code>の場合，連続してコードを書くと一つの図に表示することができる。この特徴は，次に説明する「飾り付け」を各データ毎別々に設定する際に便利な機能と感じる人もいるだろう。</p>
@@ -763,7 +749,7 @@ Name: Z, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8dd52978a36a5bef1cb040c7921562f45672c5691077affe1080a51de6109b70.png" src="_images/8dd52978a36a5bef1cb040c7921562f45672c5691077affe1080a51de6109b70.png" />
+<img alt="_images/caa26a6c1ce289401f053424f17936d00b287acef6201a678363dcfe3624531a.png" src="_images/caa26a6c1ce289401f053424f17936d00b287acef6201a678363dcfe3624531a.png" />
 </div>
 </div>
 </section>
@@ -828,7 +814,7 @@ Name: Z, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/08d4cfbf39f5f49530849f5626917b885af9d7bd84716a07a59ca6308a39101d.png" src="_images/08d4cfbf39f5f49530849f5626917b885af9d7bd84716a07a59ca6308a39101d.png" />
+<img alt="_images/e78419708650ce9760f0e65394e7101abe92ef24bee432dc34b29926b076c4a9.png" src="_images/e78419708650ce9760f0e65394e7101abe92ef24bee432dc34b29926b076c4a9.png" />
 </div>
 </div>
 </section>
@@ -844,7 +830,7 @@ Name: Z, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/83b3d9a4889219dbeb6bacda4577d63a06978dc1c5e50ac34e798ebfe5858d00.png" src="_images/83b3d9a4889219dbeb6bacda4577d63a06978dc1c5e50ac34e798ebfe5858d00.png" />
+<img alt="_images/e1c32369c2a3e5e8d0cf5ff0d1985e67d76a8b1b3d26c1f7f46baf672f5aee78.png" src="_images/e1c32369c2a3e5e8d0cf5ff0d1985e67d76a8b1b3d26c1f7f46baf672f5aee78.png" />
 </div>
 </div>
 <ul class="simple">
@@ -872,7 +858,7 @@ Name: Z, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1f4361bd7375af24b6b02e138471e1c3ea8cfc74fd489871d5c1a0563e68a9de.png" src="_images/1f4361bd7375af24b6b02e138471e1c3ea8cfc74fd489871d5c1a0563e68a9de.png" />
+<img alt="_images/370b2fc6bb322789d9998fe17094d9d74e073e43ce6d035336871f2200756690.png" src="_images/370b2fc6bb322789d9998fe17094d9d74e073e43ce6d035336871f2200756690.png" />
 </div>
 </div>
 <p>また上のコードの最後に次の行を付け加えている。</p>
@@ -895,7 +881,7 @@ Name: Z, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/883b22d09977f44691e2167d6a0202b07f05d7ed97bcfa5de36d1d21ee2e27b6.png" src="_images/883b22d09977f44691e2167d6a0202b07f05d7ed97bcfa5de36d1d21ee2e27b6.png" />
+<img alt="_images/dbbbaa299f4489b2d29e1c53dcccd6fc4f773b7e285fd89b78259fe48a92e2bf.png" src="_images/dbbbaa299f4489b2d29e1c53dcccd6fc4f773b7e285fd89b78259fe48a92e2bf.png" />
 </div>
 </div>
 <p>図を横に並べるには<code class="docutils literal notranslate"><span class="pre">layout=(1,2)</span></code>を付け加える。<code class="docutils literal notranslate"><span class="pre">layout</span></code>は図の配置を行列のように考えて指定し、<code class="docutils literal notranslate"><span class="pre">1</span></code>は行の数であり、<code class="docutils literal notranslate"><span class="pre">2</span></code>は列の数。</p>
@@ -910,7 +896,7 @@ Name: Z, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/21a4bfc1b2b03db3571d416856a5062224a23c92a075837d186b729999fd368d.png" src="_images/21a4bfc1b2b03db3571d416856a5062224a23c92a075837d186b729999fd368d.png" />
+<img alt="_images/2a105d18ce936d5cfbd3d2268b99a3e57eb1664788e823e9cc8cbb9497ef9d95.png" src="_images/2a105d18ce936d5cfbd3d2268b99a3e57eb1664788e823e9cc8cbb9497ef9d95.png" />
 </div>
 </div>
 <p>図を並べる際も引数<code class="docutils literal notranslate"><span class="pre">x</span></code>を省略すると，横軸には行インデックスが使われることになる。</p>
@@ -926,7 +912,7 @@ Name: Z, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3e5a06eec0716eaf60eeac7d8b9df6723a1e38d20c1a0f9ba92e09e6b7359060.png" src="_images/3e5a06eec0716eaf60eeac7d8b9df6723a1e38d20c1a0f9ba92e09e6b7359060.png" />
+<img alt="_images/050e4c706282f9f408eb79fb67e8447e50484ef93e2f648eec2783d67a586283.png" src="_images/050e4c706282f9f408eb79fb67e8447e50484ef93e2f648eec2783d67a586283.png" />
 </div>
 </div>
 <p>別々の飾り付けをする場合は次のようにすると良いだろう。</p>
@@ -945,7 +931,7 @@ Name: Z, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9e29c83868c211f7b16268ce382ff427a7f55a46933eb2b01d32c96c30709472.png" src="_images/9e29c83868c211f7b16268ce382ff427a7f55a46933eb2b01d32c96c30709472.png" />
+<img alt="_images/7e783cd8677a38abbf9ffe56fedd3d6d2dfff2cae6536e0e3727adf7caec9fac.png" src="_images/7e783cd8677a38abbf9ffe56fedd3d6d2dfff2cae6536e0e3727adf7caec9fac.png" />
 </div>
 </div>
 <p>上のコードとの主な違い：</p>
@@ -964,7 +950,7 @@ Name: Z, dtype: float64
 <p>使い方は到って簡単で、<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>と同様にインポートするだけである。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">japanize_matplotlib</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">japanize_matplotlib</span>
 </pre></div>
 </div>
 </div>
@@ -985,7 +971,7 @@ Name: Z, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b221965d1b9d28961558508e20305aeeed661fd87bb0b85440f6f6adb1380ae0.png" src="_images/b221965d1b9d28961558508e20305aeeed661fd87bb0b85440f6f6adb1380ae0.png" />
+<img alt="_images/3b13ceaab537d87c7eb27c2bb38ddbe508e9ba9b12a9832e0010950337dda9cf.png" src="_images/3b13ceaab537d87c7eb27c2bb38ddbe508e9ba9b12a9832e0010950337dda9cf.png" />
 </div>
 </div>
 </section>
@@ -1037,7 +1023,7 @@ Name: Z, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9189d16529165fae15705137bdd72299c12e7966ca05862c0b5898d68eb92533.png" src="_images/9189d16529165fae15705137bdd72299c12e7966ca05862c0b5898d68eb92533.png" />
+<img alt="_images/9b1f94675d5238f8c20e47a2d2d04206d4dae6e0c546700b345bc26ae413247a.png" src="_images/9b1f94675d5238f8c20e47a2d2d04206d4dae6e0c546700b345bc26ae413247a.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1063,7 +1049,7 @@ Name: Z, dtype: float64
 <p>実質利子率<code class="docutils literal notranslate"><span class="pre">r</span></code>によって投資がどのように変化するかを考えてみよう。まず投資関数を次のように仮定する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">investment</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">investment</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">100</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="mi">50</span>
 </pre></div>
 </div>
@@ -1179,7 +1165,7 @@ Name: Z, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cc2f903fd3375dc67805334c70367a01950289f0171a4d0fec92e353e047bf83.png" src="_images/cc2f903fd3375dc67805334c70367a01950289f0171a4d0fec92e353e047bf83.png" />
+<img alt="_images/184c60112134708dcda199b98c214f50057f40670b7c38f2efa35a77fb4da6d0.png" src="_images/184c60112134708dcda199b98c214f50057f40670b7c38f2efa35a77fb4da6d0.png" />
 </div>
 </div>
 </section>
@@ -1188,7 +1174,7 @@ Name: Z, dtype: float64
 <p><code class="docutils literal notranslate"><span class="pre">x</span></code>万円を実質年率<code class="docutils literal notranslate"><span class="pre">r</span></code>%の利息を得る金融商品に投資し，<code class="docutils literal notranslate"><span class="pre">t</span></code>年間の将来価値（期首の値）をリストで示す関数は以下で与えられた。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_futre_value</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_futre_value</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
     
     <span class="n">value_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>           <span class="c1"># 初期値が入ったリスト</span>
     
@@ -1371,7 +1357,7 @@ Name: Z, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/192fa14e483b5cfbaa83f3eacf3a3f752760c5f740e07e30f27fe49a8db56c60.png" src="_images/192fa14e483b5cfbaa83f3eacf3a3f752760c5f740e07e30f27fe49a8db56c60.png" />
+<img alt="_images/58fdf59a0aecd515bbce159ea2c3818f41a95f56ac48af52d6c585d3e4da642b.png" src="_images/58fdf59a0aecd515bbce159ea2c3818f41a95f56ac48af52d6c585d3e4da642b.png" />
 </div>
 </div>
 </section>
@@ -1512,7 +1498,7 @@ df1.plot(x=&#39;列ラベル&#39;, y=&#39;列ラベル&#39;, kind=&#39;scatter&#
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5366e53b06d2924dee2bdd2d3d63edc5933030527d30ecd36654d53d1259554f.png" src="_images/5366e53b06d2924dee2bdd2d3d63edc5933030527d30ecd36654d53d1259554f.png" />
+<img alt="_images/16674f07dac9cbb9226b9b5ec0fac71589f8ce04dde1fcf919cff68307ba81e5.png" src="_images/16674f07dac9cbb9226b9b5ec0fac71589f8ce04dde1fcf919cff68307ba81e5.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1562,7 +1548,7 @@ df1.plot(x=&#39;列ラベル&#39;, y=&#39;列ラベル&#39;, kind=&#39;scatter&#
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b1a8dc31079282db5b900aeafa97af571ccdd82f26624269c9dcb7011fe258d4.png" src="_images/b1a8dc31079282db5b900aeafa97af571ccdd82f26624269c9dcb7011fe258d4.png" />
+<img alt="_images/e74460a320740a85e1fa6ccb1459ccc4cfb02f54cc35c535d6f9709344334ef2.png" src="_images/e74460a320740a85e1fa6ccb1459ccc4cfb02f54cc35c535d6f9709344334ef2.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なので，そちらを参照しよう。</p>
@@ -1577,7 +1563,7 @@ df1.plot(x=&#39;列ラベル&#39;, y=&#39;列ラベル&#39;, kind=&#39;scatter&#
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/021ca830f5ba8715d9ad6c492a0f87170cf59ea0c16f4083085eba1c75932b46.png" src="_images/021ca830f5ba8715d9ad6c492a0f87170cf59ea0c16f4083085eba1c75932b46.png" />
+<img alt="_images/b48ec11f36c0dfc85a54c8e11d510bacf0c44adc05f679700beb0c503f1d7e87.png" src="_images/b48ec11f36c0dfc85a54c8e11d510bacf0c44adc05f679700beb0c503f1d7e87.png" />
 </div>
 </div>
 </section>
@@ -1603,7 +1589,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;hist&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ea42185a9e477080a9760dae9b557e5561f60734d7404a4d45de89f695f1b03b.png" src="_images/ea42185a9e477080a9760dae9b557e5561f60734d7404a4d45de89f695f1b03b.png" />
+<img alt="_images/eb93a7aab659ff97ceac1cb01a0e4b8dff39b56395ab1f9141b925adafdfc9d9.png" src="_images/eb93a7aab659ff97ceac1cb01a0e4b8dff39b56395ab1f9141b925adafdfc9d9.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1663,7 +1649,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;hist&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f4cf7341108a42777ac292dbd08195153e4541a357e98ea5024e5a9ef1b5467c.png" src="_images/f4cf7341108a42777ac292dbd08195153e4541a357e98ea5024e5a9ef1b5467c.png" />
+<img alt="_images/3fb6217d514592096a4fee2d581c119f54321e94bc5febdbbd7fe85934d1e021.png" src="_images/3fb6217d514592096a4fee2d581c119f54321e94bc5febdbbd7fe85934d1e021.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
@@ -1680,7 +1666,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;hist&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c07ab7ce5199e31680bfeb977bd7e0e3e12969577c36c1d42a804296a2159044.png" src="_images/c07ab7ce5199e31680bfeb977bd7e0e3e12969577c36c1d42a804296a2159044.png" />
+<img alt="_images/d8daaeda4a185a23a232ecbc7dc68d29b2d724acbff797c62025ac09bef43428.png" src="_images/d8daaeda4a185a23a232ecbc7dc68d29b2d724acbff797c62025ac09bef43428.png" />
 </div>
 </div>
 <p>濃い部分が重なっている部分となる。また柱を積み上げて表示するには<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）を使う。</p>
@@ -1696,7 +1682,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;hist&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/20b2b33440013aee6f24ab171a43d8480bce586f69efcab1b6f71272a3eac4ff.png" src="_images/20b2b33440013aee6f24ab171a43d8480bce586f69efcab1b6f71272a3eac4ff.png" />
+<img alt="_images/bc3af36160125bbe34c12cce5190ab88f0a569adcd101f1e2849ac8bdb46c461.png" src="_images/bc3af36160125bbe34c12cce5190ab88f0a569adcd101f1e2849ac8bdb46c461.png" />
 </div>
 </div>
 <p>赤の上に黒が積み上げられている。</p>
@@ -1725,7 +1711,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fd1dbf657c6be4c8f1b65dfb48dd7f9633c6b6f5c335bde04160cbcf05c80467.png" src="_images/fd1dbf657c6be4c8f1b65dfb48dd7f9633c6b6f5c335bde04160cbcf05c80467.png" />
+<img alt="_images/ff9083270f2882dfe34f36f229251679ea8bd3e44702edca993a24eadde8c81f.png" src="_images/ff9083270f2882dfe34f36f229251679ea8bd3e44702edca993a24eadde8c81f.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1778,7 +1764,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/effd3ab4f9b0e79084508c289d43b9a4117c91af03da353b5d93d912fcd4d5b2.png" src="_images/effd3ab4f9b0e79084508c289d43b9a4117c91af03da353b5d93d912fcd4d5b2.png" />
+<img alt="_images/3af2e92b79a712c592f1f0bd695f239c4166122cd1c24fdf327f47beb8ea68a8.png" src="_images/3af2e92b79a712c592f1f0bd695f239c4166122cd1c24fdf327f47beb8ea68a8.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
@@ -1797,7 +1783,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bcb2594731617781ea830bb34a0bea8c25314e9401ef89698bd4fbae2960b83e.png" src="_images/bcb2594731617781ea830bb34a0bea8c25314e9401ef89698bd4fbae2960b83e.png" />
+<img alt="_images/30e6053f39dd06364c4e4b97fb0f05966f62bf7c09f023fd27145412f5060d1a.png" src="_images/30e6053f39dd06364c4e4b97fb0f05966f62bf7c09f023fd27145412f5060d1a.png" />
 </div>
 </div>
 </section>
@@ -1832,7 +1818,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/894a0df0062c47bef442184cf5ee947ad67b1b7fa686ce8ce95bc5fc136d6d0a.png" src="_images/894a0df0062c47bef442184cf5ee947ad67b1b7fa686ce8ce95bc5fc136d6d0a.png" />
+<img alt="_images/4b9b78ed6db7fbc605b613410c919ea0ae5028497bba310d5752b6c2158ecd38.png" src="_images/4b9b78ed6db7fbc605b613410c919ea0ae5028497bba310d5752b6c2158ecd38.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1876,7 +1862,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/34a3a381d21c5a46c554752e08f1c246b06592e324eb9e97647418cffebae518.png" src="_images/34a3a381d21c5a46c554752e08f1c246b06592e324eb9e97647418cffebae518.png" />
+<img alt="_images/d9c8468e78e9a811cfe1b385169c53e8323a7ac84383a8c4a41c3050c968509f.png" src="_images/d9c8468e78e9a811cfe1b385169c53e8323a7ac84383a8c4a41c3050c968509f.png" />
 </div>
 </div>
 <p>最後に上のヒストグラムとカーネル密度推定プロットに縦線を加えてみよう。</p>
@@ -1895,7 +1881,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9a08af37391ab8b9e2705681672858b9cbca0da35b03cae0b83414806ae194dc.png" src="_images/9a08af37391ab8b9e2705681672858b9cbca0da35b03cae0b83414806ae194dc.png" />
+<img alt="_images/693bfdc6e4e04d3a0f5112d9689164da16f7705f5e2d27c31f0aa89bcee85af9.png" src="_images/693bfdc6e4e04d3a0f5112d9689164da16f7705f5e2d27c31f0aa89bcee85af9.png" />
 </div>
 </div>
 </section>
@@ -1944,7 +1930,7 @@ df2.plot(x=&#39;列ラベル&#39;, y=&#39;列ラベル&#39;, kind=&#39;bar&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ac1b7bbb35ac738ca0f4754645becb330de317b02b0d13768ce4bf275e217af8.png" src="_images/ac1b7bbb35ac738ca0f4754645becb330de317b02b0d13768ce4bf275e217af8.png" />
+<img alt="_images/ba13f44952fe51c83b3b9fd19c08b34e3a1e86af845170426eb617ea2e36a1d6.png" src="_images/ba13f44952fe51c83b3b9fd19c08b34e3a1e86af845170426eb617ea2e36a1d6.png" />
 </div>
 </div>
 <p>複数の棒（データ）を並べたい場合もあるだろう。その場合は引数<code class="docutils literal notranslate"><span class="pre">y</span></code>にリストを指定すれば表示できる。</p>
@@ -1956,7 +1942,7 @@ df2.plot(x=&#39;列ラベル&#39;, y=&#39;列ラベル&#39;, kind=&#39;bar&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c89e5fb73105dc7f8abf17ce1be4547d278e35dd6e4659ce72299d39178d9cfd.png" src="_images/c89e5fb73105dc7f8abf17ce1be4547d278e35dd6e4659ce72299d39178d9cfd.png" />
+<img alt="_images/bcc2ab967f91f3ba446a008d0d65067c39c84597f026c6d1787b8e8d4c486917.png" src="_images/bcc2ab967f91f3ba446a008d0d65067c39c84597f026c6d1787b8e8d4c486917.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2009,7 +1995,7 @@ df2.plot(x=&#39;列ラベル&#39;, y=&#39;列ラベル&#39;, kind=&#39;bar&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ad07efb4f7a0d23769e293f0f11162bc0c3ff02d97a73a5cfc0c61cebb800a59.png" src="_images/ad07efb4f7a0d23769e293f0f11162bc0c3ff02d97a73a5cfc0c61cebb800a59.png" />
+<img alt="_images/1a946626ab9a3c30d8c4a512638c79ccf2d2a4d5e2bbcda8c05abd1b73850c93.png" src="_images/1a946626ab9a3c30d8c4a512638c79ccf2d2a4d5e2bbcda8c05abd1b73850c93.png" />
 </div>
 </div>
 <p>次に，ライン・プロットを追加する例を考えてみよう。<code class="docutils literal notranslate"><span class="pre">df2</span></code>には列<code class="docutils literal notranslate"><span class="pre">gdp</span></code>があり，それを表すライン・プロットを重ねることにしよう。</p>
@@ -2036,7 +2022,7 @@ df2.plot(x=&#39;列ラベル&#39;, y=&#39;列ラベル&#39;, kind=&#39;bar&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e8601f7b61d2498d2ab17859358172521632c8ee7402909eac35664d28a29563.png" src="_images/e8601f7b61d2498d2ab17859358172521632c8ee7402909eac35664d28a29563.png" />
+<img alt="_images/bdf8a5f2500366ce170c93be2ebb1667beb06f5211b0b23d9961a7e90f87e715.png" src="_images/bdf8a5f2500366ce170c93be2ebb1667beb06f5211b0b23d9961a7e90f87e715.png" />
 </div>
 </div>
 <p>棒の高さとGDPのマーカーの高さは同じであることがわかる。</p>
@@ -2099,7 +2085,8 @@ df2.plot(x=&#39;列ラベル&#39;, y=&#39;列ラベル&#39;, kind=&#39;bar&#39;)
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2192,8 +2179,8 @@ By 春山 鉄源  Tetsugen HARUYAMA
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

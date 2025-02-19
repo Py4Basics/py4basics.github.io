@@ -16,19 +16,21 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -37,10 +39,11 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -81,6 +84,7 @@
     <link rel="prev" title="関数とメソッド" href="1_Basics_III.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -96,19 +100,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -116,7 +109,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -124,8 +116,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -141,7 +133,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -171,15 +164,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
@@ -226,9 +215,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -389,24 +383,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -481,7 +467,7 @@ document.write(`
 </div><br><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 警告メッセージを非表示</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -519,9 +505,9 @@ document.write(`
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">flow</span>
-<span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">japanize_matplotlib</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">flow</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">japanize_matplotlib</span>
 
 <span class="n">schemdraw</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s1">&#39;IPAexGothic&#39;</span><span class="p">)</span>
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
@@ -542,7 +528,7 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
 </pre></div>
 </div>
-<img alt="_images/095195047acbc623e2ae8346838d5c3bc81042082ba945371974163e57a33158.svg" src="_images/095195047acbc623e2ae8346838d5c3bc81042082ba945371974163e57a33158.svg" />
+<img alt="_images/179fe4af8161e1ba2b63a2c720acc67c417ca2dd650fc06d773c2029886ec95d.svg" src="_images/179fe4af8161e1ba2b63a2c720acc67c417ca2dd650fc06d773c2029886ec95d.svg" />
 </div>
 </div>
 <p>一番最初と最後の楕円は，プログラムの始まり（<code class="docutils literal notranslate"><span class="pre">START</span></code>）と終わり（<code class="docutils literal notranslate"><span class="pre">END</span></code>）を表す。長方形はコードの処理，そして，矢印はプログラムの実行の順番（フロー）を意味する。単純な例なので，上から下に一直線の実行フローとなっている。より複雑なコードの場合，矢印が横向きや上向きになったりもし，枠も様々な形を使い実行フローを表現することになる。以下では，枠は次の３種類だけを使い制御フローをシンプルな形で表すことにする。</p>
@@ -647,7 +633,7 @@ else:
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/868682c05cc532b137530ca06227cf880353bdff93ddb9321998c2f1bae25dd0.svg" src="_images/868682c05cc532b137530ca06227cf880353bdff93ddb9321998c2f1bae25dd0.svg" />
+<img alt="_images/7b0d28d6bd9f02473ac647a5d041b8dae44b7d730381125555b241b25441575f.svg" src="_images/7b0d28d6bd9f02473ac647a5d041b8dae44b7d730381125555b241b25441575f.svg" />
 </div>
 </div>
 <p>菱形枠中の<code class="docutils literal notranslate"><span class="pre">？</span></code>は「判断」を意味するが，上のコードの<code class="docutils literal notranslate"><span class="pre">#2</span></code>に対応している。<code class="docutils literal notranslate"><span class="pre">x=10</span></code>は<code class="docutils literal notranslate"><span class="pre">True</span></code>なので，菱形枠から右に移動して<code class="docutils literal notranslate"><span class="pre">条件はTrueです</span></code>が表示されることになる。</p>
@@ -700,7 +686,7 @@ else:
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/2d6f22d80bf143e403c2b6a3d8d543eaa3f74f31e277c19293710cd875399f9d.svg" src="_images/2d6f22d80bf143e403c2b6a3d8d543eaa3f74f31e277c19293710cd875399f9d.svg" />
+<img alt="_images/00c78d2a189701d1532f2a27e8b50ecaab82ae6a377c1a12c67c8547d80795ba.svg" src="_images/00c78d2a189701d1532f2a27e8b50ecaab82ae6a377c1a12c67c8547d80795ba.svg" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">False</span></code>と判断されると，直ぐに<code class="docutils literal notranslate"><span class="pre">END</span></code>となっている。</p>
@@ -752,7 +738,7 @@ else:
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/4e4dfd95a04c958edd82f6fade3c1032b03b43a370f7cb21cdadf60ba33e7be6.svg" src="_images/4e4dfd95a04c958edd82f6fade3c1032b03b43a370f7cb21cdadf60ba33e7be6.svg" />
+<img alt="_images/ba876d9374b5e65023f824514de32ce2d3badf3eb19f8ca88788de0ce1593f69.svg" src="_images/ba876d9374b5e65023f824514de32ce2d3badf3eb19f8ca88788de0ce1593f69.svg" />
 </div>
 </div>
 <p>このフローチャートをコードに落とし込むと次のようになる。</p>
@@ -832,7 +818,7 @@ else:
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code>文は関数の中で使うことも可能である。GDPに関する例を使って考えてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gdp_change</span><span class="p">(</span><span class="n">change_in_gdp</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gdp_change</span><span class="p">(</span><span class="n">change_in_gdp</span><span class="p">):</span>
     
     <span class="k">if</span> <span class="n">change_in_gdp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GDPは増加&#39;</span><span class="p">)</span>
@@ -895,7 +881,7 @@ else:
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code>文を実行する上で，条件が真偽値<code class="docutils literal notranslate"><span class="pre">True</span></code>又は<code class="docutils literal notranslate"><span class="pre">False</span></code>を返すかで制御フローが分岐することが分かったと思う。ここで真偽値が重要な役割を果たしているが，<code class="docutils literal notranslate"><span class="pre">bool()</span></code>関数を使って真偽値をできることを思い出そう。空の文字列<code class="docutils literal notranslate"><span class="pre">''</span></code>や<code class="docutils literal notranslate"><span class="pre">0</span></code>などは「空」・「無」なので<code class="docutils literal notranslate"><span class="pre">False</span></code>となるが，それら以外は<code class="docutils literal notranslate"><span class="pre">True</span></code>となる。次の例はこの特性を使った例となる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">truth_value</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">truth_value</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 
     <span class="k">if</span> <span class="n">x</span><span class="p">:</span>   <span class="c1"># この行に着目</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;真偽値はTrueです。&#39;</span><span class="p">)</span>
@@ -950,7 +936,7 @@ else:
 <p>真偽値を使ったもう１つの例を紹介しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_wallet</span><span class="p">(</span><span class="n">money_in_my_wallet</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_wallet</span><span class="p">(</span><span class="n">money_in_my_wallet</span><span class="p">):</span>
     
     <span class="k">if</span> <span class="n">money_in_my_wallet</span><span class="p">:</span>   <span class="c1">#1</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;なに買おうかな😄&#39;</span><span class="p">)</span>
@@ -1025,7 +1011,7 @@ y = \left|x\right|
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/138811d8d485098b37bc8d6700a154ac9a25bd853b00e3a586b190728381c809.svg" src="_images/138811d8d485098b37bc8d6700a154ac9a25bd853b00e3a586b190728381c809.svg" />
+<img alt="_images/26144fc76c506af6a98b420950b8c912da8261df23567ac04162b08cb252b672.svg" src="_images/26144fc76c506af6a98b420950b8c912da8261df23567ac04162b08cb252b672.svg" />
 </div>
 </div>
 <p>ここでは，まず <span class="math notranslate nohighlight">\(x=0\)</span> が<code class="docutils literal notranslate"><span class="pre">True</span></code>か<code class="docutils literal notranslate"><span class="pre">False</span></code>かを判断し，次に <span class="math notranslate nohighlight">\(x&gt;0\)</span> が<code class="docutils literal notranslate"><span class="pre">True</span></code>か<code class="docutils literal notranslate"><span class="pre">False</span></code>かを判定している。しかし，図から分かるように，この２つの判断は，非常に似ており，次のように１つにまとめることができる。</p>
@@ -1057,7 +1043,7 @@ y = \left|x\right|
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/66fe88fddafea3bd0f5f5cca50ae03326fd783be74b168609fe68b24c67612d3.svg" src="_images/66fe88fddafea3bd0f5f5cca50ae03326fd783be74b168609fe68b24c67612d3.svg" />
+<img alt="_images/d31c5e046b1d837cdeabade020d7cce336b16c80003e436e0f65b451df5e474e.svg" src="_images/d31c5e046b1d837cdeabade020d7cce336b16c80003e436e0f65b451df5e474e.svg" />
 </div>
 </div>
 <p>このフローチャートに従って，<code class="docutils literal notranslate"><span class="pre">if</span></code>文を使いコードを書いてみよう。</p>
@@ -1090,7 +1076,7 @@ y = \left|x\right|
 <p>次に，この<code class="docutils literal notranslate"><span class="pre">if</span></code>文を関数にまとめてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
@@ -1111,7 +1097,7 @@ y = \left|x\right|
 <p>更に，短くするには次のように書くこともできる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">x</span>
@@ -1173,7 +1159,7 @@ Y =
 <p>次のコードでは，<span class="math notranslate nohighlight">\(\rho=-\infty\)</span>以外のケースを関数で表している。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ces_production</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ces_production</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     
     <span class="k">if</span> <span class="n">rho</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;rhoには１以下の数字を入力してください。&#39;</span><span class="p">)</span>
@@ -1303,23 +1289,23 @@ Y =
     
     <span class="n">b1</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mf">4.1</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;gdp_componentsの</span><span class="se">\n</span><span class="s1">&#39;</span><span class="sa">r</span><span class="s1">&#39;要素を $i$ に割り当てる&#39;</span><span class="p">)</span>
     <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+
+    <span class="n">b2</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mf">3.2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;毎回実行したい</span><span class="se">\n</span><span class="s1">コードを実行&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
     
-    <span class="n">d</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">Decision</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mf">4.2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1.7</span><span class="p">,</span> <span class="n">S</span><span class="o">=</span><span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="s1">&#39;True&#39;</span>
-                     <span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;最後の要素を</span><span class="se">\n</span><span class="s1">使い切ったか？&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)</span>
-    
-    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">flow</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;END&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">anchor</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)</span>
-    
-    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mf">2.4</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
-    <span class="n">b2</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mf">3.2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;毎回実行したい</span><span class="se">\n</span><span class="s1">コードを実行&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">Decision</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mf">4.2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1.7</span><span class="p">,</span> <span class="n">S</span><span class="o">=</span><span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="s1">&#39;True&#39;</span>
+                     <span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;次の要素</span><span class="se">\n</span><span class="s1">はある？&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)</span>
     
     <span class="n">flow</span><span class="o">.</span><span class="n">Wire</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">k</span><span class="o">=-</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">arrow</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">linewidth</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">b1</span><span class="o">.</span><span class="n">W</span><span class="p">)</span>
+    
+    <span class="n">flow</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">sd</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mf">2.4</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
+    <span class="n">flow</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;END&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">anchor</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/072555de28d880b558769c3b792d33ba6658928c21d5ae447c748b1191b4c471.svg" src="_images/072555de28d880b558769c3b792d33ba6658928c21d5ae447c748b1191b4c471.svg" />
+<img alt="_images/6681bfa532dc264a5bbeae031358765cdde891d20d49e8704e078751ef36ebf3.svg" src="_images/6681bfa532dc264a5bbeae031358765cdde891d20d49e8704e078751ef36ebf3.svg" />
 </div>
 </div>
 <p>この図から，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの裏では菱形の判断，即ち，<code class="docutils literal notranslate"><span class="pre">if</span></code>文が動いていることが分かる。<code class="docutils literal notranslate"><span class="pre">gdp_components</span></code>の最後の要素のループ処理が終わったかどうかを判断している。</p>
@@ -1620,7 +1606,7 @@ Y =
 初期時点の資本ストック<code class="docutils literal notranslate"><span class="pre">k0</span></code>と期間<code class="docutils literal notranslate"><span class="pre">period</span></code>を引数とする。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">capital_accumulation</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">period</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">capital_accumulation</span><span class="p">(</span><span class="n">k0</span><span class="p">,</span> <span class="n">period</span><span class="p">):</span>
 
     <span class="n">k</span> <span class="o">=</span> <span class="n">k0</span>   <span class="c1"># アップデート用の変数の生成</span>
 
@@ -1647,7 +1633,7 @@ Y =
 <p>このコードでは<code class="docutils literal notranslate"><span class="pre">k=k0</span></code>でアップデート用の変数の生成している。実は，このコードをもう少し縮めることができる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">capital_accumulation_shorter</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">period</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">capital_accumulation_shorter</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">period</span><span class="p">):</span>
 
     <span class="n">k_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="p">]</span>
 
@@ -1679,7 +1665,7 @@ Y =
 <p>元本<code class="docutils literal notranslate"><span class="pre">x0</span></code>万円を投資すると実質年率<code class="docutils literal notranslate"><span class="pre">r</span></code>％の利息を得る金融商品を考えよう。<code class="docutils literal notranslate"><span class="pre">t</span></code>年後の将来価値（期首の値）をリストで示す関数を作成する。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_futre_value</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>  <span class="c1">#1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_futre_value</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>  <span class="c1">#1</span>
     
     <span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>                            <span class="c1">#2</span>
     
@@ -2146,7 +2132,7 @@ A
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/3739fd30ab2ca0cddca83f2d6f921d72adb446a31e8e37c725918fcb5b503c90.svg" src="_images/3739fd30ab2ca0cddca83f2d6f921d72adb446a31e8e37c725918fcb5b503c90.svg" />
+<img alt="_images/a2cfe6fe4f08b6b53030f0bd5a928cdd26c1fb06db44f826c1c1269c9717b0bd.svg" src="_images/a2cfe6fe4f08b6b53030f0bd5a928cdd26c1fb06db44f826c1c1269c9717b0bd.svg" />
 </div>
 </div>
 <p>この図から，最後の<code class="docutils literal notranslate"><span class="pre">counter+=1</span></code>がなければ無限ループに陥ってしまうことが分かると思う。また，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ同様，菱形で<code class="docutils literal notranslate"><span class="pre">if</span></code>文が裏で働いていることが分かる。一方で，<code class="docutils literal notranslate"><span class="pre">if</span></code>文の判断で次の点で異なる。</p>
@@ -2217,7 +2203,7 @@ A
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/f80eb28ffe517a8715ba001246e05fee7973d9fbb70f412c73d05b18f41258c4.svg" src="_images/f80eb28ffe517a8715ba001246e05fee7973d9fbb70f412c73d05b18f41258c4.svg" />
+<img alt="_images/8642995e85d70ca2fcaf635014543a800b101e3973bb018e969589374371aff9.svg" src="_images/8642995e85d70ca2fcaf635014543a800b101e3973bb018e969589374371aff9.svg" />
 </div>
 </div>
 <p>上のフローチャートと比べると，菱形枠と<code class="docutils literal notranslate"><span class="pre">END</span></code>の間に<code class="docutils literal notranslate"><span class="pre">print('無事終了(^^)')</span></code>が追加されている。</p>
@@ -2343,7 +2329,7 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 <p>この式は数学で学ぶ漸化式の形となっている。<span class="math notranslate nohighlight">\(N\)</span>は任意の計算回数。<span class="math notranslate nohighlight">\(N\)</span>が大きくれば，それだけ誤差が小さくなり，<span class="math notranslate nohighlight">\(x_n\)</span>は真の値に近づいていく。実際にコードを書いてみよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sqrt_approx</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">x0</span><span class="p">):</span>  <span class="c1">#1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sqrt_approx</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">x0</span><span class="p">):</span>  <span class="c1">#1</span>
     
     <span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>               <span class="c1">#2</span>
     
@@ -2460,7 +2446,7 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/16829766c636d636a6fdf13590f91919b68f18a69b0663e14b51fde0ea4e0477.svg" src="_images/16829766c636d636a6fdf13590f91919b68f18a69b0663e14b51fde0ea4e0477.svg" />
+<img alt="_images/9b70f039385f4a402c04397543dc9ba24a734161f2f3dd57ae2d8b281b78c928.svg" src="_images/9b70f039385f4a402c04397543dc9ba24a734161f2f3dd57ae2d8b281b78c928.svg" />
 </div>
 </div>
 <p>この例に基づいて，<code class="docutils literal notranslate"><span class="pre">1</span></code>から<code class="docutils literal notranslate"><span class="pre">5</span></code>までの数字を<code class="docutils literal notranslate"><span class="pre">3</span></code>を飛ばして<code class="docutils literal notranslate"><span class="pre">1</span></code>，<code class="docutils literal notranslate"><span class="pre">2</span></code>，<code class="docutils literal notranslate"><span class="pre">4</span></code>，<code class="docutils literal notranslate"><span class="pre">5</span></code>を表示するとしよう。その場合に重宝するのが<code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">continue</span></code>（対象コードの実行を飛ばすコード）の組み合わせである。まず，フローチャートで表してみよう。</p>
@@ -2500,7 +2486,7 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/33a1beea63dbee831177c0638010248226f6d70871cf916de57ea8d309d5baf8.svg" src="_images/33a1beea63dbee831177c0638010248226f6d70871cf916de57ea8d309d5baf8.svg" />
+<img alt="_images/e03762bd7866e81601c56541b3e2260fbbeebefa3495069a868e850773338358.svg" src="_images/e03762bd7866e81601c56541b3e2260fbbeebefa3495069a868e850773338358.svg" />
 </div>
 </div>
 <p>上のフローチャートと異なる点は，下の菱形が追加されていることだけであり，その菱形を<code class="docutils literal notranslate"><span class="pre">if</span></code>文で捉えることができる。更に，下の菱形から上の菱形への矢印（<code class="docutils literal notranslate"><span class="pre">3</span></code>の表示を飛ばす）を<code class="docutils literal notranslate"><span class="pre">continue</span></code>で実行することになる。コードを書いてみよう。</p>
@@ -2585,7 +2571,7 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/e2e8df9d44c589e6b1be76326135628450513b6d8f4574a1a55d6b059eb4c69e.svg" src="_images/e2e8df9d44c589e6b1be76326135628450513b6d8f4574a1a55d6b059eb4c69e.svg" />
+<img alt="_images/61e782c134999fea25b8552770252b99817b08d312753bb412cf0a31d19a20f3.svg" src="_images/61e782c134999fea25b8552770252b99817b08d312753bb412cf0a31d19a20f3.svg" />
 </div>
 </div>
 <p>菱形の中は<code class="docutils literal notranslate"><span class="pre">True</span></code>なので，必ず<code class="docutils literal notranslate"><span class="pre">True</span></code>の矢印の方向に沿ってコードは実行される。<code class="docutils literal notranslate"><span class="pre">False</span></code>も書いてあるが，そちらの矢印に決して進むことはない。</p>
@@ -2623,7 +2609,7 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/6104f4c23dd4e367b979fbdc98d9a5d3ca16244454fd5082c947adad0d134bd1.svg" src="_images/6104f4c23dd4e367b979fbdc98d9a5d3ca16244454fd5082c947adad0d134bd1.svg" />
+<img alt="_images/2fcffca341bbc0975dc8b5348f3549d0970ba8a7f052ef335b4620792061d1ea.svg" src="_images/2fcffca341bbc0975dc8b5348f3549d0970ba8a7f052ef335b4620792061d1ea.svg" />
 </div>
 </div>
 <p>上のフローチャートと異なるのは，下の菱形（<code class="docutils literal notranslate"><span class="pre">条件？</span></code>）を追加することにより，<code class="docutils literal notranslate"><span class="pre">while</span></code>ループは維持するとともに<code class="docutils literal notranslate"><span class="pre">END</span></code>への矢印を追加した点である。</p>
@@ -2706,7 +2692,7 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/8186033819985b2de648d52b7a39c0ee76232638024519549a8b975519c68396.svg" src="_images/8186033819985b2de648d52b7a39c0ee76232638024519549a8b975519c68396.svg" />
+<img alt="_images/88157568b9475497760749f58c92c89d4511f649adea15948a5c15336699d707.svg" src="_images/88157568b9475497760749f58c92c89d4511f649adea15948a5c15336699d707.svg" />
 </div>
 </div>
 <p>上のコードの<code class="docutils literal notranslate"><span class="pre">#4</span></code>〜<code class="docutils literal notranslate"><span class="pre">#6</span></code>を少し書き換えて，次のようにしても同じ結果が返される。</p>
@@ -2839,7 +2825,7 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/dc1483c325f40f34216ec10c529d16cf89e56fbeb6f94d979e133d4e184da553.svg" src="_images/dc1483c325f40f34216ec10c529d16cf89e56fbeb6f94d979e133d4e184da553.svg" />
+<img alt="_images/270cf28476e33c94ccb0b98e8100344817c52b7982c7868eaba487618bfa150d.svg" src="_images/270cf28476e33c94ccb0b98e8100344817c52b7982c7868eaba487618bfa150d.svg" />
 </div>
 </div>
 </section>
@@ -2901,7 +2887,8 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2994,8 +2981,8 @@ By 春山 鉄源  Tetsugen HARUYAMA
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
