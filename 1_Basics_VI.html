@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -84,7 +81,6 @@
     <link rel="prev" title="モジュール、エラーとアルゴリズム" href="1_Basics_V.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -100,8 +96,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -109,6 +116,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -116,8 +124,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -133,8 +141,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -164,11 +171,15 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
@@ -215,14 +226,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -383,16 +389,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -512,7 +526,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x110094410&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x110c7dee0&gt;]
 </pre></div>
 </div>
 <img alt="_images/d6733ca8b770e5aa06891a6a0110d7f961094032e1810362499523c9458cd5a2.png" src="_images/d6733ca8b770e5aa06891a6a0110d7f961094032e1810362499523c9458cd5a2.png" />
@@ -627,7 +641,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11070fe90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11085fd10&gt;]
 </pre></div>
 </div>
 <img alt="_images/47a6621f90dc2f0bff360ea09b282e4c355b1d54d1e4ca600b53b8f6066057ab.png" src="_images/47a6621f90dc2f0bff360ea09b282e4c355b1d54d1e4ca600b53b8f6066057ab.png" />
@@ -644,7 +658,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1107fb9b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x110e39a30&gt;]
 </pre></div>
 </div>
 <img alt="_images/c41a7ca3649b9b56a1e501736e9a35e1f62dea70a538daba1fdcf029faac3e35.png" src="_images/c41a7ca3649b9b56a1e501736e9a35e1f62dea70a538daba1fdcf029faac3e35.png" />
@@ -866,7 +880,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fecddd2d8b646bdabb135529bc4a6a3c11b5ebe3148e1067b4ed0a44c8fce50e.png" src="_images/fecddd2d8b646bdabb135529bc4a6a3c11b5ebe3148e1067b4ed0a44c8fce50e.png" />
+<img alt="_images/71c7eb76c2f300aea421ecbe0de34298bc2a2ebefb29f589aad2f51fea80df99.png" src="_images/71c7eb76c2f300aea421ecbe0de34298bc2a2ebefb29f589aad2f51fea80df99.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -916,7 +930,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3084416e0e924a71be87d125c0482b6347258ad8bf18981a01d0d91c47763c23.png" src="_images/3084416e0e924a71be87d125c0482b6347258ad8bf18981a01d0d91c47763c23.png" />
+<img alt="_images/ff3af2eb1c3d81281297475793e9ca67e37936a94f72421b27aafff3b607af64.png" src="_images/ff3af2eb1c3d81281297475793e9ca67e37936a94f72421b27aafff3b607af64.png" />
 </div>
 </div>
 <p>次に複数のデータを重ねてプロットする場合を考えよう。方法は簡単で，ライン・プロットと同じように<code class="docutils literal notranslate"><span class="pre">plt.hist()</span></code>を続けてコードを書くだけである。まず平均<code class="docutils literal notranslate"><span class="pre">4</span></code>標準偏差<code class="docutils literal notranslate"><span class="pre">2</span></code>の正規分布からのランダム変数を用意しよう。</p>
@@ -945,7 +959,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6c8c7c3c5bccfccca255b3203cc0b810c7b97eb22e84bdd4bc4532bd27e88c45.png" src="_images/6c8c7c3c5bccfccca255b3203cc0b810c7b97eb22e84bdd4bc4532bd27e88c45.png" />
+<img alt="_images/9495b62b49ad772d7e89e77703080f54ce39a965739bfa97c303e8d457bc78e7.png" src="_images/9495b62b49ad772d7e89e77703080f54ce39a965739bfa97c303e8d457bc78e7.png" />
 </div>
 </div>
 <p>濃い赤の部分が重なっている部分となる。</p>
@@ -975,7 +989,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/46fbfc5015fe688925b98762fa6407f040797a07a8507852c952c1d749b6c487.png" src="_images/46fbfc5015fe688925b98762fa6407f040797a07a8507852c952c1d749b6c487.png" />
+<img alt="_images/d34d9d7f23cba73af5b18db228cbec903e2a3c0b9d4af6855f4fa71371ab6885.png" src="_images/d34d9d7f23cba73af5b18db228cbec903e2a3c0b9d4af6855f4fa71371ab6885.png" />
 </div>
 </div>
 </section>
@@ -1017,7 +1031,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -1040,7 +1054,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1]
 </pre></div>
 </div>
 </div>
@@ -1053,7 +1067,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
 </pre></div>
 </div>
 </div>
@@ -1067,7 +1081,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
 </pre></div>
 </div>
 </div>
@@ -1080,7 +1094,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.55
 </pre></div>
 </div>
 </div>
@@ -1125,7 +1139,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/af3a1da10c61ce63bdfc06d9b479f9ebfd66d584cf48f13661641e33ef57a8f1.png" src="_images/af3a1da10c61ce63bdfc06d9b479f9ebfd66d584cf48f13661641e33ef57a8f1.png" />
+<img alt="_images/41b31e54cdc8553a0cf3b96cb9010c30abff8b46458255a095fac7f0baf8950f.png" src="_images/41b31e54cdc8553a0cf3b96cb9010c30abff8b46458255a095fac7f0baf8950f.png" />
 </div>
 </div>
 <p>＜コードの説明＞</p>
@@ -1267,7 +1281,7 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.65
 </pre></div>
 </div>
 </div>
@@ -1280,7 +1294,7 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.8944271909999157
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.341640786499874
 </pre></div>
 </div>
 </div>
@@ -1316,7 +1330,7 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.44721359549995837
 </pre></div>
 </div>
 </div>
@@ -1330,25 +1344,25 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.4142135623730951,
- 0.0,
- 0.0,
- 0.0,
- 0.0,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0,
  -1.4142135623730951,
- -1.4142135623730951,
- -1.4142135623730951,
- 1.4142135623730951,
- -1.4142135623730951,
- 1.4142135623730951,
- 0.0,
- 0.0,
  0.0,
  1.4142135623730951,
  0.0,
  -1.4142135623730951,
  -1.4142135623730951,
  0.0,
+ 0.0,
+ 0.0,
+ 0.0,
+ 0.0,
+ 0.0,
+ 1.4142135623730951,
+ -1.4142135623730951,
+ 0.0,
+ 0.0,
+ 0.0,
+ 1.4142135623730951,
  0.0]
 </pre></div>
 </div>
@@ -1443,7 +1457,7 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/82f8e979cab2b396cb0c9931b9c4a1d24242970c632456b70b0379a2a506abe5.png" src="_images/82f8e979cab2b396cb0c9931b9c4a1d24242970c632456b70b0379a2a506abe5.png" />
+<img alt="_images/8dcf338d6768da55076be743f0d6726ab225bb15f1d6a9d6da0c8072d7c95421.png" src="_images/8dcf338d6768da55076be743f0d6726ab225bb15f1d6a9d6da0c8072d7c95421.png" />
 </div>
 </div>
 <p>＜コードの説明＞</p>
@@ -1526,11 +1540,11 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/fbf546619d1b2ac8d612ed5d2c6c2213d522a9babae5e19b0f19ee4599950c52.png" src="_images/fbf546619d1b2ac8d612ed5d2c6c2213d522a9babae5e19b0f19ee4599950c52.png" />
+<img alt="_images/73790baebac078958e8ed606ebe1f86b40116ee7e06cce50bd208884342794fc.png" src="_images/73790baebac078958e8ed606ebe1f86b40116ee7e06cce50bd208884342794fc.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/f79285ffe189b9a4525bf68cd003d9fc4833bcd767d7c1be7cca0bc224830a1a.png" src="_images/f79285ffe189b9a4525bf68cd003d9fc4833bcd767d7c1be7cca0bc224830a1a.png" />
+<img alt="_images/68bb211398424a6e37f011f2d0eb39e569567d3983d93d8e1881e34688a4ef75.png" src="_images/68bb211398424a6e37f011f2d0eb39e569567d3983d93d8e1881e34688a4ef75.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が小さい（<code class="docutils literal notranslate"><span class="pre">10</span></code>）とランダムな影響が強く現れるが，大きくなると（<code class="docutils literal notranslate"><span class="pre">10000</span></code>）大数の法則によって<code class="docutils literal notranslate"><span class="pre">-1</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>の割合は<code class="docutils literal notranslate"><span class="pre">0.5</span></code>に近づいている。一方で，<code class="docutils literal notranslate"><span class="pre">N</span></code>が大きくなっても，分布は標準正規分布とは大きく異なっている。</p>
@@ -1548,11 +1562,11 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：3
 </pre></div>
 </div>
-<img alt="_images/cdf1762b040d0a34ad4ecee1fa3a3af7a3536088dfc2b179881cbc009368b989.png" src="_images/cdf1762b040d0a34ad4ecee1fa3a3af7a3536088dfc2b179881cbc009368b989.png" />
+<img alt="_images/c06e771d690c794c8869f28895d3ddf89bf4cc0dee124d02ebd2bdab4dd6a79e.png" src="_images/c06e771d690c794c8869f28895d3ddf89bf4cc0dee124d02ebd2bdab4dd6a79e.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：3
 </pre></div>
 </div>
-<img alt="_images/b09814ee2a63d3a0cc5b0ea763b42f8efc9a030d8c8218a4ca76e0dd11835bd2.png" src="_images/b09814ee2a63d3a0cc5b0ea763b42f8efc9a030d8c8218a4ca76e0dd11835bd2.png" />
+<img alt="_images/c8f61b7c428362a8a403acc34bdf917cd7294ed1f5c47ed5d34adb6a3a067b6b.png" src="_images/c8f61b7c428362a8a403acc34bdf917cd7294ed1f5c47ed5d34adb6a3a067b6b.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が大きくなると，大数の法則によって左右対称の分布となっている。しかし，依然として標準正規分布とは異なっている。</p>
@@ -1570,11 +1584,11 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：8
 </pre></div>
 </div>
-<img alt="_images/b94ee63b614b60e021d0bdd8ae1215b0d03f6ae77cc31dd0eca9e46fde26fb96.png" src="_images/b94ee63b614b60e021d0bdd8ae1215b0d03f6ae77cc31dd0eca9e46fde26fb96.png" />
+<img alt="_images/63dee24101ea685830fc67f9d90c6d18a8d4b48a7ab8a82a42c807a1978a4c32.png" src="_images/63dee24101ea685830fc67f9d90c6d18a8d4b48a7ab8a82a42c807a1978a4c32.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：13
 </pre></div>
 </div>
-<img alt="_images/7b98247cea7cc693250e20e7e7424dae8eeffdc9fbe70a4d452c6d4a194933f5.png" src="_images/7b98247cea7cc693250e20e7e7424dae8eeffdc9fbe70a4d452c6d4a194933f5.png" />
+<img alt="_images/57c6ad9b3edc52cba5167c800cff5187c1d548c1bb9a3a35bf420e6a204d8282.png" src="_images/57c6ad9b3edc52cba5167c800cff5187c1d548c1bb9a3a35bf420e6a204d8282.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が小さいとランダムな要素が際立ち明確ではないが，<code class="docutils literal notranslate"><span class="pre">n</span></code>増加すると標準正規分布に近づいていることが分かる。</p>
@@ -1589,14 +1603,17 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：19
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：20
 </pre></div>
 </div>
-<img alt="_images/c3a99e08b67c04f72e4af974ccdaeec33bf90e115f2f34c033d2aa83f2ed67b7.png" src="_images/c3a99e08b67c04f72e4af974ccdaeec33bf90e115f2f34c033d2aa83f2ed67b7.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：30
+<img alt="_images/560c9a2e8a1329388d68153a127222b43948f356dae8ac5c39021d6014f93a2c.png" src="_images/560c9a2e8a1329388d68153a127222b43948f356dae8ac5c39021d6014f93a2c.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：31
 </pre></div>
 </div>
-<img alt="_images/4e50e6087b38f6dad0e842db8818699f58eee53789a50baf20eeeba81643f7d6.png" src="_images/4e50e6087b38f6dad0e842db8818699f58eee53789a50baf20eeeba81643f7d6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<img alt="_images/a987aea2eba6d920b1480ecd6074e99107af886432815ca0d9ee96a0ca97fecb.png" src="_images/a987aea2eba6d920b1480ecd6074e99107af886432815ca0d9ee96a0ca97fecb.png" />
 </div>
 </div>
 <p>標準正規分布に大きく近づいたことが確認できる。</p>
@@ -1637,10 +1654,10 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：111
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：106
 </pre></div>
 </div>
-<img alt="_images/bafff66a749d1d364b77198e80ab8ea1850d4b9f96394acc18fb29fc664897e3.png" src="_images/bafff66a749d1d364b77198e80ab8ea1850d4b9f96394acc18fb29fc664897e3.png" />
+<img alt="_images/e3e5acc5a9342850976cd8a2bab7042023e1e1d30e493651a1b4eda669bb8273.png" src="_images/e3e5acc5a9342850976cd8a2bab7042023e1e1d30e493651a1b4eda669bb8273.png" />
 </div>
 </div>
 <div class="admonition hint">
@@ -1711,8 +1728,7 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1812,8 +1828,8 @@ By 春山 鉄源  Tetsugen HARUYAMA
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
