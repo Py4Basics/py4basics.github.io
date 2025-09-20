@@ -52,7 +52,7 @@ dt = datetime.datetime.today()
 
 ## 書籍の刊行とトピックの削除
 
-書籍(『経済学のためのPython入門』)[https://www.saiensu.co.jp/search/?isbn=978-4-88384-416-6&y=2025]（新世社）が刊行されます。目次は次のようになります。
+書籍[『経済学のためのPython入門』](https://www.saiensu.co.jp/search/?isbn=978-4-88384-416-6&y=2025)（新世社）が刊行されます。目次は次のようになります。
 * 第1章 準備
 * 第2章 `Python`の基礎
 * 第3章 コンテナデータ型とその操作
