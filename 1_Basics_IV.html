@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
@@ -130,6 +130,9 @@
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.saiensu.co.jp/search/?isbn=978-4-88384-416-6&y=2025'><span style='color:white; font-size:90%;'> ✴️ 書籍『経済学のためのPython入門』(発行日：2025年10月10日)　←　クリック！ ✴️ </span></a></p></div>
+</aside>
 
   
     <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
@@ -513,10 +516,10 @@ document.write(`
 </ul>
 <p>この流れをフローチャートに表してみよう。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">flow</span>
@@ -542,7 +545,7 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
 </pre></div>
 </div>
-<img alt="_images/84148ae60587c9d0e1e078fb659250f887ca7c345a71bce575b4ade4f8953ea6.svg" src="_images/84148ae60587c9d0e1e078fb659250f887ca7c345a71bce575b4ade4f8953ea6.svg" />
+<img alt="_images/4873616e4db7e43f9a4ab26abaf9722948c4260f4b3ae9d4e28cb4c7dd69b5cf.svg" src="_images/4873616e4db7e43f9a4ab26abaf9722948c4260f4b3ae9d4e28cb4c7dd69b5cf.svg" />
 </div>
 </div>
 <p>一番最初と最後の楕円は，プログラムの始まり（<code class="docutils literal notranslate"><span class="pre">START</span></code>）と終わり（<code class="docutils literal notranslate"><span class="pre">END</span></code>）を表す。長方形はコードの処理，そして，矢印はプログラムの実行の順番（フロー）を意味する。単純な例なので，上から下に一直線の実行フローとなっている。より複雑なコードの場合，矢印が横向きや上向きになったりもし，枠も様々な形を使い実行フローを表現することになる。以下では，枠は次の３種類だけを使い制御フローをシンプルな形で表すことにする。</p>
@@ -618,10 +621,10 @@ else:
 </ul>
 <p>もちろん，上のコード・セルを実行すると，<code class="docutils literal notranslate"><span class="pre">#3</span></code>で処理は終了することになる。この<code class="docutils literal notranslate"><span class="pre">if</span></code>文をフローチャートで表してみよう。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
@@ -647,7 +650,7 @@ else:
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/4fb48cdb8c052be4913ab4a1f1a24dc802206b16cabfa2fe79642ed422a5b31b.svg" src="_images/4fb48cdb8c052be4913ab4a1f1a24dc802206b16cabfa2fe79642ed422a5b31b.svg" />
+<img alt="_images/46b5691093e2c007fe6295b3ddd865876f96a2f18d0c1a7c321f6f1fba0b981e.svg" src="_images/46b5691093e2c007fe6295b3ddd865876f96a2f18d0c1a7c321f6f1fba0b981e.svg" />
 </div>
 </div>
 <p>菱形枠中の<code class="docutils literal notranslate"><span class="pre">？</span></code>は「判断」を意味するが，上のコードの<code class="docutils literal notranslate"><span class="pre">#2</span></code>に対応している。<code class="docutils literal notranslate"><span class="pre">x=10</span></code>は<code class="docutils literal notranslate"><span class="pre">True</span></code>なので，菱形枠から右に移動して<code class="docutils literal notranslate"><span class="pre">条件はTrueです</span></code>が表示されることになる。</p>
@@ -673,10 +676,10 @@ else:
 <p>このコードで<code class="docutils literal notranslate"><span class="pre">else</span></code>以下を省略してもエラーにはならない（結果も変わらない）。即ち，<code class="docutils literal notranslate"><span class="pre">else</span></code>以下がない場合は，<code class="docutils literal notranslate"><span class="pre">#3</span></code>と<code class="docutils literal notranslate"><span class="pre">#4</span></code>が省略されていると考えることができる。</p>
 <p>フローチャートで表すと次のようになる。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
@@ -700,7 +703,7 @@ else:
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/a5723dd3b3fff6b422ccfc5aa60d7ac7c73388bd81cf9a3d93ab35f7b296cca4.svg" src="_images/a5723dd3b3fff6b422ccfc5aa60d7ac7c73388bd81cf9a3d93ab35f7b296cca4.svg" />
+<img alt="_images/576445a1e62afb195df2fec42f90100cba35bd0fd1204c2dd058db59741314be.svg" src="_images/576445a1e62afb195df2fec42f90100cba35bd0fd1204c2dd058db59741314be.svg" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">False</span></code>と判断されると，直ぐに<code class="docutils literal notranslate"><span class="pre">END</span></code>となっている。</p>
@@ -715,10 +718,10 @@ else:
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">change_in_gdp</span></code>の値が<code class="docutils literal notranslate"><span class="pre">200</span></code>として，フローチャートで表すと次のようになる。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
@@ -752,7 +755,7 @@ else:
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/15da34cd9f245d2d44c4344c34b6c7c9205466cfdcefcc560780a4799109ebe8.svg" src="_images/15da34cd9f245d2d44c4344c34b6c7c9205466cfdcefcc560780a4799109ebe8.svg" />
+<img alt="_images/f632404fc959b349ad09b47554848cd3172ed783bfaf058287db1622a33abab1.svg" src="_images/f632404fc959b349ad09b47554848cd3172ed783bfaf058287db1622a33abab1.svg" />
 </div>
 </div>
 <p>このフローチャートをコードに落とし込むと次のようになる。</p>
@@ -989,10 +992,10 @@ y = \left|x\right|
 \]</div>
 <p>まず，フローチャートを考えてみる。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
@@ -1025,15 +1028,15 @@ y = \left|x\right|
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/c3b22e6749204603d755b22ac73e64aa66e78aa9de1d79a0dac6f07baf9d4ac7.svg" src="_images/c3b22e6749204603d755b22ac73e64aa66e78aa9de1d79a0dac6f07baf9d4ac7.svg" />
+<img alt="_images/e7ba31d1c011487998dc1fc8c372b8f8c94435523dccb7aa41a32a2f5eb238a3.svg" src="_images/e7ba31d1c011487998dc1fc8c372b8f8c94435523dccb7aa41a32a2f5eb238a3.svg" />
 </div>
 </div>
 <p>ここでは，まず <span class="math notranslate nohighlight">\(x=0\)</span> が<code class="docutils literal notranslate"><span class="pre">True</span></code>か<code class="docutils literal notranslate"><span class="pre">False</span></code>かを判断し，次に <span class="math notranslate nohighlight">\(x&gt;0\)</span> が<code class="docutils literal notranslate"><span class="pre">True</span></code>か<code class="docutils literal notranslate"><span class="pre">False</span></code>かを判定している。しかし，図から分かるように，この２つの判断は，非常に似ており，次のように１つにまとめることができる。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
@@ -1057,7 +1060,7 @@ y = \left|x\right|
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/fa2bdc221048f863e1b7375257fc3082c29c3f44b7d2a1be20fac9b87a580625.svg" src="_images/fa2bdc221048f863e1b7375257fc3082c29c3f44b7d2a1be20fac9b87a580625.svg" />
+<img alt="_images/2625fe0e9dc8a5f820a332a26f500ed6de060b2141b733d4a019aae7308946a9.svg" src="_images/2625fe0e9dc8a5f820a332a26f500ed6de060b2141b733d4a019aae7308946a9.svg" />
 </div>
 </div>
 <p>このフローチャートに従って，<code class="docutils literal notranslate"><span class="pre">if</span></code>文を使いコードを書いてみよう。</p>
@@ -1291,10 +1294,10 @@ Y =
 <p>この例では<code class="docutils literal notranslate"><span class="pre">gdp_components</span></code>の要素の数だけループが行われる。</p>
 <p>言葉での説明をフローチャートで表すと次のようになる。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
@@ -1319,7 +1322,7 @@ Y =
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/dd7f508359bdfd681c5dd4d2a0dd7b49579a2fdd16c52afa545bb73756bb0640.svg" src="_images/dd7f508359bdfd681c5dd4d2a0dd7b49579a2fdd16c52afa545bb73756bb0640.svg" />
+<img alt="_images/ca06af02625789837416f9a050dc492587485cf6338b0dbc71f3f017dcf0a972.svg" src="_images/ca06af02625789837416f9a050dc492587485cf6338b0dbc71f3f017dcf0a972.svg" />
 </div>
 </div>
 <p>この図から，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループの裏では菱形の判断，即ち，<code class="docutils literal notranslate"><span class="pre">if</span></code>文が動いていることが分かる。<code class="docutils literal notranslate"><span class="pre">gdp_components</span></code>の最後の要素のループ処理が終わったかどうかを判断している。</p>
@@ -1475,10 +1478,10 @@ Y =
 </ul>
 <p>初期の資本ストック（浴槽の水）<code class="docutils literal notranslate"><span class="pre">0</span></code>であり，毎期ごと<code class="docutils literal notranslate"><span class="pre">10</span></code>単位の投資（<code class="docutils literal notranslate"><span class="pre">10</span></code>リットルのバケツで水を追加）するとしよう。問題を簡単にするために<code class="docutils literal notranslate"><span class="pre">5</span></code>期間（水を追加するのは<code class="docutils literal notranslate"><span class="pre">5</span></code>回）とする。資本ストック（浴槽の水量）の推移は次のリストで表すことができる。<code class="docutils literal notranslate"><span class="pre">for</span></code>ループを使って，このリストを作成することが目的である。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">10</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
@@ -2117,10 +2120,10 @@ A
 <p>この例で分かることは，4行目の<code class="docutils literal notranslate"><span class="pre">counter+=1</span></code>がなければ<code class="docutils literal notranslate"><span class="pre">counter</span></code>の値は<code class="docutils literal notranslate"><span class="pre">0</span></code>のままなため無限ループが発生することになる。</p>
 <p>フローチャートで表すと次のようになる。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
@@ -2146,7 +2149,7 @@ A
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/6cf8f0d16bd2aa549d4823055184bb688aaca4c4cca3abb8565173c61391c4d3.svg" src="_images/6cf8f0d16bd2aa549d4823055184bb688aaca4c4cca3abb8565173c61391c4d3.svg" />
+<img alt="_images/03516fc15570a97a8eb83eb58b4cda507aabbbe40692ab43a76f73c9b675ed4c.svg" src="_images/03516fc15570a97a8eb83eb58b4cda507aabbbe40692ab43a76f73c9b675ed4c.svg" />
 </div>
 </div>
 <p>この図から，最後の<code class="docutils literal notranslate"><span class="pre">counter+=1</span></code>がなければ無限ループに陥ってしまうことが分かると思う。また，<code class="docutils literal notranslate"><span class="pre">for</span></code>ループ同様，菱形で<code class="docutils literal notranslate"><span class="pre">if</span></code>文が裏で働いていることが分かる。一方で，<code class="docutils literal notranslate"><span class="pre">if</span></code>文の判断で次の点で異なる。</p>
@@ -2186,10 +2189,10 @@ A
 </ul>
 <p>フローチャートを使うと，次のように表すことができる。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
@@ -2217,7 +2220,7 @@ A
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/5f5d73b9eb1df44cbfcd5003eca5c767e1f43258a02477db8509e832c74ce25d.svg" src="_images/5f5d73b9eb1df44cbfcd5003eca5c767e1f43258a02477db8509e832c74ce25d.svg" />
+<img alt="_images/1468b5d816b848ea791e816790d20c51521b43de224485bb0d98c4f735c23170.svg" src="_images/1468b5d816b848ea791e816790d20c51521b43de224485bb0d98c4f735c23170.svg" />
 </div>
 </div>
 <p>上のフローチャートと比べると，菱形枠と<code class="docutils literal notranslate"><span class="pre">END</span></code>の間に<code class="docutils literal notranslate"><span class="pre">print('無事終了(^^)')</span></code>が追加されている。</p>
@@ -2431,10 +2434,10 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </ul>
 <p>この２つの違いにより，最初に表示される数字は<code class="docutils literal notranslate"><span class="pre">0</span></code>ではなく<code class="docutils literal notranslate"><span class="pre">1</span></code>となり，最後に表示される数字は<code class="docutils literal notranslate"><span class="pre">2</span></code>ではなく<code class="docutils literal notranslate"><span class="pre">3</span></code>となっている。この違いは，フローチャートで示すとより分かりやすいのではないだろうか。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
@@ -2460,15 +2463,15 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/7c5f01b45d0697d22ac6348c31b224cbb009ac4fa497ae2049fc07f489fd4b78.svg" src="_images/7c5f01b45d0697d22ac6348c31b224cbb009ac4fa497ae2049fc07f489fd4b78.svg" />
+<img alt="_images/bd218970283f115c5a4b0d7d16e35ed19e421708473f779259ab0702efdbb7f7.svg" src="_images/bd218970283f115c5a4b0d7d16e35ed19e421708473f779259ab0702efdbb7f7.svg" />
 </div>
 </div>
 <p>この例に基づいて，<code class="docutils literal notranslate"><span class="pre">1</span></code>から<code class="docutils literal notranslate"><span class="pre">5</span></code>までの数字を<code class="docutils literal notranslate"><span class="pre">3</span></code>を飛ばして<code class="docutils literal notranslate"><span class="pre">1</span></code>，<code class="docutils literal notranslate"><span class="pre">2</span></code>，<code class="docutils literal notranslate"><span class="pre">4</span></code>，<code class="docutils literal notranslate"><span class="pre">5</span></code>を表示するとしよう。その場合に重宝するのが<code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">continue</span></code>（対象コードの実行を飛ばすコード）の組み合わせである。まず，フローチャートで表してみよう。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
@@ -2500,7 +2503,7 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/dc0a754d3c17d9acb971863ca4d7e189933ee6c270838618b60eaa44b77c9429.svg" src="_images/dc0a754d3c17d9acb971863ca4d7e189933ee6c270838618b60eaa44b77c9429.svg" />
+<img alt="_images/6bd01b877ca9cdaec7eb796acb6fd711b0064d5088bf9924b372abfc152b9fcc.svg" src="_images/6bd01b877ca9cdaec7eb796acb6fd711b0064d5088bf9924b372abfc152b9fcc.svg" />
 </div>
 </div>
 <p>上のフローチャートと異なる点は，下の菱形が追加されていることだけであり，その菱形を<code class="docutils literal notranslate"><span class="pre">if</span></code>文で捉えることができる。更に，下の菱形から上の菱形への矢印（<code class="docutils literal notranslate"><span class="pre">3</span></code>の表示を飛ばす）を<code class="docutils literal notranslate"><span class="pre">continue</span></code>で実行することになる。コードを書いてみよう。</p>
@@ -2522,7 +2525,9 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 4
 5
 </pre></div>
@@ -2560,10 +2565,10 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </div>
 <p>と書くと無限ループになってしまう。フローチャートで表現すると次のようになる。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
@@ -2585,16 +2590,16 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/2feea4f46e0c09108240862562bd859f02080e90e4b79aa49c0bc2e32448b3d7.svg" src="_images/2feea4f46e0c09108240862562bd859f02080e90e4b79aa49c0bc2e32448b3d7.svg" />
+<img alt="_images/9dfa775809f7b939bdb887cd19a3083541deacb4bff7aab6faa1b6bfe465b24f.svg" src="_images/9dfa775809f7b939bdb887cd19a3083541deacb4bff7aab6faa1b6bfe465b24f.svg" />
 </div>
 </div>
 <p>菱形の中は<code class="docutils literal notranslate"><span class="pre">True</span></code>なので，必ず<code class="docutils literal notranslate"><span class="pre">True</span></code>の矢印の方向に沿ってコードは実行される。<code class="docutils literal notranslate"><span class="pre">False</span></code>も書いてあるが，そちらの矢印に決して進むことはない。</p>
 <p>一方で，<code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True:</span></code>と書く<code class="docutils literal notranslate"><span class="pre">while</span></code>ループでも，途中で処理を終了させる方法がある。それが<code class="docutils literal notranslate"><span class="pre">if</span></code>文と<code class="docutils literal notranslate"><span class="pre">break</span></code>（ループを中断するコード）を組み合わせる方法である。フローチャートでは次のようになる。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
@@ -2623,7 +2628,7 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/60b360668b92a246d61079be7185f9516c31e6911c9be7647100c8f6d03a81fe.svg" src="_images/60b360668b92a246d61079be7185f9516c31e6911c9be7647100c8f6d03a81fe.svg" />
+<img alt="_images/7d940e802c7aa77cedb0ad3f709bb98577f097852e6e7393ddee97cb509216f8.svg" src="_images/7d940e802c7aa77cedb0ad3f709bb98577f097852e6e7393ddee97cb509216f8.svg" />
 </div>
 </div>
 <p>上のフローチャートと異なるのは，下の菱形（<code class="docutils literal notranslate"><span class="pre">条件？</span></code>）を追加することにより，<code class="docutils literal notranslate"><span class="pre">while</span></code>ループは維持するとともに<code class="docutils literal notranslate"><span class="pre">END</span></code>への矢印を追加した点である。</p>
@@ -2668,10 +2673,10 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </ul>
 <p>フローチャートでは次のようになる。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
@@ -2706,7 +2711,7 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/2bb265a3fb3b1b941b22c36a28c0d5f2a4185579f81e61fbfefd917213ae563c.svg" src="_images/2bb265a3fb3b1b941b22c36a28c0d5f2a4185579f81e61fbfefd917213ae563c.svg" />
+<img alt="_images/f28d9c8bdeba29be540de7035bc311806e572da349119977bc9b49af94432ea2.svg" src="_images/f28d9c8bdeba29be540de7035bc311806e572da349119977bc9b49af94432ea2.svg" />
 </div>
 </div>
 <p>上のコードの<code class="docutils literal notranslate"><span class="pre">#4</span></code>〜<code class="docutils literal notranslate"><span class="pre">#6</span></code>を少し書き換えて，次のようにしても同じ結果が返される。</p>
@@ -2795,10 +2800,10 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 <p><code class="docutils literal notranslate"><span class="pre">continue</span></code>と<code class="docutils literal notranslate"><span class="pre">break</span></code>それぞれに<code class="docutils literal notranslate"><span class="pre">if</span></code>文が必要となる。</p>
 <p>フローチャートを使うと次のように表すことができる。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">sd</span><span class="p">:</span>
@@ -2839,7 +2844,7 @@ x_{n+1}=\dfrac{1}{2}\left(x_n+\frac{s}{x_n}\right),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/1044ee6555caee6169f9112df9ceb325baec2a2a3bd404843a8bf6aaf82bd74d.svg" src="_images/1044ee6555caee6169f9112df9ceb325baec2a2a3bd404843a8bf6aaf82bd74d.svg" />
+<img alt="_images/725f3a3d9213d1f5ee14f64978de7dad5cdfdb2e01e1f7b80ec452bc9dfc1502.svg" src="_images/725f3a3d9213d1f5ee14f64978de7dad5cdfdb2e01e1f7b80ec452bc9dfc1502.svg" />
 </div>
 </div>
 </section>
@@ -2967,7 +2972,7 @@ By 春山 鉄源  Tetsugen HARUYAMA
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>

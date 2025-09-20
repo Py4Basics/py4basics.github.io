@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
@@ -130,6 +130,9 @@
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.saiensu.co.jp/search/?isbn=978-4-88384-416-6&y=2025'><span style='color:white; font-size:90%;'> ✴️ 書籍『経済学のためのPython入門』(発行日：2025年10月10日)　←　クリック！ ✴️ </span></a></p></div>
+</aside>
 
   
     <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
@@ -526,10 +529,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10f17c410&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10b33be00&gt;]
 </pre></div>
 </div>
-<img alt="_images/387beb921a6be725c598fb7a4ec63765ba29a9fa1fc745558a1acaa80b81217b.png" src="_images/387beb921a6be725c598fb7a4ec63765ba29a9fa1fc745558a1acaa80b81217b.png" />
+<img alt="_images/defb45963b388ad2e2cbbdda4903dd6fa5e86f112512ab7fde9ac21a82dceb05.png" src="_images/defb45963b388ad2e2cbbdda4903dd6fa5e86f112512ab7fde9ac21a82dceb05.png" />
 </div>
 </div>
 <p>コードに<code class="docutils literal notranslate"><span class="pre">marker='o'</span></code>が追加されているが，「●」を表示するために使っている。このような引数の使い方は後で詳しく説明するので，ここでは気にしないで読み進めて欲しい。</p>
@@ -556,13 +559,13 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function xvalues in module py4macro.py4macro:
 
-xvalues(l, h, n)
+xvalues(low, high, number)
     引数
-        l：最小値（lowest value）
-        h：最大値（highest value）
-        n：作成する数値の数を指定する（正の整数型，number of values）
+        low：最小値（lowest value）
+        high：最大値（highest value）
+        number：作成する数値の数を指定する（正の整数型，number of values）
     戻り値
-        n個の要素から構成されるリスト
+        number個の要素から構成されるリスト
 </pre></div>
 </div>
 </div>
@@ -641,10 +644,10 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x110fcf2c0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11b0d89e0&gt;]
 </pre></div>
 </div>
-<img alt="_images/ed4406fd3665c418fb99f3727f95361fb3520de58c48b064427c73fabe964cd4.png" src="_images/ed4406fd3665c418fb99f3727f95361fb3520de58c48b064427c73fabe964cd4.png" />
+<img alt="_images/fd6bbfaf3e5c1cd92dcadb1698baaa05f8daafd3ceeef4b78ceaf4d3972f6a0c.png" src="_images/fd6bbfaf3e5c1cd92dcadb1698baaa05f8daafd3ceeef4b78ceaf4d3972f6a0c.png" />
 </div>
 </div>
 <p>座標の数が少ないのでスムーズな曲線には見えない。もっと座標を増やしてみよう。</p>
@@ -658,10 +661,10 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1110e9430&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11b151520&gt;]
 </pre></div>
 </div>
-<img alt="_images/212b2a36fc6b41eed92efedbd4e2a4713723275130198472011b0b65a0594208.png" src="_images/212b2a36fc6b41eed92efedbd4e2a4713723275130198472011b0b65a0594208.png" />
+<img alt="_images/e5d090920dfffec6b8cccdc34d5b941f986025e5bf15aacc14fbc5c9a38db3f3.png" src="_images/e5d090920dfffec6b8cccdc34d5b941f986025e5bf15aacc14fbc5c9a38db3f3.png" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\(y=x^2\)</span>の図らしく見える。</p>
@@ -696,7 +699,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d44387212b45a0cf2c48581f4d24a45ec7c871cf119f58e64fcfd03a8c8ef2fa.png" src="_images/d44387212b45a0cf2c48581f4d24a45ec7c871cf119f58e64fcfd03a8c8ef2fa.png" />
+<img alt="_images/8a17db17e66091fde65b3d41ec7b105b6b243a68a35847dcc4eaee43c7d9ffb6.png" src="_images/8a17db17e66091fde65b3d41ec7b105b6b243a68a35847dcc4eaee43c7d9ffb6.png" />
 </div>
 </div>
 </section>
@@ -736,7 +739,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4085e2dbbf8723eab178b32a13bdebc460c93861cd184e0ecfe43b4d0206cd37.png" src="_images/4085e2dbbf8723eab178b32a13bdebc460c93861cd184e0ecfe43b4d0206cd37.png" />
+<img alt="_images/1d57b792e11e2da9bebe919db5bbabc6fff1e25903eec57ca450039388099489.png" src="_images/1d57b792e11e2da9bebe919db5bbabc6fff1e25903eec57ca450039388099489.png" />
 </div>
 </div>
 <p>引数をいちいち書くのが面倒な場合、次の３つを簡略して一緒に指定できる。</p>
@@ -760,7 +763,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6df811fe7bea5c6bbe562c34f085e67050b6ed41e1d786b444bf0022dfe09b51.png" src="_images/6df811fe7bea5c6bbe562c34f085e67050b6ed41e1d786b444bf0022dfe09b51.png" />
+<img alt="_images/0280884291ff78d0c2d62a1d5b0f914c1f4ca4cc0fadc8fca0992e2cce171634.png" src="_images/0280884291ff78d0c2d62a1d5b0f914c1f4ca4cc0fadc8fca0992e2cce171634.png" />
 </div>
 </div>
 <p>（注意点）</p>
@@ -812,7 +815,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7fe191054d1f514e5b5594a8565cceb40d0a993129e01f90ca8ae1ab61961790.png" src="_images/7fe191054d1f514e5b5594a8565cceb40d0a993129e01f90ca8ae1ab61961790.png" />
+<img alt="_images/631625ad7e8f268e979404750c85b52cf810d9aa6e3e4f33bf5de1ceaca4fbc1.png" src="_images/631625ad7e8f268e979404750c85b52cf810d9aa6e3e4f33bf5de1ceaca4fbc1.png" />
 </div>
 </div>
 <p>最後に，図の大きさの指定方法を例を使って説明しよう。変更方法は簡単で，次の行を<code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>の<strong>上</strong>に付け加えるだけである。</p>
@@ -839,7 +842,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/83a802b7ed46380a7bdb8a6135a3b474346981dc70fb6f5d511f1db2d8c9a11d.png" src="_images/83a802b7ed46380a7bdb8a6135a3b474346981dc70fb6f5d511f1db2d8c9a11d.png" />
+<img alt="_images/bb8e017524e9d168a2e3053291d8b461f5c3eb6125ff647781f263f99f1e94f9.png" src="_images/bb8e017524e9d168a2e3053291d8b461f5c3eb6125ff647781f263f99f1e94f9.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -880,7 +883,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/13ad818f09cfb58f86ba5b3db7042ce1681428111cdbb60516bc3351e8f60db8.png" src="_images/13ad818f09cfb58f86ba5b3db7042ce1681428111cdbb60516bc3351e8f60db8.png" />
+<img alt="_images/5570029cadc6d8be3b72130d2c0027d71e8a0b8be6380263cf38d87acf4da87b.png" src="_images/5570029cadc6d8be3b72130d2c0027d71e8a0b8be6380263cf38d87acf4da87b.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -930,7 +933,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cbd5bc94faf8c41d2850ecb94ca502972fc117928ea4b1a483720e1a7042da05.png" src="_images/cbd5bc94faf8c41d2850ecb94ca502972fc117928ea4b1a483720e1a7042da05.png" />
+<img alt="_images/d167f49a234f18621706b32ef4f1a9ba7d288301e37d90d49a837c7d786df810.png" src="_images/d167f49a234f18621706b32ef4f1a9ba7d288301e37d90d49a837c7d786df810.png" />
 </div>
 </div>
 <p>次に複数のデータを重ねてプロットする場合を考えよう。方法は簡単で，ライン・プロットと同じように<code class="docutils literal notranslate"><span class="pre">plt.hist()</span></code>を続けてコードを書くだけである。まず平均<code class="docutils literal notranslate"><span class="pre">4</span></code>標準偏差<code class="docutils literal notranslate"><span class="pre">2</span></code>の正規分布からのランダム変数を用意しよう。</p>
@@ -959,7 +962,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b1d364074ce7aedec0c19d492bfc13a89337001527effcf7ea0aa5bd18c9b6ee.png" src="_images/b1d364074ce7aedec0c19d492bfc13a89337001527effcf7ea0aa5bd18c9b6ee.png" />
+<img alt="_images/e51c640f9558783b271449e153d29cf0a988eb4b0eb3fddb3f90035814d08b1b.png" src="_images/e51c640f9558783b271449e153d29cf0a988eb4b0eb3fddb3f90035814d08b1b.png" />
 </div>
 </div>
 <p>濃い赤の部分が重なっている部分となる。</p>
@@ -989,7 +992,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a9c161aa62739b04c1753b16bb166af76ec9df6fd85a316906838a5ca520c668.png" src="_images/a9c161aa62739b04c1753b16bb166af76ec9df6fd85a316906838a5ca520c668.png" />
+<img alt="_images/8fa5770927852f3c5e844407fee6f935868f3be98cf9f2c75856d795b0f80e71.png" src="_images/8fa5770927852f3c5e844407fee6f935868f3be98cf9f2c75856d795b0f80e71.png" />
 </div>
 </div>
 </section>
@@ -1031,7 +1034,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -1054,7 +1057,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1]
 </pre></div>
 </div>
 </div>
@@ -1067,7 +1070,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
 </pre></div>
 </div>
 </div>
@@ -1081,7 +1084,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
 </pre></div>
 </div>
 </div>
@@ -1094,7 +1097,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.35
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.45
 </pre></div>
 </div>
 </div>
@@ -1139,7 +1142,7 @@ xvalues(l, h, n)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/24a80788bc3f9076b72474432cc6206739b4b86e8ced1ed9ba08e5a3da4d1c7f.png" src="_images/24a80788bc3f9076b72474432cc6206739b4b86e8ced1ed9ba08e5a3da4d1c7f.png" />
+<img alt="_images/a1c9c12011369447407f59fb0fe52126b4cba589d5295f1a3ffb452555db8c69.png" src="_images/a1c9c12011369447407f59fb0fe52126b4cba589d5295f1a3ffb452555db8c69.png" />
 </div>
 </div>
 <p>＜コードの説明＞</p>
@@ -1228,10 +1231,10 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 <p>下の図は標準正規分布をプロットしている。左右対称のベル型の分布であり，横軸の値は<span class="math notranslate nohighlight">\(-\infty\)</span>から<span class="math notranslate nohighlight">\(\infty\)</span>まで全ての実数をカバーしている。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_normal</span><span class="p">():</span>
@@ -1250,7 +1253,7 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/221e5c2bebcefc8431c44def130c843e13935bc29193b03b8aac7449b8373de0.png" src="_images/221e5c2bebcefc8431c44def130c843e13935bc29193b03b8aac7449b8373de0.png" />
+<img alt="_images/6ad9472c93a9634b3650a79401fd34fda92bbcf6639218241f3b55686f0c5ef0.png" src="_images/6ad9472c93a9634b3650a79401fd34fda92bbcf6639218241f3b55686f0c5ef0.png" />
 </div>
 </div>
 <p>この驚くべき結果は統計学の金字塔である。ではどこが金字塔なのだろうか。データ分析のためには標本を集める必要がある。例えば，大学生の１日の授業以外の勉強時間（単位は分）を考えてみよう。マイナス時間や24時間以上はあり得ないため，母集団の分布は正規分布ではないことは明らかである。標本の中には驚くほど勉強している人もいれば，アルバイトなどに追われ<code class="docutils literal notranslate"><span class="pre">0</span></code>分の学生も含まれるかも知れない。もしかすると，分布には複数のピークがあるかもしれない（例えば，<code class="docutils literal notranslate"><span class="pre">0</span></code>と<code class="docutils literal notranslate"><span class="pre">60</span></code>分）。いずれにしろ，母集団の分布は未知であるため，仮説検定は不可能のように感じられる。しかし中心極限定理は，超えることはできないように見える壁をいとも簡単に飛び越えさせてくれる。ランダム標本を集め，標本の大きさが十分に大きければ，標本平均は正規分布に従う（近似される）ため仮説検定が可能になるのだ。</p>
@@ -1330,7 +1333,7 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.341640786499874
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.341640786499874
 </pre></div>
 </div>
 </div>
@@ -1345,25 +1348,25 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0,
- 0.0,
  1.4142135623730951,
  0.0,
- 1.4142135623730951,
  -1.4142135623730951,
- 0.0,
- 1.4142135623730951,
- 1.4142135623730951,
- 1.4142135623730951,
  0.0,
  0.0,
  0.0,
  -1.4142135623730951,
+ 0.0,
+ -1.4142135623730951,
+ 0.0,
+ -1.4142135623730951,
  1.4142135623730951,
+ 0.0,
+ 0.0,
+ 0.0,
+ -1.4142135623730951,
+ 0.0,
  1.4142135623730951,
- 1.4142135623730951,
- 1.4142135623730951,
- 1.4142135623730951,
- 0.0]
+ -1.4142135623730951]
 </pre></div>
 </div>
 </div>
@@ -1457,7 +1460,7 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/ac2ed497a29add770377050b3eca6dc44f3f78edf3fe4c2f5e6dfc394e6f26f0.png" src="_images/ac2ed497a29add770377050b3eca6dc44f3f78edf3fe4c2f5e6dfc394e6f26f0.png" />
+<img alt="_images/f7ee6e9e676fa25e65055603fc18e53cb953c0d21052342b96e334313adfe214.png" src="_images/f7ee6e9e676fa25e65055603fc18e53cb953c0d21052342b96e334313adfe214.png" />
 </div>
 </div>
 <p>＜コードの説明＞</p>
@@ -1540,11 +1543,11 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/570a41af55b07cc5d3436bb56ae99065dbfd6df6d1f6b8776e3a4976b5015b10.png" src="_images/570a41af55b07cc5d3436bb56ae99065dbfd6df6d1f6b8776e3a4976b5015b10.png" />
+<img alt="_images/b4ec76ed446f4ab9824ddb1014b21ab82acdb71e3bdb552ec8d20537d16547f9.png" src="_images/b4ec76ed446f4ab9824ddb1014b21ab82acdb71e3bdb552ec8d20537d16547f9.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：2
 </pre></div>
 </div>
-<img alt="_images/b668b9d9426a7e9228f93665abc53d7f8be5cbefd8692c02191890648bf18f64.png" src="_images/b668b9d9426a7e9228f93665abc53d7f8be5cbefd8692c02191890648bf18f64.png" />
+<img alt="_images/a30b4c6097863756cdbd949f172f9366fd6f8599af2ae2562e200807564f11df.png" src="_images/a30b4c6097863756cdbd949f172f9366fd6f8599af2ae2562e200807564f11df.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が小さい（<code class="docutils literal notranslate"><span class="pre">10</span></code>）とランダムな影響が強く現れるが，大きくなると（<code class="docutils literal notranslate"><span class="pre">10000</span></code>）大数の法則によって<code class="docutils literal notranslate"><span class="pre">-1</span></code>と<code class="docutils literal notranslate"><span class="pre">1</span></code>の割合は<code class="docutils literal notranslate"><span class="pre">0.5</span></code>に近づいている。一方で，<code class="docutils literal notranslate"><span class="pre">N</span></code>が大きくなっても，分布は標準正規分布とは大きく異なっている。</p>
@@ -1562,11 +1565,11 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：3
 </pre></div>
 </div>
-<img alt="_images/76ba43b75f9e51767b05b14d4fa1fecc8cb11a338cbf1c4a3de737b39d5050d6.png" src="_images/76ba43b75f9e51767b05b14d4fa1fecc8cb11a338cbf1c4a3de737b39d5050d6.png" />
+<img alt="_images/a1238cec87ddfceacc094792221ed0f92b3dfbd12f94f9d551a48feed6328149.png" src="_images/a1238cec87ddfceacc094792221ed0f92b3dfbd12f94f9d551a48feed6328149.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：3
 </pre></div>
 </div>
-<img alt="_images/67cfeb646137765124d416d105576ef8fd9a32deec01cd4e4c2fa7f68b0ca303.png" src="_images/67cfeb646137765124d416d105576ef8fd9a32deec01cd4e4c2fa7f68b0ca303.png" />
+<img alt="_images/be7db92a638b8e49bed2939517d480415ec858c6f79d6eb198167d7ee172e5de.png" src="_images/be7db92a638b8e49bed2939517d480415ec858c6f79d6eb198167d7ee172e5de.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が大きくなると，大数の法則によって左右対称の分布となっている。しかし，依然として標準正規分布とは異なっている。</p>
@@ -1581,14 +1584,14 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：8
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：7
 </pre></div>
 </div>
-<img alt="_images/855ee3463cb1f512e14dac7d2adf8747cdf59c215676c18eacbf9e413cf1b654.png" src="_images/855ee3463cb1f512e14dac7d2adf8747cdf59c215676c18eacbf9e413cf1b654.png" />
+<img alt="_images/f6d6318e34497e96b991c0a1819dbb688edb7f2ec00a9563b8a6118ac9ccfb16.png" src="_images/f6d6318e34497e96b991c0a1819dbb688edb7f2ec00a9563b8a6118ac9ccfb16.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：13
 </pre></div>
 </div>
-<img alt="_images/c5c8c3f576ce8a7792bec7710ca2eca0ade26d3651b6eb18e1d2c77106955ff6.png" src="_images/c5c8c3f576ce8a7792bec7710ca2eca0ade26d3651b6eb18e1d2c77106955ff6.png" />
+<img alt="_images/37ec250ea83b65f907149838bec4363a4e8bbbca7075dc2537756b800f12bdb4.png" src="_images/37ec250ea83b65f907149838bec4363a4e8bbbca7075dc2537756b800f12bdb4.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">N</span></code>が小さいとランダムな要素が際立ち明確ではないが，<code class="docutils literal notranslate"><span class="pre">n</span></code>増加すると標準正規分布に近づいていることが分かる。</p>
@@ -1606,11 +1609,11 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：17
 </pre></div>
 </div>
-<img alt="_images/18d3c7ec02c9d8bb6c82d5f890c6a8d137a6c4e522f7bde5f81171044f02939c.png" src="_images/18d3c7ec02c9d8bb6c82d5f890c6a8d137a6c4e522f7bde5f81171044f02939c.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：29
+<img alt="_images/4d124a00d8cad538a90c2f2d4262815925fb3ea7fe098fb31d1feca736c9f85a.png" src="_images/4d124a00d8cad538a90c2f2d4262815925fb3ea7fe098fb31d1feca736c9f85a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：31
 </pre></div>
 </div>
-<img alt="_images/ba493969f82f38b6af1b9f941fa4d867b32bef4c52072ff18a13d792b1be1d95.png" src="_images/ba493969f82f38b6af1b9f941fa4d867b32bef4c52072ff18a13d792b1be1d95.png" />
+<img alt="_images/9e049d342cd0bda803fd223ff3fff78239edf172ad112e8ac274b2f331978c2c.png" src="_images/9e049d342cd0bda803fd223ff3fff78239edf172ad112e8ac274b2f331978c2c.png" />
 </div>
 </div>
 <p>標準正規分布に大きく近づいたことが確認できる。</p>
@@ -1619,10 +1622,10 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 <h4><code class="docutils literal notranslate"><span class="pre">n=1000</span></code>の場合<a class="headerlink" href="#n-1000" title="Link to this heading">#</a></h4>
 <p>更に<code class="docutils literal notranslate"><span class="pre">n</span></code>が増加すると，分布は標準正規分布に収束していくことになる。次のコードは<code class="docutils literal notranslate"><span class="pre">n=1000</span></code>と<code class="docutils literal notranslate"><span class="pre">N=10_000</span></code>の下でのヒストグラムと標準正規分布を重ねてプロットしている。標準正規分布の近似としては十分な重なり具合と言っていいだろう。</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_hist_normal</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">10_000</span><span class="p">):</span>
@@ -1651,10 +1654,10 @@ Z=\frac{Y-\text{E}[Y]}{\sqrt{\text{Var}[Y]}}
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：111
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>標準化平均の重複しない値の数（x軸）：104
 </pre></div>
 </div>
-<img alt="_images/163498390a5ffb60a998716b72367fb2e2a1c26e6776d5491830d0bb3d60a34f.png" src="_images/163498390a5ffb60a998716b72367fb2e2a1c26e6776d5491830d0bb3d60a34f.png" />
+<img alt="_images/2f63dc23bfd7a41eee286eb5925ea300c6f3531b491e3905d0cad60220b9029f.png" src="_images/2f63dc23bfd7a41eee286eb5925ea300c6f3531b491e3905d0cad60220b9029f.png" />
 </div>
 </div>
 <div class="admonition hint">
@@ -1798,7 +1801,7 @@ By 春山 鉄源  Tetsugen HARUYAMA
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
@@ -128,6 +128,9 @@
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content"><p><a href='https://www.saiensu.co.jp/search/?isbn=978-4-88384-416-6&y=2025'><span style='color:white; font-size:90%;'> ✴️ 書籍『経済学のためのPython入門』(発行日：2025年10月10日)　←　クリック！ ✴️ </span></a></p></div>
+</aside>
 
   
     <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
@@ -475,6 +478,12 @@ document.write(`
 <span class="c1"># 警告メッセージを非表示</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/gapminder/data.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools&lt;81.
+  import pkg_resources
 </pre></div>
 </div>
 </div>
@@ -899,23 +908,23 @@ Name: proportion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.agg                .aggregate          .all                .any
-.apply              .bfill              .boxplot            .continent
-.corr               .corrwith           .count              .country
-.cov                .cumcount           .cummax             .cummin
-.cumprod            .cumsum             .describe           .diff
-.dtypes             .ewm                .expanding          .ffill
-.fillna             .filter             .first              .gdpPercap
-.get_group          .groups             .head               .hist
-.idxmax             .idxmin             .indices            .last
-.lifeExp            .max                .mean               .median
-.min                .ndim               .ngroup             .ngroups
-.nth                .nunique            .ohlc               .pct_change
-.pipe               .plot               .pop                .prod
-.quantile           .rank               .resample           .rolling
-.sample             .sem                .shift              .size
-.skew               .std                .sum                .tail
-.take               .transform          .value_counts       .var
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.agg()           .aggregate()     .all()           .any()
+.apply()         .bfill()         .boxplot()       .continent
+.corr()          .corrwith()      .count()         .country
+.cov()           .cumcount()      .cummax()        .cummin()
+.cumprod()       .cumsum()        .describe()      .diff()
+.dtypes          .ewm()           .expanding()     .ffill()
+.fillna()        .filter()        .first()         .gdpPercap
+.get_group()     .groups          .head()          .hist()
+.idxmax()        .idxmin()        .indices         .last()
+.lifeExp         .max()           .mean()          .median()
+.min()           .ndim            .ngroup()        .ngroups
+.nth()           .nunique()       .ohlc()          .pct_change()
+.pipe()          .plot()          .pop             .prod()
+.quantile()      .rank()          .resample()      .rolling()
+.sample()        .sem()           .shift()         .size()
+.skew()          .std()           .sum()           .tail()
+.take()          .transform()     .value_counts()  .var()
 .year
 </pre></div>
 </div>
@@ -983,7 +992,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d13c2f1f1dec792cc09cd943f6abf1f5128f42eb43cf0e12b90d05d6bad315f1.png" src="_images/d13c2f1f1dec792cc09cd943f6abf1f5128f42eb43cf0e12b90d05d6bad315f1.png" />
+<img alt="_images/8b01419eec9b7cc633218d565d88942a6ddc0e471dcbd129d6197b18cdf13560.png" src="_images/8b01419eec9b7cc633218d565d88942a6ddc0e471dcbd129d6197b18cdf13560.png" />
 </div>
 </div>
 <p>変数別での観測値の数</p>
@@ -1157,7 +1166,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1b1b12fa2966324f329415744143a4e3191956c6f118718caa1cface7757bed9.png" src="_images/1b1b12fa2966324f329415744143a4e3191956c6f118718caa1cface7757bed9.png" />
+<img alt="_images/6877a51a30cf0a9a070c8b2beee65cb1f691ab74ae0565ab346e3ad997e12dd3.png" src="_images/6877a51a30cf0a9a070c8b2beee65cb1f691ab74ae0565ab346e3ad997e12dd3.png" />
 </div>
 </div>
 </section>
@@ -1941,7 +1950,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/077bb4c3ca07153e9bfc1a6f79c3c3993bd90f807a4f71213a810b846476ede0.png" src="_images/077bb4c3ca07153e9bfc1a6f79c3c3993bd90f807a4f71213a810b846476ede0.png" />
+<img alt="_images/faca124088d096f5cd4667da79bd9e210b1341955115459067b764c3cd1fa1b7.png" src="_images/faca124088d096f5cd4667da79bd9e210b1341955115459067b764c3cd1fa1b7.png" />
 </div>
 </div>
 <section id="id10">
@@ -1964,7 +1973,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8cc11d81ca624dd5675db6b2d42c5e1ef91b11c2792f68d4ad2064b98ca18b38.png" src="_images/8cc11d81ca624dd5675db6b2d42c5e1ef91b11c2792f68d4ad2064b98ca18b38.png" />
+<img alt="_images/a25fc29a892d11b809efa0e92c7a6ceaa56512c975d44fdac8b04b757ad55aa9.png" src="_images/a25fc29a892d11b809efa0e92c7a6ceaa56512c975d44fdac8b04b757ad55aa9.png" />
 </div>
 </div>
 </section>
@@ -2070,7 +2079,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1f0a5c03d1f5345b5c9ab1ed2fa210056bca5edf90ff02e780efe955bd9cbaf2.png" src="_images/1f0a5c03d1f5345b5c9ab1ed2fa210056bca5edf90ff02e780efe955bd9cbaf2.png" />
+<img alt="_images/c3c7e34182c1eb879fea32c7dfb864088af0ce07d2a8c2eb47e1c925bd2c8629.png" src="_images/c3c7e34182c1eb879fea32c7dfb864088af0ce07d2a8c2eb47e1c925bd2c8629.png" />
 </div>
 </div>
 <p><strong>世界平均との比較</strong></p>
@@ -2099,7 +2108,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/11910e3c73b7090d6df69fb680831e509961f8eedb4a46144b13d404b25c9d39.png" src="_images/11910e3c73b7090d6df69fb680831e509961f8eedb4a46144b13d404b25c9d39.png" />
+<img alt="_images/057bf572fa6ab7bb3e14385e2d107eed838386e454b3eafc73f499f1f550aebd.png" src="_images/057bf572fa6ab7bb3e14385e2d107eed838386e454b3eafc73f499f1f550aebd.png" />
 </div>
 </div>
 </section>
@@ -2214,7 +2223,7 @@ By 春山 鉄源  Tetsugen HARUYAMA
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>
