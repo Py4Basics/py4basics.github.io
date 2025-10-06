@@ -180,23 +180,11 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_I.html">基本データ型と変数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_II.html">データの操作</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_III.html">関数とメソッド</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_IV.html">制御フロー</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_V.html">モジュール、エラーとアルゴリズム</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_VI.html">図示とシミュレーション</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門II</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="2_NumPy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>：高速化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_Pandas.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_matplotlib.html"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7_SciPy_optimize.html"><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="8_NumPy_random.html"><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: ランダム変数</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">SciPy.stats：確率分布</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
@@ -769,12 +757,12 @@ Name: Z, dtype: float64
 </section>
 <section id="sec-5-titlelabels">
 <span id="id5"></span><h3>タイトルとラベルのサイズの調整<a class="headerlink" href="#sec-5-titlelabels" title="Link to this heading">#</a></h3>
-<p>タイトルのフォント・サイズの指定，横軸と縦軸のラベルとフォント・サイズの指定をおこなう場合は、<code class="docutils literal notranslate"><span class="pre">plot()</span></code>の引数ではなく下で説明する方法でおこなう。この方法を理解するために、<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>（実は<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>）が表示する図は<a class="reference internal" href="#fig-5-figure-axes"><span class="std std-numref">Fig. 4</span></a>で示している階層的な構造となることをイメージして欲しい。ここで重要なのは「キャンバス」と「軸」の違いである。</p>
+<p>タイトルのフォント・サイズの指定，横軸と縦軸のラベルとフォント・サイズの指定をおこなう場合は、<code class="docutils literal notranslate"><span class="pre">plot()</span></code>の引数ではなく下で説明する方法でおこなう。この方法を理解するために、<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>（実は<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>）が表示する図は<a class="reference internal" href="#fig-5-figure-axes"><span class="std std-numref">Fig. 2</span></a>で示している階層的な構造となることをイメージして欲しい。ここで重要なのは「キャンバス」と「軸」の違いである。</p>
 <figure class="align-default" id="fig-5-figure-axes">
 <a class="reference internal image-reference" href="_images/figure_axes_pandas.png"><img alt="_images/figure_axes_pandas.png" src="_images/figure_axes_pandas.png" style="width: 473.6px; height: 428.8px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">「キャンバス」と「軸」の関係</span><a class="headerlink" href="#fig-5-figure-axes" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">「キャンバス」と「軸」の関係</span><a class="headerlink" href="#fig-5-figure-axes" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple">
@@ -1513,7 +1501,7 @@ df1.plot(x=&#39;列ラベル&#39;, y=&#39;列ラベル&#39;, kind=&#39;scatter&#
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/19d2d13f189013cedea6cf8fa0d83f9cf955b9a0e7347d665303ebed8b348486.png" src="_images/19d2d13f189013cedea6cf8fa0d83f9cf955b9a0e7347d665303ebed8b348486.png" />
+<img alt="_images/ad10b4b73a69c79d2f44454a9d071466215f433b4c62828e28d66850cad13559.png" src="_images/ad10b4b73a69c79d2f44454a9d071466215f433b4c62828e28d66850cad13559.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1563,7 +1551,7 @@ df1.plot(x=&#39;列ラベル&#39;, y=&#39;列ラベル&#39;, kind=&#39;scatter&#
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/90c365a4354a058bdc0858e2dffe43e7a1b01f04adc531c710ef9e5a13995ce2.png" src="_images/90c365a4354a058bdc0858e2dffe43e7a1b01f04adc531c710ef9e5a13995ce2.png" />
+<img alt="_images/535664602e2a52fc7947c6c6a66d8102ca8f5148e5dee99b4cc5862785f6db5c.png" src="_images/535664602e2a52fc7947c6c6a66d8102ca8f5148e5dee99b4cc5862785f6db5c.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なので，そちらを参照しよう。</p>
@@ -1578,7 +1566,7 @@ df1.plot(x=&#39;列ラベル&#39;, y=&#39;列ラベル&#39;, kind=&#39;scatter&#
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/502574259fb05458478127b4d418d4006993f391e6295d695f541d99875ec440.png" src="_images/502574259fb05458478127b4d418d4006993f391e6295d695f541d99875ec440.png" />
+<img alt="_images/bbb0040511d6322ae8e300279183b1d5fa4fd4167feca15d2c1cc5f091f925a7.png" src="_images/bbb0040511d6322ae8e300279183b1d5fa4fd4167feca15d2c1cc5f091f925a7.png" />
 </div>
 </div>
 </section>
@@ -1604,7 +1592,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;hist&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5efe1461acec87823f8c354d64e51058458b26bbab0c5bc863d56aaf2f6d0a52.png" src="_images/5efe1461acec87823f8c354d64e51058458b26bbab0c5bc863d56aaf2f6d0a52.png" />
+<img alt="_images/aced103c810cb218389c34c1ba6e8e7ccb22ba0327fdf5daa6a38ea514ced4b4.png" src="_images/aced103c810cb218389c34c1ba6e8e7ccb22ba0327fdf5daa6a38ea514ced4b4.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1664,7 +1652,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;hist&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5954a18ac041427a53d36332479e82102d7219c26878bbcfed5e97f1f9807066.png" src="_images/5954a18ac041427a53d36332479e82102d7219c26878bbcfed5e97f1f9807066.png" />
+<img alt="_images/5b7884e03502368932f2458f3da44a1ac3fed596da5d931766f67b7b016be72b.png" src="_images/5b7884e03502368932f2458f3da44a1ac3fed596da5d931766f67b7b016be72b.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
@@ -1681,7 +1669,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;hist&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/09b9a2a468c9869ae61d096667058ecd51abd9c763a7d62e377783d19f3ecc41.png" src="_images/09b9a2a468c9869ae61d096667058ecd51abd9c763a7d62e377783d19f3ecc41.png" />
+<img alt="_images/29bcc6344f6e4e46a3d9d70359a3d7f37049f5969f4b5154da5668fdf7b62595.png" src="_images/29bcc6344f6e4e46a3d9d70359a3d7f37049f5969f4b5154da5668fdf7b62595.png" />
 </div>
 </div>
 <p>濃い部分が重なっている部分となる。また柱を積み上げて表示するには<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>（デフォルトは<code class="docutils literal notranslate"><span class="pre">False</span></code>）を使う。</p>
@@ -1697,7 +1685,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;hist&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/357709c2645b34d5ea0bcc9ff9899a764f232ce506d3e2da69db96ae856218d1.png" src="_images/357709c2645b34d5ea0bcc9ff9899a764f232ce506d3e2da69db96ae856218d1.png" />
+<img alt="_images/7bbb7e678a1d7669a1c964b35300774693d538b8ea558f5b7ef52395834503a1.png" src="_images/7bbb7e678a1d7669a1c964b35300774693d538b8ea558f5b7ef52395834503a1.png" />
 </div>
 </div>
 <p>赤の上に黒が積み上げられている。</p>
@@ -1726,7 +1714,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8b5e20e847d645c3bee6569d4dcdd6f79a56c24511490a387c574efdf3087833.png" src="_images/8b5e20e847d645c3bee6569d4dcdd6f79a56c24511490a387c574efdf3087833.png" />
+<img alt="_images/97629ff35c8a002da4fc70921331cb22437dd45e260b1354e2edf40b062aaee6.png" src="_images/97629ff35c8a002da4fc70921331cb22437dd45e260b1354e2edf40b062aaee6.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1779,7 +1767,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ed96adf86569d7b83a896ad3c21fb159a7deeaa7bc136eae6d245ee4164293f4.png" src="_images/ed96adf86569d7b83a896ad3c21fb159a7deeaa7bc136eae6d245ee4164293f4.png" />
+<img alt="_images/5f14342c86b3ab4b20b6c31d1fc9c9dcc68d04bc94ca6ba8490c39752015c3ab.png" src="_images/5f14342c86b3ab4b20b6c31d1fc9c9dcc68d04bc94ca6ba8490c39752015c3ab.png" />
 </div>
 </div>
 <p>この図ではタイトルと横軸・縦軸ラベルの大きさが調整できていないが，上で説明した<a class="reference internal" href="#sec-5-titlelabels"><span class="std std-ref">タイトルとラベルのサイズの調整</span></a>のコードと共通なのでそちらを参照しよう。</p>
@@ -1798,7 +1786,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/155e88a93e4af500232ec20e9f18f5ed4eb5944b5632f3654b8d43134a5e31c3.png" src="_images/155e88a93e4af500232ec20e9f18f5ed4eb5944b5632f3654b8d43134a5e31c3.png" />
+<img alt="_images/a469ed92da46dca9e39f81b584274227e97a0df08b8ebe57f7272f7e20f69df6.png" src="_images/a469ed92da46dca9e39f81b584274227e97a0df08b8ebe57f7272f7e20f69df6.png" />
 </div>
 </div>
 </section>
@@ -1833,7 +1821,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6d561f4f077ec53fbb45ceb17f1355a53997496e01c3b24b80e5619d9fee6fae.png" src="_images/6d561f4f077ec53fbb45ceb17f1355a53997496e01c3b24b80e5619d9fee6fae.png" />
+<img alt="_images/730330f9bdac6cc48cd910f2d1e3d6b87f78aeab750c9616922ec762a2e30a92.png" src="_images/730330f9bdac6cc48cd910f2d1e3d6b87f78aeab750c9616922ec762a2e30a92.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1877,7 +1865,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/56ea1fd0895de4cc47bb86507f145293d93470db58336016f7cfbbabad7117f1.png" src="_images/56ea1fd0895de4cc47bb86507f145293d93470db58336016f7cfbbabad7117f1.png" />
+<img alt="_images/0691bafba3485c7f36daefee9599dad458c0f55e73b6cce273a2f9d8b63b5ba3.png" src="_images/0691bafba3485c7f36daefee9599dad458c0f55e73b6cce273a2f9d8b63b5ba3.png" />
 </div>
 </div>
 <p>最後に上のヒストグラムとカーネル密度推定プロットに縦線を加えてみよう。</p>
@@ -1896,7 +1884,7 @@ df1.plot(y=&#39;列ラベル&#39;, kind=&#39;kde&#39;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1ebd9259c55dba26577b3bd56db135ccb571651661764e6b6789c8f01ee45cac.png" src="_images/1ebd9259c55dba26577b3bd56db135ccb571651661764e6b6789c8f01ee45cac.png" />
+<img alt="_images/518e5a14d4797a50b2ef6c70998a445e0f019440738b0bf52fbcf1d109dee9e3.png" src="_images/518e5a14d4797a50b2ef6c70998a445e0f019440738b0bf52fbcf1d109dee9e3.png" />
 </div>
 </div>
 </section>

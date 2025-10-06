@@ -180,23 +180,11 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_I.html">基本データ型と変数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_II.html">データの操作</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_III.html">関数とメソッド</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_IV.html">制御フロー</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_V.html">モジュール、エラーとアルゴリズム</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_VI.html">図示とシミュレーション</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門II</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="2_NumPy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>：高速化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_Pandas.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_matplotlib.html"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_pandas_plot.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7_SciPy_optimize.html"><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="8_NumPy_random.html"><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: ランダム変数</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">SciPy.stats：確率分布</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
@@ -464,7 +452,7 @@ document.write(`
 </div>
 <section id="id2">
 <h2>はじめに<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p><a class="reference internal" href="1_Basics_V.html#chap-5-module"><span class="std std-ref">モジュールとアルゴリズム</span></a>では簡単なアルゴリズムを<code class="docutils literal notranslate"><span class="pre">Python</span></code>コードとして表し実行したが，その裏にある考え方は他のコンピューター言語でも使うことができる。更に言うと，アルゴリズムを図や言葉で表すことも可能である。<a class="reference external" href="https://www.google.co.jp/search?q=%E3%83%95%E3%83%AD%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC%E3%83%88%E3%80%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0">フローチャート</a>と呼ばれるのがその一つであり，図を使いアルゴリズムの考えを表現している。そしてもう１つが疑似コードと言われるものであり，自然言語（日本語や英語）で書かれたコードのことである。この２つの手法の利点は，コンピューター言語で発生するエラーを気にせずに，アルゴリズムの考えを理解・整理し，より良い（速い）ものを作り出すことができる土壌となり得ることだろう。以下では疑似コードに基づいてコードの書き方を検討する。</p>
+<p><a class="reference internal" href="#chap:5-module"><span class="xref myst">モジュールとアルゴリズム</span></a>では簡単なアルゴリズムを<code class="docutils literal notranslate"><span class="pre">Python</span></code>コードとして表し実行したが，その裏にある考え方は他のコンピューター言語でも使うことができる。更に言うと，アルゴリズムを図や言葉で表すことも可能である。<a class="reference external" href="https://www.google.co.jp/search?q=%E3%83%95%E3%83%AD%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC%E3%83%88%E3%80%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0">フローチャート</a>と呼ばれるのがその一つであり，図を使いアルゴリズムの考えを表現している。そしてもう１つが疑似コードと言われるものであり，自然言語（日本語や英語）で書かれたコードのことである。この２つの手法の利点は，コンピューター言語で発生するエラーを気にせずに，アルゴリズムの考えを理解・整理し，より良い（速い）ものを作り出すことができる土壌となり得ることだろう。以下では疑似コードに基づいてコードの書き方を検討する。</p>
 <p>上でも説明したが，疑似コードとは，自然言語（日本語や英語）で書かれたコードであるため，<code class="docutils literal notranslate"><span class="pre">Python</span></code>は実行できない箇条書きのような文章となっている。レポートを書く際に，まずアウトラインを考えて書き出す人もいると思うが，それをイメージすれば良いだろう。次の点が重要となる。</p>
 <ul class="simple">
 <li><p>明確さ</p></li>
@@ -1073,7 +1061,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(57, 43)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(62, 38)
 </pre></div>
 </div>
 </div>
@@ -1233,7 +1221,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(51, 49)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(44, 56)
 </pre></div>
 </div>
 </div>
@@ -1469,7 +1457,7 @@ Buzz
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.7422506998619873
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.396871093967261
 </pre></div>
 </div>
 </div>

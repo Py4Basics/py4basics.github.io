@@ -78,7 +78,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Pandas：図示" href="5_pandas_plot.html" />
-    <link rel="prev" title="Pandas：データ分析" href="3_Pandas.html" />
+    <link rel="prev" title="経済学のためのPython入門" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,23 +182,11 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_I.html">基本データ型と変数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_II.html">データの操作</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_III.html">関数とメソッド</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_IV.html">制御フロー</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_V.html">モジュール、エラーとアルゴリズム</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_VI.html">図示とシミュレーション</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門II</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="2_NumPy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>：高速化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_Pandas.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_pandas_plot.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7_SciPy_optimize.html"><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="8_NumPy_random.html"><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: ランダム変数</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">SciPy.stats：確率分布</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
@@ -496,6 +484,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
+</pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>（「マットプロットリブ」と読む）はプロットのための代表的なパッケージであり、ここではその使い方を解説する。プロットには<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>のモジュールである<code class="docutils literal notranslate"><span class="pre">pyplot</span></code>を使うことになる。慣例に沿って<code class="docutils literal notranslate"><span class="pre">plt</span></code>としてインポートする。<br></p>
 <p><code class="docutils literal notranslate"><span class="pre">pyplot</span></code>モジュールを使ってプロットする場合、主に３つのコードの書き方がる。</p>
@@ -514,13 +507,13 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>本サイトでは書き方２に沿って<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>の使い方を説明する。一方で，その裏にある考え方を理解するには、書き方１から始めた方が良いと思うので，書き方１の簡単な説明をすることにする。<a class="reference internal" href="#fig-4-figure-axes"><span class="std std-numref">Fig. 3</span></a>は，<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>が描画する図の階層的な構造を示している。ここで重要なのは「キャンバス」と「軸」の違いである。</p>
+<p>本サイトでは書き方２に沿って<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>の使い方を説明する。一方で，その裏にある考え方を理解するには、書き方１から始めた方が良いと思うので，書き方１の簡単な説明をすることにする。<a class="reference internal" href="#fig-4-figure-axes"><span class="std std-numref">Fig. 1</span></a>は，<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>が描画する図の階層的な構造を示している。ここで重要なのは「キャンバス」と「軸」の違いである。</p>
 <p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>によるプロットは次の図のような構成となっている。</p>
 <figure class="align-default" id="fig-4-figure-axes">
 <a class="reference internal image-reference" href="_images/figure_axes_mpl.png"><img alt="_images/figure_axes_mpl.png" src="_images/figure_axes_mpl.png" style="width: 575.2px; height: 425.6px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">キャンバスと軸の関係</span><a class="headerlink" href="#fig-4-figure-axes" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">キャンバスと軸の関係</span><a class="headerlink" href="#fig-4-figure-axes" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -615,7 +608,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x111a650a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x113f1b050&gt;]
 </pre></div>
 </div>
 <img alt="_images/5c08d5b5e840e805d4254bb3e94f66bf1d42759f1deaec6455083f636d73aeee.png" src="_images/5c08d5b5e840e805d4254bb3e94f66bf1d42759f1deaec6455083f636d73aeee.png" />
@@ -640,7 +633,7 @@ plot(＜縦軸の変数名＞, data=＜データ名＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x111b176e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1140e4bf0&gt;]
 </pre></div>
 </div>
 <img alt="_images/6aa4c4c1d7a1bcb6d0630d6161e40be3fc088adaa112ae87d18d534aa11e8358.png" src="_images/6aa4c4c1d7a1bcb6d0630d6161e40be3fc088adaa112ae87d18d534aa11e8358.png" />
@@ -1855,7 +1848,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dc84f3cf1e350dd809d5f5ce980850507a0b93fca31be817ec855f70a2b36530.png" src="_images/dc84f3cf1e350dd809d5f5ce980850507a0b93fca31be817ec855f70a2b36530.png" />
+<img alt="_images/9b24087cd808351fcd75dd55b0e29a9fcb2b62193b6e31420483565c7432f651.png" src="_images/9b24087cd808351fcd75dd55b0e29a9fcb2b62193b6e31420483565c7432f651.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1892,7 +1885,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d6f0b3fa45d47cf62793030c06bae8dcf111c5a304d130159628ac239cc01ba6.png" src="_images/d6f0b3fa45d47cf62793030c06bae8dcf111c5a304d130159628ac239cc01ba6.png" />
+<img alt="_images/404196e9cc6955454c1715abb2cd5603706d922051fd32b5567bb9e77761d9e2.png" src="_images/404196e9cc6955454c1715abb2cd5603706d922051fd32b5567bb9e77761d9e2.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">X</span></code>と<code class="docutils literal notranslate"><span class="pre">Z</span></code>の散布図を加えてタイトルなども付け加えてみよう。</p>
@@ -1918,7 +1911,7 @@ ax.scatter(＜横軸の列ラベル＞, ＜縦軸の列ラベル＞, data=＜Dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eaccb5447840b69e482d8101b4021c8c651a100e63574986aa7592c9b9f064ee.png" src="_images/eaccb5447840b69e482d8101b4021c8c651a100e63574986aa7592c9b9f064ee.png" />
+<img alt="_images/ea48c303b20a92d6d1ad46194ea5b36e6cf855d533a932969ed2c60a6b59cf64.png" src="_images/ea48c303b20a92d6d1ad46194ea5b36e6cf855d533a932969ed2c60a6b59cf64.png" />
 </div>
 </div>
 </section>
@@ -1948,7 +1941,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cb04c5ff3d2065770077fdcf2b1c8b14adae36d9f4d6cc298894f1ff815d7dea.png" src="_images/cb04c5ff3d2065770077fdcf2b1c8b14adae36d9f4d6cc298894f1ff815d7dea.png" />
+<img alt="_images/4a67c853e29e3006a9238582eb3576ee05cbc84d1ea40051281e9a30f75c61fb.png" src="_images/4a67c853e29e3006a9238582eb3576ee05cbc84d1ea40051281e9a30f75c61fb.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -1991,7 +1984,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b0261919c89ab5cc15fb057c9da97e1970656b3e0fb44507610bf0485f1aefee.png" src="_images/b0261919c89ab5cc15fb057c9da97e1970656b3e0fb44507610bf0485f1aefee.png" />
+<img alt="_images/d22fe6676dd5035d04667804697a0b6091c0af02c1b175eefde66cf3dd5cbe88.png" src="_images/d22fe6676dd5035d04667804697a0b6091c0af02c1b175eefde66cf3dd5cbe88.png" />
 </div>
 </div>
 <p>次に複数のデータを並べてプロットする場合を考えよう。方法は簡単で，異なるデータをリストとして指定すれば良い。</p>
@@ -2010,7 +2003,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bb1cee55426de7b3ddbf279003ad8abd00e07c27680b3c5f96d8e3e2c824bcc5.png" src="_images/bb1cee55426de7b3ddbf279003ad8abd00e07c27680b3c5f96d8e3e2c824bcc5.png" />
+<img alt="_images/daa533a1d68002979fa8254c75cada11bc4313316e6fb912f55037af90d3b754.png" src="_images/daa533a1d68002979fa8254c75cada11bc4313316e6fb912f55037af90d3b754.png" />
 </div>
 </div>
 <p>上のコードに引数<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>を加えると，柱を重ねて表示される。試してみよう。また<code class="docutils literal notranslate"><span class="pre">ax.hist()</span></code>を２回使うと，２つのヒストグラムを重ねて表示することができる。この場合，引数<code class="docutils literal notranslate"><span class="pre">alpha</span></code>の値を調整すると良いだろう。</p>
@@ -2036,7 +2029,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2dcf791c4765a7a08c6dde0d4191cf2b82554ef355e9fb6cefe68c345bfe6cc7.png" src="_images/2dcf791c4765a7a08c6dde0d4191cf2b82554ef355e9fb6cefe68c345bfe6cc7.png" />
+<img alt="_images/f36d18bc6f5ba25caa0ebb45225605142b66ddb755bc29dfa31dfb0be74d084f.png" src="_images/f36d18bc6f5ba25caa0ebb45225605142b66ddb755bc29dfa31dfb0be74d084f.png" />
 </div>
 </div>
 <p>濃い赤の部分が重なっている部分となる。</p>
@@ -2072,7 +2065,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5f3a141c31867794ab6a9d2ef1a9e19945c7f430d4f63ad62f1a8d7272bd9388.png" src="_images/5f3a141c31867794ab6a9d2ef1a9e19945c7f430d4f63ad62f1a8d7272bd9388.png" />
+<img alt="_images/9c42ddf76d1226a055d9a7b410ea9baa25097cf8becb10ac310d04710ac5a376.png" src="_images/9c42ddf76d1226a055d9a7b410ea9baa25097cf8becb10ac310d04710ac5a376.png" />
 </div>
 </div>
 <p><strong>＜基本的な引数＞</strong></p>
@@ -2116,7 +2109,7 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/428fbc533062c346964078ca58cf5794fbd725598c6c0dde165ab5e92a2502e8.png" src="_images/428fbc533062c346964078ca58cf5794fbd725598c6c0dde165ab5e92a2502e8.png" />
+<img alt="_images/0b82ef47dc2f67d4d7c238d75ac586442872250a98284f8f3efd2f5f15529fbb.png" src="_images/0b82ef47dc2f67d4d7c238d75ac586442872250a98284f8f3efd2f5f15529fbb.png" />
 </div>
 </div>
 </section>
@@ -2386,12 +2379,12 @@ ax.scatter(＜列ラベル＞, data=＜DataFrame＞)
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="3_Pandas.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析</p>
+        <p class="prev-next-title">経済学のためのPython入門</p>
       </div>
     </a>
     <a class="right-next"

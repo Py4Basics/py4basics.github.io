@@ -77,7 +77,7 @@
     <link rel="canonical" href="https://py4basics.github.io/7_SciPy_optimize.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Numpy: ランダム変数" href="8_NumPy_random.html" />
+    <link rel="next" title="ツールのインストールと説明" href="0_Preparations.html" />
     <link rel="prev" title="Pandas：図示" href="5_pandas_plot.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -182,23 +182,11 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門I</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_I.html">基本データ型と変数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_II.html">データの操作</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_III.html">関数とメソッド</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_IV.html">制御フロー</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_V.html">モジュール、エラーとアルゴリズム</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_Basics_VI.html">図示とシミュレーション</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門II</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="2_NumPy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>：高速化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_Pandas.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：データ分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_matplotlib.html"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_pandas_plot.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="8_NumPy_random.html"><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: ランダム変数</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">SciPy.stats：確率分布</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
@@ -505,7 +493,7 @@ document.write(`
 </div>
 <section id="id1">
 <h2>はじめに<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>線形の方程式の解を求めることは比較的簡単である。１変数の場合，式を変形すれば解を簡単に求めることができる。変数が複数ある場合でも，<a class="reference internal" href="2_NumPy.html#sec-2-simultaneouseq"><span class="std std-ref">「連立一次方程式の解」の節</span></a>で説明したように，<code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code>を使えば簡単に解を求めることができる。例えば，<a class="reference external" href="https://py4macro.github.io/7_DifferenceEq.html">差分方程式と経済分析</a>で扱う45度線モデルと蜘蛛の巣モデルは線形であるため、長期的な均衡の値を簡単に計算することができる。またソロー・モデルも線形ではないが、定常状態の資本ストック（<span class="math notranslate nohighlight">\(k_*\)</span>）について解くことができるので、長期的な値を計算することが可能である。しかし非線形モデルによっては、長期的均衡の値を簡単に求めることができない場合もあり、その場合に使う手法をここで説明する。</p>
+<p>線形の方程式の解を求めることは比較的簡単である。１変数の場合，式を変形すれば解を簡単に求めることができる。変数が複数ある場合でも，<a class="reference internal" href="#sec:2-simultaneousEq"><span class="xref myst">「連立一次方程式の解」の節</span></a>で説明したように，<code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code>を使えば簡単に解を求めることができる。例えば，<a class="reference external" href="https://py4macro.github.io/7_DifferenceEq.html">差分方程式と経済分析</a>で扱う45度線モデルと蜘蛛の巣モデルは線形であるため、長期的な均衡の値を簡単に計算することができる。またソロー・モデルも線形ではないが、定常状態の資本ストック（<span class="math notranslate nohighlight">\(k_*\)</span>）について解くことができるので、長期的な値を計算することが可能である。しかし非線形モデルによっては、長期的均衡の値を簡単に求めることができない場合もあり、その場合に使う手法をここで説明する。</p>
 <p>コードを書いて非線形の方程式の解を求めるには色々な方法があるり，ここではその代表的な方法の考え方についてまず説明する。その後<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>（「サイパイ」と読み，Scientific Pythonの略）というパッケージにある<code class="docutils literal notranslate"><span class="pre">optimize</span></code>というモジュールを紹介する。<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>は<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の大幅な拡張版と理解して良いだろう。<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>を読み込むと<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の関数などを利用できるようになる。しかし<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>は大きなパッケージであり，全てを読み込む必要もない。従って，<code class="docutils literal notranslate"><span class="pre">NumPy</span></code>を読み込んで<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>のサブパッケージや関数を読み込むということで十分であろう。そして<code class="docutils literal notranslate"><span class="pre">SciPy</span></code>のモジュール<code class="docutils literal notranslate"><span class="pre">optimize</span></code>に非線形の方程式の解を簡単に求めることができる関数が含まれている。もちろんこれらの関数は線形の方程式の解を求める為にも使える。また<code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>には最適化問題のための関数も用意されており，<code class="docutils literal notranslate"><span class="pre">Python</span></code>で経済学を学ぶ為には必須となるツールと言えるだろう。消費者の効用最大化問題やソロー・モデルの資本の黄金律水準などに応用して使い方を説明する。</p>
 </section>
 <section id="id2">
@@ -855,12 +843,12 @@ x_1 = x_0 - \dfrac{f(x_0)}{f^{\prime}(x_0)}
 <a class="reference internal image-reference" href="_images/newton.jpeg"><img alt="_images/newton.jpeg" src="_images/newton.jpeg" style="width: 406.2px; height: 300.0px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Newton法</span><a class="headerlink" href="#fig-scipy-newton" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Newton法</span><a class="headerlink" href="#fig-scipy-newton" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>即ち、<span class="math notranslate nohighlight">\(x_0\)</span>が与えられ<span class="math notranslate nohighlight">\(f^{\prime}(x_0)\)</span>が分かれば、<span class="math notranslate nohighlight">\(x_1\)</span>を求めることができる。更に、<span class="math notranslate nohighlight">\(x_1\)</span>が与えられ、<span class="math notranslate nohighlight">\(f^{\prime}(x_1)\)</span>が分かれば、<span class="math notranslate nohighlight">\(x_2\)</span>を求めることができる。一般的には次の差分方程式が成り立つことになる。</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-newton">
-<span class="eqno">(4)<a class="headerlink" href="#equation-eq-scipy-newton" title="Link to this equation">#</a></span>\[
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-scipy-newton" title="Link to this equation">#</a></span>\[
 x_{t+1} = x_t - \dfrac{f(x_t)}{f^{\prime}(x_t)}
 \]</div>
 <p>この式に従って<span class="math notranslate nohighlight">\(x_{t+1}\)</span>の計算を続けると、<span class="math notranslate nohighlight">\(x_{t+1}\)</span>は<span class="math notranslate nohighlight">\(f(x)=0\)</span>を満たす<span class="math notranslate nohighlight">\(x\)</span>に漸近的に近づいていき、根に十分に近い値を計算することが可能となる。</p>
@@ -1260,7 +1248,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 <p><span class="math notranslate nohighlight">\(k\)</span>の定常状態<span class="math notranslate nohighlight">\(k_*\)</span>は次式で定義される。</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-kss">
-<span class="eqno">(5)<a class="headerlink" href="#equation-eq-scipy-kss" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-scipy-kss" title="Link to this equation">#</a></span>\[
 0 = sAk_*^a + (1-d)k_* - k_{*}
 \]</div>
 <p>この方程式の解を求めるが，関数<code class="docutils literal notranslate"><span class="pre">kss()</span></code>を定義しよう。</p>
@@ -1272,7 +1260,7 @@ I = \dfrac{j}{r^{b}}
 </div>
 </div>
 </div>
-<p>まず式<a class="reference internal" href="#equation-eq-scipy-kss">(5)</a>をプロットするが，そのために<span class="math notranslate nohighlight">\(k\)</span>の値を設定しよう。</p>
+<p>まず式<a class="reference internal" href="#equation-eq-scipy-kss">(2)</a>をプロットするが，そのために<span class="math notranslate nohighlight">\(k\)</span>の値を設定しよう。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1639,7 +1627,7 @@ I = \dfrac{j}{r^{b}}
 </section>
 <section id="id16">
 <h3>ソロー・モデル：黄金律<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
-<p>資本の黄金律水準とは、長期均衡において一人当たり消費を最大化する資本ストックであり、貯蓄率<span class="math notranslate nohighlight">\(s\)</span>に依存している。それを示すために、まず定常状態の資本ストック<span class="math notranslate nohighlight">\(k_*\)</span>をパラメータで示すが，次式は式<a class="reference internal" href="#equation-eq-scipy-kss">(5)</a>から導出できる。</p>
+<p>資本の黄金律水準とは、長期均衡において一人当たり消費を最大化する資本ストックであり、貯蓄率<span class="math notranslate nohighlight">\(s\)</span>に依存している。それを示すために、まず定常状態の資本ストック<span class="math notranslate nohighlight">\(k_*\)</span>をパラメータで示すが，次式は式<a class="reference internal" href="#equation-eq-scipy-kss">(2)</a>から導出できる。</p>
 <div class="math notranslate nohighlight">
 \[
 k_*=\left(
@@ -1757,7 +1745,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </li>
 <li><p>制約式：</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-pcwl">
-<span class="eqno">(6)<a class="headerlink" href="#equation-eq-scipy-pcwl" title="Link to this equation">#</a></span>\[pc=wl\]</div>
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-scipy-pcwl" title="Link to this equation">#</a></span>\[pc=wl\]</div>
 </li>
 </ul>
 <p>制約式のもとで消費者は<span class="math notranslate nohighlight">\(c\)</span>と<span class="math notranslate nohighlight">\(l\)</span>を選択し効用を最大化する。</p>
@@ -1822,7 +1810,7 @@ c=(1-s)A\left(\frac{As}{d}\right)^{\frac{a}{1-a}}
 </div>
 <p>予算制約式から消費量は</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-c">
-<span class="eqno">(7)<a class="headerlink" href="#equation-eq-scipy-c" title="Link to this equation">#</a></span>\[
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-scipy-c" title="Link to this equation">#</a></span>\[
 c=\frac{wl}{p}
 \]</div>
 <p>となるので，</p>
@@ -1852,7 +1840,7 @@ c=\frac{wl}{p}
 </div>
 <p>結果を図示するために、効用関数を<span class="math notranslate nohighlight">\(c\)</span>で解くと次式となる。</p>
 <div class="math notranslate nohighlight" id="equation-eq-scipy-cc">
-<span class="eqno">(8)<a class="headerlink" href="#equation-eq-scipy-cc" title="Link to this equation">#</a></span>\[
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-scipy-cc" title="Link to this equation">#</a></span>\[
 c=
 \left(
     \frac{e^u}{(1-l)^{1-a}}
@@ -1875,7 +1863,7 @@ c=
 </div>
 </div>
 </div>
-<p>（注意）次のコードで<span class="math notranslate nohighlight">\(l=1\)</span>になると警告が出てしまう。理由は式<a class="reference internal" href="#equation-eq-scipy-cc">(8)</a>の右辺の分母がゼロになるためである。それを避けるために，<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">0.999</span></code>の間の値を100個生成している。</p>
+<p>（注意）次のコードで<span class="math notranslate nohighlight">\(l=1\)</span>になると警告が出てしまう。理由は式<a class="reference internal" href="#equation-eq-scipy-cc">(5)</a>の右辺の分母がゼロになるためである。それを避けるために，<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">0.999</span></code>の間の値を100個生成している。</p>
 <p>これらを使い、無差別曲線の値を計算する。この際、<code class="docutils literal notranslate"><span class="pre">res_u.fun</span></code>を利用する（マイナスになることに注意しよう）。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1898,7 +1886,7 @@ c=
 </div>
 </div>
 </div>
-<p>ここで式<a class="reference internal" href="#equation-eq-scipy-c">(7)</a>を使っている。</p>
+<p>ここで式<a class="reference internal" href="#equation-eq-scipy-c">(4)</a>を使っている。</p>
 <p>値を<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>にまとめる。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2341,7 +2329,7 @@ y+z\leq 1
 </div>
 </div>
 </div>
-<p>次に制約式<a class="reference internal" href="#equation-eq-scipy-pcwl">(6)</a>だが、下のように書き換えることができる。</p>
+<p>次に制約式<a class="reference internal" href="#equation-eq-scipy-pcwl">(3)</a>だが、下のように書き換えることができる。</p>
 <div class="math notranslate nohighlight">
 \[
 pc=wl
@@ -2467,11 +2455,11 @@ wl-pc=0
       </div>
     </a>
     <a class="right-next"
-       href="8_NumPy_random.html"
+       href="0_Preparations.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: ランダム変数</p>
+        <p class="prev-next-title">ツールのインストールと説明</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
