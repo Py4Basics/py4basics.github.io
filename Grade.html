@@ -1,0 +1,2569 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>学業成績の分析 &#8212; 経済学のためのPython入門</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/myadmonitions.css?v=372cf325" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-R9KXY9G892"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
+                gtag('js', new Date());
+                gtag('config', 'G-R9KXY9G892');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
+                gtag('js', new Date());
+                gtag('config', 'G-R9KXY9G892');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Grade';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://py4basics.github.io/Grade.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Gapminder" href="Gapminder.html" />
+    <link rel="prev" title="疑似コード" href="pseudo_code.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">経済学のためのPython入門</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python入門</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="4_matplotlib.html"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>：図示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_pandas_plot.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code>：図示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_SciPy_optimize.html"><code class="docutils literal notranslate"><span class="pre">SciPy.optimize</span></code>：解の求め方と最適化問題</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://py4etrics.github.io/5_SciPy_stats.html">SciPy.stats：確率分布</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">参考</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_Preparations.html">ツールのインストールと説明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="things_to_note.html">Tipsと注意点</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pseudo_code.html">疑似コード</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">学業成績の分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Gapminder.html">Gapminder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Moving_Average.html">移動平均</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">経済学</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://py4macro.github.io">Pythonで学ぶマクロ経済学（中級＋レベル）</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://py4etrics.github.io">Pythonで学ぶ入門計量経済学</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JupyterLite</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://py4class.netlify.app">JupyterLiteを始める</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/Py4Basics/py4basics.github.io/source?urlpath=tree/Grade.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Py4Basics/py4basics.github.io/blob/source/Grade.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/Py4Basics/py4basics.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Grade.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>学業成績の分析</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">データの読み込み</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">学生</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">例</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">列の内容の確認</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe"><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の作成</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">全科目</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-string"><code class="docutils literal notranslate"><span class="pre">f-string</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">優・秀・良・可・不可などの数</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">簡単な方法</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">表示を整理したい場合</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">優・秀・良・可・不可などの％</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">簡単な方法</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">表示を整理したい場合</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">全学共通授業科目</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">割合</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">専門科目</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gpa">GPAの推移</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gp">「科目GP」で記号がある行の削除</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">「科目GP」を浮動小数点に変更</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">図示：毎年</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby"><code class="docutils literal notranslate"><span class="pre">groupby</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">図示</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">図示：前期後期毎</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">「修得学期」の英語化</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id22"><code class="docutils literal notranslate"><span class="pre">groupby</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">図示</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>学業成績の分析<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<div name="html-admonition" style="font-size: 0.8em">
+<input type="button" onclick="location.href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u='+window.location;" value="Google translation" style="color:#ffffff;background-color:#008080; height:25px" onmouseover="this.style.background='#99ccff'" onmouseout="this.style.background='#008080'"/> in English or the language of your choice.
+</div><br><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># 警告メッセージを非表示</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>授業の成績（優秀良可不可）とGP（Grade Point）を使った成績の分析を行う。成績表のコピーは神戸大学の「うりぼーネット」を用いる例を考えるが、Web上で成績表が表示されるのであればコードを少し修正するだけで分析が行えるであろう。</p>
+<section id="id2">
+<h2>データの読み込み<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h3>学生<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>「うりぼー」→ 成績修得情報　→　成績表を選択しコピー</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ーーーーー dfに成績表を割り当てる ーーーーー</span>
+
+<span class="c1"># df = pd.read_clipboard()</span>
+<span class="c1"># df.head()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ーーーーー csvに保存 ーーーーー</span>
+
+<span class="c1"># df.to_csv('成績表20200708.csv')</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ーーーーー 保存先のフォルダの確認 ーーーーー</span>
+
+<span class="c1"># %pwd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h3>例<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>例のファイルを使う場合。</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/Haruyama-KobeU/Py4Basics/master/data/data_for_mark.csv'</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>No.</th>
+      <th>区分</th>
+      <th>科目大区分</th>
+      <th>科目中区分</th>
+      <th>科目ナンバー</th>
+      <th>科目</th>
+      <th>単位数</th>
+      <th>修得年度</th>
+      <th>修得学期</th>
+      <th>評語</th>
+      <th>科目GP</th>
+      <th>合否</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AA100</td>
+      <td>XX学</td>
+      <td>1</td>
+      <td>2020</td>
+      <td>前期</td>
+      <td>合格</td>
+      <td>-</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AA100</td>
+      <td>XX学</td>
+      <td>1</td>
+      <td>2020</td>
+      <td>前期</td>
+      <td>合格</td>
+      <td>-</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AA100</td>
+      <td>XX学</td>
+      <td>1</td>
+      <td>2020</td>
+      <td>前期</td>
+      <td>可</td>
+      <td>2</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AB100</td>
+      <td>XX学Ａ</td>
+      <td>1</td>
+      <td>2020</td>
+      <td>後期</td>
+      <td>秀</td>
+      <td>4.3</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AB100</td>
+      <td>XX学Ｂ</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>後期</td>
+      <td>可</td>
+      <td>2</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ａ</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>後期</td>
+      <td>優</td>
+      <td>4</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ｂ</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>前期</td>
+      <td>秀</td>
+      <td>4.3</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AA100</td>
+      <td>X学</td>
+      <td>1</td>
+      <td>2018</td>
+      <td>前期</td>
+      <td>可</td>
+      <td>2</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AB100</td>
+      <td>X学Ａ</td>
+      <td>1</td>
+      <td>2018</td>
+      <td>後期</td>
+      <td>秀</td>
+      <td>4.3</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AB100</td>
+      <td>X学Ｂ</td>
+      <td>1</td>
+      <td>2018</td>
+      <td>後期</td>
+      <td>可</td>
+      <td>2</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ａ</td>
+      <td>1</td>
+      <td>2018</td>
+      <td>後期</td>
+      <td>優</td>
+      <td>4</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ｂ</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>前期</td>
+      <td>秀</td>
+      <td>4.3</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>高度教養科目</td>
+      <td>高度教養科目</td>
+      <td>NaN</td>
+      <td>U1AA100</td>
+      <td>X学</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>前期</td>
+      <td>可</td>
+      <td>2</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>高度教養科目</td>
+      <td>高度教養科目</td>
+      <td>NaN</td>
+      <td>U1AA100</td>
+      <td>X学</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>前期</td>
+      <td>可</td>
+      <td>2</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>高度教養科目</td>
+      <td>高度教養科目</td>
+      <td>NaN</td>
+      <td>U1AA100</td>
+      <td>X学</td>
+      <td>1</td>
+      <td>2020</td>
+      <td>前期</td>
+      <td>優</td>
+      <td>4</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>16</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AA100</td>
+      <td>XX学</td>
+      <td>2</td>
+      <td>2020</td>
+      <td>前期</td>
+      <td>可</td>
+      <td>2</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>17</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AB100</td>
+      <td>XX学Ａ</td>
+      <td>1</td>
+      <td>2020</td>
+      <td>後期</td>
+      <td>秀</td>
+      <td>4.3</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>18</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AB100</td>
+      <td>XX学Ｂ</td>
+      <td>4</td>
+      <td>2020</td>
+      <td>後期</td>
+      <td>可</td>
+      <td>2</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>19</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ａ</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>後期</td>
+      <td>優</td>
+      <td>4</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>20</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ｂ</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>前期</td>
+      <td>秀</td>
+      <td>4.3</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AA100</td>
+      <td>X学</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>前期</td>
+      <td>可</td>
+      <td>2</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>22</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AB100</td>
+      <td>X学Ａ</td>
+      <td>2</td>
+      <td>2019</td>
+      <td>後期</td>
+      <td>秀</td>
+      <td>4.3</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>23</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AB100</td>
+      <td>X学Ｂ</td>
+      <td>2</td>
+      <td>2018</td>
+      <td>後期</td>
+      <td>可</td>
+      <td>2</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>24</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ａ</td>
+      <td>2</td>
+      <td>2018</td>
+      <td>後期</td>
+      <td>優</td>
+      <td>4</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>25</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ａ</td>
+      <td>2</td>
+      <td>2018</td>
+      <td>後期</td>
+      <td>良</td>
+      <td>3</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ｂ</td>
+      <td>1</td>
+      <td>2018</td>
+      <td>前期</td>
+      <td>取消</td>
+      <td>-</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>27</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ｂ</td>
+      <td>1</td>
+      <td>2018</td>
+      <td>前期</td>
+      <td>不可</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>28</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ｂ</td>
+      <td>1</td>
+      <td>2018</td>
+      <td>前期</td>
+      <td>不可</td>
+      <td>*</td>
+      <td>否</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>29</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ｂ</td>
+      <td>1</td>
+      <td>2018</td>
+      <td>前期</td>
+      <td>取消</td>
+      <td>-</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>30</td>
+      <td>専門科目</td>
+      <td>専門科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ｂ</td>
+      <td>1</td>
+      <td>2018</td>
+      <td>前期</td>
+      <td>認定</td>
+      <td>-</td>
+      <td>合</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2>列の内容の確認<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>ステップ１：列のラベルの表示</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">col</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index(['No.', '区分', '科目大区分', '科目中区分', '科目ナンバー', '科目', '単位数', '修得年度', '修得学期',
+       '評語', '科目GP', '合否'],
+      dtype='str')
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">col</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No.
+区分
+科目大区分
+科目中区分
+科目ナンバー
+科目
+単位数
+修得年度
+修得学期
+評語
+科目GP
+合否
+</pre></div>
+</div>
+</div>
+</div>
+<p>ステップ２：それぞれの列の要素の種類を表示方法</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'区分'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;StringArray&gt;
+['全学共通授業科目', '高度教養科目', '専門科目']
+Length: 3, dtype: str
+</pre></div>
+</div>
+</div>
+</div>
+<p>スッテプ３：スッテプ１と２を同時に</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">col</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>      <span class="c1"># Noの列を除外</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>区分 &lt;StringArray&gt;
+['全学共通授業科目', '高度教養科目', '専門科目']
+Length: 3, dtype: str
+科目大区分 &lt;StringArray&gt;
+['基礎教養科目', '高度教養科目', '専門科目']
+Length: 3, dtype: str
+科目中区分 [nan]
+科目ナンバー &lt;StringArray&gt;
+['U1AA100', 'U1AB100', 'U1AD100']
+Length: 3, dtype: str
+科目 &lt;StringArray&gt;
+['XX学', 'XX学Ａ', 'XX学Ｂ', 'X学Ａ', 'X学Ｂ', 'X学']
+Length: 6, dtype: str
+単位数 [1 2 4]
+修得年度 [2020 2019 2018]
+修得学期 &lt;StringArray&gt;
+['前期', '後期']
+Length: 2, dtype: str
+評語 &lt;StringArray&gt;
+['合格', '可', '秀', '優', '良', '取消', '不可', '認定']
+Length: 8, dtype: str
+科目GP &lt;StringArray&gt;
+['-', '2', '4.3', '4', '3', '0', '*']
+Length: 7, dtype: str
+合否 &lt;StringArray&gt;
+['合', nan, '否']
+Length: 3, dtype: str
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dataframe">
+<h2><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の作成<a class="headerlink" href="#dataframe" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cond1</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">'区分'</span><span class="p">]</span><span class="o">==</span><span class="s1">'全学共通授業科目'</span> <span class="p">)</span>
+<span class="n">cond2</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">'区分'</span><span class="p">]</span><span class="o">==</span><span class="s1">'高度教養科目'</span> <span class="p">)</span>
+<span class="n">cond1or2</span> <span class="o">=</span> <span class="p">(</span> <span class="n">cond1</span> <span class="o">|</span> <span class="n">cond2</span><span class="p">)</span>
+<span class="n">cond3</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">'区分'</span><span class="p">]</span><span class="o">==</span><span class="s1">'専門科目'</span> <span class="p">)</span>
+
+<span class="n">df_other</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond1or2</span><span class="p">,:]</span>
+<span class="n">df_econ</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond3</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">df_other</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">df_econ</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(30, 15, 15)
+</pre></div>
+</div>
+</div>
+</div>
+<p>全角文字を使わない方法</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kubun</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">col</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+
+<span class="n">kubun_arr</span> <span class="o">=</span> <span class="n">kubun</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">kubun_arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;StringArray&gt;
+['全学共通授業科目', '高度教養科目', '専門科目']
+Length: 3, dtype: str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cond1</span> <span class="o">=</span> <span class="p">(</span> <span class="n">kubun</span><span class="o">==</span><span class="n">kubun_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">cond2</span> <span class="o">=</span> <span class="p">(</span> <span class="n">kubun</span><span class="o">==</span><span class="n">kubun_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">cond1or2</span> <span class="o">=</span> <span class="p">(</span> <span class="n">cond1</span> <span class="o">|</span> <span class="n">cond2</span><span class="p">)</span>
+<span class="n">cond3</span> <span class="o">=</span> <span class="p">(</span> <span class="n">kubun</span><span class="o">==</span><span class="n">kubun_arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="n">df_other</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond1or2</span><span class="p">,:]</span>
+<span class="n">df_econ</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond3</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">df_other</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">df_econ</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(30, 15, 15)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h2>全科目<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="f-string">
+<h3><code class="docutils literal notranslate"><span class="pre">f-string</span></code><a class="headerlink" href="#f-string" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">f-string</span></code>を使うと文字列の<code class="docutils literal notranslate"><span class="pre">{}</span></code>の中の変数を評価して表示することが可能となる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="s1">'春山'</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'私は</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">ゼミに所属しています。'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>私は春山ゼミに所属しています。
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'合計は</span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="si">}</span><span class="s1">です。'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>合計は6です。
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h3>優・秀・良・可・不可などの数<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<section id="id8">
+<h4>簡単な方法<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>を使うと簡単になる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>評語
+可     10
+秀      7
+優      5
+合格     2
+取消     2
+不可     2
+良      1
+認定     1
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h4>表示を整理したい場合<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<p>評語の種類</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;StringArray&gt;
+['合格', '可', '秀', '優', '良', '取消', '不可', '認定']
+Length: 8, dtype: str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mark</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">m</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">m</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span><span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]]</span>
+<span class="n">mark</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['秀', '優', '良', '可', '合格', '認定', '不可', '取消']
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'-'</span><span class="o">*</span><span class="mi">7</span><span class="p">,</span><span class="s1">'</span><span class="se">\n</span><span class="s1">合計'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>秀
+優
+良
+可
+合格
+認定
+不可
+取消
+------- 
+合計
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    
+    <span class="n">cond</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">==</span><span class="n">m</span> <span class="p">)</span>
+    <span class="n">df0</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">,:]</span>
+    <span class="n">no</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df0</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">no</span><span class="p">)</span>
+
+<span class="n">lst</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7, 5, 1, 10, 2, 1, 2, 2]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    
+    <span class="n">cond</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">==</span><span class="n">m</span> <span class="p">)</span>
+    <span class="n">df0</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">,:]</span>
+    <span class="n">no</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df0</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">no</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">no</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'-'</span><span class="o">*</span><span class="mi">7</span><span class="p">,</span><span class="s1">'</span><span class="se">\n</span><span class="s1">合計'</span><span class="p">,</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>秀 7
+優 5
+良 1
+可 10
+合格 2
+認定 1
+不可 2
+取消 2
+------- 
+合計 30
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id10">
+<h3>優・秀・良・可・不可などの％<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<section id="id11">
+<h4>簡単な方法<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="mi">100</span><span class="o">*</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>評語
+可     33.3
+秀     23.3
+優     16.7
+合格     6.7
+取消     6.7
+不可     6.7
+良      3.3
+認定     3.3
+Name: proportion, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id12">
+<h4>表示を整理したい場合<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<p>％だけを表示する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    
+    <span class="n">cond</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">==</span><span class="n">m</span> <span class="p">)</span>
+    <span class="n">df0</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">,:]</span>
+    <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">percent</span><span class="p">)</span>
+
+<span class="n">lst</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[23.333333333333332,
+ 16.666666666666668,
+ 3.3333333333333335,
+ 33.333333333333336,
+ 6.666666666666667,
+ 3.3333333333333335,
+ 6.666666666666667,
+ 6.666666666666667]
+</pre></div>
+</div>
+</div>
+</div>
+<p>％と評語も表示する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+
+    <span class="n">cond</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">==</span><span class="n">m</span> <span class="p">)</span>
+    <span class="n">df0</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">,:]</span>
+    <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">percent</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">percent</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">'-'</span><span class="o">*</span><span class="mi">30</span><span class="p">,</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1">合計: </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>秀: 23.333333333333332
+優: 16.666666666666668
+良: 3.3333333333333335
+可: 33.333333333333336
+合格: 6.666666666666667
+認定: 3.3333333333333335
+不可: 6.666666666666667
+取消: 6.666666666666667
+------------------------------ 
+合計: 100.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>小数点の表示を調整する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+
+    <span class="n">cond</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">==</span><span class="n">m</span> <span class="p">)</span>
+    <span class="n">df0</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">,:]</span>
+    <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">percent</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">percent</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>   <span class="c1"># 小数点第ー位まで表示</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">'-'</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1">合計: </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>  <span class="c1"># 小数点は表示しない</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>秀 23.3
+優 16.7
+良 3.3
+可 33.3
+合格 6.7
+認定 3.3
+不可 6.7
+取消 6.7
+---------- 
+合計: 100
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">%</span></code>を追加し，表示も揃える。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+
+    <span class="n">cond</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">==</span><span class="n">m</span> <span class="p">)</span>
+    <span class="n">df0</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">,:]</span>
+    <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">percent</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="se">\u3000</span><span class="s1">&lt;2</span><span class="si">}{</span><span class="n">percent</span><span class="si">:</span><span class="s1">&gt;5.1f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>  <span class="c1"># ここを修正</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">'-'</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1">合計: </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>秀　 23.3
+優　 16.7
+良　  3.3
+可　 33.3
+合格  6.7
+認定  3.3
+不可  6.7
+取消  6.7
+---------- 
+合計: 100
+</pre></div>
+</div>
+</div>
+</div>
+<p>ここで「秀」など全角を使っているので<code class="docutils literal notranslate"><span class="pre">\u3000</span></code>が必要となる。</p>
+</section>
+</section>
+</section>
+<section id="id13">
+<h2>全学共通授業科目<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<section id="id14">
+<h3>数<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_other</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>評語
+可     6
+秀     4
+優     3
+合格    2
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    
+    <span class="n">cond</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df_other</span><span class="p">[</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">==</span><span class="n">m</span> <span class="p">)</span>
+    <span class="n">df0</span> <span class="o">=</span> <span class="n">df_other</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">,:]</span>
+    <span class="n">no</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df0</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">no</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">no</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">'-'</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1">合計 </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>秀 4
+優 3
+良 0
+可 6
+合格 2
+認定 0
+不可 0
+取消 0
+---------- 
+合計 15
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id15">
+<h3>割合<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="mi">100</span> <span class="o">*</span> <span class="n">df_other</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>評語
+可     40.0
+秀     26.7
+優     20.0
+合格    13.3
+Name: proportion, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    
+    <span class="n">cond</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df_other</span><span class="p">[</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">==</span><span class="n">m</span> <span class="p">)</span>
+    <span class="n">df0</span> <span class="o">=</span> <span class="n">df_other</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">,:]</span>
+    <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_other</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">percent</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">percent</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">'-'</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1">合計 </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>秀 26.7
+優 20.0
+良 0.0
+可 40.0
+合格 13.3
+認定 0.0
+不可 0.0
+取消 0.0
+---------- 
+合計 100
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id16">
+<h2>専門科目<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_econ</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>評語
+可     4
+秀     3
+優     2
+取消    2
+不可    2
+良     1
+認定    1
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    
+    <span class="n">cond</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df_econ</span><span class="p">[</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">==</span><span class="n">m</span> <span class="p">)</span>
+    <span class="n">df0</span> <span class="o">=</span> <span class="n">df_econ</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">,:]</span>
+    <span class="n">no</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df0</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">no</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">no</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">'-'</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1">合計 </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>秀 3
+優 2
+良 1
+可 4
+合格 0
+認定 1
+不可 2
+取消 2
+---------- 
+合計 15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="mi">100</span> <span class="o">*</span> <span class="n">df_econ</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>評語
+可     26.7
+秀     20.0
+優     13.3
+取消    13.3
+不可    13.3
+良      6.7
+認定     6.7
+Name: proportion, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mark</span><span class="p">:</span>
+    
+    <span class="n">cond</span> <span class="o">=</span> <span class="p">(</span> <span class="n">df_econ</span><span class="p">[</span><span class="s1">'評語'</span><span class="p">]</span><span class="o">==</span><span class="n">m</span> <span class="p">)</span>
+    <span class="n">df0</span> <span class="o">=</span> <span class="n">df_econ</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">,:]</span>
+    <span class="n">percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_econ</span><span class="p">)</span>
+    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">percent</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">percent</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">'-'</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1">合計 </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>秀 20.0
+優 13.3
+良 6.7
+可 26.7
+合格 0.0
+認定 6.7
+不可 13.3
+取消 13.3
+---------- 
+合計 100
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gpa">
+<h2>GPAの推移<a class="headerlink" href="#gpa" title="Link to this heading">#</a></h2>
+<section id="gp">
+<h3>「科目GP」で記号がある行の削除<a class="headerlink" href="#gp" title="Link to this heading">#</a></h3>
+<p>科目GPの要素の種類</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'科目GP'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;StringArray&gt;
+['-', '2', '4.3', '4', '3', '0', '*']
+Length: 7, dtype: str
+</pre></div>
+</div>
+</div>
+</div>
+<p>全て文字列となっているので，<code class="docutils literal notranslate"><span class="pre">-</span></code>と<code class="docutils literal notranslate"><span class="pre">*</span></code>の記号が含まれない行だけから構成される<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>を作成する。</p>
+<p>後で「科目GP」のデータ型を変更する際に警告がでないようにメソッド<code class="docutils literal notranslate"><span class="pre">.copy()</span></code>を使い<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>のコピーを作成する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"科目GP not in ['-', '*']"</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">gpa</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>No.</th>
+      <th>区分</th>
+      <th>科目大区分</th>
+      <th>科目中区分</th>
+      <th>科目ナンバー</th>
+      <th>科目</th>
+      <th>単位数</th>
+      <th>修得年度</th>
+      <th>修得学期</th>
+      <th>評語</th>
+      <th>科目GP</th>
+      <th>合否</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AA100</td>
+      <td>XX学</td>
+      <td>1</td>
+      <td>2020</td>
+      <td>前期</td>
+      <td>可</td>
+      <td>2</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AB100</td>
+      <td>XX学Ａ</td>
+      <td>1</td>
+      <td>2020</td>
+      <td>後期</td>
+      <td>秀</td>
+      <td>4.3</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AB100</td>
+      <td>XX学Ｂ</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>後期</td>
+      <td>可</td>
+      <td>2</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ａ</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>後期</td>
+      <td>優</td>
+      <td>4</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ｂ</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>前期</td>
+      <td>秀</td>
+      <td>4.3</td>
+      <td>合</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa</span><span class="p">[</span><span class="s1">'科目GP'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;StringArray&gt;
+['2', '4.3', '4', '3', '0']
+Length: 5, dtype: str
+</pre></div>
+</div>
+</div>
+</div>
+<p>データ型は<code class="docutils literal notranslate"><span class="pre">object</span></code>（文字列）のままである。</p>
+<p>属性<code class="docutils literal notranslate"><span class="pre">.dtypes</span></code>を使って確認することもできる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa</span><span class="p">[</span><span class="s1">'科目GP'</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;StringDtype(storage='python', na_value=nan)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">O</span></code>は<code class="docutils literal notranslate"><span class="pre">object</span></code>。</p>
+</section>
+<section id="id17">
+<h3>「科目GP」を浮動小数点に変更<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<p>科目GPは<code class="docutils literal notranslate"><span class="pre">object</span></code>（文字列）となっているので，メソッド<code class="docutils literal notranslate"><span class="pre">astype()</span></code>を使って<code class="docutils literal notranslate"><span class="pre">float</span></code>に変換する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa</span><span class="p">[</span><span class="s1">'科目GP'</span><span class="p">]</span> <span class="o">=</span> <span class="n">gpa</span><span class="p">[</span><span class="s1">'科目GP'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No.         int64
+区分            str
+科目大区分         str
+科目中区分     float64
+科目ナンバー        str
+科目            str
+単位数         int64
+修得年度        int64
+修得学期          str
+評語            str
+科目GP      float64
+合否            str
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id18">
+<h3>図示：毎年<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<section id="groupby">
+<h4><code class="docutils literal notranslate"><span class="pre">groupby</span></code><a class="headerlink" href="#groupby" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">groupby</span></code>は<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>や<code class="docutils literal notranslate"><span class="pre">Series</span></code>をグループ化し，グループ内の計算を簡単に行うことができる便利なメソッドである。「修得年度」でグループ化し，平均を計算する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">two_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'単位数'</span><span class="p">,</span><span class="s1">'科目GP'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa_grouped</span> <span class="o">=</span> <span class="n">gpa</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'修得年度'</span><span class="p">)</span>
+<span class="n">gpa_mean</span> <span class="o">=</span> <span class="n">gpa_grouped</span><span class="p">[</span><span class="n">two_vars</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">gpa_mean</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>単位数</th>
+      <th>科目GP</th>
+    </tr>
+    <tr>
+      <th>修得年度</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018</th>
+      <td>1.375000</td>
+      <td>2.6625</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>1.100000</td>
+      <td>3.3200</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>1.666667</td>
+      <td>3.1000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gpa_grouped</span></code>は<code class="docutils literal notranslate"><span class="pre">DetaFrame</span></code>ではないので注意しよう。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gpa_grouped</span></code>には<code class="docutils literal notranslate"><span class="pre">median()</span></code>，<code class="docutils literal notranslate"><span class="pre">std()</span></code>，<code class="docutils literal notranslate"><span class="pre">var()</span></code>，<code class="docutils literal notranslate"><span class="pre">min()</span></code>，<code class="docutils literal notranslate"><span class="pre">max()</span></code>などが使える。その他の属性・メソッドを確認。</p></li>
+</ul>
+</section>
+<section id="id19">
+<h4>図示<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
+<p>方法１：横軸に文字列を使う</p>
+<p><code class="docutils literal notranslate"><span class="pre">gpa_mean.index</span></code>を確認する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa_mean</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([2018, 2019, 2020], dtype='int64', name='修得年度')
+</pre></div>
+</div>
+</div>
+</div>
+<p>これを使い横軸に使う文字列を作成する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yr</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gpa_mean</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+<span class="n">yr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['2018', '2019', '2020']
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yr</span><span class="p">,</span><span class="n">gpa_mean</span><span class="p">[</span><span class="s1">'科目GP'</span><span class="p">],</span> <span class="s1">'o-'</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/546def9157ec2c91c4b85f0ce095a3177512e87e4b518b5e8b41c5ae21d8c4d2.png" src="_images/546def9157ec2c91c4b85f0ce095a3177512e87e4b518b5e8b41c5ae21d8c4d2.png" />
+</div>
+</div>
+<p>方法２：<code class="docutils literal notranslate"><span class="pre">plt.xticks()</span></code>を使って</p>
+<p>横軸を調整するために，<code class="docutils literal notranslate"><span class="pre">gpa_mean</span></code>のインデックスを確認。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yr</span> <span class="o">=</span> <span class="n">gpa_mean</span><span class="o">.</span><span class="n">index</span>
+<span class="n">yr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([2018, 2019, 2020], dtype='int64', name='修得年度')
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">xticks()</span></code>を使って横軸の表示を指定する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">'科目GP'</span><span class="p">,</span> <span class="s1">'o-'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">gpa_mean</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">yr</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/546def9157ec2c91c4b85f0ce095a3177512e87e4b518b5e8b41c5ae21d8c4d2.png" src="_images/546def9157ec2c91c4b85f0ce095a3177512e87e4b518b5e8b41c5ae21d8c4d2.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="id20">
+<h3>図示：前期後期毎<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<section id="id21">
+<h4>「修得学期」の英語化<a class="headerlink" href="#id21" title="Link to this heading">#</a></h4>
+<p>「修得学期」の要素が日本語だと警告が出るため，メソッド<code class="docutils literal notranslate"><span class="pre">.replace()</span></code>を使って英語に変換する。<code class="docutils literal notranslate"><span class="pre">replace()</span></code>の引数は辞書で指定する。</p>
+<ul class="simple">
+<li><p>キー：変更する対象の数値や文字列</p></li>
+<li><p>値：変更後の数値や文字列</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa</span><span class="p">[</span><span class="s1">'修得学期'</span><span class="p">]</span> <span class="o">=</span> <span class="n">gpa</span><span class="p">[</span><span class="s1">'修得学期'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">'前期'</span><span class="p">:</span><span class="s1">'1'</span><span class="p">,</span><span class="s1">'後期'</span><span class="p">:</span><span class="s1">'2'</span><span class="p">})</span>
+<span class="n">gpa</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>No.</th>
+      <th>区分</th>
+      <th>科目大区分</th>
+      <th>科目中区分</th>
+      <th>科目ナンバー</th>
+      <th>科目</th>
+      <th>単位数</th>
+      <th>修得年度</th>
+      <th>修得学期</th>
+      <th>評語</th>
+      <th>科目GP</th>
+      <th>合否</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AA100</td>
+      <td>XX学</td>
+      <td>1</td>
+      <td>2020</td>
+      <td>1</td>
+      <td>可</td>
+      <td>2.0</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AB100</td>
+      <td>XX学Ａ</td>
+      <td>1</td>
+      <td>2020</td>
+      <td>2</td>
+      <td>秀</td>
+      <td>4.3</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AB100</td>
+      <td>XX学Ｂ</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>2</td>
+      <td>可</td>
+      <td>2.0</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ａ</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>2</td>
+      <td>優</td>
+      <td>4.0</td>
+      <td>合</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>全学共通授業科目</td>
+      <td>基礎教養科目</td>
+      <td>NaN</td>
+      <td>U1AD100</td>
+      <td>X学Ｂ</td>
+      <td>1</td>
+      <td>2019</td>
+      <td>1</td>
+      <td>秀</td>
+      <td>4.3</td>
+      <td>合</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="id22">
+<h4><code class="docutils literal notranslate"><span class="pre">groupby</span></code><a class="headerlink" href="#id22" title="Link to this heading">#</a></h4>
+<p>「修得年度」と「修得学期」でグループ化する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa_grouped</span> <span class="o">=</span> <span class="n">gpa</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'修得年度'</span><span class="p">,</span><span class="s1">'修得学期'</span><span class="p">])</span>
+<span class="n">gpa_mean</span> <span class="o">=</span> <span class="n">gpa_grouped</span><span class="p">[</span><span class="n">two_vars</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">gpa_mean</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>単位数</th>
+      <th>科目GP</th>
+    </tr>
+    <tr>
+      <th>修得年度</th>
+      <th>修得学期</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">2018</th>
+      <th>1</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.500000</td>
+      <td>3.216667</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2019</th>
+      <th>1</th>
+      <td>1.000000</td>
+      <td>3.150000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.250000</td>
+      <td>3.575000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2020</th>
+      <th>1</th>
+      <td>1.333333</td>
+      <td>2.666667</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.000000</td>
+      <td>3.533333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="id23">
+<h4>図示<a class="headerlink" href="#id23" title="Link to this heading">#</a></h4>
+<p>横軸に文字列を使う。まず<code class="docutils literal notranslate"><span class="pre">gpa_mean</span></code>のインデックスを確認する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpa_mean</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndex([(2018, '1'),
+            (2018, '2'),
+            (2019, '1'),
+            (2019, '2'),
+            (2020, '1'),
+            (2020, '2')],
+           names=['修得年度', '修得学期'])
+</pre></div>
+</div>
+</div>
+</div>
+<p>これを使い横軸に使う文字列を作成する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yr_half</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="s1">'-'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gpa_mean</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+<span class="n">yr_half</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['2018-1', '2018-2', '2019-1', '2019-2', '2020-1', '2020-2']
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yr_half</span><span class="p">,</span> <span class="n">gpa_mean</span><span class="p">[</span><span class="s1">'科目GP'</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0fd7bcee596fc8f98d7e70e1b57a7a3c0b55616f3b8ea0bebc7a7d8f46191cc8.png" src="_images/0fd7bcee596fc8f98d7e70e1b57a7a3c0b55616f3b8ea0bebc7a7d8f46191cc8.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pseudo_code.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">疑似コード</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Gapminder.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Gapminder</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">データの読み込み</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">学生</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">例</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">列の内容の確認</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe"><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の作成</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">全科目</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-string"><code class="docutils literal notranslate"><span class="pre">f-string</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">優・秀・良・可・不可などの数</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">簡単な方法</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">表示を整理したい場合</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">優・秀・良・可・不可などの％</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">簡単な方法</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">表示を整理したい場合</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">全学共通授業科目</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">割合</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">専門科目</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gpa">GPAの推移</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gp">「科目GP」で記号がある行の削除</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">「科目GP」を浮動小数点に変更</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">図示：毎年</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby"><code class="docutils literal notranslate"><span class="pre">groupby</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">図示</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">図示：前期後期毎</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">「修得学期」の英語化</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id22"><code class="docutils literal notranslate"><span class="pre">groupby</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">図示</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 春山 鉄源  Tetsugen HARUYAMA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <!-- Default Statcounter code for Py4Basics https://py4basics.github.io --> <script type="text/javascript"> var sc_project=12615270; var sc_invisible=1; var sc_security="2a7796f0"; </script> <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script> <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12615270/0/2a7796f0/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript> <!-- End of Statcounter Code -->
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
